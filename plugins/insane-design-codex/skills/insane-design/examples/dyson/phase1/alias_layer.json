@@ -1,0 +1,614 @@
+{
+  "slug": "dyson",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--yxt-button-focus-border-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--yxt-gda-citation-button-spacing",
+        "references": [
+          "--yxt-base-spacing-sm"
+        ],
+        "terminal_hint": "--yxt-base-spacing-sm"
+      },
+      {
+        "alias": "--yxt-searchbar-button-background-color-active",
+        "references": [
+          "--yxt-searchbar-button-background-color-base"
+        ],
+        "terminal_hint": "--yxt-searchbar-button-background-color-base"
+      },
+      {
+        "alias": "--yxt-searchbar-button-background-color-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-searchbar-button-background-color-hover",
+        "references": [],
+        "terminal_hint": "#e9e9e9"
+      },
+      {
+        "alias": "--yxt-searchbar-button-text-color-active",
+        "references": [
+          "--yxt-searchbar-button-text-color-base"
+        ],
+        "terminal_hint": "--yxt-searchbar-button-text-color-base"
+      },
+      {
+        "alias": "--yxt-searchbar-button-text-color-base",
+        "references": [
+          "--yxt-color-text-primary"
+        ],
+        "terminal_hint": "--yxt-color-text-primary"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--yxt-accordion-card-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-accordion-card-background-color--expanded",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-border",
+        "references": [
+          "--yxt-border-default"
+        ],
+        "terminal_hint": "--yxt-border-default"
+      },
+      {
+        "alias": "--yxt-accordion-card-content-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-accordion-card-cta-color",
+        "references": [
+          "--yxt-color-brand-primary"
+        ],
+        "terminal_hint": "--yxt-color-brand-primary"
+      },
+      {
+        "alias": "--yxt-accordion-card-cta-font-size",
+        "references": [
+          "--yxt-font-size-md"
+        ],
+        "terminal_hint": "--yxt-font-size-md"
+      },
+      {
+        "alias": "--yxt-accordion-card-cta-font-weight",
+        "references": [
+          "--yxt-font-weight-normal"
+        ],
+        "terminal_hint": "--yxt-font-weight-normal"
+      },
+      {
+        "alias": "--yxt-accordion-card-cta-icon-size",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-cta-spacing",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-details-color",
+        "references": [
+          "--yxt-color-text-primary"
+        ],
+        "terminal_hint": "--yxt-color-text-primary"
+      },
+      {
+        "alias": "--yxt-accordion-card-details-line-height",
+        "references": [
+          "--yxt-accordion-card-details-size"
+        ],
+        "terminal_hint": "--yxt-accordion-card-details-size"
+      },
+      {
+        "alias": "--yxt-accordion-card-details-size",
+        "references": [
+          "--yxt-font-size-md"
+        ],
+        "terminal_hint": "--yxt-font-size-md"
+      },
+      {
+        "alias": "--yxt-accordion-card-details-weight",
+        "references": [
+          "--yxt-font-weight-normal"
+        ],
+        "terminal_hint": "--yxt-font-weight-normal"
+      },
+      {
+        "alias": "--yxt-accordion-card-margin",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-spacing",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-spacing--expanded",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-subtitle-color",
+        "references": [
+          "--yxt-color-text-secondary"
+        ],
+        "terminal_hint": "--yxt-color-text-secondary"
+      },
+      {
+        "alias": "--yxt-accordion-card-subtitle-size",
+        "references": [
+          "--yxt-font-size-md"
+        ],
+        "terminal_hint": "--yxt-font-size-md"
+      },
+      {
+        "alias": "--yxt-accordion-card-title-color",
+        "references": [
+          "--yxt-color-brand-primary"
+        ],
+        "terminal_hint": "--yxt-color-brand-primary"
+      },
+      {
+        "alias": "--yxt-accordion-card-title-color-hover",
+        "references": [
+          "--yxt-color-background-highlight"
+        ],
+        "terminal_hint": "--yxt-color-background-highlight"
+      },
+      {
+        "alias": "--yxt-accordion-card-title-line-height",
+        "references": [
+          "--yxt-line-height-lg"
+        ],
+        "terminal_hint": "--yxt-line-height-lg"
+      },
+      {
+        "alias": "--yxt-accordion-card-title-size",
+        "references": [
+          "--yxt-font-size-md-lg"
+        ],
+        "terminal_hint": "--yxt-font-size-md-lg"
+      },
+      {
+        "alias": "--yxt-accordion-card-title-weight",
+        "references": [
+          "--yxt-font-weight-normal"
+        ],
+        "terminal_hint": "--yxt-font-weight-normal"
+      },
+      {
+        "alias": "--yxt-accordion-card-toggle-icon-height",
+        "references": [
+          "--yxt-accordion-card-spacing"
+        ],
+        "terminal_hint": "--yxt-accordion-card-spacing"
+      },
+      {
+        "alias": "--yxt-accordion-card-toggle-icon-width",
+        "references": [
+          "--yxt-accordion-card-spacing"
+        ],
+        "terminal_hint": "--yxt-accordion-card-spacing"
+      },
+      {
+        "alias": "--yxt-nav-border-color",
+        "references": [
+          "--yxt-color-borders"
+        ],
+        "terminal_hint": "--yxt-color-borders"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-color",
+        "references": [
+          "--yxt-nav-text-color"
+        ],
+        "terminal_hint": "--yxt-nav-text-color"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-font-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--yxt-nav-dropdown-font-weight",
+        "references": [
+          "--yxt-font-weight-semibold"
+        ],
+        "terminal_hint": "--yxt-font-weight-semibold"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-hover-background-color",
+        "references": [],
+        "terminal_hint": "#eeeff0"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-hover-color",
+        "references": [
+          "--yxt-nav-dropdown-color"
+        ],
+        "terminal_hint": "--yxt-nav-dropdown-color"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-line-height",
+        "references": [
+          "--yxt-line-height-sm"
+        ],
+        "terminal_hint": "--yxt-line-height-sm"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--yxt-nav-text-active-border",
+        "references": [
+          "--yxt-nav-text-active-border-width",
+          "--yxt-color-brand-primary"
+        ],
+        "terminal_hint": "--yxt-nav-text-active-border-width"
+      },
+      {
+        "alias": "--yxt-nav-text-active-border-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--yxt-nav-text-active-color",
+        "references": [
+          "--yxt-color-brand-primary"
+        ],
+        "terminal_hint": "--yxt-color-brand-primary"
+      },
+      {
+        "alias": "--yxt-nav-text-color",
+        "references": [
+          "--yxt-color-text-primary"
+        ],
+        "terminal_hint": "--yxt-color-text-primary"
+      },
+      {
+        "alias": "--yxt-nav-text-focus-background-color",
+        "references": [],
+        "terminal_hint": "#e9e9e9"
+      },
+      {
+        "alias": "--yxt-nav-text-font-size",
+        "references": [
+          "--yxt-font-size-md"
+        ],
+        "terminal_hint": "--yxt-font-size-md"
+      },
+      {
+        "alias": "--yxt-nav-text-font-weight",
+        "references": [
+          "--yxt-font-weight-semibold"
+        ],
+        "terminal_hint": "--yxt-font-weight-semibold"
+      },
+      {
+        "alias": "--yxt-nav-text-hover-color",
+        "references": [],
+        "terminal_hint": "#c5cace"
+      },
+      {
+        "alias": "--yxt-nav-text-line-height",
+        "references": [
+          "--yxt-line-height-md"
+        ],
+        "terminal_hint": "--yxt-line-height-md"
+      },
+      {
+        "alias": "--yxt-question-submission-input-color",
+        "references": [
+          "--yxt-color-text-primary"
+        ],
+        "terminal_hint": "--yxt-color-text-primary"
+      },
+      {
+        "alias": "--yxt-question-submission-input-font-size",
+        "references": [
+          "--yxt-font-size-md"
+        ],
+        "terminal_hint": "--yxt-font-size-md"
+      },
+      {
+        "alias": "--yxt-question-submission-input-font-weight",
+        "references": [
+          "--yxt-font-weight-normal"
+        ],
+        "terminal_hint": "--yxt-font-weight-normal"
+      },
+      {
+        "alias": "--yxt-question-submission-input-line-height",
+        "references": [
+          "--yxt-line-height-md"
+        ],
+        "terminal_hint": "--yxt-line-height-md"
+      },
+      {
+        "alias": "--yxt-standard-card-base-spacing",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-cta-icon-size",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-cta-icon-size-solo",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-cta-spacing",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-cta-width",
+        "references": [
+          "--yxt-standard-card-base-spacing"
+        ],
+        "terminal_hint": "--yxt-standard-card-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-link-color",
+        "references": [
+          "--yxt-color-brand-primary"
+        ],
+        "terminal_hint": "--yxt-color-brand-primary"
+      },
+      {
+        "alias": "--yxt-standard-card-link-hover-color",
+        "references": [
+          "--yxt-color-brand-hover"
+        ],
+        "terminal_hint": "--yxt-color-brand-hover"
+      },
+      {
+        "alias": "--yxt-standard-card-ordinal-font-size",
+        "references": [
+          "--yxt-font-size-xs"
+        ],
+        "terminal_hint": "--yxt-font-size-xs"
+      },
+      {
+        "alias": "--yxt-standard-card-ordinal-size",
+        "references": [
+          "--yxt-base-spacing"
+        ],
+        "terminal_hint": "--yxt-base-spacing"
+      },
+      {
+        "alias": "--yxt-standard-card-subtitle-color",
+        "references": [
+          "--yxt-color-text-secondary"
+        ],
+        "terminal_hint": "--yxt-color-text-secondary"
+      },
+      {
+        "alias": "--yxt-standard-card-wrapper-width",
+        "references": [
+          "--yxt-standard-card-base-spacing"
+        ],
+        "terminal_hint": "--yxt-standard-card-base-spacing"
+      },
+      {
+        "alias": "--yxt-z-index-nav-more-modal",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "core": [
+      {
+        "alias": "--eswIconFillColor",
+        "references": [],
+        "terminal_hint": "#FFF"
+      },
+      {
+        "alias": "--yxt-accordion-card-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-accordion-card-content-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-accordion-result-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-autocomplete-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-autocomplete-option-hover-background-color",
+        "references": [],
+        "terminal_hint": "#f9f9f9"
+      },
+      {
+        "alias": "--yxt-autocomplete-selected-background-color",
+        "references": [],
+        "terminal_hint": "#f9f9f9"
+      },
+      {
+        "alias": "--yxt-color-background-dark",
+        "references": [],
+        "terminal_hint": "#a8a8a8"
+      },
+      {
+        "alias": "--yxt-color-background-highlight",
+        "references": [],
+        "terminal_hint": "#fafafa"
+      },
+      {
+        "alias": "--yxt-color-borders",
+        "references": [],
+        "terminal_hint": "#dcdcdc"
+      },
+      {
+        "alias": "--yxt-color-brand-hover",
+        "references": [],
+        "terminal_hint": "#0c5ecb"
+      },
+      {
+        "alias": "--yxt-color-brand-primary",
+        "references": [],
+        "terminal_hint": "#0f70f0"
+      },
+      {
+        "alias": "--yxt-color-brand-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-color-error",
+        "references": [],
+        "terminal_hint": "#940000"
+      },
+      {
+        "alias": "--yxt-color-text-neutral",
+        "references": [],
+        "terminal_hint": "#616161"
+      },
+      {
+        "alias": "--yxt-color-text-primary",
+        "references": [],
+        "terminal_hint": "#212121"
+      },
+      {
+        "alias": "--yxt-color-text-secondary",
+        "references": [],
+        "terminal_hint": "#757575"
+      },
+      {
+        "alias": "--yxt-direct-answer-content-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-direct-answer-title-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-filter-options-checkbox-focus-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--yxt-filter-options-checkmark-color",
+        "references": [],
+        "terminal_hint": "#0f70f0"
+      },
+      {
+        "alias": "--yxt-gda-content-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-gda-title-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-nav-dropdown-hover-background-color",
+        "references": [],
+        "terminal_hint": "#eeeff0"
+      },
+      {
+        "alias": "--yxt-nav-text-focus-background-color",
+        "references": [],
+        "terminal_hint": "#e9e9e9"
+      },
+      {
+        "alias": "--yxt-nav-text-hover-color",
+        "references": [],
+        "terminal_hint": "#c5cace"
+      },
+      {
+        "alias": "--yxt-result-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-result-ordinal-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-results-filters-background",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-searchbar-button-background-color-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yxt-searchbar-button-background-color-hover",
+        "references": [],
+        "terminal_hint": "#e9e9e9"
+      },
+      {
+        "alias": "--yxt-searchbar-form-background-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 7,
+      "component": 58,
+      "core": 32
+    }
+  }
+}

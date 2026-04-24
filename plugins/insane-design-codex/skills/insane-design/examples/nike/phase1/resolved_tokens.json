@@ -1,0 +1,410 @@
+{
+  "slug": "nike",
+  "total_vars": 351,
+  "resolved_count": 284,
+  "unresolved_count": 67,
+  "samples": {
+    "--progress": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--progress",
+        "0"
+      ]
+    },
+    "--podium-cds-color-text-primary-on-light": {
+      "raw": "var(--podium-cds-color-black)",
+      "resolved": "#111111",
+      "chain": [
+        "--podium-cds-color-text-primary-on-light",
+        "--podium-cds-color-black",
+        "#111111"
+      ]
+    },
+    "--animation-duration": {
+      "raw": "var(--podium-cds-transition-duration-normal)",
+      "resolved": "250ms",
+      "chain": [
+        "--animation-duration",
+        "--podium-cds-transition-duration-normal",
+        "250ms"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-oversize1": {
+      "raw": "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-oversize1",
+        "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-oversize2": {
+      "raw": "500 4.75rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-oversize2",
+        "500 4.75rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-oversize3": {
+      "raw": "500 3.75rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-oversize3",
+        "500 3.75rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-display1": {
+      "raw": "3rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-display1",
+        "3rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-display2": {
+      "raw": "2.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-display2",
+        "2.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-display3": {
+      "raw": "2rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-display3",
+        "2rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-display4": {
+      "raw": "1.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-display4",
+        "1.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-conversation1": {
+      "raw": "300 2rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-conversation1",
+        "300 2rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-conversation2": {
+      "raw": "300 1.5rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-conversation2",
+        "300 1.5rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-conversation3": {
+      "raw": "300 1.25rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-conversation3",
+        "300 1.25rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-conversation4": {
+      "raw": "300 1rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-conversation4",
+        "300 1rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-editorial-body1": {
+      "raw": "400 1rem/1.5 'Helvetica Now Text',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-editorial-body1",
+        "400 1rem/1.5 'Helvetica Now Text',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-959-editorial-body1-strong": {
+      "raw": "500 1rem/1.5 'Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-959-editorial-body1-strong",
+        "500 1rem/1.5 'Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-1919-title1": {
+      "raw": "500 2.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-1919-title1",
+        "500 2.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-1919-title2": {
+      "raw": "500 2rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-1919-title2",
+        "500 2rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-1919-title3": {
+      "raw": "500 1.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-1919-title3",
+        "500 1.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-320-to-1919-title4": {
+      "raw": "500 1.25rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-320-to-1919-title4",
+        "500 1.25rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1439-oversize1": {
+      "raw": "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1439-oversize1",
+        "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1439-oversize2": {
+      "raw": "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1439-oversize2",
+        "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1439-oversize3": {
+      "raw": "500 4.75rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1439-oversize3",
+        "500 4.75rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-display1": {
+      "raw": "6rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-display1",
+        "6rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-display2": {
+      "raw": "4.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-display2",
+        "4.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-display3": {
+      "raw": "3.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-display3",
+        "3.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-display4": {
+      "raw": "3rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-display4",
+        "3rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-conversation1": {
+      "raw": "300 3rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-conversation1",
+        "300 3rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-conversation2": {
+      "raw": "300 2.5rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-conversation2",
+        "300 2.5rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-conversation3": {
+      "raw": "300 2rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-conversation3",
+        "300 2rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-to-1919-conversation4": {
+      "raw": "300 1.25rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-to-1919-conversation4",
+        "300 1.25rem/1.35 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-plus-editorial-body1": {
+      "raw": "400 1.25rem/1.5 'Helvetica Now Text',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-plus-editorial-body1",
+        "400 1.25rem/1.5 'Helvetica Now Text',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-960-plus-editorial-body1-strong": {
+      "raw": "500 1.25rem/1.5 'Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-960-plus-editorial-body1-strong",
+        "500 1.25rem/1.5 'Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1440-to-1919-oversize1": {
+      "raw": "500 9.375rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1440-to-1919-oversize1",
+        "500 9.375rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1440-to-1919-oversize2": {
+      "raw": "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1440-to-1919-oversize2",
+        "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1440-to-1919-oversize3": {
+      "raw": "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1440-to-1919-oversize3",
+        "500 6rem/1.1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-oversize1": {
+      "raw": "500 11.625rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-oversize1",
+        "500 11.625rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-oversize2": {
+      "raw": "500 9.375rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-oversize2",
+        "500 9.375rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-oversize3": {
+      "raw": "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-oversize3",
+        "500 7.5rem/1 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-display1": {
+      "raw": "7.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-display1",
+        "7.5rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-display2": {
+      "raw": "6rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-display2",
+        "6rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-display3": {
+      "raw": "4.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-display3",
+        "4.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-display4": {
+      "raw": "3.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-display4",
+        "3.75rem/.9 'Nike Futura ND','Helvetica Now Text Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-title1": {
+      "raw": "500 3rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-title1",
+        "500 3rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-title2": {
+      "raw": "500 2.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-title2",
+        "500 2.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-title3": {
+      "raw": "500 2rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-title3",
+        "500 2rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-title4": {
+      "raw": "500 1.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-title4",
+        "500 1.5rem/1.2 'Helvetica Now Display Medium',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-conversation1": {
+      "raw": "300 3.75rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-conversation1",
+        "300 3.75rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-conversation2": {
+      "raw": "300 3rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-conversation2",
+        "300 3rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    },
+    "--podium-cds-typography-1920-plus-conversation3": {
+      "raw": "300 2.5rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif",
+      "resolved": null,
+      "chain": [
+        "--podium-cds-typography-1920-plus-conversation3",
+        "300 2.5rem/1.1 'Palatino LT Pro Light',Helvetica,Arial,sans-serif"
+      ]
+    }
+  }
+}

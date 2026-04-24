@@ -1,0 +1,408 @@
+{
+  "slug": "vercel",
+  "total_vars": 635,
+  "resolved_count": 268,
+  "unresolved_count": 367,
+  "samples": {
+    "--tw-border-spacing-x": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-border-spacing-x",
+        "0"
+      ]
+    },
+    "--tw-border-spacing-y": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-border-spacing-y",
+        "0"
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "-50%",
+      "resolved": "-50%",
+      "chain": [
+        "--tw-translate-x",
+        "-50%"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "-3.5px",
+      "resolved": "-3.5px",
+      "chain": [
+        "--tw-translate-y",
+        "-3.5px"
+      ]
+    },
+    "--tw-rotate": {
+      "raw": "180deg",
+      "resolved": "180deg",
+      "chain": [
+        "--tw-rotate",
+        "180deg"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-skew-x",
+        "0"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-skew-y",
+        "0"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--tw-scale-x",
+        "1"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--tw-scale-y",
+        "1"
+      ]
+    },
+    "--tw-pan-x": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-x",
+        ""
+      ]
+    },
+    "--tw-pan-y": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-y",
+        ""
+      ]
+    },
+    "--tw-pinch-zoom": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-pinch-zoom",
+        ""
+      ]
+    },
+    "--tw-scroll-snap-strictness": {
+      "raw": "mandatory",
+      "resolved": null,
+      "chain": [
+        "--tw-scroll-snap-strictness",
+        "mandatory"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "20%",
+      "resolved": "20%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "20%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "70%",
+      "resolved": "70%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "70%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "50%"
+      ]
+    },
+    "--tw-ordinal": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-ordinal",
+        ""
+      ]
+    },
+    "--tw-slashed-zero": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-slashed-zero",
+        ""
+      ]
+    },
+    "--tw-numeric-figure": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-figure",
+        ""
+      ]
+    },
+    "--tw-numeric-spacing": {
+      "raw": "tabular-nums",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-spacing",
+        "tabular-nums"
+      ]
+    },
+    "--tw-numeric-fraction": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-fraction",
+        ""
+      ]
+    },
+    "--tw-ring-inset": {
+      "raw": "inset",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-inset",
+        "inset"
+      ]
+    },
+    "--tw-ring-offset-width": {
+      "raw": "2px",
+      "resolved": "2px",
+      "chain": [
+        "--tw-ring-offset-width",
+        "2px"
+      ]
+    },
+    "--tw-ring-offset-color": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--tw-ring-offset-color",
+        "#fff"
+      ]
+    },
+    "--tw-ring-color": {
+      "raw": "hsla(var(--ds-gray-700-value), var(--tw-ring-opacity))",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-color",
+        "hsla(var(--ds-gray-700-value), var(--tw-ring-opacity))"
+      ]
+    },
+    "--tw-ring-offset-shadow": {
+      "raw": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-offset-shadow",
+        "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)"
+      ]
+    },
+    "--tw-ring-shadow": {
+      "raw": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-shadow",
+        "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+      ]
+    },
+    "--tw-shadow": {
+      "raw": "0 0 0 1px var(--ds-gray-400)!important",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow",
+        "0 0 0 1px var(--ds-gray-400)!important"
+      ]
+    },
+    "--tw-shadow-colored": {
+      "raw": "0 0 0 1px var(--tw-shadow-color)!important",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow-colored",
+        "0 0 0 1px var(--tw-shadow-color)!important"
+      ]
+    },
+    "--tw-blur": {
+      "raw": "blur(4px)",
+      "resolved": null,
+      "chain": [
+        "--tw-blur",
+        "blur(4px)"
+      ]
+    },
+    "--tw-brightness": {
+      "raw": "brightness(1.25)",
+      "resolved": null,
+      "chain": [
+        "--tw-brightness",
+        "brightness(1.25)"
+      ]
+    },
+    "--tw-contrast": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-contrast",
+        ""
+      ]
+    },
+    "--tw-grayscale": {
+      "raw": "grayscale(100%)",
+      "resolved": null,
+      "chain": [
+        "--tw-grayscale",
+        "grayscale(100%)"
+      ]
+    },
+    "--tw-hue-rotate": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-hue-rotate",
+        ""
+      ]
+    },
+    "--tw-invert": {
+      "raw": "invert(100%)",
+      "resolved": null,
+      "chain": [
+        "--tw-invert",
+        "invert(100%)"
+      ]
+    },
+    "--tw-saturate": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-saturate",
+        ""
+      ]
+    },
+    "--tw-sepia": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-sepia",
+        ""
+      ]
+    },
+    "--tw-drop-shadow": {
+      "raw": "drop-shadow(0 10px 8px #0000000a) drop-shadow(0 4px 3px #0000001a)",
+      "resolved": null,
+      "chain": [
+        "--tw-drop-shadow",
+        "drop-shadow(0 10px 8px #0000000a) drop-shadow(0 4px 3px #0000001a)"
+      ]
+    },
+    "--tw-backdrop-blur": {
+      "raw": "blur(4px)",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-blur",
+        "blur(4px)"
+      ]
+    },
+    "--tw-backdrop-brightness": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-brightness",
+        ""
+      ]
+    },
+    "--tw-backdrop-contrast": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-contrast",
+        ""
+      ]
+    },
+    "--tw-backdrop-grayscale": {
+      "raw": "grayscale(100%)",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-grayscale",
+        "grayscale(100%)"
+      ]
+    },
+    "--tw-backdrop-hue-rotate": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-hue-rotate",
+        ""
+      ]
+    },
+    "--tw-backdrop-invert": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-invert",
+        ""
+      ]
+    },
+    "--tw-backdrop-opacity": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-opacity",
+        ""
+      ]
+    },
+    "--tw-backdrop-saturate": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-saturate",
+        ""
+      ]
+    },
+    "--tw-backdrop-sepia": {
+      "raw": "",
+      "resolved": null,
+      "chain": [
+        "--tw-backdrop-sepia",
+        ""
+      ]
+    },
+    "--tw-text-opacity": {
+      "raw": "1!important",
+      "resolved": null,
+      "chain": [
+        "--tw-text-opacity",
+        "1!important"
+      ]
+    },
+    "--tw-bg-opacity": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--tw-bg-opacity",
+        "1"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    }
+  }
+}

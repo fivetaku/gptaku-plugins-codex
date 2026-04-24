@@ -1,0 +1,45 @@
+{
+  "name": "pumasi-codex",
+  "version": "0.1.0",
+  "description": "Codex-native parallel coding orchestration with a bundled image companion skill.",
+  "author": {
+    "name": "chulrolee",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/pumasi-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "parallel",
+    "orchestration",
+    "pumasi",
+    "delegation",
+    "image-generation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pumasi Codex",
+    "shortDescription": "Parallel build orchestration plus image generation for Codex",
+    "longDescription": "Package the Codex-native `pumasi` orchestration skill and the adjacent `pumasi-image` visual skill into one installable plugin for the Codex marketplace flow.",
+    "developerName": "GPTaku",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Use pumasi to split this greenfield feature into parallel Codex worker tasks.",
+      "Create a bounded worker plan and gates for this multi-module implementation.",
+      "Generate a poster or thumbnail with pumasi-image."
+    ],
+    "brandColor": "#1F2937",
+    "composerIcon": "./assets/pumasi-codex.svg",
+    "logo": "./assets/pumasi-codex.svg",
+    "screenshots": []
+  }
+}

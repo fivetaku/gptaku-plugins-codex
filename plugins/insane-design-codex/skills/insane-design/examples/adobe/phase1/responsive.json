@@ -1,0 +1,76 @@
+{
+  "slug": "adobe",
+  "breakpoints": [
+    {
+      "condition": "max-width: 320px",
+      "direction": "max",
+      "value": "320px"
+    },
+    {
+      "condition": "max-width: 599px",
+      "direction": "max",
+      "value": "599px"
+    },
+    {
+      "condition": "min-width: 600px",
+      "direction": "min",
+      "value": "600px"
+    },
+    {
+      "condition": "max-width: 600px",
+      "direction": "max",
+      "value": "600px"
+    },
+    {
+      "condition": "min-width: 900px",
+      "direction": "min",
+      "value": "900px"
+    },
+    {
+      "condition": "max-width: 900px",
+      "direction": "max",
+      "value": "900px"
+    },
+    {
+      "condition": "max-width: 1199px",
+      "direction": "max",
+      "value": "1199px"
+    },
+    {
+      "condition": "min-width: 1200px",
+      "direction": "min",
+      "value": "1200px"
+    },
+    {
+      "condition": "min-width: 1504px",
+      "direction": "min",
+      "value": "1504px"
+    }
+  ],
+  "approach": "desktop-first",
+  "touch": {
+    "min_height_44px": true,
+    "button_heights": [
+      "6px",
+      "48px",
+      "1.875rem",
+      "21px",
+      "14px",
+      "9.179px",
+      "25px",
+      "24px"
+    ],
+    "input_heights": [
+      "32px"
+    ]
+  },
+  "collapsing": {
+    "nav_collapse": "hamburger",
+    "grid_collapse": "single_column",
+    "sidebar_collapse": "hidden_at_mobile"
+  },
+  "stats": {
+    "breakpoint_count": 9,
+    "approach": "desktop-first"
+  }
+}

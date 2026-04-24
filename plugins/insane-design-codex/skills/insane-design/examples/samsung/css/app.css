@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* 카드발급 안내  */
+.app-content { max-width: 800px; margin: auto; padding: 0; }
+.app-content .conbox { padding: 30px 12px 60px 12px; }
+.line-header { position:relative;padding:0 0 6px 0;border-bottom: 2px solid #000; }
+.line-header .con-tit { font-size: 20px; line-height: 26px; color: #000; font-weight:bold; letter-spacing: 0; }
+
+.card-box { padding-top: 30px; text-align: center; }
+.card-box ~ .card-box { margin-top: 30px; border-top: 1px solid #d9d9d9; }
+.card-box .card-type { font-size: 16px; line-height: 21px; color: #000; font-weight: bold; text-align: left; letter-spacing: 0; }
+.card-box .card-type + p { padding-top: 6px; font-size: 14px; line-height: 19px; color: #707070; text-align: left; letter-spacing: 0; word-break: keep-all; }
+.card-box .imgbox { margin-right: -10px; padding: 24px 0 30px; }
+.card-box .imgbox img { width: 144px; height: 93px; }
+.card-box .imgbox + .btn { margin: 0; letter-spacing: 0; }
+
+/* 삼성전자 OK캐쉬백 제휴 카드 발급 안내 */
+.app-content .conbox.terms { padding: 24px 12px 60px 12px; }
+.app-pgTitle { font-size: 24px; line-height: 32px; color: #000; font-weight: bold; letter-spacing: 0; }
+.tit-esse { margin: 18px 0 36px; }
+/* s : ※ 가상클래스로 넣지 않을 경우 */
+    .tit-esse li { font-size: 14px; line-height: 19px; color: #707070; letter-spacing: -0.02em; word-break: keep-all; }
+    .tit-esse li + li { margin-top: 6px; }
+/* e : ※ 가상클래스로 넣지 않을 경우 */
+.reference-essential li { position: relative; padding-left: 12px; font-size: 14px; line-height: 19px; color: #707070; letter-spacing: -0.02em; word-break: keep-all; }
+.reference-essential li + li { margin-top: 6px; }
+.reference-essential li:before { content: '※'; position: absolute; left: 0; top: 0; }
+/* e : ※ 가상클래스로 넣을 경우 */
+.app-terms .allChk-box { margin-top: 18px; }
+.app-terms .chk-form input[type="radio"] + label, .chk-form input[type="checkbox"] + label { line-height: 20px; }
+/* fold 관련 미디어쿼리 추가 */
+@media screen and (max-width: 1100px) and (min-width: 801px) {
+    .app-terms .chk-form input[type="radio"] + label, .chk-form input[type="checkbox"] + label {line-height: 1.6364vw;}
+}
+.app-terms .terms-wrap { margin-top: 30px; }
+.app-terms .terms-wrap .terms-box-tit { font-size: 16px; font-weight: 700; color: #000; line-height: 21px; letter-spacing: 0; word-break: keep-all; }
+.app-terms .terms-wrap .terms-box { width: 100%; margin: 6px 0 18px 0; padding: 18px 18px 18px 10px; box-sizing: border-box; font-size: 14px; line-height: 20px; resize: none; white-space: inherit; }
+.app-terms .terms-wrap .terms-box em { font-size: 14px; line-height: 18px; color: #000; letter-spacing: -0.02em; word-break: keep-all; }
+.app-terms .terms-wrap .terms-box em + ul { padding-top: 12px; }
+.app-terms .terms-wrap .terms-box ul li { font-size: 12px; line-height: 18px; color: #707070; letter-spacing: -0.02em; }
+.app-terms .terms-wrap .terms-box.incl-btn { height: auto; white-space: inherit; }
+.app-terms .terms-wrap .terms-box.incl-btn .btn { margin: 18px 0 0; max-width: 80px; min-width: auto; padding: 0 15px; }
+.app-terms .terms-wrap .terms-box.none-btn { max-height: 70px; }
+.app-terms .terms-wrap .terms-box.none-btn li { white-space: pre-line; }
+.app-terms .chk-form label br { display: block; }
+.app-content .error-msg { padding-top: 6px; }
+.app-content .chk-form input[type=checkbox].inp-terms + label ~ .error-msg p { font-size: 12px; line-height: 16px; letter-spacing: -0.02em; color: #fa2337; }
+.app-content .btn-box { margin-top: 36px; }
+.app-content .btn-box .btn { margin:0; }
+
+/* OK캐쉬백 카드서비스 및 회원 서비스 이용약관 popup */
+.layer-app { top: 0; bottom: 0; left: 0; max-width: 100% !important; width: 100%; height: calc(100vh - 56px); padding:0 12px; border-radius: 0; transform: none; }
+.layer-app .layer-header { margin: 0 0 30px; border-bottom: 1px solid #d9d9d9; }
+.layer-app .layer-header h2 { padding: 15px 0; font-size: 20px; line-height: 26px; color: #000; font-weight: bold; letter-spacing: -0.02em; text-align: left; }
+.layer-app .pop-close { position: absolute; top: 15px; right: 12px; bottom: auto; left: auto; transform: none; width: 26px; height: 26px; font-size: 0; border-radius: 0; border: none; background-color: transparent; background: url(/sec/static/_images/common/icon-close-large.svg) no-repeat center; }
+.layer-app .terms-content { padding-bottom: 76px; max-height: calc(100vh - 150px); overflow-y: scroll; overflow-x: hidden; }
+.layer-app .terms-content  h3 { margin-bottom: 12px; font-size: 16px; line-height: 21px; color: #000; font-weight: bold; }
+.layer-app .terms-content > div { font-size: 12px; line-height: 18px; color: #707070; white-space: pre-line; }
+.layer-app .bottom-btn-box { position: absolute; left:0; bottom:0; width: 100%; padding: 12px 0 24px; text-align: center; background: #fff; }
+
+
+/* .layer-app .terms-content { padding-bottom: 0px; height: 100vh; overflow-y: scroll; overflow-x: hidden; } */
+/* .layer-app .bottom-btn-box { width: 100%; padding: 12px 0 24px; text-align: center; background: #fff; } */
+
+/* OK캐쉬백포인트 사용 위한 개인정보 수집 및 이용 동의 popup */
+.layer-app .terms-content .pt-table table{width:100%}
+.layer-app .terms-content .pt-table table th,
+.layer-app .terms-content .pt-table table td{padding:1.95313vw;/*font-size:12px;*/font-size:9px;color:#000;text-align:left;vertical-align:top}
+.layer-app .terms-content .pt-table table th{font-weight:normal}
+.layer-app .terms-content .pt-table table th.bg1{background-color:#0071bf;color:#fff}
+.layer-app .terms-content .pt-table table th.bg2{background-color:#f1f1f1}
+.layer-app .terms-content .pt-table table th.bg3{background-color:#e1e1e1}
+.layer-app .terms-content .pt-table table td{border-bottom:1px solid #f1f1f1;line-height:160%;}
+.layer-app .terms-content .pt-table table td.bg{background-color:#b8d8ee}
+.layer-app .terms-content .pt-table table td p{padding:0;margin:0}
+.layer-app .terms-content .pt-table table td strong{font-size: inherit; font-weight: bold;}
+.layer-app .terms-content .pt-table table td em.big-bold{font-size: 11px; font-weight: bold;}
+.layer-app .terms-content .pt-table table .ptw1{width:30%}
+.layer-app .terms-content .pt-table table .ptw2{width:35%}
+.layer-app .terms-content .pt-table table .ptw3{width:35%}
+.layer-app .terms-content .pt-table .center{text-align:center}
+.layer-app .terms-content .pt-table .rbl{border-right:1px solid #f1f1f1}
+.layer-app .terms-content .pt-table .v-middle{vertical-align:middle}
+.layer-app .terms-content .pt-table > span.reference-essential { font-size:12px;color:#000; }
+
+
+/* 알림 */
+.reference-essential.small-esse { margin: 12px 0 24px; }
+.reference-essential.small li { font-size: 12px; line-height: 16px; }
+.app-drop {  }
+.app-drop .app-list-order { display: flex; flex-wrap: wrap; padding: 18px 0; border-top: 1px solid #d9d9d9;}
+.app-drop .app-list-order:last-child { border-bottom: 1px solid #d9d9d9; }
+.app-drop .app-list-order .info-area { order: 2; width: 100%; margin-top: 10px; font-size: 0; }
+.app-drop .app-list-order .info-area > span { font-size: 12px; line-height: 16px; color: #707070; }
+.app-drop .app-list-order .info-area > span + span:before { content:''; display: inline-block; width: 1px; height: 10px; transform: translateY(1px); margin: 0 12px; background: #ddd; }
+.app-drop .app-list-order .list-tit { order: 1; position: relative; width: 100%; height: 18px; line-height: 18px; }
+.app-drop .app-list-order .list-tit:before { content: ''; position: absolute; right: 0; top: 3px; width: 12px; height: 12px; background: url(/sec/static/_images/common/icon-plus-black.svg) center center no-repeat; }
+.app-drop .app-list-order .list-tit.open:before { background: url(/sec/static/_images/common/icon-minus-black.svg) center center no-repeat; }
+.app-drop .app-list-order .list-tit > em { font-size: 14px; line-height: 18px; color: #000; font-weight: bold; vertical-align: top; }
+.app-drop .app-list-order .dropList { order: 3; padding: 18px 0 0 0; width: 100%; }
+.app-drop .app-list-order .dropList span { display: block; }
+.app-drop .dropList a > span { display: block; font-size: 12px; line-height: 16px; color: #000; }
+.app-drop .dropList a > span + img { margin-top: 12px; }
+.app-drop .dropList a > img { width: 100%; height: auto; }
+.app-content .mob-moreViewList { margin-top: 24px; text-align: center; }
+
+

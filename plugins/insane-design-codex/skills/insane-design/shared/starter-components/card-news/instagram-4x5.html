@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- insane-build: card-news/instagram-4x5.html — 1080×1350 portrait card (IG feed recommended) -->
+<!-- Safe zone: 80px top/bottom, 60px sides. Feed crops may hide top 60px in some clients. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --fg-muted: #555555;
+    --brand: #000000;
+    --font-family: system-ui, sans-serif;
+  }
+  body { margin: 0; background: #eee; display: flex; justify-content: center; padding: 24px; }
+  .card {
+    width: 1080px; height: 1350px;
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-family);
+    padding: 80px 60px; box-sizing: border-box;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .eyebrow { font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); }
+  .headline { font-size: 108px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 32px 0; }
+  .body { font-size: 34px; line-height: 1.5; color: var(--fg-muted); }
+  .footer { display: flex; justify-content: space-between; align-items: baseline; font-size: 26px; color: var(--fg-muted); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow">{EYEBROW}</p>
+      <h1 class="headline">{HEADLINE}</h1>
+      <p class="body">{BODY}</p>
+    </div>
+    <div class="footer">
+      <span>@{HANDLE}</span>
+      <span>{PAGE}/{TOTAL}</span>
+    </div>
+  </div>
+</body>
+</html>

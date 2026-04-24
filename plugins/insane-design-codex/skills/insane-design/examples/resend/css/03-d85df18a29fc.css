@@ -1,0 +1,41 @@
+@property --angle {
+syntax:"<angle>";
+inherits:false;
+initial-value:0deg}
+@keyframes rotate {
+to {
+--angle:360deg}
+}
+.rainbow-border {
+background:linear-gradient(var(--angle), #02fcef70 0%, #ffb52b70 50%, #a02bfe70 100%);
+height:32px;
+animation-name:rotate;
+animation-duration:30s;
+animation-timing-function:linear;
+animation-iteration-count:infinite}
+.rainbow-border:after {
+content:"";
+background:linear-gradient(var(--angle), #02fcef70 0%, #ffb52b70 50%, #a02bfe70 100%);
+filter:blur(20px);
+opacity:1;
+transition:all .4s ease-out;
+animation-name:rotate;
+animation-duration:30s;
+animation-timing-function:linear;
+animation-iteration-count:infinite;
+transform:scale(.95,.6)}
+.rainbow-border span {
+background-color:#0b0e14;
+width:calc(100% - 2px);
+height:30px;
+transition:all .2s ease-out}
+.rainbow-border:hover {
+animation-duration:15s}
+.rainbow-border:hover span {
+mix-blend-mode:darken;
+background-color:#0b0e14d1}
+.rainbow-border:hover:after {
+opacity:.8;
+animation-duration:15s;
+transform:scale(1.1,.9)}
+

@@ -1,0 +1,191 @@
+{
+  "slug": "convex",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "button,input,select,optgroup,textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input,select,optgroup,textarea {font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button {font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}"
+    },
+    {
+      "selector": ":is(a,button:not(:disabled),[role=button]:not(:disabled),input:not(:disabled),textarea:not(:disabled),select:not(:disabled)):focus",
+      "property": "outline",
+      "hex": "#00000000",
+      "rule_snippet": ":is(a,button:not(:disabled),[role=button]:not(:disabled),input:not(:disabled),textarea:not(:disabled),select:not(:disabled)):focus {outline-offset:2px;outline:2px solid #0000}"
+    },
+    {
+      "selector": ".file\\:bg-transparent::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".file\\:bg-transparent::file-selector-button {background-color:#0000}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#948AE3",
+      "count": 65,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FC618D",
+      "count": 65,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#7BD88F",
+      "count": 64,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#BAB6C0",
+      "count": 64,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5AD4E6",
+      "count": 43,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F7F1FF",
+      "count": 42,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000000",
+      "count": 32,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F8E67A",
+      "count": 23,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D6D6D6",
+      "count": 21,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FCE566",
+      "count": 21,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#221F1D",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#312B2B",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#529BBA",
+      "count": 7,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#DE5D33",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#05050508",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#101828",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#516C7D",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#BC7914",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000021",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0505051A",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#364153",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6F00FF80",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D1D5DC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EBE3D1",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FDEFD2",
+      "count": 4,
+      "kind": "svg_pattern"
+    }
+  ],
+  "summary": {
+    "total_candidates": 34,
+    "by_role": {
+      "chromatic": 16,
+      "neutral": 12,
+      "selector": 4,
+      "svg_pattern": 2
+    }
+  }
+}

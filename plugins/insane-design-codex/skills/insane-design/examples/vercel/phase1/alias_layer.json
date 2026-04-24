@@ -1,0 +1,378 @@
+{
+  "slug": "vercel",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [
+      {
+        "alias": "--context-card-tip-stroke",
+        "references": [],
+        "terminal_hint": "#252525"
+      },
+      {
+        "alias": "--ds-motion-popover-duration",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--ds-motion-popover-timing",
+        "references": [
+          "--ds-motion-timing-swift"
+        ],
+        "terminal_hint": "--ds-motion-timing-swift"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--accents-1",
+        "references": [],
+        "terminal_hint": "#111"
+      },
+      {
+        "alias": "--accents-2",
+        "references": [],
+        "terminal_hint": "#333"
+      },
+      {
+        "alias": "--accents-3",
+        "references": [],
+        "terminal_hint": "#444"
+      },
+      {
+        "alias": "--accents-4",
+        "references": [],
+        "terminal_hint": "#666"
+      },
+      {
+        "alias": "--accents-5",
+        "references": [],
+        "terminal_hint": "#888"
+      },
+      {
+        "alias": "--accents-6",
+        "references": [],
+        "terminal_hint": "#999"
+      },
+      {
+        "alias": "--accents-7",
+        "references": [],
+        "terminal_hint": "#eaeaea"
+      },
+      {
+        "alias": "--accents-8",
+        "references": [],
+        "terminal_hint": "#fafafa"
+      },
+      {
+        "alias": "--blue",
+        "references": [],
+        "terminal_hint": "#0059abcc"
+      },
+      {
+        "alias": "--caveats-toggle-false",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--context-card-tip-stroke",
+        "references": [],
+        "terminal_hint": "#252525"
+      },
+      {
+        "alias": "--cyan",
+        "references": [],
+        "terminal_hint": "#0fffa9cc"
+      },
+      {
+        "alias": "--dropdown-triangle-stroke",
+        "references": [],
+        "terminal_hint": "#333"
+      },
+      {
+        "alias": "--ds-contrast-fg",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--ds-gray-alpha-100",
+        "references": [],
+        "terminal_hint": "#ffffff0f"
+      },
+      {
+        "alias": "--ds-gray-alpha-1000",
+        "references": [],
+        "terminal_hint": "#ffffffeb"
+      },
+      {
+        "alias": "--ds-gray-alpha-200",
+        "references": [],
+        "terminal_hint": "#ffffff17"
+      },
+      {
+        "alias": "--ds-gray-alpha-300",
+        "references": [],
+        "terminal_hint": "#ffffff21"
+      },
+      {
+        "alias": "--ds-gray-alpha-400",
+        "references": [],
+        "terminal_hint": "#ffffff24"
+      },
+      {
+        "alias": "--ds-gray-alpha-500",
+        "references": [],
+        "terminal_hint": "#ffffff3d"
+      },
+      {
+        "alias": "--ds-gray-alpha-600",
+        "references": [],
+        "terminal_hint": "#ffffff82"
+      },
+      {
+        "alias": "--ds-gray-alpha-700",
+        "references": [],
+        "terminal_hint": "#ffffff8a"
+      },
+      {
+        "alias": "--ds-gray-alpha-800",
+        "references": [],
+        "terminal_hint": "#ffffff78"
+      },
+      {
+        "alias": "--ds-gray-alpha-900",
+        "references": [],
+        "terminal_hint": "#ffffff9c"
+      },
+      {
+        "alias": "--geist-background",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--geist-console-header",
+        "references": [],
+        "terminal_hint": "#0f0310"
+      },
+      {
+        "alias": "--geist-console-purple",
+        "references": [],
+        "terminal_hint": "#8a63d2"
+      },
+      {
+        "alias": "--geist-console-text-color-blue",
+        "references": [],
+        "terminal_hint": "#3291ff"
+      },
+      {
+        "alias": "--geist-console-text-color-pink",
+        "references": [],
+        "terminal_hint": "#eb367f"
+      },
+      {
+        "alias": "--geist-console-text-color-purple",
+        "references": [],
+        "terminal_hint": "#7928ca"
+      },
+      {
+        "alias": "--geist-error-dark",
+        "references": [],
+        "terminal_hint": "#e60000"
+      },
+      {
+        "alias": "--geist-error-light",
+        "references": [],
+        "terminal_hint": "#f33"
+      },
+      {
+        "alias": "--geist-foreground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--geist-highlight-magenta",
+        "references": [],
+        "terminal_hint": "#eb367f"
+      },
+      {
+        "alias": "--geist-highlight-pink",
+        "references": [],
+        "terminal_hint": "#ff0080"
+      },
+      {
+        "alias": "--geist-highlight-purple",
+        "references": [],
+        "terminal_hint": "#f81ce5"
+      },
+      {
+        "alias": "--geist-highlight-yellow",
+        "references": [],
+        "terminal_hint": "#fff500"
+      },
+      {
+        "alias": "--geist-violet-background",
+        "references": [],
+        "terminal_hint": "#291d3a"
+      },
+      {
+        "alias": "--geist-violet-background-secondary",
+        "references": [],
+        "terminal_hint": "#211830"
+      },
+      {
+        "alias": "--geist-violet-background-tertiary",
+        "references": [],
+        "terminal_hint": "#211830"
+      },
+      {
+        "alias": "--header-import-flow-background",
+        "references": [],
+        "terminal_hint": "#111c"
+      },
+      {
+        "alias": "--leaderboard-chart-cursor-fill",
+        "references": [],
+        "terminal_hint": "#27272a"
+      },
+      {
+        "alias": "--left",
+        "references": [],
+        "terminal_hint": "#223b67"
+      },
+      {
+        "alias": "--light-border-color",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--lighten-color",
+        "references": [],
+        "terminal_hint": "#000000b3"
+      },
+      {
+        "alias": "--line-shadow",
+        "references": [],
+        "terminal_hint": "#36b37e20"
+      },
+      {
+        "alias": "--menu-bg",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--next-icon-border",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--red",
+        "references": [],
+        "terminal_hint": "#c50000cc"
+      },
+      {
+        "alias": "--right",
+        "references": [],
+        "terminal_hint": "#4c2638"
+      },
+      {
+        "alias": "--salesforce-commerce-cloud-color",
+        "references": [],
+        "terminal_hint": "#099dda"
+      },
+      {
+        "alias": "--scroller-0",
+        "references": [],
+        "terminal_hint": "#fffffff2"
+      },
+      {
+        "alias": "--scroller-1",
+        "references": [],
+        "terminal_hint": "#ffffffb3"
+      },
+      {
+        "alias": "--scroller-2",
+        "references": [],
+        "terminal_hint": "#ffffff73"
+      },
+      {
+        "alias": "--scroller-3",
+        "references": [],
+        "terminal_hint": "#fff3"
+      },
+      {
+        "alias": "--scroller-4",
+        "references": [],
+        "terminal_hint": "#fff0"
+      },
+      {
+        "alias": "--scroller-end",
+        "references": [],
+        "terminal_hint": "#0000"
+      },
+      {
+        "alias": "--scroller-start",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--themed-focus-ring",
+        "references": [],
+        "terminal_hint": "#a35200"
+      },
+      {
+        "alias": "--themed-hover-bg",
+        "references": [],
+        "terminal_hint": "#d27504"
+      },
+      {
+        "alias": "--themed-press-bg",
+        "references": [],
+        "terminal_hint": "#a35200"
+      },
+      {
+        "alias": "--tw-ring-offset-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--vaul-overlay-background-end",
+        "references": [],
+        "terminal_hint": "#0006"
+      },
+      {
+        "alias": "--vaul-overlay-background-start",
+        "references": [],
+        "terminal_hint": "#0000"
+      },
+      {
+        "alias": "--wv-green",
+        "references": [],
+        "terminal_hint": "#0cce6b"
+      },
+      {
+        "alias": "--wv-orange",
+        "references": [],
+        "terminal_hint": "#ffa400"
+      },
+      {
+        "alias": "--wv-red",
+        "references": [],
+        "terminal_hint": "#ff4e42"
+      },
+      {
+        "alias": "--yellow",
+        "references": [],
+        "terminal_hint": "#ffce20cc"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 3,
+      "core": 68
+    }
+  }
+}

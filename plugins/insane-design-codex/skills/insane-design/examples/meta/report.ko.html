@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meta — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#0866FF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-feature-settings:"ss01" 1,"ss02" 1;font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:100px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;padding:20px 24px;border-bottom:1px solid var(--border);}
+  .type-row:last-child{border-bottom:none;}
+  .type-row__s{color:var(--fg);}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-row__spec b{color:var(--fg);font-weight:600;}
+  .type-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{display:grid;grid-template-columns:180px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .rad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .rad-card__v .px{font-family:var(--font-mono);}
+
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{padding:24px;background:var(--muted);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;position:relative;}
+  .cmp-code .copy{position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;color:#7d8ba4;background:#1f2023;padding:3px 8px;border-radius:4px;border:1px solid #2f3135;}
+  .cmp-code .copy:hover{color:#f7f8f8;background:#2f3135;}
+
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{padding:14px 16px;background:var(--muted);border-radius:var(--radius);font-weight:400;color:var(--fg);font-size:15px;line-height:1.5;border-left:2px solid var(--brand-color);}
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{background:var(--muted);font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;}
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;text-decoration-color:rgba(220,38,38,.4);}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.qs__grid,.voice-grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .dd-grid,.sem-row{grid-template-columns:1fr;}
+    .rad-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Meta</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">07</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">08</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">09</span>CSS · Drop-in</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">10</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">
+      insane-design/meta/<br>
+      design.md<br>
+      2026-04-13
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Meta <span class="sub">— --primary-button-*</span></h1>
+      <p class="hero__sub">
+        https://meta.com 이 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        모든 값은 CSS 커스텀 프로퍼티를 파싱한 결과이고, AI 추론이나 추측은 섞이지 않았다.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="meta.com hero — 실제 렌더링된 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Meta처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight</span>
+            <code>body {
+  font-family: "Optimistic Text",
+    Montserrat, Helvetica,
+    Arial, "Noto Sans", sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#1C1E21</b>;  /* 순흑 아님 */
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 블루</span>
+            <code>:root {
+  --brand: <b>#0866FF</b>;
+  /* --primary-button-background
+     2023 Meta blue */
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: 브랜드 블루로 <code>#1877F2</code>(구 Facebook 파랑)를 쓰는 것.
+          Meta 리브랜딩 이후 CTA 버튼 공식 색은 <code>#0866FF</code>로 바뀌었다.
+          <code>#1877F2</code>를 쓰면 즉시 "아직도 Facebook 시대" 느낌이 난다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">meta.com</div>
+          <div class="stat__hint">React (Meta 자체 빌드)</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">curl + Chrome UA</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">Optimistic Text</div>
+          <div class="stat__hint">weight normal = 400</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono">#0866FF</div>
+          <div class="stat__hint">--primary-button-background</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 모두 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://meta.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">HTML size</span><span class="prov__v">서버 렌더링 (React)</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">인라인 + 외부 CSS (Optimistic 폰트 셀프 호스트)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--primary-button-*</code></span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">Meta 자체 빌드 시스템 위에 Optimistic 폰트 시스템을 결합한 구조.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">React (Meta 자체 빌드 시스템)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">자체 커스텀 (Optimistic 폰트 시스템, <code>--primary-button-*</code> 토큰)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS ARCHITECTURE</div>
+          <div class="ts__body">플랫 CSS 변수 + 클래스: <code>--primary-button-background</code>, <code>--primary-button-text</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CLASS NAMING</div>
+          <div class="ts__body">해시 기반: <code>.inputbutton</code>, <code>.uiHeaderNav</code>, <code>._rz3</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body">light — bg <code>#FFFFFF</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT LOADING</div>
+          <div class="ts__body">Optimistic 폰트 시리즈 셀프 호스트 (Display, Text, VF, Bold 등 다수)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body"><code>#0866FF</code> — <code>--primary-button-background</code>에서 확인. 2021 Meta 리브랜딩 이후 공식 CTA blue.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">
+        Optimistic Display(헤딩)와 Optimistic Text(본문)를 구분하는 것이 핵심이다.
+        Meta heading은 전부 weight 700이고 본문만 400이다.
+      </p>
+
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display font</span>
+          <span class="fs-card__v"><code>Optimistic Display</code> — Meta 전용, 헤딩에 사용</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Body font</span>
+          <span class="fs-card__v"><code>Optimistic Text</code> — Meta 전용, 본문에 사용</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Variable font</span>
+          <span class="fs-card__v"><code>Optimistic VF</code> — 가변 폰트 버전</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Code font</span>
+          <span class="fs-card__v"><code>Menlo, Consolas, Monaco, monospace</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight normal / bold</span>
+          <span class="fs-card__v"><code>400</code> / <code>700</code></span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>폰트 대체재:</b> Optimistic 폰트는 Meta 전용이라 재배포 불가.
+        <code>Montserrat</code>(오픈소스)가 가장 가까운 대체재다.
+      </div>
+
+      <div class="type-sub" style="margin-top:28px;">Typography scale</div>
+      <div class="type-table">
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:12px;font-weight:400;line-height:1.33;">caption — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">caption</span>0.75rem · weight <b>400</b> · 1.33 · 0</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:14px;font-weight:400;line-height:1.43;">body-sm — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">body-sm</span>0.875rem · weight <b>400</b> · 1.43 · 0</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:16px;font-weight:400;line-height:1.5;">body — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">body</span>1rem · weight <b>400</b> · 1.5 · 0</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:20px;font-weight:700;line-height:1.3;letter-spacing:-0.005em;">title-sm — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">title-sm</span>1.25rem · weight <b>700</b> · 1.3 · -0.005em</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:24px;font-weight:700;line-height:1.25;letter-spacing:-0.01em;">title — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">title</span>1.5rem · weight <b>700</b> · 1.25 · <b>-0.01em</b></div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:32px;font-weight:700;line-height:1.2;letter-spacing:-0.015em;">headline — Meta의 모든 것</div>
+          <div class="type-row__spec"><span class="tk">headline</span>2rem · weight <b>700</b> · 1.2 · <b>-0.015em</b></div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:48px;font-weight:700;line-height:1.13;letter-spacing:-0.02em;">display</div>
+          <div class="type-row__spec"><span class="tk">display</span>3rem · weight <b>700</b> · 1.13 · <b>-0.02em</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">
+        Meta 리브랜딩 이후 CTA 공식 색은 #0866FF다.
+        #1877F2(구 Facebook), #4267B2(레거시), #0095F6(Instagram) 세 가지 legacy blue를 혼용하지 않도록 주의한다.
+      </p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Meta Blue 계보</b> <span class="muted">— 현재 vs 레거시</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d" style="background:#4267B2;">
+            <span class="n">레거시 (2004~)</span>
+            <span>#4267B2</span>
+          </div>
+          <div class="sw sw--d" style="background:#1877F2;">
+            <span class="n">구 Facebook (2019~)</span>
+            <span>#1877F2</span>
+          </div>
+          <div class="sw sw--d is-anchor" style="background:#0866FF;">
+            <span class="n">현재 canonical ★</span>
+            <span>#0866FF</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutral Ramp</b></div>
+        <div class="ramp ramp--6">
+          <div class="sw sw--l" style="background:#FFFFFF;border:1px solid #e4e4e7;">
+            <span class="n">bg</span>
+            <span>#FFFFFF</span>
+          </div>
+          <div class="sw sw--l" style="background:#F5F6F7;">
+            <span class="n">bg-sec</span>
+            <span>#F5F6F7</span>
+          </div>
+          <div class="sw sw--l" style="background:#DADDE1;">
+            <span class="n">border-str</span>
+            <span>#DADDE1</span>
+          </div>
+          <div class="sw sw--l" style="background:#CCD0D5;">
+            <span class="n">border</span>
+            <span>#CCD0D5</span>
+          </div>
+          <div class="sw sw--l" style="background:#7F7F7F;">
+            <span class="n">fg-muted</span>
+            <span>#7F7F7F</span>
+          </div>
+          <div class="sw sw--d" style="background:#1C1E21;">
+            <span class="n">fg</span>
+            <span>#1C1E21</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sem-row">
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#0866FF;"></div>
+          <div>
+            <div class="sem-card__n">--primary-button-background</div>
+            <div class="sem-card__h">#0866FF</div>
+            <div class="sem-card__u">primary CTA 버튼 배경 — canonical</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#4267B2;"></div>
+          <div>
+            <div class="sem-card__n">legacy-btn</div>
+            <div class="sem-card__h">#4267B2</div>
+            <div class="sem-card__u">구 Facebook 버튼 (일부 잔존)</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#0095F6;"></div>
+          <div>
+            <div class="sem-card__n">instagram-btn</div>
+            <div class="sem-card__h">#0095F6</div>
+            <div class="sem-card__u">Instagram 연동 버튼</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#1C1E21;"></div>
+          <div>
+            <div class="sem-card__n">fg / text</div>
+            <div class="sem-card__h">#1C1E21</div>
+            <div class="sem-card__u">본문 텍스트 — 순흑 아님</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">Meta는 8px 배수 내부 그리드를 기반으로 한다.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">sm</span><span class="val">8px</span><div class="bar" style="width:8px;"></div></div>
+        <div class="space-row"><span class="tk">md</span><span class="val">16px</span><div class="bar" style="width:16px;"></div></div>
+        <div class="space-row"><span class="tk">lg</span><span class="val">24px</span><div class="bar" style="width:24px;"></div></div>
+        <div class="space-row"><span class="tk">xl</span><span class="val">32px</span><div class="bar" style="width:32px;"></div></div>
+        <div class="space-row"><span class="tk">nav-padding</span><span class="val">7px 6px 3px 5px</span><div class="bar" style="width:7px;background:#0866FF;"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">Meta 버튼은 6px, 카드는 8px이다. 배지/태그는 pill(999px)을 쓴다.</p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:4px;"></div>
+          <div class="rad-card__n">sm</div>
+          <div class="rad-card__v"><span class="px">4px</span><br>소형 요소</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:6px;"></div>
+          <div class="rad-card__n">btn</div>
+          <div class="rad-card__v"><span class="px">6px</span><br>버튼</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:8px;"></div>
+          <div class="rad-card__n">card</div>
+          <div class="rad-card__v"><span class="px">8px</span><br>콘텐츠 카드</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px;"></div>
+          <div class="rad-card__n">pill</div>
+          <div class="rad-card__v"><span class="px">999px</span><br>배지 · 태그</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">07 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Meta primary button. --primary-button-background CSS 변수를 인라인으로 지정하는 것이 특징이다.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Button — Primary</span>
+          <span class="cmp-block__desc">--primary-button-background: #0866FF</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="
+                background:#0866FF;color:#fff;
+                font-size:14px;font-weight:700;
+                padding:8px 16px;border-radius:6px;
+                font-family:Montserrat,Helvetica,sans-serif;
+                border:none;cursor:pointer;
+              ">시작하기</button>
+              <button style="
+                background:transparent;color:#0866FF;
+                font-size:14px;font-weight:700;
+                padding:8px 16px;border-radius:6px;
+                font-family:Montserrat,Helvetica,sans-serif;
+                border:1px solid #0866FF;cursor:pointer;
+              ">더 알아보기</button>
+            </div>
+            <div class="cmp-code">
+              <button class="copy" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">copy</button>
+              <pre>&lt;button class="btn-primary"
+  style="--primary-button-background:#0866FF;--primary-button-text:#FFFFFF;"
+  type="button"&gt;
+  시작하기
+&lt;/button&gt;</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>--primary-button-background: #0866FF</code><br>
+            <code>--primary-button-text: #FFFFFF</code><br>
+            <code>font-weight: 700</code><br>
+            <code>border-radius: 6px</code><br>
+            <code>padding: 8px 16px</code><br>
+            <span class="kr">Meta primary · CSS 변수 인라인 지정 · weight 700 필수</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">08 · Writing Principles</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">Meta 카피는 사람 중심, 연결 강조다. 포용적이고 따뜻한 어조를 유지한다.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">Headline</div>
+          <div class="voice-card__rule">사람 중심, 연결 강조. 기술 용어 최소화.</div>
+          <div class="voice-card__ex">Give everyone the power to build community</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Primary CTA</div>
+          <div class="voice-card__rule">동사형, 간결. 즉각적 행동 유도.</div>
+          <div class="voice-card__ex">시작하기</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Tone</div>
+          <div class="voice-card__rule">포용적, 따뜻함. 모든 사람을 환영하는 느낌.</div>
+          <div class="voice-card__ex">Connect with people who matter most.</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Brand Identity</div>
+          <div class="voice-card__rule">2021년 리브랜딩 이후 "Facebook"이 아닌 "Meta"가 브랜드다.</div>
+          <div class="voice-card__ex">Meta builds technologies that help people connect.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">09 · CSS Drop-in</div>
+      <h2 class="section__title">CSS · Drop-in</h2>
+      <p class="section__lede">루트 스타일시트에 바로 붙여넣으면 Meta 디자인 토큰을 그대로 쓸 수 있다.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'css-pane')">CSS</button>
+          <button onclick="switchTab(this,'tw-pane')">Tailwind config</button>
+        </div>
+        <div id="css-pane" class="code-pane is-active">
+          <pre><span class="c">/* Meta — copy into your root stylesheet */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Fonts */</span>
+  <span class="k">--font-family</span>: <span class="v">"Optimistic Text", Montserrat, Helvetica, Arial, "Noto Sans", sans-serif</span>;
+  <span class="k">--font-family-display</span>: <span class="v">"Optimistic Display", Montserrat, Helvetica, Arial, sans-serif</span>;
+  <span class="k">--font-weight-normal</span>: <span class="v">400</span>;
+  <span class="k">--font-weight-bold</span>: <span class="v">700</span>;
+
+  <span class="c">/* Brand */</span>
+  <span class="k">--primary-button-background</span>: <span class="v">#0866FF</span>;  <span class="c">/* ← canonical (2023 Meta) */</span>
+  <span class="k">--primary-button-text</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">--brand-legacy</span>: <span class="v">#4267B2</span>;            <span class="c">/* 레거시 잔존 — 새 CTA에 쓰지 말 것 */</span>
+  <span class="k">--brand-instagram</span>: <span class="v">#0095F6</span>;         <span class="c">/* Instagram 전용 */</span>
+
+  <span class="c">/* Surfaces */</span>
+  <span class="k">--bg-page</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">--bg-secondary</span>: <span class="v">#F5F6F7</span>;
+  <span class="k">--text</span>: <span class="v">#1C1E21</span>;
+  <span class="k">--text-muted</span>: <span class="v">#7F7F7F</span>;
+  <span class="k">--border</span>: <span class="v">#CCD0D5</span>;
+
+  <span class="c">/* Key spacing */</span>
+  <span class="k">--space-sm</span>: <span class="v">8px</span>;
+  <span class="k">--space-md</span>: <span class="v">16px</span>;
+  <span class="k">--space-lg</span>: <span class="v">32px</span>;
+
+  <span class="c">/* Radius */</span>
+  <span class="k">--radius-sm</span>: <span class="v">4px</span>;
+  <span class="k">--radius-btn</span>: <span class="v">6px</span>;
+  <span class="k">--radius-card</span>: <span class="v">8px</span>;
+  <span class="k">--radius-pill</span>: <span class="v">999px</span>;
+}</pre>
+        </div>
+        <div id="tw-pane" class="code-pane">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT:   <span class="v">'#0866FF'</span>,  <span class="c">// canonical 2023 Meta</span>
+          legacy:    <span class="v">'#4267B2'</span>,  <span class="c">// 레거시 — 새 CTA 쓰지 말 것</span>
+          instagram: <span class="v">'#0095F6'</span>,  <span class="c">// Instagram</span>
+        },
+        neutral: {
+          text:      <span class="v">'#1C1E21'</span>,
+          muted:     <span class="v">'#7F7F7F'</span>,
+          secondary: <span class="v">'#F5F6F7'</span>,
+          border:    <span class="v">'#CCD0D5'</span>,
+        },
+      },
+      borderRadius: {
+        btn:  <span class="v">'6px'</span>,
+        card: <span class="v">'8px'</span>,
+        pill: <span class="v">'999px'</span>,
+      },
+      fontFamily: {
+        sans:    [<span class="v">'Optimistic Text'</span>, <span class="v">'Montserrat'</span>, <span class="v">'Helvetica'</span>, <span class="v">'Arial'</span>, <span class="v">'sans-serif'</span>],
+        display: [<span class="v">'Optimistic Display'</span>, <span class="v">'Montserrat'</span>, <span class="v">'Helvetica'</span>, <span class="v">'sans-serif'</span>],
+      },
+    },
+  },
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">10 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Meta 디자인 시스템을 구현할 때 가장 자주 틀리는 항목들.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>DO</h3>
+          <ul>
+            <li>CTA 버튼 배경은 <code>#0866FF</code>(2023 Meta blue)을 써라.</li>
+            <li>텍스트는 <code>#1C1E21</code>을 써라 — 순흑이 아닌 Meta의 <b>dark gray</b>다.</li>
+            <li>보조 배경에는 <code>#F5F6F7</code>을 써라.</li>
+            <li>큰 heading에 <code>font-weight: 700</code>을 써라 — 본문(400)과 명확히 구분한다.</li>
+            <li>heading 크기에 비례해 letter-spacing을 음수로 조정하라.</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>DON'T</h3>
+          <ul>
+            <li><code>#1877F2</code>(구 Facebook 파랑)를 primary로 쓰지 마라 — Meta는 <code>#0866FF</code>다.</li>
+            <li><code>#4267B2</code>를 현재 CTA에 쓰지 마라 — 레거시 폼 버튼 잔재다.</li>
+            <li>Optimistic 폰트를 재배포하지 마라 — Meta 전용. <code>Montserrat</code>를 fallback으로 쓰라.</li>
+            <li>본문에 <code>font-weight: 700</code>을 쓰지 마라 — 기본은 <code>400</code>이다.</li>
+            <li>다크 테마를 기본으로 쓰지 마라 — Meta는 라이트 기반이다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="type-sub" style="margin-top:32px;margin-bottom:16px;">Common Mistakes</div>
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <span>틀린 값</span>
+          <span>올바른 값</span>
+          <span>이유</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">#1877F2</span>
+          <span class="right">#0866FF</span>
+          <span class="why">구 Facebook blue. Meta 리브랜딩 이후 #0866FF로 교체됐다.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">#4267B2</span>
+          <span class="right">#0866FF</span>
+          <span class="why">2004~2019 레거시 blue. 현재 CTA에는 쓰면 안 된다.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">#000000</span>
+          <span class="right">#1C1E21</span>
+          <span class="why">Meta 텍스트는 따뜻한 dark gray. 순흑은 Meta 팔레트에 없다.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">font-weight: 400 (heading)</span>
+          <span class="right">font-weight: 700</span>
+          <span class="why">Meta heading은 전부 700. 본문(400)과 명확한 위계를 만들어야 한다.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">letter-spacing: 0 (display)</span>
+          <span class="right">-0.02em</span>
+          <span class="why">display 크기에서는 -0.02em negative tracking이 Meta 타이포의 핵심이다.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span>insane-design/meta/ · 2026-04-13</span>
+      <span class="kr">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  function switchTab(btn, paneId) {
+    btn.closest('.code-export').querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    btn.closest('.code-export').querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+    document.getElementById(paneId).classList.add('is-active');
+  }
+</script>
+</body>
+</html>

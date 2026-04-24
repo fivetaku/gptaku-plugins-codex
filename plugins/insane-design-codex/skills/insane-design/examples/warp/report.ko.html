@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Warp — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--brand-color:#000000;--cream:#FAF9F6;--font-display:"Inter",-apple-system,sans-serif;--font-sans:"Pretendard Variable","Inter",sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--bg:#FAF9F6;--fg:#000000;--card:#FFFFFF;--muted:#F2F1EE;--muted-fg:#868584;--subtle:#666469;--border:#E3E2E0;--accent:#000000;--radius:.5rem;--radius-lg:.75rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:700;font-family:var(--font-display);color:var(--brand-color)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:700}
+.hero-big h1{font-family:var(--font-display);font-size:56px;font-weight:500;line-height:1.0;letter-spacing:-.03em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:32px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:8px;font-family:var(--font-mono);font-size:11px;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#000000}.sw--d{color:#FAF9F6}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans)}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:700;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:700}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:8px;background:var(--card)}
+.sh-card__n{font-weight:700;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:20px;border:1px solid var(--border);border-radius:12px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:6px}
+.comp pre{background:var(--muted);padding:12px;border-radius:6px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#1A1A1A;color:#FAF9F6;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:4px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:700}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:6px 14px;background:#F2F1EE;border:1px solid var(--border);border-radius:4px;font-size:11px;color:var(--subtle)}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#1A1A1A;color:#FAF9F6;padding:16px;border-radius:8px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}.main{padding:32px 20px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+<div class="toc__brand"><div class="toc__brand-name">Warp</div><div class="toc__brand-sub">Design System Report</div></div>
+<div class="toc__group-label">Overview</div><ul class="toc__list"><li><a href="#mood"><span class="toc__num">00</span>분위기</a></li><li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">02</span>출처</a></li><li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li></ul>
+<div class="toc__group-label">Foundations</div><ul class="toc__list"><li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">05</span>컬러</a></li></ul>
+<div class="toc__group-label">Tokens</div><ul class="toc__list"><li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li><li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li><li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li><li><a href="#motion"><span class="toc__num">08</span>모션</a></li></ul>
+<div class="toc__group-label">Patterns</div><ul class="toc__list"><li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li><li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li></ul>
+<div class="toc__group-label">Guide</div><ul class="toc__list"><li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li><li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li></ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Warm Brutalist Terminal — cream #FAF9F6 + typography-first</div>
+  <h1>AI terminal · warm cream canvas</h1>
+  <p class="lead">Warp · <code>https://www.warp.dev</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Warp hero" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Warp는 AI-powered terminal이라는 포지셔닝을 <b>Warm Brutalist Terminal</b> 비주얼로 풀어냈다. 가장 특이한 점은 대부분의 dev-tool이 쓰는 검정이 아닌 <b><code>#FAF9F6</code> cream/warm-white</b>를 주 bg로 선택했다는 것 — Kraft paper/Bauhaus 계열의 따뜻한 off-white로, "터미널은 검정이어야 한다"는 클리셰를 깨는 전략적 선택이다. 제품 자체(Warp terminal)는 다크지만, <b>마케팅 사이트는 cream-first</b>.</p>
+    <p>컬러 시스템은 의도적으로 빈약하다 — frequency candidates를 봐도 검정(<code>#000</code> 74회), cream(<code>#FAF9F6</code> 33회), 흰색(<code>#FFFFFF</code> 10회)이 압도적이고, 나머지는 거의 alpha-overlay. 중간 gray 계단이 <b>7-8단</b>(<code>#232224</code>, <code>#2B2B2B</code>, <code>#353534</code>, <code>#454545</code>, <code>#666469</code>, <code>#868584</code>, <code>#AFAEAC</code>, <code>#E3E2E0</code>)으로 촘촘. <b>컬러로 말하지 않고 warm neutrals + typography로 말한다.</b></p>
+    <p>타이포는 Warp의 진짜 시그니처. <b>Inter</b>(57회)를 body로 쓰면서, display에 <b>Matter Regular/Medium</b>(sans serif 브랜드 커스텀), <b>Aguzzo-TRIAL Medium</b>(experimental display), <b>Abel</b>까지 동시에 로드한다. mono는 <b>Geist Mono + Fragment Mono + DM Mono</b> — 3종의 monospace를 맥락별로 swap. weight는 400/500/600/700/900, <b>300 없음</b>.</p>
+    <p>레이아웃은 Framer 기반(<code>--framer-*</code> custom properties). Framer의 rich text node 시스템이 그대로 드러나 <code>[data-framer-component-type=DeprecatedRichText]</code> selector가 대량 등장. Framer native scroll-driven animations 풍부.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Warm cream #FAF9F6</span>
+    <span class="kw">true black #000 text</span>
+    <span class="kw">warm gray ramp 8단</span>
+    <span class="kw">Inter 57회 body</span>
+    <span class="kw">Matter display (브랜드 커스텀)</span>
+    <span class="kw">Geist / Fragment / DM Mono 3종</span>
+    <span class="kw">Framer native (--framer-*)</span>
+    <span class="kw">weight 400/500/600/700/900 (no 300)</span>
+    <span class="kw">border-first elevation</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기</h2>
+  <div class="quick-steps">
+    <pre><code>:root {
+  --cream: #FAF9F6;
+  --fg: #000000;
+  --fg-muted: #666469;
+  --border: #E3E2E0;
+  --dark-bg: #1A1A1A;
+}
+body {
+  background: var(--cream);
+  color: var(--fg);
+}</code></pre>
+    <pre><code>body {
+  font-family: "Inter","Inter Placeholder",
+               sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+h1, h2, .display {
+  font-family: "Matter Regular",
+               "Matter Regular Placeholder",
+               sans-serif;
+  font-weight: 500;
+}
+code { font-family: "Geist Mono",monospace; }</code></pre>
+    <pre><code>.btn-warp {
+  background: #000000;
+  color: #FAF9F6;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all .2s ease;
+}
+.btn-warp:hover {
+  background: #1A1A1A;
+  transform: translateY(-1px);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> bg를 <code>#FFFFFF</code> pure white로 두지 마라 — Warp의 정체성은 <code>#FAF9F6</code> <b>warm cream</b>이다. pure white로 바꾸면 Stripe/Apple 느낌이 되고 Warp 브랜드가 증발한다.</div>
+</section>
+
+<section id="provenance" class="sec"><h2>02. 출처</h2><table class="tbl">
+<tr><th>Source URL</th><td><code>https://www.warp.dev</code></td></tr>
+<tr><th>Fetched</th><td>2026-04-20</td></tr>
+<tr><th>Framework</th><td>Framer (native site builder)</td></tr>
+<tr><th>Font vars</th><td><code>--framer-font-family</code>, <code>--framer-link-*-font-family</code></td></tr>
+<tr><th>Theme</th><td>light default (product은 dark)</td></tr>
+</table></section>
+
+<section id="stack" class="sec"><h2>03. 테크 스택</h2>
+<ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+<li><b>Framework</b>: Framer (native)</li>
+<li><b>CSS</b>: Framer custom properties (<code>--framer-*</code>) + custom fonts</li>
+<li><b>Typography</b>: Inter + Matter (brand sans) + Geist/Fragment/DM Mono + Aguzzo + Abel</li>
+<li><b>Theme</b>: light marketing / dark product</li>
+<li><b>Interaction</b>: Framer scroll-driven animations</li>
+<li><b>Rich text</b>: <code>[data-framer-component-type=DeprecatedRichText]</code></li>
+</ul></section>
+
+<section id="typography" class="sec">
+<h2>04. 타이포그래피</h2>
+<p class="lede">Inter(57회) body + Matter brand display + 3종 mono. weight 400/500/600/700/900 (300 없음).</p>
+<ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+<li><b>Primary body</b>: <code>Inter</code> (57회)</li>
+<li><b>Display sans</b>: <code>Matter Regular/Medium/SQ</code> (brand custom)</li>
+<li><b>Experimental</b>: <code>Aguzzo-TRIAL Medium</code></li>
+<li><b>Condensed</b>: <code>Abel</code></li>
+<li><b>Mono</b>: <code>Geist Mono</code>(6회) / <code>Fragment Mono</code>(3회) / <code>DM Mono</code>(2회) / <code>Matter Mono Regular</code></li>
+<li><b>Framer Placeholder</b>: 모든 브랜드 폰트에 Placeholder 변형 (FOIT 방지)</li>
+<li><b>Weights</b>: 400 · 500 · 600 · 700 · 900</li>
+</ul>
+<h3 style="margin-top:32px;">Type Scale</h3>
+<div class="type-row"><div style="font-size:12px;">caption</div><div class="type-row__spec"><div class="tk">caption</div>12px · 400 · lh 1.5</div></div>
+<div class="type-row"><div style="font-size:16px;">body</div><div class="type-row__spec"><div class="tk">body</div>16px · 400 · lh 1.6</div></div>
+<div class="type-row"><div style="font-size:18px;font-weight:500;">lead</div><div class="type-row__spec"><div class="tk">lead</div>18px · 500</div></div>
+<div class="type-row"><div style="font-size:24px;font-weight:600;">h3</div><div class="type-row__spec"><div class="tk">h3</div>22-24px · 600</div></div>
+<div class="type-row"><div style="font-size:40px;font-weight:500;">h2</div><div class="type-row__spec"><div class="tk">h2</div>32-40px · 500</div></div>
+<div class="type-row"><div style="font-size:56px;font-weight:500;line-height:1.05;letter-spacing:-.03em;">h1</div><div class="type-row__spec"><div class="tk">h1</div>48-64px · 500</div></div>
+<div class="type-row"><div style="font-size:80px;font-weight:500;line-height:1.0;letter-spacing:-.03em;">display</div><div class="type-row__spec"><div class="tk">display</div>72-96px · 500</div></div>
+<div class="type-row"><div style="font-size:100px;font-weight:900;line-height:1.0;letter-spacing:-.04em;">mega</div><div class="type-row__spec"><div class="tk">mega</div>120px+ · 900</div></div>
+</section>
+
+<section id="colors" class="sec">
+<h2>05. 컬러</h2>
+<p class="lede">Warm neutrals 지배 — cream + black + warm gray 8단. 컬러 팔레트 의도적으로 빈약.</p>
+
+<div class="ramp-label">Warm Neutrals · signature</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:#FAF9F6"><div class="n">cream ★</div>#FAF9F6</div>
+<div class="sw sw--l" style="background:#FAF9F5"><div class="n">cream-alt</div>#FAF9F5</div>
+<div class="sw sw--l" style="background:#FFFFFF"><div class="n">white</div>#FFFFFF</div>
+<div class="sw sw--l" style="background:#FFFFFFE6"><div class="n">white-90α</div>#FFFFFFE6</div>
+</div>
+
+<div class="ramp-label">Black & Dark Stack</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#000000"><div class="n">black ★</div>#000000</div>
+<div class="sw sw--d" style="background:#121212"><div class="n">near-black</div>#121212</div>
+<div class="sw sw--d" style="background:#1A1A1A"><div class="n">dark-bg</div>#1A1A1A</div>
+<div class="sw sw--d" style="background:#232224"><div class="n">dark-alt-2</div>#232224</div>
+<div class="sw sw--d" style="background:#2B2B2B"><div class="n">dark-alt</div>#2B2B2B</div>
+<div class="sw sw--d" style="background:#353534"><div class="n">border-dark</div>#353534</div>
+<div class="sw sw--d" style="background:#454545"><div class="n">border-mid</div>#454545</div>
+</div>
+
+<div class="ramp-label">Warm Gray Ramp (8 steps)</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#666469"><div class="n">fg-muted-dk</div>#666469</div>
+<div class="sw sw--d" style="background:#868584"><div class="n">fg-muted</div>#868584</div>
+<div class="sw sw--l" style="background:#AFAEAC"><div class="n">surface-light</div>#AFAEAC</div>
+<div class="sw sw--l" style="background:#E3E2E0"><div class="n">border-light</div>#E3E2E0</div>
+</div>
+
+<div class="ramp-label">Alpha / Overlay</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:rgba(255,255,255,.9);border:1px solid #ccc"><div class="n">white/90</div>#FFFFFFE6</div>
+<div class="sw sw--l" style="background:rgba(255,255,255,.6);border:1px solid #ccc"><div class="n">white/60</div>#FFFFFF99</div>
+<div class="sw sw--l" style="background:rgba(255,255,255,.16);border:1px solid #ccc"><div class="n">white/16</div>#FFFFFF29</div>
+<div class="sw sw--l" style="background:rgba(255,255,255,.05);border:1px solid #ccc"><div class="n">white/5</div>#FFFFFF0D</div>
+<div class="sw sw--l" style="background:rgba(54,54,50,.1)"><div class="n">warm-black/10</div>#3636321A</div>
+</div>
+
+<h3>Dominant Usage</h3>
+<div class="dom-bar">
+<div style="flex:74;background:#000000"></div>
+<div style="flex:33;background:#FAF9F6"></div>
+<div style="flex:10;background:#FFFFFF"></div>
+<div style="flex:6;background:#FAF9F5"></div>
+<div style="flex:6;background:#FFFFFFE6"></div>
+<div style="flex:4;background:#121212"></div>
+<div style="flex:4;background:#999999"></div>
+</div>
+<div class="dom-list">
+<div class="item"><div class="chip" style="background:#000000"></div><div><div class="hex">#000000</div><div class="cnt">74회 · text primary</div></div></div>
+<div class="item"><div class="chip" style="background:#FAF9F6"></div><div><div class="hex">#FAF9F6</div><div class="cnt">33회 · cream bg ★</div></div></div>
+<div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">10회 · alt bg</div></div></div>
+<div class="item"><div class="chip" style="background:#FAF9F5"></div><div><div class="hex">#FAF9F5</div><div class="cnt">6회 · cream-alt</div></div></div>
+<div class="item"><div class="chip" style="background:#FFFFFFE6"></div><div><div class="hex">#FFFFFFE6</div><div class="cnt">6회 · overlay 90%</div></div></div>
+<div class="item"><div class="chip" style="background:#121212"></div><div><div class="hex">#121212</div><div class="cnt">4회 · near-black</div></div></div>
+<div class="item"><div class="chip" style="background:#666469"></div><div><div class="hex">#666469</div><div class="cnt">2회 · fg muted</div></div></div>
+<div class="item"><div class="chip" style="background:#E3E2E0"></div><div><div class="hex">#E3E2E0</div><div class="cnt">2회 · border-light</div></div></div>
+</div>
+</section>
+
+<section id="spacing" class="sec"><h2>06. 스페이싱</h2>
+<p class="lede">Framer spacing, 4px base.</p>
+<div class="space-row"><div class="tk">xs</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline</div></div>
+<div class="space-row"><div class="tk">sm</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">icon gap</div></div>
+<div class="space-row"><div class="tk">md</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default</div></div>
+<div class="space-row"><div class="tk">lg</div><div>24px</div><div class="bar" style="width:24px"></div><div class="use">card padding</div></div>
+<div class="space-row"><div class="tk">xl</div><div>48px</div><div class="bar" style="width:48px"></div><div class="use">hero padding</div></div>
+<div class="space-row"><div class="tk">2xl</div><div>96px</div><div class="bar" style="width:96px"></div><div class="use">section</div></div>
+</section>
+
+<section id="radius" class="sec"><h2>07. 라디우스</h2>
+<div class="rad-grid">
+<div class="rad-card"><div style="border-radius:4px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-sm</div><div class="rad-card__v">4px · input</div></div>
+<div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-md</div><div class="rad-card__v">8px · button</div></div>
+<div class="rad-card"><div style="border-radius:12px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-lg</div><div class="rad-card__v">12px · card</div></div>
+<div class="rad-card"><div style="border-radius:16px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-xl</div><div class="rad-card__v">16px · hero card</div></div>
+<div class="rad-card"><div style="border-radius:9999px;background:#000;height:64px;"></div><div class="rad-card__n">radius-full</div><div class="rad-card__v">9999 · pill</div></div>
+</div></section>
+
+<section id="shadows" class="sec"><h2>07S. 섀도우 — Border-first</h2>
+<p class="lede">Warp는 shadow를 거의 쓰지 않는다 — cream bg 위에서 <b>border가 primary elevation</b>.</p>
+<div class="sh-grid">
+<div class="sh-card" style="border:1px solid #E3E2E0;background:#FAF9F6;"><div class="sh-card__n">border-primary ★</div><div class="sh-card__d">primary elevation</div><div class="sh-card__v">1px solid #E3E2E0</div></div>
+<div class="sh-card" style="box-shadow:0 1px 3px rgba(0,0,0,.04);background:var(--card);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle raise</div><div class="sh-card__v">0 1px 3px rgba(0,0,0,.04)</div></div>
+<div class="sh-card" style="box-shadow:0 8px 24px rgba(0,0,0,.08);background:var(--card);"><div class="sh-card__n">shadow-md</div><div class="sh-card__d">card hover</div><div class="sh-card__v">0 8px 24px rgba(0,0,0,.08)</div></div>
+</div></section>
+
+<section id="motion" class="sec"><h2>08. 모션</h2>
+<p class="lede">Framer native scroll-driven + hover transform.</p>
+<table class="tbl"><thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>hover transition</td><td><code>.2s ease</code></td><td>color + transform</td></tr>
+<tr><td>scroll reveal</td><td>parallax / fade-in</td><td>Framer default</td></tr>
+<tr><td>button press</td><td><code>translateY(-1px)</code></td><td>interactive feedback</td></tr>
+</tbody></table></section>
+
+<section id="layout" class="sec"><h2>09. 레이아웃</h2>
+<div class="lay-grid">
+<div class="lay-card"><h3>Hero</h3><ul><li>bg #FAF9F6 cream</li><li>Matter 72-96px 500</li><li>Inter subcopy #666469</li><li>Single dark CTA</li></ul></div>
+<div class="lay-card"><h3>Section Rhythm</h3><ul><li>padding 96-128px</li><li>max-width 1200-1440px</li><li>cream / white alternation</li></ul></div>
+<div class="lay-card"><h3>Warm Card</h3><ul><li>bg #FAF9F6 / #FFFFFF</li><li>border 1px #E3E2E0</li><li>radius 12</li><li>hover: translateY(-2) + soft shadow</li></ul></div>
+<div class="lay-card"><h3>Terminal Frame</h3><ul><li>bg #1A1A1A / #000</li><li>radius 16</li><li>subtle border</li><li>Geist Mono 내부</li></ul></div>
+<div class="lay-card"><h3>Navigation</h3><ul><li>height 72px</li><li>bg cream / transparent</li><li>Inter 500</li><li>Dark Download CTA</li></ul></div>
+</div></section>
+
+<section id="components" class="sec"><h2>10. 컴포넌트</h2>
+<div class="comp"><h3>Dark CTA on Cream (Primary)</h3>
+<div class="comp-spec"><b>Spec</b>: bg #000 · color #FAF9F6 (cream!) · padding 12px 24px · radius 8 · Inter 500</div>
+<pre><code>.btn-warp {
+  background: #000000;
+  color: #FAF9F6;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  transition: background .2s ease, transform .2s ease;
+}
+.btn-warp:hover {
+  background: #1A1A1A;
+  transform: translateY(-1px);
+}</code></pre></div>
+
+<div class="comp"><h3>Ghost CTA</h3>
+<pre><code>.btn-warp-ghost {
+  background: transparent;
+  color: #000000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #E3E2E0;
+  font-weight: 500;
+}
+.btn-warp-ghost:hover { background: #F2F1EE; }</code></pre></div>
+
+<div class="comp"><h3>Warm Card</h3>
+<pre><code>.warp-card {
+  background: #FAF9F6;
+  border: 1px solid #E3E2E0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform .2s, box-shadow .2s;
+}
+.warp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}</code></pre></div>
+
+<div class="comp"><h3>Terminal Screenshot Frame</h3>
+<pre><code>.terminal-frame {
+  background: #1A1A1A;
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid #2B2B2B;
+  overflow: hidden;
+}
+.terminal-frame pre {
+  font-family: "Geist Mono", monospace;
+  color: #FAF9F6;
+  padding: 24px;
+}</code></pre></div>
+
+<div class="comp"><h3>Oversized Display Headline</h3>
+<pre><code>.display-xl {
+  font-family: "Matter Regular", sans-serif;
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 500;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #000000;
+}</code></pre></div>
+</section>
+
+<section id="agent" class="sec"><h2>11. Agent Prompt Guide</h2>
+<table class="tbl"><thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+<tbody>
+<tr><td>Bg (cream)</td><td><code>--cream</code></td><td><span style="width:16px;height:16px;background:#FAF9F6;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ccc;"></span><code>#FAF9F6</code></td></tr>
+<tr><td>Text</td><td><code>--fg</code></td><td><span style="width:16px;height:16px;background:#000000;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#000000</code></td></tr>
+<tr><td>Text muted</td><td><code>--fg-muted</code></td><td><span style="width:16px;height:16px;background:#666469;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#666469</code></td></tr>
+<tr><td>Border</td><td><code>--border</code></td><td><span style="width:16px;height:16px;background:#E3E2E0;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#E3E2E0</code></td></tr>
+<tr><td>Dark bg (product)</td><td><code>--dark-bg</code></td><td><span style="width:16px;height:16px;background:#1A1A1A;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1A1A1A</code></td></tr>
+</tbody></table>
+<h3 style="margin-top:32px;">Example Prompts</h3>
+<div class="ag-grid">
+<div class="ag-card"><h4>🎯 Hero</h4><pre>Warp hero: bg #FAF9F6 warm cream, oversized headline Matter Regular 96px weight 500 color #000. Inter subcopy 18px #666469. Dark CTA bg #000 color #FAF9F6 padding 12px 24px radius 8. Optional terminal screenshot card dark bg #1A1A1A below.</pre></div>
+<div class="ag-card"><h4>🔘 Dark CTA</h4><pre>Warp dark CTA: bg #000 color #FAF9F6 (cream text!), padding 12px 24px, radius 8, Inter 500. Hover bg #1A1A1A + translateY(-1px).</pre></div>
+<div class="ag-card"><h4>🎴 Warm Card</h4><pre>Warp card: bg #FAF9F6, border 1px solid #E3E2E0, radius 12, padding 24. Hover translateY(-2px) + subtle shadow 0 8px 24px rgba(0,0,0,.08).</pre></div>
+<div class="ag-card"><h4>🖥️ Terminal Frame</h4><pre>Product terminal frame: bg #1A1A1A, radius 16, padding 8, border 1px #2B2B2B. Inside Geist Mono text color #FAF9F6.</pre></div>
+</div></section>
+
+<section id="dodont" class="sec"><h2>12. DO / DON'T</h2>
+<div class="do-dont">
+<div class="do"><h3>✓ DO</h3><ul>
+<li>✅ bg는 <code>#FAF9F6</code> cream (pure white 아님)</li>
+<li>✅ 텍스트는 <code>#000000</code> true black</li>
+<li>✅ display에 Matter Regular weight 500 · 72-120px</li>
+<li>✅ 3종 mono (Geist/Fragment/DM) 맥락별 사용</li>
+<li>✅ border-first elevation (shadow 최소)</li>
+<li>✅ cream+black 2-tone으로 충분</li>
+</ul></div>
+<div class="dont"><h3>✗ DON'T</h3><ul>
+<li>bg를 <code>#FFFFFF</code>/<code>#F5F5F5</code>로 두지 말 것 — cream <code>#FAF9F6</code></li>
+<li>body weight 300 light 쓰지 말 것 — 400부터</li>
+<li>mono 한 종류만 쓰지 말 것 — 3종 병행</li>
+<li>shadow로 elevation 표현하지 말 것 — border</li>
+<li>Supabase green 같은 accent 추가하지 말 것 — warm neutrals only</li>
+<li>hero headline에 serif 쓰지 말 것 — Matter/Inter sans</li>
+</ul></div></div></section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+<p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

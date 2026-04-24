@@ -1,0 +1,382 @@
+{
+  "slug": "spotify",
+  "semantic_vars": [
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#107434",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#159542",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#000000",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#000000",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFFFFF",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFFFFF",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#590810",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#590810",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#491E00",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#491E00",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#073116",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#073116",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#052A56",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#052A56",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#1ED760",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#1ED760",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#127E38",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#169F47",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFD2D7",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFD2D7",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFD97E",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFD97E",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#96F0B6",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#96F0B6",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#C8E0FC",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#C8E0FC",
+      "role": "accent"
+    },
+    {
+      "name": "--color-text-primary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".button-primary__inner.svelte-164a8y4.svelte-164a8y4",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".button-primary__inner.svelte-164a8y4.svelte-164a8y4 { position:relative; color:#000; display:flex; font-size:inherit; align-items:center; justify-content:center; transition:inherit; will-change:trans"
+    },
+    {
+      "selector": "[dir] .button-primary__inner.svelte-164a8y4.svelte-164a8y4",
+      "property": "background-color",
+      "hex": "#1ED760",
+      "rule_snippet": "[dir] .button-primary__inner.svelte-164a8y4.svelte-164a8y4 { background-color:#1ed760; border-radius:9999px; transition-property:background-color,transform; transition-duration:.15s; transition-timing"
+    },
+    {
+      "selector": "[dir] .button-primary.svelte-164a8y4:hover .button-primary__inner.svelte-164a8y4",
+      "property": "background-color",
+      "hex": "#3BE477",
+      "rule_snippet": "[dir] .button-primary.svelte-164a8y4:hover .button-primary__inner.svelte-164a8y4 { background-color:#3be477; transform:scale(1.04) }"
+    },
+    {
+      "selector": "[dir] .button-primary.svelte-164a8y4:active .button-primary__inner.svelte-164a8y4",
+      "property": "background-color",
+      "hex": "#1ABC54",
+      "rule_snippet": "[dir] .button-primary.svelte-164a8y4:active .button-primary__inner.svelte-164a8y4 { background-color:#1abc54 }"
+    },
+    {
+      "selector": ".button-primary.svelte-164a8y4:disabled .button-primary__inner.svelte-164a8y4,.button-primary[aria-disabled=true].svelte-164a8y4 .button-primary__inner.svelte-164a8y4",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".button-primary.svelte-164a8y4:disabled .button-primary__inner.svelte-164a8y4,.button-primary[aria-disabled=true].svelte-164a8y4 .button-primary__inner.svelte-164a8y4 { opacity:.3; color:#000 }"
+    },
+    {
+      "selector": "[dir] .button-primary.svelte-164a8y4:disabled .button-primary__inner.svelte-164a8y4,[dir] .button-primary[aria-disabled=true].svelte-164a8y4 .button-primary__inner.svelte-164a8y4",
+      "property": "background-color",
+      "hex": "#1ED760",
+      "rule_snippet": "[dir] .button-primary.svelte-164a8y4:disabled .button-primary__inner.svelte-164a8y4,[dir] .button-primary[aria-disabled=true].svelte-164a8y4 .button-primary__inner.svelte-164a8y4 { background-color:#1"
+    },
+    {
+      "selector": "[dir] .mh-mobile-menu.svelte-n40izj nav.svelte-n40izj",
+      "property": "background-color",
+      "hex": "#000000",
+      "rule_snippet": "[dir] .mh-mobile-menu.svelte-n40izj nav.svelte-n40izj { background-color:#000; border-width:0; margin:0; padding:32px }"
+    },
+    {
+      "selector": ".mh-footer-primary,.mh-header-primary",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mh-footer-primary,.mh-header-primary { color:#fff }"
+    },
+    {
+      "selector": "header.svelte-2b53f .mh-skip-link.svelte-2b53f",
+      "property": "color",
+      "hex": "#121212",
+      "rule_snippet": "header.svelte-2b53f .mh-skip-link.svelte-2b53f { color:#121212; clip:rect(1px,1px,1px,1px); display:block; font-weight:700; height:1px; overflow:hidden; position:absolute; text-decoration:none; text-t"
+    },
+    {
+      "selector": "[dir] header.svelte-2b53f .mh-skip-link.svelte-2b53f",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": "[dir] header.svelte-2b53f .mh-skip-link.svelte-2b53f { background:#fff; border-radius:500px; margin:16px; padding:16px 48px }"
+    },
+    {
+      "selector": ".ComparisonTable_ctaContainerDesktop__tp2wk.ComparisonTable_ctaPlan1__FhMog,.ComparisonTable_expandButtonSpacer__0wN2U.ComparisonTable_plan1__Zfhxj,.ComparisonTable_featureValue__hMv7l.ComparisonTable_plan1__Zfhxj,.ComparisonTable_planHeader__yXtdD[data-plan-index=\"1\"]",
+      "property": "border-inline-start",
+      "hex": "#2A2A2A",
+      "rule_snippet": ".ComparisonTable_ctaContainerDesktop__tp2wk.ComparisonTable_ctaPlan1__FhMog,.ComparisonTable_expandButtonSpacer__0wN2U.ComparisonTable_plan1__Zfhxj,.ComparisonTable_featureValue__hMv7l.ComparisonTable"
+    },
+    {
+      "selector": ".AdditionalPlanCards_additionalPlansV1__iTF1O .AdditionalPlanCards_ctaPremiumBasic__M8IUx",
+      "property": "background",
+      "hex": "#96F0B6",
+      "rule_snippet": ".AdditionalPlanCards_additionalPlansV1__iTF1O .AdditionalPlanCards_ctaPremiumBasic__M8IUx { background:#96F0B6 }"
+    },
+    {
+      "selector": ".PremiumPlanCards_compareAllPlansCTA__zy8yF a *,.PremiumPlanCards_compareAllPlansCTA__zy8yF a span,.PremiumPlanCards_compareAllPlansCTA__zy8yF button *,.PremiumPlanCards_compareAllPlansCTA__zy8yF button span",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".PremiumPlanCards_compareAllPlansCTA__zy8yF a *,.PremiumPlanCards_compareAllPlansCTA__zy8yF a span,.PremiumPlanCards_compareAllPlansCTA__zy8yF button *,.PremiumPlanCards_compareAllPlansCTA__zy8yF butt"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 510,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 454,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1ED760",
+      "count": 81,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFD2D7",
+      "count": 51,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#96F0B6",
+      "count": 48,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C8E0FC",
+      "count": 44,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#052A56",
+      "count": 40,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#073116",
+      "count": 40,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#491E00",
+      "count": 40,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#590810",
+      "count": 40,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFD97E",
+      "count": 40,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1ABC54",
+      "count": 26,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3BE477",
+      "count": 26,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0D72EA",
+      "count": 24,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#141414",
+      "count": 22,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F0F0F0",
+      "count": 22,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFA42B",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E91429",
+      "count": 18,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1F1F1F",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#121212",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0C69D8",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#343434",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#919496",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#C7C7C7",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D81326",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFB656",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C4B1D4",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#A5BBD1",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFC862",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0951A6",
+      "count": 8,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 70,
+    "by_role": {
+      "accent": 26,
+      "chromatic": 21,
+      "neutral": 9,
+      "primary": 1,
+      "selector": 13
+    }
+  }
+}

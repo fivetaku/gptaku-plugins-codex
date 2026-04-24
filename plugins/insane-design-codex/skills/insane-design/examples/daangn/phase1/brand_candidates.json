@@ -1,0 +1,251 @@
+{
+  "slug": "daangn",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".seed-action-button--variant_ghost",
+      "property": "background",
+      "hex": "#FFFFFF00",
+      "rule_snippet": ".seed-action-button--variant_ghost {--seed-box-color: var(--seed-color-fg-neutral);color:var(--seed-box-color);--seed-prefix-icon-color: var(--seed-box-color);--seed-suffix-icon-color: var(--seed-box-"
+    },
+    {
+      "selector": ".seed-action-button--variant_ghost:is(:disabled,[disabled],[data-disabled])",
+      "property": "background",
+      "hex": "#FFFFFF00",
+      "rule_snippet": ".seed-action-button--variant_ghost:is(:disabled,[disabled],[data-disabled]) {color:var(--seed-color-fg-disabled);--seed-prefix-icon-color: var(--seed-color-fg-disabled);--seed-suffix-icon-color: var(-"
+    },
+    {
+      "selector": ".seed-callout__link",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-callout__link {cursor:pointer;font-family:inherit;font-size:var(--seed-font-size-t4);line-height:var(--seed-line-height-t4);font-weight:var(--seed-font-weight-regular);text-underline-offset:2px;"
+    },
+    {
+      "selector": ".seed-callout__closeButton",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-callout__closeButton {cursor:pointer;width:var(--seed-dimension-x10);height:var(--seed-dimension-x10);margin:calc((var(--seed-dimension-x10) - var(--seed-dimension-x4)) * -.5);border-radius:var("
+    },
+    {
+      "selector": ".seed-inline-banner__link",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-inline-banner__link {cursor:pointer;margin-block:auto;margin-left:var(--seed-dimension-x4);font-family:inherit;font-size:var(--seed-font-size-t2);line-height:var(--seed-line-height-t2);font-weig"
+    },
+    {
+      "selector": ".seed-inline-banner__closeButton",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-inline-banner__closeButton {width:var(--seed-dimension-x10);height:var(--seed-dimension-x10);margin:calc((var(--seed-dimension-x10) - var(--seed-dimension-x4)) * -.5);margin-left:calc((var(--see"
+    },
+    {
+      "selector": ".seed-input-button__button:after",
+      "property": "border",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-input-button__button:after {content:\"\";border-radius:inherit;transition:border-color .1s var(--seed-timing-function-easing);pointer-events:none;border:2px solid #0000;position:absolute;top:0;rig"
+    },
+    {
+      "selector": ".seed-input-button__clearButton",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-input-button__clearButton {cursor:pointer;border-radius:var(--seed-radius-full);transition:outline-color var(--seed-duration-d3) var(--seed-timing-function-easing);outline:var(--seed-dimension-x"
+    },
+    {
+      "selector": ".seed-link-content",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-link-content {cursor:pointer;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:var(--seed-box-color);--seed-suffix-icon-color: va"
+    },
+    {
+      "selector": ".seed-page-banner__button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-page-banner__button {cursor:pointer;margin:calc((var(--seed-dimension-x10) - var(--seed-line-height-t3)) * .5 * -1);padding:calc((var(--seed-dimension-x10) - var(--seed-line-height-t3)) * .5);fo"
+    },
+    {
+      "selector": ".seed-page-banner__closeButton",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".seed-page-banner__closeButton {width:var(--seed-dimension-x10);height:var(--seed-dimension-x10);margin:calc((var(--seed-dimension-x10) - var(--seed-dimension-x4)) * -.5);margin-left:calc((var(--seed-"
+    },
+    {
+      "selector": ".yarl__button:focus",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".yarl__button:focus {color:var(--yarl__color_button_active,#fff)}"
+    },
+    {
+      "selector": ".yarl__button:focus-visible",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".yarl__button:focus-visible {color:var(--yarl__color_button_active,#fff)}"
+    },
+    {
+      "selector": ".yarl__button:focus-visible:hover,.yarl__button:focus:hover,.yarl__button:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".yarl__button:focus-visible:hover,.yarl__button:focus:hover,.yarl__button:hover {color:var(--yarl__color_button_active,#fff)}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 19,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FF6F0F",
+      "count": 9,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FF6600",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2299DD",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000080",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#126BE0",
+      "count": 4,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#868B94",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#B0B3BA",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DCDEE3",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F3F4F5",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FF9000",
+      "count": 4,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFF9F500",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000026",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000033",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1A1C20",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFE8DB",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF33",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000007",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000C",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000010",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000014",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000021",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000002C",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000004C",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 44,
+    "by_role": {
+      "chromatic": 6,
+      "neutral": 21,
+      "selector": 14,
+      "svg_pattern": 3
+    }
+  }
+}

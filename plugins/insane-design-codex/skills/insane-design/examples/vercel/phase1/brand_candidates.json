@@ -1,0 +1,357 @@
+{
+  "slug": "vercel",
+  "semantic_vars": [
+    {
+      "name": "--accents-1",
+      "value_hex": "#FAFAFA",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-2",
+      "value_hex": "#EAEAEA",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-3",
+      "value_hex": "#999999",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-4",
+      "value_hex": "#888888",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-5",
+      "value_hex": "#666666",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-6",
+      "value_hex": "#444444",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-7",
+      "value_hex": "#333333",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-8",
+      "value_hex": "#111111",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-8",
+      "value_hex": "#FAFAFA",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-7",
+      "value_hex": "#EAEAEA",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-6",
+      "value_hex": "#999999",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-5",
+      "value_hex": "#888888",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-4",
+      "value_hex": "#666666",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-3",
+      "value_hex": "#444444",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-2",
+      "value_hex": "#333333",
+      "role": "accent"
+    },
+    {
+      "name": "--accents-1",
+      "value_hex": "#111111",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".tailwind .file\\:bg-transparent::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".tailwind .file\\:bg-transparent::file-selector-button {background-color:#0000}"
+    },
+    {
+      "selector": ".tailwind .has-\\[button\\:focus-visible\\]\\:ring-2:has(button:focus-visible)",
+      "property": "box-shadow",
+      "hex": "#00000000",
+      "rule_snippet": ".tailwind .has-\\[button\\:focus-visible\\]\\:ring-2:has(button:focus-visible) {--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:"
+    },
+    {
+      "selector": ".button-module__QyrFCa__invert[data-hover][data-geist-button],.button-module__QyrFCa__invert[data-active][data-geist-button],:is(.dark-theme .button-module__QyrFCa__invert[data-hover][data-geist-button],.dark-theme .button-module__QyrFCa__invert[data-active][data-geist-button])",
+      "property": "background",
+      "hex": "#CCCCCC",
+      "rule_snippet": ".button-module__QyrFCa__invert[data-hover][data-geist-button],.button-module__QyrFCa__invert[data-active][data-geist-button],:is(.dark-theme .button-module__QyrFCa__invert[data-hover][data-geist-butto"
+    },
+    {
+      "selector": ".button-module__QyrFCa__invert[data-hover][data-geist-button],.button-module__QyrFCa__invert[data-active][data-geist-button]",
+      "property": "background",
+      "hex": "#383838",
+      "rule_snippet": ".button-module__QyrFCa__invert[data-hover][data-geist-button],.button-module__QyrFCa__invert[data-active][data-geist-button] {background:var(--themed-hover-bg,#383838)}"
+    },
+    {
+      "selector": ".button-module__QyrFCa__tertiary[data-geist-button]",
+      "property": "--lighten-color",
+      "hex": "#FFFFFFCC",
+      "rule_snippet": ".button-module__QyrFCa__tertiary[data-geist-button] {color:var(--themed-bg,var(--ds-gray-1000));--themed-border:transparent;--themed-hover-bg:var(--ds-gray-alpha-200);--lighten-color:#fffc;outline-off"
+    },
+    {
+      "selector": ".dark-theme .button-module__QyrFCa__tertiary[data-active][data-geist-button]",
+      "property": "--lighten-color",
+      "hex": "#000000B3",
+      "rule_snippet": ".dark-theme .button-module__QyrFCa__tertiary[data-active][data-geist-button] {--lighten-color:#000000b3}"
+    },
+    {
+      "selector": ":not(.dark-theme) .index-module__w1cOja__root.index-module__w1cOja__default [data-geist-button]:last-child:before",
+      "property": "background",
+      "hex": "#404040",
+      "rule_snippet": ":not(.dark-theme) .index-module__w1cOja__root.index-module__w1cOja__default [data-geist-button]:last-child:before {background:#404040}"
+    },
+    {
+      "selector": ".dark-theme .index-module__w1cOja__root.index-module__w1cOja__default [data-geist-button]:last-child:before",
+      "property": "background",
+      "hex": "#CDCDCD",
+      "rule_snippet": ".dark-theme .index-module__w1cOja__root.index-module__w1cOja__default [data-geist-button]:last-child:before {background:#cdcdcd}"
+    },
+    {
+      "selector": ".modal-module__VSkE6q__actions:before",
+      "property": "background",
+      "hex": "#00000013",
+      "rule_snippet": ".modal-module__VSkE6q__actions:before {content:\"\";filter:blur(3px);z-index:-1;background:#00000013;width:100%;height:12px;transition:transform .2s;position:absolute;bottom:100%;left:0;transform:transl"
+    },
+    {
+      "selector": ".dark-theme .modal-module__VSkE6q__actions:before",
+      "property": "background",
+      "hex": "#FFFFFF1A",
+      "rule_snippet": ".dark-theme .modal-module__VSkE6q__actions:before {background:#ffffff1a}"
+    },
+    {
+      "selector": ".navigation-menu-module__AENi4G__root",
+      "property": "--menu-bg",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".navigation-menu-module__AENi4G__root {--margin-top:20px;--item-padding:12px;--menu-bg:#fff;--menu-border-width:1px;--menu-border-color:var(--ds-gray-400);align-items:center;width:100%;display:flex;po"
+    },
+    {
+      "selector": ".dark-theme .navigation-menu-module__AENi4G__root",
+      "property": "--menu-bg",
+      "hex": "#000000",
+      "rule_snippet": ".dark-theme .navigation-menu-module__AENi4G__root {--menu-bg:#000}"
+    },
+    {
+      "selector": ".analytics-plus-module__ghfE_a__dialog .analytics-plus-module__ghfE_a__dialogCTA",
+      "property": "color",
+      "hex": "#718900",
+      "rule_snippet": ".analytics-plus-module__ghfE_a__dialog .analytics-plus-module__ghfE_a__dialogCTA {font-family:var(--font-mono);color:#718900;background-color:#bfde2c26;border-radius:4px;padding:1px 4px}"
+    },
+    {
+      "selector": ".analytics-plus-module__ghfE_a__dialog .analytics-plus-module__ghfE_a__dialogCTA",
+      "property": "background-color",
+      "hex": "#BFDE2C26",
+      "rule_snippet": ".analytics-plus-module__ghfE_a__dialog .analytics-plus-module__ghfE_a__dialogCTA {font-family:var(--font-mono);color:#718900;background-color:#bfde2c26;border-radius:4px;padding:1px 4px}"
+    },
+    {
+      "selector": "button.tab-module__AKeiTG__tab.tab-module__AKeiTG__active",
+      "property": "box-shadow",
+      "hex": "#0000000A",
+      "rule_snippet": "button.tab-module__AKeiTG__tab.tab-module__AKeiTG__active {background:var(--ds-background-100);border-bottom-color:var(--ds-background-100);z-index:5;box-shadow:0 2px 4px #0000000a}"
+    },
+    {
+      "selector": ".tabs-module__ree8gq__root button[aria-selected=true] .tabs-module__ree8gq__indicator",
+      "property": "box-shadow",
+      "hex": "#0000000A",
+      "rule_snippet": ".tabs-module__ree8gq__root button[aria-selected=true] .tabs-module__ree8gq__indicator {border:1px solid var(--ds-gray-alpha-400);background:var(--ds-background-100);box-shadow:0 1px 2px #0000000a;back"
+    },
+    {
+      "selector": ".avatar-popover-module__H3jTzW__upgradeButton[data-selected]",
+      "property": "background",
+      "hex": "#383838",
+      "rule_snippet": ".avatar-popover-module__H3jTzW__upgradeButton[data-selected] {background:#383838!important}"
+    },
+    {
+      "selector": ".dark-theme .avatar-popover-module__H3jTzW__upgradeButton[data-selected]",
+      "property": "background",
+      "hex": "#CCCCCC",
+      "rule_snippet": ".dark-theme .avatar-popover-module__H3jTzW__upgradeButton[data-selected] {background:#ccc!important}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 265,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 70,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 69,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000A",
+      "count": 37,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 28,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2C8CE1",
+      "count": 20,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#00000005",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001F",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#333333",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#45DEC4",
+      "count": 10,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#EAEAEA",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FF1E56",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000F",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00DC82",
+      "count": 8,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#D9D9D9",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FF3E00",
+      "count": 8,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#00000029",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0096FF",
+      "count": 7,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#666666",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FAFAFA",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1F1F1F",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000008",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000014",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000033",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000B3",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#CCCCCC",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFCADE40",
+      "count": 5,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 64,
+    "by_role": {
+      "accent": 16,
+      "chromatic": 2,
+      "neutral": 23,
+      "selector": 18,
+      "svg_pattern": 5
+    }
+  }
+}

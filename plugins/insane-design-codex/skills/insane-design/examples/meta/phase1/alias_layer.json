@@ -1,0 +1,1658 @@
+{
+  "slug": "meta",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--button-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-corner-radius-medium",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-height-medium",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-large-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-medium-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-medium-height",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-medium-padding-horizontal",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-padding-horizontal-medium",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-small-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--primary-button-background",
+        "references": [
+          "--secondary-button-text"
+        ],
+        "terminal_hint": "--secondary-button-text"
+      },
+      {
+        "alias": "--primary-button-text",
+        "references": [
+          "--secondary-button-text"
+        ],
+        "terminal_hint": "--secondary-button-text"
+      },
+      {
+        "alias": "--primary-deemphasized-button-background",
+        "references": [
+          "--x---primary-deemphasized-button-background"
+        ],
+        "terminal_hint": "--x---primary-deemphasized-button-background"
+      },
+      {
+        "alias": "--primary-deemphasized-button-text",
+        "references": [
+          "--x---primary-deemphasized-button-text"
+        ],
+        "terminal_hint": "--x---primary-deemphasized-button-text"
+      },
+      {
+        "alias": "--secondary-button-background",
+        "references": [
+          "--ig-colors-button-secondary-background"
+        ],
+        "terminal_hint": "--ig-colors-button-secondary-background"
+      },
+      {
+        "alias": "--secondary-button-stroke",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--secondary-button-text",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--card-background",
+        "references": [
+          "--dialog-background"
+        ],
+        "terminal_hint": "--dialog-background"
+      },
+      {
+        "alias": "--card-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-anchor-vertical-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-corner-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-background",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-border-color",
+        "references": [
+          "--warning"
+        ],
+        "terminal_hint": "--warning"
+      },
+      {
+        "alias": "--input-label-color-inside",
+        "references": [
+          "--ig-secondary-text"
+        ],
+        "terminal_hint": "--ig-secondary-text"
+      },
+      {
+        "alias": "--nav-list-cell-min-height-dense",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "core": [
+      {
+        "alias": "--always-dark-overlay",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.4)"
+      },
+      {
+        "alias": "--bubbleContentUserColor",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, 1)"
+      },
+      {
+        "alias": "--secondary-button-text",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--text-white",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x10763r7",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--x10mrbvr",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--x1131iq4",
+        "references": [],
+        "terminal_hint": "#365899"
+      },
+      {
+        "alias": "--x1196mbi",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x11l78wh",
+        "references": [],
+        "terminal_hint": "#E3193B80"
+      },
+      {
+        "alias": "--x11llz9l",
+        "references": [],
+        "terminal_hint": "#9b59b6"
+      },
+      {
+        "alias": "--x11nuaxw",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x11rivb9",
+        "references": [],
+        "terminal_hint": "#f3f4f5"
+      },
+      {
+        "alias": "--x11wfri4",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--x125rdix",
+        "references": [],
+        "terminal_hint": "#465A69"
+      },
+      {
+        "alias": "--x127c7k2",
+        "references": [],
+        "terminal_hint": "#D69804"
+      },
+      {
+        "alias": "--x12a2sij",
+        "references": [],
+        "terminal_hint": "#f39c12"
+      },
+      {
+        "alias": "--x12b7fxo",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--x12dhckj",
+        "references": [],
+        "terminal_hint": "#3e4042"
+      },
+      {
+        "alias": "--x12oyt3f",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--x12ryck7",
+        "references": [],
+        "terminal_hint": "#3a3b3c"
+      },
+      {
+        "alias": "--x12x7wmq",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x132cemr",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--x13f2gul",
+        "references": [],
+        "terminal_hint": "#A7B3BF"
+      },
+      {
+        "alias": "--x13i12v9",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x13t7dcq",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x13xh4bl",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--x1487n2n",
+        "references": [],
+        "terminal_hint": "#4BA9FE"
+      },
+      {
+        "alias": "--x149dqt",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x14iyvcv",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x14ttt0u",
+        "references": [],
+        "terminal_hint": "#0D862680"
+      },
+      {
+        "alias": "--x14w6lj",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--x14y9034",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x151ozsg",
+        "references": [],
+        "terminal_hint": "#603863"
+      },
+      {
+        "alias": "--x158zvr2",
+        "references": [],
+        "terminal_hint": "#F1F4F7B2"
+      },
+      {
+        "alias": "--x15e74zr",
+        "references": [],
+        "terminal_hint": "#8e44ad"
+      },
+      {
+        "alias": "--x15j2dhm",
+        "references": [],
+        "terminal_hint": "#CED0D4"
+      },
+      {
+        "alias": "--x15spvhi",
+        "references": [],
+        "terminal_hint": "#73BEFA"
+      },
+      {
+        "alias": "--x15wcnep",
+        "references": [],
+        "terminal_hint": "#f39c12"
+      },
+      {
+        "alias": "--x16izkdv",
+        "references": [],
+        "terminal_hint": "#F1F4F7E6"
+      },
+      {
+        "alias": "--x16oxp5a",
+        "references": [],
+        "terminal_hint": "#1D3831"
+      },
+      {
+        "alias": "--x171dupz",
+        "references": [],
+        "terminal_hint": "#dadde1"
+      },
+      {
+        "alias": "--x17eh192",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x17h09wl",
+        "references": [],
+        "terminal_hint": "#445664"
+      },
+      {
+        "alias": "--x18025fe",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,.1)"
+      },
+      {
+        "alias": "--x18g5jj2",
+        "references": [],
+        "terminal_hint": "#3a3b3c"
+      },
+      {
+        "alias": "--x18jq40y",
+        "references": [],
+        "terminal_hint": "#CBD2D9"
+      },
+      {
+        "alias": "--x18os2xs",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x18pr57c",
+        "references": [],
+        "terminal_hint": "#f0f0f0"
+      },
+      {
+        "alias": "--x18sj8i6",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--x18tbe67",
+        "references": [],
+        "terminal_hint": "#8e44ad"
+      },
+      {
+        "alias": "--x18tv962",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x198b9t9",
+        "references": [],
+        "terminal_hint": "#FFE3DE"
+      },
+      {
+        "alias": "--x19fognk",
+        "references": [],
+        "terminal_hint": "rgba(28, 43, 51, 1)"
+      },
+      {
+        "alias": "--x1acqjmx",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x1aiv0oh",
+        "references": [],
+        "terminal_hint": "#67788A"
+      },
+      {
+        "alias": "--x1banbpf",
+        "references": [],
+        "terminal_hint": "#004BB9"
+      },
+      {
+        "alias": "--x1bd2fwr",
+        "references": [],
+        "terminal_hint": "#ECF5FF"
+      },
+      {
+        "alias": "--x1bh52m",
+        "references": [],
+        "terminal_hint": "#465A69"
+      },
+      {
+        "alias": "--x1bhutc",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--x1bvtcs1",
+        "references": [],
+        "terminal_hint": "#47A5FA"
+      },
+      {
+        "alias": "--x1bvtpo7",
+        "references": [],
+        "terminal_hint": "#8595A4"
+      },
+      {
+        "alias": "--x1bzhdv9",
+        "references": [],
+        "terminal_hint": "#43b55e"
+      },
+      {
+        "alias": "--x1cix6a3",
+        "references": [],
+        "terminal_hint": "#CBD2D9"
+      },
+      {
+        "alias": "--x1ckxv65",
+        "references": [],
+        "terminal_hint": "#29487d"
+      },
+      {
+        "alias": "--x1clyshj",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x1cr1y67",
+        "references": [],
+        "terminal_hint": "#e67e22"
+      },
+      {
+        "alias": "--x1dcry0v",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.5)"
+      },
+      {
+        "alias": "--x1dfkan",
+        "references": [],
+        "terminal_hint": "#166fe5"
+      },
+      {
+        "alias": "--x1drzc3",
+        "references": [],
+        "terminal_hint": "rgba(221, 221, 221, 1)"
+      },
+      {
+        "alias": "--x1dxmqov",
+        "references": [],
+        "terminal_hint": "#CCD3DB"
+      },
+      {
+        "alias": "--x1dynevc",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, .6)"
+      },
+      {
+        "alias": "--x1eci7gt",
+        "references": [],
+        "terminal_hint": "#166fe5"
+      },
+      {
+        "alias": "--x1eko1mp",
+        "references": [],
+        "terminal_hint": "#2ecc71"
+      },
+      {
+        "alias": "--x1ep6ljn",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1esmk3j",
+        "references": [],
+        "terminal_hint": "#FB7D87"
+      },
+      {
+        "alias": "--x1ev4bvd",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1exhmpq",
+        "references": [],
+        "terminal_hint": "#4d2b64"
+      },
+      {
+        "alias": "--x1f2g9z6",
+        "references": [],
+        "terminal_hint": "#FFFFFF66"
+      },
+      {
+        "alias": "--x1f62u1m",
+        "references": [],
+        "terminal_hint": "#d8dadf"
+      },
+      {
+        "alias": "--x1fo8oi",
+        "references": [],
+        "terminal_hint": "rgba(230, 230, 230, .8)"
+      },
+      {
+        "alias": "--x1g6537o",
+        "references": [],
+        "terminal_hint": "#5AB8FE"
+      },
+      {
+        "alias": "--x1g95hzc",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--x1glbl71",
+        "references": [],
+        "terminal_hint": "#ECF5FF"
+      },
+      {
+        "alias": "--x1gy3fwr",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--x1h50e4l",
+        "references": [],
+        "terminal_hint": "#080809"
+      },
+      {
+        "alias": "--x1h69khg",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--x1h9lvdk",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1hc51g6",
+        "references": [],
+        "terminal_hint": "#5AB8FE"
+      },
+      {
+        "alias": "--x1hg3a3i",
+        "references": [],
+        "terminal_hint": "#CCD3DB"
+      },
+      {
+        "alias": "--x1hhx3yd",
+        "references": [],
+        "terminal_hint": "#1877f2"
+      },
+      {
+        "alias": "--x1hiqbtc",
+        "references": [],
+        "terminal_hint": "#647685"
+      },
+      {
+        "alias": "--x1hwhcww",
+        "references": [],
+        "terminal_hint": "#1D2D3D"
+      },
+      {
+        "alias": "--x1i50v3k",
+        "references": [],
+        "terminal_hint": "#EBEDF0"
+      },
+      {
+        "alias": "--x1ia1t81",
+        "references": [],
+        "terminal_hint": "#2980b9"
+      },
+      {
+        "alias": "--x1ihezxe",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1ikcymc",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1ipxqsq",
+        "references": [],
+        "terminal_hint": "#9b59b6"
+      },
+      {
+        "alias": "--x1iy7589",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1iz8wdo",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x1j0o1lg",
+        "references": [],
+        "terminal_hint": "#DEE3E9"
+      },
+      {
+        "alias": "--x1jg916q",
+        "references": [],
+        "terminal_hint": "#67788A"
+      },
+      {
+        "alias": "--x1jxs9lv",
+        "references": [],
+        "terminal_hint": "#42b883"
+      },
+      {
+        "alias": "--x1jzxkya",
+        "references": [],
+        "terminal_hint": "#3CBC22"
+      },
+      {
+        "alias": "--x1lvh4gc",
+        "references": [],
+        "terminal_hint": "#8595A4"
+      },
+      {
+        "alias": "--x1m7q81a",
+        "references": [],
+        "terminal_hint": "#A7B3BF"
+      },
+      {
+        "alias": "--x1mc512y",
+        "references": [],
+        "terminal_hint": "#8595A4"
+      },
+      {
+        "alias": "--x1n95m3h",
+        "references": [],
+        "terminal_hint": "#5AB8FE"
+      },
+      {
+        "alias": "--x1nff5gi",
+        "references": [],
+        "terminal_hint": "#7d3c98"
+      },
+      {
+        "alias": "--x1o3yhu3",
+        "references": [],
+        "terminal_hint": "#4e4f50"
+      },
+      {
+        "alias": "--x1o8pxdn",
+        "references": [],
+        "terminal_hint": "#8a8d91"
+      },
+      {
+        "alias": "--x1ocp14z",
+        "references": [],
+        "terminal_hint": "#e4e6ea"
+      },
+      {
+        "alias": "--x1og57sr",
+        "references": [],
+        "terminal_hint": "#166fe5"
+      },
+      {
+        "alias": "--x1on3tgg",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1p42rpq",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1p8ippb",
+        "references": [],
+        "terminal_hint": "#1E2A30"
+      },
+      {
+        "alias": "--x1pemqhl",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1ph5trt",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--x1pwsir7",
+        "references": [],
+        "terminal_hint": "#cdcfd1"
+      },
+      {
+        "alias": "--x1qzo2en",
+        "references": [],
+        "terminal_hint": "#ffca28"
+      },
+      {
+        "alias": "--x1r17ggk",
+        "references": [],
+        "terminal_hint": "#E2E5E9"
+      },
+      {
+        "alias": "--x1r4yd9x",
+        "references": [],
+        "terminal_hint": "#4267b2"
+      },
+      {
+        "alias": "--x1rhfrof",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--x1rlt156",
+        "references": [],
+        "terminal_hint": "#A1670280"
+      },
+      {
+        "alias": "--x1rodr6a",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--x1s39hm7",
+        "references": [],
+        "terminal_hint": "#313D45"
+      },
+      {
+        "alias": "--x1sbw8zh",
+        "references": [],
+        "terminal_hint": "#0000008C"
+      },
+      {
+        "alias": "--x1sie9h7",
+        "references": [],
+        "terminal_hint": "#8494A3"
+      },
+      {
+        "alias": "--x1t4c8kb",
+        "references": [],
+        "terminal_hint": "#E8E8FB"
+      },
+      {
+        "alias": "--x1tkmqey",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1tp1lan",
+        "references": [],
+        "terminal_hint": "#42b883"
+      },
+      {
+        "alias": "--x1tqzamp",
+        "references": [],
+        "terminal_hint": "#e4e6ea"
+      },
+      {
+        "alias": "--x1tzh7nr",
+        "references": [],
+        "terminal_hint": "#f39c12"
+      },
+      {
+        "alias": "--x1uf14vt",
+        "references": [],
+        "terminal_hint": "#65676b"
+      },
+      {
+        "alias": "--x1ui6vop",
+        "references": [],
+        "terminal_hint": "#D6DDE4"
+      },
+      {
+        "alias": "--x1upcoxv",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x1uqmqip",
+        "references": [],
+        "terminal_hint": "#DEE3E9"
+      },
+      {
+        "alias": "--x1v0i8i8",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--x1v6eesl",
+        "references": [],
+        "terminal_hint": "#2c2d2e"
+      },
+      {
+        "alias": "--x1vr6j21",
+        "references": [],
+        "terminal_hint": "#1c1e21"
+      },
+      {
+        "alias": "--x1w0ne64",
+        "references": [],
+        "terminal_hint": "#DEE3E9"
+      },
+      {
+        "alias": "--x1wabinx",
+        "references": [],
+        "terminal_hint": "#cdcfd1"
+      },
+      {
+        "alias": "--x1wb1v04",
+        "references": [],
+        "terminal_hint": "rgb(0, 100, 224)"
+      },
+      {
+        "alias": "--x1x4xvwj",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--x1y1vcbx",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1y5o4kb",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x1y8ex37",
+        "references": [],
+        "terminal_hint": "#F1F4F74D"
+      },
+      {
+        "alias": "--x1yiqmuy",
+        "references": [],
+        "terminal_hint": "#ff6b6b"
+      },
+      {
+        "alias": "--x1yjcca0",
+        "references": [],
+        "terminal_hint": "#ff0000"
+      },
+      {
+        "alias": "--x1yzomig",
+        "references": [],
+        "terminal_hint": "#3498db"
+      },
+      {
+        "alias": "--x215qz1",
+        "references": [],
+        "terminal_hint": "#0866FF"
+      },
+      {
+        "alias": "--x24fn9h",
+        "references": [],
+        "terminal_hint": "#7952FF80"
+      },
+      {
+        "alias": "--x2uruw6",
+        "references": [],
+        "terminal_hint": "#5c2b7f"
+      },
+      {
+        "alias": "--x2z4mxm",
+        "references": [],
+        "terminal_hint": "#f0f2f5"
+      },
+      {
+        "alias": "--x3994ta",
+        "references": [],
+        "terminal_hint": "#242526"
+      },
+      {
+        "alias": "--x3hb97q",
+        "references": [],
+        "terminal_hint": "#b0b3b8"
+      },
+      {
+        "alias": "--x3ssoic",
+        "references": [],
+        "terminal_hint": "rgba(230, 230, 230, 1)"
+      },
+      {
+        "alias": "--x45zfrs",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--x4cdsqv",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--x4ney6b",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--x4q3eum",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--x58ugsf",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--x5afhcp",
+        "references": [],
+        "terminal_hint": "#f9fafb"
+      },
+      {
+        "alias": "--x5bxsh4",
+        "references": [],
+        "terminal_hint": "#F1F4F766"
+      },
+      {
+        "alias": "--x5d8ssk",
+        "references": [],
+        "terminal_hint": "#1464cc"
+      },
+      {
+        "alias": "--x5lf19y",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x666kwq",
+        "references": [],
+        "terminal_hint": "#25363F"
+      },
+      {
+        "alias": "--x6axvlg",
+        "references": [],
+        "terminal_hint": "#96CBFF"
+      },
+      {
+        "alias": "--x6r21d0",
+        "references": [],
+        "terminal_hint": "#0759F2"
+      },
+      {
+        "alias": "--x6r2aoj",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--x6x6ilv",
+        "references": [],
+        "terminal_hint": "#FFFFFF4D"
+      },
+      {
+        "alias": "--x6zc3lg",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--x73x56x",
+        "references": [],
+        "terminal_hint": "#5a5b5c"
+      },
+      {
+        "alias": "--x770d5r",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--x7g0h2e",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--x7ltdba",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--x7vh06b",
+        "references": [],
+        "terminal_hint": "#FEE4E6"
+      },
+      {
+        "alias": "--x9igmjo",
+        "references": [],
+        "terminal_hint": "#C4F8B9"
+      },
+      {
+        "alias": "--x9mpi4i",
+        "references": [],
+        "terminal_hint": "#CCD3DB"
+      },
+      {
+        "alias": "--x9qkhty",
+        "references": [],
+        "terminal_hint": "#005AD6"
+      },
+      {
+        "alias": "--xa5yyo8",
+        "references": [],
+        "terminal_hint": "#0171E380"
+      },
+      {
+        "alias": "--xadhof8",
+        "references": [],
+        "terminal_hint": "#F53947"
+      },
+      {
+        "alias": "--xagq3df",
+        "references": [],
+        "terminal_hint": "#283943"
+      },
+      {
+        "alias": "--xb9oy6o",
+        "references": [],
+        "terminal_hint": "#004BB9"
+      },
+      {
+        "alias": "--xbavhbg",
+        "references": [],
+        "terminal_hint": "#e4e6ea"
+      },
+      {
+        "alias": "--xbdgffm",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--xbkw8ji",
+        "references": [],
+        "terminal_hint": "#1c1e21"
+      },
+      {
+        "alias": "--xbot0hz",
+        "references": [],
+        "terminal_hint": "rgba(23, 28, 31, 1)"
+      },
+      {
+        "alias": "--xca3acd",
+        "references": [],
+        "terminal_hint": "#FFFFFF26"
+      },
+      {
+        "alias": "--xcglfdz",
+        "references": [],
+        "terminal_hint": "#bdc3c7"
+      },
+      {
+        "alias": "--xcv04am",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--xd2zy2m",
+        "references": [],
+        "terminal_hint": "#47A5FA"
+      },
+      {
+        "alias": "--xd8f86o",
+        "references": [],
+        "terminal_hint": "#29487d"
+      },
+      {
+        "alias": "--xd8zzow",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.8)"
+      },
+      {
+        "alias": "--xd9u4s4",
+        "references": [],
+        "terminal_hint": "#313D45"
+      },
+      {
+        "alias": "--xdbh3ft",
+        "references": [],
+        "terminal_hint": "rgba(0, 100, 224, .25)"
+      },
+      {
+        "alias": "--xdd0pg5",
+        "references": [],
+        "terminal_hint": "#4e8cff"
+      },
+      {
+        "alias": "--xdstih4",
+        "references": [],
+        "terminal_hint": "rgba(21, 33, 39, .2)"
+      },
+      {
+        "alias": "--xdtrtzm",
+        "references": [],
+        "terminal_hint": "#3a3b3c"
+      },
+      {
+        "alias": "--xeh2i4f",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xekpo39",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--xemw3w4",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--xepydxb",
+        "references": [],
+        "terminal_hint": "#F1F4F766"
+      },
+      {
+        "alias": "--xeq63j5",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      },
+      {
+        "alias": "--xeytzu2",
+        "references": [],
+        "terminal_hint": "#44566480"
+      },
+      {
+        "alias": "--xfe8al5",
+        "references": [],
+        "terminal_hint": "#4BA9FE"
+      },
+      {
+        "alias": "--xfj2pn9",
+        "references": [],
+        "terminal_hint": "#e74c3c"
+      },
+      {
+        "alias": "--xfjkjy5",
+        "references": [],
+        "terminal_hint": "#2c2d2e"
+      },
+      {
+        "alias": "--xfrgb6i",
+        "references": [],
+        "terminal_hint": "#67788A"
+      },
+      {
+        "alias": "--xftuvfa",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xfz2wj5",
+        "references": [],
+        "terminal_hint": "#e74c3c"
+      },
+      {
+        "alias": "--xgdujen",
+        "references": [],
+        "terminal_hint": "#365899"
+      },
+      {
+        "alias": "--xgq499o",
+        "references": [],
+        "terminal_hint": "#0064E0"
+      },
+      {
+        "alias": "--xgs0otc",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xgyo8xs",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xh62zee",
+        "references": [],
+        "terminal_hint": "#0F191E"
+      },
+      {
+        "alias": "--xh6bbig",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--xh877pd",
+        "references": [],
+        "terminal_hint": "#00ff00"
+      },
+      {
+        "alias": "--xhj0bg5",
+        "references": [],
+        "terminal_hint": "#f9fafb"
+      },
+      {
+        "alias": "--xhnsau8",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, .6)"
+      },
+      {
+        "alias": "--xhsexoy",
+        "references": [],
+        "terminal_hint": "#1464cc"
+      },
+      {
+        "alias": "--xiicwzm",
+        "references": [],
+        "terminal_hint": "#6a6b6e"
+      },
+      {
+        "alias": "--xirzdcw",
+        "references": [],
+        "terminal_hint": "#18191a"
+      },
+      {
+        "alias": "--xiv1y0m",
+        "references": [],
+        "terminal_hint": "#B0B3B8"
+      },
+      {
+        "alias": "--xiw6jcg",
+        "references": [],
+        "terminal_hint": "#323436"
+      },
+      {
+        "alias": "--xj6fmph",
+        "references": [],
+        "terminal_hint": "#96A6B4"
+      },
+      {
+        "alias": "--xjti7sq",
+        "references": [],
+        "terminal_hint": "#65676b"
+      },
+      {
+        "alias": "--xk3by9m",
+        "references": [],
+        "terminal_hint": "#2B3D46AD"
+      },
+      {
+        "alias": "--xkg1yw",
+        "references": [],
+        "terminal_hint": "#FFE3DE"
+      },
+      {
+        "alias": "--xkxqhjd",
+        "references": [],
+        "terminal_hint": "#e74c3c"
+      },
+      {
+        "alias": "--xl8vkra",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--xl9ojqf",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xlev17u",
+        "references": [],
+        "terminal_hint": "#1C2B33CC"
+      },
+      {
+        "alias": "--xleydre",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, .1)"
+      },
+      {
+        "alias": "--xlfwbuk",
+        "references": [],
+        "terminal_hint": "#007D1E"
+      },
+      {
+        "alias": "--xlq2kmo",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xm07qmq",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--xmajsdw",
+        "references": [],
+        "terminal_hint": "#004BB9"
+      },
+      {
+        "alias": "--xmdq6we",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--xmimafg",
+        "references": [],
+        "terminal_hint": "#1877f2"
+      },
+      {
+        "alias": "--xmkjx1s",
+        "references": [],
+        "terminal_hint": "#67788A"
+      },
+      {
+        "alias": "--xmqvuy9",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xn93tna",
+        "references": [],
+        "terminal_hint": "#CCD3DB"
+      },
+      {
+        "alias": "--xnmq8s",
+        "references": [],
+        "terminal_hint": "#3a3b3c"
+      },
+      {
+        "alias": "--xnn2b4y",
+        "references": [],
+        "terminal_hint": "#67788A"
+      },
+      {
+        "alias": "--xo7ic0q",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .5)"
+      },
+      {
+        "alias": "--xod81hd",
+        "references": [],
+        "terminal_hint": "#dadde1"
+      },
+      {
+        "alias": "--xopjvui",
+        "references": [],
+        "terminal_hint": "#3e4042"
+      },
+      {
+        "alias": "--xouzfpx",
+        "references": [],
+        "terminal_hint": "#28D232"
+      },
+      {
+        "alias": "--xozoeai",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--xp2xylp",
+        "references": [],
+        "terminal_hint": "#8a8d91"
+      },
+      {
+        "alias": "--xp4nueb",
+        "references": [],
+        "terminal_hint": "#52c882"
+      },
+      {
+        "alias": "--xpa06uk",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xpb7q49",
+        "references": [],
+        "terminal_hint": "#e4e6ea"
+      },
+      {
+        "alias": "--xpjk2ue",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--xq5y9bz",
+        "references": [],
+        "terminal_hint": "#A7B3BF"
+      },
+      {
+        "alias": "--xqg8v9z",
+        "references": [],
+        "terminal_hint": "#1C2B33"
+      },
+      {
+        "alias": "--xqt9fth",
+        "references": [],
+        "terminal_hint": "#F53947"
+      },
+      {
+        "alias": "--xqu9v5",
+        "references": [],
+        "terminal_hint": "#E2E5E9"
+      },
+      {
+        "alias": "--xseeu5c",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--xsfo1xj",
+        "references": [],
+        "terminal_hint": "#1877f2"
+      },
+      {
+        "alias": "--xsk64h7",
+        "references": [],
+        "terminal_hint": "#4267b2"
+      },
+      {
+        "alias": "--xsqyi4y",
+        "references": [],
+        "terminal_hint": "#0A1317"
+      },
+      {
+        "alias": "--xss4ruy",
+        "references": [],
+        "terminal_hint": "#4267b2"
+      },
+      {
+        "alias": "--xt15msc",
+        "references": [],
+        "terminal_hint": "#152127"
+      },
+      {
+        "alias": "--xt2q38h",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--xt2qcoh",
+        "references": [],
+        "terminal_hint": "#FFFFFF26"
+      },
+      {
+        "alias": "--xt3hwix",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--xtgk73w",
+        "references": [],
+        "terminal_hint": "#8595A4"
+      },
+      {
+        "alias": "--xu2fda",
+        "references": [],
+        "terminal_hint": "#344854"
+      },
+      {
+        "alias": "--xu5zft0",
+        "references": [],
+        "terminal_hint": "#4e8cff"
+      },
+      {
+        "alias": "--xu7hyf1",
+        "references": [],
+        "terminal_hint": "#e4e6ea"
+      },
+      {
+        "alias": "--xu8u1qi",
+        "references": [],
+        "terminal_hint": "#242526"
+      },
+      {
+        "alias": "--xuc1hzd",
+        "references": [],
+        "terminal_hint": "#0082FB66"
+      },
+      {
+        "alias": "--xud6c83",
+        "references": [],
+        "terminal_hint": "#0457CB"
+      },
+      {
+        "alias": "--xuik7q4",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .8)"
+      },
+      {
+        "alias": "--xusudzu",
+        "references": [],
+        "terminal_hint": "#FDF6BA"
+      },
+      {
+        "alias": "--xv63ayr",
+        "references": [],
+        "terminal_hint": "#344854"
+      },
+      {
+        "alias": "--xvloy6h",
+        "references": [],
+        "terminal_hint": "#95a5a6"
+      },
+      {
+        "alias": "--xvq2e1s",
+        "references": [],
+        "terminal_hint": "#8a8d91"
+      },
+      {
+        "alias": "--xvxwqve",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xw5k3b0",
+        "references": [],
+        "terminal_hint": "#1877f2"
+      },
+      {
+        "alias": "--xw6x4cz",
+        "references": [],
+        "terminal_hint": "rgba(241, 244, 247, .7)"
+      },
+      {
+        "alias": "--xwibhfm",
+        "references": [],
+        "terminal_hint": "#1c1e21"
+      },
+      {
+        "alias": "--xwlrjka",
+        "references": [],
+        "terminal_hint": "#CBD2D9"
+      },
+      {
+        "alias": "--xxknqzc",
+        "references": [],
+        "terminal_hint": "#FFFFFFB2"
+      },
+      {
+        "alias": "--xxqu37j",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--xxvgza9",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--xyaxlxh",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xyd2swi",
+        "references": [],
+        "terminal_hint": "#c0392b"
+      },
+      {
+        "alias": "--xyil8vw",
+        "references": [],
+        "terminal_hint": "#2B3D46"
+      },
+      {
+        "alias": "--xyx4knn",
+        "references": [],
+        "terminal_hint": "#bdc3c7"
+      },
+      {
+        "alias": "--xyx5kyu",
+        "references": [],
+        "terminal_hint": "#f0f0f0"
+      },
+      {
+        "alias": "--xz1cps4",
+        "references": [],
+        "terminal_hint": "#E6EBEF"
+      },
+      {
+        "alias": "--xz7d1p4",
+        "references": [],
+        "terminal_hint": "#A7B3BF"
+      },
+      {
+        "alias": "--xz9c3de",
+        "references": [],
+        "terminal_hint": "#1877f2"
+      },
+      {
+        "alias": "--xz9lgvt",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--xza3hsg",
+        "references": [],
+        "terminal_hint": "#F1F4F7"
+      },
+      {
+        "alias": "--xzp3m28",
+        "references": [],
+        "terminal_hint": "#5a5b5c"
+      },
+      {
+        "alias": "--xzq5v5e",
+        "references": [],
+        "terminal_hint": "#96A6B4"
+      },
+      {
+        "alias": "--xzsxl4p",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, .05)"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 16,
+      "component": 8,
+      "core": 300
+    }
+  }
+}

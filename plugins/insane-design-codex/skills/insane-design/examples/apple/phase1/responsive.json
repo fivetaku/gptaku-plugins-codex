@@ -1,0 +1,73 @@
+{
+  "slug": "apple",
+  "breakpoints": [
+    {
+      "condition": "max-width: 480px",
+      "direction": "max",
+      "value": "480px"
+    },
+    {
+      "condition": "max-width: 640px",
+      "direction": "max",
+      "value": "640px"
+    },
+    {
+      "condition": "max-width: 734px",
+      "direction": "max",
+      "value": "734px"
+    },
+    {
+      "condition": "max-width: 833px",
+      "direction": "max",
+      "value": "833px"
+    },
+    {
+      "condition": "min-width: 834px",
+      "direction": "min",
+      "value": "834px"
+    },
+    {
+      "condition": "max-width: 1023px",
+      "direction": "max",
+      "value": "1023px"
+    },
+    {
+      "condition": "max-width: 1044px",
+      "direction": "max",
+      "value": "1044px"
+    },
+    {
+      "condition": "max-width: 1068px",
+      "direction": "max",
+      "value": "1068px"
+    },
+    {
+      "condition": "min-width: 1069px",
+      "direction": "min",
+      "value": "1069px"
+    },
+    {
+      "condition": "min-width: 1441px",
+      "direction": "min",
+      "value": "1441px"
+    }
+  ],
+  "approach": "desktop-first",
+  "touch": {
+    "min_height_44px": true,
+    "button_heights": [
+      "668px",
+      "48px"
+    ],
+    "input_heights": []
+  },
+  "collapsing": {
+    "nav_collapse": "hidden_at_mobile",
+    "grid_collapse": null,
+    "sidebar_collapse": null
+  },
+  "stats": {
+    "breakpoint_count": 10,
+    "approach": "desktop-first"
+  }
+}

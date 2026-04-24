@@ -1,0 +1,442 @@
+{
+  "slug": "revolut",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--rui-color-action-background",
+        "references": [],
+        "terminal_hint": "#400013"
+      },
+      {
+        "alias": "--rui-color-action-blue",
+        "references": [],
+        "terminal_hint": "#0666eb"
+      },
+      {
+        "alias": "--rui-color-action-label",
+        "references": [],
+        "terminal_hint": "#400013"
+      },
+      {
+        "alias": "--rui-color-action-photo-header-background",
+        "references": [],
+        "terminal_hint": "#ea035d"
+      },
+      {
+        "alias": "--rui-color-action-photo-header-text",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rui-color-button-disabled-text",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.2)"
+      },
+      {
+        "alias": "--rui-color-channel-action-background",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--rui-color-channel-action-blue",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--rui-color-channel-action-photo-header-text",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--rui-color-red-action-background",
+        "references": [],
+        "terminal_hint": "#330e0c"
+      },
+      {
+        "alias": "--rui-size-button-md",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--rui-size-button-sm",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--rui-size-button-xs",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "component": [
+      {
+        "alias": "--rui-color-input-error",
+        "references": [],
+        "terminal_hint": "#330e0c"
+      },
+      {
+        "alias": "--rui-color-input-error-focus",
+        "references": [],
+        "terminal_hint": "#421210"
+      },
+      {
+        "alias": "--rui-color-popover-background",
+        "references": [],
+        "terminal_hint": "#3b3b3d"
+      },
+      {
+        "alias": "--rui-color-swipeable-card-background",
+        "references": [],
+        "terminal_hint": "#1c1c1e"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--rui-color-accent",
+        "references": [],
+        "terminal_hint": "#ea035d"
+      },
+      {
+        "alias": "--rui-color-action-background",
+        "references": [],
+        "terminal_hint": "#400013"
+      },
+      {
+        "alias": "--rui-color-action-blue",
+        "references": [],
+        "terminal_hint": "#0666eb"
+      },
+      {
+        "alias": "--rui-color-action-label",
+        "references": [],
+        "terminal_hint": "#400013"
+      },
+      {
+        "alias": "--rui-color-action-photo-header-background",
+        "references": [],
+        "terminal_hint": "#ea035d"
+      },
+      {
+        "alias": "--rui-color-action-photo-header-text",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rui-color-background",
+        "references": [],
+        "terminal_hint": "#111112"
+      },
+      {
+        "alias": "--rui-color-black",
+        "references": [],
+        "terminal_hint": "#191c1f"
+      },
+      {
+        "alias": "--rui-color-blue",
+        "references": [],
+        "terminal_hint": "#7f84f6"
+      },
+      {
+        "alias": "--rui-color-brown",
+        "references": [],
+        "terminal_hint": "#ac816e"
+      },
+      {
+        "alias": "--rui-color-button-disabled-text",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.2)"
+      },
+      {
+        "alias": "--rui-color-cyan",
+        "references": [],
+        "terminal_hint": "#0cd9e6"
+      },
+      {
+        "alias": "--rui-color-danger",
+        "references": [],
+        "terminal_hint": "#ee4a59"
+      },
+      {
+        "alias": "--rui-color-deep-grey",
+        "references": [],
+        "terminal_hint": "#6790b8"
+      },
+      {
+        "alias": "--rui-color-deep-pink",
+        "references": [],
+        "terminal_hint": "#ff5777"
+      },
+      {
+        "alias": "--rui-color-deep-purple",
+        "references": [],
+        "terminal_hint": "#805cff"
+      },
+      {
+        "alias": "--rui-color-down",
+        "references": [],
+        "terminal_hint": "#ff453a"
+      },
+      {
+        "alias": "--rui-color-foreground",
+        "references": [],
+        "terminal_hint": "#f4f4f4"
+      },
+      {
+        "alias": "--rui-color-green",
+        "references": [],
+        "terminal_hint": "#30d158"
+      },
+      {
+        "alias": "--rui-color-grey-10",
+        "references": [],
+        "terminal_hint": "#dfe3e7"
+      },
+      {
+        "alias": "--rui-color-grey-2",
+        "references": [],
+        "terminal_hint": "#f7f7f7"
+      },
+      {
+        "alias": "--rui-color-grey-20",
+        "references": [],
+        "terminal_hint": "#bbc4cd"
+      },
+      {
+        "alias": "--rui-color-grey-5",
+        "references": [],
+        "terminal_hint": "#f4f5f6"
+      },
+      {
+        "alias": "--rui-color-grey-50",
+        "references": [],
+        "terminal_hint": "#818c96"
+      },
+      {
+        "alias": "--rui-color-grey-8",
+        "references": [],
+        "terminal_hint": "#edeff2"
+      },
+      {
+        "alias": "--rui-color-grey-tone-10",
+        "references": [],
+        "terminal_hint": "#3b3b3d"
+      },
+      {
+        "alias": "--rui-color-grey-tone-2",
+        "references": [],
+        "terminal_hint": "#111112"
+      },
+      {
+        "alias": "--rui-color-grey-tone-20",
+        "references": [],
+        "terminal_hint": "#525254"
+      },
+      {
+        "alias": "--rui-color-grey-tone-5",
+        "references": [],
+        "terminal_hint": "#19191a"
+      },
+      {
+        "alias": "--rui-color-grey-tone-50",
+        "references": [],
+        "terminal_hint": "#a1a1a3"
+      },
+      {
+        "alias": "--rui-color-grey-tone-8",
+        "references": [],
+        "terminal_hint": "#272729"
+      },
+      {
+        "alias": "--rui-color-grouped-background",
+        "references": [],
+        "terminal_hint": "#1c1c1e"
+      },
+      {
+        "alias": "--rui-color-indigo",
+        "references": [],
+        "terminal_hint": "#6765e7"
+      },
+      {
+        "alias": "--rui-color-input-error",
+        "references": [],
+        "terminal_hint": "#330e0c"
+      },
+      {
+        "alias": "--rui-color-input-error-focus",
+        "references": [],
+        "terminal_hint": "#421210"
+      },
+      {
+        "alias": "--rui-color-light-blue",
+        "references": [],
+        "terminal_hint": "#2bb2ff"
+      },
+      {
+        "alias": "--rui-color-light-green",
+        "references": [],
+        "terminal_hint": "#5ad024"
+      },
+      {
+        "alias": "--rui-color-lime",
+        "references": [],
+        "terminal_hint": "#cbdc0f"
+      },
+      {
+        "alias": "--rui-color-modal-overlay",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, 0.4)"
+      },
+      {
+        "alias": "--rui-color-neutral",
+        "references": [],
+        "terminal_hint": "#8f8f92"
+      },
+      {
+        "alias": "--rui-color-on-accent",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rui-color-on-shimmer",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.5)"
+      },
+      {
+        "alias": "--rui-color-orange",
+        "references": [],
+        "terminal_hint": "#ff9f0a"
+      },
+      {
+        "alias": "--rui-color-pink",
+        "references": [],
+        "terminal_hint": "#ff50a4"
+      },
+      {
+        "alias": "--rui-color-popover-background",
+        "references": [],
+        "terminal_hint": "#3b3b3d"
+      },
+      {
+        "alias": "--rui-color-progress-neutral",
+        "references": [],
+        "terminal_hint": "#667dff"
+      },
+      {
+        "alias": "--rui-color-purple",
+        "references": [],
+        "terminal_hint": "#bf5af2"
+      },
+      {
+        "alias": "--rui-color-red",
+        "references": [],
+        "terminal_hint": "#ff453a"
+      },
+      {
+        "alias": "--rui-color-red-action-background",
+        "references": [],
+        "terminal_hint": "#330e0c"
+      },
+      {
+        "alias": "--rui-color-search-background",
+        "references": [],
+        "terminal_hint": "#303033"
+      },
+      {
+        "alias": "--rui-color-segmented-active",
+        "references": [],
+        "terminal_hint": "#525254"
+      },
+      {
+        "alias": "--rui-color-segmented-background",
+        "references": [],
+        "terminal_hint": "#3b3b3d"
+      },
+      {
+        "alias": "--rui-color-shimmer",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.2)"
+      },
+      {
+        "alias": "--rui-color-success",
+        "references": [],
+        "terminal_hint": "#1ac097"
+      },
+      {
+        "alias": "--rui-color-swipeable-card-background",
+        "references": [],
+        "terminal_hint": "#1c1c1e"
+      },
+      {
+        "alias": "--rui-color-teal",
+        "references": [],
+        "terminal_hint": "#13d1a3"
+      },
+      {
+        "alias": "--rui-color-terracotta",
+        "references": [],
+        "terminal_hint": "#ff7a40"
+      },
+      {
+        "alias": "--rui-color-up",
+        "references": [],
+        "terminal_hint": "#30d158"
+      },
+      {
+        "alias": "--rui-color-warning",
+        "references": [],
+        "terminal_hint": "#ff9f0a"
+      },
+      {
+        "alias": "--rui-color-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rui-color-widget-background",
+        "references": [],
+        "terminal_hint": "#242426"
+      },
+      {
+        "alias": "--rui-color-yellow",
+        "references": [],
+        "terminal_hint": "#ffd60a"
+      },
+      {
+        "alias": "--website-color-grouped-background",
+        "references": [],
+        "terminal_hint": "#1c1c1e"
+      },
+      {
+        "alias": "--website-color-rating",
+        "references": [],
+        "terminal_hint": "#ffd60a"
+      },
+      {
+        "alias": "--website-color-widget-background",
+        "references": [],
+        "terminal_hint": "rgba(36,36,38,0.88)"
+      },
+      {
+        "alias": "--website-sales-banner-background",
+        "references": [],
+        "terminal_hint": "#1227fd"
+      },
+      {
+        "alias": "--website-sales-banner-text",
+        "references": [],
+        "terminal_hint": "#f4f4f4"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 13,
+      "component": 4,
+      "core": 67
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "slug": "adidas",
+  "semantic_vars": [
+    {
+      "name": "--icon-primary-color",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow",
+      "property": "box-shadow",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow {box-shadow:var(--button-main-onlight-spacing-all-offset-outerbox) var(--button-main-onlight-spacing-all-offset-outerbox) 0 0 #fff,var(--butto"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow:hover",
+      "property": "box-shadow",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--primary.stripes_v7_gl-cta--dropshadow:hover {box-shadow:var(--button-main-onlight-spacing-all-offset-outerbo"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow",
+      "property": "box-shadow",
+      "hex": "#000000",
+      "rule_snippet": ".stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow {box-shadow:var(--button-main-onlight-spacing-all-offset-outerbox) var(--button-main-onlight-spacing-all-offset-outerbox) 0 0 #000,var("
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow:hover",
+      "property": "box-shadow",
+      "hex": "#000000",
+      "rule_snippet": ".stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--primary-ondark.stripes_v7_gl-cta--dropshadow:hover {box-shadow:var(--button-main-onlight-spacing-all-"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow",
+      "property": "box-shadow",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow {box-shadow:var(--button-main-onlight-spacing-all-offset-outerbox) var(--button-main-onlight-spacing-all-offset-outerbox) 0 0 #fff,var(--bu"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow:hover",
+      "property": "box-shadow",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--membership.stripes_v7_gl-cta--dropshadow:hover {box-shadow:var(--button-main-onlight-spacing-all-offset-o"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow",
+      "property": "box-shadow",
+      "hex": "#000000",
+      "rule_snippet": ".stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow {box-shadow:var(--button-main-onlight-spacing-all-offset-outerbox) var(--button-main-onlight-spacing-all-offset-outerbox) 0 0 #000,v"
+    },
+    {
+      "selector": ".stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow:hover",
+      "property": "box-shadow",
+      "hex": "#000000",
+      "rule_snippet": ".stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow:focus-visible,.stripes_v7_gl-cta--membership-ondark.stripes_v7_gl-cta--dropshadow:hover {box-shadow:var(--button-main-onlight-spacin"
+    },
+    {
+      "selector": "._promo-banner_1irxx_82 ._promo-banner-header_1irxx_108._with-category-link_1irxx_120:hover:before",
+      "property": "border-color",
+      "hex": "#000000",
+      "rule_snippet": "._promo-banner_1irxx_82 ._promo-banner-header_1irxx_108._with-category-link_1irxx_120:hover:before {z-index:1002;border-color:#000;top:0;right:0;bottom:0;left:0}"
+    },
+    {
+      "selector": "._promo-banner_1irxx_82 ._promo-banner-header_1irxx_108._with-category-link_1irxx_120:hover:after",
+      "property": "border-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "._promo-banner_1irxx_82 ._promo-banner-header_1irxx_108._with-category-link_1irxx_120:hover:after {z-index:1001;border-color:#fff;top:1px;right:1px;bottom:1px;left:1px}"
+    },
+    {
+      "selector": "._link-card_516pc_143",
+      "property": "background",
+      "hex": "#ECEFF1",
+      "rule_snippet": "._link-card_516pc_143 {display:flex;width:100%;flex-direction:row-reverse;background:var(--backgrounds-gl-color-background-alternative,#eceff1)}"
+    },
+    {
+      "selector": "._product-card__wishlist_l2teq_94 button[aria-pressed]:focus-visible",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "._product-card__wishlist_l2teq_94 button[aria-pressed]:focus-visible {outline:1px dashed #000!important}"
+    },
+    {
+      "selector": ".bxc.bx-base .bx-row-submit .bx-button",
+      "property": "background-color",
+      "hex": "#666666",
+      "rule_snippet": ".bxc.bx-base .bx-row-submit .bx-button {width:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;position:relative;text-align:center;cursor:pointer;background-color:#666;border:none;fon"
+    },
+    {
+      "selector": ".bxc.bx-base .bx-row-submit .bx-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".bxc.bx-base .bx-row-submit .bx-button {width:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;position:relative;text-align:center;cursor:pointer;background-color:#666;border:none;fon"
+    },
+    {
+      "selector": ".bxc.bx-base .bx-row-video .bx-video-btn",
+      "property": "fill",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".bxc.bx-base .bx-row-video .bx-video-btn {position:absolute;top:3px;width:38px;height:38px;padding:5px;border:none;background-color:transparent;fill:#fff;z-index:5;pointer-events:auto}"
+    },
+    {
+      "selector": ".bxc.bx-ally .bx-row-checkbox .bx-checkelem:focus+.bx-checkshape,.bxc.bx-ally .bx-row-input [type=\"\"]:focus,.bxc.bx-ally .bx-row-input [type=color]:focus,.bxc.bx-ally .bx-row-input [type=date]:focus,.bxc.bx-ally .bx-row-input [type=datetime-local]:focus,.bxc.bx-ally .bx-row-input [type=datetime]:focus,.bxc.bx-ally .bx-row-input [type=email]:focus,.bxc.bx-ally .bx-row-input [type=month]:focus,.bxc.bx-ally .bx-row-input [type=number]:focus,.bxc.bx-ally .bx-row-input [type=password]:focus,.bxc.bx-ally .bx-row-input [type=search]:focus,.bxc.bx-ally .bx-row-input [type=tel]:focus,.bxc.bx-ally .bx-row-input [type=text]:focus,.bxc.bx-ally .bx-row-input [type=time]:focus,.bxc.bx-ally .bx-row-input [type=url]:focus,.bxc.bx-ally .bx-row-input [type=week]:focus,.bxc.bx-ally .bx-row-radio .bx-radioelem:focus+.bx-radioshape,.bxc.bx-ally .bx-row-select .bx-selectelem:focus,.bxc.bx-ally .bx-row-submit .bx-button:focus,.bxc.bx-ally .bx-row-textarea .bx-textarea:focus,.bxc.bx-ally .bx-row-video .bx-video-btn:focus,.bxc.bx-ally a:focus,.bxc.bx-ally button:focus,.bxc.bx-ally form:focus",
+      "property": "outline",
+      "hex": "#91C7ED",
+      "rule_snippet": ".bxc.bx-ally .bx-row-checkbox .bx-checkelem:focus+.bx-checkshape,.bxc.bx-ally .bx-row-input [type=\"\"]:focus,.bxc.bx-ally .bx-row-input [type=color]:focus,.bxc.bx-ally .bx-row-input [type=date]:focus,."
+    },
+    {
+      "selector": "._cta--PxC_1rb5b_5:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "._cta--PxC_1rb5b_5:hover {color:#000}"
+    },
+    {
+      "selector": "._cta_1olyd_17:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "._cta_1olyd_17:hover {color:#000}"
+    },
+    {
+      "selector": "._member-panel-cta-container_t756w_1._member-panel-cta-container--border_t756w_11",
+      "property": "border-bottom",
+      "hex": "#D3D7DA",
+      "rule_snippet": "._member-panel-cta-container_t756w_1._member-panel-cta-container--border_t756w_11 {border-bottom:1px solid #d3d7da}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#000000",
+      "count": 658,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 71,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#ECEFF1",
+      "count": 30,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#91C7ED",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#A0A0A0",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#A1A1A1",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0066FF",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#767677",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E32B2B",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F3F3F3",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D3D7DA",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E9A6A6",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFD200",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000040",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0081C7",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00AC37",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#0286CD",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#1877F2",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#1DA1F2",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#3175DE",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#34A853",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#3A98FB",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#400090",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#408267",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4285F4",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#464545",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4680C2",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#666666",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#69C9D0",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#C4C4C4",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 50,
+    "by_role": {
+      "chromatic": 8,
+      "neutral": 10,
+      "primary": 1,
+      "selector": 19,
+      "svg_pattern": 12
+    }
+  }
+}

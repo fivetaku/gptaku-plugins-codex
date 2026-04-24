@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ferrari — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans:"Pretendard Variable","Inter",-apple-system,sans-serif;
+    --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+    --bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;
+    --border:#e4e4e7;--border-str:#d4d4d8;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem;
+    --brand-color:#DA0000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  a{color:inherit;text-decoration:none;}code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout--warn{background:#fef2f2;border-color:#fecaca;border-left-color:#dc2626;color:#991b1b;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout--warn b{color:#7f1d1d;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;}
+  .sw--l{color:#09090b;}.sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .na-section{background:var(--muted);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 28px;max-width:820px;font-size:13px;color:var(--muted-fg);line-height:1.6;}
+  .na-section strong{color:var(--fg);}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .code-pane{display:none;}.code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}.dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}.dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+  @media (max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.dd-grid,.qs__grid{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Ferrari</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#colors"><span class="toc__num">02</span>컬러</a></li>
+        <li><a href="#components"><span class="toc__num">03</span>컴포넌트</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">04</span>CSS 스니펫</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">05</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/ferrari/<br>design.md<br>2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Ferrari <span class="sub">— CSS 파싱 데이터 없음</span></h1>
+      <p class="hero__sub">ferrari.com은 정적 CSS 파싱으로 어떤 chromatic 컬러도, font-family도 감지되지 않았다. 극도로 절제된 레이아웃 — 그리고 레드는 로고와 핵심 accent에만 나타난다.</p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="ferrari.com — 실제 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Ferrari처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 (시각 관찰)</span>
+            <code>body {
+  font-family:
+    <b>"Neue Haas Grotesk"</b>,
+    "Helvetica Neue",
+    Helvetica, Arial,
+    sans-serif;
+  font-weight: <b>400</b>;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#1A1A1A</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · Rosso Corsa (브랜드)</span>
+            <code>:root {
+  /* 브랜드 가이드 기반 */
+  /* CSS 미확인 */
+  --brand: <b>#DA0000</b>;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것:</b> Ferrari 레드를 UI 전반에 과용하는 것. CSS 파싱에서 어떤 chromatic 컬러도 감지되지 않을 만큼 레드는 극도로 절제되어 있다. 레드는 로고와 핵심 accent에만.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Default Theme</div>
+          <div class="stat__val">Light</div>
+          <div class="stat__hint">시각 관찰 기반</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand Color</div>
+          <div class="stat__val stat__val--mono" style="color:#DA0000;">#DA0000</div>
+          <div class="stat__hint">Rosso Corsa (브랜드 가이드)</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">CSS Data</div>
+          <div class="stat__val" style="font-size:15px;">없음</div>
+          <div class="stat__hint">정적 파싱 한계</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Font (CSS)</div>
+          <div class="stat__val" style="font-size:15px;">미감지</div>
+          <div class="stat__hint">JS 렌더링 추정</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">CSS 커스텀 프로퍼티를 직접 파싱했으나 Ferrari 사이트는 정적 파싱으로 데이터가 추출되지 않았다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://ferrari.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">N/A — 커스텀 프로퍼티 시스템 미감지</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+        <div class="prov__row"><span class="prov__k">한계</span><span class="prov__v">고도로 인라인화 또는 JS 렌더링 — 정적 CSS 파싱 제한</span></div>
+      </div>
+      <div class="callout callout--warn" style="margin-top:20px;">
+        <b>데이터 없음 경고:</b> ferrari.com CSS 파싱 결과 chromatic 컬러 후보 0개, font-family 0개. 이 리포트의 색상과 폰트 정보는 공개 브랜드 가이드라인 기반이며 CSS 데이터로 확인되지 않았다. <code>#DA0000</code>은 Rosso Corsa 브랜드 레드이나 CSS 미확인.
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">02</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">CSS 파싱 데이터 없음. 아래 값은 공개 브랜드 가이드라인 기반 참고값이며 CSS에서 확인되지 않았다.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Rosso Corsa + Monochrome (브랜드 가이드 참고)</b></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d" style="background:#DA0000;"><span class="n">Rosso Corsa</span>#DA0000</div>
+          <div class="sw sw--l" style="background:#FFFFFF;"><span class="n">White (추정)</span>#FFFFFF</div>
+          <div class="sw sw--d" style="background:#1A1A1A;"><span class="n">Near-black (추정)</span>#1A1A1A</div>
+        </div>
+      </div>
+
+      <div class="callout callout--warn">
+        <b>중요:</b> 위 컬러는 CSS 파싱 데이터가 아니다. <code>#DA0000</code>은 Ferrari의 공개 브랜드 레드(Rosso Corsa)이나 실제 사이트 CSS에서 확인되지 않았다. 이 값을 확정적으로 사용하지 말 것.
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">03</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">CSS 데이터가 없으므로 시각 관찰 기반 추정. 실제 클래스명·토큰은 확인 불가.</p>
+      <div class="na-section">
+        <strong>Hero 패턴 (시각 관찰):</strong> 차량 전체 폭 영상/사진 → 그라디언트 오버레이(어두운→투명) → H1 흰 텍스트 → Discover / Configure CTA 버튼. CTA는 <code>#DA0000</code> 배경 또는 <code>transparent + white border</code> 패턴으로 보임. 실제 CSS 확인 불가.
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">04</div>
+      <h2 class="section__title">CSS 스니펫</h2>
+      <p class="section__lede">CSS 파싱 데이터가 없어 브랜드 가이드라인 기반 추정값이다. 사용 시 주의.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" data-tab="css">CSS</button>
+          <button class="code-copy" data-copy>복사</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre>/* Ferrari — copy into your root stylesheet */
+/* ⚠️ CSS 파싱 데이터 없음. 브랜드 가이드라인 기반 추정값 */
+:root {
+  /* Fonts (CSS 미감지 — 시각 관찰 기반) */
+  --ferrari-font-family: "Neue Haas Grotesk", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --ferrari-font-weight-normal: 400;
+  --ferrari-font-weight-bold: 700;
+
+  /* Brand (공개 브랜드 가이드 — CSS 미확인) */
+  --ferrari-color-rosso-corsa: #DA0000;
+
+  /* Surfaces (추정) */
+  --ferrari-bg-page: #FFFFFF;
+  --ferrari-bg-dark: #1A1A1A;
+  --ferrari-text: #1A1A1A;
+  --ferrari-text-on-dark: #FFFFFF;
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">05</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Ferrari 디자인 철학 — CSS 데이터 없이 관찰 가능한 원칙.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>Ferrari 레드를 로고, 주요 CTA에만 절제적으로 사용</li>
+            <li>Hero는 차량 전체 폭 고화질 사진/영상으로 채우기</li>
+            <li>레이아웃 최대한 여백 넓게, 그리드 정교하게</li>
+            <li>모델명을 그대로 headline으로 사용</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>Ferrari 레드를 배경 전체에 쓰지 말 것</li>
+            <li>과장된 마케팅 문구 쓰지 말 것</li>
+            <li>CSS 데이터 없는 값을 확정적으로 사용하지 말 것</li>
+            <li>레이아웃을 복잡하게 만들지 말 것 — 미니멀이 핵심</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<footer class="rfoot">
+  <span>insane-design / ferrari</span>
+  <span class="kr">CSS 파싱 데이터 없음 — 브랜드 가이드 기반 참고값</span>
+  <span>2026-04-13</span>
+</footer>
+<script>
+  document.querySelectorAll('.code-tabs button[data-tab]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const tab=btn.dataset.tab;
+      btn.closest('.code-export').querySelectorAll('.code-tabs button[data-tab]').forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      btn.closest('.code-export').querySelectorAll('.code-pane').forEach(p=>p.classList.remove('is-active'));
+      btn.closest('.code-export').querySelector('#pane-'+tab).classList.add('is-active');
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const active=btn.closest('.code-export').querySelector('.code-pane.is-active pre');
+      if(active)navigator.clipboard.writeText(active.textContent).then(()=>{const t=btn.textContent;btn.textContent='복사됨';setTimeout(()=>btn.textContent=t,1400);});
+    });
+  });
+</script>
+</body>
+</html>

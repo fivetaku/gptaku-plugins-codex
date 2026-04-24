@@ -1,0 +1,5 @@
+button,input,optgroup,select,textarea {font: inherit;margin: 0;color: inherit;}.hgf-button {--c360-g-spacing-2: 0px;position: static;display: inline-block;text-align: center;box-sizing: border-box;vertical-align: middle;}:host([variant='trial']) {--sds-c-button-color-background: #2e844a;--sds-c-button-color-border: #2e844a;--sds-c-button-text-color: var(--sds-g-color-brand-inverse-contrast-4);--sds-c-button-color-background-hover: #1c3326;--sds-c-button-color-border-hover: #1c3326;--sds-c-button-text-color-hover: var(
+ --sds-g-color-brand-inverse-contrast-4
+ );--sds-c-button-color-background-active: #1c3326;--sds-c-button-color-border-active: #1c3326;--sds-c-button-text-color-active: var(
+ --sds-g-color-brand-inverse-contrast-4
+ );--sds-c-button-color-border-focus: #3ba755;--sds-c-button-color-background-focus: #1c3326;}.hgf-button[part~='button']:focus {outline: none;box-shadow: none;}.hgf-button[part~='button']:focus-visible {outline: 5px solid var(--c360-g-color-brand-base-contrast-1);box-shadow: var(--sds-c-button-shadow, var(--sds-s-button-shadow));}.hgf-button[part~='button'][data-variant='tertiary']:focus-visible {background-color: #fff;}

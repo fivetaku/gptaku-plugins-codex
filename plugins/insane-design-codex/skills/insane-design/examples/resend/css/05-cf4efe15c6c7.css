@@ -1,0 +1,68 @@
+.scrollarea {
+--fade-area:30px}
+.scrollarea_inner {
+scrollbar-width:none;
+scroll-timeline-name:--scroller}
+@supports (animation-timeline:scroll()) {
+.scrollarea_inner-horizontal .scrollarea_inner {
+scroll-timeline-axis:x}
+.scrollarea_inner-horizontal .scrollarea_inner:before,.scrollarea_inner-horizontal .scrollarea_inner:after {
+content:"";
+pointer-events:none;
+width:var(--fade-area);
+z-index:9;
+animation-name:fadeHorizontal;
+animation-duration:1s;
+animation-timing-function:linear;
+animation-fill-mode:both;
+animation-timeline:--scroller;
+position:absolute;
+top:0;
+bottom:0}
+.scrollarea_inner-horizontal .scrollarea_inner:before {
+--start:-100%;
+background:linear-gradient(to left, #0000 0%, var(--background) 120%);
+animation-range:0 var(--fade-area);
+left:0;
+transform:translate(0)}
+.scrollarea_inner-horizontal .scrollarea_inner:after {
+background:linear-gradient(to right, #0000 0%, var(--background) 120%);
+animation-range:calc(100% - var(--fade-area)) 100%;
+right:0;
+transform:translate(100%)}
+@keyframes fadeHorizontal {
+0% {
+transform:translateX(var(--start,0))}
+}
+.scrollarea_inner-vertical {
+scroll-timeline-axis:y}
+.scrollarea_inner-vertical .scrollarea_inner:before,.scrollarea_inner-vertical .scrollarea_inner:after {
+content:"";
+pointer-events:none;
+height:var(--fade-area);
+z-index:9;
+animation-name:fadeVertical;
+animation-duration:1s;
+animation-timing-function:linear;
+animation-fill-mode:both;
+animation-timeline:--scroller;
+position:absolute;
+left:0;
+right:0}
+.scrollarea_inner-vertical .scrollarea_inner:before {
+--start:-100%;
+background:linear-gradient(to top, #0000 0%, var(--background) 120%);
+animation-range:0 var(--fade-area);
+top:0;
+transform:translateY(0)}
+.scrollarea_inner-vertical .scrollarea_inner:after {
+background:linear-gradient(to bottom, #0000 0%, var(--background) 120%);
+animation-range:calc(100% - var(--fade-area)) 100%;
+bottom:0;
+transform:translateY(100%)}
+@keyframes fadeVertical {
+0% {
+transform:translateY(var(--start,0))}
+}
+}
+

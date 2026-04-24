@@ -1,0 +1,163 @@
+:host(:focus) {outline: 0;}[part~='button'] {display: var(--sds-c-button-display, inline-flex);position: relative;background: none;background-color: var(
+ --sds-c-button-color-background,
+ var(--sds-s-button-color-background, transparent)
+ );background-clip: border-box;color: var(
+ --sds-c-button-text-color,
+ var(--sds-s-button-text-color, inherit)
+ );padding-left: var(
+ --sds-c-button-spacing-inline-start,
+ var(--sds-c-button-spacing-inline, var(--sds-s-button-spacing-inline))
+ );padding-right: var(
+ --sds-c-button-spacing-inline-end,
+ var(--sds-c-button-spacing-inline, var(--sds-s-button-spacing-inline))
+ );padding-top: var(
+ --sds-c-button-spacing-block-start,
+ var(--sds-c-button-spacing-block, var(--sds-s-button-spacing-block))
+ );padding-bottom: var(
+ --sds-c-button-spacing-block-start,
+ var(--sds-c-button-spacing-block, var(--sds-s-button-spacing-block))
+ );border-width: var(
+ --sds-c-button-sizing-border,
+ var(--sds-s-button-sizing-border, 1px)
+ );border-style: solid;border-color: var(
+ --sds-c-button-color-border,
+ var(--sds-s-button-color-border, transparent)
+ );border-radius: var(
+ --sds-c-button-radius-border,
+ var(--sds-c-button-radius-border, 4px)
+ );box-shadow: var(--sds-c-button-shadow, var(--sds-s-button-shadow));width: var(--sds-c-button-width);line-height: var(--sds-c-button-line-height);white-space: normal;user-select: none;align-items: center;text-decoration: var(--sds-c-button-text-decoration, none);appearance: none;}[part~='button']:hover,[part~='button']:focus {--sds-c-button-text-color: var(
+ --sds-c-button-text-color-hover,
+ var(--sds-s-button-text-color-hover, #0176d3)
+ );--sds-c-button-color-background: var(
+ --sds-c-button-color-background-hover,
+ var(--sds-s-button-color-background-hover)
+ );--sds-c-button-color-border: var(
+ --sds-c-button-color-border-hover,
+ var(--sds-s-button-color-border-hover)
+ );cursor: pointer;}[part~='button']:focus {--sds-c-button-color-background: var(
+ --sds-c-button-color-background-focus,
+ var(--sds-s-button-color-background-focus)
+ );--sds-c-button-color-border: var(
+ --sds-c-button-color-border-focus,
+ var(--sds-s-button-color-border-focus, #0176d3)
+ );--sds-c-button-shadow: var(
+ --sds-c-button-shadow-focus,
+ var(--sds-s-button-shadow-focus, #0176d3 0 0 3px)
+ );outline: 0;}[part~='button']:active {--sds-c-button-text-color: var(
+ --sds-c-button-text-color-active,
+ var(--sds-s-button-text-color-active, currentColor)
+ );--sds-c-button-color-background: var(
+ --sds-c-button-color-background-active,
+ var(--sds-s-button-color-background-active)
+ );--sds-c-button-color-border: var(
+ --sds-c-button-color-border-active,
+ var(--sds-s-button-color-border-active, #0176d3)
+ );}[part~='button']:disabled {--sds-c-button-text-color: var(--sds-c-button-text-color-disabled, #939393);--sds-c-button-color-background: var(
+ --sds-c-button-color-background-disabled
+ );--sds-c-button-color-border: var(--sds-c-button-color-border-disabled);}[part~='button']:disabled * {pointer-events: none;}:host {font-size: var(--c360-g-font-size-3);font-family: var(--c360-g-font-family-sans);font-weight: var(--c360-g-font-weight-bold);--sds-c-button-spacing-block: var(--c360-g-spacing-2);--sds-c-button-spacing-inline: var(--c360-g-spacing-5);--sds-c-button-radius-border: var(--c360-g-radius-border-2);--sds-c-button-text-color-disabled: var(
+ --c360-g-color-brand-inverse-contrast-4
+ );--sds-c-button-color-background-disabled: var(
+ --c360-g-color-palette-neutral-65
+ );--sds-c-button-color-border-disabled: var(
+ --c360-g-color-palette-neutral-65
+ );--sds-c-button-sizing-border: var(--c360-g-radius-border-1);--sds-c-icon-sizing-width: 16px;--sds-c-icon-sizing-border: 0;--c360-g-kx-speed-multiplier-value: 1;--c360-g-kx-reduced-motion-multiplier-os: 1;--c360-g-kx-reduced-motion-multiplier-simulation: 1;--c360-g-kx-reduced-motion-multiplier: calc(
+ var(--c360-g-kx-reduced-motion-multiplier-os) *
+ var(--c360-g-kx-reduced-motion-multiplier-simulation)
+ );--c360-g-kx-duration-x-long-init: 600ms;--c360-g-kx-duration-long-init: 400ms;--c360-g-kx-duration-normal-init: 250ms;--c360-g-kx-duration-short-init: 150ms;--c360-g-kx-duration-x-short-init: 75ms;--c360-g-kx-duration-x-long-base: var(--c360-g-kx-duration-x-long-init);--c360-g-kx-duration-long-base: var(--c360-g-kx-duration-long-init);--c360-g-kx-duration-normal-base: var(--c360-g-kx-duration-normal-init);--c360-g-kx-duration-short-base: var(--c360-g-kx-duration-short-init);--c360-g-kx-duration-x-short-base: var(--c360-g-kx-duration-x-short-init);--c360-g-kx-duration-x-long: calc(
+ var(--c360-g-kx-reduced-motion-multiplier) *
+ var(--c360-g-kx-duration-x-long-base) /
+ var(--c360-g-kx-speed-multiplier-value)
+ );--c360-g-kx-duration-long: calc(
+ var(--c360-g-kx-reduced-motion-multiplier) *
+ var(--c360-g-kx-duration-long-base) /
+ var(--c360-g-kx-speed-multiplier-value)
+ );--c360-g-kx-duration-normal: calc(
+ var(--c360-g-kx-reduced-motion-multiplier) *
+ var(--c360-g-kx-duration-normal-base) /
+ var(--c360-g-kx-speed-multiplier-value)
+ );--c360-g-kx-duration-short: calc(
+ var(--c360-g-kx-reduced-motion-multiplier) *
+ var(--c360-g-kx-duration-short-base) /
+ var(--c360-g-kx-speed-multiplier-value)
+ );--c360-g-kx-duration-x-short: calc(
+ var(--c360-g-kx-reduced-motion-multiplier) *
+ var(--c360-g-kx-duration-x-short-base) /
+ var(--c360-g-kx-speed-multiplier-value)
+ );--c360-g-kx-ease-none-init: cubic-bezier(0, 0, 1, 1);--c360-g-kx-ease-in-init: cubic-bezier(
+ 0.3,
+ 0,
+ 1,
+ 0.3
+ );--c360-g-kx-ease-out-init: cubic-bezier(
+ 0,
+ 0.3,
+ 0.15,
+ 1
+ );--c360-g-kx-ease-in-out-init: cubic-bezier(
+ 0.3,
+ 0,
+ 0.15,
+ 1
+ );--c360-g-kx-ease-under-init: cubic-bezier(
+ 0.7,
+ 0,
+ 0.7,
+ -0.75
+ );--c360-g-kx-ease-over-init: cubic-bezier(
+ 0.3,
+ 1.75,
+ 0.3,
+ 1
+ );--c360-g-kx-ease-none: var(--c360-g-kx-ease-none-init);--c360-g-kx-ease-in: var(--c360-g-kx-ease-in-init);--c360-g-kx-ease-out: var(--c360-g-kx-ease-out-init);--c360-g-kx-ease-in-out: var(--c360-g-kx-ease-in-out-init);--c360-g-kx-ease-under: var(--c360-g-kx-ease-under-init);--c360-g-kx-ease-over: var(--c360-g-kx-ease-over-init);}:host([variant='primary']) {--sds-c-button-color-background: var(--c360-g-color-palette-blue-50);--sds-c-button-color-border: var(--c360-g-color-palette-blue-50);--sds-c-button-text-color: var(--c360-g-color-brand-inverse-contrast-4);--sds-c-button-color-background-hover: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-color-border-hover: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-text-color-hover: var(
+ --c360-g-color-brand-inverse-contrast-4
+ );--sds-c-button-color-background-active: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-color-border-active: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-text-color-active: var(
+ --c360-g-color-brand-inverse-contrast-4
+ );--sds-c-button-color-background-focus: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-color-border-focus: var(
+ --c360-g-color-palette-cloud-blue-20
+ );}:host [part~='button']:focus {outline: 5px solid var(--c360-g-color-brand-base-contrast-1);}:host([variant='secondary']) {--sds-c-button-color-background: transparent;--sds-c-button-color-border: var(--c360-g-color-palette-blue-50);--sds-c-button-text-color: var(--c360-g-color-palette-blue-50);--sds-c-button-color-background-hover: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-hover: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-text-color-hover: var(--c360-g-color-palette-cloud-blue-20);--sds-c-button-color-background-active: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-active: var(
+ --c360-g-color-palette-cloud-blue-20
+ );--sds-c-button-text-color-active: var(--c360-g-color-palette-cloud-blue-20);--sds-c-button-color-background-focus: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-focus: var(
+ --c360-g-color-palette-cloud-blue-20
+ );}:host([variant='tertiary']) {--sds-c-button-text-color: var(--c360-g-color-palette-blue-50);--sds-c-button-color-background-hover: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-hover: transparent;--sds-c-button-text-color-hover: var(--c360-g-color-palette-blue-30);--sds-c-button-color-background-active: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-active: transparent;--sds-c-button-text-color-active: var(--c360-g-color-palette-blue-30);--sds-c-button-color-background-focus: var(
+ --c360-g-color-palette-cloud-blue-95
+ );--sds-c-button-color-border-focus: transparent;}:host([size='hero']) {font-size: var(--c360-g-font-size-3);--sds-c-button-spacing-block: var(--c360-g-spacing-3);--sds-c-button-spacing-inline: var(--c360-g-spacing-6);}:host([size='small']) {font-size: var(--c360-g-font-size-2);--sds-c-button-spacing-block: var(--c360-g-spacing-1);--sds-c-button-spacing-inline: var(--c360-g-spacing-3);--sds-c-icon-sizing-width: 12px;--sds-c-button-line-height: 1.15;}:host([size='small']) [icon-only] {--sds-c-button-spacing-block: var(--c360-g-spacing-2);--sds-c-button-spacing-inline: var(--c360-g-spacing-2);}:host([size='default']) [icon-only] {--sds-c-button-spacing-block: var(--c360-g-spacing-3);--sds-c-button-spacing-inline: var(--c360-g-spacing-3);}:host([size='hero']) [icon-only] {--sds-c-button-spacing-block: var(--c360-g-spacing-4);--sds-c-button-spacing-inline: var(--c360-g-spacing-4);}[part~='button'] {max-width: 100%;}::slotted([slot='end']) {margin-inline-start: var(--c360-g-spacing-2);}[icon-only] ::slotted([slot='end']) {margin-inline-start: 0;}::slotted([slot='start']) {margin-inline-end: var(--c360-g-spacing-2);}[icon-only] ::slotted([slot='start']) {margin-inline-end: 0;}:host([kx-type='ripple']) {--c360-c-button-kx-ripple-size: 20px;--c360-c-button-kx-pointer-position: 50%;}:host([kx-type='ripple']) [part='button'] {transition: 0.08s all ease-out;}:host([kx-type='ripple']) [part='button']:active {transform: scale(0.95);}:host([variant='tertiary'][kx-type='ripple']) [part='button']::before,:host([kx-type='ripple']) [part='button'] [part='kx-ripple'] {position: absolute;border-radius: var(--sds-c-button-radius-border);top: calc(-1 * var(--sds-c-button-sizing-border));left: calc(-1 * var(--sds-c-button-sizing-border));width: calc(100% + var(--sds-c-button-sizing-border) * 2);height: calc(100% + var(--sds-c-button-sizing-border) * 2);}:host([kx-type='ripple']) [part='kx-ripple']::after {content: '';position: absolute;width: var(--c360-c-button-kx-ripple-size);height: var(--c360-c-button-kx-ripple-size);top: 0;left: 0;border-radius: 50%;opacity: 0;background-color: var(--c360-g-color-brand-inverse-contrast-4);}:host([kx-type='ripple']) [part='kx-ripple'] {overflow: hidden;}:host([variant='secondary'][kx-type='ripple']) [part='kx-ripple']::after,:host([variant='tertiary'][kx-type='ripple']) [part='kx-ripple']::after {background-color: var(--c360-g-color-palette-cloud-blue-50);}:host([variant='tertiary'][kx-type='ripple']) [part='button']::before {content: '';z-index: -1;transform: scale(0.9);transition: 0.1s transform ease-out;}:host([variant='tertiary'][kx-type='ripple']) [part='button']:hover::before {background-color: var(--c360-g-color-brand-base-3);transform: scale(1);}:host([kx-type='ripple']) [part='button'].sds-kx-is-animating-from-click [part='kx-ripple']::after {top: calc(
+ var(
+ --c360-c-button-kx-pointer-position-y,
+ var(--c360-c-button-kx-pointer-position)
+ ) -
+ var(
+ --c360-c-button-kx-ripple-size,
+ var(--c360-c-button-kx-ripple-size)
+ ) / 2
+ );left: calc(
+ var(
+ --c360-c-button-kx-pointer-position-x,
+ var(--c360-c-button-kx-pointer-position)
+ ) -
+ var(
+ --c360-c-button-kx-ripple-size,
+ var(--c360-c-button-kx-ripple-size)
+ ) / 2
+ );animation: c360-kx-button_ripple var(--c360-g-kx-duration-normal) cubic-bezier(0.35, 0.01, 0.62, 0.99);}@media (prefers-reduced-motion: reduce) {:host([kx-type='ripple']) [part='button'].sds-kx-is-animating-from-click [part='kx-ripple']::after {animation: none;}}@media (prefers-reduced-motion: reduce) {[kx-scope^='button-'][kx-type='ripple']:focus {transition: none;}}@media (hover: none) {:host([kx-type='ripple']) [part='button']:active {transform: scale(0.97);}}@media (prefers-reduced-motion: reduce) {:host([kx-type='ripple']) [part='button']:active {transform: none;}}@media (hover: hover) and (pointer: fine) {:host([kx-type='ripple']) [part='button']:hover {transform: scale(1);}:host([kx-type='ripple']) [part='button']:active {transform: scale(0.97);}}@media (prefers-reduced-motion: reduce) {:host([kx-type='ripple']) [part='button']:hover {transform: none;}}@keyframes c360-kx-button_ripple {0% {opacity: 0.35;transform: scale(1);}100% {opacity: 0;transform: scale(7);}}

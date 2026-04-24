@@ -1,0 +1,296 @@
+{
+  "fontsize_top": [
+    [
+      "14px",
+      52
+    ],
+    [
+      "16px",
+      35
+    ],
+    [
+      "13px",
+      25
+    ],
+    [
+      "24px",
+      22
+    ],
+    [
+      "12px",
+      22
+    ],
+    [
+      "20px",
+      19
+    ],
+    [
+      ".875rem",
+      19
+    ],
+    [
+      "18px",
+      13
+    ],
+    [
+      "1rem",
+      13
+    ],
+    [
+      "1em",
+      12
+    ],
+    [
+      "48px",
+      12
+    ],
+    [
+      "40px",
+      11
+    ],
+    [
+      "32px",
+      11
+    ],
+    [
+      "64px",
+      8
+    ],
+    [
+      "56px",
+      8
+    ]
+  ],
+  "radius_top": [
+    [
+      "6px",
+      45
+    ],
+    [
+      "12px",
+      33
+    ],
+    [
+      "9999px",
+      27
+    ],
+    [
+      "8px",
+      19
+    ],
+    [
+      "4px",
+      18
+    ],
+    [
+      "50%",
+      17
+    ],
+    [
+      "100%",
+      10
+    ],
+    [
+      "2px",
+      8
+    ],
+    [
+      "99px",
+      5
+    ],
+    [
+      "16px",
+      4
+    ]
+  ],
+  "maxwidth_top": [
+    [
+      "600px",
+      114
+    ],
+    [
+      "960px",
+      108
+    ],
+    [
+      "768px",
+      19
+    ],
+    [
+      "624px",
+      18
+    ],
+    [
+      "400px",
+      10
+    ],
+    [
+      "640px",
+      8
+    ],
+    [
+      "1024px",
+      7
+    ],
+    [
+      "450px",
+      6
+    ],
+    [
+      "750px",
+      6
+    ],
+    [
+      "360px",
+      5
+    ]
+  ],
+  "breakpoints": {
+    "1248px": 1,
+    "961px": 26,
+    "601px": 25,
+    "1200px": 9,
+    "1600px": 1,
+    "1240px": 1,
+    "1150px": 3,
+    "960px": 84,
+    "768px": 15,
+    "600px": 95,
+    "400px": 6,
+    "375px": 1,
+    "384px": 1,
+    "440px": 2,
+    "1400px": 1,
+    "2300px": 1,
+    "450px": 4,
+    "1201px": 1,
+    "992px": 2,
+    "480px": 1,
+    "540px": 1,
+    "670px": 1,
+    "640px": 7,
+    "1024px": 4,
+    "769px": 2,
+    "1250px": 2,
+    "750px": 6,
+    "610px": 2,
+    "1020px": 1,
+    "1000px": 1,
+    "660px": 1,
+    "800px": 1,
+    "1100px": 1,
+    "650px": 1,
+    "1151px": 1,
+    "1080px": 1,
+    "1036px": 1,
+    "383px": 1,
+    "370px": 1,
+    "500px": 1,
+    "374px": 1,
+    "1120px": 2
+  },
+  "shadow_count": 265,
+  "transition_top": [
+    [
+      ".15s",
+      37
+    ],
+    [
+      ".2s",
+      8
+    ],
+    [
+      "color .15s",
+      7
+    ],
+    [
+      "background .15s ease-out",
+      6
+    ],
+    [
+      "opacity .2s",
+      6
+    ],
+    [
+      "var(--transition)",
+      6
+    ],
+    [
+      ".5s",
+      5
+    ],
+    [
+      "none",
+      5
+    ],
+    [
+      ".3s",
+      4
+    ],
+    [
+      "background .2s",
+      4
+    ]
+  ],
+  "key_vars": {
+    "--ds-gray-400": "var(--ds-gray-200)",
+    "--font-sans": "\"Geist\", Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+    "--font-mono": "\"Geist Mono\", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+    "--font-size": "clamp(24px, var(--computed-font-size), 72px)",
+    "--font-sans-fallback": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+    "--font-mono-fallback": "\"Roboto Mono\", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace",
+    "--font-space-grotesk": "Space Grotesk, var(--font-sans)",
+    "--header-height": "64px",
+    "--shadow-smallest": "0px 2px 4px #0000001a",
+    "--shadow-extra-small": "0px 4px 8px #0000001f",
+    "--shadow-small": "0 5px 10px #0000001f",
+    "--shadow-medium": "0 8px 30px #0000001f",
+    "--shadow-large": "0 30px 60px #0000001f",
+    "--shadow-hover": "0 30px 60px #0000001f",
+    "--shadow-sticky": "0 12px 10px -10px #0000001f",
+    "--ds-gray-1000": "var(--ds-gray-900)",
+    "--ds-gray-100-value": "0, 0%, 95%",
+    "--ds-gray-200-value": "0, 0%, 92%",
+    "--ds-gray-300-value": "0, 0%, 90%",
+    "--ds-gray-400-value": "0, 0%, 92%",
+    "--ds-gray-500-value": "0, 0%, 79%",
+    "--ds-gray-600-value": "0, 0%, 66%",
+    "--ds-gray-700-value": "0, 0%, 56%",
+    "--ds-gray-800-value": "0, 0%, 49%",
+    "--ds-gray-900-value": "0, 0%, 30%",
+    "--ds-gray-1000-value": "0, 0%, 9%",
+    "--ds-gray-alpha-100": "#0000000d",
+    "--ds-gray-alpha-200": "#00000015",
+    "--ds-gray-alpha-300": "#0000001a",
+    "--ds-gray-alpha-400": "#00000014",
+    "--ds-gray-alpha-500": "#00000036",
+    "--ds-gray-alpha-600": "#00000057",
+    "--ds-gray-alpha-700": "#00000070",
+    "--ds-gray-alpha-800": "#00000082",
+    "--ds-gray-alpha-900": "#000000b3",
+    "--ds-gray-alpha-1000": "#000000e8",
+    "--ds-background-100-value": "0, 0%, 100%",
+    "--ds-background-200-value": "0, 0%, 98%",
+    "--ds-gray-100": "hsla(var(--ds-gray-100-value), 1)",
+    "--ds-gray-200": "hsla(var(--ds-gray-200-value), 1)",
+    "--ds-gray-300": "hsla(var(--ds-gray-300-value), 1)",
+    "--ds-gray-500": "hsla(var(--ds-gray-500-value), 1)",
+    "--ds-gray-600": "hsla(var(--ds-gray-600-value), 1)",
+    "--ds-gray-700": "hsla(var(--ds-gray-700-value), 1)",
+    "--ds-gray-800": "hsla(var(--ds-gray-800-value), 1)",
+    "--ds-gray-900": "hsla(var(--ds-gray-900-value), 1)",
+    "--ds-background-100": "hsla(var(--ds-background-100-value), 1)",
+    "--ds-background-200": "hsla(var(--ds-background-200-value), 1)",
+    "--shadow-width-left": "40px",
+    "--shadow-width-right": "40px",
+    "--font-geist-pixel-square": "\"GeistPixelSquare\", Geist Mono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+    "--font-geist-pixel-grid": "\"GeistPixelGrid\", Geist Mono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+    "--font-geist-pixel-circle": "\"GeistPixelCircle\", Geist Mono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+    "--font-geist-pixel-triangle": "\"GeistPixelTriangle\", Geist Mono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+    "--font-geist-pixel-line": "\"GeistPixelLine\", Geist Mono, ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+    "--page-max-width": "calc(100vw - var(--geist-space-gap) * 2)",
+    "--shadow-offset": "4px",
+    "--header-height-collapsed": "64px",
+    "--header-height-expanded": "100px"
+  }
+}

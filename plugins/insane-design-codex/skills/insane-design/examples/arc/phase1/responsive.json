@@ -1,0 +1,35 @@
+{
+  "slug": "arc",
+  "breakpoints": [
+    {
+      "condition": "min-width: 580px",
+      "direction": "min",
+      "value": "580px"
+    },
+    {
+      "condition": "max-width: 800px",
+      "direction": "max",
+      "value": "800px"
+    },
+    {
+      "condition": "min-width: 800px",
+      "direction": "min",
+      "value": "800px"
+    }
+  ],
+  "approach": "mobile-first",
+  "touch": {
+    "min_height_44px": false,
+    "button_heights": [],
+    "input_heights": []
+  },
+  "collapsing": {
+    "nav_collapse": null,
+    "grid_collapse": null,
+    "sidebar_collapse": null
+  },
+  "stats": {
+    "breakpoint_count": 3,
+    "approach": "mobile-first"
+  }
+}

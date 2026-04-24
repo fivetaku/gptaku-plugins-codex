@@ -1,0 +1,248 @@
+@charset "utf-8";
+html,body { min-height:100%; }
+html, body, div, h1, h2, h3, h4, h5, h6, span, object, iframe,
+p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i, a,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary, button,
+time, mark, audio, video {
+    margin:0; padding:0; border:0; outline:0; letter-spacing:-0.02em;
+    font-family: 'SamsungOneKorean', Dotum, '돋움', sans-serif;
+    vertical-align:baseline; background:transparent; word-break: keep-all; /* keep-all 정은정프로 요청사항 */box-sizing: border-box;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+body {
+    line-height:1; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;
+    -webkit-font-smooting:antialiased; -moz-font-smoothing:grayscale;
+}
+input, button, select, optgroup, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+ol, ul, li { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after, q:before, q:after { content:none; }
+
+ins { color:#000; text-decoration:none; background-color:#ff9; }
+
+mark { font-style:italic; color:#000; font-weight:bold; background-color:#ff9; }
+del { text-decoration:line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+table { border-collapse:collapse; border-spacing:0; }
+caption,
+legend { position:absolute; overflow:hidden; border:0; width:1px; height:1px; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); }/* 22-12-27 웹 접근성 */
+em { font-style:normal; }
+hr { display:block; height:1px; margin:1em 0; padding:0; border:0; border-top:1px solid #cccccc; }
+
+span, strong, input, select { vertical-align:middle; }
+strong { font-weight:bold; }
+
+/* Placeholder */
+/* Webkit */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { font-size:13px; color:#666; font-weight:300; }
+/* Firefox 4-18 */
+input:-moz-placeholder,
+textarea:-moz-placeholder { font-size:13px; color:#666; font-weight:300; }
+/* Firefox 19+ */
+input::-moz-placeholder,
+textarea::-moz-placeholder { font-size:13px; color:#666; font-weight:300; }
+/* IE10+ */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder { font-size:13px; color:#666; font-weight:300; }
+
+/* A & Button */
+a { margin:0; padding:0; font-size:100%; color:#000; text-decoration:none; vertical-align:baseline; background:transparent; }
+/* a:hover { } */
+button{border:0;border-radius:0;-webkit-border-radius:0;cursor:pointer;}
+button::-moz-focus-inner {padding:0;border:0;} /* 파이어폭스 버튼 내부 여백 제거 */
+a:focus, button:focus {outline: -webkit-focus-ring-color auto 1px; }
+
+img { max-width:100%; vertical-align:top; }
+input,select,button { vertical-align:middle; }
+
+input[type=text] {-webkit-appearance:none;background:#fff;height:26px;vertical-align:middle;border-radius:0;width:100%;}
+input[type=date] {-webkit-appearance:none;background:#fff;height:26px;vertical-align:middle;border-radius:0;width:100%;border:0;}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=image], input[type=radio]{border:0;padding:0;}/*input[type=checkbox], */
+input[type=checkbox]{display:inline-block;}
+
+/* input text */
+/* KDP-20205 웹접근성 수정 76p, 77p */
+input[type="text"],
+input[type="password"] {height:35px;border:1px solid #ccc;text-indent:10px;color: rgb(0, 0, 0);font-size:13px;box-sizing:border-box;}
+input[type="text"]:disabled,
+input[type="password"]:disabled {background-color:#e4e4e4 ;}
+
+/* input file */
+input[type="file"]{display:none;}
+
+/* hightlight none */
+input, textarea, button{ -webkit-tap-highlight-color:transparent; outline:none; }
+
+input-placeholder { font-size:13px;}
+
+@media all and (max-width:1440px) and (min-width:1101px){
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i, a,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary, button,
+    time, mark, audio, video { font-size:1.1111vw; }
+
+    /* Placeholder */
+    /* Webkit */
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { font-size:0.9028vw; }
+    /* Firefox 4-18 */
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { font-size:0.9028vw; }
+    /* Firefox 19+ */
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { font-size:0.9028vw; }
+    /* IE10+ */
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder { font-size:0.9028vw; }
+
+    /* input text */
+    input[type="text"],
+    input[type="password"] {height:2.4306vw; font-size:0.9028vw; }
+}
+
+@media all and (max-width:1100px) and (min-width:801px){
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i, a,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary, button,
+    time, mark, audio, video { font-size:1.4545vw; }
+
+    /* Placeholder */
+    /* Webkit */
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { font-size:1.1818vw; }
+    /* Firefox 4-18 */
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { font-size:1.1818vw; }
+    /* Firefox 19+ */
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { font-size:1.1818vw; }
+    /* IE10+ */
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder { font-size:1.1818vw; }
+
+    /* input text */
+    input[type="text"],
+    input[type="password"] {height:3.1818vw; font-size:1.1818vw; }
+}
+
+@media all and (max-width:800px){
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i, a,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary, button,
+    time, mark, audio, video { font-size:16px; }
+
+    /* Placeholder */
+    /* Webkit */
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { font-size:13px; }
+    /* Firefox 4-18 */
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { font-size:13px; }
+    /* Firefox 19+ */
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { font-size:13px; }
+    /* IE10+ */
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder { font-size:13px; }
+
+    /* input text */
+    input[type="text"],
+    input[type="password"] {height:35px; font-size:13px; }
+}
+
+@media all and (max-width:414px){
+    html, body, div, span, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    abbr, address, cite, code,
+    del, dfn, em, img, ins, kbd, q, samp,
+    small, strong, sub, sup, var,
+    b, i, a,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary, button,
+    time, mark, audio, video { font-size:16px; }
+
+    /* Placeholder */
+    /* Webkit */
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder { font-size:13px; }
+    /* Firefox 4-18 */
+    input:-moz-placeholder,
+    textarea:-moz-placeholder { font-size:13px; }
+    /* Firefox 19+ */
+    input::-moz-placeholder,
+    textarea::-moz-placeholder { font-size:13px; }
+    /* IE10+ */
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder { font-size:13px; }
+
+    /* input text */
+    input[type="text"],
+    input[type="password"] { height:35px; font-size:13px; }
+}
+
+/* outline / 210819 : 태블릿 이하 제외 */
+@media all and (min-width:1100px){
+    .pf-opt-sel .btn-prev:focus,
+    .pf-opt-sel .btn-next:focus,
+    .search-zoom input[type=text]:focus,
+    .inp-box input:not([type=checkbox]):not([type=radio]).inp-line.inp-inactive:focus,
+    .itm-color-list input[type="radio"]:focus+label,
+    .itm-color-list input[type="checkbox"]:focus+label,
+    .pf-opt-sel.slideOn button:focus,
+    .txt-box:focus,
+    .chk-form input[type="radio"]:focus + label,
+    .chk-form input[type="checkbox"]:focus + label,
+    .pf-opt-sel input[type="radio"]:focus + label,
+    .itm-radiobtn-list input[type="radio"]:focus + label,
+    .droplist>li:focus,
+    a:focus, button:focus,input[type=text]:focus,input[type=passsword]:focus,select:focus,
+    .ui-slider .ui-slider-handle:focus,
+    .dps-reservationStore .reservationStore-checkboxbtn-list input:focus + label{outline:2px dotted black !important}/* KDP-66522 웹 접근성 수정 241007 아웃라인칼라 변경 */
+}

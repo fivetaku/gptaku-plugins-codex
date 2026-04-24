@@ -1,0 +1,346 @@
+{
+  "slug": "spotify-main",
+  "semantic_vars": [
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#1ED760",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#1ED760",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#000000",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#000000",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFFFFF",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFFFFF",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFD2D7",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFD2D7",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#FFD97E",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#FFD97E",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#96F0B6",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#96F0B6",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#C8E0FC",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#C8E0FC",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#127E38",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#169F47",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#107434",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#159542",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#590810",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#590810",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#491E00",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#491E00",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#073116",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#073116",
+      "role": "accent"
+    },
+    {
+      "name": "--text-bright-accent",
+      "value_hex": "#052A56",
+      "role": "accent"
+    },
+    {
+      "name": "--essential-bright-accent",
+      "value_hex": "#052A56",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".CF7t2wBdxEwj1vHS button:focus",
+      "property": "outline",
+      "hex": "#3673D4",
+      "rule_snippet": ".CF7t2wBdxEwj1vHS button:focus {outline-offset:2px;outline:5px auto #3673d4}"
+    },
+    {
+      "selector": ".link-subtle",
+      "property": "color",
+      "hex": "#B3B3B3",
+      "rule_snippet": ".link-subtle {color:#b3b3b3;transition-property:color;transition-duration:.2s;transition-timing-function:linear}"
+    },
+    {
+      "selector": ".link-subtle:hover,.link-subtle:focus",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".link-subtle:hover,.link-subtle:focus {color:#fff}"
+    },
+    {
+      "selector": ".IrkgqR1tnx44Ecuy button:focus",
+      "property": "outline",
+      "hex": "#3673D4",
+      "rule_snippet": ".IrkgqR1tnx44Ecuy button:focus {outline-offset:2px;outline:5px auto #3673d4}"
+    },
+    {
+      "selector": ".Jd9liNKX5WkQCz9T",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".Jd9liNKX5WkQCz9T {color:#000;padding:2px;background:#fff;border-radius:100px;padding-inline-end:8px}"
+    },
+    {
+      "selector": ".Jd9liNKX5WkQCz9T",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".Jd9liNKX5WkQCz9T {color:#000;padding:2px;background:#fff;border-radius:100px;padding-inline-end:8px}"
+    },
+    {
+      "selector": "button",
+      "property": "color",
+      "hex": "#B3B3B3",
+      "rule_snippet": "button {color:var(--text-subdued,#b3b3b3);padding:0}"
+    },
+    {
+      "selector": ".e-10180-nav-stepper-item__text",
+      "property": "border-block-end",
+      "hex": "#00000000",
+      "rule_snippet": ".e-10180-nav-stepper-item__text {max-inline-size:100%;padding-block:var(--encore-spacing-tighter-2)var(--encore-spacing-tighter);padding-inline:var(--encore-spacing-tighter-2);border-block-end:2px sol"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 279,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 193,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 119,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 44,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1ED760",
+      "count": 37,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFFB3",
+      "count": 27,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#121212",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#282828",
+      "count": 23,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#052A56",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#073116",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#491E00",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#590810",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#96F0B6",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C8E0FC",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFD2D7",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFD97E",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000004D",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000080",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#B3B3B3",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 15,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1ABC54",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3BE477",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#141414",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFA42B",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0D72EA",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF4D",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000099",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E91429",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F0F0F0",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000008A",
+      "count": 8,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 64,
+    "by_role": {
+      "accent": 26,
+      "chromatic": 14,
+      "neutral": 16,
+      "selector": 8
+    }
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "slug": "framer",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--framer-code-text-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--framer-link-hover-text-color",
+        "references": [],
+        "terminal_hint": "#fff9"
+      },
+      {
+        "alias": "--selection-background-color",
+        "references": [],
+        "terminal_hint": "#0099ff4d"
+      },
+      {
+        "alias": "--selection-color",
+        "references": [],
+        "terminal_hint": "#09f"
+      },
+      {
+        "alias": "--token-023e584d-eb9f-45d0-a9bf-d481c0b53395",
+        "references": [],
+        "terminal_hint": "#666"
+      },
+      {
+        "alias": "--token-0245ad54-dffa-4280-9b49-9d43ad68acaa",
+        "references": [],
+        "terminal_hint": "#60f"
+      },
+      {
+        "alias": "--token-0670237f-f1ec-47e8-98e0-ecdf93f4467c",
+        "references": [],
+        "terminal_hint": "#888"
+      },
+      {
+        "alias": "--token-0c4c4e00-f4fc-4e6a-9a97-509a95a3e5d4",
+        "references": [],
+        "terminal_hint": "#f06"
+      },
+      {
+        "alias": "--token-0d3c4e1f-33e0-4ebe-bdfa-af3c0ffb2b6e",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-1073b3db-8e72-4239-ada0-89e67ba85817",
+        "references": [],
+        "terminal_hint": "#171717"
+      },
+      {
+        "alias": "--token-1ff51228-9678-411c-9a08-00381f0fc70b",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--token-26e3cb56-8447-4a64-9b7d-37f16a9909d4",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--token-281f665e-69f0-4f4c-a171-f40f50fe70d5",
+        "references": [],
+        "terminal_hint": "#4cd963"
+      },
+      {
+        "alias": "--token-289cb3ad-ad59-4cce-aee5-0850b842d9c8",
+        "references": [],
+        "terminal_hint": "#fffc"
+      },
+      {
+        "alias": "--token-2fbf5c4b-adb8-4940-91a4-ad94f8d791ba",
+        "references": [],
+        "terminal_hint": "#141414"
+      },
+      {
+        "alias": "--token-3326ab02-a399-4a0a-90ca-823d3eeec36a",
+        "references": [],
+        "terminal_hint": "#404040"
+      },
+      {
+        "alias": "--token-373c4b2f-375a-4a63-bd70-20575308a06b",
+        "references": [],
+        "terminal_hint": "#303030"
+      },
+      {
+        "alias": "--token-393d758b-714b-4628-a487-3e2609e109b7",
+        "references": [],
+        "terminal_hint": "#1f1f1f"
+      },
+      {
+        "alias": "--token-3ead4217-f562-484f-ae35-d367de8b213a",
+        "references": [],
+        "terminal_hint": "#09f"
+      },
+      {
+        "alias": "--token-4a5ab9b5-071f-4390-82c0-81f9558f671f",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--token-50d3edc6-ca3e-4e24-b5b6-95a9ef291fd3",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-5964e09d-3671-4c80-a557-31c1772b6c22",
+        "references": [],
+        "terminal_hint": "#999"
+      },
+      {
+        "alias": "--token-5e0b3b72-9a97-43f8-96f2-85d741f3d8ca",
+        "references": [],
+        "terminal_hint": "#1d1d1d"
+      },
+      {
+        "alias": "--token-5e2a9781-f258-43f3-ae02-0a76276a5519",
+        "references": [],
+        "terminal_hint": "#080808"
+      },
+      {
+        "alias": "--token-61e699c7-742b-47d0-bb16-f42065b06637",
+        "references": [],
+        "terminal_hint": "#fd7702"
+      },
+      {
+        "alias": "--token-66dfdba2-b084-43a3-a18d-237c2893b6a7",
+        "references": [],
+        "terminal_hint": "#90f"
+      },
+      {
+        "alias": "--token-70c17056-82cb-4934-97c9-7213cf77c853",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-75b23a6a-47c8-47c8-8583-14f60f534fa2",
+        "references": [],
+        "terminal_hint": "#ccc"
+      },
+      {
+        "alias": "--token-7c6a6dd2-0dfd-431a-a4ce-82949a34d083",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--token-7caf96a9-3685-4995-95cd-92a16705da21",
+        "references": [],
+        "terminal_hint": "#09f"
+      },
+      {
+        "alias": "--token-8015ce2b-ef6f-4fe0-944b-b61f872d0501",
+        "references": [],
+        "terminal_hint": "#999"
+      },
+      {
+        "alias": "--token-81eeded8-7d17-49fd-8f9d-4b09d4083be5",
+        "references": [],
+        "terminal_hint": "#ffffff14"
+      },
+      {
+        "alias": "--token-88cad303-8ee5-4c22-877f-e434faf14eee",
+        "references": [],
+        "terminal_hint": "#f02"
+      },
+      {
+        "alias": "--token-893b117c-1037-4f46-becb-94bc264ede3a",
+        "references": [],
+        "terminal_hint": "#2dd"
+      },
+      {
+        "alias": "--token-8bda8574-ddee-4314-9957-c7b3c42a6996",
+        "references": [],
+        "terminal_hint": "#000c"
+      },
+      {
+        "alias": "--token-8f5eb515-7a13-452b-a4ab-f35e2208a3f3",
+        "references": [],
+        "terminal_hint": "#fff9"
+      },
+      {
+        "alias": "--token-93cff29c-8615-459d-9cde-fa388e8e8c88",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--token-94a5bf9a-16a4-4639-b671-271526647eef",
+        "references": [],
+        "terminal_hint": "#2e2e2e"
+      },
+      {
+        "alias": "--token-958e2cd1-b113-4aa3-9235-7a2b959c8feb",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--token-a1269b3c-6c48-45d9-9f35-32a6df13b5e0",
+        "references": [],
+        "terminal_hint": "#474747"
+      },
+      {
+        "alias": "--token-a90119e0-cc91-4f7c-8117-a4827837d154",
+        "references": [],
+        "terminal_hint": "#242424"
+      },
+      {
+        "alias": "--token-bd71055c-0a2c-4476-8cc9-4310acba652d",
+        "references": [],
+        "terminal_hint": "#09f"
+      },
+      {
+        "alias": "--token-be530db7-18b2-4273-89ab-17e94ce4aa9f",
+        "references": [],
+        "terminal_hint": "#fb0"
+      },
+      {
+        "alias": "--token-bed18f81-9cf1-4e2e-871f-69719f53f1d4",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-bf566e33-485f-437d-9c8a-97c626fb8093",
+        "references": [],
+        "terminal_hint": "#ffffff12"
+      },
+      {
+        "alias": "--token-c534b380-e14e-4ddc-9802-ad88d1f94f8e",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-c728f732-7c78-48e8-94a1-513a91a25137",
+        "references": [],
+        "terminal_hint": "#fff6"
+      },
+      {
+        "alias": "--token-d4634443-ffec-443d-a754-10b0a24f2eba",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--token-e0051992-b662-4a7c-a4c8-9cd5b5125f7a",
+        "references": [],
+        "terminal_hint": "#141414"
+      },
+      {
+        "alias": "--token-e6ff4111-cae9-48d6-82e5-a990cf837703",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--token-e81b27a0-dbec-444a-a842-619222fcd818",
+        "references": [],
+        "terminal_hint": "#999"
+      },
+      {
+        "alias": "--token-ea0a2ab8-ce16-4a61-995f-9a3f03b39cf7",
+        "references": [],
+        "terminal_hint": "#fff3"
+      },
+      {
+        "alias": "--token-eb0d9e00-7216-491c-99d5-7c1c2f3d0dbe",
+        "references": [],
+        "terminal_hint": "#05f"
+      },
+      {
+        "alias": "--token-ee053477-e115-4fec-a5f5-cdc637ed6ddc",
+        "references": [],
+        "terminal_hint": "#0cf"
+      },
+      {
+        "alias": "--token-ef3d81b5-78dc-4f92-b13e-1e8b0e28ba8c",
+        "references": [],
+        "terminal_hint": "#212121"
+      },
+      {
+        "alias": "--token-f5637926-8ee6-41cb-a320-ec3462d62cd5",
+        "references": [],
+        "terminal_hint": "#fff6"
+      },
+      {
+        "alias": "--token-f6d5743a-73c0-417f-973c-02f663387ec8",
+        "references": [],
+        "terminal_hint": "#ffffff80"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 57
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "baemin",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "/*!sc*/ input,textarea,button,select,a",
+      "property": "color",
+      "hex": "#222222",
+      "rule_snippet": "/*!sc*/ input,textarea,button,select,a {-webkit-tap-highlight-color:rgba(0,0,0,0);color:#222222;-webkit-text-decoration:none;text-decoration:none;-webkit-appearance:none;outline:none;}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0CEFD3",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#181A1C",
+      "count": 9,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#B1B3B5",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#222222",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F6F6F6",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#7E8082",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7F7F7",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 10,
+    "by_role": {
+      "chromatic": 1,
+      "neutral": 7,
+      "selector": 1,
+      "svg_pattern": 1
+    }
+  }
+}

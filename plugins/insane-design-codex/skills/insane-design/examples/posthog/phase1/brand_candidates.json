@@ -1,0 +1,347 @@
+{
+  "slug": "posthog",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".fill-navy",
+      "property": "fill",
+      "hex": "#1E2F46",
+      "rule_snippet": ".fill-navy { fill:#1e2f46}"
+    },
+    {
+      "selector": ".fill-navy-dark",
+      "property": "fill",
+      "hex": "#0F233D",
+      "rule_snippet": ".fill-navy-dark { fill:#0f233d}"
+    },
+    {
+      "selector": ".stroke-navy",
+      "property": "stroke",
+      "hex": "#1E2F46",
+      "rule_snippet": ".stroke-navy { stroke:#1e2f46}"
+    },
+    {
+      "selector": ".stroke-navy-dark",
+      "property": "stroke",
+      "hex": "#0F233D",
+      "rule_snippet": ".stroke-navy-dark { stroke:#0f233d}"
+    },
+    {
+      "selector": ".mermaid-container #flowchart-pointEnd:is(.dark *),.mermaid-container #flowchart-pointStart:is(.dark *),.mermaid-container .arrowMarkerPath:is(.dark *),.mermaid-container .arrowheadPath:is(.dark *),.mermaid-container .edgePath:is(.dark *),.mermaid-container .link:is(.dark *),.mermaid-container marker path:is(.dark *),.mermaid-container marker:is(.dark *)",
+      "property": "fill",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mermaid-container #flowchart-pointEnd:is(.dark *),.mermaid-container #flowchart-pointStart:is(.dark *),.mermaid-container .arrowMarkerPath:is(.dark *),.mermaid-container .arrowheadPath:is(.dark *),.m"
+    },
+    {
+      "selector": ".mermaid-container #flowchart-pointEnd:is(.dark *),.mermaid-container #flowchart-pointStart:is(.dark *),.mermaid-container .arrowMarkerPath:is(.dark *),.mermaid-container .arrowheadPath:is(.dark *),.mermaid-container .edgePath:is(.dark *),.mermaid-container .link:is(.dark *),.mermaid-container marker path:is(.dark *),.mermaid-container marker:is(.dark *)",
+      "property": "stroke",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mermaid-container #flowchart-pointEnd:is(.dark *),.mermaid-container #flowchart-pointStart:is(.dark *),.mermaid-container .arrowMarkerPath:is(.dark *),.mermaid-container .arrowheadPath:is(.dark *),.m"
+    },
+    {
+      "selector": ".mermaid-container .root .clusters .cluster rect:is(.dark *),.mermaid-container line:is(.dark *),.mermaid-container path.flowchart-link:is(.dark *),.mermaid-container path.path:is(.dark *)",
+      "property": "stroke",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mermaid-container .root .clusters .cluster rect:is(.dark *),.mermaid-container line:is(.dark *),.mermaid-container path.flowchart-link:is(.dark *),.mermaid-container path.path:is(.dark *) { stroke:#f"
+    },
+    {
+      "selector": ".active-link:before",
+      "property": "background",
+      "hex": "#F54E00",
+      "rule_snippet": ".active-link:before { background:#f54e00; border-radius:2px; content:\"\"; height:65%; left:0; position:absolute; top:50%; transform:translateY(-50%); width:4px}"
+    },
+    {
+      "selector": ".max-ai-body .DocSearch-Button-Keys",
+      "property": "background",
+      "hex": "#F5E2B2",
+      "rule_snippet": ".max-ai-body .DocSearch-Button-Keys { background:#f5e2b2}"
+    },
+    {
+      "selector": ".max-ai-body .article-content a:not(.cta):is(.dark *),.max-ai-body .dark\\:text-primary-dark:is(.dark *)",
+      "property": "color",
+      "hex": "#151515",
+      "rule_snippet": ".max-ai-body .article-content a:not(.cta):is(.dark *),.max-ai-body .dark\\:text-primary-dark:is(.dark *) { color:#151515!important}"
+    },
+    {
+      "selector": ".max-ai-body .dark\\:text-primary-dark\\/50:is(.dark *)",
+      "property": "color",
+      "hex": "#151515",
+      "rule_snippet": ".max-ai-body .dark\\:text-primary-dark\\/50:is(.dark *) { color:#151515!important; opacity:.5}"
+    },
+    {
+      "selector": ".max-ai-body .dark\\:text-primary-dark\\/75:is(.dark *)",
+      "property": "color",
+      "hex": "#151515",
+      "rule_snippet": ".max-ai-body .dark\\:text-primary-dark\\/75:is(.dark *) { color:#151515!important; opacity:.75}"
+    },
+    {
+      "selector": ".max-ai-body .dark\\:text-primary-dark\\/70:is(.dark *)",
+      "property": "color",
+      "hex": "#151515",
+      "rule_snippet": ".max-ai-body .dark\\:text-primary-dark\\/70:is(.dark *) { color:#151515!important; opacity:.7}"
+    },
+    {
+      "selector": ".max-ai-body button span.dark\\:bg-dark:is(.dark *)",
+      "property": "background",
+      "hex": "#FFF6DE",
+      "rule_snippet": ".max-ai-body button span.dark\\:bg-dark:is(.dark *) { background:#fff6de!important}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl-group button+button",
+      "property": "border-top",
+      "hex": "#DDDDDD",
+      "rule_snippet": ".mapboxgl-ctrl-group button+button { border-top:1px solid #ddd}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl-attrib-button:focus,.mapboxgl-ctrl-group button:focus",
+      "property": "box-shadow",
+      "hex": "#0096FF",
+      "rule_snippet": ".mapboxgl-ctrl-attrib-button:focus,.mapboxgl-ctrl-group button:focus { box-shadow:0 0 2px 2px #0096ff}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button:not(:disabled):hover",
+      "property": "background-color",
+      "hex": "#0000000D",
+      "rule_snippet": ".mapboxgl-ctrl button:not(:disabled):hover { background-color:#0000000d}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl-group button:focus:focus-visible",
+      "property": "box-shadow",
+      "hex": "#0096FF",
+      "rule_snippet": ".mapboxgl-ctrl-group button:focus:focus-visible { box-shadow:0 0 2px 2px #0096ff}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl-attrib-button",
+      "property": "background-color",
+      "hex": "#FFFFFF80",
+      "rule_snippet": ".mapboxgl-ctrl-attrib-button { background-color:#ffffff80; background-image:url(\"data:image/svg+xml; charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' viewBox='0 0 20 20'%3E%"
+    },
+    {
+      "selector": ".mapboxgl-ctrl-attrib.mapboxgl-compact-show .mapboxgl-ctrl-attrib-button",
+      "property": "background-color",
+      "hex": "#0000000D",
+      "rule_snippet": ".mapboxgl-ctrl-attrib.mapboxgl-compact-show .mapboxgl-ctrl-attrib-button { background-color:#0000000d}"
+    },
+    {
+      "selector": ".mapboxgl-popup-close-button:hover",
+      "property": "background-color",
+      "hex": "#0000000D",
+      "rule_snippet": ".mapboxgl-popup-close-button:hover { background-color:#0000000d}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button { color:#333; font-size:18px; font-weight:700; height:50px; width:50px}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button:hover",
+      "property": "background-color",
+      "hex": "#F5F5F5",
+      "rule_snippet": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button:hover { background-color:#f5f5f5}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected",
+      "property": "background-color",
+      "hex": "#4A5568",
+      "rule_snippet": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected { background-color:#4a5568; color:#fff}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected { background-color:#4a5568; color:#fff}"
+    },
+    {
+      "selector": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected:hover",
+      "property": "background-color",
+      "hex": "#2D3748",
+      "rule_snippet": ".mapboxgl-ctrl button.mapboxgl-ctrl-level-button-selected:hover { background-color:#2d3748}"
+    },
+    {
+      "selector": ".react-flow__node-default.selectable.selected,.react-flow__node-default.selectable:focus,.react-flow__node-default.selectable:focus-visible,.react-flow__node-group.selectable.selected,.react-flow__node-group.selectable:focus,.react-flow__node-group.selectable:focus-visible,.react-flow__node-input.selectable.selected,.react-flow__node-input.selectable:focus,.react-flow__node-input.selectable:focus-visible,.react-flow__node-output.selectable.selected,.react-flow__node-output.selectable:focus,.react-flow__node-output.selectable:focus-visible",
+      "property": "box-shadow",
+      "hex": "#1A192B",
+      "rule_snippet": ".react-flow__node-default.selectable.selected,.react-flow__node-default.selectable:focus,.react-flow__node-default.selectable:focus-visible,.react-flow__node-group.selectable.selected,.react-flow__nod"
+    },
+    {
+      "selector": ".react-flow__controls-button",
+      "property": "background",
+      "hex": "#FEFEFE",
+      "rule_snippet": ".react-flow__controls-button { align-items:center; background:#fefefe; border:none; border-bottom:1px solid #eee; box-sizing:content-box; cursor:pointer; display:flex; height:16px; justify-content:cen"
+    },
+    {
+      "selector": ".react-flow__controls-button",
+      "property": "border-bottom",
+      "hex": "#EEEEEE",
+      "rule_snippet": ".react-flow__controls-button { align-items:center; background:#fefefe; border:none; border-bottom:1px solid #eee; box-sizing:content-box; cursor:pointer; display:flex; height:16px; justify-content:cen"
+    },
+    {
+      "selector": ".react-flow__controls-button:hover",
+      "property": "background",
+      "hex": "#F4F4F4",
+      "rule_snippet": ".react-flow__controls-button:hover { background:#f4f4f4}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 186,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 163,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 66,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#54618E",
+      "count": 38,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F5E2B2",
+      "count": 36,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F54E00",
+      "count": 32,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1E1F23",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1D1F27",
+      "count": 25,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#161616",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#8D8D8D",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#333733",
+      "count": 19,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E1D7C2",
+      "count": 19,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FEFCED",
+      "count": 19,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#151515",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#29DBBB",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#802700",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C23D00",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E92F2F",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EEEFE9",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F7A501",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F1A82C",
+      "count": 15,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0079FF",
+      "count": 14,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#808080",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00FF00",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0500FF",
+      "count": 12,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#111827",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1E2F46",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6AA84F",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6B7280",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#EB9D2A",
+      "count": 12,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 60,
+    "by_role": {
+      "chromatic": 18,
+      "neutral": 10,
+      "selector": 30,
+      "svg_pattern": 2
+    }
+  }
+}

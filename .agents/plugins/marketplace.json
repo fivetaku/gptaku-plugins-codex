@@ -1,0 +1,140 @@
+{
+  "name": "gptaku-codex",
+  "interface": {
+    "displayName": "GPTaku Codex"
+  },
+  "plugins": [
+    {
+      "name": "pumasi-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pumasi-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Coding"
+    },
+    {
+      "name": "show-me-the-prd-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/show-me-the-prd-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "insane-search-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/insane-search-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "kkirikkiri-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kkirikkiri-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "insane-design-codex",
+      "source": {
+        "source": "local",
+        "path": "./plugins/insane-design-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Coding"
+    },
+        {
+            "name": "docs-guide-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/docs-guide-codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+            },
+            "category": "Productivity"
+        },
+        {
+            "name": "deep-research-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/deep-research-codex"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Productivity"
+        },
+        {
+            "name": "nopal-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/nopal-codex"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Productivity"
+        },
+        {
+            "name": "git-teacher-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/git-teacher-codex"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Coding"
+        },
+        {
+            "name": "skillers-suda-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/skillers-suda-codex"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Coding"
+        },
+        {
+            "name": "vibe-sunsang-codex",
+            "source": {
+                "source": "local",
+                "path": "./plugins/vibe-sunsang-codex"
+            },
+            "policy": {
+                "installation": "AVAILABLE",
+                "authentication": "ON_INSTALL"
+            },
+            "category": "Productivity"
+        }
+    ]
+}

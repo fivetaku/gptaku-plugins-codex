@@ -1,0 +1,30 @@
+{
+  "slug": "tailwindcss",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--color-black",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--color-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 2
+    }
+  }
+}

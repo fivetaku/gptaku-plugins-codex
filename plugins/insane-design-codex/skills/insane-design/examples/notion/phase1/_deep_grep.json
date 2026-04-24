@@ -1,0 +1,358 @@
+{
+  "fontsize_top": [
+    [
+      "16px",
+      4
+    ],
+    [
+      "20px",
+      3
+    ],
+    [
+      "15px",
+      3
+    ],
+    [
+      "18px",
+      2
+    ],
+    [
+      "2em",
+      1
+    ],
+    [
+      "1em",
+      1
+    ],
+    [
+      "13.5px",
+      1
+    ],
+    [
+      "19px",
+      1
+    ],
+    [
+      "26px",
+      1
+    ],
+    [
+      "22px",
+      1
+    ],
+    [
+      "24px",
+      1
+    ],
+    [
+      "36px",
+      1
+    ],
+    [
+      "40px",
+      1
+    ],
+    [
+      "11px",
+      1
+    ],
+    [
+      "14px",
+      1
+    ]
+  ],
+  "radius_top": [
+    [
+      "12px",
+      15
+    ],
+    [
+      "50%",
+      9
+    ],
+    [
+      "8px",
+      7
+    ],
+    [
+      "100%",
+      7
+    ],
+    [
+      "5px",
+      5
+    ],
+    [
+      "4px",
+      5
+    ],
+    [
+      "20px",
+      3
+    ],
+    [
+      "38px",
+      2
+    ],
+    [
+      "1000px",
+      2
+    ],
+    [
+      "6px",
+      2
+    ]
+  ],
+  "maxwidth_top": [
+    [
+      "600px",
+      7
+    ],
+    [
+      "839px",
+      5
+    ],
+    [
+      "1252px",
+      4
+    ],
+    [
+      "480px",
+      2
+    ],
+    [
+      "1200px",
+      2
+    ],
+    [
+      "1184px",
+      2
+    ],
+    [
+      "280px",
+      2
+    ],
+    [
+      "960px",
+      2
+    ],
+    [
+      "220px",
+      2
+    ],
+    [
+      "240px",
+      2
+    ]
+  ],
+  "breakpoints": {
+    "1080px": 164,
+    "668px": 1,
+    "840px": 205,
+    "1280px": 95,
+    "374px": 1,
+    "375px": 3,
+    "600px": 200,
+    "1440px": 92,
+    "908px": 1,
+    "1032px": 1,
+    "1156px": 1,
+    "440px": 2,
+    "768px": 1,
+    "1900px": 1,
+    "1800px": 1,
+    "400px": 2,
+    "1300px": 1,
+    "839px": 5,
+    "1200px": 8,
+    "712px": 2,
+    "942px": 1
+  },
+  "shadow_count": 87,
+  "transition_top": [
+    [
+      "text-decoration-color var(--motion-global-fade-out-duration)",
+      16
+    ],
+    [
+      "text-decoration-color var(--motion-global-fade-in-duration) ",
+      16
+    ],
+    [
+      "var(--motion-global-fade-in-duration)",
+      9
+    ],
+    [
+      "-webkit-text-decoration-color var(--motion-global-fade-out-d",
+      8
+    ],
+    [
+      "-webkit-text-decoration-color var(--motion-global-fade-in-du",
+      8
+    ],
+    [
+      "var(--motion-global-fade-out-duration)",
+      6
+    ],
+    [
+      "none",
+      6
+    ],
+    [
+      "outline-color var(--motion-global-fade-out-duration) var(--m",
+      5
+    ],
+    [
+      "outline-color var(--motion-global-fade-in-duration) var(--mo",
+      5
+    ],
+    [
+      "background .15s",
+      5
+    ]
+  ],
+  "key_vars": {
+    "--header-height": "60px",
+    "--font-family-serif": "var(--font-family-serif-chinese-traditional)",
+    "--font-family-sans": "var(--font-family-sans-vietnamese)",
+    "--color-gray-100": "#f9f9f8",
+    "--color-gray-200": "#f6f5f4",
+    "--color-gray-300": "#dfdcd9",
+    "--color-gray-400": "#a39e98",
+    "--color-gray-500": "#78736f",
+    "--color-gray-600": "#615d59",
+    "--color-gray-700": "#494744",
+    "--color-gray-800": "#31302e",
+    "--color-gray-900": "#191918",
+    "--font-family-primary-sans": "NotionInter",
+    "--font-family-primary-serif": "\"Lyon Text\"",
+    "--font-family-primary-serif-japanese": "\"Lyon Text\"",
+    "--font-family-primary-serif-chinese-simplified": "\"Lyon Text\"",
+    "--font-family-primary-serif-chinese-traditional": "\"Lyon Text\"",
+    "--font-family-primary-sans-vietnamese": "ui-sans-serif",
+    "--font-family-primary-serif-vietnamese": "ui-serif",
+    "--font-family-primary-sans-arabic": "\"Noto Sans Arabic\"",
+    "--font-family-primary-sans-hebrew": "\"Noto Sans Hebrew\"",
+    "--font-family-primary-handwriting": "\"Permanent Marker\"",
+    "--font-family-primary-mono": "\"iA Writer Mono\"",
+    "--font-family-primary-emoji": "\"Apple Color Emoji\"",
+    "--font-family-fallback-sans": "Inter,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,\"Apple Color Emoji\",Arial,sans-serif,\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "--font-family-fallback-serif": "Georgia,YuMincho,\"Yu Mincho\",\"Hiragino Mincho ProN\",\"Hiragino Mincho Pro\",\"Songti TC\",\"Songti SC\",SimSun,\"Nanum Myeongjo\",NanumMyeongjo,Batang,serif",
+    "--font-family-fallback-serif-japanese": "Georgia,YuMincho,\"Yu Mincho\",\"Hiragino Mincho ProN\",serif",
+    "--font-family-fallback-serif-chinese-simplified": "Georgia,\"Songti TC\",SimSun,serif",
+    "--font-family-fallback-serif-chinese-traditional": "Georgia,\"Songti SC\",SimSun,serif",
+    "--font-family-fallback-sans-vietnamese": "system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,\"Apple Color Emoji\",Arial,sans-serif,\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "--font-family-fallback-serif-vietnamese": "\"Times New Roman\",serif",
+    "--font-family-fallback-sans-arabic": "NotionInter,Inter,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,\"Apple Color Emoji\",Arial,sans-serif,\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "--font-family-fallback-sans-hebrew": "NotionInter,Inter,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,\"Apple Color Emoji\",Arial,sans-serif,\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "--font-family-fallback-handwriting": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,\"Apple Color Emoji\",Arial,sans-serif,\"Segoe UI Emoji\",\"Segoe UI Symbol\"",
+    "--font-family-fallback-mono": "Nitti,Menlo,Courier,monospace",
+    "--font-family-fallback-emoji": "\"Segoe UI Emoji\",NotoColorEmoji,\"Noto Color Emoji\",\"Segoe UI Symbol\",\"Android Emoji\",EmojiSymbols",
+    "--font-family-serif-japanese": "var(--font-family-primary-serif-japanese),var(--font-family-fallback-serif-japanese)",
+    "--font-family-serif-chinese-simplified": "var( --font-family-primary-serif-chinese-simplified ),var(--font-family-fallback-serif-chinese-simplified)",
+    "--font-family-serif-chinese-traditional": "var( --font-family-primary-serif-chinese-traditional ),var(--font-family-fallback-serif-chinese-traditional)",
+    "--font-family-sans-vietnamese": "var(--font-family-primary-sans-vietnamese),var(--font-family-fallback-sans-vietnamese)",
+    "--font-family-serif-vietnamese": "var(--font-family-primary-serif-vietnamese),var(--font-family-fallback-serif-vietnamese)",
+    "--font-family-sans-arabic": "var(--font-family-primary-sans-arabic),var(--font-family-fallback-sans-arabic)",
+    "--font-family-sans-hebrew": "var(--font-family-primary-sans-hebrew),var(--font-family-fallback-sans-hebrew)",
+    "--font-family-handwriting": "var(--font-family-primary-handwriting),var(--font-family-fallback-handwriting)",
+    "--font-family-mono": "var(--font-family-primary-mono),var(--font-family-fallback-mono)",
+    "--font-family-emoji": "var(--font-family-primary-emoji),var(--font-family-fallback-emoji)",
+    "--font-size-50": "0.75rem",
+    "--font-size-100": "0.875rem",
+    "--font-size-150": "0.9375rem",
+    "--font-size-200": "1rem",
+    "--font-size-300": "1.125rem",
+    "--font-size-350": "1.25rem",
+    "--font-size-400": "1.375rem",
+    "--font-size-500": "1.625rem",
+    "--font-size-600": "2rem",
+    "--font-size-700": "2.625rem",
+    "--font-size-800": "3.375rem",
+    "--font-size-900": "4rem",
+    "--font-size-1000": "4.75rem",
+    "--font-line-height-50": "var(--spacing-16)",
+    "--font-line-height-100": "var(--spacing-20)",
+    "--font-line-height-150": "var(--spacing-20)",
+    "--font-line-height-200": "var(--spacing-24)",
+    "--font-line-height-300": "var(--spacing-28)",
+    "--font-line-height-350": "var(--spacing-28)",
+    "--font-line-height-400": "var(--spacing-28)",
+    "--font-line-height-450": "var(--spacing-30)",
+    "--font-line-height-500": "var(--spacing-32)",
+    "--font-line-height-600": "var(--spacing-40)",
+    "--font-line-height-700": "var(--spacing-48)",
+    "--font-line-height-800": "var(--spacing-56)",
+    "--font-line-height-900": "var(--spacing-64)",
+    "--font-line-height-1000": "var(--spacing-80)",
+    "--font-letter-spacing-sans-50": "0.0078125rem",
+    "--font-letter-spacing-sans-100": "0",
+    "--font-letter-spacing-sans-150": "0",
+    "--font-letter-spacing-sans-200": "0",
+    "--font-letter-spacing-sans-300": "-0.0078125rem",
+    "--font-letter-spacing-sans-350": "-0.0078125rem",
+    "--font-letter-spacing-sans-400": "-0.015625rem",
+    "--font-letter-spacing-sans-500": "-0.0390625rem",
+    "--font-letter-spacing-sans-600-regular": "-0.0625rem",
+    "--font-letter-spacing-sans-600-semibold": "-0.046875rem",
+    "--font-letter-spacing-sans-600-bold": "-0.046875rem",
+    "--font-letter-spacing-sans-700-regular": "-0.125rem",
+    "--font-letter-spacing-sans-700-semibold": "-0.09375rem",
+    "--font-letter-spacing-sans-700-bold": "-0.09375rem",
+    "--font-letter-spacing-sans-800-regular": "-0.21875rem",
+    "--font-letter-spacing-sans-800-semibold": "-0.1171875rem",
+    "--font-letter-spacing-sans-800-bold": "-0.1171875rem",
+    "--font-letter-spacing-sans-900-regular": "-0.171875rem",
+    "--font-letter-spacing-sans-900-semibold": "-0.1328125rem",
+    "--font-letter-spacing-sans-900-bold": "-0.1328125rem",
+    "--font-letter-spacing-sans-1000-regular": "-0.25rem",
+    "--font-letter-spacing-sans-1000-bold": "-0.15625rem",
+    "--font-letter-spacing-serif-200": "0",
+    "--font-letter-spacing-serif-300": "0",
+    "--font-letter-spacing-serif-350": "0",
+    "--font-letter-spacing-serif-400": "0",
+    "--font-letter-spacing-serif-500": "0",
+    "--font-letter-spacing-serif-600": "0",
+    "--font-letter-spacing-serif-700": "-0.09375rem",
+    "--font-letter-spacing-serif-800": "-0.125rem",
+    "--font-letter-spacing-serif-900": "-0.125rem",
+    "--font-weight-regular": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--font-weight-variable-regular": "420",
+    "--font-weight-variable-medium": "520",
+    "--font-weight-variable-semibold": "620",
+    "--font-weight-variable-bold": "680",
+    "--shadow-level-100": "0px 3px 9px #00000008,0px 0.7px 1.4625px rgba(0,0,0,.015)",
+    "--shadow-level-200": "0px 4px 18px #0000000a,0px 2.025px 7.84688px rgba(0,0,0,.027),0px 0.8px 2.925px #00000005,0px 0.175px 1.04062px rgba(0,0,0,.013)",
+    "--shadow-level-300": "0px 20px 50px #00000014,0px 6px 16px #0000000a",
+    "--shadow-filter": "0 4px 18px #0000004d",
+    "--color-accent": "var(--color-blue-400)",
+    "--color-accent-strong": "var(--color-blue-500)",
+    "--color-accent-soft": "var(--color-blue-200)",
+    "--color-accent-muted": "var(--color-blue-100)",
+    "--color-background-base": "var(--color-white)",
+    "--color-background-base-hover": "var(--color-alpha-black-100)",
+    "--color-background-base-focus": "var(--color-alpha-black-100)",
+    "--color-background-base-active": "var(--color-alpha-black-200)",
+    "--color-background-surface-neutral": "var(--color-gray-200)",
+    "--color-background-surface-neutral-hover": "var(--color-gray-300)",
+    "--color-background-surface-neutral-focus": "var(--color-gray-300)",
+    "--color-background-surface-neutral-active": "var(--color-gray-300)",
+    "--color-background-surface-accent": "var(--color-blue-400)",
+    "--color-background-surface-accent-hover": "var(--color-blue-500)",
+    "--color-background-surface-accent-focus": "var(--color-blue-600)",
+    "--color-background-surface-accent-active": "var(--color-blue-700)",
+    "--color-background-surface-accent-muted": "var(--color-blue-100)",
+    "--color-background-surface-accent-muted-hover": "var(--color-blue-200)",
+    "--color-background-surface-accent-muted-focus": "var(--color-blue-200)",
+    "--color-background-surface-accent-muted-active": "var(--color-blue-200)",
+    "--color-background-surface-accent-soft": "var(--color-blue-200)",
+    "--color-background-surface-accent-soft-hover": "var(--color-blue-300)",
+    "--color-background-surface-accent-soft-focus": "var(--color-blue-300)",
+    "--color-background-surface-accent-soft-active": "var(--color-blue-300)",
+    "--color-background": "var(--color-purple-100)",
+    "--color-foreground": "var(--color-purple-500)"
+  }
+}

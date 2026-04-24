@@ -1,0 +1,411 @@
+{
+  "slug": "github",
+  "total_vars": 2236,
+  "resolved_count": 1996,
+  "unresolved_count": 240,
+  "samples": {
+    "--button-danger-fgColor-rest": {
+      "raw": "var(--fgColor-danger)",
+      "resolved": "#86061d",
+      "chain": [
+        "--button-danger-fgColor-rest",
+        "--fgColor-danger",
+        "#86061d"
+      ]
+    },
+    "--button-primary-bgColor-active": {
+      "raw": "#075fc8",
+      "resolved": "#075fc8",
+      "chain": [
+        "--button-primary-bgColor-active",
+        "#075fc8"
+      ]
+    },
+    "--button-primary-bgColor-disabled": {
+      "raw": "#92caff",
+      "resolved": "#92caff",
+      "chain": [
+        "--button-primary-bgColor-disabled",
+        "#92caff"
+      ]
+    },
+    "--button-primary-bgColor-hover": {
+      "raw": "#0864d1",
+      "resolved": "#0864d1",
+      "chain": [
+        "--button-primary-bgColor-hover",
+        "#0864d1"
+      ]
+    },
+    "--button-primary-borderColor-disabled": {
+      "raw": "var(--button-primary-bgColor-disabled)",
+      "resolved": "#92caff",
+      "chain": [
+        "--button-primary-borderColor-disabled",
+        "--button-primary-bgColor-disabled",
+        "#92caff"
+      ]
+    },
+    "--color-ansi-cyan": {
+      "raw": "#1b7c83",
+      "resolved": "#1b7c83",
+      "chain": [
+        "--color-ansi-cyan",
+        "#1b7c83"
+      ]
+    },
+    "--color-ansi-cyan-bright": {
+      "raw": "#3192aa",
+      "resolved": "#3192aa",
+      "chain": [
+        "--color-ansi-cyan-bright",
+        "#3192aa"
+      ]
+    },
+    "--control-checked-bgColor-active": {
+      "raw": "#033f9d",
+      "resolved": "#033f9d",
+      "chain": [
+        "--control-checked-bgColor-active",
+        "#033f9d"
+      ]
+    },
+    "--control-checked-bgColor-hover": {
+      "raw": "#0344a8",
+      "resolved": "#0344a8",
+      "chain": [
+        "--control-checked-bgColor-hover",
+        "#0344a8"
+      ]
+    },
+    "--fgColor-accent": {
+      "raw": "Highlight",
+      "resolved": null,
+      "chain": [
+        "--fgColor-accent",
+        "Highlight"
+      ]
+    },
+    "--reactionButton-selected-bgColor-hover": {
+      "raw": "#caecff",
+      "resolved": "#caecff",
+      "chain": [
+        "--reactionButton-selected-bgColor-hover",
+        "#caecff"
+      ]
+    },
+    "--avatar-shadow": {
+      "raw": "0 0 0 2px #fffc",
+      "resolved": null,
+      "chain": [
+        "--avatar-shadow",
+        "0 0 0 2px #fffc"
+      ]
+    },
+    "--avatarStack-fade-bgColor-default": {
+      "raw": "#c8d1da",
+      "resolved": "#c8d1da",
+      "chain": [
+        "--avatarStack-fade-bgColor-default",
+        "#c8d1da"
+      ]
+    },
+    "--avatarStack-fade-bgColor-muted": {
+      "raw": "#dae0e7",
+      "resolved": "#dae0e7",
+      "chain": [
+        "--avatarStack-fade-bgColor-muted",
+        "#dae0e7"
+      ]
+    },
+    "--bgColor-accent-emphasis": {
+      "raw": "#0349b4",
+      "resolved": "#0349b4",
+      "chain": [
+        "--bgColor-accent-emphasis",
+        "#0349b4"
+      ]
+    },
+    "--bgColor-accent-muted": {
+      "raw": "#dff7ff",
+      "resolved": "#dff7ff",
+      "chain": [
+        "--bgColor-accent-muted",
+        "#dff7ff"
+      ]
+    },
+    "--bgColor-attention-emphasis": {
+      "raw": "#744500",
+      "resolved": "#744500",
+      "chain": [
+        "--bgColor-attention-emphasis",
+        "#744500"
+      ]
+    },
+    "--bgColor-attention-muted": {
+      "raw": "#fcf7be",
+      "resolved": "#fcf7be",
+      "chain": [
+        "--bgColor-attention-muted",
+        "#fcf7be"
+      ]
+    },
+    "--bgColor-danger-emphasis": {
+      "raw": "#a0111f",
+      "resolved": "#a0111f",
+      "chain": [
+        "--bgColor-danger-emphasis",
+        "#a0111f"
+      ]
+    },
+    "--bgColor-danger-muted": {
+      "raw": "#fff0ee",
+      "resolved": "#fff0ee",
+      "chain": [
+        "--bgColor-danger-muted",
+        "#fff0ee"
+      ]
+    },
+    "--bgColor-default": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--bgColor-default",
+        "#fff"
+      ]
+    },
+    "--bgColor-disabled": {
+      "raw": "#e0e6eb",
+      "resolved": "#e0e6eb",
+      "chain": [
+        "--bgColor-disabled",
+        "#e0e6eb"
+      ]
+    },
+    "--bgColor-done-emphasis": {
+      "raw": "#622cbc",
+      "resolved": "#622cbc",
+      "chain": [
+        "--bgColor-done-emphasis",
+        "#622cbc"
+      ]
+    },
+    "--bgColor-done-muted": {
+      "raw": "#faf0fe",
+      "resolved": "#faf0fe",
+      "chain": [
+        "--bgColor-done-muted",
+        "#faf0fe"
+      ]
+    },
+    "--bgColor-emphasis": {
+      "raw": "#25292e",
+      "resolved": "#25292e",
+      "chain": [
+        "--bgColor-emphasis",
+        "#25292e"
+      ]
+    },
+    "--bgColor-muted": {
+      "raw": "#e6eaef",
+      "resolved": "#e6eaef",
+      "chain": [
+        "--bgColor-muted",
+        "#e6eaef"
+      ]
+    },
+    "--bgColor-neutral-emphasis": {
+      "raw": "#454c54",
+      "resolved": "#454c54",
+      "chain": [
+        "--bgColor-neutral-emphasis",
+        "#454c54"
+      ]
+    },
+    "--bgColor-neutral-muted": {
+      "raw": "#e0e6eb",
+      "resolved": "#e0e6eb",
+      "chain": [
+        "--bgColor-neutral-muted",
+        "#e0e6eb"
+      ]
+    },
+    "--bgColor-severe-emphasis": {
+      "raw": "#a0111f",
+      "resolved": "#a0111f",
+      "chain": [
+        "--bgColor-severe-emphasis",
+        "#a0111f"
+      ]
+    },
+    "--bgColor-severe-muted": {
+      "raw": "#fff0ee",
+      "resolved": "#fff0ee",
+      "chain": [
+        "--bgColor-severe-muted",
+        "#fff0ee"
+      ]
+    },
+    "--bgColor-sponsors-emphasis": {
+      "raw": "#971368",
+      "resolved": "#971368",
+      "chain": [
+        "--bgColor-sponsors-emphasis",
+        "#971368"
+      ]
+    },
+    "--bgColor-sponsors-muted": {
+      "raw": "#feeff7",
+      "resolved": "#feeff7",
+      "chain": [
+        "--bgColor-sponsors-muted",
+        "#feeff7"
+      ]
+    },
+    "--bgColor-success-emphasis": {
+      "raw": "#0349b4",
+      "resolved": "#0349b4",
+      "chain": [
+        "--bgColor-success-emphasis",
+        "#0349b4"
+      ]
+    },
+    "--bgColor-success-muted": {
+      "raw": "#dff7ff",
+      "resolved": "#dff7ff",
+      "chain": [
+        "--bgColor-success-muted",
+        "#dff7ff"
+      ]
+    },
+    "--bgColor-transparent": {
+      "raw": "#fff0",
+      "resolved": "#fff0",
+      "chain": [
+        "--bgColor-transparent",
+        "#fff0"
+      ]
+    },
+    "--borderColor-accent-emphasis": {
+      "raw": "#0349b4",
+      "resolved": "#0349b4",
+      "chain": [
+        "--borderColor-accent-emphasis",
+        "#0349b4"
+      ]
+    },
+    "--borderColor-accent-muted": {
+      "raw": "#368cf9",
+      "resolved": "#368cf9",
+      "chain": [
+        "--borderColor-accent-muted",
+        "#368cf9"
+      ]
+    },
+    "--borderColor-attention-emphasis": {
+      "raw": "#744500",
+      "resolved": "#744500",
+      "chain": [
+        "--borderColor-attention-emphasis",
+        "#744500"
+      ]
+    },
+    "--borderColor-attention-muted": {
+      "raw": "#b58407",
+      "resolved": "#b58407",
+      "chain": [
+        "--borderColor-attention-muted",
+        "#b58407"
+      ]
+    },
+    "--borderColor-danger-emphasis": {
+      "raw": "#a0111f",
+      "resolved": "#a0111f",
+      "chain": [
+        "--borderColor-danger-emphasis",
+        "#a0111f"
+      ]
+    },
+    "--borderColor-danger-muted": {
+      "raw": "#ee5a5d",
+      "resolved": "#ee5a5d",
+      "chain": [
+        "--borderColor-danger-muted",
+        "#ee5a5d"
+      ]
+    },
+    "--borderColor-default": {
+      "raw": "#454c54",
+      "resolved": "#454c54",
+      "chain": [
+        "--borderColor-default",
+        "#454c54"
+      ]
+    },
+    "--borderColor-disabled": {
+      "raw": "#59636e1f",
+      "resolved": "#59636e1f",
+      "chain": [
+        "--borderColor-disabled",
+        "#59636e1f"
+      ]
+    },
+    "--borderColor-done-emphasis": {
+      "raw": "#622cbc",
+      "resolved": "#622cbc",
+      "chain": [
+        "--borderColor-done-emphasis",
+        "#622cbc"
+      ]
+    },
+    "--borderColor-done-muted": {
+      "raw": "#a371f7",
+      "resolved": "#a371f7",
+      "chain": [
+        "--borderColor-done-muted",
+        "#a371f7"
+      ]
+    },
+    "--borderColor-emphasis": {
+      "raw": "var(--borderColor-default)",
+      "resolved": "#454c54",
+      "chain": [
+        "--borderColor-emphasis",
+        "--borderColor-default",
+        "#454c54"
+      ]
+    },
+    "--borderColor-severe-emphasis": {
+      "raw": "#a0111f",
+      "resolved": "#a0111f",
+      "chain": [
+        "--borderColor-severe-emphasis",
+        "#a0111f"
+      ]
+    },
+    "--borderColor-severe-muted": {
+      "raw": "#ee5a5d",
+      "resolved": "#ee5a5d",
+      "chain": [
+        "--borderColor-severe-muted",
+        "#ee5a5d"
+      ]
+    },
+    "--borderColor-sponsors-emphasis": {
+      "raw": "#971368",
+      "resolved": "#971368",
+      "chain": [
+        "--borderColor-sponsors-emphasis",
+        "#971368"
+      ]
+    },
+    "--borderColor-sponsors-muted": {
+      "raw": "#ed4baf",
+      "resolved": "#ed4baf",
+      "chain": [
+        "--borderColor-sponsors-muted",
+        "#ed4baf"
+      ]
+    }
+  }
+}

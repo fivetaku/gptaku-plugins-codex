@@ -1,0 +1,212 @@
+{
+  "slug": "apple",
+  "buttons": [
+    {
+      "selector": "button:hover",
+      "props": {
+        "color": "var(--footer-directory-title-color-hover)"
+      }
+    },
+    {
+      "selector": "button::after",
+      "props": {
+        "display": "block"
+      }
+    },
+    {
+      "selector": "button:focus-visible::after",
+      "props": {
+        "outline": "2px solid var(--sk-focus-color, #0071e3)"
+      }
+    },
+    {
+      "selector": "button:disabled",
+      "props": {
+        "cursor": "default"
+      }
+    },
+    {
+      "selector": "button:lang(ar)",
+      "props": {
+        "font-family": "\"SF Pro AR\",\"SF Pro AR Text\",\"SF Pro Text\",\"SF Pro Gulf\",\"SF Pro Icons\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif",
+        "letter-spacing": "0em"
+      }
+    },
+    {
+      "selector": "button:lang(ja)",
+      "props": {
+        "font-family": "\"SF Pro JP\",\"SF Pro Text\",\"SF Pro Icons\",\"Hiragino Kaku Gothic Pro\",\"ヒラギノ角ゴ Pro W3\",\"メイリオ\",\"Meiryo\",\"ＭＳ Ｐゴシック\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif",
+        "letter-spacing": "0em"
+      }
+    },
+    {
+      "selector": "button:lang(ko)",
+      "props": {
+        "font-family": "\"SF Pro KR\",\"SF Pro Text\",\"SF Pro Icons\",\"Apple Gothic\",\"HY Gulim\",\"MalgunGothic\",\"HY Dotum\",\"Lexi Gulim\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif",
+        "letter-spacing": "0em"
+      }
+    },
+    {
+      "selector": "button:lang(zh)",
+      "props": {
+        "letter-spacing": "0em"
+      }
+    },
+    {
+      "selector": "button:lang(th)",
+      "props": {
+        "font-family": "\"SF Pro TH\",\"SF Pro Text\",\"SF Pro Icons\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif"
+      }
+    },
+    {
+      "selector": "button:lang(zh-CN)",
+      "props": {
+        "font-family": "\"SF Pro SC\",\"SF Pro Text\",\"SF Pro Icons\",\"PingFang SC\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif"
+      }
+    }
+  ],
+  "cards": [],
+  "inputs": [
+    {
+      "selector": "textarea",
+      "props": {
+        "font-family": "\"SF Pro Text\",\"Myriad Set Pro\",\"SF Pro Icons\",\"Apple Legacy Chevron\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif"
+      }
+    },
+    {
+      "selector": "input-intro",
+      "props": {
+        "opacity": "0",
+        "transform": "translateY(var(--r-globalnav-search-input-vertical-shift))"
+      }
+    },
+    {
+      "selector": "input-outro",
+      "props": {
+        "opacity": "1",
+        "transform": "translateY(0)"
+      }
+    },
+    {
+      "selector": "input",
+      "props": {
+        "height": "1.1666666667",
+        "font-size": "24px",
+        "font-weight": "600",
+        "font-family": "SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif",
+        "line-height": "1.1666666667",
+        "letter-spacing": ".009em"
+      }
+    },
+    {
+      "selector": "input:lang(ar)",
+      "props": {
+        "font-family": "SF Pro AR,SF Pro AR Display,SF Pro Display,SF Pro Gulf,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    },
+    {
+      "selector": "input:lang(ja)",
+      "props": {
+        "font-family": "SF Pro JP,SF Pro Display,SF Pro Icons,Hiragino Kaku Gothic Pro,\\30d2\\30e9\\30ae\\30ce\\89d2\\30b4  Pro W3,\\30e1\\30a4\\30ea\\30aa,Meiryo,\\ff2d\\ff33  \\ff30\\30b4\\30b7\\30c3\\30af,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    },
+    {
+      "selector": "input:lang(ko)",
+      "props": {
+        "font-family": "SF Pro KR,SF Pro Display,SF Pro Icons,Apple Gothic,HY Gulim,MalgunGothic,HY Dotum,Lexi Gulim,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    },
+    {
+      "selector": "input:lang(th)",
+      "props": {
+        "font-family": "SF Pro TH,SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    },
+    {
+      "selector": "input:lang(zh-CN)",
+      "props": {
+        "font-family": "SF Pro SC,SF Pro Display,SF Pro Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    },
+    {
+      "selector": "input:lang(zh-HK)",
+      "props": {
+        "font-family": "SF Pro HK,SF Pro Display,SF Pro Icons,PingFang HK,Helvetica Neue,Helvetica,Arial,sans-serif"
+      }
+    }
+  ],
+  "nav": [
+    {
+      "selector": "nav",
+      "props": {
+        "color": "var(--sk-focus-color, #0071e3)"
+      }
+    },
+    {
+      "selector": "nav:small\"}}#ac-localnav",
+      "props": {
+        "padding": "22px",
+        "height": "var(--r-localnav-height)",
+        "width": "1024px",
+        "font-size": "17px"
+      }
+    },
+    {
+      "selector": "nav.ac-localnav-stacked",
+      "props": {
+        "height": "var(--r-localnav-stacked-height)"
+      }
+    },
+    {
+      "selector": "nav.theme-dark",
+      "props": {
+        "background": "none"
+      }
+    },
+    {
+      "selector": "nav.ac-localnav-dark~#ac-ln-curtain",
+      "props": {
+        "background": "rgba(51, 51, 54, 0.4)"
+      }
+    },
+    {
+      "selector": "nav.ac-localnav-light~#ac-ln-curtain",
+      "props": {
+        "background": "rgba(232, 232, 237, 0.4)"
+      }
+    },
+    {
+      "selector": "nav~#ac-ln-curtain",
+      "props": {
+        "transition": "opacity 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, -webkit-backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, width 0s ease 560ms, height 0s ease 560ms"
+      }
+    },
+    {
+      "selector": "nav.large-ac-ln-collapsible~#ac-ln-curtain",
+      "props": {
+        "transition": "opacity 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, -webkit-backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, width 0s ease 560ms, height 0s ease 560ms"
+      }
+    },
+    {
+      "selector": "nav.medium-ac-ln-collapsible~#ac-ln-curtain",
+      "props": {
+        "transition": "opacity 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, -webkit-backdrop-filter 320ms cubic-bezier(0.4, 0, 0.6, 1) 240ms, width 0s ease 560ms, height 0s ease 560ms"
+      }
+    },
+    {
+      "selector": "nav-actions-menucta-space-after)}}#ac-localnav",
+      "props": {
+        "background": "var(--globalheader-background, transparent)",
+        "color": "rgba(0, 0, 0, 0.16)"
+      }
+    }
+  ],
+  "hero": [],
+  "stats": {
+    "button_count": 10,
+    "card_count": 0,
+    "input_count": 10,
+    "nav_count": 10,
+    "hero_count": 0
+  }
+}

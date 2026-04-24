@@ -1,0 +1,410 @@
+{
+  "slug": "tinybird",
+  "total_vars": 194,
+  "resolved_count": 127,
+  "unresolved_count": 67,
+  "samples": {
+    "--font-roboto": {
+      "raw": "\"Roboto\",\"Roboto Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-roboto",
+        "\"Roboto\",\"Roboto Fallback\""
+      ]
+    },
+    "--font-roboto-mono": {
+      "raw": "\"Roboto Mono\",\"Roboto Mono Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-roboto-mono",
+        "\"Roboto Mono\",\"Roboto Mono Fallback\""
+      ]
+    },
+    "--font-fira-mono": {
+      "raw": "\"Fira Mono\",\"Fira Mono Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-fira-mono",
+        "\"Fira Mono\",\"Fira Mono Fallback\""
+      ]
+    },
+    "--font-seven-segment": {
+      "raw": "var(--font-seven-segment)",
+      "resolved": null,
+      "chain": [
+        "--font-seven-segment"
+      ]
+    },
+    "--swiper-theme-color": {
+      "raw": "#007aff",
+      "resolved": "#007aff",
+      "chain": [
+        "--swiper-theme-color",
+        "#007aff"
+      ]
+    },
+    "--swiper-preloader-color": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--swiper-preloader-color",
+        "#000"
+      ]
+    },
+    "--tw-font-weight": {
+      "raw": "var(--font-weight-semibold)",
+      "resolved": "600",
+      "chain": [
+        "--tw-font-weight",
+        "--font-weight-semibold",
+        "600"
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "calc(calc(1 / 2 * 100%) * -1)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-x",
+        "calc(calc(1 / 2 * 100%) * -1)"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "calc(50% * -1)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-y",
+        "calc(50% * -1)"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-translate-z",
+        "0"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "-1",
+      "resolved": "-1",
+      "chain": [
+        "--tw-scale-x",
+        "-1"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-y",
+        "100%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-z",
+        "100%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "initial"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "initial"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "initial"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "initial"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "initial"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "solid",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "solid"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to top in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to top in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "var(--gray-950)",
+      "resolved": "#0a0a0a",
+      "chain": [
+        "--tw-gradient-from",
+        "--gray-950",
+        "#0a0a0a"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "#0000",
+      "resolved": "#0000",
+      "chain": [
+        "--tw-gradient-via",
+        "#0000"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-to",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from) var(--tw-gradient-from-position),var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "0%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "50%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "100%"
+      ]
+    },
+    "--tw-leading": {
+      "raw": "7.25rem",
+      "resolved": "7.25rem",
+      "chain": [
+        "--tw-leading",
+        "7.25rem"
+      ]
+    },
+    "--tw-tracking": {
+      "raw": "calc(0.4375rem * -1)",
+      "resolved": null,
+      "chain": [
+        "--tw-tracking",
+        "calc(0.4375rem * -1)"
+      ]
+    },
+    "--tw-shadow": {
+      "raw": "0 0.625rem 0.9375rem -0.1875rem var(--tw-shadow-color,#0000001a),0 0.25rem 0.375rem -0.25rem var(--tw-shadow-color,#0000001a)",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow",
+        "0 0.625rem 0.9375rem -0.1875rem var(--tw-shadow-color,#0000001a),0 0.25rem 0.375rem -0.25rem var(--tw-shadow-color,#0000001a)"
+      ]
+    },
+    "--tw-shadow-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow-color",
+        "initial"
+      ]
+    },
+    "--tw-shadow-alpha": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-shadow-alpha",
+        "100%"
+      ]
+    },
+    "--tw-inset-shadow": {
+      "raw": "0 0 #0000",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-shadow",
+        "0 0 #0000"
+      ]
+    },
+    "--tw-inset-shadow-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-shadow-color",
+        "initial"
+      ]
+    },
+    "--tw-inset-shadow-alpha": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-inset-shadow-alpha",
+        "100%"
+      ]
+    },
+    "--tw-ring-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-color",
+        "initial"
+      ]
+    },
+    "--tw-ring-shadow": {
+      "raw": "var(--tw-ring-inset,) 0 0 0 calc(0 + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-shadow",
+        "var(--tw-ring-inset,) 0 0 0 calc(0 + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+      ]
+    },
+    "--tw-inset-ring-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-ring-color",
+        "initial"
+      ]
+    },
+    "--tw-inset-ring-shadow": {
+      "raw": "0 0 #0000",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-ring-shadow",
+        "0 0 #0000"
+      ]
+    },
+    "--tw-ring-inset": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-inset",
+        "initial"
+      ]
+    },
+    "--tw-ring-offset-width": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-ring-offset-width",
+        "0"
+      ]
+    },
+    "--tw-ring-offset-color": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--tw-ring-offset-color",
+        "#fff"
+      ]
+    },
+    "--tw-ring-offset-shadow": {
+      "raw": "0 0 #0000",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-offset-shadow",
+        "0 0 #0000"
+      ]
+    },
+    "--tw-outline-style": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--tw-outline-style",
+        "none"
+      ]
+    },
+    "--tw-blur": {
+      "raw": "blur(0.5rem)",
+      "resolved": null,
+      "chain": [
+        "--tw-blur",
+        "blur(0.5rem)"
+      ]
+    },
+    "--tw-brightness": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-brightness",
+        "initial"
+      ]
+    },
+    "--tw-contrast": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-contrast",
+        "initial"
+      ]
+    }
+  }
+}

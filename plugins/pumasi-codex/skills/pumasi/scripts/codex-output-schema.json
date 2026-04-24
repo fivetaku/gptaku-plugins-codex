@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "files_created": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of file paths created or modified"
+    },
+    "files_modified": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of file paths modified (not newly created)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "partial", "failed"],
+      "description": "Overall task completion status"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Brief summary of what was done"
+    },
+    "signatures": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of exported function/class signatures"
+    },
+    "dependencies_used": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "External packages used (name@version format)"
+    },
+    "risks": {
+      "type": "string",
+      "description": "Known risks or issues"
+    }
+  },
+  "required": ["files_created", "files_modified", "status", "summary", "signatures", "dependencies_used", "risks"],
+  "additionalProperties": false
+}

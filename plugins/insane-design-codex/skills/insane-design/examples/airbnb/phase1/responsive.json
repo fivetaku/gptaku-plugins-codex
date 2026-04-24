@@ -1,0 +1,237 @@
+{
+  "slug": "airbnb",
+  "breakpoints": [
+    {
+      "condition": "min-width:300px",
+      "direction": "min",
+      "value": "300px"
+    },
+    {
+      "condition": "max-width:300px",
+      "direction": "max",
+      "value": "300px"
+    },
+    {
+      "condition": "max-width:320px",
+      "direction": "max",
+      "value": "320px"
+    },
+    {
+      "condition": "max-width:330px",
+      "direction": "max",
+      "value": "330px"
+    },
+    {
+      "condition": "min-width:23em",
+      "direction": "min",
+      "value": "23em"
+    },
+    {
+      "condition": "min-width:375px",
+      "direction": "min",
+      "value": "375px"
+    },
+    {
+      "condition": "min-width:376px",
+      "direction": "min",
+      "value": "376px"
+    },
+    {
+      "condition": "min-width:403px",
+      "direction": "min",
+      "value": "403px"
+    },
+    {
+      "condition": "min-width:412px",
+      "direction": "min",
+      "value": "412px"
+    },
+    {
+      "condition": "min-width:420px",
+      "direction": "min",
+      "value": "420px"
+    },
+    {
+      "condition": "min-width:429px",
+      "direction": "min",
+      "value": "429px"
+    },
+    {
+      "condition": "min-width:431px",
+      "direction": "min",
+      "value": "431px"
+    },
+    {
+      "condition": "min-width:440px",
+      "direction": "min",
+      "value": "440px"
+    },
+    {
+      "condition": "max-width:499px",
+      "direction": "max",
+      "value": "499px"
+    },
+    {
+      "condition": "min-width:500px",
+      "direction": "min",
+      "value": "500px"
+    },
+    {
+      "condition": "min-width:550px",
+      "direction": "min",
+      "value": "550px"
+    },
+    {
+      "condition": "min-width:551px",
+      "direction": "min",
+      "value": "551px"
+    },
+    {
+      "condition": "min-width:667px",
+      "direction": "min",
+      "value": "667px"
+    },
+    {
+      "condition": "max-width:743px",
+      "direction": "max",
+      "value": "743px"
+    },
+    {
+      "condition": "min-width:744px",
+      "direction": "min",
+      "value": "744px"
+    },
+    {
+      "condition": "max-width:744px",
+      "direction": "max",
+      "value": "744px"
+    },
+    {
+      "condition": "max-width:768px",
+      "direction": "max",
+      "value": "768px"
+    },
+    {
+      "condition": "min-width:800px",
+      "direction": "min",
+      "value": "800px"
+    },
+    {
+      "condition": "min-width:880px",
+      "direction": "min",
+      "value": "880px"
+    },
+    {
+      "condition": "max-width:895px",
+      "direction": "max",
+      "value": "895px"
+    },
+    {
+      "condition": "max-width:949px",
+      "direction": "max",
+      "value": "949px"
+    },
+    {
+      "condition": "min-width:950px",
+      "direction": "min",
+      "value": "950px"
+    },
+    {
+      "condition": "min-width:1024px",
+      "direction": "min",
+      "value": "1024px"
+    },
+    {
+      "condition": "max-width:1127px",
+      "direction": "max",
+      "value": "1127px"
+    },
+    {
+      "condition": "min-width:1128px",
+      "direction": "min",
+      "value": "1128px"
+    },
+    {
+      "condition": "min-width:1194px",
+      "direction": "min",
+      "value": "1194px"
+    },
+    {
+      "condition": "min-width:1240px",
+      "direction": "min",
+      "value": "1240px"
+    },
+    {
+      "condition": "min-width:1280px",
+      "direction": "min",
+      "value": "1280px"
+    },
+    {
+      "condition": "min-width:1348px",
+      "direction": "min",
+      "value": "1348px"
+    },
+    {
+      "condition": "min-width:1440px",
+      "direction": "min",
+      "value": "1440px"
+    },
+    {
+      "condition": "min-width:1600px",
+      "direction": "min",
+      "value": "1600px"
+    },
+    {
+      "condition": "min-width:1735px",
+      "direction": "min",
+      "value": "1735px"
+    },
+    {
+      "condition": "min-width:1760px",
+      "direction": "min",
+      "value": "1760px"
+    },
+    {
+      "condition": "min-width:1880px",
+      "direction": "min",
+      "value": "1880px"
+    },
+    {
+      "condition": "min-width:1920px",
+      "direction": "min",
+      "value": "1920px"
+    },
+    {
+      "condition": "min-width:2120px",
+      "direction": "min",
+      "value": "2120px"
+    },
+    {
+      "condition": "min-width:2560px",
+      "direction": "min",
+      "value": "2560px"
+    }
+  ],
+  "approach": "mobile-first",
+  "touch": {
+    "min_height_44px": true,
+    "button_heights": [
+      "32px",
+      "46px",
+      "40px",
+      "16px"
+    ],
+    "input_heights": [
+      "120px"
+    ]
+  },
+  "collapsing": {
+    "nav_collapse": null,
+    "grid_collapse": null,
+    "sidebar_collapse": null
+  },
+  "stats": {
+    "breakpoint_count": 42,
+    "approach": "mobile-first"
+  }
+}

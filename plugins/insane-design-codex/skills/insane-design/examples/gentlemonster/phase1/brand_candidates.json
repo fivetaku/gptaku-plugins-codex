@@ -1,0 +1,268 @@
+{
+  "slug": "gentlemonster",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": "a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,h"
+    },
+    {
+      "selector": "button.btn-common:disabled",
+      "property": "border",
+      "hex": "#858585",
+      "rule_snippet": "button.btn-common:disabled {border:1px solid #858585;background-color:#858585;color:#fff}"
+    },
+    {
+      "selector": "button.btn-common:disabled",
+      "property": "background-color",
+      "hex": "#858585",
+      "rule_snippet": "button.btn-common:disabled {border:1px solid #858585;background-color:#858585;color:#fff}"
+    },
+    {
+      "selector": "button.btn-common:disabled",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "button.btn-common:disabled {border:1px solid #858585;background-color:#858585;color:#fff}"
+    },
+    {
+      "selector": "button.btn-submit:disabled",
+      "property": "color",
+      "hex": "#858585",
+      "rule_snippet": "button.btn-submit:disabled {color:#858585}"
+    },
+    {
+      "selector": ".text-color-primary",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": ".text-color-primary {color:#111}"
+    },
+    {
+      "selector": ".Accordion_child_button__GNvrM:after,.Accordion_child_button__GNvrM:before",
+      "property": "background",
+      "hex": "#000000",
+      "rule_snippet": ".Accordion_child_button__GNvrM:after,.Accordion_child_button__GNvrM:before {content:\"\";position:absolute;left:50%;top:50%;transform:translate3d(-50%,-50%,0);background:#000;transition:transform .5s ea"
+    },
+    {
+      "selector": ".SelectDropDown_dropdown-list-option__CjiRt button",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": ".SelectDropDown_dropdown-list-option__CjiRt button {padding:15px 0;border-bottom:1px solid #d8d8d8}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-three #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-three #onetrust-pc-btn-handler {order:2;border:0!important;background:transparent!important;color:#111!important}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler",
+      "property": "border",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler {order:1;width:100%!important;height:48px!important;border:1px solid #111!important;border-radius:8px!important;background:#111!importan"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler",
+      "property": "background",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler {order:1;width:100%!important;height:48px!important;border:1px solid #111!important;border-radius:8px!important;background:#111!importan"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-three #onetrust-accept-btn-handler {order:1;width:100%!important;height:48px!important;border:1px solid #111!important;border-radius:8px!important;background:#111!importan"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-hlst-cntr .ot-link-btn",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-pc-sdk .ot-hlst-cntr .ot-link-btn {margin-top:15px;font-size:11px!important;font-weight:400;color:#111!important;line-height:15px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-hlst-cntr .ot-link-btn:after",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-pc-sdk .ot-hlst-cntr .ot-link-btn:after {content:\" ↗\";font-size:11px!important;font-weight:400;color:#111!important;line-height:15px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-pc-footer .save-preference-btn-handler",
+      "property": "background-color",
+      "hex": "#111111",
+      "rule_snippet": "#onetrust-pc-sdk .ot-pc-footer .save-preference-btn-handler {width:100%;max-width:none!important;height:48px!important;margin:0!important;border-radius:8px;background-color:#111!important;font-size:13"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-pc-footer .save-preference-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-pc-sdk .ot-pc-footer .save-preference-btn-handler {width:100%;max-width:none!important;height:48px!important;margin:0!important;border-radius:8px;background-color:#111!important;font-size:13"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-lst-subhdr .ot-fltr-cntr #filter-btn-handler",
+      "property": "background-color",
+      "hex": "#4798F5",
+      "rule_snippet": "#onetrust-pc-sdk .ot-lst-subhdr .ot-fltr-cntr #filter-btn-handler {background-color:#4798f5!important}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#111111",
+      "count": 61,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 57,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 50,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#858585",
+      "count": 32,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D8D8D8",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F3F4F6",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4798F5",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E2E4E5",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F35C2D",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#BFBFBF",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#ABABAB",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F2F4F5",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#A8A8A8",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#C3C3C3",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#6D6D6D",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E3E5E5",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#008F0E",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#343434",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D9D9D9",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DFE3E8",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#005FCC",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#007AFF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#06C755",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1877F2",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2B2B2B",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#3ED00A",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#494C4F",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#525252",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#666666",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#6E6E6E",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 47,
+    "by_role": {
+      "chromatic": 11,
+      "neutral": 19,
+      "selector": 17
+    }
+  }
+}

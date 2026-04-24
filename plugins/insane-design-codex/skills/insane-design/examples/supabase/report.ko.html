@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Supabase — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --brand-color:#3ECF8E;
+  --font-display:"Ubuntu","Droid Sans",-apple-system,sans-serif;
+  --font-sans:"Pretendard Variable","Inter",-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --bg:#fafafa;--fg:#09090b;--card:#fff;
+  --muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;
+  --border:#e4e4e7;--accent:#18181b;
+  --radius:.5rem;--radius-lg:.75rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:600;color:var(--fg);font-family:var(--font-display)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:600}
+.hero-big h1{font-family:var(--font-display);font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:28px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px;color:var(--fg)}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:8px;font-family:var(--font-mono);font-size:11px;font-weight:500;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#18181b}.sw--d{color:#fafafa}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans);font-weight:500}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__s{color:var(--fg)}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:600;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:600}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:8px;background:var(--card)}
+.sh-card__n{font-weight:600;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:20px;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px;color:var(--fg)}
+.comp p{font-size:13px;color:var(--subtle)}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:4px}
+.comp pre{background:var(--muted);padding:12px;border-radius:4px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;line-height:1.5;color:var(--fg);background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#08090a;color:#f7f8f8;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:999px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:600}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:5px 12px;background:var(--muted);border-radius:9999px;font-size:11px;color:var(--subtle);font-weight:500}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#0a0a0a;color:#e5e5e5;padding:16px;border-radius:8px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .main{padding:32px 20px}
+  .do-dont{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+  <div class="toc__brand">
+    <div class="toc__brand-name">Supabase</div>
+    <div class="toc__brand-sub">Design System Report</div>
+  </div>
+  <div class="toc__group-label">Overview</div>
+  <ul class="toc__list">
+    <li><a href="#mood"><span class="toc__num">00</span>분위기</a></li>
+    <li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li>
+    <li><a href="#provenance"><span class="toc__num">02</span>출처</a></li>
+    <li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li>
+  </ul>
+  <div class="toc__group-label">Foundations</div>
+  <ul class="toc__list">
+    <li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li>
+    <li><a href="#colors"><span class="toc__num">05</span>컬러</a></li>
+  </ul>
+  <div class="toc__group-label">Tokens</div>
+  <ul class="toc__list">
+    <li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li>
+    <li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li>
+    <li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li>
+    <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+  </ul>
+  <div class="toc__group-label">Patterns</div>
+  <ul class="toc__list">
+    <li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li>
+    <li><a href="#responsive"><span class="toc__num">09R</span>반응형</a></li>
+    <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+  </ul>
+  <div class="toc__group-label">Guide</div>
+  <ul class="toc__list">
+    <li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li>
+    <li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li>
+  </ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Developer Brutalism — 코드블록을 hero에 두는 개발자 중심 미학</div>
+  <h1>Supabase green 단일 액센트 · #1C1C1C 캔버스</h1>
+  <p class="lead">Supabase · <code>https://supabase.com</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Supabase hero screenshot" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Supabase의 마케팅 사이트는 <code>#1C1C1C</code> near-black 캔버스 위에 <b>Supabase green <code>#3ECF8E</code></b> 단 하나의 액센트로 승부하는 <b>developer-brutalist minimal</b>이다. Firebase를 대체하는 오픈소스 BaaS라는 포지셔닝이 그대로 시각화되어 — 화려하지 않고, 개발자에게 필요한 것만 명확하게, 터미널 / 코드 블록 / API 스키마를 hero 자리에 둔다.</p>
+    <p>컬러 시스템은 Tailwind 기반이지만 Supabase 고유의 <b>dark-first</b> 의미 layer를 얹었다. 지배색은 <code>#1C1C1C</code>(bg-dash), <code>#191919</code>(bg-1), <code>#1E1E1E</code>(bg-2), <code>#262626</code>(border) — 검정 6-8단 계단. 액센트는 <code>#3ECF8E</code> 외에 거의 사용되지 않고, Vercel blue <code>#0070F3</code>이 link에 등장할 뿐.</p>
+    <p><b>code-hike</b> 터미널 chrome을 위한 macOS traffic-light 3색(<code>#ED6B60/#F5BE4F/#62C554</code>)은 hero에서 시그니처 역할을 한다. 타이포는 <b>Ubuntu</b>(오픈소스) + <b>Office Code Pro</b>(mono)로 "우리는 VSCode / DevTools / Linux 생태계"라는 메시지를 낸다.</p>
+    <p>인터랙션은 절제되어 있다. Supabase는 micro-interaction에서 scale 대신 <b>border + glow</b> 기반 hover를 선호한다. 예: 카드 hover에서 <code>border-color: rgba(62,207,142,0.4)</code> + 은은한 green glow.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Supabase green #3ECF8E single-accent</span>
+    <span class="kw">Dark stack #191919/#1C1C1C/#1E1E1E/#262626</span>
+    <span class="kw">Ubuntu + Office Code Pro (개발자 스택)</span>
+    <span class="kw">code-hike 터미널 chrome (hero 시그니처)</span>
+    <span class="kw">Vercel blue #0070F3 link accent</span>
+    <span class="kw">border+glow hover (scale 없음)</span>
+    <span class="kw">Hero에 실제 SQL/JS 코드</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기 (Quick Start)</h2>
+  <p class="lede">5분 안에 Supabase처럼 만들기 — 3가지만 하면 80%.</p>
+  <div class="quick-steps">
+    <pre><code>/* 1. Dark 6단 + green */
+:root {
+  --supabase-green: #3ECF8E;
+  --bg-base: #1C1C1C;
+  --bg-2: #1E1E1E;
+  --border: #262626;
+  --fg: #EDEDED;
+  --link: #0070F3;
+}
+body { background: var(--bg-base); color: var(--fg); }</code></pre>
+    <pre><code>/* 2. Ubuntu + Office Code Pro */
+body {
+  font-family: "Ubuntu","Droid Sans",
+               -apple-system,sans-serif;
+  font-weight: 400; font-size: 16px;
+}
+code, pre, .mono {
+  font-family: "Office Code Pro",
+               "Courier New",monospace;
+}</code></pre>
+    <pre><code>/* 3. Terminal chrome (signature) */
+.ch-frame {
+  background:#1E1E1E;
+  border:1px solid #262626;
+  border-radius:8px;
+}
+.ch-frame-button-left  { background:#ED6B60; border:1px solid #CE5347; }
+.ch-frame-button-middle{ background:#F5BE4F; border:1px solid #D6A243; }
+.ch-frame-button-right { background:#62C554; border:1px solid #58A942; }</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> Supabase green을 버튼 배경으로 꽉 채워 쓰지 마라 — Supabase는 초록을 <code>border-color</code> + <code>text-color</code> + <code>outline glow</code>로만 쓴다. solid green fill을 하면 Vercel이나 Cal.com 느낌이 된다.</div>
+</section>
+
+<section id="provenance" class="sec">
+  <h2>02. 출처와 수집 기준</h2>
+  <table class="tbl">
+    <tr><th>Source URL</th><td><code>https://supabase.com</code></td></tr>
+    <tr><th>Fetched</th><td>2026-04-20</td></tr>
+    <tr><th>HTML / CSS</th><td>Next.js + Tailwind + code-hike</td></tr>
+    <tr><th>Vars total</th><td>788 (resolved 598 · 76%)</td></tr>
+    <tr><th>Signature lib</th><td>code-hike (<code>.ch-frame-*</code>, <code>.ch-browser-*</code>)</td></tr>
+  </table>
+</section>
+
+<section id="stack" class="sec">
+  <h2>03. 테크 스택</h2>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+    <li><b>Framework</b>: Next.js (Vercel hosting)</li>
+    <li><b>CSS</b>: Tailwind + custom dark layer + code-hike</li>
+    <li><b>Typography</b>: Ubuntu (body) / Office Code Pro (mono)</li>
+    <li><b>Theme</b>: dark default, light available</li>
+    <li><b>Signature</b>: code-hike terminal chrome at hero</li>
+    <li><b>Link accent</b>: Vercel blue <code>#0070F3</code></li>
+  </ul>
+</section>
+
+<section id="typography" class="sec">
+  <h2>04. 타이포그래피</h2>
+  <p class="lede">Ubuntu body + Office Code Pro mono. weight 200-900 전 범위 로드, 실사용 400/500/600/700/800.</p>
+  <h3>Font Stack</h3>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+    <li><b>Body/UI</b>: <code>Ubuntu</code>, <code>Droid Sans</code>, -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, sans-serif</li>
+    <li><b>Mono</b>: <code>Office Code Pro</code>, <code>Courier New</code>, Courier, monospace</li>
+    <li><b>Weights</b>: 200/300/400/500/600/700/800/900 전 범위</li>
+  </ul>
+  <h3 style="margin-top:32px;">Type Scale</h3>
+  <div class="type-row"><div class="type-row__s" style="font-size:12px;font-weight:400;">caption</div><div class="type-row__spec"><div class="tk">caption</div><div><b>12px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:14px;font-weight:400;">small</div><div class="type-row__spec"><div class="tk">small</div><div><b>14px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:16px;font-weight:400;">body</div><div class="type-row__spec"><div class="tk">body</div><div><b>16px</b> · weight 400 · lh 1.6</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:18px;font-weight:400;">lead</div><div class="type-row__spec"><div class="tk">lead</div><div><b>18px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:24px;font-weight:600;">h3</div><div class="type-row__spec"><div class="tk">h3</div><div><b>24px</b> · weight 600 · lh 1.3</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:32px;font-weight:700;">h2</div><div class="type-row__spec"><div class="tk">h2</div><div><b>32px</b> · weight 700 · lh 1.2</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:56px;font-weight:800;line-height:1.1;letter-spacing:-.02em;font-family:var(--font-display)">h1 (clamp)</div><div class="type-row__spec"><div class="tk">h1</div><div><b>clamp(32px,6vw,72px)</b> · 800 · lh 1.1</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:72px;font-weight:800;line-height:1.05;letter-spacing:-.03em;font-family:var(--font-display)">display</div><div class="type-row__spec"><div class="tk">display</div><div><b>72-96px</b> · 800 · lh 1.05</div></div></div>
+</section>
+
+<section id="colors" class="sec">
+  <h2>05. 컬러</h2>
+  <p class="lede">Supabase green single-accent + dark stack 8단 + Vercel blue link + code-hike traffic lights.</p>
+
+  <div class="ramp-label">Signature · Supabase green (3 steps)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#3ECF8E"><div class="n">green (brand)</div>#3ECF8E</div>
+    <div class="sw sw--d" style="background:#24B47E"><div class="n">green-dark</div>#24B47E</div>
+    <div class="sw sw--l" style="background:#DFFFF1"><div class="n">green-glow-bg</div>#DFFFF1</div>
+  </div>
+
+  <div class="ramp-label">Dark Stack · 6단</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#191919"><div class="n">bg-1</div>#191919</div>
+    <div class="sw sw--d" style="background:#1C1C1C"><div class="n">bg-base</div>#1C1C1C</div>
+    <div class="sw sw--d" style="background:#1E1E1E"><div class="n">bg-2</div>#1E1E1E</div>
+    <div class="sw sw--d" style="background:#262626"><div class="n">border</div>#262626</div>
+    <div class="sw sw--d" style="background:#3C3C3C"><div class="n">surface</div>#3C3C3C</div>
+    <div class="sw sw--d" style="background:#999999"><div class="n">fg-muted</div>#999999</div>
+    <div class="sw sw--l" style="background:#EDEDED"><div class="n">fg</div>#EDEDED</div>
+    <div class="sw sw--l" style="background:#F0F0F0"><div class="n">fg-bright</div>#F0F0F0</div>
+  </div>
+
+  <div class="ramp-label">code-hike Terminal Traffic Lights</div>
+  <div class="ramp">
+    <div class="sw sw--l" style="background:#ED6B60"><div class="n">dot-red</div>#ED6B60</div>
+    <div class="sw sw--l" style="background:#F5BE4F"><div class="n">dot-amber</div>#F5BE4F</div>
+    <div class="sw sw--l" style="background:#62C554"><div class="n">dot-green</div>#62C554</div>
+    <div class="sw sw--l" style="background:#CE5347"><div class="n">red-border</div>#CE5347</div>
+    <div class="sw sw--l" style="background:#D6A243"><div class="n">amber-border</div>#D6A243</div>
+    <div class="sw sw--l" style="background:#58A942"><div class="n">green-border</div>#58A942</div>
+  </div>
+
+  <div class="ramp-label">Link / Accent</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#0070F3"><div class="n">vercel-blue</div>#0070F3</div>
+    <div class="sw sw--d" style="background:#030A0C"><div class="n">deep-ink</div>#030A0C</div>
+  </div>
+
+  <h3>Dominant Usage</h3>
+  <div class="dom-bar">
+    <div style="flex:178;background:#1C1C1C"></div>
+    <div style="flex:56;background:#FFFFFF"></div>
+    <div style="flex:12;background:#3ECF8E"></div>
+    <div style="flex:12;background:#1E1E1E"></div>
+    <div style="flex:10;background:#000"></div>
+    <div style="flex:10;background:#030A0C"></div>
+    <div style="flex:8;background:#DFFFF1"></div>
+    <div style="flex:6;background:#EDEDED"></div>
+  </div>
+  <div class="dom-list">
+    <div class="item"><div class="chip" style="background:#1C1C1C"></div><div><div class="hex">#1C1C1C</div><div class="cnt">178회 · base</div></div></div>
+    <div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">56회 · text</div></div></div>
+    <div class="item"><div class="chip" style="background:#3ECF8E"></div><div><div class="hex">#3ECF8E</div><div class="cnt">12회 · brand accent</div></div></div>
+    <div class="item"><div class="chip" style="background:#1E1E1E"></div><div><div class="hex">#1E1E1E</div><div class="cnt">12회 · card</div></div></div>
+    <div class="item"><div class="chip" style="background:#030A0C"></div><div><div class="hex">#030A0C</div><div class="cnt">10회 · deep-ink</div></div></div>
+    <div class="item"><div class="chip" style="background:#DFFFF1"></div><div><div class="hex">#DFFFF1</div><div class="cnt">8회 · green wash</div></div></div>
+    <div class="item"><div class="chip" style="background:#EDEDED"></div><div><div class="hex">#EDEDED</div><div class="cnt">6회 · fg-alt</div></div></div>
+  </div>
+</section>
+
+<section id="spacing" class="sec">
+  <h2>06. 스페이싱</h2>
+  <p class="lede">Tailwind 4px 기본 scale. Section padding 96-128px.</p>
+  <div class="space-row"><div class="tk">1</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline gap</div></div>
+  <div class="space-row"><div class="tk">2</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">icon gap</div></div>
+  <div class="space-row"><div class="tk">4</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default gap</div></div>
+  <div class="space-row"><div class="tk">6</div><div>24px</div><div class="bar" style="width:24px"></div><div class="use">card padding</div></div>
+  <div class="space-row"><div class="tk">8</div><div>32px</div><div class="bar" style="width:32px"></div><div class="use">section inner</div></div>
+  <div class="space-row"><div class="tk">16</div><div>64px</div><div class="bar" style="width:64px"></div><div class="use">section padding</div></div>
+  <div class="space-row"><div class="tk">24</div><div>96px</div><div class="bar" style="width:96px"></div><div class="use">large section</div></div>
+  <div class="space-row"><div class="tk">32</div><div>128px</div><div class="bar" style="width:128px"></div><div class="use">hero padding</div></div>
+</section>
+
+<section id="radius" class="sec">
+  <h2>07. 라디우스</h2>
+  <div class="rad-grid">
+    <div class="rad-card"><div style="border-radius:2px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-sm</div><div class="rad-card__v">2px · small control</div></div>
+    <div class="rad-card"><div style="border-radius:6px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-md</div><div class="rad-card__v">6px · input / CTA</div></div>
+    <div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-lg</div><div class="rad-card__v">8px · card / ch-frame</div></div>
+    <div class="rad-card"><div style="border-radius:12px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-xl</div><div class="rad-card__v">12px · hero card</div></div>
+    <div class="rad-card"><div style="border-radius:9999px;background:#3ECF8E;height:64px;"></div><div class="rad-card__n">rounded-full</div><div class="rad-card__v">9999px · avatar / pill</div></div>
+  </div>
+</section>
+
+<section id="shadows" class="sec">
+  <h2>07S. 섀도우</h2>
+  <p class="lede">Supabase의 시그니처는 <b>green glow</b>. dark bg 위에서 box-shadow 대신 green aura로 elevation 표현.</p>
+  <div class="sh-grid">
+    <div class="sh-card" style="box-shadow:0 1px 2px rgba(0,0,0,0.3);background:var(--card);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle raise</div><div class="sh-card__v">0 1px 2px rgba(0,0,0,0.5)</div></div>
+    <div class="sh-card" style="box-shadow:0 0 20px rgba(62,207,142,0.25);background:#1E1E1E;color:#EDEDED;"><div class="sh-card__n">shadow-glow-green</div><div class="sh-card__d" style="color:#999">시그니처 green aura</div><div class="sh-card__v" style="color:#999">0 0 20px rgba(62,207,142,.25)</div></div>
+    <div class="sh-card" style="box-shadow:0 24px 48px rgba(0,0,0,0.3);background:var(--card);"><div class="sh-card__n">shadow-lg</div><div class="sh-card__d">modal on dark</div><div class="sh-card__v">0 24px 48px rgba(0,0,0,0.6)</div></div>
+  </div>
+</section>
+
+<section id="motion" class="sec">
+  <h2>08. 모션</h2>
+  <table class="tbl">
+    <thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>hover transition</td><td><code>.15-.2s ease</code></td><td>border / color</td></tr>
+      <tr><td>link hover</td><td>instant color</td><td>Vercel blue link</td></tr>
+      <tr><td>terminal reveal</td><td>slide-in + fade</td><td>hero code block</td></tr>
+      <tr><td>focus ring</td><td>green outline 2px</td><td>CTA / input</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="layout" class="sec">
+  <h2>09. 레이아웃 패턴</h2>
+  <div class="lay-grid">
+    <div class="lay-card"><h3>Grid</h3><ul>
+      <li><b>Max-width</b>: 1280px (content) / 1440px (hero)</li>
+      <li><b>Gutter</b>: 24px</li>
+      <li><b>Columns</b>: 12 (Tailwind)</li>
+    </ul></div>
+    <div class="lay-card"><h3>Hero · code_first</h3><ul>
+      <li><b>Layout</b>: centered 1-column headline + code chrome card</li>
+      <li><b>Bg</b>: <code>#1C1C1C</code></li>
+      <li><b>Chrome</b>: traffic-light dots + filename tab + SQL/JS syntax highlight</li>
+      <li><b>CTA</b>: green outlined primary + ghost secondary</li>
+    </ul></div>
+    <div class="lay-card"><h3>Section Rhythm</h3><ul>
+      <li><b>Padding</b>: 96-128px</li>
+      <li><b>Max-width</b>: 1280px</li>
+      <li><b>Variant</b>: alternating <code>#1C1C1C / #191919</code></li>
+    </ul></div>
+    <div class="lay-card"><h3>Card</h3><ul>
+      <li><b>Bg</b>: <code>#1E1E1E</code></li>
+      <li><b>Border</b>: 1px solid <code>#262626</code></li>
+      <li><b>Radius</b>: 8-12px</li>
+      <li><b>Hover</b>: border <code>#3ECF8E40</code> + green glow</li>
+    </ul></div>
+    <div class="lay-card"><h3>Navigation</h3><ul>
+      <li><b>Height</b>: 64-72px</li>
+      <li><b>Bg</b>: transparent 초기 → <code>#1C1C1CBF</code> + blur on scroll</li>
+      <li><b>Mobile</b>: hamburger + fullscreen</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="responsive" class="sec">
+  <h2>09-R. 반응형 브레이크포인트</h2>
+  <table class="tbl">
+    <thead><tr><th>Name</th><th>Value</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>sm</code></td><td>640px</td><td>mobile stacked</td></tr>
+      <tr><td><code>md</code></td><td>768px</td><td>tablet</td></tr>
+      <tr><td><code>lg</code></td><td>1024px</td><td>desktop</td></tr>
+      <tr><td><code>xl</code></td><td>1280px</td><td>wide desktop cap</td></tr>
+      <tr><td><code>2xl</code></td><td>1536px</td><td>ultra wide</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="components" class="sec">
+  <h2>10. 컴포넌트</h2>
+  <div class="comp">
+    <h3>Terminal Chrome Card — 시그니처</h3>
+    <p>Supabase의 정체성. hero에 이거 하나 + green CTA 하나면 80% Supabase.</p>
+    <div class="comp-spec"><b>Spec</b>: bg <code>#1E1E1E</code> · border <code>#262626</code> · radius 8px · 3dots <code>#ED6B60/#F5BE4F/#62C554</code></div>
+    <pre><code>.ch-frame { background:#1E1E1E; border:1px solid #262626; border-radius:8px; }
+.ch-frame-button-left  { background:#ED6B60; border:1px solid #CE5347; }
+.ch-frame-button-middle{ background:#F5BE4F; border:1px solid #D6A243; }
+.ch-frame-button-right { background:#62C554; border:1px solid #58A942; }</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Outlined CTA (Primary)</h3>
+    <div class="comp-spec"><b>Spec</b>: bg transparent · border 1px solid #3ECF8E · color #3ECF8E · radius 6px · hover bg rgba(62,207,142,.1) + green glow</div>
+    <pre><code>.btn-primary {
+  background: transparent;
+  border: 1px solid #3ECF8E;
+  color: #3ECF8E;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all .15s ease;
+}
+.btn-primary:hover {
+  background: rgba(62,207,142,.1);
+  box-shadow: 0 0 20px rgba(62,207,142,.2);
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Card</h3>
+    <div class="comp-spec"><b>Spec</b>: bg #1E1E1E · border 1px solid #262626 · radius 8px · hover border #3ECF8E40 + glow</div>
+    <pre><code>.card {
+  background:#1E1E1E; border:1px solid #262626;
+  border-radius:8px; padding:20px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.card:hover {
+  border-color: rgba(62,207,142,.4);
+  box-shadow: 0 0 32px rgba(62,207,142,.08);
+}</code></pre>
+  </div>
+</section>
+
+<section id="agent" class="sec">
+  <h2>11. Agent Prompt Guide</h2>
+  <table class="tbl">
+    <thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+    <tbody>
+      <tr><td>Brand</td><td><code>--supabase-green</code></td><td><span style="width:16px;height:16px;background:#3ECF8E;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#3ECF8E</code></td></tr>
+      <tr><td>Bg base</td><td><code>--bg-base</code></td><td><span style="width:16px;height:16px;background:#1C1C1C;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1C1C1C</code></td></tr>
+      <tr><td>Card</td><td><code>--bg-2</code></td><td><span style="width:16px;height:16px;background:#1E1E1E;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1E1E1E</code></td></tr>
+      <tr><td>Border</td><td><code>--border</code></td><td><span style="width:16px;height:16px;background:#262626;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#262626</code></td></tr>
+      <tr><td>Text</td><td><code>--fg</code></td><td><span style="width:16px;height:16px;background:#EDEDED;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ccc;"></span><code>#EDEDED</code></td></tr>
+      <tr><td>Link</td><td><code>--link</code></td><td><span style="width:16px;height:16px;background:#0070F3;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#0070F3</code></td></tr>
+    </tbody>
+  </table>
+  <h3 style="margin-top:32px;">Example Prompts</h3>
+  <div class="ag-grid">
+    <div class="ag-card"><h4>🎯 Hero</h4><pre>Supabase hero: bg #1C1C1C, centered headline weight 800 clamp(32px,6vw,72px) color #EDEDED. Below: terminal chrome card (bg #1E1E1E, border 1px solid #262626, radius 8px) with 3 macOS traffic-light dots (#ED6B60/#F5BE4F/#62C554) + syntax-highlighted SQL.</pre></div>
+    <div class="ag-card"><h4>🔘 CTA</h4><pre>Supabase CTA: transparent bg, 1px solid #3ECF8E border, #3ECF8E text, padding 10px 20px, radius 6px. Hover: bg rgba(62,207,142,.1) + glow 0 0 20px rgba(62,207,142,.2).</pre></div>
+    <div class="ag-card"><h4>🎴 Card</h4><pre>Supabase card: bg #1E1E1E, border 1px solid #262626, radius 8px. Hover: border rgba(62,207,142,.4) + subtle green glow.</pre></div>
+    <div class="ag-card"><h4>🖥️ Terminal Chrome</h4><pre>code-hike terminal chrome: bg #1E1E1E, border 1px solid #262626, radius 8px. Top bar 40px with 3 dots (12px circles #ED6B60/#F5BE4F/#62C554 with 1px darker borders #CE5347/#D6A243/#58A942) + filename tab.</pre></div>
+  </div>
+</section>
+
+<section id="dodont" class="sec">
+  <h2>12. DO / DON'T</h2>
+  <div class="do-dont">
+    <div class="do"><h3>✓ DO</h3><ul>
+      <li>✅ Dark base <code>#1C1C1C</code> 고수 (<code>#0A0A0A</code> true black 아님)</li>
+      <li>✅ green <code>#3ECF8E</code>는 border / text / glow로만</li>
+      <li>✅ Hero에 code block을 주인공으로 (marketing 문구 대신)</li>
+      <li>✅ Ubuntu + Office Code Pro 폰트 조합 유지</li>
+      <li>✅ traffic-light 3색 <code>#ED6B60/#F5BE4F/#62C554</code>로 terminal 분위기</li>
+    </ul></div>
+    <div class="dont"><h3>✗ DON'T</h3><ul>
+      <li>solid green fill 버튼 금지 — border/glow만</li>
+      <li><code>#000</code> true black 쓰지 말 것 — <code>#1C1C1C</code>가 signature</li>
+      <li>sans-serif default로 system font만 쓰지 말 것 — Ubuntu 로드 필수</li>
+      <li>hover에 scale(1.04) 쓰지 말 것 — Spotify 것</li>
+      <li>Stripe purple / Vercel black 톤 섞지 말 것</li>
+    </ul></div>
+  </div>
+</section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+  <p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

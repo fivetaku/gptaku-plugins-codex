@@ -1,0 +1,161 @@
+@font-face {
+  font-family: sf;
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local('.SFNS-Regular'),
+    local('.SFUI-Regular');
+}
+
+@font-face {
+  font-family: sf;
+  font-weight: 400;
+  font-style: italic;
+  src:
+    local('.SFNS-RegularItalic'),
+    local('.SFUI-RegularItalic');
+}
+
+@font-face {
+  font-family: sf;
+  font-weight: 500;
+  font-style: normal;
+  src:
+    local('.SFNS-Semibold'),
+    local('.SFUI-Semibold');
+}
+
+@font-face {
+  font-family: sf;
+  font-weight: 500;
+  font-style: italic;
+  src:
+    local('.SFNS-SemiboldItalic'),
+    local('.SFUI-SemiboldItalic');
+}
+
+@font-face {
+  font-family: sf;
+  font-weight: 700;
+  font-style: normal;
+  src:
+    local('.SFNS-Heavy'),
+    local('.SFUI-Heavy');
+}
+
+@font-face {
+  font-family: sf;
+  font-weight: 700;
+  font-style: italic;
+  src:
+    local('.SFNS-HeavyItalic'),
+    local('.SFUI-HeavyItalic');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('BasierSquare-Regular'),
+    local('Basier Square Regular'),
+    url('https://static.toss.im/fonts/basier/basiersquare-regular-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('BasierSquare-RegularItalic'),
+    local('Basier Square Regular Italic'),
+    url('https://static.toss.im/fonts/basier/basiersquare-regularitalic-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-regularitalic-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('BasierSquare-Medium'),
+    local('Basier Square Medium'),
+    url('https://static.toss.im/fonts/basier/basiersquare-medium-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-medium-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('BasierSquare-MediumItalic'),
+    local('Basier Square Medium Italic'),
+    url('https://static.toss.im/fonts/basier/basiersquare-mediumitalic-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-mediumitalic-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('BasierSquare-SemiBold'),
+    local('Basier Square SemiBold'),
+    url('https://static.toss.im/fonts/basier/basiersquare-semibold-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-semibold-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Basier Square';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('BasierSquare-SemiBoldItalic'),
+    local('Basier Square SemiBold Italic'),
+    url('https://static.toss.im/fonts/basier/basiersquare-semibolditalic-webfont.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/basier/basiersquare-semibolditalic-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SD Gothic Neo';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('AppleSDGothicNeo-Regular'),
+    local('Apple SD Gothic Neo Regular'),
+    url('https://static.toss.im/fonts/sandoll/SDVRGothicNeoaTTF-dRg.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/sandoll/SDVRGothicNeoaTTF-dRg.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SD Gothic Neo';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('AppleSDGothicNeo-SemiBold'),
+    local('Apple SD Gothic Neo SemiBold'),
+    url('https://static.toss.im/fonts/sandoll/SDGothicNeoaTTF-fSm.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/sandoll/SDGothicNeoaTTF-fSm.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SD Gothic Neo';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('AppleSDGothicNeo-ExtraBold'),
+    local('Apple SD Gothic Neo ExtraBold'),
+    url('https://static.toss.im/fonts/sandoll/SDVRGothicNeoaTTF-hExBd.woff2') format('woff2'),
+    url('https://static.toss.im/fonts/sandoll/SDVRGothicNeoaTTF-hExBd.woff') format('woff');
+}

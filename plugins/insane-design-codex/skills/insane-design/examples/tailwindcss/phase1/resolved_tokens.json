@@ -1,0 +1,412 @@
+{
+  "slug": "tailwindcss",
+  "total_vars": 569,
+  "resolved_count": 114,
+  "unresolved_count": 455,
+  "samples": {
+    "--tw-content": {
+      "raw": "\"Desktop\"",
+      "resolved": null,
+      "chain": [
+        "--tw-content",
+        "\"Desktop\""
+      ]
+    },
+    "--tw-border-spacing-x": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-border-spacing-x",
+        "<value>"
+      ]
+    },
+    "--tw-border-spacing-y": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-border-spacing-y",
+        "<value>"
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "calc(50% - 3rem)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-x",
+        "calc(50% - 3rem)"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "-100%",
+      "resolved": "-100%",
+      "chain": [
+        "--tw-translate-y",
+        "-100%"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--tw-translate-z",
+        "1px"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-x",
+        "100%"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-y",
+        "100%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-z",
+        "100%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "rotateX(90deg)",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "rotateX(90deg)"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "rotateY(180deg)",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "rotateY(180deg)"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "rotateZ(45deg)",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "rotateZ(45deg)"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "skewX(<value>)",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "skewX(<value>)"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "skewY(calc(3deg*-1))",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "skewY(calc(3deg*-1))"
+      ]
+    },
+    "--tw-pan-x": {
+      "raw": "pan-x",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-x",
+        "pan-x"
+      ]
+    },
+    "--tw-pan-y": {
+      "raw": "pan-y",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-y",
+        "pan-y"
+      ]
+    },
+    "--tw-pinch-zoom": {
+      "raw": "pinch-zoom",
+      "resolved": null,
+      "chain": [
+        "--tw-pinch-zoom",
+        "pinch-zoom"
+      ]
+    },
+    "--tw-scroll-snap-strictness": {
+      "raw": "proximity",
+      "resolved": null,
+      "chain": [
+        "--tw-scroll-snap-strictness",
+        "proximity"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-divide-x-reverse": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--tw-divide-x-reverse",
+        "1"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "none"
+      ]
+    },
+    "--tw-divide-y-reverse": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--tw-divide-y-reverse",
+        "1"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to bottom in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to bottom in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "var(--color-purple-500)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-from",
+        "--color-purple-500",
+        "lab(52.0183% 66.11 -78.2316)"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "var(--color-teal-400)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-to",
+        "--color-teal-400",
+        "lab(76.0109% -53.3483 -2.27906)"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "21.56%",
+      "resolved": "21.56%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "21.56%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "35%",
+      "resolved": "35%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "35%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "90%"
+      ]
+    },
+    "--tw-mask-linear": {
+      "raw": "var(--tw-mask-left),var(--tw-mask-right),var(--tw-mask-bottom),var(--tw-mask-top)",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-linear",
+        "var(--tw-mask-left),var(--tw-mask-right),var(--tw-mask-bottom),var(--tw-mask-top)"
+      ]
+    },
+    "--tw-mask-radial": {
+      "raw": "radial-gradient(var(--tw-mask-radial-stops))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-radial",
+        "radial-gradient(var(--tw-mask-radial-stops))"
+      ]
+    },
+    "--tw-mask-conic": {
+      "raw": "conic-gradient(var(--tw-mask-conic-stops))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-conic",
+        "conic-gradient(var(--tw-mask-conic-stops))"
+      ]
+    },
+    "--tw-mask-left": {
+      "raw": "linear-gradient(to left,var(--tw-mask-left-from-color)var(--tw-mask-left-from-position),var(--tw-mask-left-to-color)var(--tw-mask-left-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-left",
+        "linear-gradient(to left,var(--tw-mask-left-from-color)var(--tw-mask-left-from-position),var(--tw-mask-left-to-color)var(--tw-mask-left-to-position))"
+      ]
+    },
+    "--tw-mask-right": {
+      "raw": "linear-gradient(to right,var(--tw-mask-right-from-color)var(--tw-mask-right-from-position),var(--tw-mask-right-to-color)var(--tw-mask-right-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right",
+        "linear-gradient(to right,var(--tw-mask-right-from-color)var(--tw-mask-right-from-position),var(--tw-mask-right-to-color)var(--tw-mask-right-to-position))"
+      ]
+    },
+    "--tw-mask-bottom": {
+      "raw": "linear-gradient(to bottom,var(--tw-mask-bottom-from-color)var(--tw-mask-bottom-from-position),var(--tw-mask-bottom-to-color)var(--tw-mask-bottom-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom",
+        "linear-gradient(to bottom,var(--tw-mask-bottom-from-color)var(--tw-mask-bottom-from-position),var(--tw-mask-bottom-to-color)var(--tw-mask-bottom-to-position))"
+      ]
+    },
+    "--tw-mask-top": {
+      "raw": "linear-gradient(to top,var(--tw-mask-top-from-color)var(--tw-mask-top-from-position),var(--tw-mask-top-to-color)var(--tw-mask-top-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top",
+        "linear-gradient(to top,var(--tw-mask-top-from-color)var(--tw-mask-top-from-position),var(--tw-mask-top-to-color)var(--tw-mask-top-to-position))"
+      ]
+    },
+    "--tw-mask-top-from-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-from-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-top-to-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-to-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-top-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-top-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-bottom-from-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-from-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-bottom-to-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-to-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-bottom-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-bottom-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-right-from-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right-from-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-right-to-position": {
+      "raw": "<value>",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right-to-position",
+        "<value>"
+      ]
+    },
+    "--tw-mask-right-from-color": {
+      "raw": "var(--color-white)",
+      "resolved": "#fff",
+      "chain": [
+        "--tw-mask-right-from-color",
+        "--color-white",
+        "#fff"
+      ]
+    }
+  }
+}

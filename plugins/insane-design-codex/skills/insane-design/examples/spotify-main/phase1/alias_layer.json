@@ -1,0 +1,291 @@
+{
+  "slug": "spotify-main",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--encore-button-block-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-both-icon-offset",
+        "references": [
+          "--encore-spacing-looser"
+        ],
+        "terminal_hint": "--encore-spacing-looser"
+      },
+      {
+        "alias": "--encore-button-both-offset",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-condensed-block-margin",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-condensed-inline-margin",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-condensed-min-block-size",
+        "references": [
+          "--encore-control-size-larger",
+          "--encore-spacing-tighter-2"
+        ],
+        "terminal_hint": "--encore-control-size-larger"
+      },
+      {
+        "alias": "--encore-button-condensed-min-inline-size",
+        "references": [
+          "--encore-control-size-larger",
+          "--encore-spacing-looser-2"
+        ],
+        "terminal_hint": "--encore-control-size-larger"
+      },
+      {
+        "alias": "--encore-button-focus-outline-offset",
+        "references": [
+          "--encore-border-width-thin"
+        ],
+        "terminal_hint": "--encore-border-width-thin"
+      },
+      {
+        "alias": "--encore-button-hover-scale",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-block-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-condensed-block-margin",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-condensed-inline-margin",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-inline-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-offset",
+        "references": [
+          "--encore-spacing-tighter"
+        ],
+        "terminal_hint": "--encore-spacing-tighter"
+      },
+      {
+        "alias": "--encore-button-icon-padding",
+        "references": [
+          "--encore-spacing-tighter-4"
+        ],
+        "terminal_hint": "--encore-spacing-tighter-4"
+      },
+      {
+        "alias": "--encore-button-icon-size",
+        "references": [
+          "--encore-graphic-size-decorative-base"
+        ],
+        "terminal_hint": "--encore-graphic-size-decorative-base"
+      },
+      {
+        "alias": "--encore-button-inline-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-min-block-size",
+        "references": [
+          "--encore-icon-height"
+        ],
+        "terminal_hint": "--encore-icon-height"
+      },
+      {
+        "alias": "--encore-button-min-inline-size",
+        "references": [
+          "--encore-icon-width"
+        ],
+        "terminal_hint": "--encore-icon-width"
+      },
+      {
+        "alias": "--modal-button-height",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "component": [],
+    "core": [
+      {
+        "alias": "--background-base",
+        "references": [],
+        "terminal_hint": "#0000008a"
+      },
+      {
+        "alias": "--background-elevated-base",
+        "references": [],
+        "terminal_hint": "#00000094"
+      },
+      {
+        "alias": "--background-elevated-highlight",
+        "references": [],
+        "terminal_hint": "#00000094"
+      },
+      {
+        "alias": "--background-elevated-press",
+        "references": [],
+        "terminal_hint": "#000000ad"
+      },
+      {
+        "alias": "--background-highlight",
+        "references": [],
+        "terminal_hint": "#00000094"
+      },
+      {
+        "alias": "--background-press",
+        "references": [],
+        "terminal_hint": "#000000ad"
+      },
+      {
+        "alias": "--background-tinted-base",
+        "references": [],
+        "terminal_hint": "#0000008a"
+      },
+      {
+        "alias": "--background-tinted-highlight",
+        "references": [],
+        "terminal_hint": "#0000008a"
+      },
+      {
+        "alias": "--background-tinted-press",
+        "references": [],
+        "terminal_hint": "#0000008a"
+      },
+      {
+        "alias": "--carousel-end-chevron-gradient",
+        "references": [],
+        "terminal_hint": "#121212b3"
+      },
+      {
+        "alias": "--carousel-start-chevron-gradient",
+        "references": [],
+        "terminal_hint": "#121212"
+      },
+      {
+        "alias": "--decorative-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--decorative-subdued",
+        "references": [],
+        "terminal_hint": "#ffffff21"
+      },
+      {
+        "alias": "--essential-announcement",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-bright-accent",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-negative",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-positive",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-subdued",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-warning",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--generic-tooltip-background-color",
+        "references": [],
+        "terminal_hint": "#282828"
+      },
+      {
+        "alias": "--os-handle-bg",
+        "references": [],
+        "terminal_hint": "#ffffff4d"
+      },
+      {
+        "alias": "--os-handle-bg-active",
+        "references": [],
+        "terminal_hint": "#ffffffb3"
+      },
+      {
+        "alias": "--os-handle-bg-hover",
+        "references": [],
+        "terminal_hint": "#ffffff80"
+      },
+      {
+        "alias": "--parents-essential-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-announcement",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-bright-accent",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-negative",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-positive",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-warning",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 20,
+      "component": 0,
+      "core": 30
+    }
+  }
+}

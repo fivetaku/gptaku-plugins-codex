@@ -1,0 +1,269 @@
+:root {
+--editor-topbar-height:0px;
+--editor-accent:59 130 246}
+.ProseMirror {
+word-wrap:break-word;
+white-space:break-spaces;
+-webkit-font-variant-ligatures:none;
+font-variant-ligatures:none;
+font-feature-settings:"liga" 0}
+.tiptap.ProseMirror {
+outline:none;
+min-width:600px}
+.tiptap.ProseMirror .ProseMirror-selectednode {
+position:relative}
+.tiptap.ProseMirror .ProseMirror-selectednode:after {
+content:"";
+pointer-events:none;
+background:rgb(var(--editor-accent) / .1);
+border-radius:4px;
+position:absolute;
+inset:0}
+.tiptap.ProseMirror .node-variable.ProseMirror-selectednode:after {
+content:none}
+.tiptap.ProseMirror .node-variable.ProseMirror-selectednode span[role=button] {
+position:relative}
+.tiptap.ProseMirror .node-variable.ProseMirror-selectednode span[role=button]:after {
+content:"";
+pointer-events:none;
+background:rgb(var(--editor-accent) / .1);
+border-radius:9px;
+position:absolute;
+inset:-1px}
+.tiptap.ProseMirror .ProseMirror-selectednode .ProseMirror-selectednode:after {
+content:none}
+.tiptap p.is-empty:before {
+opacity:.3;
+float:left;
+content:attr(data-placeholder);
+pointer-events:none;
+height:0}
+#editor-content[data-has-custom-empty-state=true] .tiptap p.is-empty:before {
+content:none}
+.tiptap .is-empty[alignment=center]:before {
+float:none;
+text-align:center}
+.tiptap .is-empty[alignment=right]:before {
+float:right}
+.tiptap[contenteditable=false] p.is-empty:before {
+display:none}
+.tiptap .is-empty:has(.img-placeholder):before {
+display:none}
+.tiptap.ProseMirror[contenteditable=true] [data-type=section]:hover {
+outline-color:var(--black-a7)}
+.tiptap.ProseMirror [data-type=section] {
+outline:2px dotted #0000;
+transition:outline .16s cubic-bezier(.45,.05,.55,.95)}
+.tiptap.ProseMirror[contenteditable=true] [data-type=section] {
+animation:2.5s ease-out backwards column-border-flash}
+.tiptap.ProseMirror[contenteditable=true] [data-type=column]:hover {
+outline-color:var(--black-a7)}
+.tiptap.ProseMirror [data-type=column] {
+outline:2px dotted #0000;
+transition:outline .16s cubic-bezier(.45,.05,.55,.95)}
+.tiptap.ProseMirror[contenteditable=true] [data-type=column] {
+animation:1.5s ease-out backwards column-border-flash}
+.tiptap.ProseMirror[contenteditable=true] [data-type=column]:nth-child(2) {
+animation-delay:.25s}
+.tiptap.ProseMirror[contenteditable=true] [data-type=column]:nth-child(3) {
+animation-delay:.5s}
+.tiptap.ProseMirror[contenteditable=true] [data-type=column]:nth-child(4) {
+animation-delay:.75s}
+@keyframes column-border-flash {
+0% {
+outline-color:#0000}
+15% {
+outline-color:var(--black-a7)}
+65% {
+outline-color:var(--black-a7)}
+to {
+outline-color:#0000}
+}
+.tiptap-extended {
+--editor-topbar-height:60px}
+.tiptap-extended .ProseMirror {
+word-wrap:break-word;
+white-space:break-spaces;
+-webkit-font-variant-ligatures:none;
+font-variant-ligatures:none;
+font-feature-settings:"liga" 0}
+.tiptap-extended .tiptap.ProseMirror {
+height:100%;
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif}
+.tiptap-extended .tiptap.ProseMirror:not(.ProseMirror-hideselection) ::selection,.tiptap-extended .editorSelection input::selection,.tiptap-extended .editorSelection span::selection {
+color:currentColor!important;
+background:#b4d1ef!important}
+.tiptap-extended .tiptap.ProseMirror.ProseMirror-hideselection ::selection {
+color:currentColor!important;
+background:0 0!important}
+.tiptap-extended .tiptap.ProseMirror ul,.tiptap-extended .tiptap.ProseMirror ol {
+padding-inline-start:1.1em;
+padding-bottom:1em}
+.tiptap-extended .tiptap.ProseMirror ul ul,.tiptap-extended .tiptap.ProseMirror ol ol {
+margin:0;
+padding-top:0;
+padding-bottom:0}
+.tiptap-extended .tiptap.ProseMirror ul li,.tiptap-extended .tiptap.ProseMirror ol li {
+margin-top:.3em;
+margin-bottom:.3em;
+margin-left:1em;
+list-style-position:outside}
+.tiptap-extended .tiptap.ProseMirror ul li {
+list-style-type:disc}
+.tiptap-extended .tiptap.ProseMirror ol li {
+list-style-type:decimal}
+.tiptap-extended .tiptap.ProseMirror li .node-paragraph {
+margin:0;
+padding:0}
+.tiptap-extended .tiptap.ProseMirror p {
+padding:0}
+.tiptap-extended .tiptap.ProseMirror p[alignment=left],.tiptap-extended .tiptap.ProseMirror h1[alignment=left],.tiptap-extended .tiptap.ProseMirror h2[alignment=left],.tiptap-extended .tiptap.ProseMirror h3[alignment=left],.tiptap-extended .tiptap.ProseMirror li[alignment=left],.tiptap-extended .tiptap.ProseMirror blockquote[alignment=left] {
+text-align:left}
+.tiptap-extended .tiptap.ProseMirror p[alignment=right]:not(.is-editor-empty),.tiptap-extended .tiptap.ProseMirror h1[alignment=right],.tiptap-extended .tiptap.ProseMirror h2[alignment=right],.tiptap-extended .tiptap.ProseMirror h3[alignment=right],.tiptap-extended .tiptap.ProseMirror li[alignment=right],.tiptap-extended .tiptap.ProseMirror blockquote[alignment=right] {
+text-align:right}
+.tiptap-extended .tiptap.ProseMirror p[alignment=center]:not(.is-editor-empty),.tiptap-extended .tiptap.ProseMirror h1[alignment=center],.tiptap-extended .tiptap.ProseMirror h2[alignment=center],.tiptap-extended .tiptap.ProseMirror h3[alignment=center],.tiptap-extended .tiptap.ProseMirror li[alignment=center],.tiptap-extended .tiptap.ProseMirror blockquote[alignment=center] {
+text-align:center}
+.tiptap-extended .tiptap.ProseMirror .align-right {
+text-align:right}
+.tiptap-extended .tiptap.ProseMirror .align-left {
+text-align:left}
+.tiptap-extended .tiptap.ProseMirror .align-center {
+text-align:center}
+.tiptap-extended .tiptap.ProseMirror img[alignment=left],.tiptap-extended .tiptap.ProseMirror .img-placeholder.left img {
+margin-right:auto;
+display:block}
+.tiptap-extended .tiptap.ProseMirror img[alignment=right],.tiptap-extended .tiptap.ProseMirror .img-placeholder.right img {
+margin-left:auto;
+display:block}
+.tiptap-extended .tiptap.ProseMirror img[alignment=center],.tiptap-extended .tiptap.ProseMirror .img-placeholder.center img {
+margin-left:auto;
+margin-right:auto;
+display:block}
+.tiptap-extended .tiptap.ProseMirror table {
+border-collapse:unset;
+border-style:unset}
+.tiptap-extended .tiptap.ProseMirror table[align=center] {
+margin-left:auto;
+margin-right:auto}
+.tiptap-extended .tiptap.ProseMirror .node-columns {
+width:100%;
+display:flex}
+.tiptap-extended .tiptap.ProseMirror .node-column {
+flex:1;
+min-width:0}
+.tiptap-extended .node-htmlContent,.tiptap-extended .node-socialLinks {
+-webkit-user-select:none;
+user-select:none}
+.tiptap-extended .node-twitter {
+max-width:550px}
+.tiptap-extended .node-twitter:has(.align-center) {
+margin-inline:auto}
+.tiptap-extended .node-twitter:has(.align-right) {
+margin-left:auto}
+.tiptap-extended .htmlContent-selected:not(:empty),.tiptap-extended .socialLinksNode-selected:not(:empty),.tiptap-extended .twitterContent-selected:not(:empty),.tiptap-extended .youtubeContent-selected:not(:empty) {
+box-shadow:0 0 0 2px #61a8f8}
+.tiptap-extended .ProseMirror img {
+-webkit-user-drag:none}
+.tiptap-extended .resizable-image-container {
+box-sizing:border-box;
+max-width:100%}
+body .collaboration-carets__caret {
+pointer-events:all;
+border-radius:4px;
+animation:3s 60s forwards fadeOut}
+body .collaboration-carets__caret:hover .collaboration-cursor__label,body .collaboration-carets__caret:hover {
+animation:.2s forwards fadeIn}
+body .collaboration-carets__label {
+color:rgb(3 7 18/var(--tw-text-opacity,1));
+letter-spacing:-.02em;
+border-radius:4px 4px 4px 0;
+padding-top:1px;
+animation:.3s 2s forwards fadeOut;
+inset-block-start:-1.3em}
+body .collaboration-carets__caret:hover .collaboration-carets__label {
+animation:.2s forwards fadeIn}
+@keyframes fadeOut {
+to {
+opacity:0}
+}
+@keyframes fadeIn {
+to {
+opacity:1}
+}
+@keyframes ai-shimmer {
+0%,20% {
+background-position:100%}
+80%,to {
+background-position:0%}
+}
+.ai-shimmer-text {
+-webkit-text-fill-color:transparent;
+background-size:300% 100%;
+-webkit-background-clip:text;
+background-clip:text;
+animation:3s ease-in-out infinite ai-shimmer}
+.ai-shimmer-text--on-dark {
+background-image:linear-gradient(95deg,#00000059 0% 44%,#0000001a 50%,#00000059 56% 100%)}
+.dark .ai-shimmer-text--on-dark {
+background-image:linear-gradient(95deg,#ffffff8c 0% 44%,#fff 50%,#ffffff8c 56% 100%)}
+@keyframes ai-selection-pulse {
+0%,to {
+opacity:1}
+50% {
+opacity:.2}
+}
+.ai-selection-loading {
+animation:1.5s ease-in-out infinite ai-selection-pulse}
+.review-warning {
+-webkit-text-decoration:underline wavy;
+text-decoration:underline wavy;
+-webkit-text-decoration-color:var(--color-yellow-9);
+-webkit-text-decoration-color:var(--color-yellow-9);
+-webkit-text-decoration-color:var(--color-yellow-9);
+text-decoration-color:var(--color-yellow-9);
+text-underline-offset:3px;
+cursor:default;
+text-decoration-thickness:1.5px;
+transition:opacity .1s ease-in-out;
+position:relative}
+.review-error {
+-webkit-text-decoration:underline wavy;
+text-decoration:underline wavy;
+-webkit-text-decoration-color:var(--color-red-9);
+-webkit-text-decoration-color:var(--color-red-9);
+-webkit-text-decoration-color:var(--color-red-9);
+text-decoration-color:var(--color-red-9);
+text-underline-offset:3px;
+cursor:default;
+text-decoration-thickness:1.5px}
+.review-warning--highlight {
+background:#fff;
+text-decoration:none}
+.review-warning:before {
+content:"";
+background:var(--color-black-3);
+pointer-events:none;
+opacity:0;
+z-index:-2;
+border-radius:4px;
+transition:opacity .4s ease-in-out;
+position:absolute}
+.review-warning:after {
+content:"";
+background:inherit;
+z-index:-1;
+pointer-events:none;
+opacity:0;
+inset:-2px;
+border-radius:6px;
+transition:opacity .4s ease-in-out;
+position:absolute;
+left:-4px;
+right:-4px}
+.review-warning--highlight:before,.review-warning--highlight:after {
+opacity:1}
+.review-warning--highlight:before {
+inset:-500vh}
+#slash-command,#variable-command {
+font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}
+

@@ -1,0 +1,379 @@
+{
+  "slug": "figma",
+  "total_vars": 46,
+  "resolved_count": 31,
+  "unresolved_count": 15,
+  "samples": {
+    "--f-font-whyte-variable": {
+      "raw": "'ABCWhytePlusVariable',\n'ABCWhytePlusVariable Fallback',\nWhyte,\nsans-serif",
+      "resolved": null,
+      "chain": [
+        "--f-font-whyte-variable",
+        "'ABCWhytePlusVariable',\n'ABCWhytePlusVariable Fallback',\nWhyte,\nsans-serif"
+      ]
+    },
+    "--f-font-sans": {
+      "raw": "\"figmaSans\",\n\"figmaSans Fallback\",\nSF Pro Display,\nsystem-ui,\nhelvetica,\nsans-serif",
+      "resolved": null,
+      "chain": [
+        "--f-font-sans",
+        "\"figmaSans\",\n\"figmaSans Fallback\",\nSF Pro Display,\nsystem-ui,\nhelvetica,\nsans-serif"
+      ]
+    },
+    "--f-font-mono": {
+      "raw": "\"figmaMono\",\n\"figmaMono Fallback\",\nSF Mono,\nmenlo,\nmonospace",
+      "resolved": null,
+      "chain": [
+        "--f-font-mono",
+        "\"figmaMono\",\n\"figmaMono Fallback\",\nSF Mono,\nmenlo,\nmonospace"
+      ]
+    },
+    "--f-statsig-overlay": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--f-statsig-overlay",
+        "#FFFFFF"
+      ]
+    },
+    "--f-vh": {
+      "raw": "1vh",
+      "resolved": "1vh",
+      "chain": [
+        "--f-vh",
+        "1vh"
+      ]
+    },
+    "--f-lego-block-padding": {
+      "raw": "10rem",
+      "resolved": "10rem",
+      "chain": [
+        "--f-lego-block-padding",
+        "10rem"
+      ]
+    },
+    "--f-max-content-width": {
+      "raw": "1680px",
+      "resolved": "1680px",
+      "chain": [
+        "--f-max-content-width",
+        "1680px"
+      ]
+    },
+    "--f-columns": {
+      "raw": "48",
+      "resolved": "48",
+      "chain": [
+        "--f-columns",
+        "48"
+      ]
+    },
+    "--f-gutter": {
+      "raw": "calc(var(--f-col-width) * 2)",
+      "resolved": null,
+      "chain": [
+        "--f-gutter",
+        "calc(var(--f-col-width) * 2)"
+      ]
+    },
+    "--f-col-width": {
+      "raw": "calc(min(100vw,\n var(--f-max-content-width)) / var(--f-columns))",
+      "resolved": null,
+      "chain": [
+        "--f-col-width",
+        "calc(min(100vw,\n var(--f-max-content-width)) / var(--f-columns))"
+      ]
+    },
+    "--f-cursor-default": {
+      "raw": "default",
+      "resolved": null,
+      "chain": [
+        "--f-cursor-default",
+        "default"
+      ]
+    },
+    "--f-cursor-pointer": {
+      "raw": "pointer",
+      "resolved": null,
+      "chain": [
+        "--f-cursor-pointer",
+        "pointer"
+      ]
+    },
+    "--f-cursor-grab": {
+      "raw": "grab",
+      "resolved": null,
+      "chain": [
+        "--f-cursor-grab",
+        "grab"
+      ]
+    },
+    "--f-cursor-grabbing": {
+      "raw": "grabbing",
+      "resolved": null,
+      "chain": [
+        "--f-cursor-grabbing",
+        "grabbing"
+      ]
+    },
+    "--f-cursor-text": {
+      "raw": "text",
+      "resolved": null,
+      "chain": [
+        "--f-cursor-text",
+        "text"
+      ]
+    },
+    "--f-bg-color": {
+      "raw": "#C7F8FB",
+      "resolved": "#C7F8FB",
+      "chain": [
+        "--f-bg-color",
+        "#C7F8FB"
+      ]
+    },
+    "--f-text-color": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--f-text-color",
+        "#000000"
+      ]
+    },
+    "--f-list-header-color": {
+      "raw": "rgba(255, 255, 255, 0.6)",
+      "resolved": "rgba(255, 255, 255, 0.6)",
+      "chain": [
+        "--f-list-header-color",
+        "rgba(255, 255, 255, 0.6)"
+      ]
+    },
+    "--f-icon-bg-color": {
+      "raw": "rgba(255, 255, 255, 0.24)",
+      "resolved": "rgba(255, 255, 255, 0.24)",
+      "chain": [
+        "--f-icon-bg-color",
+        "rgba(255, 255, 255, 0.24)"
+      ]
+    },
+    "--f-badge-text-color": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--f-badge-text-color",
+        "#000000"
+      ]
+    },
+    "--f-badge-bg-color": {
+      "raw": "rgba(0, 0, 0, 0.08)",
+      "resolved": "rgba(0, 0, 0, 0.08)",
+      "chain": [
+        "--f-badge-bg-color",
+        "rgba(0, 0, 0, 0.08)"
+      ]
+    },
+    "--text-color": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--text-color",
+        "#000000"
+      ]
+    },
+    "--bg-color": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--bg-color",
+        "#FFFFFF"
+      ]
+    },
+    "--slide-spacing": {
+      "raw": "0rem",
+      "resolved": "0rem",
+      "chain": [
+        "--slide-spacing",
+        "0rem"
+      ]
+    },
+    "--slide-size": {
+      "raw": "calc(var(--f-col-width) * 14)",
+      "resolved": null,
+      "chain": [
+        "--slide-size",
+        "calc(var(--f-col-width) * 14)"
+      ]
+    },
+    "--radius": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--radius",
+        "1rem"
+      ]
+    },
+    "--f-text-secondary-color": {
+      "raw": "rgba(0, 0, 0, 0.65)",
+      "resolved": "rgba(0, 0, 0, 0.65)",
+      "chain": [
+        "--f-text-secondary-color",
+        "rgba(0, 0, 0, 0.65)"
+      ]
+    },
+    "--f-primary-btn-bg-color": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--f-primary-btn-bg-color",
+        "#000000"
+      ]
+    },
+    "--f-primary-btn-text-color": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--f-primary-btn-text-color",
+        "#FFFFFF"
+      ]
+    },
+    "--f-form-input-bg-color": {
+      "raw": "rgba(0, 0, 0, 0.08)",
+      "resolved": "rgba(0, 0, 0, 0.08)",
+      "chain": [
+        "--f-form-input-bg-color",
+        "rgba(0, 0, 0, 0.08)"
+      ]
+    },
+    "--f-form-select-hover-bg-color": {
+      "raw": "rgba(0, 0, 0, 0.16)",
+      "resolved": "rgba(0, 0, 0, 0.16)",
+      "chain": [
+        "--f-form-select-hover-bg-color",
+        "rgba(0, 0, 0, 0.16)"
+      ]
+    },
+    "--f-form-placeholder-text-color": {
+      "raw": "rgba(0, 0, 0, 0.5)",
+      "resolved": "rgba(0, 0, 0, 0.5)",
+      "chain": [
+        "--f-form-placeholder-text-color",
+        "rgba(0, 0, 0, 0.5)"
+      ]
+    },
+    "--f-form-error-bg-color": {
+      "raw": "#972121",
+      "resolved": "#972121",
+      "chain": [
+        "--f-form-error-bg-color",
+        "#972121"
+      ]
+    },
+    "--f-form-error-text-color": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--f-form-error-text-color",
+        "#FFFFFF"
+      ]
+    },
+    "--f-primary-transparent-color": {
+      "raw": "rgba(0, 0, 0, 0.16)",
+      "resolved": "rgba(0, 0, 0, 0.16)",
+      "chain": [
+        "--f-primary-transparent-color",
+        "rgba(0, 0, 0, 0.16)"
+      ]
+    },
+    "--f-lego-fg-color": {
+      "raw": "var(--f-text-color, #000000)",
+      "resolved": "#000000",
+      "chain": [
+        "--f-lego-fg-color",
+        "--f-text-color",
+        "#000000"
+      ]
+    },
+    "--f-lego-bg-color": {
+      "raw": "var(--f-bg-color, #FFFFFF)",
+      "resolved": "#C7F8FB",
+      "chain": [
+        "--f-lego-bg-color",
+        "--f-bg-color",
+        "#C7F8FB"
+      ]
+    },
+    "--f-link-color": {
+      "raw": "var(--f-text-color, #000000)",
+      "resolved": "#000000",
+      "chain": [
+        "--f-link-color",
+        "--f-text-color",
+        "#000000"
+      ]
+    },
+    "--f-link-style": {
+      "raw": "underline",
+      "resolved": null,
+      "chain": [
+        "--f-link-style",
+        "underline"
+      ]
+    },
+    "--control-opacity": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--control-opacity",
+        "1"
+      ]
+    },
+    "--f-emphasis-btn-bg-color": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--f-emphasis-btn-bg-color",
+        "#000000"
+      ]
+    },
+    "--f-emphasis-btn-text-color": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--f-emphasis-btn-text-color",
+        "#FFFFFF"
+      ]
+    },
+    "--drawers-img-col-width": {
+      "raw": "calc(var(--f-col-width) * 26)",
+      "resolved": null,
+      "chain": [
+        "--drawers-img-col-width",
+        "calc(var(--f-col-width) * 26)"
+      ]
+    },
+    "--carousel-parent-text-color": {
+      "raw": "#FFFFFF",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--carousel-parent-text-color",
+        "#FFFFFF"
+      ]
+    },
+    "--slide-gap": {
+      "raw": "calc(var(--f-col-width) * 1)",
+      "resolved": null,
+      "chain": [
+        "--slide-gap",
+        "calc(var(--f-col-width) * 1)"
+      ]
+    },
+    "--slide-width": {
+      "raw": "calc(calc(var(--f-col-width) * 8) + var(--slide-gap))",
+      "resolved": null,
+      "chain": [
+        "--slide-width",
+        "calc(calc(var(--f-col-width) * 8) + var(--slide-gap))"
+      ]
+    }
+  }
+}

@@ -1,0 +1,415 @@
+{
+  "slug": "netflix",
+  "total_vars": 144,
+  "resolved_count": 31,
+  "unresolved_count": 113,
+  "samples": {
+    "--wct--layout-container--alignItems": {
+      "raw": "var(--wct--layout-container--alignItems-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems",
+        "--wct--layout-container--alignItems-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--alignItems-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--alignItems-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection": {
+      "raw": "var(--wct--layout-container--flexDirection-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection",
+        "--wct--layout-container--flexDirection-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--flexDirection-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--flexDirection-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent": {
+      "raw": "var(--wct--layout-container--justifyContent-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent",
+        "--wct--layout-container--justifyContent-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--justifyContent-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--justifyContent-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing": {
+      "raw": "var(--wct--layout-container--columnSpacing-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing",
+        "--wct--layout-container--columnSpacing-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--columnSpacing-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--columnSpacing-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing": {
+      "raw": "var(--wct--layout-container--rowSpacing-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing",
+        "--wct--layout-container--rowSpacing-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--rowSpacing-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--rowSpacing-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth": {
+      "raw": "var(--wct--layout-container--maxWidth-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth",
+        "--wct--layout-container--maxWidth-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-xs",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-s": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-s",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-m": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-m",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-l": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-l",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-xl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-xl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-xxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-xxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--maxWidth-xxxl": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--maxWidth-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--padding": {
+      "raw": "var(--wct--layout-container--padding-xxxl, initial)",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--padding",
+        "--wct--layout-container--padding-xxxl",
+        "initial"
+      ]
+    },
+    "--wct--layout-container--padding-xs": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--wct--layout-container--padding-xs",
+        "initial"
+      ]
+    }
+  }
+}

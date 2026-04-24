@@ -1,0 +1,45 @@
+{
+  "name": "insane-search-codex",
+  "version": "0.1.0",
+  "description": "Codex-native blocked-site and WAF bypass skill with a generic fetch engine and platform references.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/insane-search-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "search",
+    "fetch",
+    "waf",
+    "jina",
+    "playwright",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Insane Search Codex",
+    "shortDescription": "Bypass blocked or difficult web pages in Codex",
+    "longDescription": "Package the Codex-native `insane-search` skill with the generic fetch engine, platform-specific references, and runnable smoke tests for blocked or WAF-heavy URLs.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Use insane-search to fetch this blocked article and show the trace route it used.",
+      "Search a WAF-heavy site and fall back to the local engine when normal web access fails.",
+      "Run the insane-search engine against this URL and summarize what path succeeded."
+    ],
+    "brandColor": "#111827",
+    "composerIcon": "./assets/insane-search-codex.svg",
+    "logo": "./assets/insane-search-codex.svg",
+    "screenshots": []
+  }
+}

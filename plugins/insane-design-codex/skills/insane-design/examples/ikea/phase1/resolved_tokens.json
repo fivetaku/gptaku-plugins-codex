@@ -1,0 +1,413 @@
+{
+  "slug": "ikea",
+  "total_vars": 142,
+  "resolved_count": 113,
+  "unresolved_count": 29,
+  "samples": {
+    "--container-max-width": {
+      "raw": "90rem",
+      "resolved": "90rem",
+      "chain": [
+        "--container-max-width",
+        "90rem"
+      ]
+    },
+    "--container-spacing-desktop": {
+      "raw": "1.5rem",
+      "resolved": "1.5rem",
+      "chain": [
+        "--container-spacing-desktop",
+        "1.5rem"
+      ]
+    },
+    "--container-spacing-tablet": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--container-spacing-tablet",
+        "1rem"
+      ]
+    },
+    "--container-spacing-mobile": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--container-spacing-mobile",
+        "1rem"
+      ]
+    },
+    "--vertical-spacing-desktop": {
+      "raw": "10.5rem",
+      "resolved": "10.5rem",
+      "chain": [
+        "--vertical-spacing-desktop",
+        "10.5rem"
+      ]
+    },
+    "--vertical-spacing-tablet": {
+      "raw": "5rem",
+      "resolved": "5rem",
+      "chain": [
+        "--vertical-spacing-tablet",
+        "5rem"
+      ]
+    },
+    "--vertical-spacing-mobile": {
+      "raw": "4rem",
+      "resolved": "4rem",
+      "chain": [
+        "--vertical-spacing-mobile",
+        "4rem"
+      ]
+    },
+    "--grid-gap": {
+      "raw": "1.25rem",
+      "resolved": "1.25rem",
+      "chain": [
+        "--grid-gap",
+        "1.25rem"
+      ]
+    },
+    "--grid-gap-mobile": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--grid-gap-mobile",
+        "1rem"
+      ]
+    },
+    "--radius": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--radius",
+        ".5rem"
+      ]
+    },
+    "--focus-visible-relative-for-accessibility": {
+      "raw": "relative",
+      "resolved": null,
+      "chain": [
+        "--focus-visible-relative-for-accessibility",
+        "relative"
+      ]
+    },
+    "--text-x-direction": {
+      "raw": "-1",
+      "resolved": "-1",
+      "chain": [
+        "--text-x-direction",
+        "-1"
+      ]
+    },
+    "--color-logo": {
+      "raw": "#fae6e6",
+      "resolved": "#fae6e6",
+      "chain": [
+        "--color-logo",
+        "#fae6e6"
+      ]
+    },
+    "--color-off-white": {
+      "raw": "#fffefb",
+      "resolved": "#fffefb",
+      "chain": [
+        "--color-off-white",
+        "#fffefb"
+      ]
+    },
+    "--color-border": {
+      "raw": "#f0ede8",
+      "resolved": "#f0ede8",
+      "chain": [
+        "--color-border",
+        "#f0ede8"
+      ]
+    },
+    "--color-footer": {
+      "raw": "#806e6e",
+      "resolved": "#806e6e",
+      "chain": [
+        "--color-footer",
+        "#806e6e"
+      ]
+    },
+    "--color-light": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--color-light",
+        "#ffffff"
+      ]
+    },
+    "--color-ikea-blue": {
+      "raw": "#0058a3",
+      "resolved": "#0058a3",
+      "chain": [
+        "--color-ikea-blue",
+        "#0058a3"
+      ]
+    },
+    "--color-ikea-yellow": {
+      "raw": "#ffdb00",
+      "resolved": "#ffdb00",
+      "chain": [
+        "--color-ikea-yellow",
+        "#ffdb00"
+      ]
+    },
+    "--color-ikea-yellow-hover": {
+      "raw": "#ffe53a",
+      "resolved": "#ffe53a",
+      "chain": [
+        "--color-ikea-yellow-hover",
+        "#ffe53a"
+      ]
+    },
+    "--color-ikea-yellow-light": {
+      "raw": "#fff094",
+      "resolved": "#fff094",
+      "chain": [
+        "--color-ikea-yellow-light",
+        "#fff094"
+      ]
+    },
+    "--color-text-dark": {
+      "raw": "rgba(0, 0, 0, .74)",
+      "resolved": "rgba(0, 0, 0, .74)",
+      "chain": [
+        "--color-text-dark",
+        "rgba(0, 0, 0, .74)"
+      ]
+    },
+    "--color-text-darker": {
+      "raw": "#111111",
+      "resolved": "#111111",
+      "chain": [
+        "--color-text-darker",
+        "#111111"
+      ]
+    },
+    "--color-text-black": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--color-text-black",
+        "#000"
+      ]
+    },
+    "--color-grey": {
+      "raw": "#dfdfdf",
+      "resolved": "#dfdfdf",
+      "chain": [
+        "--color-grey",
+        "#dfdfdf"
+      ]
+    },
+    "--color-grey-dark": {
+      "raw": "#999999",
+      "resolved": "#999999",
+      "chain": [
+        "--color-grey-dark",
+        "#999999"
+      ]
+    },
+    "--color-grey-dim": {
+      "raw": "#484848",
+      "resolved": "#484848",
+      "chain": [
+        "--color-grey-dim",
+        "#484848"
+      ]
+    },
+    "--dotnet-border-color": {
+      "raw": "#ccc",
+      "resolved": "#ccc",
+      "chain": [
+        "--dotnet-border-color",
+        "#ccc"
+      ]
+    },
+    "--dotnet-border-style": {
+      "raw": ".0625rem solid var(--dotnet-border-color)",
+      "resolved": null,
+      "chain": [
+        "--dotnet-border-style",
+        ".0625rem solid var(--dotnet-border-color)"
+      ]
+    },
+    "--background-color": {
+      "raw": "#fffefb",
+      "resolved": "#fffefb",
+      "chain": [
+        "--background-color",
+        "#fffefb"
+      ]
+    },
+    "--text-color": {
+      "raw": "var(--color-text-darker)",
+      "resolved": "#111111",
+      "chain": [
+        "--text-color",
+        "--color-text-darker",
+        "#111111"
+      ]
+    },
+    "--main-bg-onetrust": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--main-bg-onetrust",
+        "#ffffff"
+      ]
+    },
+    "--secondary-bg-onetrust": {
+      "raw": "#f5f5f5",
+      "resolved": "#f5f5f5",
+      "chain": [
+        "--secondary-bg-onetrust",
+        "#f5f5f5"
+      ]
+    },
+    "--confirm-onetrust": {
+      "raw": "#0058a3",
+      "resolved": "#0058a3",
+      "chain": [
+        "--confirm-onetrust",
+        "#0058a3"
+      ]
+    },
+    "--link-onetrust": {
+      "raw": "#3860be",
+      "resolved": "#3860be",
+      "chain": [
+        "--link-onetrust",
+        "#3860be"
+      ]
+    },
+    "--dark-onetrust": {
+      "raw": "#111",
+      "resolved": "#111",
+      "chain": [
+        "--dark-onetrust",
+        "#111"
+      ]
+    },
+    "--light-onetrust": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--light-onetrust",
+        "#fff"
+      ]
+    },
+    "--light-dark-onetrust": {
+      "raw": "#929292",
+      "resolved": "#929292",
+      "chain": [
+        "--light-dark-onetrust",
+        "#929292"
+      ]
+    },
+    "--border-onetrust": {
+      "raw": "#ddd",
+      "resolved": "#ddd",
+      "chain": [
+        "--border-onetrust",
+        "#ddd"
+      ]
+    },
+    "--box-border-radius": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--box-border-radius",
+        ".5rem"
+      ]
+    },
+    "--content-border-radius": {
+      "raw": ".125rem",
+      "resolved": ".125rem",
+      "chain": [
+        "--content-border-radius",
+        ".125rem"
+      ]
+    },
+    "--breadcrumbs-spacing-top": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--breadcrumbs-spacing-top",
+        "2rem"
+      ]
+    },
+    "--breadcrumbs-spacing-bottom": {
+      "raw": "3rem",
+      "resolved": "3rem",
+      "chain": [
+        "--breadcrumbs-spacing-bottom",
+        "3rem"
+      ]
+    },
+    "--breadcrumbs-spacing-horizontal": {
+      "raw": "var(--navigation-spacing-mobile, 1rem)",
+      "resolved": "1rem",
+      "chain": [
+        "--breadcrumbs-spacing-horizontal",
+        "--navigation-spacing-mobile",
+        "1rem"
+      ]
+    },
+    "--breadcrumbs-text-color": {
+      "raw": "var(--text-color, #111)",
+      "resolved": "#111111",
+      "chain": [
+        "--breadcrumbs-text-color",
+        "--text-color",
+        "--color-text-darker",
+        "#111111"
+      ]
+    },
+    "--breadcrumbs-background": {
+      "raw": "var(--background-color)",
+      "resolved": "#fffefb",
+      "chain": [
+        "--breadcrumbs-background",
+        "--background-color",
+        "#fffefb"
+      ]
+    },
+    "--scroll-track-color": {
+      "raw": "rgba(128, 128, 128, .15)",
+      "resolved": "rgba(128, 128, 128, .15)",
+      "chain": [
+        "--scroll-track-color",
+        "rgba(128, 128, 128, .15)"
+      ]
+    },
+    "--scroll-thumb-color": {
+      "raw": "rgba(128, 128, 128, .3)",
+      "resolved": "rgba(128, 128, 128, .3)",
+      "chain": [
+        "--scroll-thumb-color",
+        "rgba(128, 128, 128, .3)"
+      ]
+    },
+    "--table-background-color": {
+      "raw": "#eeeeee",
+      "resolved": "#eeeeee",
+      "chain": [
+        "--table-background-color",
+        "#eeeeee"
+      ]
+    },
+    "--table-border-color": {
+      "raw": "#cccccc",
+      "resolved": "#cccccc",
+      "chain": [
+        "--table-border-color",
+        "#cccccc"
+      ]
+    }
+  }
+}

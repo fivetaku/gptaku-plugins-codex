@@ -1,0 +1,49 @@
+{
+  "slug": "stripe",
+  "semantic_vars": [
+    {"var": "--hds-canary-color-border-focus", "hex": "#635BFF", "role": "brand_focus"},
+    {"var": "--hds-color-core-brand-500", "hex": "#665EFD", "role": "brand_500"},
+    {"var": "--hds-color-core-brand-600", "hex": "#533AFD", "role": "brand_600"},
+    {"var": "--accent-gradient-color-stop-1", "hex": "#BDB4FF", "role": "gradient_stop_1"},
+    {"var": "--accent-gradient-color-stop-2", "hex": "#643AFD", "role": "gradient_stop_2"},
+    {"var": "--accent-gradient-color-stop-3", "hex": "#533AFD", "role": "gradient_stop_3"},
+    {"var": "--gradient-color", "hex": "#533AFD", "role": "gradient_terminal"}
+  ],
+  "selector_role": [
+    {"selector": "body", "property": "color", "hex": "#0D1738", "rule_snippet": "body{font-family:\"sohne-var\",\"SF Pro Display\",sans-serif;color:#0D1738}"},
+    {"selector": ":root --hds-color-core-brand-500", "property": "color", "hex": "#665EFD", "rule_snippet": "--hds-color-core-brand-500:#665efd"},
+    {"selector": ":root --hds-color-core-brand-600", "property": "color", "hex": "#533AFD", "rule_snippet": "--hds-color-core-brand-600:#533afd"}
+  ],
+  "frequency_candidates": [
+    {"hex": "#0D1738", "count": 15, "kind": "neutral"},
+    {"hex": "#F8FAFD", "count": 11, "kind": "neutral"},
+    {"hex": "#FFFFFF", "count": 10, "kind": "neutral"},
+    {"hex": "#533AFD", "count": 10, "kind": "chromatic"},
+    {"hex": "#FF6118", "count": 8, "kind": "chromatic"},
+    {"hex": "#061B31", "count": 7, "kind": "neutral"},
+    {"hex": "#FCFDFE", "count": 6, "kind": "neutral"},
+    {"hex": "#FB76FA", "count": 6, "kind": "chromatic"},
+    {"hex": "#F6F9FC", "count": 6, "kind": "neutral"},
+    {"hex": "#D4DEE9", "count": 6, "kind": "neutral"},
+    {"hex": "#7232F1", "count": 6, "kind": "chromatic"},
+    {"hex": "#1318C1", "count": 6, "kind": "chromatic"},
+    {"hex": "#FFCF5E", "count": 5, "kind": "chromatic"},
+    {"hex": "#EA2261", "count": 5, "kind": "chromatic"},
+    {"hex": "#E5EDF5", "count": 5, "kind": "neutral"},
+    {"hex": "#003B89", "count": 5, "kind": "chromatic"},
+    {"hex": "#003770", "count": 5, "kind": "chromatic"},
+    {"hex": "#635BFF", "count": 4, "kind": "chromatic"},
+    {"hex": "#E3ECF7", "count": 4, "kind": "neutral"},
+    {"hex": "#B4D8FF", "count": 4, "kind": "chromatic"},
+    {"hex": "#00D66F", "count": 4, "kind": "chromatic"},
+    {"hex": "#0073E6", "count": 4, "kind": "chromatic"}
+  ],
+  "summary": {
+    "total_candidates": 22,
+    "by_role": {
+      "chromatic": 13,
+      "neutral": 9,
+      "semantic": 7
+    }
+  }
+}

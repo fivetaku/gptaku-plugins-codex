@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spotify — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#1ED760;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#1ED760;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;padding:20px 24px;border-bottom:1px solid var(--border);}
+  .type-row:last-child{border-bottom:none;}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{display:grid;grid-template-columns:120px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .rad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .sh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{background:var(--card);padding:24px 24px 20px;border-radius:var(--radius-lg);border:1px solid var(--border);min-height:120px;display:flex;flex-direction:column;justify-content:space-between;}
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .motion-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:820px;}
+  .motion-row{display:grid;grid-template-columns:180px 120px 1fr;gap:20px;padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .motion-row:last-child{border-bottom:none;}
+  .motion-row .pt{font-family:var(--font-mono);font-size:11px;color:var(--fg);}
+  .motion-row .val{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .motion-row .use{color:var(--subtle);line-height:1.55;}
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{padding:24px;background:#121212;border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;position:relative;}
+  .cmp-code .copy{position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;color:#7d8ba4;background:#1f2023;padding:3px 8px;border-radius:4px;border:1px solid #2f3135;}
+  .cmp-code .copy:hover{color:#f7f8f8;background:#2f3135;}
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{padding:14px 16px;background:var(--muted);border-radius:var(--radius);font-size:15px;line-height:1.5;border-left:2px solid var(--brand-color);}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-pane{display:none;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .code-pane .k{color:#1ED760;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+  @media(max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.cmp-block__body,.ts,.voice-grid,.dd-grid,.sem-row{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}.rad-grid{grid-template-columns:repeat(2,1fr);}.sh-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Spotify</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+        <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">11</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">12</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">13</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/spotify-main/<br>design.md · 2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Spotify <span class="sub">— 실제 CSS 기반 분석</span></h1>
+      <p class="hero__sub">open.spotify.com의 디자인 시스템 분석 — 그린(#1ED760) Play CTA, Encore 토큰 시스템, 다크 #121212 배경의 음악 스트리밍 미학.</p>
+      <div class="hero__screenshot"><img src="screenshots/hero-cropped.png" alt="open.spotify.com 홈페이지 스크린샷"></div>
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Spotify처럼 만들기</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트</span>
+            <code>body {
+  font-family: "CircularSp",
+    "Circular",
+    -apple-system,
+    Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 다크 배경</span>
+            <code>:root {
+  --bg: <b>#121212</b>;
+  --fg: <b>#FFFFFF</b>;
+  --bg-surface: <b>#282828</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 그린</span>
+            <code>:root {
+  --text-bright-accent:
+    <b>#1ED760</b>;
+  --essential-bright-accent:
+    <b>#1ED760</b>;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: 그린(<code>#1ED760</code>)을 <b>배경 전면에 깔거나 모든 인터랙션 요소에 사용하는 것</b>. Spotify 그린은 Play 버튼·Follow CTA 등 핵심 행동 유도에만 집중해야 강렬함이 살아난다. 과용하면 포인트 효과가 소멸된다.
+        </div>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><div class="stat__label">Source</div><div class="stat__val stat__val--mono">spotify.com</div><div class="stat__hint">React SPA (in-house)</div></div>
+        <div class="stat"><div class="stat__label">Fetched</div><div class="stat__val">2026.04.13</div><div class="stat__hint">Encore DS 토큰 파싱</div></div>
+        <div class="stat"><div class="stat__label">Primary Font</div><div class="stat__val stat__val--mono">CircularSp</div><div class="stat__hint">Spotify 전용 · weight 400</div></div>
+        <div class="stat"><div class="stat__label">Brand</div><div class="stat__val stat__val--mono">#1ED760</div><div class="stat__hint">Play · Follow CTA</div></div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://open.spotify.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">CSS 추출</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · semantic_vars 추출</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--encore-*</code>, <code>--text-bright-accent</code>, <code>--essential-bright-accent</code></span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 변수 파싱 · Encore DS 공식 문서 보완 · AI 추론 최소화</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">Encore 디자인 시스템 — Spotify 공식 오픈소스 DS.</p>
+      <div class="ts">
+        <div class="ts__item"><div class="ts__head">FRAMEWORK</div><div class="ts__body">React SPA (Spotify 인-하우스 번들러)</div></div>
+        <div class="ts__item"><div class="ts__head">DESIGN SYSTEM</div><div class="ts__body">Encore — Spotify 공식 오픈소스 DS (<code>--encore-*</code> prefix)</div></div>
+        <div class="ts__item"><div class="ts__head">CSS ARCHITECTURE</div><div class="ts__body">CSS 커스텀 프로퍼티 기반 토큰 시스템</div></div>
+        <div class="ts__item"><div class="ts__head">DEFAULT THEME</div><div class="ts__body">Dark — <code>#121212</code> 기반 (near-black, 순검정 아님)</div></div>
+        <div class="ts__item"><div class="ts__head">FONT LOADING</div><div class="ts__body">자체 호스트 — CircularSp 패밀리 (다국어 variant 포함)</div></div>
+        <div class="ts__item"><div class="ts__head">MULTILANG FONTS</div><div class="ts__body">CircularSp-Arab · -Cyrl · -Deva · -Grek · -Hebr (스크립트별 variant)</div></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">CircularSp 400 body + SpotifyMixUITitleVariable 800 display.</p>
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row"><span class="fs-card__k">Primary</span><span class="fs-card__v"><code>CircularSp</code> — Spotify 전용 Circular variant · weight 400/700/800</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Display Title</span><span class="fs-card__v"><code>SpotifyMixUITitleVariable</code>, <code>SpotifyMixUITitle</code> — 대형 hero 타이틀</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">App UI</span><span class="fs-card__v"><code>SpotifyMixUI</code> — 앱 내부 인터페이스</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Weight 정의</span><span class="fs-card__v">normal = <b>400</b> · bold = <b>700</b> · extra-bold = <b>800</b></span></div>
+        <div class="fs-card__row"><span class="fs-card__k">대체재</span><span class="fs-card__v"><code>Circular</code> (상용) 또는 <code>Nunito</code> (무료, 유사한 둥근 형태)</span></div>
+      </div>
+      <div class="callout"><b>라이선스 주의</b>: <code>CircularSp</code>는 Spotify 전용이다. 외부에서는 사용 불가. <code>Circular</code> 상용 폰트 또는 <code>Nunito</code>(Google Fonts 무료)로 대체한다.</div>
+      <div class="type-sub" style="margin-top:32px;">Typography Scale</div>
+      <div class="type-table">
+        <div class="type-row"><div style="font-size:56px;font-weight:800;line-height:1.0;letter-spacing:-0.02em;">Music for every moment</div><div class="type-row__spec"><span class="tk">Hero Display</span>SpotifyMixUITitleVariable · 56–80px · 800<br>line-height 1.0 · letter-spacing -0.02em</div></div>
+        <div class="type-row"><div style="font-size:32px;font-weight:700;line-height:1.2;letter-spacing:-0.01em;">오늘의 추천</div><div class="type-row__spec"><span class="tk">Section H2</span>CircularSp · 24–40px · 700<br>line-height 1.2 · letter-spacing -0.01em</div></div>
+        <div class="type-row"><div style="font-size:20px;font-weight:700;line-height:1.3;">Album / Track Title</div><div class="type-row__spec"><span class="tk">Album Title</span>CircularSp · 18–24px · 700<br>line-height 1.3</div></div>
+        <div class="type-row"><div style="font-size:15px;font-weight:400;line-height:1.5;color:#71717a;">80M+ songs. No credit card needed.</div><div class="type-row__spec"><span class="tk">Body</span>CircularSp · 14–16px · 400<br>line-height 1.5</div></div>
+        <div class="type-row"><div style="font-size:12px;font-weight:400;line-height:1.4;color:#71717a;">2024 · 48분</div><div class="type-row__spec"><span class="tk">Caption / Meta</span>CircularSp · 12–13px · 400<br>line-height 1.4</div></div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">단색 그린 CTA + 다크 계층 팔레트 — Encore 토큰 시스템.</p>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand Green</b> <span style="color:var(--muted-fg)">— <code>--text-bright-accent</code> / <code>--essential-bright-accent</code></span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d is-anchor" style="background:#1ED760;color:#000;"><span class="n">CTA Green</span>#1ED760</div>
+          <div class="sw sw--d" style="background:#3BE477;color:#000;"><span class="n">Hover</span>#3BE477</div>
+          <div class="sw sw--d" style="background:#1ABC54;color:#000;"><span class="n">Pressed</span>#1ABC54</div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Dark Surface</b> <span style="color:var(--muted-fg)">— 배경 계층</span></div>
+        <div class="ramp ramp--5">
+          <div class="sw sw--d is-anchor" style="background:#121212;"><span class="n">Base BG</span>#121212</div>
+          <div class="sw sw--d" style="background:#141414;"><span class="n">Elevated</span>#141414</div>
+          <div class="sw sw--d" style="background:#282828;"><span class="n">Surface</span>#282828</div>
+          <div class="sw sw--d" style="background:#3E3E3E;"><span class="n">Hover</span>#3E3E3E</div>
+          <div class="sw sw--d" style="background:#B3B3B3;color:#121212;"><span class="n">Subdued</span>#B3B3B3</div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Accent Colors</b> <span style="color:var(--muted-fg)">— 섹션별 포인트</span></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#FFA42B;color:#000;"><span class="n">Orange</span>#FFA42B</div>
+          <div class="sw sw--d" style="background:#E91429;"><span class="n">Red/Error</span>#E91429</div>
+          <div class="sw sw--d" style="background:#0D72EA;"><span class="n">Blue/Link</span>#0D72EA</div>
+          <div class="sw sw--d" style="background:#052A56;"><span class="n">Deep Blue</span>#052A56</div>
+        </div>
+      </div>
+      <div class="type-sub" style="margin-top:24px;">Semantic Roles</div>
+      <div class="sem-row">
+        <div class="sem-card"><div class="sem-card__chip" style="background:#121212;border:1px solid #282828;"></div><div><div class="sem-card__n">Base BG</div><div class="sem-card__h">#121212</div><div class="sem-card__u">body 기본 배경 (near-black)</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#1ED760;border:1px solid rgba(30,215,96,.3);"></div><div><div class="sem-card__n">Brand Green CTA</div><div class="sem-card__h">#1ED760 — <code>--text-bright-accent</code></div><div class="sem-card__u">Play 버튼 · Follow · Get Premium</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#282828;border:1px solid rgba(255,255,255,.1);"></div><div><div class="sem-card__n">Card Surface</div><div class="sem-card__h">#282828</div><div class="sem-card__u">음악 카드, 사이드바 배경</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#B3B3B3;border:1px solid rgba(0,0,0,.08);"></div><div><div class="sem-card__n">Text Subdued</div><div class="sem-card__h">#B3B3B3</div><div class="sem-card__u">아티스트명, 메타 정보</div></div></div>
+      </div>
+      <div class="callout"><b>Encore 토큰 준수</b>: <code>--text-bright-accent</code>와 <code>--essential-bright-accent</code>는 모두 <code>#1ED760</code>을 가리키는 공식 Encore 토큰이다. 이를 임의 색으로 재정의하면 Encore 시스템 전체가 파괴된다. Orange(<code>#FFA42B</code>)는 Podcast 섹션 전용 — primary CTA로 절대 쓰지 않는다.</div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">8px 기반 — hero 패딩 80px, 섹션 간격 64px.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">xs</span><span class="val">4px</span><div class="bar" style="width:4%;"></div></div>
+        <div class="space-row"><span class="tk">sm</span><span class="val">8px</span><div class="bar" style="width:8%;"></div></div>
+        <div class="space-row"><span class="tk">md</span><span class="val">16px</span><div class="bar" style="width:16%;"></div></div>
+        <div class="space-row"><span class="tk">lg</span><span class="val">24px</span><div class="bar" style="width:24%;"></div></div>
+        <div class="space-row"><span class="tk">xl</span><span class="val">40px</span><div class="bar" style="width:40%;"></div></div>
+        <div class="space-row"><span class="tk">2xl</span><span class="val">64px</span><div class="bar" style="width:64%;"></div></div>
+        <div class="space-row"><span class="tk">3xl</span><span class="val">80px</span><div class="bar" style="width:80%;"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">카드 8px + Play 버튼 · 아바타 100% 원형.</p>
+      <div class="rad-grid">
+        <div class="rad-card"><div class="rad-box" style="border-radius:4px;"></div><div class="rad-card__n">sm</div><div class="rad-card__v">4px<br>태그·배지</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:8px;"></div><div class="rad-card__n">md</div><div class="rad-card__v">8px<br>카드·패널</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:16px;"></div><div class="rad-card__n">lg</div><div class="rad-card__v">16px<br>큰 카드·모달</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:100px;"></div><div class="rad-card__n">full</div><div class="rad-card__v">100px<br>Play · 아바타 · pill</div></div>
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">강한 다크 드롭섀도우 + 그린 글로우 Play 버튼.</p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,.5);background:#282828;border-color:#3E3E3E;">
+          <div>
+            <div class="sh-card__n" style="color:#FFFFFF;">card</div>
+            <div class="sh-card__d" style="color:#B3B3B3;">다크 음악 카드</div>
+          </div>
+          <div class="sh-card__v">0 4px 16px rgba(0,0,0,.5)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 0 20px rgba(30,215,96,.3);background:#282828;border-color:#1ED760;">
+          <div>
+            <div class="sh-card__n" style="color:#1ED760;">green-glow</div>
+            <div class="sh-card__d" style="color:#B3B3B3;">Play 버튼 글로우</div>
+          </div>
+          <div class="sh-card__v">0 0 20px rgba(30,215,96,.3)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 8px 40px rgba(0,0,0,.7);background:#282828;border-color:#3E3E3E;">
+          <div>
+            <div class="sh-card__n" style="color:#FFFFFF;">player</div>
+            <div class="sh-card__d" style="color:#B3B3B3;">하단 플레이어 바</div>
+          </div>
+          <div class="sh-card__v">0 8px 40px rgba(0,0,0,.7)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motion">
+      <div class="section__num">08 · Motion</div>
+      <h2 class="section__title">모션</h2>
+      <p class="section__lede">linear 이징 — 빠른 hover 120ms, 심플하고 명쾌한 전환.</p>
+      <div class="motion-table">
+        <div class="motion-row"><span class="pt">duration-fast</span><span class="val">120ms</span><span class="use">hover 전환 (버튼·링크·아이콘)</span></div>
+        <div class="motion-row"><span class="pt">duration-base</span><span class="val">240ms</span><span class="use">카드·모달 전환</span></div>
+        <div class="motion-row"><span class="pt">duration-slow</span><span class="val">400ms</span><span class="use">페이지 전환</span></div>
+        <div class="motion-row"><span class="pt">easing</span><span class="val">linear</span><span class="use">그린 색 전환 (심플, ease 없음)</span></div>
+        <div class="motion-row"><span class="pt">transition-color</span><span class="val">0.2s linear</span><span class="use">링크 색 전환 (CSS에서 직접 추출)</span></div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">10 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Play 버튼 · Follow 버튼 · 음악 카드 — Encore DS 핵심 컴포넌트.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.btn-play</span>
+          <span class="cmp-block__desc">원형 Play CTA — 그린 + 글로우 효과</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="justify-content:center;">
+              <button style="width:56px;height:56px;background:#1ED760;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(30,215,96,.3);transition:background 120ms,transform 120ms;" onmouseover="this.style.background='#3BE477';this.style.transform='scale(1.06)'" onmouseout="this.style.background='#1ED760';this.style.transform='scale(1)'" title="Play">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <button style="width:40px;height:40px;background:#1ED760;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 120ms,transform 120ms;" onmouseover="this.style.background='#3BE477';this.style.transform='scale(1.06)'" onmouseout="this.style.background='#1ED760';this.style.transform='scale(1)'" title="Play small">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#000"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+            <div class="cmp-code">
+              <span class="copy">copy</span>
+<span class="k">.btn-play</span> {
+  width: <span class="v">56px</span>; height: <span class="v">56px</span>;
+  background: <span class="v">#1ED760</span>; <span class="c">/* --essential-bright-accent */</span>
+  border-radius: <span class="v">50%</span>;
+  border: <span class="v">none</span>; cursor: <span class="v">pointer</span>;
+  display: <span class="v">flex</span>;
+  align-items: <span class="v">center</span>;
+  justify-content: <span class="v">center</span>;
+  transition: <span class="v">background 120ms, transform 120ms</span>;
+  box-shadow: <span class="v">0 0 20px rgba(30,215,96,.3)</span>;
+}
+<span class="k">.btn-play:hover</span> {
+  background: <span class="v">#3BE477</span>;
+  transform: <span class="v">scale(1.06)</span>;
+}
+<span class="k">.btn-play:active</span> {
+  background: <span class="v">#1ABC54</span>;
+  transform: <span class="v">scale(0.98)</span>;
+}
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>--essential-bright-accent</code><br>
+            <code>--text-bright-accent</code>
+            <span class="kr">기본: #1ED760 + green-glow<br>hover: #3BE477 + scale(1.06)<br>active: #1ABC54 + scale(0.98)<br>아이콘 색: #000 (검정, 녹색 위)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.btn-follow</span>
+          <span class="cmp-block__desc">Follow 버튼 — pill 형태, 팔로잉 시 그린</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:transparent;color:#B3B3B3;border:1px solid #B3B3B3;font-family:CircularSp,sans-serif;font-size:14px;font-weight:700;padding:8px 20px;border-radius:100px;cursor:pointer;text-transform:uppercase;letter-spacing:0.08em;transition:border-color 120ms,color 120ms;" onmouseover="this.style.borderColor='#FFFFFF';this.style.color='#FFFFFF'" onmouseout="this.style.borderColor='#B3B3B3';this.style.color='#B3B3B3'">FOLLOW</button>
+              <button style="background:transparent;color:#1ED760;border:1px solid #1ED760;font-family:CircularSp,sans-serif;font-size:14px;font-weight:700;padding:8px 20px;border-radius:100px;cursor:pointer;text-transform:uppercase;letter-spacing:0.08em;">FOLLOWING</button>
+            </div>
+            <div class="cmp-code">
+              <span class="copy">copy</span>
+<span class="k">.btn-follow</span> {
+  background: <span class="v">transparent</span>;
+  color: <span class="v">#B3B3B3</span>;
+  border: <span class="v">1px solid #B3B3B3</span>;
+  font-weight: <span class="v">700</span>;
+  padding: <span class="v">8px 20px</span>;
+  border-radius: <span class="v">100px</span>;
+  text-transform: <span class="v">uppercase</span>;
+  letter-spacing: <span class="v">0.08em</span>;
+  transition: <span class="v">border-color 120ms, color 120ms</span>;
+}
+<span class="k">.btn-follow:hover</span> {
+  border-color: <span class="v">#FFFFFF</span>;
+  color: <span class="v">#FFFFFF</span>;
+}
+<span class="k">.btn-follow.is-following</span> {
+  border-color: <span class="v">#1ED760</span>; <span class="c">/* --text-bright-accent */</span>
+  color: <span class="v">#1ED760</span>;
+}
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>--text-bright-accent: #1ED760</code>
+            <span class="kr">기본: #B3B3B3 테두리 + 텍스트<br>hover: #FFFFFF 테두리 + 텍스트<br>following: #1ED760 그린 활성화<br>border-radius: 100px (pill)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.music-card</span>
+          <span class="cmp-block__desc">음악 카드 — hover 시 Play 버튼 등장</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="align-items:flex-start;">
+              <div style="background:#282828;border-radius:8px;padding:16px;width:180px;cursor:pointer;position:relative;transition:background 150ms;" onmouseover="this.style.background='#3E3E3E';this.querySelector('.mc-play').style.opacity='1';this.querySelector('.mc-play').style.transform='translateY(0)'" onmouseout="this.style.background='#282828';this.querySelector('.mc-play').style.opacity='0';this.querySelector('.mc-play').style.transform='translateY(8px)'">
+                <div style="width:148px;height:148px;background:linear-gradient(135deg,#1ED760,#052A56);border-radius:4px;margin-bottom:12px;position:relative;">
+                  <div class="mc-play" style="position:absolute;bottom:8px;right:8px;width:40px;height:40px;background:#1ED760;border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:opacity 150ms,transform 150ms;box-shadow:0 0 20px rgba(30,215,96,.3);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#000"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+                <div style="font-size:14px;font-weight:700;color:#FFFFFF;margin-bottom:4px;">Chill Vibes</div>
+                <div style="font-size:13px;color:#B3B3B3;">Hover to play</div>
+              </div>
+            </div>
+            <div class="cmp-code">
+              <span class="copy">copy</span>
+<span class="k">.music-card</span> {
+  background: <span class="v">#282828</span>;
+  border-radius: <span class="v">8px</span>;
+  padding: <span class="v">16px</span>;
+  cursor: <span class="v">pointer</span>;
+  transition: <span class="v">background 150ms</span>;
+  position: <span class="v">relative</span>;
+}
+<span class="k">.music-card:hover</span> { background: <span class="v">#3E3E3E</span>; }
+<span class="k">.music-card__play</span> {
+  position: <span class="v">absolute</span>; bottom: <span class="v">16px</span>; right: <span class="v">16px</span>;
+  opacity: <span class="v">0</span>; transform: <span class="v">translateY(8px)</span>;
+  transition: <span class="v">opacity 150ms, transform 150ms</span>;
+}
+<span class="k">.music-card:hover .music-card__play</span> {
+  opacity: <span class="v">1</span>;
+  transform: <span class="v">translateY(0)</span>;
+}
+<span class="k">.music-card__title</span> { font-weight: <span class="v">700</span>; color: <span class="v">#FFFFFF</span>; }
+<span class="k">.music-card__sub</span> { font-size: <span class="v">14px</span>; color: <span class="v">#B3B3B3</span>; }
+            </div>
+          </div>
+          <div class="cmp-spec">
+            surface: <code>#282828</code><br>
+            hover: <code>#3E3E3E</code>
+            <span class="kr">Play 버튼은 기본 숨김 (opacity:0)<br>hover 시 translateY(8px→0) 슬라이드인<br>Play 버튼은 반드시 그린 + 원형</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">11 · Writing</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">친근·개인화·열정적 — 음악과 사람을 연결하는 톤.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">헤드라인 원칙</div>
+          <div class="voice-card__rule">보편적·포용적 감성. 모든 순간, 모든 사람을 위한 음악.</div>
+          <div class="voice-card__ex">Music for every moment</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">서브 카피</div>
+          <div class="voice-card__rule">숫자(80M+ songs)로 신뢰 + "No credit card" 로 허들 제거.</div>
+          <div class="voice-card__ex">80M+ songs. No credit card needed.</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">CTA 텍스트</div>
+          <div class="voice-card__rule">단순·직접·행동 중심. Play → Follow → Get Premium 순서.</div>
+          <div class="voice-card__ex">Get Premium Free for 3 months</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">큐레이션 네이밍</div>
+          <div class="voice-card__rule">분위기·맥락 중심 이름. 감정과 시간대를 담은 플레이리스트.</div>
+          <div class="voice-card__ex">Monday Morning Coffee</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">12 · Code Export</div>
+      <h2 class="section__title">CSS · Tailwind</h2>
+      <p class="section__lede">Drop-in CSS 변수 (Encore 토큰 포함) + Tailwind config.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'css')">CSS Variables</button>
+          <button onclick="switchTab(this,'tailwind')">Tailwind Config</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre><span class="k">:root</span> {
+  <span class="c">/* Encore Brand Tokens — 원본 토큰명 유지 필수 */</span>
+  <span class="k">--text-bright-accent</span>: <span class="v">#1ED760</span>;
+  <span class="k">--essential-bright-accent</span>: <span class="v">#1ED760</span>;
+
+  <span class="c">/* Alias */</span>
+  <span class="k">--brand</span>: <span class="v">#1ED760</span>;
+  <span class="k">--brand-hover</span>: <span class="v">#3BE477</span>;
+  <span class="k">--brand-active</span>: <span class="v">#1ABC54</span>;
+
+  <span class="c">/* Surface */</span>
+  <span class="k">--bg</span>: <span class="v">#121212</span>;
+  <span class="k">--bg-surface</span>: <span class="v">#282828</span>;
+  <span class="k">--bg-elevated</span>: <span class="v">#141414</span>;
+  <span class="k">--bg-hover</span>: <span class="v">#3E3E3E</span>;
+  <span class="k">--fg</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">--fg-subdued</span>: <span class="v">#B3B3B3</span>;
+
+  <span class="c">/* Spacing */</span>
+  <span class="k">--space-xs</span>: <span class="v">4px</span>;
+  <span class="k">--space-sm</span>: <span class="v">8px</span>;
+  <span class="k">--space-md</span>: <span class="v">16px</span>;
+  <span class="k">--space-lg</span>: <span class="v">24px</span>;
+  <span class="k">--space-xl</span>: <span class="v">40px</span>;
+  <span class="k">--space-2xl</span>: <span class="v">64px</span>;
+
+  <span class="c">/* Radius */</span>
+  <span class="k">--radius-sm</span>: <span class="v">4px</span>;
+  <span class="k">--radius-md</span>: <span class="v">8px</span>;
+  <span class="k">--radius-lg</span>: <span class="v">16px</span>;
+  <span class="k">--radius-full</span>: <span class="v">100px</span>;
+}
+
+<span class="k">body</span> {
+  font-family: <span class="v">"CircularSp", "Circular", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif</span>;
+  font-weight: <span class="v">400</span>;
+  background: <span class="v">var(--bg)</span>;
+  color: <span class="v">var(--fg)</span>;
+  -webkit-font-smoothing: <span class="v">antialiased</span>;
+}</pre>
+        </div>
+        <div class="code-pane" id="pane-tailwind">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        brand: <span class="v">'#1ED760'</span>,
+        <span class="v">'brand-hover'</span>: <span class="v">'#3BE477'</span>,
+        <span class="v">'brand-active'</span>: <span class="v">'#1ABC54'</span>,
+        <span class="v">'bg-base'</span>: <span class="v">'#121212'</span>,
+        <span class="v">'bg-surface'</span>: <span class="v">'#282828'</span>,
+        <span class="v">'bg-elevated'</span>: <span class="v">'#141414'</span>,
+        <span class="v">'bg-hover'</span>: <span class="v">'#3E3E3E'</span>,
+        <span class="v">'text-subdued'</span>: <span class="v">'#B3B3B3'</span>,
+      },
+      fontFamily: {
+        sans: [<span class="v">'"CircularSp"'</span>, <span class="v">'"Circular"'</span>, <span class="v">'-apple-system'</span>, <span class="v">'sans-serif'</span>],
+        title: [<span class="v">'"SpotifyMixUITitleVariable"'</span>, <span class="v">'"SpotifyMixUITitle"'</span>, <span class="v">'sans-serif'</span>],
+      },
+      borderRadius: {
+        DEFAULT: <span class="v">'8px'</span>,
+        sm: <span class="v">'4px'</span>,
+        lg: <span class="v">'16px'</span>,
+        full: <span class="v">'100px'</span>,
+      },
+    },
+  },
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">13 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Spotify 미학의 핵심 원칙과 치명적 실수.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li><b>그린(#1ED760)은 Play·Follow·CTA 핵심 행동에만</b> — 포인트 효과 극대화</li>
+            <li><b>배경은 #121212</b> — 순검정(#000) 아닌 약간 따뜻한 near-black</li>
+            <li>카드 배경은 <code>#282828</code> — 배경과 레이어 구분 (중요)</li>
+            <li>텍스트 subdued는 <code>#B3B3B3</code> — 회색 톤으로 계층 구분</li>
+            <li>Play 버튼은 원형(border-radius: 50%) + 그린 글로우 효과</li>
+            <li>Encore 토큰명 <code>--text-bright-accent</code> 원본 유지 — 임의 변경 금지</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li><b>그린(#1ED760)을 배경 전면 사용하지 않는다</b> — 포인트 컬러 효과 소멸</li>
+            <li><b>흰 배경(#FFFFFF)을 기본으로 쓰지 않는다</b> — Spotify는 다크 퍼스트</li>
+            <li><code>--text-bright-accent</code>를 임의 색으로 재정의하지 않는다 — Encore 파괴</li>
+            <li>CircularSp weight 100으로 쓰지 않는다 — 다크 배경에서 가독성 부족</li>
+            <li>Orange(<code>#FFA42B</code>)를 primary CTA로 쓰지 않는다 — Podcast 섹션 전용</li>
+            <li>Play 버튼을 사각형으로 만들지 않는다 — 원형(50%)이 Spotify DNA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span>insane-design / spotify-main / report.ko.html</span>
+      <span class="kr">실제 CSS 추출 기반 · 2026-04-13</span>
+    </footer>
+  </main>
+</div>
+<script>
+function switchTab(btn, id) {
+  const export_ = btn.closest('.code-export');
+  export_.querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  export_.querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById('pane-' + id).classList.add('is-active');
+}
+</script>
+</body>
+</html>

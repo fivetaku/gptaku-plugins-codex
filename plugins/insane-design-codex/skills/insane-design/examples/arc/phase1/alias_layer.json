@@ -1,0 +1,290 @@
+{
+  "slug": "arc",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--color-gray1",
+        "references": [],
+        "terminal_hint": "#6F6F6F"
+      },
+      {
+        "alias": "--color-gray2",
+        "references": [],
+        "terminal_hint": "#171717"
+      },
+      {
+        "alias": "--color-indigo-bg",
+        "references": [],
+        "terminal_hint": "#F0F1FF"
+      },
+      {
+        "alias": "--color-indigo-fg",
+        "references": [],
+        "terminal_hint": "#0047FF"
+      },
+      {
+        "alias": "--color-red-bg",
+        "references": [],
+        "terminal_hint": "#FEF1ED"
+      },
+      {
+        "alias": "--color-red-fg",
+        "references": [],
+        "terminal_hint": "#E5484D"
+      },
+      {
+        "alias": "--color-yellow-bg",
+        "references": [],
+        "terminal_hint": "#FEF4D5"
+      },
+      {
+        "alias": "--color-yellow-fg",
+        "references": [],
+        "terminal_hint": "#FFB223"
+      },
+      {
+        "alias": "--colors-brandBlue",
+        "references": [],
+        "terminal_hint": "#3139FB"
+      },
+      {
+        "alias": "--colors-brandDarkBlue",
+        "references": [],
+        "terminal_hint": "#000354"
+      },
+      {
+        "alias": "--colors-brandDeepBlue",
+        "references": [],
+        "terminal_hint": "#2404AA"
+      },
+      {
+        "alias": "--colors-brandOffwhite",
+        "references": [],
+        "terminal_hint": "#FFFCEC"
+      },
+      {
+        "alias": "--colors-brandRed",
+        "references": [],
+        "terminal_hint": "#FB3A4D"
+      },
+      {
+        "alias": "--colors-focusOutline",
+        "references": [],
+        "terminal_hint": "#96C4FF"
+      },
+      {
+        "alias": "--colors-highContrast",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--colors-lowContrast",
+        "references": [],
+        "terminal_hint": "#FFF"
+      },
+      {
+        "alias": "--colors-primary1",
+        "references": [],
+        "terminal_hint": "rgb(255, 234, 231)"
+      },
+      {
+        "alias": "--colors-primary10",
+        "references": [],
+        "terminal_hint": "rgb(71, 17, 12)"
+      },
+      {
+        "alias": "--colors-primary11",
+        "references": [],
+        "terminal_hint": "rgb(26, 4, 2)"
+      },
+      {
+        "alias": "--colors-primary12",
+        "references": [],
+        "terminal_hint": "rgb(9, 2, 1)"
+      },
+      {
+        "alias": "--colors-primary2",
+        "references": [],
+        "terminal_hint": "rgb(255, 201, 195)"
+      },
+      {
+        "alias": "--colors-primary3",
+        "references": [],
+        "terminal_hint": "rgb(252, 163, 159)"
+      },
+      {
+        "alias": "--colors-primary4",
+        "references": [],
+        "terminal_hint": "rgb(252, 130, 121)"
+      },
+      {
+        "alias": "--colors-primary5",
+        "references": [],
+        "terminal_hint": "rgb(253, 105, 88)"
+      },
+      {
+        "alias": "--colors-primary6",
+        "references": [],
+        "terminal_hint": "rgb(250, 69, 49)"
+      },
+      {
+        "alias": "--colors-primary7",
+        "references": [],
+        "terminal_hint": "rgb(207, 56, 40)"
+      },
+      {
+        "alias": "--colors-primary8",
+        "references": [],
+        "terminal_hint": "rgb(162, 43, 31)"
+      },
+      {
+        "alias": "--colors-primary9",
+        "references": [],
+        "terminal_hint": "rgb(116, 30, 21)"
+      },
+      {
+        "alias": "--colors-secondary1",
+        "references": [],
+        "terminal_hint": "rgb(0, 234, 231)"
+      },
+      {
+        "alias": "--colors-secondary10",
+        "references": [],
+        "terminal_hint": "rgb(0, 17, 12)"
+      },
+      {
+        "alias": "--colors-secondary11",
+        "references": [],
+        "terminal_hint": "rgb(0, 4, 2)"
+      },
+      {
+        "alias": "--colors-secondary12",
+        "references": [],
+        "terminal_hint": "rgb(0, 2, 1)"
+      },
+      {
+        "alias": "--colors-secondary2",
+        "references": [],
+        "terminal_hint": "rgb(0, 201, 195)"
+      },
+      {
+        "alias": "--colors-secondary3",
+        "references": [],
+        "terminal_hint": "rgb(0, 163, 159)"
+      },
+      {
+        "alias": "--colors-secondary4",
+        "references": [],
+        "terminal_hint": "rgb(0, 130, 121)"
+      },
+      {
+        "alias": "--colors-secondary5",
+        "references": [],
+        "terminal_hint": "rgb(0, 105, 88)"
+      },
+      {
+        "alias": "--colors-secondary6",
+        "references": [],
+        "terminal_hint": "rgb(0, 69, 49)"
+      },
+      {
+        "alias": "--colors-secondary7",
+        "references": [],
+        "terminal_hint": "rgb(0, 56, 40)"
+      },
+      {
+        "alias": "--colors-secondary8",
+        "references": [],
+        "terminal_hint": "rgb(0, 43, 31)"
+      },
+      {
+        "alias": "--colors-secondary9",
+        "references": [],
+        "terminal_hint": "rgb(0, 30, 21)"
+      },
+      {
+        "alias": "--colors-students-arc_blue",
+        "references": [],
+        "terminal_hint": "rgb(12, 80, 255)"
+      },
+      {
+        "alias": "--colors-students-arc_blue_pale",
+        "references": [],
+        "terminal_hint": "rgb(69, 138, 255)"
+      },
+      {
+        "alias": "--colors-students-arc_pinkish",
+        "references": [],
+        "terminal_hint": "rgb(242, 94, 107)"
+      },
+      {
+        "alias": "--colors-students-dark_blue",
+        "references": [],
+        "terminal_hint": "rgb(39, 2, 194)"
+      },
+      {
+        "alias": "--colors-students-dark_grey",
+        "references": [],
+        "terminal_hint": "rgb(60, 59, 58)"
+      },
+      {
+        "alias": "--colors-students-deep_blue",
+        "references": [],
+        "terminal_hint": "rgb(36, 4, 170)"
+      },
+      {
+        "alias": "--colors-students-light_blue",
+        "references": [],
+        "terminal_hint": "rgb(205, 204, 223)"
+      },
+      {
+        "alias": "--colors-students-light_green",
+        "references": [],
+        "terminal_hint": "rgb(211, 224, 129)"
+      },
+      {
+        "alias": "--colors-students-light_grey",
+        "references": [],
+        "terminal_hint": "rgb(225, 224, 206)"
+      },
+      {
+        "alias": "--colors-students-light_grey-hover",
+        "references": [],
+        "terminal_hint": "rgb(215, 214, 196)"
+      },
+      {
+        "alias": "--colors-students-off_white",
+        "references": [],
+        "terminal_hint": "rgb(245, 244, 226)"
+      },
+      {
+        "alias": "--colors-students-salmon",
+        "references": [],
+        "terminal_hint": "rgb(242, 194, 172)"
+      },
+      {
+        "alias": "--colors-students-text_dark",
+        "references": [],
+        "terminal_hint": "rgb(118, 110, 106)"
+      },
+      {
+        "alias": "--colors-students-text_light",
+        "references": [],
+        "terminal_hint": "rgb(151, 146, 143)"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 54
+    }
+  }
+}

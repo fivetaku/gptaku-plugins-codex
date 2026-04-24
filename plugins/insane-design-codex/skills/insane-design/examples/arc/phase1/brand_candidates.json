@@ -1,0 +1,193 @@
+{
+  "slug": "arc",
+  "semantic_vars": [
+    {
+      "name": "--colors-brandDarkBlue",
+      "value_hex": "#000354",
+      "role": "brand"
+    },
+    {
+      "name": "--colors-brandDeepBlue",
+      "value_hex": "#2404AA",
+      "role": "brand"
+    },
+    {
+      "name": "--colors-brandBlue",
+      "value_hex": "#3139FB",
+      "role": "brand"
+    },
+    {
+      "name": "--colors-brandRed",
+      "value_hex": "#FB3A4D",
+      "role": "brand"
+    },
+    {
+      "name": "--colors-brandOffwhite",
+      "value_hex": "#FFFCEC",
+      "role": "brand"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".c-bCeQxv-ebGbss-type-primaryLight",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".c-bCeQxv-ebGbss-type-primaryLight {background:#ffffff;color:#2702c2}"
+    },
+    {
+      "selector": ".c-bCeQxv-ebGbss-type-primaryLight",
+      "property": "color",
+      "hex": "#2702C2",
+      "rule_snippet": ".c-bCeQxv-ebGbss-type-primaryLight {background:#ffffff;color:#2702c2}"
+    },
+    {
+      "selector": ".c-bCeQxv-dPCjKn-type-primary",
+      "property": "background",
+      "hex": "#FF3333",
+      "rule_snippet": ".c-bCeQxv-dPCjKn-type-primary {background:#ff3333;color:var(--colors-lowContrast)}"
+    },
+    {
+      "selector": ".c-bCeQxv-dQyHWl-type-primaryLightAlt",
+      "property": "background",
+      "hex": "#2702C2",
+      "rule_snippet": ".c-bCeQxv-dQyHWl-type-primaryLightAlt {background:#2702c2;color:var(--colors-lowContrast)}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#3139FB",
+      "count": 17,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFCEA",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2702C2",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2404AA",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000354",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0047FF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#171717",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#6F6F6F",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#96C4FF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5484D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F0F1FF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FB3A4D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FEF1ED",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FEF4D5",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF3333",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFB223",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFADD",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFCEC",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0034FE",
+      "count": 1,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#210784",
+      "count": 1,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#26069C",
+      "count": 1,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FF5060",
+      "count": 1,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FF9999",
+      "count": 1,
+      "kind": "svg_pattern"
+    }
+  ],
+  "summary": {
+    "total_candidates": 34,
+    "by_role": {
+      "brand": 5,
+      "chromatic": 16,
+      "neutral": 4,
+      "selector": 4,
+      "svg_pattern": 5
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "show-me-the-prd-codex",
+  "version": "0.1.0",
+  "description": "Codex-native PRD bundle generation from a rough product idea or partial spec.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/show-me-the-prd-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "prd",
+    "product-requirements",
+    "planning",
+    "spec",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Show Me The PRD Codex",
+    "shortDescription": "Turn a rough idea into a five-file PRD bundle in Codex",
+    "longDescription": "Package the Codex-native `show-me-the-prd` skill with chat-first interview rules so users can turn rough ideas or partial specs into a structured five-file PRD bundle.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Turn this rough app idea into a PRD bundle with scope, data model, phases, and project spec.",
+      "Use show-me-the-prd to normalize these planning notes into a five-file handoff.",
+      "Help me clarify this product idea with short chat questions and then write the PRD files."
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/show-me-the-prd-codex.svg",
+    "logo": "./assets/show-me-the-prd-codex.svg",
+    "screenshots": []
+  }
+}

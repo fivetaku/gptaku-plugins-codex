@@ -1,0 +1,63 @@
+.dynamic-autocomplete .mentions--singleLine .mentions__input {
+border-width:1px;
+border-color:var(--gray-200);
+color:var(--foreground);
+background-color:#0000;
+border-radius:.375rem}
+.dynamic-autocomplete .mentions--singleLine .mentions__input::placeholder {
+color:var(--gray-500)}
+.dynamic-autocomplete .mentions--multiLine .mentions__input {
+border-width:1px;
+border-color:var(--gray-200);
+color:var(--foreground);
+background-color:#0000;
+border-radius:.375rem}
+.dynamic-autocomplete .mentions--multiLine .mentions__input::placeholder {
+color:var(--gray-500)}
+.dynamic-autocomplete .mentions--multiLine .mentions__input:focus {
+border-color:var(--pink-400);
+outline-offset:2px;
+outline:2px solid #0000}
+.dynamic-autocomplete .mentions__suggestions {
+z-index:10;
+border-width:1px;
+border-color:var(--gray-200);
+border-radius:.375rem;
+max-height:20rem;
+position:relative;
+overflow:hidden;
+background-color:var(--gray-100)!important}
+.dynamic-autocomplete .mentions__suggestions__list {
+max-height:15rem;
+overflow-y:auto}
+.dynamic-autocomplete .mentions__suggestions__item {
+min-width:1rem;
+margin-top:0;
+padding-left:.75rem;
+padding-right:.75rem}
+.dynamic-autocomplete .mentions__suggestions__item--focused {
+background-color:var(--gray-50)}
+.dynamic-autocomplete .mentions__highlighter strong {
+background-color:var(--yellow-200);
+border-radius:.125rem}
+.dynamic-autocomplete-error .mentions--singleLine .mentions__input,.dynamic-autocomplete-error .mentions--multiLine .mentions__input {
+border-color:var(--red-500)}
+.dynamic-autocomplete-with-icon .mentions--multiLine .mentions__input {
+padding-right:2rem}
+.dynamic-autocomplete-size-xs {
+font-size:12px;
+line-height:1rem}
+.dynamic-autocomplete-size-xs .mentions--multiLine .mentions__highlighter,.dynamic-autocomplete-size-xs .mentions--multiLine .mentions__input,.dynamic-autocomplete-size-xs .mentions__suggestions__item,.dynamic-autocomplete-size-xs .mentions__highlighter {
+padding-left:6px;
+padding-right:6px}
+.dynamic-autocomplete-size-sm {
+font-size:14px;
+line-height:1.25rem}
+.dynamic-autocomplete-size-sm .mentions--multiLine .mentions__highlighter,.dynamic-autocomplete-size-sm .mentions--multiLine .mentions__input,.dynamic-autocomplete-size-sm .mentions__suggestions__item,.dynamic-autocomplete-size-sm .mentions__highlighter {
+padding:6px}
+.dynamic-autocomplete-size-md {
+font-size:16px;
+line-height:1.5rem}
+.dynamic-autocomplete-size-md .mentions--multiLine .mentions__highlighter,.dynamic-autocomplete-size-md .mentions--multiLine .mentions__input,.dynamic-autocomplete-size-md .mentions__suggestions__item,.dynamic-autocomplete-size-md .mentions__highlighter {
+padding:.5rem .75rem}
+

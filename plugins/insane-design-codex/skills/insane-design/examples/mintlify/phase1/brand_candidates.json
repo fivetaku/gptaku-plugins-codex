@@ -1,0 +1,195 @@
+{
+  "slug": "mintlify",
+  "semantic_vars": [
+    {
+      "name": "--color-brand",
+      "value_hex": "#0C8C5E",
+      "role": "brand"
+    },
+    {
+      "name": "--color-brand-light",
+      "value_hex": "#0C8C5E",
+      "role": "brand"
+    },
+    {
+      "name": "--color-brand",
+      "value_hex": "#18E299",
+      "role": "brand"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".footer-cta-gradient",
+      "property": "background",
+      "hex": "#F7F7F7",
+      "rule_snippet": ".footer-cta-gradient {background:linear-gradient(#f7f7f7 0%, rgba(247,247,247,.95) 4.7%, rgba(247,247,247,.89) 8.8%, rgba(247,247,247,.827) 12.6%, rgba(247,247,247,.76) 16.3%, rgba(247,247,247,.69) 19"
+    },
+    {
+      "selector": ".dark .footer-cta-gradient",
+      "property": "background",
+      "hex": "#151616",
+      "rule_snippet": ".dark .footer-cta-gradient {background:linear-gradient(#151616 0%, rgba(21,22,22,.95) 4.7%, rgba(21,22,22,.89) 8.8%, rgba(21,22,22,.827) 12.6%, rgba(21,22,22,.76) 16.3%, rgba(21,22,22,.69) 19.9%, rgba"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 62,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#231F20",
+      "count": 46,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F1EFED",
+      "count": 22,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#003087",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0C8C5E",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#009CDE",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF5A00",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0070E0",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4B73FF",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5984F2",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0A0A0A",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#101828",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F26207",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0052FF",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#08090A",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#578BFA",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#001C64",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#18E299",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#20808D",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#262626",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#364153",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4A5565",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D1D5DC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F5F5F5",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FE7B02",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF0105",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF66F4",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF7EB0",
+      "count": 4,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 35,
+    "by_role": {
+      "brand": 3,
+      "chromatic": 24,
+      "neutral": 6,
+      "selector": 2
+    }
+  }
+}

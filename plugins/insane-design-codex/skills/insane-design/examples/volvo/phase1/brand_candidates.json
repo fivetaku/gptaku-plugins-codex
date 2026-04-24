@@ -1,0 +1,614 @@
+{
+  "slug": "volvo",
+  "semantic_vars": [
+    {
+      "name": "--ot-btn-primary-bg",
+      "value_hex": "#1F1F1F",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-text",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-hover",
+      "value_hex": "#3A3A3A",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-active",
+      "value_hex": "#4C4C4C",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-border",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-bg",
+      "value_hex": "#E5E7EB",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-text",
+      "value_hex": "#0B0F19",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-hover",
+      "value_hex": "#CBD5E1",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-active",
+      "value_hex": "#94A3B8",
+      "role": "primary"
+    },
+    {
+      "name": "--ot-btn-primary-border",
+      "value_hex": "#0B0F19",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings {color:#fff;background-color:#468254;height:auto;white-space:normal;word-wrap:break-word;padding:.8em 2em;font-size:.8em;line-height:"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings",
+      "property": "background-color",
+      "hex": "#468254",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings {color:#fff;background-color:#468254;height:auto;white-space:normal;word-wrap:break-word;padding:.8em 2em;font-size:.8em;line-height:"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover {color:#fff;background-color:#2c6415}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover",
+      "property": "background-color",
+      "hex": "#2C6415",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover {color:#fff;background-color:#2c6415}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active {color:#fff;background-color:#2c6415;border:1px solid rgba(162,192,169,.5)}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active",
+      "property": "background-color",
+      "hex": "#2C6415",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active {color:#fff;background-color:#2c6415;border:1px solid rgba(162,192,169,.5)}"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "border",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button.reject,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button.reject",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button.reject,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button.reject {background-color:#fff}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button",
+      "property": "color",
+      "hex": "#555555",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button {display:inlin"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button",
+      "property": "border",
+      "hex": "#BBBBBB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button {display:inlin"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#onetrust-pc-sdk .ot-sdk-button:hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#ot-sdk-cookie-policy .ot-sdk-button:hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-containe"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#onetrust-pc-sdk .ot-sdk-button:hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#ot-sdk-cookie-policy .ot-sdk-button:hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus",
+      "property": "border-color",
+      "hex": "#888888",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-containe"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:focus,#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus,#onetrust-pc-sdk .ot-sdk-button:focus,#onetrust-pc-sdk :not(.ot-leg-btn-container)>button:focus,#ot-sdk-cookie-policy .ot-sdk-button:focus,#ot-sdk-cookie-policy :not(.ot-leg-btn-container)>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:focus,#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus,#onetrust-pc-sdk .ot-sdk-button:focus,#onetrust-pc-sdk :not(.ot-leg-btn-container)>button:focus,"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "background-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "border-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "background-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "border-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "border-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link {background-color:#fff;border:none;color:#68b631;text-decoration:underline;padding-left:0;padding-right:0}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link {background-color:#fff;border:none;color:#68b631;text-decoration:underline;padding-left:0;padding-right:0}"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn",
+      "property": "color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn { color: #3860BE; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #68b631;border-color: #68b631; color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "border-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #68b631;border-color: #68b631; color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #68b631;border-color: #68b631; color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "color",
+      "hex": "#6CC04A",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link { color: #6CC04A; border-color: #6CC04A; background-color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "border-color",
+      "hex": "#6CC04A",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link { color: #6CC04A; border-color: #6CC04A; background-color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link { color: #6CC04A; border-color: #6CC04A; background-color: #FFFFFF; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "background-color",
+      "hex": "#1C6BBA",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #1c6bba!important; color: #fff!important; Margin-right: 4px!important; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #1c6bba!important; color: #fff!important; Margin-right: 4px!important; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "color",
+      "hex": "#2A609D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link { color: #2A609D!important; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "background-color",
+      "hex": "#1C6BBA",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #1c6bba!important; color: #ffffff!important; border-color: #1c6bba; border-rad"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #1c6bba!important; color: #ffffff!important; border-color: #1c6bba; border-rad"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "border-color",
+      "hex": "#1C6BBA",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #1c6bba!important; color: #ffffff!important; border-color: #1c6bba; border-rad"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "background-color",
+      "hex": "#1C6BBA",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #1c6bba !important; color: #ffffff!important; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #1c6bba !important; color: #ffffff!important; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover",
+      "property": "background-color",
+      "hex": "#2A609D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover { background-color: #2A609D!important; color: #fff!important; border-color: #2A609D!important; border-radius: 4px; opacity: unset; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover { background-color: #2A609D!important; color: #fff!important; border-color: #2A609D!important; border-radius: 4px; opacity: unset; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover",
+      "property": "border-color",
+      "hex": "#2A609D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler:hover { background-color: #2A609D!important; color: #fff!important; border-color: #2A609D!important; border-radius: 4px; opacity: unset; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus",
+      "property": "outline-color",
+      "hex": "#141414",
+      "rule_snippet": "#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus { outline-color: #141414!important; outline-width: 2px; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "background-color",
+      "hex": "#2A609D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #2A609D!important; color: #ffff!important; border-color: #2A609D; border-radius: 4px; margin-right: 3px!important; margin: unset; "
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #2A609D!important; color: #ffff!important; border-color: #2A609D; border-radius: 4px; margin-right: 3px!important; margin: unset; "
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "border-color",
+      "hex": "#2A609D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #2A609D!important; color: #ffff!important; border-color: #2A609D; border-radius: 4px; margin-right: 3px!important; margin: unset; "
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler {background-color:#3860be;border-radius:17px;display:inline-block;position:relative;width:32px;height:32px;-moz-transition:.1s ease;-o-transition:.1s ease;-webkit-"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler:hover",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler:hover {background-color:#3860be}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-ven-link,#onetrust-pc-sdk .ot-ven-legclaim-link",
+      "property": "color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk .ot-ven-link,#onetrust-pc-sdk .ot-ven-legclaim-link {color:#3860be;text-decoration:none;font-weight:100;display:inline-block;padding-top:10px;transform:translate(0, 1%);-o-transform:t"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-cat-item>button:focus,#onetrust-pc-sdk .ot-acc-cntr>button:focus,#onetrust-pc-sdk li>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-cat-item>button:focus,#onetrust-pc-sdk .ot-acc-cntr>button:focus,#onetrust-pc-sdk li>button:focus {outline:#000 solid 2px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item>button:focus,#onetrust-pc-sdk .ot-ven-item>button:focus",
+      "property": "border",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item>button:focus,#onetrust-pc-sdk .ot-ven-item>button:focus {outline:0;border:2px solid #000}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vnd-item>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vnd-item>button:focus {outline:#000 solid 2px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*=DPOLink]",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*=DPOLink] {border-bottom:1px solid #d8d8d8;padding-bottom:1rem}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button,#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button,#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button {outline:none;border-bottom:1px solid #d8d8d8}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink],#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink]",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink],#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink] {border-bottom:1px solid #d8d8d8;"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetrust-pc-sdk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-ven-lst .ot-ven-opts p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-li-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-sel-all-hdr span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info, #onetrust-consent-sdk #onetrust-pc-sdk #ot-fltr-modal #modal-header, #onetrust-consent-sdk #onetrust-pc-sdk .ot-checkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-sel-blk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title h3, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title p[aria-level=\"3\"], #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .back-btn-handler p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .ot-ven-name, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-ven-lst .consent-category, #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-label-status, #onetrust-consent-sdk #onetrust-pc-sdk .ot-chkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #clear-filters-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-optout-signal",
+      "property": "color",
+      "hex": "#696969",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetr"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler + a, #onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-legclaim-link, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-name a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-acc-hdr .ot-host-expand, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-content #ot-pc-desc .ot-link-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc a",
+      "property": "color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler, #onetrust-cons"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "border-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "color",
+      "hex": "#4D4D4D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "border-color",
+      "hex": "#4D4D4D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus",
+      "property": "border",
+      "hex": "#696969",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus { border: 1px solid #696969; }"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 88,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D8D8D8",
+      "count": 46,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 42,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#3860BE",
+      "count": 30,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#68B631",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#696969",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1C6BBA",
+      "count": 16,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E2E2E2",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0B0F19",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C7C5C7",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2A609D",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C1C1C1",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D7D7D7",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E9E9E9",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F8F8F8",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2E3644",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#141414",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#AACCCCEE",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FAFAFA",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#656565",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#468254",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4D4D4D",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#565656",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#707070",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F6F6F4",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7F3F0FF",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E7E3E0FF",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#111827",
+      "count": 4,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 106,
+    "by_role": {
+      "chromatic": 12,
+      "neutral": 18,
+      "primary": 10,
+      "selector": 66
+    }
+  }
+}

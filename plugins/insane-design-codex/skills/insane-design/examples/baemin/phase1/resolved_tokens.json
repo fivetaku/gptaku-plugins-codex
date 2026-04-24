@@ -1,0 +1,24 @@
+{
+  "slug": "baemin",
+  "total_vars": 2,
+  "resolved_count": 2,
+  "unresolved_count": 0,
+  "samples": {
+    "--color-mode-text": {
+      "raw": "#FFF",
+      "resolved": "#FFF",
+      "chain": [
+        "--color-mode-text",
+        "#FFF"
+      ]
+    },
+    "--color-mode-divider": {
+      "raw": "rgba(255,255,255,0.3)",
+      "resolved": "rgba(255,255,255,0.3)",
+      "chain": [
+        "--color-mode-divider",
+        "rgba(255,255,255,0.3)"
+      ]
+    }
+  }
+}

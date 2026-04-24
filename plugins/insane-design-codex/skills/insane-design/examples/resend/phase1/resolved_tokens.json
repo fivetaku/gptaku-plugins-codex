@@ -1,0 +1,414 @@
+{
+  "slug": "resend",
+  "total_vars": 513,
+  "resolved_count": 154,
+  "unresolved_count": 359,
+  "samples": {
+    "--editor-topbar-height": {
+      "raw": "60px",
+      "resolved": "60px",
+      "chain": [
+        "--editor-topbar-height",
+        "60px"
+      ]
+    },
+    "--editor-accent": {
+      "raw": "59 130 246",
+      "resolved": null,
+      "chain": [
+        "--editor-accent",
+        "59 130 246"
+      ]
+    },
+    "--font-inter": {
+      "raw": "\"inter\"",
+      "resolved": null,
+      "chain": [
+        "--font-inter",
+        "\"inter\""
+      ]
+    },
+    "--font-abc-favorit": {
+      "raw": "\"aBCFavorit\"",
+      "resolved": null,
+      "chain": [
+        "--font-abc-favorit",
+        "\"aBCFavorit\""
+      ]
+    },
+    "--font-domaine-src": {
+      "raw": "\"domaine\"",
+      "resolved": null,
+      "chain": [
+        "--font-domaine-src",
+        "\"domaine\""
+      ]
+    },
+    "--font-commit-mono": {
+      "raw": "\"commitMono\"",
+      "resolved": null,
+      "chain": [
+        "--font-commit-mono",
+        "\"commitMono\""
+      ]
+    },
+    "--angle": {
+      "raw": "360deg",
+      "resolved": "360deg",
+      "chain": [
+        "--angle",
+        "360deg"
+      ]
+    },
+    "--tw-border-spacing-x": {
+      "raw": "calc(var(--spacing,.25rem) * 0)",
+      "resolved": null,
+      "chain": [
+        "--tw-border-spacing-x",
+        "calc(var(--spacing,.25rem) * 0)"
+      ]
+    },
+    "--tw-border-spacing-y": {
+      "raw": "calc(var(--spacing,.25rem) * 0)",
+      "resolved": null,
+      "chain": [
+        "--tw-border-spacing-y",
+        "calc(var(--spacing,.25rem) * 0)"
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "20%",
+      "resolved": "20%",
+      "chain": [
+        "--tw-translate-x",
+        "20%"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--tw-translate-y",
+        "1px"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-translate-z",
+        "0"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-x",
+        "100%"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-y",
+        "100%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-z",
+        "100%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "initial"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "initial"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "initial"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "skewX(calc(12deg * -1))",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "skewX(calc(12deg * -1))"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "initial"
+      ]
+    },
+    "--tw-pan-x": {
+      "raw": "pan-x",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-x",
+        "pan-x"
+      ]
+    },
+    "--tw-pan-y": {
+      "raw": "pan-y",
+      "resolved": null,
+      "chain": [
+        "--tw-pan-y",
+        "pan-y"
+      ]
+    },
+    "--tw-pinch-zoom": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-pinch-zoom",
+        "initial"
+      ]
+    },
+    "--tw-scroll-snap-strictness": {
+      "raw": "mandatory",
+      "resolved": null,
+      "chain": [
+        "--tw-scroll-snap-strictness",
+        "mandatory"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-divide-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-divide-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "none"
+      ]
+    },
+    "--tw-divide-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-divide-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to bottom in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to bottom in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "var(--color-gray-3,var(--gray-3))",
+      "resolved": "#212629",
+      "chain": [
+        "--tw-gradient-from",
+        "--color-gray-3",
+        "--gray-3",
+        "#212629"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "var(--color-gray-5,var(--gray-5))",
+      "resolved": "#333b3e",
+      "chain": [
+        "--tw-gradient-to",
+        "--color-gray-5",
+        "--gray-5",
+        "#333b3e"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "0%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "50%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "30%",
+      "resolved": "30%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "30%"
+      ]
+    },
+    "--tw-leading": {
+      "raw": "calc(var(--spacing,.25rem) * 6)",
+      "resolved": null,
+      "chain": [
+        "--tw-leading",
+        "calc(var(--spacing,.25rem) * 6)"
+      ]
+    },
+    "--tw-font-weight": {
+      "raw": "var(--font-weight-normal,400)",
+      "resolved": "400",
+      "chain": [
+        "--tw-font-weight",
+        "--font-weight-normal",
+        "400"
+      ]
+    },
+    "--tw-tracking": {
+      "raw": "-.896px",
+      "resolved": "-.896px",
+      "chain": [
+        "--tw-tracking",
+        "-.896px"
+      ]
+    },
+    "--tw-ordinal": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-ordinal",
+        "initial"
+      ]
+    },
+    "--tw-slashed-zero": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-slashed-zero",
+        "initial"
+      ]
+    },
+    "--tw-numeric-figure": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-figure",
+        "initial"
+      ]
+    },
+    "--tw-numeric-spacing": {
+      "raw": "tabular-nums",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-spacing",
+        "tabular-nums"
+      ]
+    },
+    "--tw-numeric-fraction": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-fraction",
+        "initial"
+      ]
+    },
+    "--tw-shadow": {
+      "raw": "0 0 0 4px var(--tw-shadow-color,#0b0e14)",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow",
+        "0 0 0 4px var(--tw-shadow-color,#0b0e14)"
+      ]
+    },
+    "--tw-shadow-color": {
+      "raw": "color-mix(in oklab, var(--color-slate-100,lab(96.286% -.852436 -2.46847)) var(--tw-shadow-alpha), transparent)",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow-color",
+        "color-mix(in oklab, var(--color-slate-100,lab(96.286% -.852436 -2.46847)) var(--tw-shadow-alpha), transparent)"
+      ]
+    },
+    "--tw-shadow-alpha": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-shadow-alpha",
+        "100%"
+      ]
+    },
+    "--tw-inset-shadow": {
+      "raw": "inset -.5px .5px 0 var(--tw-inset-shadow-color,#fff3)",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-shadow",
+        "inset -.5px .5px 0 var(--tw-inset-shadow-color,#fff3)"
+      ]
+    }
+  }
+}

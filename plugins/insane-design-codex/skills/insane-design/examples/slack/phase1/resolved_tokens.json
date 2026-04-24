@@ -1,0 +1,168 @@
+{
+  "slug": "slack",
+  "total_vars": 20,
+  "resolved_count": 11,
+  "unresolved_count": 9,
+  "samples": {
+    "--article-theme-primary": {
+      "raw": "#4a154b",
+      "resolved": "#4a154b",
+      "chain": [
+        "--article-theme-primary",
+        "#4a154b"
+      ]
+    },
+    "--article-theme-secondary": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--article-theme-secondary",
+        "#fff"
+      ]
+    },
+    "--font-family-heading": {
+      "raw": "\"MXiangHeHeiSCProBold\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "resolved": null,
+      "chain": [
+        "--font-family-heading",
+        "\"MXiangHeHeiSCProBold\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ]
+    },
+    "--font-family-body": {
+      "raw": "\"NotoSansSC\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "resolved": null,
+      "chain": [
+        "--font-family-body",
+        "\"NotoSansSC\", system-ui, -apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, \"Helvetica Neue\", arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+      ]
+    },
+    "--font-family-monospace": {
+      "raw": "\"Monaco\", \"Menlo\", \"Consolas\", \"Courier New\", monospace",
+      "resolved": null,
+      "chain": [
+        "--font-family-monospace",
+        "\"Monaco\", \"Menlo\", \"Consolas\", \"Courier New\", monospace"
+      ]
+    },
+    "--bck-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--bck-color",
+        "transparent"
+      ]
+    },
+    "--scrollbar-width": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--scrollbar-width",
+        "1rem"
+      ]
+    },
+    "--mask-height": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--mask-height",
+        "2rem"
+      ]
+    },
+    "--mask-image-content": {
+      "raw": "linear-gradient(to bottom, transparent, #000 var(--mask-height), #000 calc(100% - var(--mask-height)), transparent)",
+      "resolved": null,
+      "chain": [
+        "--mask-image-content",
+        "linear-gradient(to bottom, transparent, #000 var(--mask-height), #000 calc(100% - var(--mask-height)), transparent)"
+      ]
+    },
+    "--mask-size-content": {
+      "raw": "calc(100% - var(--scrollbar-width)) 100%",
+      "resolved": null,
+      "chain": [
+        "--mask-size-content",
+        "calc(100% - var(--scrollbar-width)) 100%"
+      ]
+    },
+    "--mask-image-scrollbar": {
+      "raw": "linear-gradient(#000, #000)",
+      "resolved": null,
+      "chain": [
+        "--mask-image-scrollbar",
+        "linear-gradient(#000, #000)"
+      ]
+    },
+    "--mask-size-scrollbar": {
+      "raw": "var(--scrollbar-width) 100%",
+      "resolved": null,
+      "chain": [
+        "--mask-size-scrollbar",
+        "var(--scrollbar-width) 100%"
+      ]
+    },
+    "--sidebar-color": {
+      "raw": "#400d40",
+      "resolved": "#400d40",
+      "chain": [
+        "--sidebar-color",
+        "#400d40"
+      ]
+    },
+    "--sidebar-highlight-color": {
+      "raw": "#1264a3",
+      "resolved": "#1264a3",
+      "chain": [
+        "--sidebar-highlight-color",
+        "#1264a3"
+      ]
+    },
+    "--attachment-color": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--attachment-color",
+        "#000"
+      ]
+    },
+    "--more-count": {
+      "raw": "\"+1\"",
+      "resolved": null,
+      "chain": [
+        "--more-count",
+        "\"+1\""
+      ]
+    },
+    "--swiper-theme-color": {
+      "raw": "#007aff",
+      "resolved": "#007aff",
+      "chain": [
+        "--swiper-theme-color",
+        "#007aff"
+      ]
+    },
+    "--swiper-navigation-size": {
+      "raw": "44px",
+      "resolved": "44px",
+      "chain": [
+        "--swiper-navigation-size",
+        "44px"
+      ]
+    },
+    "--swiper-pagination-color": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--swiper-pagination-color",
+        "#000"
+      ]
+    },
+    "--swiper-preloader-color": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--swiper-preloader-color",
+        "#000"
+      ]
+    }
+  }
+}

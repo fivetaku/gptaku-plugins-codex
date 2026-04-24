@@ -1,0 +1,45 @@
+{
+  "name": "insane-design-codex",
+  "version": "0.1.0",
+  "description": "Codex-native design system extraction, apply, and build workflow with a bundled corpus.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/insane-design-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "design-system",
+    "css-analysis",
+    "design-tokens",
+    "design-md",
+    "report",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Insane Design Codex",
+    "shortDescription": "Extract and reuse real design systems in Codex",
+    "longDescription": "Package the Codex-native `insane-design` workflow with the bundled example corpus, helper scripts, starter components, and the clean Codex contract for `design.md` generation.",
+    "developerName": "GPTaku",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Analyze this site and generate a reusable design.md plus report.ko.html.",
+      "Use insane-design to extract real CSS tokens from this URL and summarize the design system.",
+      "Build a new artifact from this design.md and starter-component set."
+    ],
+    "brandColor": "#0B1020",
+    "composerIcon": "./assets/insane-design-codex.svg",
+    "logo": "./assets/insane-design-codex.svg",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "contentful",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--swiper-preloader-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--swiper-theme-color",
+        "references": [],
+        "terminal_hint": "#007aff"
+      },
+      {
+        "alias": "--tw-ring-color",
+        "references": [],
+        "terminal_hint": "rgb(59 130 246/0.5)"
+      },
+      {
+        "alias": "--tw-ring-offset-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 4
+    }
+  }
+}

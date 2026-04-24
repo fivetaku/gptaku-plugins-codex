@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IKEA — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#FFDB00;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:#111111;}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#ffd700;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;padding:20px 24px;border-bottom:1px solid var(--border);}
+  .type-row:last-child{border-bottom:none;}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{display:grid;grid-template-columns:120px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .rad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .sh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{background:var(--card);padding:24px 24px 20px;border-radius:var(--radius-lg);border:1px solid var(--border);min-height:120px;display:flex;flex-direction:column;justify-content:space-between;}
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .motion-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:820px;}
+  .motion-row{display:grid;grid-template-columns:180px 120px 1fr;gap:20px;padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .motion-row:last-child{border-bottom:none;}
+  .motion-row .pt{font-family:var(--font-mono);font-size:11px;color:var(--fg);}
+  .motion-row .val{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .motion-row .use{color:var(--subtle);line-height:1.55;}
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{padding:24px;background:var(--muted);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;position:relative;}
+  .cmp-code .copy{position:absolute;top:10px;right:10px;font-family:var(--font-mono);font-size:10px;color:#7d8ba4;background:#1f2023;padding:3px 8px;border-radius:4px;border:1px solid #2f3135;}
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{padding:14px 16px;background:var(--muted);border-radius:var(--radius);font-size:15px;line-height:1.5;border-left:2px solid #FFDB00;}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-pane{display:none;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+  @media(max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.cmp-block__body,.ts,.voice-grid,.dd-grid,.sem-row{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}.rad-grid{grid-template-columns:repeat(2,1fr);}.sh-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">IKEA</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+        <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">11</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">12</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">13</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/ikea/<br>design.md · 2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">IKEA <span class="sub">— 실제 CSS 기반 분석</span></h1>
+      <p class="hero__sub">ikea.com의 디자인 시스템 분석 — IKEA 옐로우(#FFDB00) 브랜드 색상, 검정 CTA 버튼, Noto IKEA 전용 폰트, 스웨덴 블루-옐로우 정체성.</p>
+      <div class="hero__screenshot"><img src="screenshots/hero-cropped.png" alt="ikea.com 홈페이지 스크린샷"></div>
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 IKEA처럼 만들기</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트</span>
+            <code>body {
+  font-family:
+    "Noto IKEA",
+    "Noto Sans",
+    Roboto,
+    "Open Sans",
+    sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFEFB</b>;
+  --fg: <b>#111111</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 옐로우</span>
+            <code>:root {
+  --brand: <b>#FFDB00</b>;
+  --ikea-blue: <b>#0058A3</b>;
+}
+/* Primary btn = 검정 */
+.btn { background: <b>#111111</b>; }</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: 파란색(#0058A3)을 primary CTA로 쓰는 것. IKEA 파란색은 보조 브랜드 색상이고 primary 버튼은 검정(<code>#111111</code>)이다. 옐로우(#FFDB00)는 배지·특별 CTA용으로만 사용한다.
+        </div>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><div class="stat__label">Source</div><div class="stat__val stat__val--mono">ikea.com</div><div class="stat__hint">Svelte (SvelteKit)</div></div>
+        <div class="stat"><div class="stat__label">Fetched</div><div class="stat__val">2026.04.13</div><div class="stat__hint">CSS 추출 (Svelte 스코프)</div></div>
+        <div class="stat"><div class="stat__label">Primary Font</div><div class="stat__val stat__val--mono">Noto IKEA</div><div class="stat__hint">전용 다국어 폰트 · weight 400</div></div>
+        <div class="stat"><div class="stat__label">Brand</div><div class="stat__val stat__val--mono">#FFDB00</div><div class="stat__hint">IKEA Yellow — 브랜드 식별자</div></div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://www.ikea.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">CSS 패턴</span><span class="prov__v">Svelte scoped CSS 해시 클래스 (<code>.svelte-*</code>)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">없음 (CSS 변수 미노출, Svelte scoped)</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">selector_role 파싱 · frequency 분석 (버튼 hover=#333333, active=#000000 확인)</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">SvelteKit + Svelte scoped CSS — 해시 클래스로 스타일 격리.</p>
+      <div class="ts">
+        <div class="ts__item"><div class="ts__head">FRAMEWORK</div><div class="ts__body">SvelteKit (Svelte 기반 SSR)</div></div>
+        <div class="ts__item"><div class="ts__head">CSS SYSTEM</div><div class="ts__body">Svelte scoped CSS — <code>.svelte-{hash}</code> 자동 클래스</div></div>
+        <div class="ts__item"><div class="ts__head">DESIGN SYSTEM</div><div class="ts__body">인-하우스 (IKEA Lovisa DS — 내부)</div></div>
+        <div class="ts__item"><div class="ts__head">DEFAULT THEME</div><div class="ts__body">Light — 순백에 가까운 크림 <code>#FFFEFB</code></div></div>
+        <div class="ts__item"><div class="ts__head">FONT LOADING</div><div class="ts__body">자체 호스트 — Noto IKEA (다국어 지원 전용 폰트)</div></div>
+        <div class="ts__item"><div class="ts__head">NOTABLE</div><div class="ts__body">버튼 CSS selector_role: hover=<code>#333333</code>, active=<code>#000000</code>. 옐로우(#FFDB00) frequency count:4로 top chromatic 확인.</div></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">Noto IKEA — 전 세계 언어 지원을 위한 Noto 기반 전용 폰트.</p>
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row"><span class="fs-card__k">Primary</span><span class="fs-card__v"><code>Noto IKEA</code> — Noto 기반 IKEA 전용 다국어 폰트 · weight 400/700</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Fallback</span><span class="fs-card__v"><code>Noto Sans</code>, <code>Roboto</code>, <code>Open Sans</code>, <code>sans-serif</code></span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Weight</span><span class="fs-card__v">400 (normal) · 700 (bold) — 과도한 weight 금지</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">대체재</span><span class="fs-card__v"><code>Noto Sans</code> (Google Fonts — 거의 동일) + <code>Inter</code></span></div>
+      </div>
+      <div class="type-sub" style="margin-top:32px;">Typography Scale</div>
+      <div class="type-table">
+        <div class="type-row"><div style="font-size:44px;font-weight:700;line-height:1.1;letter-spacing:-0.01em;">BILLY</div><div class="type-row__spec"><span class="tk">Hero Display</span>Noto IKEA · 40–56px · 700<br>line-height 1.1 · letter-spacing -0.01em</div></div>
+        <div class="type-row"><div style="font-size:28px;font-weight:700;line-height:1.2;">카테고리 제목</div><div class="type-row__spec"><span class="tk">Section H2</span>Noto IKEA · 24–32px · 700<br>line-height 1.2</div></div>
+        <div class="type-row"><div style="font-size:18px;font-weight:700;line-height:1.3;">제품 이름</div><div class="type-row__spec"><span class="tk">Product Name</span>Noto IKEA · 18–22px · 700<br>line-height 1.3</div></div>
+        <div class="type-row"><div style="font-size:15px;font-weight:400;line-height:1.6;">본문 텍스트 · 설명</div><div class="type-row__spec"><span class="tk">Body</span>Noto IKEA · 14–16px · 400<br>line-height 1.6</div></div>
+        <div class="type-row"><div style="font-size:13px;font-weight:400;line-height:1.4;">₩149,000 · 치수</div><div class="type-row__spec"><span class="tk">Price / Meta</span>Noto IKEA · 12–14px · 400<br>line-height 1.4</div></div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">검정 primary CTA + IKEA 옐로우 브랜드 식별 + 스웨덴 블루 보조 팔레트.</p>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>IKEA Yellow (Brand)</b> <span style="color:var(--muted-fg)">CSS frequency top chromatic</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--l is-anchor" style="background:#FFDB00"><span class="n">IKEA Yellow</span>#FFDB00</div>
+          <div class="sw sw--l" style="background:#FFE54C"><span class="n">Light</span>#FFE54C</div>
+          <div class="sw sw--l" style="background:#E8C800"><span class="n">Dark</span>#E8C800</div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>IKEA Blue (Secondary)</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d is-anchor" style="background:#0058A3"><span class="n">Brand Blue</span>#0058A3</div>
+          <div class="sw sw--d" style="background:#004F93"><span class="n">Dark</span>#004F93</div>
+          <div class="sw sw--d" style="background:#0067C0"><span class="n">Hover</span>#0067C0</div>
+          <div class="sw sw--l" style="background:#DEEBF7"><span class="n">Tint</span>#DEEBF7</div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Dark Neutrals (CTA)</b> <span style="color:var(--muted-fg)">selector_role 직접 추출</span></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d is-anchor" style="background:#111111"><span class="n">Primary Btn</span>#111111</div>
+          <div class="sw sw--d" style="background:#333333"><span class="n">Hover</span>#333333</div>
+          <div class="sw sw--d" style="background:#000000"><span class="n">Active</span>#000000</div>
+          <div class="sw sw--l" style="background:#FFFEFB"><span class="n">Page BG</span>#FFFEFB</div>
+        </div>
+      </div>
+      <div class="type-sub" style="margin-top:24px;">시멘틱 컬러 역할</div>
+      <div class="sem-row">
+        <div class="sem-card"><div class="sem-card__chip" style="background:#FFDB00;border:1px solid #e4e4e7;"></div><div><div class="sem-card__n">IKEA Yellow</div><div class="sem-card__h">#FFDB00 (brand)</div><div class="sem-card__u">브랜드 식별자 — 배지, 특별 CTA, 헤더 배경</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#111111;"></div><div><div class="sem-card__n">Primary Button</div><div class="sem-card__h">#111111 (CTA)</div><div class="sem-card__u">대부분의 CTA 버튼 (selector_role 추출)</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#0058A3;"></div><div><div class="sem-card__n">IKEA Blue</div><div class="sem-card__h">#0058A3 (secondary)</div><div class="sem-card__u">링크, 정보, 보조 accent</div></div></div>
+        <div class="sem-card"><div class="sem-card__chip" style="background:#FFFEFB;border:1px solid #e4e4e7;"></div><div><div class="sem-card__n">Page BG</div><div class="sem-card__h">#FFFEFB</div><div class="sem-card__u">기본 배경 — 순백이 아닌 warm near-white</div></div></div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">8px 기반 스페이싱 — 기능적 스칸디나비안 미니멀리즘.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">xs</span><span class="val">4px</span><div class="bar" style="width:4px;"></div></div>
+        <div class="space-row"><span class="tk">sm</span><span class="val">8px</span><div class="bar" style="width:8px;"></div></div>
+        <div class="space-row"><span class="tk">md</span><span class="val">16px</span><div class="bar" style="width:16px;"></div></div>
+        <div class="space-row"><span class="tk">lg</span><span class="val">24px</span><div class="bar" style="width:24px;"></div></div>
+        <div class="space-row"><span class="tk">xl</span><span class="val">40px</span><div class="bar" style="width:40px;"></div></div>
+        <div class="space-row"><span class="tk">2xl</span><span class="val">64px</span><div class="bar" style="width:64px;"></div></div>
+        <div class="space-row"><span class="tk">3xl</span><span class="val">96px</span><div class="bar" style="width:96px;"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Border Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">미니멀 반경 — 기능적·직선적 형태 언어.</p>
+      <div class="rad-grid">
+        <div class="rad-card"><div class="rad-box" style="border-radius:4px;"></div><div class="rad-card__n">sm</div><div class="rad-card__v">4px<br>태그, 배지</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:8px;"></div><div class="rad-card__n">md</div><div class="rad-card__v">8px<br>버튼, 카드</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:16px;"></div><div class="rad-card__n">lg</div><div class="rad-card__v">16px<br>큰 카드</div></div>
+        <div class="rad-card"><div class="rad-box" style="border-radius:50%;aspect-ratio:1;"></div><div class="rad-card__n">circle</div><div class="rad-card__v">50%<br>아바타, 아이콘</div></div>
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">flat 디자인 위주 — 그림자 최소화.</p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 2px 8px rgba(0,0,0,.08);"><div><div class="sh-card__n">card</div><div class="sh-card__d">제품 카드 기본 그림자</div></div><div class="sh-card__v">0 2px 8px rgba(0,0,0,.08)</div></div>
+        <div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,.12);"><div><div class="sh-card__n">elevated</div><div class="sh-card__d">모달, 드롭다운</div></div><div class="sh-card__v">0 4px 16px rgba(0,0,0,.12)</div></div>
+      </div>
+    </section>
+
+    <section id="motion">
+      <div class="section__num">08 · Motion</div>
+      <h2 class="section__title">모션</h2>
+      <p class="section__lede">빠르고 실용적인 전환 — 과한 애니메이션 없음.</p>
+      <div class="motion-table">
+        <div class="motion-row"><span class="pt">duration-fast</span><span class="val">150ms</span><span class="use">hover 전환</span></div>
+        <div class="motion-row"><span class="pt">duration-base</span><span class="val">250ms</span><span class="use">카드, 드롭다운</span></div>
+        <div class="motion-row"><span class="pt">easing</span><span class="val">ease-out</span><span class="use">표준 전환</span></div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">10 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">검정 primary CTA + 옐로우 프로모션 배지 + 카드 제품.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.btn-primary</span>
+          <span class="cmp-block__desc">Primary CTA — 검정 버튼 (selector_role 추출)</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:#111111;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;border:none;cursor:pointer;">Add to cart</button>
+            </div>
+            <div class="cmp-code">
+              <span class="copy">CSS</span>
+.btn-primary {
+  background: #111111;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  transition: background 150ms ease-out;
+}
+.btn-primary:hover {
+  background: #333333; /* selector_role */
+}
+.btn-primary:active {
+  background: #000000; /* selector_role */
+}
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #111111</code><br>
+            <code>hover: #333333</code><br>
+            <code>active: #000000</code>
+            <span class="kr">CSS selector_role 직접 추출값. 파란색(#0058A3)을 버튼으로 쓰지 말 것.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.promo-badge</span>
+          <span class="cmp-block__desc">프로모션 배지 — IKEA 옐로우</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <span style="background:#FFDB00;color:#111111;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;display:inline-block;">SALE</span>
+              <span style="background:#FFDB00;color:#111111;font-size:13px;font-weight:700;padding:4px 12px;border-radius:4px;display:inline-block;">NEW</span>
+            </div>
+            <div class="cmp-code">
+              <span class="copy">CSS</span>
+.promo-badge {
+  background: #FFDB00;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #FFDB00</code><br>
+            <code>color: #111111</code>
+            <span class="kr">옐로우는 배지·특별 CTA 전용. 일반 버튼에 쓰지 말 것.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">11 · Content Voice</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">기능적 · 직관적 · 스칸디나비안 미니멀리즘.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">Product Naming</div>
+          <div class="voice-card__rule">단어 1–2개의 대문자 스웨덴어 또는 조어</div>
+          <div class="voice-card__ex">BILLY · KALLAX · HEMNES · POÄNG</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">CTA 패턴</div>
+          <div class="voice-card__rule">명확한 행동 동사 — 애매함 없이</div>
+          <div class="voice-card__ex">"Add to cart" / "Find in store" / "Shop now"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">설명 원칙</div>
+          <div class="voice-card__rule">치수·색상·재질 명시 — 기능 중심</div>
+          <div class="voice-card__ex">"W80xD40xH202cm · birch veneer · 3 adj. shelves"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">톤</div>
+          <div class="voice-card__rule">실용적·따뜻함·모두를 위한 디자인</div>
+          <div class="voice-card__ex">"Good design is available to everyone."</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">12 · Code Export</div>
+      <h2 class="section__title">CSS · Tailwind</h2>
+      <p class="section__lede">Drop-in CSS 토큰과 Tailwind 설정.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'tab-css')">CSS Variables</button>
+          <button onclick="switchTab(this,'tab-tw')">Tailwind Config</button>
+        </div>
+        <div id="tab-css" class="code-pane is-active">
+          <pre><span class="c">/* IKEA — Drop-in CSS Tokens */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Brand */</span>
+  <span class="k">--brand</span>: <span class="v">#FFDB00</span>; <span class="c">/* IKEA Yellow */</span>
+  <span class="k">--ikea-blue</span>: <span class="v">#0058A3</span>;
+  <span class="k">--btn-primary</span>: <span class="v">#111111</span>;
+  <span class="k">--btn-hover</span>: <span class="v">#333333</span>;
+  <span class="k">--btn-active</span>: <span class="v">#000000</span>;
+
+  <span class="c">/* Surface */</span>
+  <span class="k">--bg</span>: <span class="v">#FFFEFB</span>;
+  <span class="k">--bg-card</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">--fg</span>: <span class="v">#111111</span>;
+  <span class="k">--fg-muted</span>: <span class="v">#767676</span>;
+
+  <span class="c">/* Border */</span>
+  <span class="k">--border</span>: <span class="v">#DFDFDF</span>;
+
+  <span class="c">/* Spacing */</span>
+  <span class="k">--space-xs</span>: <span class="v">4px</span>;
+  <span class="k">--space-sm</span>: <span class="v">8px</span>;
+  <span class="k">--space-md</span>: <span class="v">16px</span>;
+  <span class="k">--space-lg</span>: <span class="v">24px</span>;
+  <span class="k">--space-xl</span>: <span class="v">40px</span>;
+  <span class="k">--space-2xl</span>: <span class="v">64px</span>;
+
+  <span class="c">/* Radius */</span>
+  <span class="k">--radius-sm</span>: <span class="v">4px</span>;
+  <span class="k">--radius-md</span>: <span class="v">8px</span>;
+  <span class="k">--radius-lg</span>: <span class="v">16px</span>;
+}
+
+<span class="k">body</span> {
+  <span class="k">font-family</span>: <span class="v">"Noto IKEA", "Noto Sans",
+    Roboto, "Open Sans", sans-serif</span>;
+  <span class="k">font-weight</span>: <span class="v">400</span>;
+  <span class="k">background</span>: <span class="v">var(--bg)</span>;
+  <span class="k">color</span>: <span class="v">var(--fg)</span>;
+  <span class="k">-webkit-font-smoothing</span>: <span class="v">antialiased</span>;
+}</pre>
+        </div>
+        <div id="tab-tw" class="code-pane">
+          <pre><span class="c">// tailwind.config.js — IKEA</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        <span class="v">'ikea-yellow'</span>: <span class="v">'#FFDB00'</span>,
+        <span class="v">'ikea-blue'</span>: <span class="v">'#0058A3'</span>,
+        <span class="v">'btn-primary'</span>: <span class="v">'#111111'</span>,
+        <span class="v">'btn-hover'</span>: <span class="v">'#333333'</span>,
+        <span class="v">'page-bg'</span>: <span class="v">'#FFFEFB'</span>,
+        <span class="v">'text-muted'</span>: <span class="v">'#767676'</span>,
+        <span class="v">'border-default'</span>: <span class="v">'#DFDFDF'</span>,
+      },
+      fontFamily: {
+        sans: [<span class="v">'"Noto IKEA"'</span>, <span class="v">'"Noto Sans"'</span>,
+               <span class="v">'Roboto'</span>, <span class="v">'"Open Sans"'</span>, <span class="v">'sans-serif'</span>],
+      },
+      borderRadius: {
+        DEFAULT: <span class="v">'8px'</span>,
+        sm: <span class="v">'4px'</span>,
+        lg: <span class="v">'16px'</span>,
+      },
+    },
+  },
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">13 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">IKEA를 IKEA답게 만드는 규칙.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>DO</h3>
+          <ul>
+            <li><b>Primary 버튼은 검정(#111111)</b> — CSS selector_role 직접 추출값</li>
+            <li><b>옐로우(#FFDB00)는 배지·특별 프로모션 CTA</b> — 브랜드 식별자 역할</li>
+            <li><b>배경은 near-white #FFFEFB</b> — 순백이 아닌 약간 따뜻한 크림</li>
+            <li><b>파란색(#0058A3)은 링크·정보 역할</b> — 스웨덴 국기 color 보조 사용</li>
+            <li><b>제품명은 스웨덴어 또는 조어 대문자</b> (BILLY, KALLAX)</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>DON'T</h3>
+          <ul>
+            <li><b>파란색(#0058A3)을 primary CTA로 쓰지 않는다</b> — 버튼은 검정</li>
+            <li><b>옐로우(#FFDB00)를 일반 텍스트 배경으로 깔지 않는다</b> — 배지 전용</li>
+            <li><b>Svelte 해시 클래스(<code>.svelte-*</code>)를 직접 참조하지 않는다</b> — 빌드 시 변경</li>
+            <li><b>그림자를 과도하게 쓰지 않는다</b> — IKEA는 flat 디자인 위주</li>
+            <li><b>weight 900+ 헤드라인을 일반 텍스트에 쓰지 않는다</b> — 700이 최대</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <div>
+        <div>insane-design/ikea · 2026-04-13</div>
+        <div style="margin-top:4px;color:var(--muted-fg);">Source: <code style="font-size:10px;">ikea.com</code> · CSS selector_role · frequency 파싱</div>
+      </div>
+      <div class="kr" style="text-align:right;">Codex · insane-design 플러그인<br>실제 CSS 추출 기반 분석</div>
+    </footer>
+  </main>
+</div>
+<script>
+function switchTab(btn, id) {
+  const export_ = btn.closest('.code-export');
+  export_.querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  export_.querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById(id).classList.add('is-active');
+}
+</script>
+</body>
+</html>

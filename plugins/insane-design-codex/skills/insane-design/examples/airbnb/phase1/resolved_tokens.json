@@ -1,0 +1,423 @@
+{
+  "slug": "airbnb",
+  "total_vars": 1713,
+  "resolved_count": 1064,
+  "unresolved_count": 649,
+  "samples": {
+    "--corner-radius-tiny4px-border-radius": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--corner-radius-tiny4px-border-radius",
+        "4px"
+      ]
+    },
+    "--corner-radius-small8px-border-radius": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--corner-radius-small8px-border-radius",
+        "8px"
+      ]
+    },
+    "--corner-radius-medium12px-border-radius": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--corner-radius-medium12px-border-radius",
+        "12px"
+      ]
+    },
+    "--corner-radius-large16px-border-radius": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--corner-radius-large16px-border-radius",
+        "16px"
+      ]
+    },
+    "--corner-radius-xlarge20px-border-radius": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--corner-radius-xlarge20px-border-radius",
+        "20px"
+      ]
+    },
+    "--corner-radius-xxlarge24px-border-radius": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--corner-radius-xxlarge24px-border-radius",
+        "24px"
+      ]
+    },
+    "--corner-radius-xxlarge28px-border-radius": {
+      "raw": "28px",
+      "resolved": "28px",
+      "chain": [
+        "--corner-radius-xxlarge28px-border-radius",
+        "28px"
+      ]
+    },
+    "--corner-radius-xxxlarge32px-border-radius": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--corner-radius-xxxlarge32px-border-radius",
+        "32px"
+      ]
+    },
+    "--elevation-high-box-shadow": {
+      "raw": "var(--elevation-high-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-high-box-shadow",
+        "--elevation-high-box-shadow-dark",
+        "0 0 0 1px #313131,0 8px 28px rgba(0,0,0,0.96)"
+      ]
+    },
+    "--elevation-high-border": {
+      "raw": "var(--elevation-high-border-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-high-border",
+        "--elevation-high-border-dark",
+        "1px solid #313131"
+      ]
+    },
+    "--elevation-primary-box-shadow": {
+      "raw": "var(--elevation-primary-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-primary-box-shadow",
+        "--elevation-primary-box-shadow-dark",
+        "0 0 0 1px #313131,0 6px 20px rgba(0,0,0,0.92)"
+      ]
+    },
+    "--elevation-primary-border": {
+      "raw": "var(--elevation-primary-border-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-primary-border",
+        "--elevation-primary-border-dark",
+        "1px solid #313131"
+      ]
+    },
+    "--elevation-secondary-box-shadow": {
+      "raw": "var(--elevation-secondary-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-secondary-box-shadow",
+        "--elevation-secondary-box-shadow-dark",
+        "0 0 0 1px #313131,0 6px 16px rgba(0,0,0,0.88)"
+      ]
+    },
+    "--elevation-secondary-border": {
+      "raw": "var(--elevation-secondary-border-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-secondary-border",
+        "--elevation-secondary-border-dark",
+        "1px solid #313131"
+      ]
+    },
+    "--elevation-sharp-edge-background": {
+      "raw": "var(--elevation-sharp-edge-background-dark)",
+      "resolved": "#313131",
+      "chain": [
+        "--elevation-sharp-edge-background",
+        "--elevation-sharp-edge-background-dark",
+        "#313131"
+      ]
+    },
+    "--elevation-tertiary-box-shadow": {
+      "raw": "var(--elevation-tertiary-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-tertiary-box-shadow",
+        "--elevation-tertiary-box-shadow-dark",
+        "0 0 0 1px #313131,0 2px 4px rgba(0,0,0,0.92)"
+      ]
+    },
+    "--elevation-tertiary-border": {
+      "raw": "var(--elevation-tertiary-border-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-tertiary-border",
+        "--elevation-tertiary-border-dark",
+        "1px solid #313131"
+      ]
+    },
+    "--elevation-elevation0-box-shadow": {
+      "raw": "var(--elevation-elevation0-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation0-box-shadow",
+        "--elevation-elevation0-box-shadow-dark",
+        "0px 0px 0px 1px #303030"
+      ]
+    },
+    "--elevation-elevation1-box-shadow": {
+      "raw": "var(--elevation-elevation1-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation1-box-shadow",
+        "--elevation-elevation1-box-shadow-dark",
+        "0px 0px 0px 1px rgba(0,0,0,0.30),0px 2px 4px 0px #000"
+      ]
+    },
+    "--elevation-elevation2-box-shadow": {
+      "raw": "var(--elevation-elevation2-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation2-box-shadow",
+        "--elevation-elevation2-box-shadow-dark",
+        "0px 0px 0px 1px rgba(0,0,0,0.20),0px 2px 6px 0px rgba(0,0,0,0.30),0px 4px 8px 0px rgba(0,0,0,0.60)"
+      ]
+    },
+    "--elevation-elevation3-box-shadow": {
+      "raw": "var(--elevation-elevation3-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation3-box-shadow",
+        "--elevation-elevation3-box-shadow-dark",
+        "0px 0px 0px 1px rgba(0,0,0,0.20),0px 2px 4px 0px rgba(0,0,0,0.20),0px 8px 16px 0px rgba(0,0,0,0.60)"
+      ]
+    },
+    "--elevation-elevation4-box-shadow": {
+      "raw": "var(--elevation-elevation4-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation4-box-shadow",
+        "--elevation-elevation4-box-shadow-dark",
+        "0px 0px 0px 1px rgba(0,0,0,0.20),0px 4px 8px 0px rgba(0,0,0,0.40),0px 12px 30px 0px rgba(0,0,0,0.80)"
+      ]
+    },
+    "--elevation-elevation5-box-shadow": {
+      "raw": "var(--elevation-elevation5-box-shadow-dark)",
+      "resolved": null,
+      "chain": [
+        "--elevation-elevation5-box-shadow",
+        "--elevation-elevation5-box-shadow-dark",
+        "0px 0px 0px 1px rgba(0,0,0,0.20),0px 6px 8px 0px rgba(0,0,0,0.40),0px 16px 56px 0px rgba(0,0,0,0.80)"
+      ]
+    },
+    "--motion-springs-fast-duration": {
+      "raw": "451.75438596491193ms",
+      "resolved": "451.75438596491193ms",
+      "chain": [
+        "--motion-springs-fast-duration",
+        "451.75438596491193ms"
+      ]
+    },
+    "--motion-springs-fast-easing": {
+      "raw": "linear(0,0.18557241650572898,0.46530560393651493,0.6823338821577483,0.8223254801509006,0.9049744175651648,0.951288850000914,0.9763638545339052,0.9896118636450829,0.9964846505475399,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-fast-easing",
+        "linear(0,0.18557241650572898,0.46530560393651493,0.6823338821577483,0.8223254801509006,0.9049744175651648,0.951288850000914,0.9763638545339052,0.9896118636450829,0.9964846505475399,1)"
+      ]
+    },
+    "--motion-springs-fast-source-mass": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--motion-springs-fast-source-mass",
+        "1px"
+      ]
+    },
+    "--motion-springs-fast-source-damping": {
+      "raw": "35px",
+      "resolved": "35px",
+      "chain": [
+        "--motion-springs-fast-source-damping",
+        "35px"
+      ]
+    },
+    "--motion-springs-fast-source-stiffness": {
+      "raw": "300px",
+      "resolved": "300px",
+      "chain": [
+        "--motion-springs-fast-source-stiffness",
+        "300px"
+      ]
+    },
+    "--motion-springs-standard-duration": {
+      "raw": "583.7719298245607ms",
+      "resolved": "583.7719298245607ms",
+      "chain": [
+        "--motion-springs-standard-duration",
+        "583.7719298245607ms"
+      ]
+    },
+    "--motion-springs-standard-easing": {
+      "raw": "linear(0,0.15794349142280711,0.4146686698630492,0.6303103850844771,0.7802275692100804,0.8751011408890221,0.9317564666924485,0.9642434451985746,0.9823049252758026,0.992097579596505,0.9972943925635941,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-standard-easing",
+        "linear(0,0.15794349142280711,0.4146686698630492,0.6303103850844771,0.7802275692100804,0.8751011408890221,0.9317564666924485,0.9642434451985746,0.9823049252758026,0.992097579596505,0.9972943925635941,1)"
+      ]
+    },
+    "--motion-springs-standard-source-mass": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--motion-springs-standard-source-mass",
+        "1px"
+      ]
+    },
+    "--motion-springs-standard-source-damping": {
+      "raw": "26px",
+      "resolved": "26px",
+      "chain": [
+        "--motion-springs-standard-source-damping",
+        "26px"
+      ]
+    },
+    "--motion-springs-standard-source-stiffness": {
+      "raw": "175px",
+      "resolved": "175px",
+      "chain": [
+        "--motion-springs-standard-source-stiffness",
+        "175px"
+      ]
+    },
+    "--motion-springs-medium-bounce-duration": {
+      "raw": "574.1228070175433ms",
+      "resolved": "574.1228070175433ms",
+      "chain": [
+        "--motion-springs-medium-bounce-duration",
+        "574.1228070175433ms"
+      ]
+    },
+    "--motion-springs-medium-bounce-easing": {
+      "raw": "linear(0,0.17056804830171035,0.47921259292635127,0.749704997553311,0.9261583179716212,1.0149357719696455,1.0442328379057395,1.042269832870079,1.028981085732054,1.0152861473492045,1.0054622129208994,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-medium-bounce-easing",
+        "linear(0,0.17056804830171035,0.47921259292635127,0.749704997553311,0.9261583179716212,1.0149357719696455,1.0442328379057395,1.042269832870079,1.028981085732054,1.0152861473492045,1.0054622129208994,1)"
+      ]
+    },
+    "--motion-springs-medium-bounce-source-mass": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--motion-springs-medium-bounce-source-mass",
+        "1px"
+      ]
+    },
+    "--motion-springs-medium-bounce-source-damping": {
+      "raw": "18.5px",
+      "resolved": "18.5px",
+      "chain": [
+        "--motion-springs-medium-bounce-source-damping",
+        "18.5px"
+      ]
+    },
+    "--motion-springs-medium-bounce-source-stiffness": {
+      "raw": "175px",
+      "resolved": "175px",
+      "chain": [
+        "--motion-springs-medium-bounce-source-stiffness",
+        "175px"
+      ]
+    },
+    "--motion-springs-fast-bounce-duration": {
+      "raw": "449.12280701754327ms",
+      "resolved": "449.12280701754327ms",
+      "chain": [
+        "--motion-springs-fast-bounce-duration",
+        "449.12280701754327ms"
+      ]
+    },
+    "--motion-springs-fast-bounce-easing": {
+      "raw": "linear(0,0.25484239226416866,0.643483807710504,0.9061742021274407,1.0208040643586513,1.043750765143047,1.0303012036555117,1.0119725530453332,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-fast-bounce-easing",
+        "linear(0,0.25484239226416866,0.643483807710504,0.9061742021274407,1.0208040643586513,1.043750765143047,1.0303012036555117,1.0119725530453332,1)"
+      ]
+    },
+    "--motion-springs-fast-bounce-source-mass": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--motion-springs-fast-bounce-source-mass",
+        "1px"
+      ]
+    },
+    "--motion-springs-fast-bounce-source-damping": {
+      "raw": "22px",
+      "resolved": "22px",
+      "chain": [
+        "--motion-springs-fast-bounce-source-damping",
+        "22px"
+      ]
+    },
+    "--motion-springs-fast-bounce-source-stiffness": {
+      "raw": "250px",
+      "resolved": "250px",
+      "chain": [
+        "--motion-springs-fast-bounce-source-stiffness",
+        "250px"
+      ]
+    },
+    "--motion-springs-slow-duration": {
+      "raw": "745.6140350877179ms",
+      "resolved": "745.6140350877179ms",
+      "chain": [
+        "--motion-springs-slow-duration",
+        "745.6140350877179ms"
+      ]
+    },
+    "--motion-springs-slow-easing": {
+      "raw": "linear(0,0.1726495179466309,0.44139132340393467,0.6575338740242772,0.8021357455779029,0.890693569261087,0.9421755177398626,0.9710919896728034,0.9869420351097642,0.9954729340379553,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-slow-easing",
+        "linear(0,0.1726495179466309,0.44139132340393467,0.6575338740242772,0.8021357455779029,0.890693569261087,0.9421755177398626,0.9710919896728034,0.9869420351097642,0.9954729340379553,1)"
+      ]
+    },
+    "--motion-springs-slow-source-mass": {
+      "raw": "1px",
+      "resolved": "1px",
+      "chain": [
+        "--motion-springs-slow-source-mass",
+        "1px"
+      ]
+    },
+    "--motion-springs-slow-source-damping": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--motion-springs-slow-source-damping",
+        "20px"
+      ]
+    },
+    "--motion-springs-slow-source-stiffness": {
+      "raw": "100px",
+      "resolved": "100px",
+      "chain": [
+        "--motion-springs-slow-source-stiffness",
+        "100px"
+      ]
+    },
+    "--motion-springs-slow-bounce-duration": {
+      "raw": "762.2807017543847ms",
+      "resolved": "762.2807017543847ms",
+      "chain": [
+        "--motion-springs-slow-bounce-duration",
+        "762.2807017543847ms"
+      ]
+    },
+    "--motion-springs-slow-bounce-easing": {
+      "raw": "linear(0,0.17157063121773947,0.4812770425544863,0.7518340186858384,0.9276145377206974,1.0155374835651005,1.0441834344763297,1.0418987538382922,1.028565879063093,1.0149848580762686,1.005322404392434,1)",
+      "resolved": null,
+      "chain": [
+        "--motion-springs-slow-bounce-easing",
+        "linear(0,0.17157063121773947,0.4812770425544863,0.7518340186858384,0.9276145377206974,1.0155374835651005,1.0441834344763297,1.0418987538382922,1.028565879063093,1.0149848580762686,1.005322404392434,1)"
+      ]
+    }
+  }
+}

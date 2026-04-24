@@ -1,0 +1,197 @@
+{
+  "slug": "sonos",
+  "semantic_vars": [
+    {
+      "name": "--color-accentRed",
+      "value_hex": "#DE8579",
+      "role": "accent"
+    },
+    {
+      "name": "--color-accentGold",
+      "value_hex": "#C59C6E",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".tw-sticky-nav",
+      "property": "--tw-shadow",
+      "hex": "#E0E0E0",
+      "rule_snippet": ".tw-sticky-nav {height:4rem;width:100%;flex-direction:row;align-items:center;justify-content:space-between;--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity));--tw-shadow:inset 0p"
+    },
+    {
+      "selector": ".tw-sticky-nav",
+      "property": "box-shadow",
+      "hex": "#00000000",
+      "rule_snippet": ".tw-sticky-nav {height:4rem;width:100%;flex-direction:row;align-items:center;justify-content:space-between;--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity));--tw-shadow:inset 0p"
+    },
+    {
+      "selector": ".\\[\\&_button\\]\\:shadow-\\[0_0_24px_rgba\\(0\\2c 0\\2c 0\\2c 0\\.25\\)\\] button",
+      "property": "box-shadow",
+      "hex": "#00000000",
+      "rule_snippet": ".\\[\\&_button\\]\\:shadow-\\[0_0_24px_rgba\\(0\\2c 0\\2c 0\\2c 0\\.25\\)\\] button {--tw-shadow:0 0 24px rgba(0,0,0,0.25);--tw-shadow-colored:0 0 24px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shado"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 372,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 87,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2E2E2E",
+      "count": 71,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 52,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4C4C4C",
+      "count": 43,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000A0",
+      "count": 34,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#BCBCBC",
+      "count": 32,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#424242",
+      "count": 26,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#7F7F7F",
+      "count": 26,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E0E0E0",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#040404",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#EEEEEE",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000FF",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#737373",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#646464",
+      "count": 9,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#2D2D2D",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F4F4F4",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2C2C2C",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#303030",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#353535",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#444444",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#333333",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#7C7C7C",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#CDCDCD",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D8D8D8",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DE8579",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000011",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1C5F4A",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2A2A2A",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#343434",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 35,
+    "by_role": {
+      "accent": 2,
+      "chromatic": 2,
+      "neutral": 27,
+      "selector": 3,
+      "svg_pattern": 1
+    }
+  }
+}

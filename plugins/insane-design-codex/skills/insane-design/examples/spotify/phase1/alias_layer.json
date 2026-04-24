@@ -1,0 +1,270 @@
+{
+  "slug": "spotify",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--encore-button-both-icon-offset",
+        "references": [
+          "--encore-spacing-looser"
+        ],
+        "terminal_hint": "--encore-spacing-looser"
+      },
+      {
+        "alias": "--encore-button-both-offset",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-hover-scale",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--encore-button-icon-offset",
+        "references": [
+          "--encore-spacing-tighter"
+        ],
+        "terminal_hint": "--encore-spacing-tighter"
+      },
+      {
+        "alias": "--encore-button-icon-padding",
+        "references": [
+          "--encore-spacing-looser"
+        ],
+        "terminal_hint": "--encore-spacing-looser"
+      },
+      {
+        "alias": "--encore-button-icon-size",
+        "references": [
+          "--encore-graphic-size-decorative-base"
+        ],
+        "terminal_hint": "--encore-graphic-size-decorative-base"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--card-border-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--card-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--card-padding-mobile",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "core": [
+      {
+        "alias": "--background-base",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.54)"
+      },
+      {
+        "alias": "--background-elevated-base",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.58)"
+      },
+      {
+        "alias": "--background-elevated-highlight",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.58)"
+      },
+      {
+        "alias": "--background-elevated-press",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.68)"
+      },
+      {
+        "alias": "--background-highlight",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.58)"
+      },
+      {
+        "alias": "--background-press",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.68)"
+      },
+      {
+        "alias": "--background-tinted-base",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.54)"
+      },
+      {
+        "alias": "--background-tinted-highlight",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.54)"
+      },
+      {
+        "alias": "--background-tinted-press",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.54)"
+      },
+      {
+        "alias": "--color-basic-platinum-hover",
+        "references": [],
+        "terminal_hint": "#E5E5E5"
+      },
+      {
+        "alias": "--color-bg-badge",
+        "references": [],
+        "terminal_hint": "#1A1A1A"
+      },
+      {
+        "alias": "--color-bg-basic-platinum",
+        "references": [],
+        "terminal_hint": "#F3FF46"
+      },
+      {
+        "alias": "--color-bg-card",
+        "references": [],
+        "terminal_hint": "#1F1F1F"
+      },
+      {
+        "alias": "--color-bg-premium-basic",
+        "references": [],
+        "terminal_hint": "#96F0B6"
+      },
+      {
+        "alias": "--color-border-default",
+        "references": [],
+        "terminal_hint": "#1F1F1F"
+      },
+      {
+        "alias": "--color-plan-free",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--color-plan-lite",
+        "references": [],
+        "terminal_hint": "#c8e0fc"
+      },
+      {
+        "alias": "--color-plan-platinum",
+        "references": [],
+        "terminal_hint": "#F6F609"
+      },
+      {
+        "alias": "--color-plan-standard",
+        "references": [],
+        "terminal_hint": "#1ED760"
+      },
+      {
+        "alias": "--color-premium-basic-hover",
+        "references": [],
+        "terminal_hint": "#B3E5B5"
+      },
+      {
+        "alias": "--color-spotify-green",
+        "references": [],
+        "terminal_hint": "#1ED760"
+      },
+      {
+        "alias": "--color-text-on-light",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--color-text-primary",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--color-text-secondary",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.7)"
+      },
+      {
+        "alias": "--decorative-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--decorative-subdued",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.13)"
+      },
+      {
+        "alias": "--essential-announcement",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-bright-accent",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-negative",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-positive",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-subdued",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--essential-warning",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--parents-essential-base",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-announcement",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-bright-accent",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-negative",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-positive",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-warning",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 6,
+      "component": 3,
+      "core": 39
+    }
+  }
+}

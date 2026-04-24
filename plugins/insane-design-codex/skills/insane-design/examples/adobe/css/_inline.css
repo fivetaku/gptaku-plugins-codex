@@ -1,0 +1,10 @@
+body { display: none; }
+
+        @media (max-width: 1199px) {
+          .homepage-brick.link.split-background {
+            min-height: unset!important;
+          }
+        }
+      
+.homepage-brick.news .highlight-row {background: #000 !important;}
+.homepage-brick.link.split-background > .foreground > :first-child { background: #000!important; }

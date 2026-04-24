@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- insane-build: slide/deck-16x9.html — 16:9 HTML deck shell, no 9:16 -->
+<!-- Navigation: ←/→ keys. Speaker notes live in <script id="speaker-notes"> at bottom. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{DECK_TITLE}</title>
+<style>
+  :root {
+    --deck-bg: #ffffff;
+    --deck-fg: #111111;
+    --deck-fg-muted: #555555;
+    --deck-brand: #000000;
+    --font-family: system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #222;
+    font-family: var(--font-family);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh;
+  }
+  .stage {
+    width: min(100vw, calc(100vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background: var(--deck-bg);
+    color: var(--deck-fg);
+    overflow: hidden;
+  }
+  .slide {
+    position: absolute; inset: 0;
+    padding: 6vw;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slide.is-active { display: flex; }
+  .slide h1 { font-size: 6vw; font-weight: 600; margin: 0 0 2vw; letter-spacing: -0.02em; }
+  .slide h2 { font-size: 3.2vw; font-weight: 600; margin: 0 0 1.2vw; }
+  .slide p  { font-size: 1.6vw; color: var(--deck-fg-muted); line-height: 1.5; margin: 0 0 1vw; max-width: 70%; }
+  .slide .label { font-size: 1vw; color: var(--deck-brand); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.2vw; }
+  .slide--title { justify-content: center; text-align: left; }
+  .slide--section { justify-content: center; background: var(--deck-brand); color: #fff; }
+  .slide--section h1 { color: #fff; }
+  .chrome {
+    position: fixed; bottom: 12px; right: 12px;
+    font-family: ui-monospace, monospace; font-size: 12px; color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <section class="slide slide--title is-active" data-slide="1">
+      <span class="label">{EYEBROW}</span>
+      <h1>{TITLE}</h1>
+      <p>{SUBTITLE}</p>
+    </section>
+    <section class="slide" data-slide="2">
+      <h2>{SLIDE_2_HEADING}</h2>
+      <p>{SLIDE_2_BODY}</p>
+    </section>
+    <section class="slide slide--section" data-slide="3">
+      <h1>{SECTION_HEADER}</h1>
+    </section>
+  </div>
+  <div class="chrome"><span id="idx">1</span> / <span id="total">3</span></div>
+
+<script id="speaker-notes" type="application/json">
+[
+  {"slide": 1, "note": "{SLIDE_1_NOTE}"},
+  {"slide": 2, "note": "{SLIDE_2_NOTE}"},
+  {"slide": 3, "note": "{SLIDE_3_NOTE}"}
+]
+</script>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const idxEl = document.getElementById('idx');
+  document.getElementById('total').textContent = slides.length;
+  let i = 0;
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    idxEl.textContent = i + 1;
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ') go(i + 1);
+    if (e.key === 'ArrowLeft') go(i - 1);
+  });
+</script>
+</body>
+</html>

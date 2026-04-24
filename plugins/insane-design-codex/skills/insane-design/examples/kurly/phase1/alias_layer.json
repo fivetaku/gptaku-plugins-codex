@@ -1,0 +1,1020 @@
+{
+  "slug": "kurly",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--base-color",
+        "references": [],
+        "terminal_hint": "#ebebeb"
+      },
+      {
+        "alias": "--highlight-color",
+        "references": [],
+        "terminal_hint": "#f5f5f5"
+      },
+      {
+        "alias": "--kpds_ldmw171t",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--kpds_ldmw171u",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--kpds_ldmw171v",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw171w",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw171x",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw171y",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw171z",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1720",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1721",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1722",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw1723",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw1724",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1725",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1726",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1727",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1728",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw1729",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw172a",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw172b",
+        "references": [],
+        "terminal_hint": "#f2f5f8"
+      },
+      {
+        "alias": "--kpds_ldmw172c",
+        "references": [],
+        "terminal_hint": "#dde2e8"
+      },
+      {
+        "alias": "--kpds_ldmw172d",
+        "references": [],
+        "terminal_hint": "#c0c8d0"
+      },
+      {
+        "alias": "--kpds_ldmw172e",
+        "references": [],
+        "terminal_hint": "#a7b2bc"
+      },
+      {
+        "alias": "--kpds_ldmw172f",
+        "references": [],
+        "terminal_hint": "#848f9a"
+      },
+      {
+        "alias": "--kpds_ldmw172g",
+        "references": [],
+        "terminal_hint": "#626c77"
+      },
+      {
+        "alias": "--kpds_ldmw172h",
+        "references": [],
+        "terminal_hint": "#505760"
+      },
+      {
+        "alias": "--kpds_ldmw172i",
+        "references": [],
+        "terminal_hint": "#464b52"
+      },
+      {
+        "alias": "--kpds_ldmw172j",
+        "references": [],
+        "terminal_hint": "#363a40"
+      },
+      {
+        "alias": "--kpds_ldmw172k",
+        "references": [],
+        "terminal_hint": "#303337"
+      },
+      {
+        "alias": "--kpds_ldmw172l",
+        "references": [],
+        "terminal_hint": "#222"
+      },
+      {
+        "alias": "--kpds_ldmw172m",
+        "references": [],
+        "terminal_hint": "#9f53e0"
+      },
+      {
+        "alias": "--kpds_ldmw172n",
+        "references": [],
+        "terminal_hint": "#8d4cc4"
+      },
+      {
+        "alias": "--kpds_ldmw172o",
+        "references": [],
+        "terminal_hint": "#8147b2"
+      },
+      {
+        "alias": "--kpds_ldmw172p",
+        "references": [],
+        "terminal_hint": "#7542a1"
+      },
+      {
+        "alias": "--kpds_ldmw172q",
+        "references": [],
+        "terminal_hint": "#6b3e92"
+      },
+      {
+        "alias": "--kpds_ldmw172r",
+        "references": [],
+        "terminal_hint": "#603981"
+      },
+      {
+        "alias": "--kpds_ldmw172s",
+        "references": [],
+        "terminal_hint": "#563472"
+      },
+      {
+        "alias": "--kpds_ldmw172t",
+        "references": [],
+        "terminal_hint": "#4a3061"
+      },
+      {
+        "alias": "--kpds_ldmw172u",
+        "references": [],
+        "terminal_hint": "#402b52"
+      },
+      {
+        "alias": "--kpds_ldmw172v",
+        "references": [],
+        "terminal_hint": "#352741"
+      },
+      {
+        "alias": "--kpds_ldmw172w",
+        "references": [],
+        "terminal_hint": "#2b2232"
+      },
+      {
+        "alias": "--kpds_ldmw172x",
+        "references": [],
+        "terminal_hint": "#231f26"
+      },
+      {
+        "alias": "--kpds_ldmw172y",
+        "references": [],
+        "terminal_hint": "#ff602b"
+      },
+      {
+        "alias": "--kpds_ldmw172z",
+        "references": [],
+        "terminal_hint": "#eb5522"
+      },
+      {
+        "alias": "--kpds_ldmw1730",
+        "references": [],
+        "terminal_hint": "#d44f22"
+      },
+      {
+        "alias": "--kpds_ldmw1731",
+        "references": [],
+        "terminal_hint": "#c04921"
+      },
+      {
+        "alias": "--kpds_ldmw1732",
+        "references": [],
+        "terminal_hint": "#ad4420"
+      },
+      {
+        "alias": "--kpds_ldmw1733",
+        "references": [],
+        "terminal_hint": "#983e20"
+      },
+      {
+        "alias": "--kpds_ldmw1734",
+        "references": [],
+        "terminal_hint": "#86391f"
+      },
+      {
+        "alias": "--kpds_ldmw1735",
+        "references": [],
+        "terminal_hint": "#71331f"
+      },
+      {
+        "alias": "--kpds_ldmw1736",
+        "references": [],
+        "terminal_hint": "#5e2e1e"
+      },
+      {
+        "alias": "--kpds_ldmw1737",
+        "references": [],
+        "terminal_hint": "#4a281d"
+      },
+      {
+        "alias": "--kpds_ldmw1738",
+        "references": [],
+        "terminal_hint": "#37231d"
+      },
+      {
+        "alias": "--kpds_ldmw1739",
+        "references": [],
+        "terminal_hint": "#281f1c"
+      },
+      {
+        "alias": "--kpds_ldmw173a",
+        "references": [],
+        "terminal_hint": "#be77ff"
+      },
+      {
+        "alias": "--kpds_ldmw173b",
+        "references": [],
+        "terminal_hint": "#b06eed"
+      },
+      {
+        "alias": "--kpds_ldmw173c",
+        "references": [],
+        "terminal_hint": "#a065d6"
+      },
+      {
+        "alias": "--kpds_ldmw173d",
+        "references": [],
+        "terminal_hint": "#915dc1"
+      },
+      {
+        "alias": "--kpds_ldmw173e",
+        "references": [],
+        "terminal_hint": "#8455ae"
+      },
+      {
+        "alias": "--kpds_ldmw173f",
+        "references": [],
+        "terminal_hint": "#754d99"
+      },
+      {
+        "alias": "--kpds_ldmw173g",
+        "references": [],
+        "terminal_hint": "#674687"
+      },
+      {
+        "alias": "--kpds_ldmw173h",
+        "references": [],
+        "terminal_hint": "#593e72"
+      },
+      {
+        "alias": "--kpds_ldmw173i",
+        "references": [],
+        "terminal_hint": "#4b365f"
+      },
+      {
+        "alias": "--kpds_ldmw173j",
+        "references": [],
+        "terminal_hint": "#3d2e4a"
+      },
+      {
+        "alias": "--kpds_ldmw173k",
+        "references": [],
+        "terminal_hint": "#2f2737"
+      },
+      {
+        "alias": "--kpds_ldmw173l",
+        "references": [],
+        "terminal_hint": "#252129"
+      },
+      {
+        "alias": "--kpds_ldmw173m",
+        "references": [],
+        "terminal_hint": "#e92728"
+      },
+      {
+        "alias": "--kpds_ldmw173n",
+        "references": [],
+        "terminal_hint": "#d22a2b"
+      },
+      {
+        "alias": "--kpds_ldmw173o",
+        "references": [],
+        "terminal_hint": "#be2829"
+      },
+      {
+        "alias": "--kpds_ldmw173p",
+        "references": [],
+        "terminal_hint": "#ac2728"
+      },
+      {
+        "alias": "--kpds_ldmw173q",
+        "references": [],
+        "terminal_hint": "#9b2627"
+      },
+      {
+        "alias": "--kpds_ldmw173r",
+        "references": [],
+        "terminal_hint": "#892425"
+      },
+      {
+        "alias": "--kpds_ldmw173s",
+        "references": [],
+        "terminal_hint": "#792324"
+      },
+      {
+        "alias": "--kpds_ldmw173t",
+        "references": [],
+        "terminal_hint": "#672222"
+      },
+      {
+        "alias": "--kpds_ldmw173u",
+        "references": [],
+        "terminal_hint": "#562021"
+      },
+      {
+        "alias": "--kpds_ldmw173v",
+        "references": [],
+        "terminal_hint": "#441f1f"
+      },
+      {
+        "alias": "--kpds_ldmw173w",
+        "references": [],
+        "terminal_hint": "#341e1e"
+      },
+      {
+        "alias": "--kpds_ldmw173x",
+        "references": [],
+        "terminal_hint": "#271d1d"
+      },
+      {
+        "alias": "--kpds_ldmw173y",
+        "references": [],
+        "terminal_hint": "#019c6c"
+      },
+      {
+        "alias": "--kpds_ldmw173z",
+        "references": [],
+        "terminal_hint": "#028b61"
+      },
+      {
+        "alias": "--kpds_ldmw1740",
+        "references": [],
+        "terminal_hint": "#057f59"
+      },
+      {
+        "alias": "--kpds_ldmw1741",
+        "references": [],
+        "terminal_hint": "#077452"
+      },
+      {
+        "alias": "--kpds_ldmw1742",
+        "references": [],
+        "terminal_hint": "#0a6a4c"
+      },
+      {
+        "alias": "--kpds_ldmw1743",
+        "references": [],
+        "terminal_hint": "#0c5f45"
+      },
+      {
+        "alias": "--kpds_ldmw1744",
+        "references": [],
+        "terminal_hint": "#0f553f"
+      },
+      {
+        "alias": "--kpds_ldmw1745",
+        "references": [],
+        "terminal_hint": "#114a38"
+      },
+      {
+        "alias": "--kpds_ldmw1746",
+        "references": [],
+        "terminal_hint": "#144032"
+      },
+      {
+        "alias": "--kpds_ldmw1747",
+        "references": [],
+        "terminal_hint": "#16342b"
+      },
+      {
+        "alias": "--kpds_ldmw1748",
+        "references": [],
+        "terminal_hint": "#192a25"
+      },
+      {
+        "alias": "--kpds_ldmw1749",
+        "references": [],
+        "terminal_hint": "#1a2320"
+      },
+      {
+        "alias": "--kpds_ldmw174a",
+        "references": [],
+        "terminal_hint": "#45bcd6"
+      },
+      {
+        "alias": "--kpds_ldmw174b",
+        "references": [],
+        "terminal_hint": "#48b1c8"
+      },
+      {
+        "alias": "--kpds_ldmw174c",
+        "references": [],
+        "terminal_hint": "#43a1b5"
+      },
+      {
+        "alias": "--kpds_ldmw174d",
+        "references": [],
+        "terminal_hint": "#3f92a4"
+      },
+      {
+        "alias": "--kpds_ldmw174e",
+        "references": [],
+        "terminal_hint": "#3b8494"
+      },
+      {
+        "alias": "--kpds_ldmw174f",
+        "references": [],
+        "terminal_hint": "#367583"
+      },
+      {
+        "alias": "--kpds_ldmw174g",
+        "references": [],
+        "terminal_hint": "#326874"
+      },
+      {
+        "alias": "--kpds_ldmw174h",
+        "references": [],
+        "terminal_hint": "#2e5962"
+      },
+      {
+        "alias": "--kpds_ldmw174i",
+        "references": [],
+        "terminal_hint": "#2a4c53"
+      },
+      {
+        "alias": "--kpds_ldmw174j",
+        "references": [],
+        "terminal_hint": "#263d42"
+      },
+      {
+        "alias": "--kpds_ldmw174k",
+        "references": [],
+        "terminal_hint": "#222f32"
+      },
+      {
+        "alias": "--kpds_ldmw174l",
+        "references": [],
+        "terminal_hint": "#1f2526"
+      },
+      {
+        "alias": "--kpds_ldmw174m",
+        "references": [],
+        "terminal_hint": "#076ad3"
+      },
+      {
+        "alias": "--kpds_ldmw174n",
+        "references": [],
+        "terminal_hint": "#055fbf"
+      },
+      {
+        "alias": "--kpds_ldmw174o",
+        "references": [],
+        "terminal_hint": "#0858ad"
+      },
+      {
+        "alias": "--kpds_ldmw174p",
+        "references": [],
+        "terminal_hint": "#0a519d"
+      },
+      {
+        "alias": "--kpds_ldmw174q",
+        "references": [],
+        "terminal_hint": "#0c4b8e"
+      },
+      {
+        "alias": "--kpds_ldmw174r",
+        "references": [],
+        "terminal_hint": "#0e447e"
+      },
+      {
+        "alias": "--kpds_ldmw174s",
+        "references": [],
+        "terminal_hint": "#103e6f"
+      },
+      {
+        "alias": "--kpds_ldmw174t",
+        "references": [],
+        "terminal_hint": "#13375f"
+      },
+      {
+        "alias": "--kpds_ldmw174u",
+        "references": [],
+        "terminal_hint": "#153150"
+      },
+      {
+        "alias": "--kpds_ldmw174v",
+        "references": [],
+        "terminal_hint": "#172b40"
+      },
+      {
+        "alias": "--kpds_ldmw174w",
+        "references": [],
+        "terminal_hint": "#192531"
+      },
+      {
+        "alias": "--kpds_ldmw174x",
+        "references": [],
+        "terminal_hint": "#1b2026"
+      },
+      {
+        "alias": "--kpds_ldmw174y",
+        "references": [],
+        "terminal_hint": "#edb403"
+      },
+      {
+        "alias": "--kpds_ldmw174z",
+        "references": [],
+        "terminal_hint": "#dca600"
+      },
+      {
+        "alias": "--kpds_ldmw1750",
+        "references": [],
+        "terminal_hint": "#c79703"
+      },
+      {
+        "alias": "--kpds_ldmw1751",
+        "references": [],
+        "terminal_hint": "#b48906"
+      },
+      {
+        "alias": "--kpds_ldmw1752",
+        "references": [],
+        "terminal_hint": "#a27d08"
+      },
+      {
+        "alias": "--kpds_ldmw1753",
+        "references": [],
+        "terminal_hint": "#8f6f0b"
+      },
+      {
+        "alias": "--kpds_ldmw1754",
+        "references": [],
+        "terminal_hint": "#7e620e"
+      },
+      {
+        "alias": "--kpds_ldmw1755",
+        "references": [],
+        "terminal_hint": "#6b5511"
+      },
+      {
+        "alias": "--kpds_ldmw1756",
+        "references": [],
+        "terminal_hint": "#594813"
+      },
+      {
+        "alias": "--kpds_ldmw1757",
+        "references": [],
+        "terminal_hint": "#463a16"
+      },
+      {
+        "alias": "--kpds_ldmw1758",
+        "references": [],
+        "terminal_hint": "#352e18"
+      },
+      {
+        "alias": "--kpds_ldmw1759",
+        "references": [],
+        "terminal_hint": "#28241a"
+      },
+      {
+        "alias": "--kpds_ldmw175a",
+        "references": [],
+        "terminal_hint": "#a5601f"
+      },
+      {
+        "alias": "--kpds_ldmw175b",
+        "references": [],
+        "terminal_hint": "#93561d"
+      },
+      {
+        "alias": "--kpds_ldmw175c",
+        "references": [],
+        "terminal_hint": "#86501d"
+      },
+      {
+        "alias": "--kpds_ldmw175d",
+        "references": [],
+        "terminal_hint": "#7a4a1d"
+      },
+      {
+        "alias": "--kpds_ldmw175e",
+        "references": [],
+        "terminal_hint": "#6f451d"
+      },
+      {
+        "alias": "--kpds_ldmw175f",
+        "references": [],
+        "terminal_hint": "#633f1d"
+      },
+      {
+        "alias": "--kpds_ldmw175g",
+        "references": [],
+        "terminal_hint": "#593a1d"
+      },
+      {
+        "alias": "--kpds_ldmw175h",
+        "references": [],
+        "terminal_hint": "#4d341c"
+      },
+      {
+        "alias": "--kpds_ldmw175i",
+        "references": [],
+        "terminal_hint": "#422f1c"
+      },
+      {
+        "alias": "--kpds_ldmw175j",
+        "references": [],
+        "terminal_hint": "#36291c"
+      },
+      {
+        "alias": "--kpds_ldmw175k",
+        "references": [],
+        "terminal_hint": "#2b241c"
+      },
+      {
+        "alias": "--kpds_ldmw175l",
+        "references": [],
+        "terminal_hint": "#231f1c"
+      },
+      {
+        "alias": "--kpds_ldmw175m",
+        "references": [],
+        "terminal_hint": "#fee609"
+      },
+      {
+        "alias": "--kpds_ldmw175n",
+        "references": [],
+        "terminal_hint": "#f1d902"
+      },
+      {
+        "alias": "--kpds_ldmw175o",
+        "references": [],
+        "terminal_hint": "#dac405"
+      },
+      {
+        "alias": "--kpds_ldmw175p",
+        "references": [],
+        "terminal_hint": "#c4b107"
+      },
+      {
+        "alias": "--kpds_ldmw175q",
+        "references": [],
+        "terminal_hint": "#b1a00a"
+      },
+      {
+        "alias": "--kpds_ldmw175r",
+        "references": [],
+        "terminal_hint": "#9c8d0c"
+      },
+      {
+        "alias": "--kpds_ldmw175s",
+        "references": [],
+        "terminal_hint": "#897c0f"
+      },
+      {
+        "alias": "--kpds_ldmw175t",
+        "references": [],
+        "terminal_hint": "#736911"
+      },
+      {
+        "alias": "--kpds_ldmw175u",
+        "references": [],
+        "terminal_hint": "#605814"
+      },
+      {
+        "alias": "--kpds_ldmw175v",
+        "references": [],
+        "terminal_hint": "#4b4616"
+      },
+      {
+        "alias": "--kpds_ldmw175w",
+        "references": [],
+        "terminal_hint": "#383519"
+      },
+      {
+        "alias": "--kpds_ldmw175x",
+        "references": [],
+        "terminal_hint": "#29271a"
+      },
+      {
+        "alias": "--kpds_ldmw175y",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--kpds_ldmw175z",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--kpds_ldmw1760",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw1761",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw1762",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1763",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1764",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1765",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw1766",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw1767",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw1768",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw1769",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.2)"
+      },
+      {
+        "alias": "--kpds_ldmw176a",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw176b",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.5)"
+      },
+      {
+        "alias": "--kpds_ldmw176c",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw176d",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.7)"
+      },
+      {
+        "alias": "--kpds_ldmw176e",
+        "references": [],
+        "terminal_hint": "#8d4cc4"
+      },
+      {
+        "alias": "--kpds_ldmw176f",
+        "references": [],
+        "terminal_hint": "#2b2232"
+      },
+      {
+        "alias": "--kpds_ldmw176g",
+        "references": [],
+        "terminal_hint": "#f2f5f8"
+      },
+      {
+        "alias": "--kpds_ldmw176h",
+        "references": [],
+        "terminal_hint": "#303337"
+      },
+      {
+        "alias": "--kpds_ldmw176i",
+        "references": [],
+        "terminal_hint": "#eb5522"
+      },
+      {
+        "alias": "--kpds_ldmw176j",
+        "references": [],
+        "terminal_hint": "#37231d"
+      },
+      {
+        "alias": "--kpds_ldmw176k",
+        "references": [],
+        "terminal_hint": "#ac2728"
+      },
+      {
+        "alias": "--kpds_ldmw176l",
+        "references": [],
+        "terminal_hint": "#341e1e"
+      },
+      {
+        "alias": "--kpds_ldmw176m",
+        "references": [],
+        "terminal_hint": "#028b61"
+      },
+      {
+        "alias": "--kpds_ldmw176n",
+        "references": [],
+        "terminal_hint": "#192a25"
+      },
+      {
+        "alias": "--kpds_ldmw176o",
+        "references": [],
+        "terminal_hint": "#f2f5f8"
+      },
+      {
+        "alias": "--kpds_ldmw176p",
+        "references": [],
+        "terminal_hint": "#a7b2bc"
+      },
+      {
+        "alias": "--kpds_ldmw176q",
+        "references": [],
+        "terminal_hint": "#848f9a"
+      },
+      {
+        "alias": "--kpds_ldmw176r",
+        "references": [],
+        "terminal_hint": "#626c77"
+      },
+      {
+        "alias": "--kpds_ldmw176s",
+        "references": [],
+        "terminal_hint": "#505760"
+      },
+      {
+        "alias": "--kpds_ldmw176t",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw176u",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw176v",
+        "references": [],
+        "terminal_hint": "#505760"
+      },
+      {
+        "alias": "--kpds_ldmw176w",
+        "references": [],
+        "terminal_hint": "#464b52"
+      },
+      {
+        "alias": "--kpds_ldmw176x",
+        "references": [],
+        "terminal_hint": "#363a40"
+      },
+      {
+        "alias": "--kpds_ldmw176y",
+        "references": [],
+        "terminal_hint": "#303337"
+      },
+      {
+        "alias": "--kpds_ldmw176z",
+        "references": [],
+        "terminal_hint": "#222"
+      },
+      {
+        "alias": "--kpds_ldmw1770",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw1771",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--kpds_ldmw1772",
+        "references": [],
+        "terminal_hint": "#363a40"
+      },
+      {
+        "alias": "--kpds_ldmw1773",
+        "references": [],
+        "terminal_hint": "#303337"
+      },
+      {
+        "alias": "--kpds_ldmw1774",
+        "references": [],
+        "terminal_hint": "#b06eed"
+      },
+      {
+        "alias": "--kpds_ldmw1775",
+        "references": [],
+        "terminal_hint": "#7542a1"
+      },
+      {
+        "alias": "--kpds_ldmw1776",
+        "references": [],
+        "terminal_hint": "#f1d902"
+      },
+      {
+        "alias": "--kpds_ldmw1777",
+        "references": [],
+        "terminal_hint": "#48b1c8"
+      },
+      {
+        "alias": "--kpds_ldmw1778",
+        "references": [],
+        "terminal_hint": "#581d89"
+      },
+      {
+        "alias": "--kpds_ldmw1779",
+        "references": [],
+        "terminal_hint": "#451b6c"
+      },
+      {
+        "alias": "--swiper-theme-color",
+        "references": [],
+        "terminal_hint": "#007aff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 200
+    }
+  }
+}

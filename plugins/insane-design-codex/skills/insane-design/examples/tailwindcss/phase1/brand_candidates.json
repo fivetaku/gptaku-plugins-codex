@@ -1,0 +1,244 @@
+{
+  "slug": "tailwindcss",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "button,input,select,optgroup,textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input,select,optgroup,textarea { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-r"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-radius:0 }"
+    },
+    {
+      "selector": ".group-hover\\/navitem\\:bg-black\\/75:is(:where(.group\\/navitem):hover *)",
+      "property": "background-color",
+      "hex": "#000000BF",
+      "rule_snippet": ".group-hover\\/navitem\\:bg-black\\/75:is(:where(.group\\/navitem):hover *) { background-color:#000000bf }"
+    },
+    {
+      "selector": ".DocSearch-Hit-action path",
+      "property": "stroke",
+      "hex": "#71717A",
+      "rule_snippet": ".DocSearch-Hit-action path { stroke-width:2px; stroke:#71717a }"
+    },
+    {
+      "selector": ".DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action path",
+      "property": "stroke",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".DocSearch-Hit[aria-selected=true] .DocSearch-Hit-action path { stroke:#fff }"
+    },
+    {
+      "selector": ".DocSearch-NoResults-Prefill-List button:where(.dark,.dark *):hover",
+      "property": "background-color",
+      "hex": "#FFFFFF05",
+      "rule_snippet": ".DocSearch-NoResults-Prefill-List button:where(.dark,.dark *):hover { background-color:#ffffff05 }"
+    },
+    {
+      "selector": ".DocSearch-NoResults-Prefill-List button:where(.system,.system *):hover",
+      "property": "background-color",
+      "hex": "#FFFFFF05",
+      "rule_snippet": ".DocSearch-NoResults-Prefill-List button:where(.system,.system *):hover { background-color:#ffffff05 }"
+    },
+    {
+      "selector": ".DocSearch-NoResults-Prefill-List li+li button:where(.dark,.dark *)",
+      "property": "border-color",
+      "hex": "#E5E7EB0D",
+      "rule_snippet": ".DocSearch-NoResults-Prefill-List li+li button:where(.dark,.dark *) { border-color:#e5e7eb0d }"
+    },
+    {
+      "selector": ".DocSearch-NoResults-Prefill-List li+li button:where(.system,.system *)",
+      "property": "border-color",
+      "hex": "#E5E7EB0D",
+      "rule_snippet": ".DocSearch-NoResults-Prefill-List li+li button:where(.system,.system *) { border-color:#e5e7eb0d }"
+    },
+    {
+      "selector": ".dark :is(.DocSearch-Hit-action [title=\"Remove this search from favorites\"]):before",
+      "property": "background-color",
+      "hex": "#3641534D",
+      "rule_snippet": ".dark :is(.DocSearch-Hit-action [title=\"Remove this search from favorites\"]):before { background-color:#3641534d }"
+    },
+    {
+      "selector": ".system :is(.DocSearch-Hit-action [title=\"Remove this search from favorites\"]):before",
+      "property": "background-color",
+      "hex": "#3641534D",
+      "rule_snippet": ".system :is(.DocSearch-Hit-action [title=\"Remove this search from favorites\"]):before { background-color:#3641534d }"
+    },
+    {
+      "selector": ".system :is(.DocSearch-Hit-action+.DocSearch-Hit-action)",
+      "property": "border-color",
+      "hex": "#FFFFFF33",
+      "rule_snippet": ".system :is(.DocSearch-Hit-action+.DocSearch-Hit-action) { border-color:#fff3 }"
+    },
+    {
+      "selector": ".dark :is(.DocSearch-Hit-action+.DocSearch-Hit-action)",
+      "property": "border-color",
+      "hex": "#FFFFFF33",
+      "rule_snippet": ".dark :is(.DocSearch-Hit-action+.DocSearch-Hit-action) { border-color:#fff3 }"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF1A",
+      "count": 103,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 60,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 53,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 47,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0307120D",
+      "count": 41,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 35,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF33",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E5E7EB0D",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF80",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000026",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0307121A",
+      "count": 13,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000080",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF26",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000033",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#03071280",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF40",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF99",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFFBF",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF4D",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000013",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000040",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00B7D780",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3641534D",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF20",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000004D",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00A5EF1A",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#03071240",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3080FF80",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#625FFF",
+      "count": 5,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 43,
+    "by_role": {
+      "chromatic": 10,
+      "neutral": 20,
+      "selector": 13
+    }
+  }
+}

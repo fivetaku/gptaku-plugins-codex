@@ -1,0 +1,45 @@
+{
+  "name": "git-teacher-codex",
+  "version": "0.1.0",
+  "description": "Beginner-friendly Git and GitHub helper for Codex using Korean cloud-folder analogies.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/git-teacher-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "git",
+    "github",
+    "beginner",
+    "korean",
+    "education",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Git Teacher Codex",
+    "shortDescription": "Explain and run beginner Git workflows in Korean",
+    "longDescription": "Packages the Codex-native git-teacher skill set: setup, status, save, upload, review, and help. It explains Git and GitHub with cloud-folder analogies while using normal Git and GitHub CLI commands.",
+    "developerName": "GPTaku",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "깃 상태 확인해줘.",
+      "지금까지 한 작업 저장해줘.",
+      "GitHub에 올려줘.",
+      "PR 만들어서 검토 요청해줘."
+    ],
+    "brandColor": "#7C2D12",
+    "composerIcon": "./assets/git-teacher-codex.svg",
+    "logo": "./assets/git-teacher-codex.svg",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,2106 @@
+{
+  "slug": "atlassian",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--ds--button--new-icon-padding-end",
+        "references": [
+          "--ds-space-025"
+        ],
+        "terminal_hint": "--ds-space-025"
+      },
+      {
+        "alias": "--ds--button--new-icon-padding-start",
+        "references": [
+          "--ds-space-025"
+        ],
+        "terminal_hint": "--ds-space-025"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--ds-background-input-hovered",
+        "references": [],
+        "terminal_hint": "#F8F8F8"
+      },
+      {
+        "alias": "--ds-background-input-pressed",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--border-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--ds-background-accent-blue-bolder",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-background-accent-blue-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-background-accent-blue-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#144794"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtle",
+        "references": [],
+        "terminal_hint": "#669DF1"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#8FB8F6"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtler",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#8FB8F6"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtlest",
+        "references": [],
+        "terminal_hint": "#E9F2FE"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-accent-blue-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-accent-gray-bolder",
+        "references": [],
+        "terminal_hint": "#6B6E76"
+      },
+      {
+        "alias": "--ds-background-accent-gray-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-background-accent-gray-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#3B3D42"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtle",
+        "references": [],
+        "terminal_hint": "#8C8F97"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#B7B9BE"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtler",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#B7B9BE"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#8C8F97"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtlest",
+        "references": [],
+        "terminal_hint": "#F0F1F2"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-background-accent-gray-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#B7B9BE"
+      },
+      {
+        "alias": "--ds-background-accent-green-bolder",
+        "references": [],
+        "terminal_hint": "#1F845A"
+      },
+      {
+        "alias": "--ds-background-accent-green-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#216E4E"
+      },
+      {
+        "alias": "--ds-background-accent-green-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#19573D"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtle",
+        "references": [],
+        "terminal_hint": "#4BCE97"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#7EE2B8"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#97EDC9"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtler",
+        "references": [],
+        "terminal_hint": "#BAF3DB"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#97EDC9"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#7EE2B8"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtlest",
+        "references": [],
+        "terminal_hint": "#DCFFF1"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#BAF3DB"
+      },
+      {
+        "alias": "--ds-background-accent-green-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#97EDC9"
+      },
+      {
+        "alias": "--ds-background-accent-lime-bolder",
+        "references": [],
+        "terminal_hint": "#5B7F24"
+      },
+      {
+        "alias": "--ds-background-accent-lime-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-background-accent-lime-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#3F5224"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtle",
+        "references": [],
+        "terminal_hint": "#94C748"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#B3DF72"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#BDE97C"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtler",
+        "references": [],
+        "terminal_hint": "#D3F1A7"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#BDE97C"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#B3DF72"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtlest",
+        "references": [],
+        "terminal_hint": "#EFFFD6"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#D3F1A7"
+      },
+      {
+        "alias": "--ds-background-accent-lime-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#BDE97C"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-bolder",
+        "references": [],
+        "terminal_hint": "#AE4787"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#943D73"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#77325B"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtle",
+        "references": [],
+        "terminal_hint": "#E774BB"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#F797D2"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#FCB6E1"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtler",
+        "references": [],
+        "terminal_hint": "#FDD0EC"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#FCB6E1"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#F797D2"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtlest",
+        "references": [],
+        "terminal_hint": "#FFECF8"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#FDD0EC"
+      },
+      {
+        "alias": "--ds-background-accent-magenta-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#FCB6E1"
+      },
+      {
+        "alias": "--ds-background-accent-orange-bolder",
+        "references": [],
+        "terminal_hint": "#BD5B00"
+      },
+      {
+        "alias": "--ds-background-accent-orange-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#9E4C00"
+      },
+      {
+        "alias": "--ds-background-accent-orange-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#7A3B00"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtle",
+        "references": [],
+        "terminal_hint": "#FCA700"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#FBC828"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#FBD779"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtler",
+        "references": [],
+        "terminal_hint": "#FCE4A6"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#FBD779"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#FBC828"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtlest",
+        "references": [],
+        "terminal_hint": "#FFF5DB"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#FCE4A6"
+      },
+      {
+        "alias": "--ds-background-accent-orange-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#FBD779"
+      },
+      {
+        "alias": "--ds-background-accent-purple-bolder",
+        "references": [],
+        "terminal_hint": "#964AC0"
+      },
+      {
+        "alias": "--ds-background-accent-purple-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-background-accent-purple-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#673286"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtle",
+        "references": [],
+        "terminal_hint": "#C97CF4"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#D8A0F7"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#E3BDFA"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtler",
+        "references": [],
+        "terminal_hint": "#EED7FC"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#E3BDFA"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#D8A0F7"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtlest",
+        "references": [],
+        "terminal_hint": "#F8EEFE"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#EED7FC"
+      },
+      {
+        "alias": "--ds-background-accent-purple-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#E3BDFA"
+      },
+      {
+        "alias": "--ds-background-accent-red-bolder",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-background-accent-red-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#AE2E24"
+      },
+      {
+        "alias": "--ds-background-accent-red-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#872821"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtle",
+        "references": [],
+        "terminal_hint": "#F87168"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#FD9891"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#FFB8B2"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtler",
+        "references": [],
+        "terminal_hint": "#FFD5D2"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#FFB8B2"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#FD9891"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtlest",
+        "references": [],
+        "terminal_hint": "#FFECEB"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#FFD5D2"
+      },
+      {
+        "alias": "--ds-background-accent-red-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#FFB8B2"
+      },
+      {
+        "alias": "--ds-background-accent-teal-bolder",
+        "references": [],
+        "terminal_hint": "#227D9B"
+      },
+      {
+        "alias": "--ds-background-accent-teal-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#206A83"
+      },
+      {
+        "alias": "--ds-background-accent-teal-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#1A5265"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtle",
+        "references": [],
+        "terminal_hint": "#6CC3E0"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#9DD9EE"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#B1E4F7"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtler",
+        "references": [],
+        "terminal_hint": "#C6EDFB"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#B1E4F7"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#9DD9EE"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtlest",
+        "references": [],
+        "terminal_hint": "#E7F9FF"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#C6EDFB"
+      },
+      {
+        "alias": "--ds-background-accent-teal-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#B1E4F7"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-bolder",
+        "references": [],
+        "terminal_hint": "#946F00"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#7F5F01"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-bolder-pressed",
+        "references": [],
+        "terminal_hint": "#614A05"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtle",
+        "references": [],
+        "terminal_hint": "#EED12B"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#DDB30E"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#EFDD4E"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtler",
+        "references": [],
+        "terminal_hint": "#F5E989"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#EFDD4E"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#EED12B"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtlest",
+        "references": [],
+        "terminal_hint": "#FEF7C8"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#F5E989"
+      },
+      {
+        "alias": "--ds-background-accent-yellow-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#EFDD4E"
+      },
+      {
+        "alias": "--ds-background-brand-bold",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-background-brand-bold-hovered",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-background-brand-bold-pressed",
+        "references": [],
+        "terminal_hint": "#144794"
+      },
+      {
+        "alias": "--ds-background-brand-boldest",
+        "references": [],
+        "terminal_hint": "#1C2B42"
+      },
+      {
+        "alias": "--ds-background-brand-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-background-brand-boldest-pressed",
+        "references": [],
+        "terminal_hint": "#144794"
+      },
+      {
+        "alias": "--ds-background-brand-subtlest",
+        "references": [],
+        "terminal_hint": "#E9F2FE"
+      },
+      {
+        "alias": "--ds-background-brand-subtlest-hovered",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-brand-subtlest-pressed",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-danger",
+        "references": [],
+        "terminal_hint": "#FFECEB"
+      },
+      {
+        "alias": "--ds-background-danger-bold",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-background-danger-bold-hovered",
+        "references": [],
+        "terminal_hint": "#AE2E24"
+      },
+      {
+        "alias": "--ds-background-danger-bold-pressed",
+        "references": [],
+        "terminal_hint": "#872821"
+      },
+      {
+        "alias": "--ds-background-danger-hovered",
+        "references": [],
+        "terminal_hint": "#FFD5D2"
+      },
+      {
+        "alias": "--ds-background-danger-pressed",
+        "references": [],
+        "terminal_hint": "#FFB8B2"
+      },
+      {
+        "alias": "--ds-background-danger-subtler",
+        "references": [],
+        "terminal_hint": "#FFD5D2"
+      },
+      {
+        "alias": "--ds-background-danger-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#FFB8B2"
+      },
+      {
+        "alias": "--ds-background-danger-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#FD9891"
+      },
+      {
+        "alias": "--ds-background-disabled",
+        "references": [],
+        "terminal_hint": "#17171708"
+      },
+      {
+        "alias": "--ds-background-discovery",
+        "references": [],
+        "terminal_hint": "#F8EEFE"
+      },
+      {
+        "alias": "--ds-background-discovery-bold",
+        "references": [],
+        "terminal_hint": "#964AC0"
+      },
+      {
+        "alias": "--ds-background-discovery-bold-hovered",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-background-discovery-bold-pressed",
+        "references": [],
+        "terminal_hint": "#673286"
+      },
+      {
+        "alias": "--ds-background-discovery-hovered",
+        "references": [],
+        "terminal_hint": "#EED7FC"
+      },
+      {
+        "alias": "--ds-background-discovery-pressed",
+        "references": [],
+        "terminal_hint": "#E3BDFA"
+      },
+      {
+        "alias": "--ds-background-discovery-subtler",
+        "references": [],
+        "terminal_hint": "#EED7FC"
+      },
+      {
+        "alias": "--ds-background-discovery-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#E3BDFA"
+      },
+      {
+        "alias": "--ds-background-discovery-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#D8A0F7"
+      },
+      {
+        "alias": "--ds-background-information",
+        "references": [],
+        "terminal_hint": "#E9F2FE"
+      },
+      {
+        "alias": "--ds-background-information-bold",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-background-information-bold-hovered",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-background-information-bold-pressed",
+        "references": [],
+        "terminal_hint": "#144794"
+      },
+      {
+        "alias": "--ds-background-information-hovered",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-information-pressed",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-information-subtler",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-information-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#ADCBFB"
+      },
+      {
+        "alias": "--ds-background-information-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#8FB8F6"
+      },
+      {
+        "alias": "--ds-background-input",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-background-input-hovered",
+        "references": [],
+        "terminal_hint": "#F8F8F8"
+      },
+      {
+        "alias": "--ds-background-input-pressed",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-background-inverse-subtle",
+        "references": [],
+        "terminal_hint": "#00000029"
+      },
+      {
+        "alias": "--ds-background-inverse-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#0000003D"
+      },
+      {
+        "alias": "--ds-background-inverse-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#00000052"
+      },
+      {
+        "alias": "--ds-background-neutral",
+        "references": [],
+        "terminal_hint": "#0515240F"
+      },
+      {
+        "alias": "--ds-background-neutral-bold",
+        "references": [],
+        "terminal_hint": "#292A2E"
+      },
+      {
+        "alias": "--ds-background-neutral-bold-hovered",
+        "references": [],
+        "terminal_hint": "#3B3D42"
+      },
+      {
+        "alias": "--ds-background-neutral-bold-pressed",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-background-neutral-hovered",
+        "references": [],
+        "terminal_hint": "#0B120E24"
+      },
+      {
+        "alias": "--ds-background-neutral-pressed",
+        "references": [],
+        "terminal_hint": "#080F214A"
+      },
+      {
+        "alias": "--ds-background-neutral-subtle",
+        "references": [],
+        "terminal_hint": "#00000000"
+      },
+      {
+        "alias": "--ds-background-neutral-subtle-hovered",
+        "references": [],
+        "terminal_hint": "#0515240F"
+      },
+      {
+        "alias": "--ds-background-neutral-subtle-pressed",
+        "references": [],
+        "terminal_hint": "#0B120E24"
+      },
+      {
+        "alias": "--ds-background-selected",
+        "references": [],
+        "terminal_hint": "#E9F2FE"
+      },
+      {
+        "alias": "--ds-background-selected-bold",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-background-selected-bold-hovered",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-background-selected-bold-pressed",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-background-selected-hovered",
+        "references": [],
+        "terminal_hint": "#CFE1FD"
+      },
+      {
+        "alias": "--ds-background-selected-pressed",
+        "references": [],
+        "terminal_hint": "#8FB8F6"
+      },
+      {
+        "alias": "--ds-background-success",
+        "references": [],
+        "terminal_hint": "#EFFFD6"
+      },
+      {
+        "alias": "--ds-background-success-bold",
+        "references": [],
+        "terminal_hint": "#5B7F24"
+      },
+      {
+        "alias": "--ds-background-success-bold-hovered",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-background-success-bold-pressed",
+        "references": [],
+        "terminal_hint": "#3F5224"
+      },
+      {
+        "alias": "--ds-background-success-hovered",
+        "references": [],
+        "terminal_hint": "#D3F1A7"
+      },
+      {
+        "alias": "--ds-background-success-pressed",
+        "references": [],
+        "terminal_hint": "#BDE97C"
+      },
+      {
+        "alias": "--ds-background-success-subtler",
+        "references": [],
+        "terminal_hint": "#D3F1A7"
+      },
+      {
+        "alias": "--ds-background-success-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#BDE97C"
+      },
+      {
+        "alias": "--ds-background-success-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#B3DF72"
+      },
+      {
+        "alias": "--ds-background-warning",
+        "references": [],
+        "terminal_hint": "#FFF5DB"
+      },
+      {
+        "alias": "--ds-background-warning-bold",
+        "references": [],
+        "terminal_hint": "#FBC828"
+      },
+      {
+        "alias": "--ds-background-warning-bold-hovered",
+        "references": [],
+        "terminal_hint": "#FCA700"
+      },
+      {
+        "alias": "--ds-background-warning-bold-pressed",
+        "references": [],
+        "terminal_hint": "#F68909"
+      },
+      {
+        "alias": "--ds-background-warning-hovered",
+        "references": [],
+        "terminal_hint": "#FCE4A6"
+      },
+      {
+        "alias": "--ds-background-warning-pressed",
+        "references": [],
+        "terminal_hint": "#FBD779"
+      },
+      {
+        "alias": "--ds-background-warning-subtler",
+        "references": [],
+        "terminal_hint": "#FCE4A6"
+      },
+      {
+        "alias": "--ds-background-warning-subtler-hovered",
+        "references": [],
+        "terminal_hint": "#FBD779"
+      },
+      {
+        "alias": "--ds-background-warning-subtler-pressed",
+        "references": [],
+        "terminal_hint": "#FBC828"
+      },
+      {
+        "alias": "--ds-blanket",
+        "references": [],
+        "terminal_hint": "#050C1F75"
+      },
+      {
+        "alias": "--ds-blanket-danger",
+        "references": [],
+        "terminal_hint": "#EF5C4814"
+      },
+      {
+        "alias": "--ds-blanket-selected",
+        "references": [],
+        "terminal_hint": "#388BFF14"
+      },
+      {
+        "alias": "--ds-border",
+        "references": [],
+        "terminal_hint": "#0B120E24"
+      },
+      {
+        "alias": "--ds-border-accent-blue",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-border-accent-gray",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-border-accent-green",
+        "references": [],
+        "terminal_hint": "#22A06B"
+      },
+      {
+        "alias": "--ds-border-accent-lime",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-border-accent-magenta",
+        "references": [],
+        "terminal_hint": "#CD519D"
+      },
+      {
+        "alias": "--ds-border-accent-orange",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-border-accent-purple",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-border-accent-red",
+        "references": [],
+        "terminal_hint": "#E2483D"
+      },
+      {
+        "alias": "--ds-border-accent-teal",
+        "references": [],
+        "terminal_hint": "#2898BD"
+      },
+      {
+        "alias": "--ds-border-accent-yellow",
+        "references": [],
+        "terminal_hint": "#B38600"
+      },
+      {
+        "alias": "--ds-border-bold",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-border-brand",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-border-danger",
+        "references": [],
+        "terminal_hint": "#E2483D"
+      },
+      {
+        "alias": "--ds-border-disabled",
+        "references": [],
+        "terminal_hint": "#0515240F"
+      },
+      {
+        "alias": "--ds-border-discovery",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-border-focused",
+        "references": [],
+        "terminal_hint": "#4688EC"
+      },
+      {
+        "alias": "--ds-border-information",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-border-input",
+        "references": [],
+        "terminal_hint": "#8C8F97"
+      },
+      {
+        "alias": "--ds-border-inverse",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-border-selected",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-border-success",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-border-warning",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-chart-blue-bold",
+        "references": [],
+        "terminal_hint": "#4688EC"
+      },
+      {
+        "alias": "--ds-chart-blue-bold-hovered",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-chart-blue-bolder",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-chart-blue-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-chart-blue-boldest",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-chart-blue-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-chart-brand",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-chart-brand-hovered",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-chart-categorical-1",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-chart-categorical-1-hovered",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-chart-categorical-2",
+        "references": [],
+        "terminal_hint": "#82B536"
+      },
+      {
+        "alias": "--ds-chart-categorical-2-hovered",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-chart-categorical-3",
+        "references": [],
+        "terminal_hint": "#BF63F3"
+      },
+      {
+        "alias": "--ds-chart-categorical-3-hovered",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-chart-categorical-4",
+        "references": [],
+        "terminal_hint": "#F68909"
+      },
+      {
+        "alias": "--ds-chart-categorical-4-hovered",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-chart-categorical-5",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-chart-categorical-5-hovered",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-chart-categorical-6",
+        "references": [],
+        "terminal_hint": "#964AC0"
+      },
+      {
+        "alias": "--ds-chart-categorical-6-hovered",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-chart-categorical-7",
+        "references": [],
+        "terminal_hint": "#42B2D7"
+      },
+      {
+        "alias": "--ds-chart-categorical-7-hovered",
+        "references": [],
+        "terminal_hint": "#2898BD"
+      },
+      {
+        "alias": "--ds-chart-categorical-8",
+        "references": [],
+        "terminal_hint": "#BD5B00"
+      },
+      {
+        "alias": "--ds-chart-categorical-8-hovered",
+        "references": [],
+        "terminal_hint": "#7A3B00"
+      },
+      {
+        "alias": "--ds-chart-danger",
+        "references": [],
+        "terminal_hint": "#E2483D"
+      },
+      {
+        "alias": "--ds-chart-danger-bold",
+        "references": [],
+        "terminal_hint": "#872821"
+      },
+      {
+        "alias": "--ds-chart-danger-bold-hovered",
+        "references": [],
+        "terminal_hint": "#5D1F1A"
+      },
+      {
+        "alias": "--ds-chart-danger-hovered",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-chart-discovery",
+        "references": [],
+        "terminal_hint": "#BF63F3"
+      },
+      {
+        "alias": "--ds-chart-discovery-bold",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-chart-discovery-bold-hovered",
+        "references": [],
+        "terminal_hint": "#964AC0"
+      },
+      {
+        "alias": "--ds-chart-discovery-hovered",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-chart-gray-bold",
+        "references": [],
+        "terminal_hint": "#8C8F97"
+      },
+      {
+        "alias": "--ds-chart-gray-bold-hovered",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-chart-gray-bolder",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-chart-gray-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#6B6E76"
+      },
+      {
+        "alias": "--ds-chart-gray-boldest",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-chart-gray-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#3B3D42"
+      },
+      {
+        "alias": "--ds-chart-green-bold",
+        "references": [],
+        "terminal_hint": "#22A06B"
+      },
+      {
+        "alias": "--ds-chart-green-bold-hovered",
+        "references": [],
+        "terminal_hint": "#1F845A"
+      },
+      {
+        "alias": "--ds-chart-green-bolder",
+        "references": [],
+        "terminal_hint": "#1F845A"
+      },
+      {
+        "alias": "--ds-chart-green-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#216E4E"
+      },
+      {
+        "alias": "--ds-chart-green-boldest",
+        "references": [],
+        "terminal_hint": "#216E4E"
+      },
+      {
+        "alias": "--ds-chart-green-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#164B35"
+      },
+      {
+        "alias": "--ds-chart-information",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-chart-information-bold",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-chart-information-bold-hovered",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-chart-information-hovered",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-chart-lime-bold",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-chart-lime-bold-hovered",
+        "references": [],
+        "terminal_hint": "#5B7F24"
+      },
+      {
+        "alias": "--ds-chart-lime-bolder",
+        "references": [],
+        "terminal_hint": "#5B7F24"
+      },
+      {
+        "alias": "--ds-chart-lime-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-chart-lime-boldest",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-chart-lime-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#37471F"
+      },
+      {
+        "alias": "--ds-chart-magenta-bold",
+        "references": [],
+        "terminal_hint": "#DA62AC"
+      },
+      {
+        "alias": "--ds-chart-magenta-bold-hovered",
+        "references": [],
+        "terminal_hint": "#CD519D"
+      },
+      {
+        "alias": "--ds-chart-magenta-bolder",
+        "references": [],
+        "terminal_hint": "#CD519D"
+      },
+      {
+        "alias": "--ds-chart-magenta-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#AE4787"
+      },
+      {
+        "alias": "--ds-chart-magenta-boldest",
+        "references": [],
+        "terminal_hint": "#943D73"
+      },
+      {
+        "alias": "--ds-chart-magenta-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#50253F"
+      },
+      {
+        "alias": "--ds-chart-neutral",
+        "references": [],
+        "terminal_hint": "#8C8F97"
+      },
+      {
+        "alias": "--ds-chart-neutral-hovered",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-chart-orange-bold",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-chart-orange-bold-hovered",
+        "references": [],
+        "terminal_hint": "#BD5B00"
+      },
+      {
+        "alias": "--ds-chart-orange-bolder",
+        "references": [],
+        "terminal_hint": "#BD5B00"
+      },
+      {
+        "alias": "--ds-chart-orange-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#9E4C00"
+      },
+      {
+        "alias": "--ds-chart-orange-boldest",
+        "references": [],
+        "terminal_hint": "#7A3B00"
+      },
+      {
+        "alias": "--ds-chart-orange-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#693200"
+      },
+      {
+        "alias": "--ds-chart-purple-bold",
+        "references": [],
+        "terminal_hint": "#BF63F3"
+      },
+      {
+        "alias": "--ds-chart-purple-bold-hovered",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-chart-purple-bolder",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-chart-purple-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#964AC0"
+      },
+      {
+        "alias": "--ds-chart-purple-boldest",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-chart-purple-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#48245D"
+      },
+      {
+        "alias": "--ds-chart-red-bold",
+        "references": [],
+        "terminal_hint": "#F15B50"
+      },
+      {
+        "alias": "--ds-chart-red-bold-hovered",
+        "references": [],
+        "terminal_hint": "#E2483D"
+      },
+      {
+        "alias": "--ds-chart-red-bolder",
+        "references": [],
+        "terminal_hint": "#E2483D"
+      },
+      {
+        "alias": "--ds-chart-red-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-chart-red-boldest",
+        "references": [],
+        "terminal_hint": "#AE2E24"
+      },
+      {
+        "alias": "--ds-chart-red-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#5D1F1A"
+      },
+      {
+        "alias": "--ds-chart-success",
+        "references": [],
+        "terminal_hint": "#82B536"
+      },
+      {
+        "alias": "--ds-chart-success-bold",
+        "references": [],
+        "terminal_hint": "#5B7F24"
+      },
+      {
+        "alias": "--ds-chart-success-bold-hovered",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-chart-success-hovered",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-chart-teal-bold",
+        "references": [],
+        "terminal_hint": "#2898BD"
+      },
+      {
+        "alias": "--ds-chart-teal-bold-hovered",
+        "references": [],
+        "terminal_hint": "#227D9B"
+      },
+      {
+        "alias": "--ds-chart-teal-bolder",
+        "references": [],
+        "terminal_hint": "#227D9B"
+      },
+      {
+        "alias": "--ds-chart-teal-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#206A83"
+      },
+      {
+        "alias": "--ds-chart-teal-boldest",
+        "references": [],
+        "terminal_hint": "#206A83"
+      },
+      {
+        "alias": "--ds-chart-teal-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#164555"
+      },
+      {
+        "alias": "--ds-chart-warning",
+        "references": [],
+        "terminal_hint": "#F68909"
+      },
+      {
+        "alias": "--ds-chart-warning-bold",
+        "references": [],
+        "terminal_hint": "#BD5B00"
+      },
+      {
+        "alias": "--ds-chart-warning-bold-hovered",
+        "references": [],
+        "terminal_hint": "#9E4C00"
+      },
+      {
+        "alias": "--ds-chart-warning-hovered",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-chart-yellow-bold",
+        "references": [],
+        "terminal_hint": "#B38600"
+      },
+      {
+        "alias": "--ds-chart-yellow-bold-hovered",
+        "references": [],
+        "terminal_hint": "#946F00"
+      },
+      {
+        "alias": "--ds-chart-yellow-bolder",
+        "references": [],
+        "terminal_hint": "#946F00"
+      },
+      {
+        "alias": "--ds-chart-yellow-bolder-hovered",
+        "references": [],
+        "terminal_hint": "#7F5F01"
+      },
+      {
+        "alias": "--ds-chart-yellow-boldest",
+        "references": [],
+        "terminal_hint": "#7F5F01"
+      },
+      {
+        "alias": "--ds-chart-yellow-boldest-hovered",
+        "references": [],
+        "terminal_hint": "#533F04"
+      },
+      {
+        "alias": "--ds-elevation-surface-current",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-icon",
+        "references": [],
+        "terminal_hint": "#292A2E"
+      },
+      {
+        "alias": "--ds-icon-accent-blue",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-icon-accent-gray",
+        "references": [],
+        "terminal_hint": "#7D818A"
+      },
+      {
+        "alias": "--ds-icon-accent-green",
+        "references": [],
+        "terminal_hint": "#22A06B"
+      },
+      {
+        "alias": "--ds-icon-accent-lime",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-icon-accent-magenta",
+        "references": [],
+        "terminal_hint": "#CD519D"
+      },
+      {
+        "alias": "--ds-icon-accent-orange",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-icon-accent-purple",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-icon-accent-red",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-icon-accent-teal",
+        "references": [],
+        "terminal_hint": "#2898BD"
+      },
+      {
+        "alias": "--ds-icon-accent-yellow",
+        "references": [],
+        "terminal_hint": "#B38600"
+      },
+      {
+        "alias": "--ds-icon-brand",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-icon-danger",
+        "references": [],
+        "terminal_hint": "#C9372C"
+      },
+      {
+        "alias": "--ds-icon-disabled",
+        "references": [],
+        "terminal_hint": "#080F214A"
+      },
+      {
+        "alias": "--ds-icon-discovery",
+        "references": [],
+        "terminal_hint": "#AF59E1"
+      },
+      {
+        "alias": "--ds-icon-information",
+        "references": [],
+        "terminal_hint": "#357DE8"
+      },
+      {
+        "alias": "--ds-icon-inverse",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-icon-selected",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-icon-subtle",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-icon-subtlest",
+        "references": [],
+        "terminal_hint": "#6B6E76"
+      },
+      {
+        "alias": "--ds-icon-success",
+        "references": [],
+        "terminal_hint": "#6A9A23"
+      },
+      {
+        "alias": "--ds-icon-warning",
+        "references": [],
+        "terminal_hint": "#E06C00"
+      },
+      {
+        "alias": "--ds-icon-warning-inverse",
+        "references": [],
+        "terminal_hint": "#292A2E"
+      },
+      {
+        "alias": "--ds-interaction-hovered",
+        "references": [],
+        "terminal_hint": "#00000029"
+      },
+      {
+        "alias": "--ds-interaction-pressed",
+        "references": [],
+        "terminal_hint": "#00000052"
+      },
+      {
+        "alias": "--ds-link",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-link-pressed",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-link-visited",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-link-visited-pressed",
+        "references": [],
+        "terminal_hint": "#48245D"
+      },
+      {
+        "alias": "--ds-shadow-overflow-perimeter",
+        "references": [],
+        "terminal_hint": "#1E1F211f"
+      },
+      {
+        "alias": "--ds-shadow-overflow-spread",
+        "references": [],
+        "terminal_hint": "#1E1F2129"
+      },
+      {
+        "alias": "--ds-skeleton",
+        "references": [],
+        "terminal_hint": "#0515240F"
+      },
+      {
+        "alias": "--ds-skeleton-subtle",
+        "references": [],
+        "terminal_hint": "#17171708"
+      },
+      {
+        "alias": "--ds-surface",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-surface-hovered",
+        "references": [],
+        "terminal_hint": "#F0F1F2"
+      },
+      {
+        "alias": "--ds-surface-overlay",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-surface-overlay-hovered",
+        "references": [],
+        "terminal_hint": "#F0F1F2"
+      },
+      {
+        "alias": "--ds-surface-overlay-pressed",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-surface-pressed",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-surface-raised",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-surface-raised-hovered",
+        "references": [],
+        "terminal_hint": "#F0F1F2"
+      },
+      {
+        "alias": "--ds-surface-raised-pressed",
+        "references": [],
+        "terminal_hint": "#DDDEE1"
+      },
+      {
+        "alias": "--ds-surface-sunken",
+        "references": [],
+        "terminal_hint": "#F8F8F8"
+      },
+      {
+        "alias": "--ds-text",
+        "references": [],
+        "terminal_hint": "#292A2E"
+      },
+      {
+        "alias": "--ds-text-accent-blue",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-text-accent-blue-bolder",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-text-accent-gray",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-text-accent-gray-bolder",
+        "references": [],
+        "terminal_hint": "#1E1F21"
+      },
+      {
+        "alias": "--ds-text-accent-green",
+        "references": [],
+        "terminal_hint": "#216E4E"
+      },
+      {
+        "alias": "--ds-text-accent-green-bolder",
+        "references": [],
+        "terminal_hint": "#164B35"
+      },
+      {
+        "alias": "--ds-text-accent-lime",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-text-accent-lime-bolder",
+        "references": [],
+        "terminal_hint": "#37471F"
+      },
+      {
+        "alias": "--ds-text-accent-magenta",
+        "references": [],
+        "terminal_hint": "#943D73"
+      },
+      {
+        "alias": "--ds-text-accent-magenta-bolder",
+        "references": [],
+        "terminal_hint": "#50253F"
+      },
+      {
+        "alias": "--ds-text-accent-orange",
+        "references": [],
+        "terminal_hint": "#9E4C00"
+      },
+      {
+        "alias": "--ds-text-accent-orange-bolder",
+        "references": [],
+        "terminal_hint": "#693200"
+      },
+      {
+        "alias": "--ds-text-accent-purple",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-text-accent-purple-bolder",
+        "references": [],
+        "terminal_hint": "#48245D"
+      },
+      {
+        "alias": "--ds-text-accent-red",
+        "references": [],
+        "terminal_hint": "#AE2E24"
+      },
+      {
+        "alias": "--ds-text-accent-red-bolder",
+        "references": [],
+        "terminal_hint": "#5D1F1A"
+      },
+      {
+        "alias": "--ds-text-accent-teal",
+        "references": [],
+        "terminal_hint": "#206A83"
+      },
+      {
+        "alias": "--ds-text-accent-teal-bolder",
+        "references": [],
+        "terminal_hint": "#164555"
+      },
+      {
+        "alias": "--ds-text-accent-yellow",
+        "references": [],
+        "terminal_hint": "#7F5F01"
+      },
+      {
+        "alias": "--ds-text-accent-yellow-bolder",
+        "references": [],
+        "terminal_hint": "#533F04"
+      },
+      {
+        "alias": "--ds-text-brand",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-text-danger",
+        "references": [],
+        "terminal_hint": "#AE2E24"
+      },
+      {
+        "alias": "--ds-text-danger-bolder",
+        "references": [],
+        "terminal_hint": "#5D1F1A"
+      },
+      {
+        "alias": "--ds-text-disabled",
+        "references": [],
+        "terminal_hint": "#080F214A"
+      },
+      {
+        "alias": "--ds-text-discovery",
+        "references": [],
+        "terminal_hint": "#803FA5"
+      },
+      {
+        "alias": "--ds-text-discovery-bolder",
+        "references": [],
+        "terminal_hint": "#48245D"
+      },
+      {
+        "alias": "--ds-text-information",
+        "references": [],
+        "terminal_hint": "#1558BC"
+      },
+      {
+        "alias": "--ds-text-information-bolder",
+        "references": [],
+        "terminal_hint": "#123263"
+      },
+      {
+        "alias": "--ds-text-inverse",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--ds-text-selected",
+        "references": [],
+        "terminal_hint": "#1868DB"
+      },
+      {
+        "alias": "--ds-text-subtle",
+        "references": [],
+        "terminal_hint": "#505258"
+      },
+      {
+        "alias": "--ds-text-subtlest",
+        "references": [],
+        "terminal_hint": "#6B6E76"
+      },
+      {
+        "alias": "--ds-text-success",
+        "references": [],
+        "terminal_hint": "#4C6B1F"
+      },
+      {
+        "alias": "--ds-text-success-bolder",
+        "references": [],
+        "terminal_hint": "#37471F"
+      },
+      {
+        "alias": "--ds-text-warning",
+        "references": [],
+        "terminal_hint": "#9E4C00"
+      },
+      {
+        "alias": "--ds-text-warning-bolder",
+        "references": [],
+        "terminal_hint": "#693200"
+      },
+      {
+        "alias": "--ds-text-warning-inverse",
+        "references": [],
+        "terminal_hint": "#292A2E"
+      },
+      {
+        "alias": "--icon-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rovo-blue-color",
+        "references": [],
+        "terminal_hint": "#357de8"
+      },
+      {
+        "alias": "--rovo-green-color",
+        "references": [],
+        "terminal_hint": "#82b536"
+      },
+      {
+        "alias": "--rovo-purple-color",
+        "references": [],
+        "terminal_hint": "#bf63f3"
+      },
+      {
+        "alias": "--rovo-yellow-color",
+        "references": [],
+        "terminal_hint": "#fca700"
+      },
+      {
+        "alias": "--text-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tile-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 2,
+      "component": 2,
+      "core": 412
+    }
+  }
+}

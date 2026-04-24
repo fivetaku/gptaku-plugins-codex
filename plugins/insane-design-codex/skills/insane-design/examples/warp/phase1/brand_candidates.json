@@ -1,0 +1,240 @@
+{
+  "slug": "warp",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "a.framer-text,span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text,span.framer-text[data-nested-link] { color:var(--framer-blockquote-text-color-rgb,var(--framer-blockquote-text-color,var(--framer-link-text-color-rgb,var(--framer-link-text-color,var(--f"
+    },
+    {
+      "selector": "code.framer-text a.framer-text,code.framer-text a.framer-text span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-nested-link],code.framer-text span.framer-text[data-nested-link] span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text,code.framer-text a.framer-text span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-nested-link],code.framer-text span.framer-text[data-nested-l"
+    },
+    {
+      "selector": "a.framer-text:hover,span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text:hover,span.framer-text[data-nested-link]:hover { color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-blockquote-text-color-rgb,var(--framer-block"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover { color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-blockquote"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current] { color:var(--framer-link-current-text-color-rgb,var(--framer-link-current-text-color,var(--framer-link-tex"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[dat"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover { color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),code.framer-text span.fra"
+    },
+    {
+      "selector": "a.framer-text,span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text,span.framer-text[data-nested-link] { color:var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-text-color,#000))); -webkit-text-decoration-line:var(--framer-bloc"
+    },
+    {
+      "selector": "code.framer-text a.framer-text,code.framer-text span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text,code.framer-text span.framer-text[data-nested-link] { color:var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-code-text-color,var(--framer-tex"
+    },
+    {
+      "selector": "a.framer-text:hover,span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text:hover,span.framer-text[data-nested-link]:hover { color:var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-text-color,#000))))"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover { color:var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-colo"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current] { color:var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color,#000))); "
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current] { color:var(--framer-link-current-text-color,var(--framer-link-text-color"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover { color:var(--framer-link-hover-text-color,var(--framer-link-current-text-color,var(--framer-li"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover { color:var(--framer-link-hover-text-color,var(--framer-link-"
+    },
+    {
+      "selector": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current],[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-nested-link])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current],[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-n"
+    },
+    {
+      "selector": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover,[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover,[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill])"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#000000",
+      "count": 74,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FAF9F6",
+      "count": 33,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FAF9F5",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFFE6",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#121212",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1A1A1A",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#232224",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2B2B2B",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#353534",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#3636321A",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#38555832",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#454545",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#666469",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#868584",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#87878700",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#AFAEAC",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E3E2E0",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FAF9F6E6",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF29",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF99",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 41,
+    "by_role": {
+      "chromatic": 2,
+      "neutral": 19,
+      "selector": 18,
+      "svg_pattern": 2
+    }
+  }
+}

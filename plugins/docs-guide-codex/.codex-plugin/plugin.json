@@ -1,0 +1,43 @@
+{
+  "name": "docs-guide-codex",
+  "version": "0.1.0",
+  "description": "Codex-native official documentation lookup with llms.txt-first retrieval and official fallbacks.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/docs-guide-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "official-docs",
+    "llms-txt",
+    "reference",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Docs Guide Codex",
+    "shortDescription": "Fetch official docs live instead of relying on model memory",
+    "longDescription": "Package the Codex-native `docs-guide` skill with an `llms.txt`-first retrieval strategy, known-site index, and official-source fallback chain for version-aware documentation answers.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Look up the official docs for this library and explain the relevant section with citations.",
+      "Fetch the current official documentation for this API and tell me what changed.",
+      "Use docs-guide to answer this version-sensitive library question from official sources only."
+    ],
+    "brandColor": "#0F172A",
+    "composerIcon": "./assets/docs-guide-codex.svg",
+    "logo": "./assets/docs-guide-codex.svg",
+    "screenshots": []
+  }
+}

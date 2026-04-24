@@ -1,0 +1,262 @@
+{
+  "slug": "rivian",
+  "tiers": {
+    "util": [],
+    "semantic": [
+      {
+        "alias": "--semantic-disabled",
+        "references": [],
+        "terminal_hint": "#8e8e8e"
+      },
+      {
+        "alias": "--semantic-error",
+        "references": [],
+        "terminal_hint": "#dc3127"
+      },
+      {
+        "alias": "--semantic-info",
+        "references": [],
+        "terminal_hint": "#005e7d"
+      },
+      {
+        "alias": "--semantic-success",
+        "references": [],
+        "terminal_hint": "#4a8231"
+      },
+      {
+        "alias": "--semantic-warning",
+        "references": [],
+        "terminal_hint": "#d58103"
+      }
+    ],
+    "action": [
+      {
+        "alias": "--button-px",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "component": [
+      {
+        "alias": "--card-duration",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--card-foreground",
+        "references": [
+          "--foreground"
+        ],
+        "terminal_hint": "--foreground"
+      },
+      {
+        "alias": "--input-pt",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-card-background",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--navbar-card-foreground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--navbar-card-muted",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-card-muted-foreground",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-image-card-pb",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-image-card-pt",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-image-card-px",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-vehicle-card-px",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--navbar-vehicle-card-py",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--popover-foreground",
+        "references": [
+          "--foreground"
+        ],
+        "terminal_hint": "--foreground"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--background",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--navbar-card-background",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--navbar-card-foreground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--navbar-image-header-gradient-from",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,.3)"
+      },
+      {
+        "alias": "--semantic-disabled",
+        "references": [],
+        "terminal_hint": "#8e8e8e"
+      },
+      {
+        "alias": "--semantic-error",
+        "references": [],
+        "terminal_hint": "#dc3127"
+      },
+      {
+        "alias": "--semantic-info",
+        "references": [],
+        "terminal_hint": "#005e7d"
+      },
+      {
+        "alias": "--semantic-success",
+        "references": [],
+        "terminal_hint": "#4a8231"
+      },
+      {
+        "alias": "--semantic-warning",
+        "references": [],
+        "terminal_hint": "#d58103"
+      },
+      {
+        "alias": "--stroke-invertPrimary",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--stroke-invertSecondary",
+        "references": [],
+        "terminal_hint": "#151515"
+      },
+      {
+        "alias": "--stroke-primary",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--stroke-secondary",
+        "references": [],
+        "terminal_hint": "#cbcbcb"
+      },
+      {
+        "alias": "--stroke-tertiary",
+        "references": [],
+        "terminal_hint": "#939393"
+      },
+      {
+        "alias": "--surface-invertPrimary",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--surface-invertSecondary",
+        "references": [],
+        "terminal_hint": "#f2f2f2"
+      },
+      {
+        "alias": "--surface-invertTertiary",
+        "references": [],
+        "terminal_hint": "#ececec"
+      },
+      {
+        "alias": "--surface-neutralDark",
+        "references": [],
+        "terminal_hint": "#cbcbcb"
+      },
+      {
+        "alias": "--surface-neutralLight",
+        "references": [],
+        "terminal_hint": "#494949"
+      },
+      {
+        "alias": "--surface-primary",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--surface-primaryAlt",
+        "references": [],
+        "terminal_hint": "#151515"
+      },
+      {
+        "alias": "--surface-secondary",
+        "references": [],
+        "terminal_hint": "#151515"
+      },
+      {
+        "alias": "--surface-tertiary",
+        "references": [],
+        "terminal_hint": "#212121"
+      },
+      {
+        "alias": "--text-invertPrimary",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--text-invertSecondary",
+        "references": [],
+        "terminal_hint": "#151515"
+      },
+      {
+        "alias": "--text-primary",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--text-secondary",
+        "references": [],
+        "terminal_hint": "#cbcbcb"
+      },
+      {
+        "alias": "--text-tertiary",
+        "references": [],
+        "terminal_hint": "#494949"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 5,
+      "action": 1,
+      "component": 13,
+      "core": 28
+    }
+  }
+}

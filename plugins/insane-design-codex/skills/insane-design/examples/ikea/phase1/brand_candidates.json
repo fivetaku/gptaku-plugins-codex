@@ -1,0 +1,298 @@
+{
+  "slug": "ikea",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".global-content-links a.focus-visible,.global-content a.focus-visible",
+      "property": "box-shadow",
+      "hex": "#111111",
+      "rule_snippet": ".global-content-links a.focus-visible,.global-content a.focus-visible {box-shadow:inset 0 0 0 .0625rem #111,inset 0 0 0 .1875rem #fff,inset 0 0 0 .25rem #111!important;transition:box-shadow .2s ease-o"
+    },
+    {
+      "selector": ".global-content-links a.focus-visible,.global-content a.focus-visible",
+      "property": "box-shadow",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".global-content-links a.focus-visible,.global-content a.focus-visible {box-shadow:inset 0 0 0 .0625rem #111,inset 0 0 0 .1875rem #fff,inset 0 0 0 .25rem #111!important;transition:box-shadow .2s ease-o"
+    },
+    {
+      "selector": ".btn-color-primary:hover",
+      "property": "background",
+      "hex": "#333333",
+      "rule_snippet": ".btn-color-primary:hover {background:#333}"
+    },
+    {
+      "selector": ".btn-color-primary:active",
+      "property": "background",
+      "hex": "#000000",
+      "rule_snippet": ".btn-color-primary:active {background:#000}"
+    },
+    {
+      "selector": ".btn-color-secondary:hover",
+      "property": "background",
+      "hex": "#F5F5F5",
+      "rule_snippet": ".btn-color-secondary:hover {background:#f5f5f5}"
+    },
+    {
+      "selector": ".btn-color-secondary:active",
+      "property": "background",
+      "hex": "#DFDFDF",
+      "rule_snippet": ".btn-color-secondary:active {background:#dfdfdf}"
+    },
+    {
+      "selector": ".btn-color-transparent:hover",
+      "property": "background",
+      "hex": "#F5F5F5",
+      "rule_snippet": ".btn-color-transparent:hover {background:#f5f5f5}"
+    },
+    {
+      "selector": ".btn-color-transparent:active",
+      "property": "background",
+      "hex": "#DFDFDF",
+      "rule_snippet": ".btn-color-transparent:active {background:#dfdfdf}"
+    },
+    {
+      "selector": ".btn-color-disabled",
+      "property": "background",
+      "hex": "#DADADA",
+      "rule_snippet": ".btn-color-disabled {background:#dadada;color:#818181}"
+    },
+    {
+      "selector": ".btn-color-disabled",
+      "property": "color",
+      "hex": "#818181",
+      "rule_snippet": ".btn-color-disabled {background:#dadada;color:#818181}"
+    },
+    {
+      "selector": ".btn-color-disabled:hover,.btn-color-disabled:active",
+      "property": "background",
+      "hex": "#DADADA",
+      "rule_snippet": ".btn-color-disabled:hover,.btn-color-disabled:active {background:#dadada;color:#818181;cursor:not-allowed}"
+    },
+    {
+      "selector": ".btn-color-disabled:hover,.btn-color-disabled:active",
+      "property": "color",
+      "hex": "#818181",
+      "rule_snippet": ".btn-color-disabled:hover,.btn-color-disabled:active {background:#dadada;color:#818181;cursor:not-allowed}"
+    },
+    {
+      "selector": ".richtext.svelte-4dvh1u a:has(.button-link):hover",
+      "property": "background",
+      "hex": "#333333",
+      "rule_snippet": ".richtext.svelte-4dvh1u a:has(.button-link):hover {background:#333}"
+    },
+    {
+      "selector": ".richtext.svelte-4dvh1u a:has(.button-link):active",
+      "property": "background",
+      "hex": "#000000",
+      "rule_snippet": ".richtext.svelte-4dvh1u a:has(.button-link):active {background:#000}"
+    },
+    {
+      "selector": ".richtext.svelte-4dvh1u a:has(.button-link-white):hover",
+      "property": "background",
+      "hex": "#F5F5F5",
+      "rule_snippet": ".richtext.svelte-4dvh1u a:has(.button-link-white):hover {background:#f5f5f5}"
+    },
+    {
+      "selector": ".richtext.svelte-4dvh1u a:has(.button-link-white):active",
+      "property": "background",
+      "hex": "#DFDFDF",
+      "rule_snippet": ".richtext.svelte-4dvh1u a:has(.button-link-white):active {background:#dfdfdf}"
+    },
+    {
+      "selector": ".website-link.svelte-1fsf42z:hover .arrow-container:where(.svelte-1fsf42z)",
+      "property": "background",
+      "hex": "#333333",
+      "rule_snippet": ".website-link.svelte-1fsf42z:hover .arrow-container:where(.svelte-1fsf42z) {background:#333}"
+    },
+    {
+      "selector": ".website-link.svelte-1fsf42z:active .arrow-container:where(.svelte-1fsf42z)",
+      "property": "background",
+      "hex": "#000000",
+      "rule_snippet": ".website-link.svelte-1fsf42z:active .arrow-container:where(.svelte-1fsf42z) {background:#000}"
+    },
+    {
+      "selector": ".website-link.svelte-gsegnc:hover .arrow-container:where(.svelte-gsegnc)",
+      "property": "background",
+      "hex": "#333333",
+      "rule_snippet": ".website-link.svelte-gsegnc:hover .arrow-container:where(.svelte-gsegnc) {background:#333}"
+    },
+    {
+      "selector": ".website-link.svelte-gsegnc:active .arrow-container:where(.svelte-gsegnc)",
+      "property": "background",
+      "hex": "#000000",
+      "rule_snippet": ".website-link.svelte-gsegnc:active .arrow-container:where(.svelte-gsegnc) {background:#000}"
+    },
+    {
+      "selector": ".mobile-menu.svelte-117r2qw .links-mobile:where(.svelte-117r2qw) a",
+      "property": "border-bottom",
+      "hex": "#CCCCCC",
+      "rule_snippet": ".mobile-menu.svelte-117r2qw .links-mobile:where(.svelte-117r2qw) a {display:flex;align-items:center;justify-content:space-between;border-bottom:.0625rem solid #cccccc;padding:0 1.125rem 0 1rem;min-hei"
+    },
+    {
+      "selector": ".link",
+      "property": "background",
+      "hex": "#0159A3",
+      "rule_snippet": ".link { background: #0159a3; color: white; }"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#111111",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF80",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#333333",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFEFB",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#DFDFDF",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F5F5F5",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#11111180",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#CCCCCC",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFDB00",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#003B7D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0058A3",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#008D3D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#009521",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0B2C48",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0E748A",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#205524",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#25272D",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#62AD47",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#818181",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#8FB62D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#DADADA",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F098B6",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F1F2F0",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7DA06",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F9F2E3",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FD600E",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FEFEFE",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 52,
+    "by_role": {
+      "chromatic": 15,
+      "neutral": 15,
+      "selector": 22
+    }
+  }
+}

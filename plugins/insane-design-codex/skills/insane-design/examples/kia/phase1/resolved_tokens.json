@@ -1,0 +1,256 @@
+{
+  "slug": "kia",
+  "total_vars": 31,
+  "resolved_count": 29,
+  "unresolved_count": 2,
+  "samples": {
+    "--bs-table-bg": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--bs-table-bg",
+        "transparent"
+      ]
+    },
+    "--bs-table-accent-bg": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--bs-table-accent-bg",
+        "transparent"
+      ]
+    },
+    "--bs-table-striped-color": {
+      "raw": "#212529",
+      "resolved": "#212529",
+      "chain": [
+        "--bs-table-striped-color",
+        "#212529"
+      ]
+    },
+    "--bs-table-striped-bg": {
+      "raw": "rgba(0,0,0,.05)",
+      "resolved": "rgba(0,0,0,.05)",
+      "chain": [
+        "--bs-table-striped-bg",
+        "rgba(0,0,0,.05)"
+      ]
+    },
+    "--bs-table-active-color": {
+      "raw": "#212529",
+      "resolved": "#212529",
+      "chain": [
+        "--bs-table-active-color",
+        "#212529"
+      ]
+    },
+    "--bs-table-active-bg": {
+      "raw": "rgba(0,0,0,.1)",
+      "resolved": "rgba(0,0,0,.1)",
+      "chain": [
+        "--bs-table-active-bg",
+        "rgba(0,0,0,.1)"
+      ]
+    },
+    "--bs-table-hover-color": {
+      "raw": "#212529",
+      "resolved": "#212529",
+      "chain": [
+        "--bs-table-hover-color",
+        "#212529"
+      ]
+    },
+    "--bs-table-hover-bg": {
+      "raw": "rgba(0,0,0,.075)",
+      "resolved": "rgba(0,0,0,.075)",
+      "chain": [
+        "--bs-table-hover-bg",
+        "rgba(0,0,0,.075)"
+      ]
+    },
+    "--drop-final-top": {
+      "raw": "107px",
+      "resolved": "107px",
+      "chain": [
+        "--drop-final-top",
+        "107px"
+      ]
+    },
+    "--dp-menu-border-color": {
+      "raw": "#ddd",
+      "resolved": "#ddd",
+      "chain": [
+        "--dp-menu-border-color",
+        "#ddd"
+      ]
+    },
+    "--dp-background-color": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--dp-background-color",
+        "#fff"
+      ]
+    },
+    "--dp-text-color": {
+      "raw": "#212121",
+      "resolved": "#212121",
+      "chain": [
+        "--dp-text-color",
+        "#212121"
+      ]
+    },
+    "--dp-hover-color": {
+      "raw": "#f3f3f3",
+      "resolved": "#f3f3f3",
+      "chain": [
+        "--dp-hover-color",
+        "#f3f3f3"
+      ]
+    },
+    "--dp-hover-text-color": {
+      "raw": "#212121",
+      "resolved": "#212121",
+      "chain": [
+        "--dp-hover-text-color",
+        "#212121"
+      ]
+    },
+    "--dp-hover-icon-color": {
+      "raw": "#959595",
+      "resolved": "#959595",
+      "chain": [
+        "--dp-hover-icon-color",
+        "#959595"
+      ]
+    },
+    "--dp-primary-color": {
+      "raw": "#1976d2",
+      "resolved": "#1976d2",
+      "chain": [
+        "--dp-primary-color",
+        "#1976d2"
+      ]
+    },
+    "--dp-primary-disabled-color": {
+      "raw": "#6bacea",
+      "resolved": "#6bacea",
+      "chain": [
+        "--dp-primary-disabled-color",
+        "#6bacea"
+      ]
+    },
+    "--dp-primary-text-color": {
+      "raw": "#f8f5f5",
+      "resolved": "#f8f5f5",
+      "chain": [
+        "--dp-primary-text-color",
+        "#f8f5f5"
+      ]
+    },
+    "--dp-secondary-color": {
+      "raw": "#c0c4cc",
+      "resolved": "#c0c4cc",
+      "chain": [
+        "--dp-secondary-color",
+        "#c0c4cc"
+      ]
+    },
+    "--dp-border-color": {
+      "raw": "#ddd",
+      "resolved": "#ddd",
+      "chain": [
+        "--dp-border-color",
+        "#ddd"
+      ]
+    },
+    "--dp-border-color-hover": {
+      "raw": "#aaaeb7",
+      "resolved": "#aaaeb7",
+      "chain": [
+        "--dp-border-color-hover",
+        "#aaaeb7"
+      ]
+    },
+    "--dp-disabled-color": {
+      "raw": "#f6f6f6",
+      "resolved": "#f6f6f6",
+      "chain": [
+        "--dp-disabled-color",
+        "#f6f6f6"
+      ]
+    },
+    "--dp-disabled-color-text": {
+      "raw": "#8e8e8e",
+      "resolved": "#8e8e8e",
+      "chain": [
+        "--dp-disabled-color-text",
+        "#8e8e8e"
+      ]
+    },
+    "--dp-scroll-bar-background": {
+      "raw": "#f3f3f3",
+      "resolved": "#f3f3f3",
+      "chain": [
+        "--dp-scroll-bar-background",
+        "#f3f3f3"
+      ]
+    },
+    "--dp-scroll-bar-color": {
+      "raw": "#959595",
+      "resolved": "#959595",
+      "chain": [
+        "--dp-scroll-bar-color",
+        "#959595"
+      ]
+    },
+    "--dp-success-color": {
+      "raw": "#76d275",
+      "resolved": "#76d275",
+      "chain": [
+        "--dp-success-color",
+        "#76d275"
+      ]
+    },
+    "--dp-success-color-disabled": {
+      "raw": "#a3d9b1",
+      "resolved": "#a3d9b1",
+      "chain": [
+        "--dp-success-color-disabled",
+        "#a3d9b1"
+      ]
+    },
+    "--dp-icon-color": {
+      "raw": "#959595",
+      "resolved": "#959595",
+      "chain": [
+        "--dp-icon-color",
+        "#959595"
+      ]
+    },
+    "--dp-danger-color": {
+      "raw": "#ff6f60",
+      "resolved": "#ff6f60",
+      "chain": [
+        "--dp-danger-color",
+        "#ff6f60"
+      ]
+    },
+    "--dp-marker-color": {
+      "raw": "#ff6f60",
+      "resolved": "#ff6f60",
+      "chain": [
+        "--dp-marker-color",
+        "#ff6f60"
+      ]
+    },
+    "--dp-tooltip-color": {
+      "raw": "#fafafa",
+      "resolved": "#fafafa",
+      "chain": [
+        "--dp-tooltip-color",
+        "#fafafa"
+      ]
+    }
+  }
+}

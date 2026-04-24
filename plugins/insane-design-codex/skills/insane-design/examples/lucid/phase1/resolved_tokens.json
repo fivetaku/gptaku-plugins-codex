@@ -1,0 +1,408 @@
+{
+  "slug": "lucid",
+  "total_vars": 96,
+  "resolved_count": 85,
+  "unresolved_count": 11,
+  "samples": {
+    "--nav-offset-mobile": {
+      "raw": "60px",
+      "resolved": "60px",
+      "chain": [
+        "--nav-offset-mobile",
+        "60px"
+      ]
+    },
+    "--nav-offset-tablet": {
+      "raw": "64px",
+      "resolved": "64px",
+      "chain": [
+        "--nav-offset-tablet",
+        "64px"
+      ]
+    },
+    "--nav-offset-desktop": {
+      "raw": "80px",
+      "resolved": "80px",
+      "chain": [
+        "--nav-offset-desktop",
+        "80px"
+      ]
+    },
+    "--translateX": {
+      "raw": "-50%",
+      "resolved": "-50%",
+      "chain": [
+        "--translateX",
+        "-50%"
+      ]
+    },
+    "--translateY": {
+      "raw": "-100%",
+      "resolved": "-100%",
+      "chain": [
+        "--translateY",
+        "-100%"
+      ]
+    },
+    "--font-size-base": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--font-size-base",
+        "16px"
+      ]
+    },
+    "--font-serif-fallback": {
+      "raw": "Georgia,Times,\"Times New Roman\",serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"",
+      "resolved": null,
+      "chain": [
+        "--font-serif-fallback",
+        "Georgia,Times,\"Times New Roman\",serif,\"Apple Color Emoji\",\"Segoe UI Emoji\""
+      ]
+    },
+    "--font-sans-serif-fallback": {
+      "raw": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Roboto,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"",
+      "resolved": null,
+      "chain": [
+        "--font-sans-serif-fallback",
+        "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Roboto,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\""
+      ]
+    },
+    "--font-gt-america": {
+      "raw": "\"GTAmerica\",var(--font-sans-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-gt-america",
+        "\"GTAmerica\",var(--font-sans-serif-fallback)"
+      ]
+    },
+    "--font-schnyder-s": {
+      "raw": "\"SchnyderS\",var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-schnyder-s",
+        "\"SchnyderS\",var(--font-serif-fallback)"
+      ]
+    },
+    "--font-schnyder-m": {
+      "raw": "\"SchnyderM\",var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-schnyder-m",
+        "\"SchnyderM\",var(--font-serif-fallback)"
+      ]
+    },
+    "--font-lucid-sans": {
+      "raw": "\"Lucid Sans VF\",\"IBM Plex Sans\",var(--font-sans-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-sans",
+        "\"Lucid Sans VF\",\"IBM Plex Sans\",var(--font-sans-serif-fallback)"
+      ]
+    },
+    "--font-lucid-serif": {
+      "raw": "\"Lucid Serif VF\",Georgia,var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-serif",
+        "\"Lucid Serif VF\",Georgia,var(--font-serif-fallback)"
+      ]
+    },
+    "--font-lucid-serif-italic": {
+      "raw": "\"Lucid Serif Italic VF\",Georgia,var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-serif-italic",
+        "\"Lucid Serif Italic VF\",Georgia,var(--font-serif-fallback)"
+      ]
+    },
+    "--font-lucid-ibm-plex-sans": {
+      "raw": "\"IBM Plex Sans\",var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-ibm-plex-sans",
+        "\"IBM Plex Sans\",var(--font-serif-fallback)"
+      ]
+    },
+    "--font-lucid-saudi-riyal": {
+      "raw": "\"dirham-symbol\",var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-saudi-riyal",
+        "\"dirham-symbol\",var(--font-serif-fallback)"
+      ]
+    },
+    "--font-lucid-amiri": {
+      "raw": "\"Amiri\",var(--font-serif-fallback)",
+      "resolved": null,
+      "chain": [
+        "--font-lucid-amiri",
+        "\"Amiri\",var(--font-serif-fallback)"
+      ]
+    },
+    "--color-pure-black": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--color-pure-black",
+        "#000000"
+      ]
+    },
+    "--color-black": {
+      "raw": "#1b1b1b",
+      "resolved": "#1b1b1b",
+      "chain": [
+        "--color-black",
+        "#1b1b1b"
+      ]
+    },
+    "--color-black-2": {
+      "raw": "#141414",
+      "resolved": "#141414",
+      "chain": [
+        "--color-black-2",
+        "#141414"
+      ]
+    },
+    "--color-black-3": {
+      "raw": "#0c0b16",
+      "resolved": "#0c0b16",
+      "chain": [
+        "--color-black-3",
+        "#0c0b16"
+      ]
+    },
+    "--color-greyscale-charcoal": {
+      "raw": "#2d2d2d",
+      "resolved": "#2d2d2d",
+      "chain": [
+        "--color-greyscale-charcoal",
+        "#2d2d2d"
+      ]
+    },
+    "--greyscale-colors-off-black": {
+      "raw": "#101010",
+      "resolved": "#101010",
+      "chain": [
+        "--greyscale-colors-off-black",
+        "#101010"
+      ]
+    },
+    "--color-sand": {
+      "raw": "#e1e0dc",
+      "resolved": "#e1e0dc",
+      "chain": [
+        "--color-sand",
+        "#e1e0dc"
+      ]
+    },
+    "--color-sand-light": {
+      "raw": "#e4e0d2",
+      "resolved": "#e4e0d2",
+      "chain": [
+        "--color-sand-light",
+        "#e4e0d2"
+      ]
+    },
+    "--color-brown": {
+      "raw": "#c2b299",
+      "resolved": "#c2b299",
+      "chain": [
+        "--color-brown",
+        "#c2b299"
+      ]
+    },
+    "--color-brown-light": {
+      "raw": "#dbd4c5",
+      "resolved": "#dbd4c5",
+      "chain": [
+        "--color-brown-light",
+        "#dbd4c5"
+      ]
+    },
+    "--color-grey": {
+      "raw": "#787878",
+      "resolved": "#787878",
+      "chain": [
+        "--color-grey",
+        "#787878"
+      ]
+    },
+    "--color-grey-dark": {
+      "raw": "#555354",
+      "resolved": "#555354",
+      "chain": [
+        "--color-grey-dark",
+        "#555354"
+      ]
+    },
+    "--color-grey-darker": {
+      "raw": "#40423f",
+      "resolved": "#40423f",
+      "chain": [
+        "--color-grey-darker",
+        "#40423f"
+      ]
+    },
+    "--color-grey-light": {
+      "raw": "#ededed",
+      "resolved": "#ededed",
+      "chain": [
+        "--color-grey-light",
+        "#ededed"
+      ]
+    },
+    "--color-pink": {
+      "raw": "#9d857f",
+      "resolved": "#9d857f",
+      "chain": [
+        "--color-pink",
+        "#9d857f"
+      ]
+    },
+    "--color-white": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--color-white",
+        "#ffffff"
+      ]
+    },
+    "--color-broken-white": {
+      "raw": "#f2f2f2",
+      "resolved": "#f2f2f2",
+      "chain": [
+        "--color-broken-white",
+        "#f2f2f2"
+      ]
+    },
+    "--color-yellow-light": {
+      "raw": "#8a6e33",
+      "resolved": "#8a6e33",
+      "chain": [
+        "--color-yellow-light",
+        "#8a6e33"
+      ]
+    },
+    "--color-satin-linen": {
+      "raw": "#e5e1cf",
+      "resolved": "#e5e1cf",
+      "chain": [
+        "--color-satin-linen",
+        "#e5e1cf"
+      ]
+    },
+    "--color-yellow-lighter": {
+      "raw": "#e4dfd4",
+      "resolved": "#e4dfd4",
+      "chain": [
+        "--color-yellow-lighter",
+        "#e4dfd4"
+      ]
+    },
+    "--color-snow": {
+      "raw": "#e4dfde",
+      "resolved": "#e4dfde",
+      "chain": [
+        "--color-snow",
+        "#e4dfde"
+      ]
+    },
+    "--color-error-red": {
+      "raw": "#eb5858",
+      "resolved": "#eb5858",
+      "chain": [
+        "--color-error-red",
+        "#eb5858"
+      ]
+    },
+    "--color-fossil-light": {
+      "raw": "#e7e7e4",
+      "resolved": "#e7e7e4",
+      "chain": [
+        "--color-fossil-light",
+        "#e7e7e4"
+      ]
+    },
+    "--color-off-white": {
+      "raw": "#f9f9f9",
+      "resolved": "#f9f9f9",
+      "chain": [
+        "--color-off-white",
+        "#f9f9f9"
+      ]
+    },
+    "--color-primary-colors-gold": {
+      "raw": "#d7be96",
+      "resolved": "#d7be96",
+      "chain": [
+        "--color-primary-colors-gold",
+        "#d7be96"
+      ]
+    },
+    "--color-greyscale-colors-fossil": {
+      "raw": "#bebbbb",
+      "resolved": "#bebbbb",
+      "chain": [
+        "--color-greyscale-colors-fossil",
+        "#bebbbb"
+      ]
+    },
+    "--border-neutral-white": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--border-neutral-white",
+        "#ffffff"
+      ]
+    },
+    "--border-neutral-gray-10": {
+      "raw": "#e1e1e1",
+      "resolved": "#e1e1e1",
+      "chain": [
+        "--border-neutral-gray-10",
+        "#e1e1e1"
+      ]
+    },
+    "--border-neutral-gray-70": {
+      "raw": "#323232",
+      "resolved": "#323232",
+      "chain": [
+        "--border-neutral-gray-70",
+        "#323232"
+      ]
+    },
+    "--border-neutral-gray-80": {
+      "raw": "#2d2d2d",
+      "resolved": "#2d2d2d",
+      "chain": [
+        "--border-neutral-gray-80",
+        "#2d2d2d"
+      ]
+    },
+    "--border-brand-gold": {
+      "raw": "#d7be96",
+      "resolved": "#d7be96",
+      "chain": [
+        "--border-brand-gold",
+        "#d7be96"
+      ]
+    },
+    "--surface-brand-gold": {
+      "raw": "#d7be96",
+      "resolved": "#d7be96",
+      "chain": [
+        "--surface-brand-gold",
+        "#d7be96"
+      ]
+    },
+    "--surface-neutral-white": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--surface-neutral-white",
+        "#ffffff"
+      ]
+    }
+  }
+}

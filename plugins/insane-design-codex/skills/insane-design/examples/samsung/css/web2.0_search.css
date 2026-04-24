@@ -1,0 +1,107 @@
+#header.open_mo, 
+#header__navi.open_mo, 
+#header.open__search, 
+#header__navi.open__search, 
+#header.close__search,
+#header__navi.close__search{z-index: 231;}
+.outer__mask{ position:fixed; display:none; left:0; right:0; top:0; bottom:0; background:rgba(0,0,0,0.5); z-index: 99; }
+.inner__mask{ position:fixed; display:none; left:0; right:0; top:0; bottom:0; background:rgba(0,0,0,0.5); z-index: -1; }
+/* 검색창 */
+.search__area{position: fixed; right: 0; top: 0; width: 100%; background: #fff; z-index: 55; overflow: hidden; visibility: hidden; transition: opacity 0.4s cubic-bezier(0.35, 0, 0.36, 1), visibility 0.4s cubic-bezier(0.35, 0, 0.36, 1); opacity: 0;} 
+.open__search .search__area{visibility: visible; opacity: 1;} 
+.close__search .search__area{transition: opacity .2s linear .2s, visibility .2s linear .2s, right 0s linear .3s;} 
+.search__area .search__area__inner{max-width: 1440px; width: 100%; margin: 0 auto; padding: 32px 24px 64px;} 
+.search__area .search__input__box{display: flex; align-items: center; position: relative; padding-bottom: 32px; border-bottom: 1px solid #ddd;}
+.search__area .search__input__box .search__find__btn{order: 1; position: relative; left: 25px; display: flex; align-items: center; height: 42px; justify-content: center; margin-right: 8px; opacity: 0; transition: left .5s cubic-bezier(0.35,0,0.36,1), opacity .2s linear;} 
+.search__area .search__input__box .search__find__btn img{width: 24px;} 
+.search__area .search__input__box .search__input{position: relative; order: 2; flex: 1;}
+.search__area .search__input__box .search__input::before{content: ""; position: absolute; top: 2px; left: 1px; bottom: 2px; width: 70px; z-index: 1; opacity: 0; pointer-events: none; -webkit-transition: opacity .2s; transition: opacity .2s; background: -webkit-gradient(linear,left top,right top,from(#fff),to(rgba(255,255,255,0))); background: linear-gradient(90deg,#fff 0,rgba(255,255,255,0) 100%);}
+.search__area .search__input__box.input__overflow .search__input::before{opacity: 1;}
+.search__area .search__input__box .search__input input{position: relative; left: 25px; text-indent: 0; border: 0; height: 47px; font-size: 36px; font-weight: 700; opacity: 0; transition: left .5s cubic-bezier(0.35,0,0.36,1), opacity .2s linear;} 
+.open__search .search__area .search__input__box .search__find__btn,
+.open__search .search__area .search__input__box .search__input input,
+.open__search .search__area .search__input__box.typing button.search__reset__btn{opacity: 1; left: 0;}
+.search__area .search__input__box .search__input input::placeholder{color: #909090; font-size: 36px; font-weight: 700;} /* KDP-99400 [퍼블] [B2C] 25년 웹접근성 심사 - 색상 변경 */
+.search__area .search__input__box button.search__close__btn{order: 4; margin-left: 20px;} 
+.search__area .search__input__box button.search__close__btn img{width: 24px;} 
+.search__area .search__input__box button.search__reset__btn{order: 3; position: relative; left: 25px; font-size: 14px; font-weight: 700; line-height: 19px; margin-left: 20px; padding-bottom: 3px; text-align: left; color: #000; display: none; opacity: 0; transition: left .5s cubic-bezier(0.35,0,0.36,1), opacity .2s linear;} 
+.search__area .search__input__box.typing button.search__reset__btn{display: block;} 
+.search__area .search__input__box button.search__reset__btn::before{content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #000;} 
+.search__area .search__inner__content{position: relative; top: -25px; opacity: 0; padding: 0; transition: top .5s cubic-bezier(0.35,0,0.36,1), opacity .2s linear .2s;} 
+.open__search .search__area .search__inner__content{top: 0; opacity: 1;}
+.close__search .search__area .search__inner__content{top: -100px; transition: top .5s cubic-bezier(0.35,0,0.36,1),opacity .2s linear;}
+.search__area .search__content__view{margin-top: 32px; display: flex; align-items: flex-start; justify-content: space-between; left: -200vw; top: 0; width: 100%;} 
+.search__area .search__content__view.content__result,
+.search__area .result .search__inner__content .search__content__view.content__basic,
+.search__area .no__result .search__inner__content .search__content__view.content__basic,
+.search__area .no__result .search__inner__content .search__content__view.content__result,
+.open__search .search__area .no__result .search__inner__content .search__content__view.content__result .content__view__right{position: absolute; visibility: hidden;} 
+.search__area .result .search__inner__content .search__content__view.content__result,
+.search__area .no__result .search__inner__content .search__content__view.content__result{position: static; left: 0; visibility: visible;} 
+.search__area .none__text{display: none;} 
+.search__area .no__result .none__text{display: block;} 
+.search__area .none__text p{font-size: 16px; font-weight: bold; line-height: 1.33; text-align: left; color: #000; padding: 32px 0 27px;} 
+.search__area .search__content__view .content__view__left{width: 388px; padding-right: 76px; flex-shrink: 0;} 
+.search__area .search__content__view .content__view__inner + .content__view__inner{margin-top: 40px;}
+.search__area .search__content__view .view__tit__wrap{margin-bottom: 16px;}
+.search__area .search__content__view .content__view__delete .view__tit__wrap{display: flex; align-items: center;}
+.search__area .search__content__view .view__tit{display: block; color: #757575; font-size: 14px; font-weight: 700; line-height: 19px;} 
+.search__area .search__content__view .content__view__delete .view__tit__wrap .view__tit{flex: 1;}
+.search__area .search__content__view .content__view__delete .view__tit__wrap .search__all__delete__btn{flex-shrink: 0; position: relative; font-size: 12px; font-weight: 400; line-height: 16px; margin-left: 16px; color: #757575;}
+.search__area .search__content__view .content__view__delete .view__tit__wrap .search__all__delete__btn::before {content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #707070;}
+.search__area .search__content__view .view__txt li{padding: 4px 0;} 
+.search__area .search__content__view .content__view__delete .view__txt li{display: flex; align-items: center;} 
+.search__area .search__content__view .view__txt li a{color: #000; font-size: 16px; font-weight: 700; line-height: 22px; word-break: break-word; display: inline-block; vertical-align: middle; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;} 
+.search__area .search__area__inner:not(.no__result) .search__content__view.content__result .view__txt li a{font-weight: 400;} 
+.search__area .search__content__view.content__result .view__txt li a > strong{font-weight: 700; font-size: inherit; vertical-align: unset;} 
+.search__area .search__content__view.content__result .view__txt li a > span{display: inline-block; color: #757575; font-size: inherit; vertical-align: unset;} 
+.search__area .search__content__view .content__view__delete .view__txt li .search__delete__btn{flex-shrink: 0; margin-left: 8px; width: 16px; height: 16px; background: url("/sec/static/_images/gnb/icon-search-delete.svg") center center no-repeat; text-indent: -99999px;}
+.search__area .search__content__view .content__view__right{flex: 1;}
+.search__area .result .search__content__view.content__basic .content__view__right{visibility: hidden;} 
+.search__area .search__content__view .view__thumbnail{display: grid; gap: 0 12px; grid-template-columns: repeat(4, 1fr);} 
+.search__area .search__area__inner .view__thumbnail li > a{display: block; width: 100%; height: 100%; font-weight: 700; color: #000;} 
+.search__area .search__content__view .view__thumbnail li > a:hover .img-box img{transform: scale(1.05);} 
+.search__area .search__content__view .view__thumbnail li > a .img-box{position: relative; border-radius: 8px; overflow: hidden; background: #f7f7f7; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;} 
+.search__area .search__content__view .view__thumbnail li > a .img-box img{transition: transform 0.4s cubic-bezier(0.35, 0, 0.36, 1);} 
+.search__area .search__content__view .view__thumbnail li > a > p{margin-top: 16px; font-size: 22px; line-height: 29px; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-word;} 
+.search__area .search__content__view .view__thumbnail li > a > span{display: block; margin-top: 8px; font-size: 16px; font-weight: 400; line-height: 19px;} 
+.search__area .search__content__view .view__thumbnail li > a > strong{display: block; margin-top: 4px; font-size: 20px; line-height: 27px;} 
+/***
+* 이 위로는 Pc
+
+* 여기부터 태블릿
+***/
+@media all and (max-width:1279px) {
+  /* 검색창 */
+	.search__area{width: 360px; height: 100vh; padding: 0; background: #fff; overflow-y: auto; overscroll-behavior: contain;} 
+	.search__area .search__area__inner{overflow: hidden; padding: 18px 24px 36px;} 
+	.search__area .search__input__box{padding-bottom: 17px;} 
+	.search__area .search__input__box > span{padding-right: 4px;} 
+	.search__area .search__input__box button.search__close__btn,
+	.search__area .search__input__box button.search__reset__btn{margin-left: 16px;} 
+	.search__area .search__input__box .search__input input{height: 32px; font-size: 24px;} 
+	.search__area .search__input__box .search__input input::placeholder{font-size: 24px; letter-spacing: -0.5px;} 
+	.search__area .search__content__view{display: block; margin-top: 24px;} 
+	.search__area .search__content__view .content__view__left{width: auto; padding-right: 0;} 
+	.search__area .search__content__view .view__txt li{padding: 6px 0;} 
+	.search__area .search__content__view .content__view__right{margin-top: 24px;} 
+	.search__area .search__content__view .content__view__inner + .content__view__inner{margin-top: 24px;}
+	.search__area .search__content__view .view__thumbnail{margin: 0 -24px; gap: 24px 8px; grid-template-columns: repeat(2, 1fr);} 
+	.search__area .search__area__inner .view__thumbnail li > a{padding: 0 24px;} 
+	.search__area .search__content__view .view__thumbnail li > a .img-box{margin: 0 -24px;} 
+	.search__area .search__content__view .view__thumbnail li > a > p{font-size: 18px; line-height: 24px; height: 48px;} 
+	.search__area .search__content__view .view__thumbnail li > a > span{font-size: 14px;} 
+	.search__area .search__content__view .view__thumbnail li > a > strong{margin-top: 2px; font-size: 14px; line-height: 19px;}
+}
+@media all and (max-width:1099px) {
+	.search__area .search__input__box .search__input input:focus{outline: -webkit-focus-ring-color auto 1px;}
+}
+/***
+* 이 위로는 태블릿
+
+* 여기부터 모바일
+***/
+@media only screen and (max-width: 534px) {
+    #header .search__area,
+	#header__navi .search__area{width: 100%;}
+}

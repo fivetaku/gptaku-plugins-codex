@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dyson — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#0F70F0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{
+    font-family:var(--font-sans);
+    font-feature-settings:"ss01" 1,"ss02" 1;
+    font-size:14px;font-weight:400;line-height:1.6;
+    color:var(--fg);background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+
+  .toc{
+    position:sticky;top:0;align-self:start;height:100vh;
+    padding:28px 24px 28px 40px;
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;gap:22px;
+    overflow-y:auto;
+  }
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--border-str);text-transform:uppercase;
+    letter-spacing:.1em;padding:0 10px;margin-bottom:4px;
+  }
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{
+    display:grid;grid-template-columns:26px 1fr;align-items:center;
+    padding:6px 10px;font-size:13px;color:var(--muted-fg);
+    border-radius:var(--radius);transition:background 140ms,color 140ms;
+  }
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 12px;background:var(--muted);border:1px solid var(--border);
+    border-radius:999px;font-family:var(--font-mono);font-size:11px;
+    color:var(--subtle);margin-bottom:24px;
+  }
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{
+    margin-bottom:32px;max-width:880px;
+    border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);
+  }
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:28px 32px;
+    max-width:880px;margin-top:8px;
+  }
+  .qs__head{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:16px;margin-bottom:20px;
+    border-bottom:1px solid var(--border);
+  }
+  .qs__head-label{
+    font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+  }
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{
+    background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 16px;
+    display:flex;flex-direction:column;gap:6px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.55;
+    border:1px solid #1f2023;
+  }
+  .qs__step-label{
+    color:#7d8ba4;font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{
+    margin-top:16px;padding:14px 18px;
+    background:#fef2f2;border:1px solid #fecaca;
+    border-left:3px solid #dc2626;
+    border-radius:var(--radius);
+    font-size:13px;color:#991b1b;line-height:1.6;
+  }
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    max-width:880px;margin-top:32px;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;
+  }
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.04em;margin-bottom:8px;
+  }
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;max-width:820px;
+  }
+  .prov__row{
+    display:grid;grid-template-columns:180px 1fr;
+    padding:14px 24px;border-bottom:1px solid var(--border);
+    font-size:13px;align-items:center;
+  }
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{
+    padding:20px 22px;background:var(--card);
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+  }
+  .ts__head{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:10px;
+  }
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .ts__body b{font-weight:600;color:var(--fg);}
+
+  .fs-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:24px 28px;
+    max-width:820px;margin-bottom:24px;
+  }
+  .fs-card__row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card__v b{font-weight:600;}
+
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{
+    display:grid;grid-template-columns:minmax(0,1fr) 260px;
+    gap:32px;align-items:baseline;
+    padding:20px 24px;border-bottom:1px solid var(--border);
+  }
+  .type-row:last-child{border-bottom:none;}
+  .type-row__s{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--fg);}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-row__spec b{color:var(--fg);font-weight:600;}
+
+  .type-sub{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;
+    margin-bottom:12px;
+  }
+
+  .callout{
+    margin-top:16px;padding:16px 20px;
+    background:var(--muted);border:1px solid var(--border);
+    border-left:2px solid var(--accent);
+    border-radius:var(--radius);
+    font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;
+  }
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{
+    font-family:var(--font-mono);font-size:11px;margin-bottom:10px;
+    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;
+  }
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{
+    display:grid;gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  }
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--7{grid-template-columns:repeat(7,minmax(0,1fr));}
+  .sw{
+    aspect-ratio:1/2.2;display:flex;flex-direction:column;
+    justify-content:flex-end;padding:8px 6px;
+    font-family:var(--font-mono);font-size:9px;line-height:1.3;
+    transition:transform 160ms;position:relative;cursor:default;
+  }
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+
+  .accent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px;}
+  .accent-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .accent-card__sw{display:grid;aspect-ratio:5/1.2;}
+  .accent-card__body{padding:12px 16px;display:flex;align-items:baseline;justify-content:space-between;}
+  .accent-card__n{font-size:13px;font-weight:500;}
+  .accent-card__h{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+
+  .space-note{
+    font-size:13px;color:var(--subtle);max-width:720px;
+    margin-bottom:24px;padding:14px 20px;
+    background:var(--muted);border:1px solid var(--border);
+    border-left:2px solid var(--accent);border-radius:var(--radius);line-height:1.7;
+  }
+  .space-note b{color:var(--fg);}
+  .space-note code{background:var(--card);padding:1px 5px;border-radius:3px;font-size:11px;border:1px solid var(--border);}
+
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{
+    display:grid;grid-template-columns:120px 70px 1fr;
+    gap:16px;padding:8px 20px;
+    border-bottom:1px solid var(--border);align-items:center;
+    font-family:var(--font-mono);font-size:11px;
+  }
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+
+  .rad-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+  .rad-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:16px 12px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .rad-card__v .px{font-family:var(--font-mono);}
+
+  .sh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{
+    background:var(--card);padding:24px 24px 20px;
+    border-radius:var(--radius-lg);border:1px solid var(--border);
+    min-height:150px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+
+  .cmp-block{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;
+  }
+  .cmp-block__head{
+    display:flex;align-items:baseline;gap:12px;
+    padding-bottom:14px;margin-bottom:18px;
+    border-bottom:1px solid var(--border);flex-wrap:wrap;
+  }
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{
+    padding:24px;background:var(--muted);border-radius:var(--radius);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;
+  }
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+
+  .cmp-code{
+    margin-top:14px;background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 18px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.65;
+    overflow-x:auto;border:1px solid #1f2023;position:relative;
+  }
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{
+    display:flex;gap:0;
+    border-bottom:1px solid var(--border);
+    background:var(--muted);
+  }
+  .code-tabs button{
+    padding:12px 18px;font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+    border-bottom:2px solid transparent;
+  }
+  .code-tabs button.is-active{
+    color:var(--fg);background:var(--card);
+    border-bottom-color:var(--accent);
+  }
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{
+    background:#08090a;color:#f7f8f8;
+    padding:24px 28px;
+    font-family:var(--font-mono);font-size:12px;line-height:1.65;
+    overflow-x:auto;max-height:560px;margin:0;
+  }
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{
+    font-family:var(--font-mono);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:4px 12px;border-radius:999px;
+  }
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{
+    background:var(--muted);font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;
+  }
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.dd-grid,.sem-row,.qs__grid{grid-template-columns:1fr;}
+    .accent-grid{grid-template-columns:1fr 1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .rad-grid{grid-template-columns:repeat(3,1fr);}
+    .sh-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Dyson</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">08</span>컴포넌트</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">09</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">10</span>Do / Don't</a></li>
+      </ul>
+    </div>
+
+    <div class="toc__foot">
+      insane-design/dyson/<br>
+      design.md · report.ko.html<br>
+      2026-04-13
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Dyson <span class="sub">— --yxt-*</span></h1>
+      <p class="hero__sub">
+        dyson.com 이 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        이커머스 프리미엄 하드웨어 브랜드의 클린 화이트 + 파란 CTA 시스템.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="dyson.com hero — 실제 렌더링된 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Dyson처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트</span>
+            <code>body {
+  font-family: system-ui,
+    "Segoe UI", Roboto,
+    sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#212121</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 파랑</span>
+            <code>:root {
+  --brand: <b>#0F70F0</b>;
+}
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 4px;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: CTA 버튼에 <code>background: #EFEFEF</code> 같은 회색 배경을 쓰는 것. Dyson CTA의 정체성은 <b>#0F70F0 파란색</b> 단 하나다. 회색 CTA는 프리미엄 이커머스가 아닌 평범한 폼 UI처럼 보인다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">dyson.com</div>
+          <div class="stat__hint">글로벌 이커머스 · Next.js SSR</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">--yxt-* Yext DS 토큰 포함</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">system-ui</div>
+          <div class="stat__hint">웹폰트 없음 · 시스템 폰트 전략</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono">#0F70F0</div>
+          <div class="stat__hint">--yxt-color-brand-primary</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://www.dyson.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">Framework</span><span class="prov__v">Next.js SSR (글로벌 이커머스)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--yxt-*</code> (Yext 검색 DS)</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">프레임워크, 디자인 시스템, CSS 아키텍처, 테마, 폰트 로딩 방식.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">Next.js (글로벌 이커머스 마케팅 SSR 빌드)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">자체 Dyson DS + Yext 검색 위젯 (<code>--yxt-*</code> prefix 분리)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS ARCHITECTURE</div>
+          <div class="ts__body">커스텀 프로퍼티 기반, Yext 검색 레이어 별도 스코프</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body">light — 흰 배경(<code>#FFFFFF</code>) + 검정 텍스트(<code>#212121</code>) + 파란 CTA</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT LOADING</div>
+          <div class="ts__body">system-ui 스택 — 웹폰트 없음. 로딩 속도 우선 전략</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body"><code>#0F70F0</code> — <code>--yxt-color-brand-primary</code> 에 명시된 CTA 파랑. hover는 <code>#0C5ECB</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">폰트 스택, 굵기 정의, 타이포그래피 스케일.</p>
+
+      <div class="type-sub">Font Stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Body font</span>
+          <span class="fs-card__v"><code>system-ui</code> — 플랫폼별 시스템 폰트</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Fallback</span>
+          <span class="fs-card__v"><code>"Segoe UI"</code>, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight normal / bold</span>
+          <span class="fs-card__v"><code>400</code> / <code>600</code></span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>전략적 선택</b>: Dyson은 글로벌 이커머스로 80+ 국가에 서빙된다. 별도 웹폰트를 로드하지 않는 것은 성능 우선 결정이다. 제품 사진과 레이아웃이 브랜드 정체성을 담당한다.
+      </div>
+
+      <div class="type-sub" style="margin-top:24px;">Typography Scale (실측)</div>
+      <div class="type-table">
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:42px;font-weight:700;letter-spacing:-.02em;">Hero Heading</div>
+          <div class="type-row__spec"><span class="tk">Hero Heading</span><b>clamp(32px, 5vw, 64px)</b><br>weight 600–700 · letter-spacing -0.02em</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:32px;font-weight:600;">Section Title</div>
+          <div class="type-row__spec"><span class="tk">Section Title</span><b>32px–40px</b><br>weight 600</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:20px;font-weight:500;">Card Title</div>
+          <div class="type-row__spec"><span class="tk">Card Title</span><b>18px–22px</b><br>weight 500–600</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:15px;font-weight:400;">Body text — 제품 설명과 스펙</div>
+          <div class="type-row__spec"><span class="tk">Body</span><b>14px–16px</b><br>weight 400 · line-height 1.6</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:12px;font-weight:400;color:#71717a;">Caption / Legal</div>
+          <div class="type-row__spec"><span class="tk">Caption</span><b>12px</b><br>weight 400 · color #555</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">Dyson 컬러 시스템: 파란 CTA + 흰 배경 + 중성 그레이 스케일.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand / CTA</b> <span class="muted">-- 인터랙션 전용 파랑</span></div>
+        <div class="ramp ramp--2">
+          <div class="sw sw--d" style="background:#0F70F0"><span class="n">Primary</span>#0F70F0</div>
+          <div class="sw sw--d" style="background:#0C5ECB"><span class="n">Hover</span>#0C5ECB</div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutrals</b> <span class="muted">-- 배경·텍스트·보더</span></div>
+        <div class="ramp ramp--7">
+          <div class="sw sw--d" style="background:#212121"><span class="n">Text</span>#212121</div>
+          <div class="sw sw--d" style="background:#555555"><span class="n">Subtle</span>#555555</div>
+          <div class="sw sw--l" style="background:#D7D7D7"><span class="n">Border</span>#D7D7D7</div>
+          <div class="sw sw--l" style="background:#E8E8E8"><span class="n">Hover bg</span>#E8E8E8</div>
+          <div class="sw sw--l" style="background:#EFEFEF"><span class="n">Muted</span>#EFEFEF</div>
+          <div class="sw sw--l" style="background:#F5F5F5"><span class="n">Section</span>#F5F5F5</div>
+          <div class="sw sw--l" style="background:#FFFFFF;border:1px solid #E8E8E8"><span class="n">Page</span>#FFFFFF</div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Semantic</b></div>
+        <div class="ramp ramp--2">
+          <div class="sw sw--d" style="background:#E64942"><span class="n">Danger</span>#E64942</div>
+          <div class="sw sw--l" style="background:#EFEFEF"><span class="n">Cancel</span>#EFEFEF</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>컬러 사용 원칙</b>: Dyson은 단색 CTA 전략이다. <code>#0F70F0</code> 파랑 하나가 모든 인터랙션 포인트를 담당한다. 배경의 순백 + 이 파랑 CTA 조합이 프리미엄 이커머스 신뢰감을 만든다.
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">8pt 그리드 기반 스페이싱 시스템.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">xs</span><span class="val">4px</span><div class="bar" style="width:4%"></div></div>
+        <div class="space-row"><span class="tk">sm</span><span class="val">8px</span><div class="bar" style="width:8%"></div></div>
+        <div class="space-row"><span class="tk">md</span><span class="val">16px</span><div class="bar" style="width:16%"></div></div>
+        <div class="space-row"><span class="tk">lg</span><span class="val">24px</span><div class="bar" style="width:24%"></div></div>
+        <div class="space-row"><span class="tk">xl</span><span class="val">40px</span><div class="bar" style="width:40%"></div></div>
+        <div class="space-row"><span class="tk">2xl</span><span class="val">64px</span><div class="bar" style="width:64%"></div></div>
+        <div class="space-row"><span class="tk">3xl</span><span class="val">96px</span><div class="bar" style="width:96%"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">Dyson 라디우스는 미니멀 — 이커머스 컴포넌트별 최소 곡률.</p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:2px"></div>
+          <div class="rad-card__n">Button sm</div>
+          <div class="rad-card__v"><span class="px">2px–4px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:4px"></div>
+          <div class="rad-card__n">Button primary</div>
+          <div class="rad-card__v"><span class="px">4px–6px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:8px"></div>
+          <div class="rad-card__n">Card</div>
+          <div class="rad-card__v"><span class="px">8px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:12px"></div>
+          <div class="rad-card__n">Modal</div>
+          <div class="rad-card__v"><span class="px">12px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px"></div>
+          <div class="rad-card__n">Pill</div>
+          <div class="rad-card__v"><span class="px">999px</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">Dyson 그림자는 미니멀. 제품 이미지가 시각적 깊이를 담당한다.</p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,.12)">
+          <div class="sh-card__n">Card hover</div>
+          <div class="sh-card__d">제품 카드 호버 시 부드러운 부상감</div>
+          <div class="sh-card__v">0 4px 16px rgba(0,0,0,.12)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 8px 32px rgba(0,0,0,.16)">
+          <div class="sh-card__n">Modal / Drawer</div>
+          <div class="sh-card__d">사이드 드로어, 팝업 오버레이</div>
+          <div class="sh-card__v">0 8px 32px rgba(0,0,0,.16)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 2px 8px rgba(0,0,0,.10)">
+          <div class="sh-card__n">Dropdown</div>
+          <div class="sh-card__d">메가 메뉴, 드롭다운 패널</div>
+          <div class="sh-card__v">0 2px 8px rgba(0,0,0,.10)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">08 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Dyson 이커머스의 핵심 UI 컴포넌트 스펙.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">btn-primary</span>
+          <span class="cmp-block__desc">모든 CTA — "Buy now", "Shop", "Add to bag"</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:#0F70F0;color:#fff;border:none;border-radius:4px;padding:12px 24px;font-size:14px;font-weight:600;cursor:pointer;">Shop now</button>
+              <button style="background:#0C5ECB;color:#fff;border:none;border-radius:4px;padding:12px 24px;font-size:14px;font-weight:600;cursor:pointer;">Hover state</button>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #0F70F0</code><br>
+            <code>color: #FFFFFF</code><br>
+            <code>border-radius: 4px</code><br>
+            <code>padding: 12px 24px</code><br>
+            <code>font-weight: 600</code><br>
+            <code>transition: 150ms ease</code>
+            <span class="kr">hover: background #0C5ECB (--yxt-color-brand-hover)</span>
+          </div>
+        </div>
+        <div class="cmp-code">background:#0F70F0;color:#fff;border:none;border-radius:4px;
+padding:12px 24px;font-weight:600;font-size:14px;
+transition:background-color 150ms ease;
+/* hover */ background:#0C5ECB;</div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">btn-secondary</span>
+          <span class="cmp-block__desc">보조 액션 — "Cancel", "Learn more"</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:#EFEFEF;color:#555;border:none;border-radius:4px;padding:10px 24px;font-size:14px;font-weight:600;">Cancel</button>
+              <button style="background:#E8E8E8;color:#555;border:none;border-radius:4px;padding:10px 24px;font-size:14px;font-weight:600;">Hover</button>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #EFEFEF</code><br>
+            <code>color: #555555</code><br>
+            <code>border-radius: 4px</code><br>
+            <code>padding: 10px 24px</code>
+            <span class="kr">hover: background #E8E8E8</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">product-card</span>
+          <span class="cmp-block__desc">제품 그리드 카드 — 이미지 중심</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="padding:16px;">
+              <div style="background:#fff;border-radius:8px;overflow:hidden;border:1px solid #E8E8E8;width:180px;">
+                <div style="background:#F5F5F5;height:120px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#71717a;">제품 이미지</div>
+                <div style="padding:12px 14px;">
+                  <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Dyson V15 Detect</div>
+                  <div style="font-size:12px;color:#555;">£649.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #FFFFFF</code><br>
+            <code>border-radius: 8px</code><br>
+            <code>border: 1px solid #D7D7D7</code><br>
+            <code>overflow: hidden</code>
+            <span class="kr">hover: box-shadow 0 4px 16px rgba(0,0,0,.12)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">09 · CSS · Tailwind</div>
+      <h2 class="section__title">코드 내보내기</h2>
+      <p class="section__lede">바로 붙여넣을 수 있는 CSS 변수와 Tailwind 설정.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'pane-css')">CSS</button>
+          <button onclick="switchTab(this,'pane-tw')">Tailwind</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre><span class="c">/* Dyson Design System — Drop-in CSS */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Brand */</span>
+  <span class="k">--yxt-color-brand-primary</span>: <span class="v">#0F70F0</span>;
+  <span class="k">--yxt-color-brand-hover</span>:   <span class="v">#0C5ECB</span>;
+  <span class="k">--yxt-color-brand-white</span>:   <span class="v">#FFFFFF</span>;
+
+  <span class="c">/* Text */</span>
+  <span class="k">--yxt-color-text-primary</span>: <span class="v">#212121</span>;
+  <span class="k">--color-text-secondary</span>:   <span class="v">#555555</span>;
+
+  <span class="c">/* Background */</span>
+  <span class="k">--color-bg-page</span>:    <span class="v">#FFFFFF</span>;
+  <span class="k">--color-bg-section</span>: <span class="v">#F5F5F5</span>;
+  <span class="k">--color-bg-muted</span>:   <span class="v">#EFEFEF</span>;
+  <span class="k">--color-bg-hover</span>:   <span class="v">#E8E8E8</span>;
+
+  <span class="c">/* Border */</span>
+  <span class="k">--color-border</span>: <span class="v">#D7D7D7</span>;
+
+  <span class="c">/* Semantic */</span>
+  <span class="k">--color-danger</span>: <span class="v">#E64942</span>;
+
+  <span class="c">/* Spacing */</span>
+  <span class="k">--space-xs</span>:  <span class="v">4px</span>;
+  <span class="k">--space-sm</span>:  <span class="v">8px</span>;
+  <span class="k">--space-md</span>:  <span class="v">16px</span>;
+  <span class="k">--space-lg</span>:  <span class="v">24px</span>;
+  <span class="k">--space-xl</span>:  <span class="v">40px</span>;
+  <span class="k">--space-2xl</span>: <span class="v">64px</span>;
+}
+
+<span class="k">body</span> {
+  <span class="k">font-family</span>: <span class="v">system-ui, "Segoe UI", Roboto, sans-serif</span>;
+  <span class="k">font-weight</span>: <span class="v">400</span>;
+  <span class="k">background</span>: <span class="v">var(--color-bg-page)</span>;
+  <span class="k">color</span>: <span class="v">var(--yxt-color-text-primary)</span>;
+}</pre>
+        </div>
+        <div class="code-pane" id="pane-tw">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: <span class="v">'#0F70F0'</span>,
+          hover:   <span class="v">'#0C5ECB'</span>,
+        },
+        neutral: {
+          <span class="v">50</span>:  <span class="v">'#F5F5F5'</span>,
+          <span class="v">100</span>: <span class="v">'#EFEFEF'</span>,
+          <span class="v">200</span>: <span class="v">'#E8E8E8'</span>,
+          <span class="v">300</span>: <span class="v">'#D7D7D7'</span>,
+          <span class="v">500</span>: <span class="v">'#555555'</span>,
+          <span class="v">900</span>: <span class="v">'#212121'</span>,
+        },
+        danger: <span class="v">'#E64942'</span>,
+      },
+      fontFamily: {
+        sans: [<span class="v">'system-ui'</span>, <span class="v">'Segoe UI'</span>, <span class="v">'Roboto'</span>, <span class="v">'sans-serif'</span>],
+      },
+      borderRadius: {
+        btn:  <span class="v">'4px'</span>,
+        card: <span class="v">'8px'</span>,
+        modal: <span class="v">'12px'</span>,
+      },
+    },
+  },
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">10 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Dyson 디자인 시스템을 복제할 때 가장 중요한 규칙들.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>CTA 버튼에 <b>#0F70F0</b> 파란색 사용</li>
+            <li>배경은 <b>#FFFFFF</b> 또는 <b>#F5F5F5</b> — 흰 공간이 프리미엄감</li>
+            <li>텍스트는 <b>#212121</b>에서 <b>#555555</b> 범위 내로</li>
+            <li>버튼 radius는 <b>4px–6px</b> 미니멀하게</li>
+            <li>제품 이미지 품질에 집중 — 이미지가 곧 디자인</li>
+            <li>기술 스펙 수치를 카피에 직접 사용 (신뢰도)</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>CTA에 <code>#EFEFEF</code> 회색 배경 — 파란색만이 Dyson CTA</li>
+            <li>화려한 그라디언트 배경 — Dyson은 클린 화이트</li>
+            <li>무리하게 웹폰트 추가 — 시스템 폰트가 전략적 선택</li>
+            <li>낮은 대비 컬러로 텍스트 — 프리미엄 = 가독성</li>
+            <li>다수의 포인트 컬러 — 파랑 하나로 충분</li>
+            <li>다크 배경을 전체 페이지에 — 히어로 섹션 한정</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <span>오해</span><span>실제</span><span class="kr">설명</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">#000000 검은 배경</span>
+          <span class="right">#FFFFFF 흰 배경</span>
+          <span class="why">마케팅 사이트 기본은 흰 배경. 다크는 특정 히어로에만</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">커스텀 웹폰트</span>
+          <span class="right">system-ui 스택</span>
+          <span class="why">글로벌 이커머스 — 웹폰트 없이 시스템 폰트로 속도 우선</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">빨간/노란 포인트</span>
+          <span class="right">#0F70F0 단색</span>
+          <span class="why">Dyson 디지털 UI는 파란 단색 CTA 전략</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span>insane-design/dyson · 2026-04-13</span>
+      <span class="kr">CSS 파싱 기반 · AI 추론 없음</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+function switchTab(btn, paneId) {
+  btn.closest('.code-export').querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  btn.closest('.code-export').querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById(paneId).classList.add('is-active');
+}
+</script>
+</body>
+</html>

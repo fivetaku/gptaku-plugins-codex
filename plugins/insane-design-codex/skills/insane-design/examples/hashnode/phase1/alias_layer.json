@@ -1,0 +1,80 @@
+{
+  "slug": "hashnode",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [
+      {
+        "alias": "--card-foreground",
+        "references": [
+          "--color-slate-50"
+        ],
+        "terminal_hint": "--color-slate-50"
+      },
+      {
+        "alias": "--popover-foreground",
+        "references": [
+          "--color-slate-50"
+        ],
+        "terminal_hint": "--color-slate-50"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--color-black",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--color-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-bold",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-code",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-headings",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-kbd",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-kbd-shadows",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--tw-prose-invert-links",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-pre-bg",
+        "references": [],
+        "terminal_hint": "#00000080"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 2,
+      "core": 9
+    }
+  }
+}

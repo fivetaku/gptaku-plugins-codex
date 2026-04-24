@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nike — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans:"Pretendard Variable","Inter",-apple-system,sans-serif;
+    --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+    --bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;
+    --border:#e4e4e7;--border-str:#d4d4d8;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem;
+    --brand-color:#111111;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  a{color:inherit;text-decoration:none;}code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;}
+  .sw--l{color:#09090b;}.sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card__v b{font-weight:600;}
+  .comp-demo{background:var(--muted);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 36px;max-width:820px;display:flex;flex-direction:column;gap:20px;}
+  .neon-badge{display:inline-flex;align-items:center;padding:4px 12px;background:#D5FF44;color:#111111;border:1px solid #BAD168;font-size:13px;font-weight:600;border-radius:4px;font-family:Helvetica,Arial,sans-serif;}
+  .nike-btn{display:inline-flex;align-items:center;padding:10px 24px;background:#111111;color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:500;border:none;border-radius:30px;cursor:pointer;}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .code-pane{display:none;}.code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}.dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}.dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+  @media (max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.dd-grid,.qs__grid{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Nike</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">02</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">03</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#semantic"><span class="toc__num">04</span>Podium CDS 토큰</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">05</span>컴포넌트</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">06</span>CSS 스니펫</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">07</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/nike/<br>design.md<br>2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Nike <span class="sub">— near-black + neon lime</span></h1>
+      <p class="hero__sub">nike.com은 순흑/순백 모노크롬 브랜드가 아니다. 실제 텍스트 컬러는 <strong>#111111</strong>(near-black)이고, AI 기능 highlight에는 <strong>#D5FF44</strong>(형광 라임 옐로)가 사용된다. Podium CDS 토큰 시스템 기반.</p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="nike.com — 실제 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Nike처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight</span>
+            <code>body {
+  font-family:
+    <b>"Helvetica Now Text"</b>,
+    Helvetica, Arial,
+    sans-serif;
+  font-weight: <b>400</b>;
+}
+/* 중간 강조는 500 */
+.strong { font-weight: <b>500</b>; }</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · near-black 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  /* ⚠️ #000000 아님! */
+  --fg: <b>#111111</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · Neon AI highlight</span>
+            <code>:root {
+  /* AI 기능 포인트 */
+  --neon: <b>#D5FF44</b>;
+  --neon-border: <b>#BAD168</b>;
+  /* focus ring */
+  --focus: <b>#1151FF</b>;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것:</b> Nike를 "검정과 흰색의 단순 브랜드"로만 생각하는 것. 실제 텍스트는 <code>#111111</code>(near-black)이고, AI 기능에 <code>#D5FF44</code> 네온 포인트가 현재 아이덴티티다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Default Theme</div>
+          <div class="stat__val">Light</div>
+          <div class="stat__hint">bg:#FFFFFF</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand Color</div>
+          <div class="stat__val stat__val--mono" style="color:#111111;">#111111</div>
+          <div class="stat__hint">near-black, 순흑 아님</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Neon Accent</div>
+          <div class="stat__val stat__val--mono" style="color:#888;background:#D5FF44;padding:2px 8px;border-radius:4px;">#D5FF44</div>
+          <div class="stat__hint">AI 기능 highlight</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Token Prefix</div>
+          <div class="stat__val" style="font-size:13px;">--podium-cds-*</div>
+          <div class="stat__hint">Podium Commerce DS</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">CSS 커스텀 프로퍼티를 직접 파싱했으며 AI 추론으로 컬러를 창작하지 않는다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://nike.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">Podium CDS 토큰 시스템</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--podium-cds-*</code></span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+        <div class="prov__row"><span class="prov__k">Class naming</span><span class="prov__v">BEM + <code>nav-css-*</code> 해시 패턴</span></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">02</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">Helvetica Now Text — Monotype 유료 폰트. Nike Futura ND는 headline 전용. 외부 대체재: Inter 또는 DM Sans.</p>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Body</span>
+          <span class="fs-card__v"><b>Helvetica Now Text</b> — Monotype, 26회 감지</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display</span>
+          <span class="fs-card__v"><b>Nike Futura ND</b> — Nike 독점, headline 전용 (2회)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">CSS Token</span>
+          <span class="fs-card__v"><code>--podium-cds-font-family</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight Normal</span>
+          <span class="fs-card__v"><code>400</code> (10회), <code>500</code> (18회), <code>700</code> (4회)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">라이선스</span>
+          <span class="fs-card__v">Helvetica Now Text = Monotype 유료. 외부: Inter / DM Sans</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">03</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">모노크롬 기반 + 네온 라임 포인트. DOM 빈도 기준 추출.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand + Neon Accent</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#111111;"><span class="n">near-black×7</span>#111111</div>
+          <div class="sw sw--d" style="background:#000000;"><span class="n">black×12</span>#000000</div>
+          <div class="sw sw--l" style="background:#D5FF44;"><span class="n">AI Neon×4</span>#D5FF44</div>
+          <div class="sw sw--d" style="background:#1151FF;"><span class="n">Focus×11</span>#1151FF</div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutral Ramp (DOM 빈도 순)</b></div>
+        <div class="ramp ramp--5">
+          <div class="sw sw--d" style="background:#FFFFFF;"><span class="n">×22</span>#FFFFFF</div>
+          <div class="sw sw--d" style="background:#000000;"><span class="n">×12</span>#000000</div>
+          <div class="sw sw--d" style="background:#111111;"><span class="n">×7</span>#111111</div>
+          <div class="sw sw--d" style="background:#707072;"><span class="n">×3</span>#707072</div>
+          <div class="sw sw--d" style="background:#2B333F;"><span class="n">VideoJS×7</span>#2B333F</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>핵심 포인트:</b> <code>#D5FF44</code>(형광 라임 옐로)는 <code>.nav-css-1syi1pm</code> 셀렉터에서 직접 파싱됨. Nike AI 네비게이션 섹션 배경으로 사용. 순수 모노크롬 브랜드에서 이 하나의 네온 포인트가 현재 Nike 디지털 아이덴티티의 핵심이다.
+      </div>
+    </section>
+
+    <section id="semantic">
+      <div class="section__num">04</div>
+      <h2 class="section__title">Podium CDS 토큰</h2>
+      <p class="section__lede">Nike Podium Commerce Design System의 semantic 토큰 레이어.</p>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">text-primary</span>
+          <span class="fs-card__v"><code>--podium-cds-color-text-primary</code> → <code>#111111</code> (폴백값 7회)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">nav AI bg</span>
+          <span class="fs-card__v"><code>nav-css-1syi1pm { background: #D5FF44 }</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">nav AI border</span>
+          <span class="fs-card__v"><code>border: 1px solid #BAD168</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">focus ring</span>
+          <span class="fs-card__v"><code>#1151FF</code> (11회) — 접근성 포커스</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">nav dropdown</span>
+          <span class="fs-card__v"><code>color: #000000</code> — 드롭다운 아이콘</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">05</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Nike AI 네비게이션 badge + Primary CTA 버튼 실제 렌더링.</p>
+      <div class="comp-demo">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <span class="neon-badge">Nike AI</span>
+          <span style="font-size:12px;color:var(--muted-fg);font-family:var(--font-mono);">nav-css-1syi1pm — #D5FF44 + 1px solid #BAD168</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <button class="nike-btn">SHOP NOW</button>
+          <span style="font-size:12px;color:var(--muted-fg);font-family:var(--font-mono);">nds-btn — #111111 bg + UPPERCASE</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <a href="#" style="color:#111111;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:500;cursor:pointer;">Men</a>
+          <span style="font-size:12px;color:var(--muted-fg);font-family:var(--font-mono);">nav-css-ykqebk — color:#111111; font-weight:500</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">06</div>
+      <h2 class="section__title">CSS 스니펫</h2>
+      <p class="section__lede">루트 스타일시트에 복사해서 바로 쓸 수 있는 Nike 디자인 토큰.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" data-tab="css">CSS</button>
+          <button data-tab="tw">Tailwind</button>
+          <button class="code-copy" data-copy>복사</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre>/* Nike — copy into your root stylesheet */
+:root {
+  /* Fonts */
+  --podium-cds-font-family: "Helvetica Now Text",
+    Helvetica, Arial, sans-serif;
+  --podium-cds-font-weight-normal: 400;
+  --podium-cds-font-weight-medium: 500;
+  --podium-cds-font-weight-bold: 700;
+
+  /* Brand */
+  --podium-cds-color-brand: #111111;
+  --podium-cds-color-brand-neon: #D5FF44;
+  --podium-cds-color-neon-border: #BAD168;
+  --podium-cds-color-focus: #1151FF;
+
+  /* Surfaces */
+  --podium-cds-bg-page: #FFFFFF;
+  --podium-cds-bg-dark: #111111;
+  --podium-cds-text: #111111;
+  --podium-cds-text-muted: #707072;
+}</pre>
+        </div>
+        <div class="code-pane" id="pane-tw">
+          <pre>// tailwind.config.js — Nike
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          black: '#111111',
+          neon: '#D5FF44',
+          'neon-border': '#BAD168',
+          focus: '#1151FF',
+        },
+        neutral: {
+          900: '#111111',
+          700: '#707072',
+          100: '#FFFFFF',
+        },
+      },
+      fontFamily: {
+        sans: ['"Helvetica Now Text"',
+          'Helvetica', 'Arial', 'sans-serif'],
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        bold: '700',
+      },
+    },
+  },
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">07</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Nike 디자인을 구현할 때 지켜야 할 핵심 규칙.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>브랜드 컬러로 <code>#111111</code> (near-black, 순흑 아님)</li>
+            <li>AI/혁신 기능에 <code>#D5FF44</code> 네온 라임 포인트</li>
+            <li>포커스 링은 <code>#1151FF</code> 블루</li>
+            <li><code>--podium-cds-color-text-primary</code> 변수 사용</li>
+            <li>headline은 UPPERCASE, 짧고 임팩트 있게</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>Nike를 순흑/순백만으로 표현하지 말 것</li>
+            <li>네온 라임 <code>#D5FF44</code>를 배경 전체에 쓰지 말 것</li>
+            <li>텍스트에 순흑 <code>#000000</code> 대신 <code>#111111</code></li>
+            <li>소문자 headline 쓰지 말 것 — Nike는 UPPERCASE</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<footer class="rfoot">
+  <span>insane-design / nike</span>
+  <span class="kr">CSS 커스텀 프로퍼티 직접 파싱 · AI 컬러 창작 없음</span>
+  <span>2026-04-13</span>
+</footer>
+<script>
+  document.querySelectorAll('.code-tabs button[data-tab]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const tab=btn.dataset.tab;
+      btn.closest('.code-export').querySelectorAll('.code-tabs button[data-tab]').forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      btn.closest('.code-export').querySelectorAll('.code-pane').forEach(p=>p.classList.remove('is-active'));
+      btn.closest('.code-export').querySelector('#pane-'+tab).classList.add('is-active');
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const active=btn.closest('.code-export').querySelector('.code-pane.is-active pre');
+      if(active)navigator.clipboard.writeText(active.textContent).then(()=>{const t=btn.textContent;btn.textContent='복사됨';setTimeout(()=>btn.textContent=t,1400);});
+    });
+  });
+</script>
+</body>
+</html>

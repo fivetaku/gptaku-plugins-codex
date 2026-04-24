@@ -1,0 +1,161 @@
+.hypertuneToolbarMainButtonBackground {
+z-index:100;
+background-color:#0000;
+padding-bottom:30px;
+position:fixed;
+bottom:0;
+left:calc(50% - 60px)}
+.hypertuneToolbarMainButton {
+cursor:pointer;
+-webkit-user-select:none;
+user-select:none;
+background-color:#fff;
+border-width:1px;
+border-color:#eaecf1;
+border-radius:.75rem;
+padding:.5rem;
+box-shadow:0 4px 6px -1px #0000001a,0 2px 4px -1px #0000000f}
+.hypertuneToolbarMainButton:hover {
+background-color:#eaecf1}
+.hypertuneToolbarModalBackground {
+z-index:200;
+flex-direction:column;
+align-items:center;
+width:100%;
+padding-top:4rem;
+padding-bottom:4rem;
+display:flex;
+position:fixed;
+inset:0}
+@media (min-height:900px) {
+.hypertuneToolbarModalBackground {
+padding-top:208px;
+padding-bottom:208px}
+}
+.hypertuneToolbarModal {
+background-color:#fff;
+border-width:1px;
+border-color:#eaecf1;
+border-radius:14px;
+flex-direction:column;
+align-items:stretch;
+width:663px;
+max-height:532px;
+display:flex;
+overflow:hidden;
+box-shadow:0 0 0 3px #7a839614,0 15px 45px #0000001a}
+.hypertuneToolbarHeader {
+border-color:#eaecf1;
+border-bottom-width:1px;
+flex-direction:row;
+align-items:center;
+padding:.75rem 1rem;
+display:flex}
+.hypertuneToolbarMainContainer {
+flex-direction:column;
+width:100%;
+height:100%;
+padding:.75rem .5rem;
+display:flex;
+overflow:hidden auto}
+.hypertuneToolbarFlag {
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+gap:.5rem;
+width:100%;
+max-width:100%;
+min-height:48px;
+padding:10px 20px 10px 16px;
+display:flex}
+.hypertuneToolbarFlagNameContainer {
+flex-direction:row;
+align-items:center;
+gap:.75rem;
+min-width:0;
+display:flex}
+.hypertuneToolbarFlagIconContainer {
+background-color:#5b67e7;
+border-radius:.5rem;
+height:28px;
+padding:6px}
+.hypertuneToolbarFlagName {
+text-overflow:ellipsis;
+white-space:nowrap;
+color:#22252b;
+flex-shrink:1;
+max-width:384px;
+font-size:14px;
+line-height:19.5px;
+overflow:hidden}
+.hypertuneToolbarFlagValueContainer {
+flex-direction:row;
+align-items:center;
+gap:.5rem;
+display:flex}
+.hypertuneToolbarFooter {
+border-color:#eaecf1;
+border-top-width:1px;
+flex-direction:row;
+justify-content:flex-end;
+padding:.75rem 1rem;
+display:flex}
+.hypertuneToolbarSearchTextInput {
+color:#22252b;
+outline:none;
+flex-grow:1;
+font-size:14px}
+.hypertuneToolbarNumberInput {
+text-align:right;
+border-width:1px;
+border-color:#eaecf1;
+border-radius:.5rem;
+outline-style:none;
+padding:.25rem .5rem;
+font-size:13px;
+line-height:19.5px}
+.hypertuneToolbarNumberInput:hover {
+border-color:#5b67e7}
+.hypertuneToolbarNumberInput:focus {
+border-color:#5b67e7;
+box-shadow:0 0 0 2px #5b67e726}
+.hypertuneToolbarButton {
+cursor:pointer;
+color:#7a8396;
+border-radius:.5rem;
+padding:7px;
+font-size:13px;
+line-height:16px}
+.hypertuneToolbarButton:hover {
+background-color:#f9f9fb}
+.hypertuneToolbarButton:active {
+background-color:#eaecf1}
+.hypertuneToolbarToggle {
+cursor:pointer;
+background-color:#c5c9d3;
+border-radius:9999px;
+width:36px;
+height:20px;
+padding:2px;
+transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;
+transition-duration:.3s;
+transition-timing-function:cubic-bezier(.4,0,.2,1);
+display:inline-flex;
+position:relative}
+.hypertuneToolbarToggle:hover {
+background-color:#c5c9d3cc}
+.hypertuneToolbarToggle[aria-checked=true] {
+background-color:#5b67e7}
+.hypertuneToolbarToggle span {
+background-color:#fff;
+border-radius:9999px;
+width:16px;
+height:16px;
+transition-property:all;
+transition-duration:.3s;
+transition-timing-function:cubic-bezier(.4,0,.2,1);
+position:relative;
+left:0%}
+.hypertuneToolbarToggle[aria-checked=true] span {
+left:100%;
+transform:translate(-100%)}

@@ -1,0 +1,409 @@
+{
+  "slug": "daangn",
+  "total_vars": 674,
+  "resolved_count": 558,
+  "unresolved_count": 116,
+  "samples": {
+    "--carotene-enter-translate-x": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--carotene-enter-translate-x",
+        "100%"
+      ]
+    },
+    "--carotene-enter-translate-y": {
+      "raw": "var(--carotene-spacing-2)",
+      "resolved": ".5rem",
+      "chain": [
+        "--carotene-enter-translate-y",
+        "--carotene-spacing-2",
+        ".5rem"
+      ]
+    },
+    "--carotene-enter-opacity": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--carotene-enter-opacity",
+        "0"
+      ]
+    },
+    "--carotene-enter-scale": {
+      "raw": ".98",
+      "resolved": ".98",
+      "chain": [
+        "--carotene-enter-scale",
+        ".98"
+      ]
+    },
+    "--carotene-exit-translate-x": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--carotene-exit-translate-x",
+        "100%"
+      ]
+    },
+    "--carotene-exit-translate-y": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--carotene-exit-translate-y",
+        "100%"
+      ]
+    },
+    "--carotene-exit-opacity": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--carotene-exit-opacity",
+        "0"
+      ]
+    },
+    "--carotene-exit-scale": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--carotene-exit-scale",
+        "1"
+      ]
+    },
+    "--_1s63ipf1": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--_1s63ipf1",
+        "100%"
+      ]
+    },
+    "--_1s63ipf2": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--_1s63ipf2",
+        "100%"
+      ]
+    },
+    "--_1s63ipf3": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--_1s63ipf3",
+        "100%"
+      ]
+    },
+    "--tw-content": {
+      "raw": "\"\"",
+      "resolved": null,
+      "chain": [
+        "--tw-content",
+        "\"\""
+      ]
+    },
+    "--carotene-color-palette-static-black": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--carotene-color-palette-static-black",
+        "#000000"
+      ]
+    },
+    "--carotene-color-palette-static-black-alpha-500": {
+      "raw": "#00000080",
+      "resolved": "#00000080",
+      "chain": [
+        "--carotene-color-palette-static-black-alpha-500",
+        "#00000080"
+      ]
+    },
+    "--carotene-color-palette-static-white": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--carotene-color-palette-static-white",
+        "#ffffff"
+      ]
+    },
+    "--carotene-color-palette-static-white-alpha-200": {
+      "raw": "#ffffff33",
+      "resolved": "#ffffff33",
+      "chain": [
+        "--carotene-color-palette-static-white-alpha-200",
+        "#ffffff33"
+      ]
+    },
+    "--carotene-spacing-1": {
+      "raw": ".25rem",
+      "resolved": ".25rem",
+      "chain": [
+        "--carotene-spacing-1",
+        ".25rem"
+      ]
+    },
+    "--carotene-spacing-2": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--carotene-spacing-2",
+        ".5rem"
+      ]
+    },
+    "--carotene-spacing-3": {
+      "raw": ".75rem",
+      "resolved": ".75rem",
+      "chain": [
+        "--carotene-spacing-3",
+        ".75rem"
+      ]
+    },
+    "--carotene-spacing-4": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--carotene-spacing-4",
+        "1rem"
+      ]
+    },
+    "--carotene-spacing-5": {
+      "raw": "1.25rem",
+      "resolved": "1.25rem",
+      "chain": [
+        "--carotene-spacing-5",
+        "1.25rem"
+      ]
+    },
+    "--carotene-spacing-6": {
+      "raw": "1.5rem",
+      "resolved": "1.5rem",
+      "chain": [
+        "--carotene-spacing-6",
+        "1.5rem"
+      ]
+    },
+    "--carotene-spacing-7": {
+      "raw": "1.75rem",
+      "resolved": "1.75rem",
+      "chain": [
+        "--carotene-spacing-7",
+        "1.75rem"
+      ]
+    },
+    "--carotene-spacing-8": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--carotene-spacing-8",
+        "2rem"
+      ]
+    },
+    "--carotene-spacing-10": {
+      "raw": "2.5rem",
+      "resolved": "2.5rem",
+      "chain": [
+        "--carotene-spacing-10",
+        "2.5rem"
+      ]
+    },
+    "--carotene-spacing-11": {
+      "raw": "2.75rem",
+      "resolved": "2.75rem",
+      "chain": [
+        "--carotene-spacing-11",
+        "2.75rem"
+      ]
+    },
+    "--carotene-spacing-12": {
+      "raw": "3rem",
+      "resolved": "3rem",
+      "chain": [
+        "--carotene-spacing-12",
+        "3rem"
+      ]
+    },
+    "--carotene-spacing-16": {
+      "raw": "4rem",
+      "resolved": "4rem",
+      "chain": [
+        "--carotene-spacing-16",
+        "4rem"
+      ]
+    },
+    "--carotene-spacing-20": {
+      "raw": "5rem",
+      "resolved": "5rem",
+      "chain": [
+        "--carotene-spacing-20",
+        "5rem"
+      ]
+    },
+    "--carotene-spacing-24": {
+      "raw": "6rem",
+      "resolved": "6rem",
+      "chain": [
+        "--carotene-spacing-24",
+        "6rem"
+      ]
+    },
+    "--carotene-spacing-32": {
+      "raw": "8rem",
+      "resolved": "8rem",
+      "chain": [
+        "--carotene-spacing-32",
+        "8rem"
+      ]
+    },
+    "--carotene-size-1": {
+      "raw": ".25rem",
+      "resolved": ".25rem",
+      "chain": [
+        "--carotene-size-1",
+        ".25rem"
+      ]
+    },
+    "--carotene-size-2": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--carotene-size-2",
+        ".5rem"
+      ]
+    },
+    "--carotene-size-3": {
+      "raw": ".75rem",
+      "resolved": ".75rem",
+      "chain": [
+        "--carotene-size-3",
+        ".75rem"
+      ]
+    },
+    "--carotene-size-4": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--carotene-size-4",
+        "1rem"
+      ]
+    },
+    "--carotene-size-5": {
+      "raw": "1.25rem",
+      "resolved": "1.25rem",
+      "chain": [
+        "--carotene-size-5",
+        "1.25rem"
+      ]
+    },
+    "--carotene-size-6": {
+      "raw": "1.5rem",
+      "resolved": "1.5rem",
+      "chain": [
+        "--carotene-size-6",
+        "1.5rem"
+      ]
+    },
+    "--carotene-size-7": {
+      "raw": "1.75rem",
+      "resolved": "1.75rem",
+      "chain": [
+        "--carotene-size-7",
+        "1.75rem"
+      ]
+    },
+    "--carotene-size-8": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--carotene-size-8",
+        "2rem"
+      ]
+    },
+    "--carotene-size-10": {
+      "raw": "2.5rem",
+      "resolved": "2.5rem",
+      "chain": [
+        "--carotene-size-10",
+        "2.5rem"
+      ]
+    },
+    "--carotene-size-12": {
+      "raw": "3rem",
+      "resolved": "3rem",
+      "chain": [
+        "--carotene-size-12",
+        "3rem"
+      ]
+    },
+    "--carotene-size-16": {
+      "raw": "4rem",
+      "resolved": "4rem",
+      "chain": [
+        "--carotene-size-16",
+        "4rem"
+      ]
+    },
+    "--carotene-size-20": {
+      "raw": "5rem",
+      "resolved": "5rem",
+      "chain": [
+        "--carotene-size-20",
+        "5rem"
+      ]
+    },
+    "--carotene-size-24": {
+      "raw": "6rem",
+      "resolved": "6rem",
+      "chain": [
+        "--carotene-size-24",
+        "6rem"
+      ]
+    },
+    "--carotene-size-32": {
+      "raw": "8rem",
+      "resolved": "8rem",
+      "chain": [
+        "--carotene-size-32",
+        "8rem"
+      ]
+    },
+    "--carotene-radius-1": {
+      "raw": ".25rem",
+      "resolved": ".25rem",
+      "chain": [
+        "--carotene-radius-1",
+        ".25rem"
+      ]
+    },
+    "--carotene-radius-2": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--carotene-radius-2",
+        ".5rem"
+      ]
+    },
+    "--carotene-radius-3": {
+      "raw": ".75rem",
+      "resolved": ".75rem",
+      "chain": [
+        "--carotene-radius-3",
+        ".75rem"
+      ]
+    },
+    "--carotene-radius-4": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--carotene-radius-4",
+        "1rem"
+      ]
+    },
+    "--carotene-radius-5": {
+      "raw": "1.25rem",
+      "resolved": "1.25rem",
+      "chain": [
+        "--carotene-radius-5",
+        "1.25rem"
+      ]
+    }
+  }
+}

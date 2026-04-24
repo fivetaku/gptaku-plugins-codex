@@ -1,0 +1,138 @@
+
+
+    body {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        background-color: #ffffff;
+        font-family: 'AvenirNextLTW02-Medium', Helvetica, Arial, Verdana, sans-serif;
+        color: #000000;
+        font-size: 100%;
+        background: url("/media/SPA-sitefailover/sitedownpage/images/sitedown_background.jpg") no-repeat left center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .top-logo {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: red;
+        padding-top: 20px;
+        height: 41px;
+        background-color: white;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .top-logo img {
+        width: 137px;
+        padding-left: 67px;
+    }
+    .textholder-wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .textholder {
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 46%;
+        padding: 30px;
+        text-align: center;
+        color: #020202;
+        font-size: 13px;
+        line-height: 19px;
+        transform: translate(0%, 11%);
+        left: 39%;
+        position: absolute;
+    }
+    h2 {
+        font-family: 'Avenir Next LT W02 Bold', Helvetica, Arial, Verdana, sans-serif;
+        font-size: 23px;
+        letter-spacing: 1.5px;
+    }
+    h3 {
+        font-size: 14px;
+        clear: both;
+        font-family:'Avenir Next W02 Light', Helvetica, Arial, Verdana, sans-serif;
+        padding: 0 10px;
+    }
+    table {
+        width: 100%;
+    }
+    .line {
+        position: relative;
+        width: 50%;
+    }
+    .line:before {
+        content: "";
+        background-color: rgba(0,0,0,0.3);
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 24px;
+    }
+    p {
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        font-family:'Avenir Next W02 Light', Helvetica, Arial, Verdana, sans-serif;
+        margin-top: 0;
+    }
+    p a:link {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-family: Helvetica;
+    }
+    .eu-phones {
+        float: left;
+        width: 33%;
+        text-align: left;
+        padding-bottom: 18px;
+    }
+    .photo-credit {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        font-size: 10px;
+    }
+
+    @media (max-width:1200px) {
+        .textholder {
+            width: 60%;
+            left: 28%;
+        }
+    }
+
+    @media (max-width:900px) {
+        .textholder {
+            transform: translate(0%, 4%);
+        }
+    }
+
+    @media (max-width:800px) {
+        .textholder {
+            width: 80%;
+            left: 6%;
+            transform: translate(0,0);
+            top: 35px;
+        }
+    }
+    @media (max-width:550px) {
+        .textholder {
+            transform: translate(0, 0);
+            left: 2%;
+            width: 85%;
+            padding: 5%;
+            margin-bottom: 35px;
+        }
+        .eu-phones {
+            margin-left: 10%;
+            width: 65%;
+            float: none;
+            padding-bottom: 0;
+        }
+    }

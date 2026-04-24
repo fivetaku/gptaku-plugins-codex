@@ -1,0 +1,72 @@
+{
+  "slug": "coinbase",
+  "total_vars": 8,
+  "resolved_count": 1,
+  "unresolved_count": 7,
+  "samples": {
+    "--ot-footer-space": {
+      "raw": "160px",
+      "resolved": "160px",
+      "chain": [
+        "--ot-footer-space",
+        "160px"
+      ]
+    },
+    "--cds-font-fallback": {
+      "raw": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "resolved": null,
+      "chain": [
+        "--cds-font-fallback",
+        "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica\", \"Arial\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+      ]
+    },
+    "--cds-font-display": {
+      "raw": "CoinbaseDisplay, var(--cds-font-fallback)",
+      "resolved": null,
+      "chain": [
+        "--cds-font-display",
+        "CoinbaseDisplay, var(--cds-font-fallback)"
+      ]
+    },
+    "--cds-font-sans": {
+      "raw": "CoinbaseSans, var(--cds-font-fallback)",
+      "resolved": null,
+      "chain": [
+        "--cds-font-sans",
+        "CoinbaseSans, var(--cds-font-fallback)"
+      ]
+    },
+    "--cds-font-text": {
+      "raw": "CoinbaseText, var(--cds-font-fallback)",
+      "resolved": null,
+      "chain": [
+        "--cds-font-text",
+        "CoinbaseText, var(--cds-font-fallback)"
+      ]
+    },
+    "--cds-font-mono": {
+      "raw": "CoinbaseMono, var(--cds-font-fallback)",
+      "resolved": null,
+      "chain": [
+        "--cds-font-mono",
+        "CoinbaseMono, var(--cds-font-fallback)"
+      ]
+    },
+    "--cds-font-condensed": {
+      "raw": "CoinbaseCondensed, var(--cds-font-fallback)",
+      "resolved": null,
+      "chain": [
+        "--cds-font-condensed",
+        "CoinbaseCondensed, var(--cds-font-fallback)"
+      ]
+    },
+    "--bookendRadius": {
+      "raw": "var(--borderRadius-400)",
+      "resolved": null,
+      "chain": [
+        "--bookendRadius",
+        "--borderRadius-400"
+      ]
+    }
+  }
+}

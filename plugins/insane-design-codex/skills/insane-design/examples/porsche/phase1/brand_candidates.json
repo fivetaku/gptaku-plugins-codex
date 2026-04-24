@@ -1,0 +1,97 @@
+{
+  "slug": "porsche",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".DatabaseButton__wrapper__0808c",
+      "property": "background-color",
+      "hex": "#0E0E12",
+      "rule_snippet": ".DatabaseButton__wrapper__0808c {background-color:#0e0e12;border:1px solid #fff;border-radius:8px;padding:6px 10px;width:185px;z-index:2000}"
+    },
+    {
+      "selector": ".DatabaseButton__wrapper__0808c",
+      "property": "border",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".DatabaseButton__wrapper__0808c {background-color:#0e0e12;border:1px solid #fff;border-radius:8px;padding:6px 10px;width:185px;z-index:2000}"
+    },
+    {
+      "selector": ".DevToolsSidebar__toggleButton__14360",
+      "property": "background",
+      "hex": "#0E0E12",
+      "rule_snippet": ".DevToolsSidebar__toggleButton__14360 {align-items:center;background:#0e0e12;border:1px solid hsla(0,0%,100%,.6);border-radius:8px 0 0 8px;border-right:none;color:#fff;cursor:pointer;display:flex;heig"
+    },
+    {
+      "selector": ".DevToolsSidebar__toggleButton__14360",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".DevToolsSidebar__toggleButton__14360 {align-items:center;background:#0e0e12;border:1px solid hsla(0,0%,100%,.6);border-radius:8px 0 0 8px;border-right:none;color:#fff;cursor:pointer;display:flex;heig"
+    },
+    {
+      "selector": ".DevToolsSidebar__toggleButton__14360:hover",
+      "property": "background",
+      "hex": "#1A1A24",
+      "rule_snippet": ".DevToolsSidebar__toggleButton__14360:hover {background:#1a1a24;border-color:#fff}"
+    },
+    {
+      "selector": ".DevToolsSidebar__toggleButton__14360:hover",
+      "property": "border-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".DevToolsSidebar__toggleButton__14360:hover {background:#1a1a24;border-color:#fff}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0E0E12",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1A1A24",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#555555",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#CC0000",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EEEEEE",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#EEEFF2",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0E1418",
+      "count": 1,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 15,
+    "by_role": {
+      "chromatic": 5,
+      "neutral": 4,
+      "selector": 6
+    }
+  }
+}

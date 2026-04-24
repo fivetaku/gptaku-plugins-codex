@@ -1,0 +1,190 @@
+{
+  "slug": "tinybird",
+  "semantic_vars": [
+    {
+      "name": "--primary",
+      "value_hex": "#27F795",
+      "role": "primary"
+    },
+    {
+      "name": "--primary-dark",
+      "value_hex": "#008060",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": "button,input,optgroup,select,textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input,optgroup,select,textarea { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-r"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-radius:0 }"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#008060",
+      "count": 48,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#800000",
+      "count": 34,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000000",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#262626",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#61C454",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EC6D62",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F5C451",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#27F795",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00C1FF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00FF00",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0A0A0A",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#202020",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#303347",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#30334700",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3C3C3C",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F8AC49",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FC9F5B",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FF8389",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF50",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000040",
+      "count": 1,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000FF",
+      "count": 1,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#007AFF",
+      "count": 1,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00DDDD",
+      "count": 1,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#151515",
+      "count": 1,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#25283D",
+      "count": 1,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 34,
+    "by_role": {
+      "chromatic": 17,
+      "neutral": 13,
+      "primary": 2,
+      "selector": 2
+    }
+  }
+}

@@ -1,0 +1,595 @@
+{
+  "slug": "axiom",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--blue-01",
+        "references": [],
+        "terminal_hint": "#0d1520"
+      },
+      {
+        "alias": "--blue-02",
+        "references": [],
+        "terminal_hint": "#111927"
+      },
+      {
+        "alias": "--blue-03",
+        "references": [],
+        "terminal_hint": "#0d2847"
+      },
+      {
+        "alias": "--blue-04",
+        "references": [],
+        "terminal_hint": "#003362"
+      },
+      {
+        "alias": "--blue-05",
+        "references": [],
+        "terminal_hint": "#004074"
+      },
+      {
+        "alias": "--blue-06",
+        "references": [],
+        "terminal_hint": "#104d87"
+      },
+      {
+        "alias": "--blue-07",
+        "references": [],
+        "terminal_hint": "#205d9e"
+      },
+      {
+        "alias": "--blue-08",
+        "references": [],
+        "terminal_hint": "#2870bd"
+      },
+      {
+        "alias": "--blue-09",
+        "references": [],
+        "terminal_hint": "#0090ff"
+      },
+      {
+        "alias": "--blue-10",
+        "references": [],
+        "terminal_hint": "#3b9eff"
+      },
+      {
+        "alias": "--blue-11",
+        "references": [],
+        "terminal_hint": "#70b8ff"
+      },
+      {
+        "alias": "--blue-12",
+        "references": [],
+        "terminal_hint": "#c2e6ff"
+      },
+      {
+        "alias": "--gray-00",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--gray-01",
+        "references": [],
+        "terminal_hint": "#111111"
+      },
+      {
+        "alias": "--gray-02",
+        "references": [],
+        "terminal_hint": "#191919"
+      },
+      {
+        "alias": "--gray-03",
+        "references": [],
+        "terminal_hint": "#222222"
+      },
+      {
+        "alias": "--gray-04",
+        "references": [],
+        "terminal_hint": "#2a2a2a"
+      },
+      {
+        "alias": "--gray-05",
+        "references": [],
+        "terminal_hint": "#313131"
+      },
+      {
+        "alias": "--gray-06",
+        "references": [],
+        "terminal_hint": "#3a3a3a"
+      },
+      {
+        "alias": "--gray-07",
+        "references": [],
+        "terminal_hint": "#484848"
+      },
+      {
+        "alias": "--gray-08",
+        "references": [],
+        "terminal_hint": "#606060"
+      },
+      {
+        "alias": "--gray-09",
+        "references": [],
+        "terminal_hint": "#6e6e6e"
+      },
+      {
+        "alias": "--gray-10",
+        "references": [],
+        "terminal_hint": "#7b7b7b"
+      },
+      {
+        "alias": "--gray-11",
+        "references": [],
+        "terminal_hint": "#b4b4b4"
+      },
+      {
+        "alias": "--gray-12",
+        "references": [],
+        "terminal_hint": "#eeeeee"
+      },
+      {
+        "alias": "--gray-13",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--green-01",
+        "references": [],
+        "terminal_hint": "#0d1512"
+      },
+      {
+        "alias": "--green-02",
+        "references": [],
+        "terminal_hint": "#121c18"
+      },
+      {
+        "alias": "--green-03",
+        "references": [],
+        "terminal_hint": "#0f2e22"
+      },
+      {
+        "alias": "--green-04",
+        "references": [],
+        "terminal_hint": "#0b3b2c"
+      },
+      {
+        "alias": "--green-05",
+        "references": [],
+        "terminal_hint": "#114837"
+      },
+      {
+        "alias": "--green-06",
+        "references": [],
+        "terminal_hint": "#1b5745"
+      },
+      {
+        "alias": "--green-07",
+        "references": [],
+        "terminal_hint": "#246854"
+      },
+      {
+        "alias": "--green-08",
+        "references": [],
+        "terminal_hint": "#2a7e68"
+      },
+      {
+        "alias": "--green-09",
+        "references": [],
+        "terminal_hint": "#29a383"
+      },
+      {
+        "alias": "--green-10",
+        "references": [],
+        "terminal_hint": "#27b08b"
+      },
+      {
+        "alias": "--green-11",
+        "references": [],
+        "terminal_hint": "#1fd8a4"
+      },
+      {
+        "alias": "--green-12",
+        "references": [],
+        "terminal_hint": "#adf0d4"
+      },
+      {
+        "alias": "--orange-01",
+        "references": [],
+        "terminal_hint": "#17120e"
+      },
+      {
+        "alias": "--orange-02",
+        "references": [],
+        "terminal_hint": "#1e160f"
+      },
+      {
+        "alias": "--orange-03",
+        "references": [],
+        "terminal_hint": "#331e0b"
+      },
+      {
+        "alias": "--orange-04",
+        "references": [],
+        "terminal_hint": "#462100"
+      },
+      {
+        "alias": "--orange-05",
+        "references": [],
+        "terminal_hint": "#562800"
+      },
+      {
+        "alias": "--orange-06",
+        "references": [],
+        "terminal_hint": "#66350c"
+      },
+      {
+        "alias": "--orange-07",
+        "references": [],
+        "terminal_hint": "#7e451d"
+      },
+      {
+        "alias": "--orange-08",
+        "references": [],
+        "terminal_hint": "#a35829"
+      },
+      {
+        "alias": "--orange-09",
+        "references": [],
+        "terminal_hint": "#f76b15"
+      },
+      {
+        "alias": "--orange-10",
+        "references": [],
+        "terminal_hint": "#ff801f"
+      },
+      {
+        "alias": "--orange-11",
+        "references": [],
+        "terminal_hint": "#ffa057"
+      },
+      {
+        "alias": "--orange-12",
+        "references": [],
+        "terminal_hint": "#ffe0c2"
+      },
+      {
+        "alias": "--purple-01",
+        "references": [],
+        "terminal_hint": "#14121f"
+      },
+      {
+        "alias": "--purple-02",
+        "references": [],
+        "terminal_hint": "#1b1525"
+      },
+      {
+        "alias": "--purple-03",
+        "references": [],
+        "terminal_hint": "#291f43"
+      },
+      {
+        "alias": "--purple-04",
+        "references": [],
+        "terminal_hint": "#33255b"
+      },
+      {
+        "alias": "--purple-05",
+        "references": [],
+        "terminal_hint": "#3c2e69"
+      },
+      {
+        "alias": "--purple-06",
+        "references": [],
+        "terminal_hint": "#473876"
+      },
+      {
+        "alias": "--purple-07",
+        "references": [],
+        "terminal_hint": "#56468b"
+      },
+      {
+        "alias": "--purple-08",
+        "references": [],
+        "terminal_hint": "#6958ad"
+      },
+      {
+        "alias": "--purple-09",
+        "references": [],
+        "terminal_hint": "#6e56cf"
+      },
+      {
+        "alias": "--purple-10",
+        "references": [],
+        "terminal_hint": "#7d66d9"
+      },
+      {
+        "alias": "--purple-11",
+        "references": [],
+        "terminal_hint": "#baa7ff"
+      },
+      {
+        "alias": "--purple-12",
+        "references": [],
+        "terminal_hint": "#e2ddfe"
+      },
+      {
+        "alias": "--red-01",
+        "references": [],
+        "terminal_hint": "#191111"
+      },
+      {
+        "alias": "--red-02",
+        "references": [],
+        "terminal_hint": "#201314"
+      },
+      {
+        "alias": "--red-03",
+        "references": [],
+        "terminal_hint": "#3b1219"
+      },
+      {
+        "alias": "--red-04",
+        "references": [],
+        "terminal_hint": "#500f1c"
+      },
+      {
+        "alias": "--red-05",
+        "references": [],
+        "terminal_hint": "#611623"
+      },
+      {
+        "alias": "--red-06",
+        "references": [],
+        "terminal_hint": "#72232d"
+      },
+      {
+        "alias": "--red-07",
+        "references": [],
+        "terminal_hint": "#8c333a"
+      },
+      {
+        "alias": "--red-08",
+        "references": [],
+        "terminal_hint": "#b54548"
+      },
+      {
+        "alias": "--red-09",
+        "references": [],
+        "terminal_hint": "#e5484d"
+      },
+      {
+        "alias": "--red-10",
+        "references": [],
+        "terminal_hint": "#ec5d5e"
+      },
+      {
+        "alias": "--red-11",
+        "references": [],
+        "terminal_hint": "#ff9592"
+      },
+      {
+        "alias": "--red-12",
+        "references": [],
+        "terminal_hint": "#ffd1d9"
+      },
+      {
+        "alias": "--teal-01",
+        "references": [],
+        "terminal_hint": "#0d1514"
+      },
+      {
+        "alias": "--teal-02",
+        "references": [],
+        "terminal_hint": "#111c1b"
+      },
+      {
+        "alias": "--teal-03",
+        "references": [],
+        "terminal_hint": "#0d2d2a"
+      },
+      {
+        "alias": "--teal-04",
+        "references": [],
+        "terminal_hint": "#023b37"
+      },
+      {
+        "alias": "--teal-05",
+        "references": [],
+        "terminal_hint": "#084843"
+      },
+      {
+        "alias": "--teal-06",
+        "references": [],
+        "terminal_hint": "#145750"
+      },
+      {
+        "alias": "--teal-07",
+        "references": [],
+        "terminal_hint": "#1c6961"
+      },
+      {
+        "alias": "--teal-08",
+        "references": [],
+        "terminal_hint": "#207e73"
+      },
+      {
+        "alias": "--teal-09",
+        "references": [],
+        "terminal_hint": "#12a594"
+      },
+      {
+        "alias": "--teal-10",
+        "references": [],
+        "terminal_hint": "#0eb39e"
+      },
+      {
+        "alias": "--teal-11",
+        "references": [],
+        "terminal_hint": "#0bd8b6"
+      },
+      {
+        "alias": "--teal-12",
+        "references": [],
+        "terminal_hint": "#adf0dd"
+      },
+      {
+        "alias": "--tw-prose-invert-body",
+        "references": [],
+        "terminal_hint": "#d4d4d4"
+      },
+      {
+        "alias": "--tw-prose-invert-bold",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-bullets",
+        "references": [],
+        "terminal_hint": "#525252"
+      },
+      {
+        "alias": "--tw-prose-invert-captions",
+        "references": [],
+        "terminal_hint": "#a3a3a3"
+      },
+      {
+        "alias": "--tw-prose-invert-code",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-counters",
+        "references": [],
+        "terminal_hint": "#a3a3a3"
+      },
+      {
+        "alias": "--tw-prose-invert-headings",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-hr",
+        "references": [],
+        "terminal_hint": "#404040"
+      },
+      {
+        "alias": "--tw-prose-invert-kbd",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-lead",
+        "references": [],
+        "terminal_hint": "#a3a3a3"
+      },
+      {
+        "alias": "--tw-prose-invert-links",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tw-prose-invert-pre-bg",
+        "references": [],
+        "terminal_hint": "rgb(0 0 0/50%)"
+      },
+      {
+        "alias": "--tw-prose-invert-pre-code",
+        "references": [],
+        "terminal_hint": "#d4d4d4"
+      },
+      {
+        "alias": "--tw-prose-invert-quote-borders",
+        "references": [],
+        "terminal_hint": "#404040"
+      },
+      {
+        "alias": "--tw-prose-invert-quotes",
+        "references": [],
+        "terminal_hint": "#f5f5f5"
+      },
+      {
+        "alias": "--tw-prose-invert-td-borders",
+        "references": [],
+        "terminal_hint": "#404040"
+      },
+      {
+        "alias": "--tw-prose-invert-th-borders",
+        "references": [],
+        "terminal_hint": "#525252"
+      },
+      {
+        "alias": "--yellow-01",
+        "references": [],
+        "terminal_hint": "#14120b"
+      },
+      {
+        "alias": "--yellow-02",
+        "references": [],
+        "terminal_hint": "#1b180f"
+      },
+      {
+        "alias": "--yellow-03",
+        "references": [],
+        "terminal_hint": "#2d2305"
+      },
+      {
+        "alias": "--yellow-04",
+        "references": [],
+        "terminal_hint": "#362b00"
+      },
+      {
+        "alias": "--yellow-05",
+        "references": [],
+        "terminal_hint": "#433500"
+      },
+      {
+        "alias": "--yellow-06",
+        "references": [],
+        "terminal_hint": "#524202"
+      },
+      {
+        "alias": "--yellow-07",
+        "references": [],
+        "terminal_hint": "#665417"
+      },
+      {
+        "alias": "--yellow-08",
+        "references": [],
+        "terminal_hint": "#836a21"
+      },
+      {
+        "alias": "--yellow-09",
+        "references": [],
+        "terminal_hint": "#ffe629"
+      },
+      {
+        "alias": "--yellow-10",
+        "references": [],
+        "terminal_hint": "#ffff57"
+      },
+      {
+        "alias": "--yellow-11",
+        "references": [],
+        "terminal_hint": "#f5e147"
+      },
+      {
+        "alias": "--yellow-12",
+        "references": [],
+        "terminal_hint": "#f6eeb4"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 115
+    }
+  }
+}

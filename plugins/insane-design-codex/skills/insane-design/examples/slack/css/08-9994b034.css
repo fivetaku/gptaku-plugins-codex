@@ -1,0 +1,95 @@
+.c-bento-sticky-toc {
+  z-index:100;
+  background-color:#f9f0ff;
+  border:.75px solid #eac8fe;
+  border-radius:3.75rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  justify-self:center;
+  align-items:center;
+  gap:.75rem;
+  width:fit-content;
+  max-width:95%;
+  margin-bottom:4.5rem;
+  margin-left:auto;
+  margin-right:auto;
+  padding:.3125rem .4rem;
+  display:flex;
+  position:sticky;
+  top:92px;
+  box-shadow:0 3.073px 9.372px #6a6a6a40
+}
+.c-bento-sticky-toc .c-bento-sticky-toc__item {
+  font-family:var(--font-family-heading);
+  color:#3d0157;
+  border-radius:90px;
+  padding:.75rem;
+  font-size:1.125rem
+}
+.c-bento-sticky-toc .c-bento-sticky-toc__item.is-active {
+  background-color:#f2defe
+}
+.c-bento-sticky-toc .c-bento-sticky-toc__item:hover {
+  background-color:#e5b9fe
+}
+.c-bento-sticky-toc-mobile {
+  z-index:50;
+  background-color:#f9f0ff;
+  flex-direction:column;
+  width:100%;
+  display:flex;
+  position:sticky;
+  top:54px;
+  box-shadow:0 3.073px 9.372px #6a6a6a40
+}
+.c-bento-sticky-toc-mobile .c-bento-sticky-toc-mobile__panel-item,.c-bento-sticky-toc-mobile .c-bento-sticky-toc-mobile__top-row {
+  font-family:var(--font-family-heading);
+  color:#3d0157;
+  text-align:left;
+  align-content:center;
+  width:100%;
+  padding:1rem 4vw;
+  font-size:1rem
+}
+.c-bento-sticky-toc-mobile .c-bento-sticky-toc-mobile__panel-item.is-active,.c-bento-sticky-toc-mobile .c-bento-sticky-toc-mobile__top-row.is-active {
+  background-color:#fff
+}
+.c-bento-sticky-toc-mobile .c-bento-sticky-toc-mobile__top-row {
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  display:flex
+}
+.c-bento-sticky-toc-mobile.is-closed-mobile .c-bento-sticky-toc-mobile__panel {
+  display:none
+}
+.c-bento-sticky-toc-mobile.is-open-mobile {
+  z-index:1001;
+  width:100%;
+  height:100vh;
+  position:fixed;
+  top:0
+}
+.c-bento-sticky-toc-mobile.is-open-mobile .c-bento-sticky-toc-mobile__top-row {
+  display:none
+}
+.c-bento-sticky-toc-mobile.is-open-mobile .c-bento-sticky-toc-mobile__panel-header {
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  padding:.7rem 4vw;
+  display:flex
+}
+.c-bento-sticky-toc-mobile.is-open-mobile .c-bento-sticky-toc-mobile__panel-header .c-bento-sticky-toc-mobile__close-icon {
+  transform:rotate(180deg)
+}
+.c-bento-sticky-toc-mobile.is-open-mobile .c-bento-sticky-toc-mobile__panel-items {
+  width:100%;
+  padding:0 4vw
+}
+.c-bento-sticky-toc-mobile.is-open-mobile .c-bento-sticky-toc-mobile__panel {
+  flex-direction:column;
+  align-items:flex-start;
+  display:flex
+}

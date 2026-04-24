@@ -1,0 +1,638 @@
+{
+  "slug": "mckinsey",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--button-disabled-text",
+        "references": [
+          "--mdc-color-neutral-gray-54"
+        ],
+        "terminal_hint": "--mdc-color-neutral-gray-54"
+      },
+      {
+        "alias": "--button-focus-default",
+        "references": [
+          "--mdc-color-neutral-gray-60"
+        ],
+        "terminal_hint": "--mdc-color-neutral-gray-60"
+      },
+      {
+        "alias": "--button-gradient-border-background",
+        "references": [
+          "--mdc-color-palette-deep-blue"
+        ],
+        "terminal_hint": "--mdc-color-palette-deep-blue"
+      },
+      {
+        "alias": "--button-minimal-disabled",
+        "references": [
+          "--mdc-color-neutral-gray-30"
+        ],
+        "terminal_hint": "--mdc-color-neutral-gray-30"
+      },
+      {
+        "alias": "--button-minimal-primary",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-minimal-secondary",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-minimal-tertiary",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-minimal-tertiary-hover",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-primary-background",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-primary-background-hover",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-primary-border-hover",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-primary-disabled-background",
+        "references": [],
+        "terminal_hint": "rgba(51, 51, 51, 0.5)"
+      },
+      {
+        "alias": "--button-primary-text",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      },
+      {
+        "alias": "--button-primary-text-hover",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      },
+      {
+        "alias": "--button-secondary-background",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-secondary-background-hover",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-secondary-border",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-secondary-border-hover",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-secondary-disabled-background",
+        "references": [],
+        "terminal_hint": "rgba(5, 28, 44, 0.5)"
+      },
+      {
+        "alias": "--button-secondary-disabled-border",
+        "references": [
+          "--mdc-color-neutral-gray-54"
+        ],
+        "terminal_hint": "--mdc-color-neutral-gray-54"
+      },
+      {
+        "alias": "--button-secondary-icon-focus",
+        "references": [
+          "--mdc-color-palette-cyan"
+        ],
+        "terminal_hint": "--mdc-color-palette-cyan"
+      },
+      {
+        "alias": "--button-secondary-text",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      },
+      {
+        "alias": "--button-secondary-text-hover",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      },
+      {
+        "alias": "--button-tertiary-background-hover",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-tertiary-border",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-tertiary-border-hover",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-tertiary-text",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--button-tertiary-text-hover",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      },
+      {
+        "alias": "--select-button-background",
+        "references": [
+          "--mdc-color-neutral-white"
+        ],
+        "terminal_hint": "--mdc-color-neutral-white"
+      },
+      {
+        "alias": "--select-button-color",
+        "references": [
+          "--mdc-color-neutral-black"
+        ],
+        "terminal_hint": "--mdc-color-neutral-black"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--auth-card-bg",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.15)"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--auth-card-bg",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.15)"
+      },
+      {
+        "alias": "--button-primary-disabled-background",
+        "references": [],
+        "terminal_hint": "rgba(51, 51, 51, 0.5)"
+      },
+      {
+        "alias": "--button-secondary-disabled-background",
+        "references": [],
+        "terminal_hint": "rgba(5, 28, 44, 0.5)"
+      },
+      {
+        "alias": "--intro-link-background-color",
+        "references": [],
+        "terminal_hint": "rgba(242, 242, 242, 0.25)"
+      },
+      {
+        "alias": "--link",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--link-border",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--loader-border",
+        "references": [],
+        "terminal_hint": "rgba(0, 0, 0, 0.2)"
+      },
+      {
+        "alias": "--mdc-color-cyan-100",
+        "references": [],
+        "terminal_hint": "#CCF2FF"
+      },
+      {
+        "alias": "--mdc-color-cyan-200",
+        "references": [],
+        "terminal_hint": "#99E6FF"
+      },
+      {
+        "alias": "--mdc-color-cyan-300",
+        "references": [],
+        "terminal_hint": "#6ECBF9"
+      },
+      {
+        "alias": "--mdc-color-cyan-400",
+        "references": [],
+        "terminal_hint": "#34B4F4"
+      },
+      {
+        "alias": "--mdc-color-cyan-500",
+        "references": [],
+        "terminal_hint": "#00A9F4"
+      },
+      {
+        "alias": "--mdc-color-cyan-600",
+        "references": [],
+        "terminal_hint": "#0291DC"
+      },
+      {
+        "alias": "--mdc-color-cyan-700",
+        "references": [],
+        "terminal_hint": "#0679C3"
+      },
+      {
+        "alias": "--mdc-color-cyan-800",
+        "references": [],
+        "terminal_hint": "#0863AA"
+      },
+      {
+        "alias": "--mdc-color-cyan-900",
+        "references": [],
+        "terminal_hint": "#084D91"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-1000",
+        "references": [],
+        "terminal_hint": "#031119"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-200",
+        "references": [],
+        "terminal_hint": "#82A6C9"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-300",
+        "references": [],
+        "terminal_hint": "#5380AC"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-400",
+        "references": [],
+        "terminal_hint": "#386694"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-500",
+        "references": [],
+        "terminal_hint": "#2B5580"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-600",
+        "references": [],
+        "terminal_hint": "#1B455E"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-700",
+        "references": [],
+        "terminal_hint": "#103559"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-800",
+        "references": [],
+        "terminal_hint": "#082644"
+      },
+      {
+        "alias": "--mdc-color-deep-blue-900",
+        "references": [],
+        "terminal_hint": "#051C2C"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-100",
+        "references": [],
+        "terminal_hint": "#CCE1FF"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-200",
+        "references": [],
+        "terminal_hint": "#99C4FF"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-300",
+        "references": [],
+        "terminal_hint": "#6E9DFF"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-400",
+        "references": [],
+        "terminal_hint": "#2972FF"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-50",
+        "references": [],
+        "terminal_hint": "#D9E8FC"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-500",
+        "references": [],
+        "terminal_hint": "#2251FF"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-600",
+        "references": [],
+        "terminal_hint": "#1C44DC"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-700",
+        "references": [],
+        "terminal_hint": "#1537BA"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-800",
+        "references": [],
+        "terminal_hint": "#0E2B99"
+      },
+      {
+        "alias": "--mdc-color-electric-blue-900",
+        "references": [],
+        "terminal_hint": "#061F79"
+      },
+      {
+        "alias": "--mdc-color-functional-blue-transition-1",
+        "references": [],
+        "terminal_hint": "#034B6F"
+      },
+      {
+        "alias": "--mdc-color-functional-blue-transition-2",
+        "references": [],
+        "terminal_hint": "#027AB1"
+      },
+      {
+        "alias": "--mdc-color-functional-blue-transition-3",
+        "references": [],
+        "terminal_hint": "#39BDF3"
+      },
+      {
+        "alias": "--mdc-color-functional-blue-transition-4",
+        "references": [],
+        "terminal_hint": "#71D2F1"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-orange",
+        "references": [],
+        "terminal_hint": "#FAA082"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-pale-blue",
+        "references": [],
+        "terminal_hint": "#AAE6F0"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-pink",
+        "references": [],
+        "terminal_hint": "#E6A0C8"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-purple",
+        "references": [],
+        "terminal_hint": "#8C5AC8"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-red",
+        "references": [],
+        "terminal_hint": "#E5546C"
+      },
+      {
+        "alias": "--mdc-color-functional-mckinsey-turquoise",
+        "references": [],
+        "terminal_hint": "#3C96B4"
+      },
+      {
+        "alias": "--mdc-color-neutral-active-gray",
+        "references": [],
+        "terminal_hint": "#E3E6FC"
+      },
+      {
+        "alias": "--mdc-color-neutral-black",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--mdc-color-neutral-dark-neutral",
+        "references": [],
+        "terminal_hint": "#1B1B19"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-02",
+        "references": [],
+        "terminal_hint": "#FAFAFA"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-03",
+        "references": [],
+        "terminal_hint": "#F7F7F7"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-04",
+        "references": [],
+        "terminal_hint": "#F5F5F5"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-06",
+        "references": [],
+        "terminal_hint": "#F0F0F0"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-10",
+        "references": [],
+        "terminal_hint": "#E6E6E6"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-18",
+        "references": [],
+        "terminal_hint": "#D0D0D0"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-30",
+        "references": [],
+        "terminal_hint": "#B3B3B3"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-54",
+        "references": [],
+        "terminal_hint": "#757575"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-60",
+        "references": [],
+        "terminal_hint": "#666666"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-70",
+        "references": [],
+        "terminal_hint": "#4D4D4D"
+      },
+      {
+        "alias": "--mdc-color-neutral-gray-80",
+        "references": [],
+        "terminal_hint": "#333333"
+      },
+      {
+        "alias": "--mdc-color-neutral-hover-gray",
+        "references": [],
+        "terminal_hint": "#F1F3FD"
+      },
+      {
+        "alias": "--mdc-color-neutral-white",
+        "references": [],
+        "terminal_hint": "#FFFFFF"
+      },
+      {
+        "alias": "--mdc-color-palette-cyan",
+        "references": [],
+        "terminal_hint": "#00A9F4"
+      },
+      {
+        "alias": "--mdc-color-palette-deep-blue",
+        "references": [],
+        "terminal_hint": "#051C2C"
+      },
+      {
+        "alias": "--mdc-color-palette-electric-blue",
+        "references": [],
+        "terminal_hint": "#2251FF"
+      },
+      {
+        "alias": "--mdc-color-status-dark-blue",
+        "references": [],
+        "terminal_hint": "#1E32E6"
+      },
+      {
+        "alias": "--mdc-color-status-dark-green",
+        "references": [],
+        "terminal_hint": "#00611B"
+      },
+      {
+        "alias": "--mdc-color-status-dark-neutral",
+        "references": [],
+        "terminal_hint": "#1B1B19"
+      },
+      {
+        "alias": "--mdc-color-status-dark-red",
+        "references": [],
+        "terminal_hint": "#A41523"
+      },
+      {
+        "alias": "--mdc-color-status-dark-yellow",
+        "references": [],
+        "terminal_hint": "#6A4F00"
+      },
+      {
+        "alias": "--mdc-color-status-green",
+        "references": [],
+        "terminal_hint": "#007F26"
+      },
+      {
+        "alias": "--mdc-color-status-light-blue",
+        "references": [],
+        "terminal_hint": "#E6ECFF"
+      },
+      {
+        "alias": "--mdc-color-status-light-green",
+        "references": [],
+        "terminal_hint": "#d1f4dd"
+      },
+      {
+        "alias": "--mdc-color-status-light-neutral",
+        "references": [],
+        "terminal_hint": "#EBEBF6"
+      },
+      {
+        "alias": "--mdc-color-status-light-red",
+        "references": [],
+        "terminal_hint": "#FDE7E7"
+      },
+      {
+        "alias": "--mdc-color-status-light-yellow",
+        "references": [],
+        "terminal_hint": "#FFF3CE"
+      },
+      {
+        "alias": "--mdc-color-status-red",
+        "references": [],
+        "terminal_hint": "#D51F31"
+      },
+      {
+        "alias": "--mdc-color-status-yellow",
+        "references": [],
+        "terminal_hint": "#FFD048"
+      },
+      {
+        "alias": "--swiper-preloader-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--swiper-theme-color",
+        "references": [],
+        "terminal_hint": "#007aff"
+      },
+      {
+        "alias": "--tag-background-color",
+        "references": [],
+        "terminal_hint": "rgba(255, 255, 255, 0.2)"
+      },
+      {
+        "alias": "--text",
+        "references": [],
+        "terminal_hint": "#fff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 30,
+      "component": 1,
+      "core": 81
+    }
+  }
+}

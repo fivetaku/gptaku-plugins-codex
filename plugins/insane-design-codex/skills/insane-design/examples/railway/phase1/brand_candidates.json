@@ -1,0 +1,215 @@
+{
+  "slug": "railway",
+  "semantic_vars": [
+    {
+      "name": "--train-accent",
+      "value_hex": "#13044C",
+      "role": "accent"
+    },
+    {
+      "name": "--train-accent-deep",
+      "value_hex": "#13044C",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": "button,input:where([type=button]),input:where([type=reset]),input:where([type=submit])",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]) { -webkit-appearance:button; background-color:#0000; background-image:none}"
+    },
+    {
+      "selector": ".react-flow__node-default.selectable:hover,.react-flow__node-input.selectable:hover,.react-flow__node-output.selectable:hover,.react-flow__node-group.selectable:hover",
+      "property": "box-shadow",
+      "hex": "#00000014",
+      "rule_snippet": ".react-flow__node-default.selectable:hover,.react-flow__node-input.selectable:hover,.react-flow__node-output.selectable:hover,.react-flow__node-group.selectable:hover { box-shadow:0 1px 4px 1px #00000"
+    },
+    {
+      "selector": ".react-flow__node-default.selectable.selected,.react-flow__node-default.selectable:focus,.react-flow__node-default.selectable:focus-visible,.react-flow__node-input.selectable.selected,.react-flow__node-input.selectable:focus,.react-flow__node-input.selectable:focus-visible,.react-flow__node-output.selectable.selected,.react-flow__node-output.selectable:focus,.react-flow__node-output.selectable:focus-visible,.react-flow__node-group.selectable.selected,.react-flow__node-group.selectable:focus,.react-flow__node-group.selectable:focus-visible",
+      "property": "box-shadow",
+      "hex": "#1A192B",
+      "rule_snippet": ".react-flow__node-default.selectable.selected,.react-flow__node-default.selectable:focus,.react-flow__node-default.selectable:focus-visible,.react-flow__node-input.selectable.selected,.react-flow__nod"
+    },
+    {
+      "selector": ".react-flow__controls-button",
+      "property": "background",
+      "hex": "#FEFEFE",
+      "rule_snippet": ".react-flow__controls-button { box-sizing:content-box; cursor:pointer; -webkit-user-select:none; user-select:none; background:#fefefe; border:none; border-bottom:1px solid #eee; justify-content:center"
+    },
+    {
+      "selector": ".react-flow__controls-button",
+      "property": "border-bottom",
+      "hex": "#EEEEEE",
+      "rule_snippet": ".react-flow__controls-button { box-sizing:content-box; cursor:pointer; -webkit-user-select:none; user-select:none; background:#fefefe; border:none; border-bottom:1px solid #eee; justify-content:center"
+    },
+    {
+      "selector": ".react-flow__controls-button:hover",
+      "property": "background",
+      "hex": "#F4F4F4",
+      "rule_snippet": ".react-flow__controls-button:hover { background:#f4f4f4}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 179,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 28,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#08070C",
+      "count": 28,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 27,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#454545",
+      "count": 23,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 19,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#13044C",
+      "count": 16,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#0000000A",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F9A8D4",
+      "count": 13,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000014",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#13111C",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000033",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#262626",
+      "count": 10,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#0000000F",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF26",
+      "count": 9,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF14",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000026",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF33",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF80",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000040",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000080",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF0F",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF13",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000008",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000013",
+      "count": 5,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 38,
+    "by_role": {
+      "accent": 2,
+      "chromatic": 4,
+      "neutral": 23,
+      "selector": 6,
+      "svg_pattern": 3
+    }
+  }
+}

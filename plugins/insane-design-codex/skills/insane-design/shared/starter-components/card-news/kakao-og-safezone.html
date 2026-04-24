@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- insane-build: card-news/kakao-og-safezone.html — 1200×630 OG card with KakaoTalk share safezone -->
+<!-- KakaoTalk in-chat preview crops to ~1.91:1. Critical text/logo must sit inside 1000×500 center box. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --fg-muted: #555555;
+    --brand: #000000;
+    --font-family: system-ui, sans-serif;
+  }
+  body { margin: 0; background: #eee; display: flex; justify-content: center; padding: 24px; }
+  .og {
+    width: 1200px; height: 630px;
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-family);
+    padding: 65px 100px; box-sizing: border-box;
+    position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  /* Safezone: 1000×500 centered. Visible only in dev (remove before export). */
+  .og[data-dev="true"]::before {
+    content: ""; position: absolute; inset: 65px 100px;
+    outline: 2px dashed rgba(255,0,0,0.3); pointer-events: none;
+  }
+  .title { font-size: 56px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
+  .lede  { font-size: 24px; color: var(--fg-muted); margin: 0; max-width: 920px; line-height: 1.5; }
+  .brand { font-size: 18px; color: var(--brand); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="og">
+    <span class="brand">{BRAND_NAME}</span>
+    <div>
+      <h1 class="title">{TITLE}</h1>
+      <p class="lede">{LEDE}</p>
+    </div>
+  </div>
+</body>
+</html>

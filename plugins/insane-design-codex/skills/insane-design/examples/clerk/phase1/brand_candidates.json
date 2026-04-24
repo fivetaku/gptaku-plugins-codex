@@ -1,0 +1,299 @@
+{
+  "slug": "clerk",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "button,input:where([type=button]),input:where([type=reset]),input:where([type=submit])",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]) {-webkit-appearance:button;background-color:#0000;background-image:none}"
+    },
+    {
+      "selector": ".\\[--shiki-token-link\\:theme\\(colors\\.green\\.600\\)\\]",
+      "property": "--shiki-token-link",
+      "hex": "#16A332",
+      "rule_snippet": ".\\[--shiki-token-link\\:theme\\(colors\\.green\\.600\\)\\] {--shiki-token-link:#16a332}"
+    },
+    {
+      "selector": ".focus-visible\\:outline-focus:focus-visible,.group\\/link:focus-visible .group-focus-visible\\/link\\:outline-focus,.group:focus-visible .group-focus-visible\\:outline-focus",
+      "property": "outline",
+      "hex": "#131316",
+      "rule_snippet": ".focus-visible\\:outline-focus:focus-visible,.group\\/link:focus-visible .group-focus-visible\\/link\\:outline-focus,.group:focus-visible .group-focus-visible\\:outline-focus {outline:2px solid var(--focus"
+    },
+    {
+      "selector": ".focus-visible\\:outline-focus:focus-visible,.group\\/link:focus-visible .group-focus-visible\\/link\\:outline-focus,.group:focus-visible .group-focus-visible\\:outline-focus",
+      "property": "outline",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".focus-visible\\:outline-focus:focus-visible,.group\\/link:focus-visible .group-focus-visible\\/link\\:outline-focus,.group:focus-visible .group-focus-visible\\:outline-focus {outline:2px solid var(--focus"
+    },
+    {
+      "selector": ".has-\\[button\\:focus-visible\\]\\:outline-focus:has(button:focus-visible)",
+      "property": "outline",
+      "hex": "#131316",
+      "rule_snippet": ".has-\\[button\\:focus-visible\\]\\:outline-focus:has(button:focus-visible) {outline:2px solid var(--focus-outline,var(--light,#131316)var(--dark,#fff));outline-offset:var(--focus-outline-offset,2px)}"
+    },
+    {
+      "selector": ".has-\\[button\\:focus-visible\\]\\:outline-focus:has(button:focus-visible)",
+      "property": "outline",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".has-\\[button\\:focus-visible\\]\\:outline-focus:has(button:focus-visible) {outline:2px solid var(--focus-outline,var(--light,#131316)var(--dark,#fff));outline-offset:var(--focus-outline-offset,2px)}"
+    },
+    {
+      "selector": ".group\\/link:hover .group-hover\\/link\\:bg-black\\/10",
+      "property": "background-color",
+      "hex": "#0000001A",
+      "rule_snippet": ".group\\/link:hover .group-hover\\/link\\:bg-black\\/10 {background-color:#0000001a}"
+    },
+    {
+      "selector": ".group\\/link:hover .group-hover\\/link\\:bg-gray-950\\/10",
+      "property": "background-color",
+      "hex": "#1313161A",
+      "rule_snippet": ".group\\/link:hover .group-hover\\/link\\:bg-gray-950\\/10 {background-color:#1313161a}"
+    },
+    {
+      "selector": ".group\\/button:hover .group-hover\\/button\\:stroke-gray-300",
+      "property": "stroke",
+      "hex": "#B7B8C2",
+      "rule_snippet": ".group\\/button:hover .group-hover\\/button\\:stroke-gray-300 {stroke:#b7b8c2}"
+    },
+    {
+      "selector": ".group\\/button:hover .group-hover\\/button\\:text-white\\/60",
+      "property": "color",
+      "hex": "#FFFFFF99",
+      "rule_snippet": ".group\\/button:hover .group-hover\\/button\\:text-white\\/60 {color:#fff9}"
+    },
+    {
+      "selector": ".group\\/link:hover .group-hover\\/link\\:decoration-gray-950,.group:hover .group-hover\\:decoration-gray-950",
+      "property": "text-decoration-color",
+      "hex": "#131316",
+      "rule_snippet": ".group\\/link:hover .group-hover\\/link\\:decoration-gray-950,.group:hover .group-hover\\:decoration-gray-950 {text-decoration-color:#131316}"
+    },
+    {
+      "selector": ".group\\/button[aria-expanded=true] .group-aria-expanded\\/button\\:text-white\\/60",
+      "property": "color",
+      "hex": "#FFFFFF99",
+      "rule_snippet": ".group\\/button[aria-expanded=true] .group-aria-expanded\\/button\\:text-white\\/60 {color:#fff9}"
+    },
+    {
+      "selector": ".group\\/link[aria-expanded=true] .group-aria-expanded\\/link\\:decoration-gray-950",
+      "property": "text-decoration-color",
+      "hex": "#131316",
+      "rule_snippet": ".group\\/link[aria-expanded=true] .group-aria-expanded\\/link\\:decoration-gray-950 {text-decoration-color:#131316}"
+    },
+    {
+      "selector": ".group\\/button[data-hovered] .group-data-\\[hovered\\]\\/button\\:stroke-gray-400",
+      "property": "stroke",
+      "hex": "#9394A1",
+      "rule_snippet": ".group\\/button[data-hovered] .group-data-\\[hovered\\]\\/button\\:stroke-gray-400 {stroke:#9394a1}"
+    },
+    {
+      "selector": ".group\\/button[data-hovered] .group-data-\\[hovered\\]\\/button\\:stroke-gray-950",
+      "property": "stroke",
+      "hex": "#131316",
+      "rule_snippet": ".group\\/button[data-hovered] .group-data-\\[hovered\\]\\/button\\:stroke-gray-950 {stroke:#131316}"
+    },
+    {
+      "selector": ".dark\\:\\[--shiki-token-link\\:theme\\(colors\\.green\\.300\\)\\]:is(.dark *)",
+      "property": "--shiki-token-link",
+      "hex": "#86EF9B",
+      "rule_snippet": ".dark\\:\\[--shiki-token-link\\:theme\\(colors\\.green\\.300\\)\\]:is(.dark *) {--shiki-token-link:#86ef9b}"
+    },
+    {
+      "selector": ".dark\\:\\[--typography-link-icon-bg\\:theme\\(colors\\.gray\\.600\\)\\]:is(.dark *)",
+      "property": "--typography-link-icon-bg",
+      "hex": "#5E5F6E",
+      "rule_snippet": ".dark\\:\\[--typography-link-icon-bg\\:theme\\(colors\\.gray\\.600\\)\\]:is(.dark *) {--typography-link-icon-bg:#5e5f6e}"
+    },
+    {
+      "selector": ".dark\\:\\[--typography-link-icon\\:theme\\(colors\\.gray\\.300\\)\\]:is(.dark *)",
+      "property": "--typography-link-icon",
+      "hex": "#B7B8C2",
+      "rule_snippet": ".dark\\:\\[--typography-link-icon\\:theme\\(colors\\.gray\\.300\\)\\]:is(.dark *) {--typography-link-icon:#b7b8c2}"
+    },
+    {
+      "selector": ".group\\/link:hover .dark\\:group-hover\\/link\\:decoration-white:is(.dark *),.group:hover .dark\\:group-hover\\:decoration-white:is(.dark *)",
+      "property": "text-decoration-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".group\\/link:hover .dark\\:group-hover\\/link\\:decoration-white:is(.dark *),.group:hover .dark\\:group-hover\\:decoration-white:is(.dark *) {text-decoration-color:#fff}"
+    },
+    {
+      "selector": ".group\\/link[aria-expanded=true] .dark\\:group-aria-expanded\\/link\\:decoration-white:is(.dark *)",
+      "property": "text-decoration-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".group\\/link[aria-expanded=true] .dark\\:group-aria-expanded\\/link\\:decoration-white:is(.dark *) {text-decoration-color:#fff}"
+    },
+    {
+      "selector": ".group\\/button[data-hovered] .dark\\:group-data-\\[hovered\\]\\/button\\:stroke-gray-500:is(.dark *)",
+      "property": "stroke",
+      "hex": "#747686",
+      "rule_snippet": ".group\\/button[data-hovered] .dark\\:group-data-\\[hovered\\]\\/button\\:stroke-gray-500:is(.dark *) {stroke:#747686}"
+    },
+    {
+      "selector": ".group\\/button[data-hovered] .dark\\:group-data-\\[hovered\\]\\/button\\:stroke-white:is(.dark *)",
+      "property": "stroke",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".group\\/button[data-hovered] .dark\\:group-data-\\[hovered\\]\\/button\\:stroke-white:is(.dark *) {stroke:#fff}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 693,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#131316",
+      "count": 324,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 217,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 85,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 74,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2F3037",
+      "count": 54,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 52,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 50,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000014",
+      "count": 49,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7F7F8",
+      "count": 44,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5E5F6E",
+      "count": 42,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 41,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000F",
+      "count": 40,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#212126",
+      "count": 38,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#747686",
+      "count": 37,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5DE3FF",
+      "count": 36,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#9394A1",
+      "count": 35,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000D",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#64E5FF",
+      "count": 30,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6C47FF",
+      "count": 29,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000033",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D9D9DE",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000A",
+      "count": 23,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#EEEEF0",
+      "count": 21,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#42434D",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#B7B8C2",
+      "count": 19,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000026",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0A0A0B",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1313161A",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000099",
+      "count": 16,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 52,
+    "by_role": {
+      "chromatic": 3,
+      "neutral": 26,
+      "selector": 22,
+      "svg_pattern": 1
+    }
+  }
+}

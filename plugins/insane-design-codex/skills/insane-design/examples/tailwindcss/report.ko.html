@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tailwind CSS — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--brand-color:#625FFF;--font-display:"Inter",system-ui,sans-serif;--font-sans:"Pretendard Variable","Inter",sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;--border:#e4e4e7;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:600;font-family:var(--font-display)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:600}
+.hero-big h1{font-family:var(--font-display);font-size:48px;font-weight:600;line-height:1.05;letter-spacing:-.02em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:8px;font-family:var(--font-mono);font-size:11px;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#18181b}.sw--d{color:#fafafa}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans)}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:600;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:600}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:8px;background:var(--card)}
+.sh-card__n{font-weight:600;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:20px;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px}
+.comp p{font-size:13px;color:var(--subtle)}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:4px}
+.comp pre{background:var(--muted);padding:12px;border-radius:4px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;line-height:1.5;background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#08090a;color:#f7f8f8;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:999px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:600}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:5px 12px;background:var(--muted);border-radius:9999px;font-size:11px;color:var(--subtle)}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#0a0a0a;color:#e5e5e5;padding:16px;border-radius:8px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}.main{padding:32px 20px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+<div class="toc__brand"><div class="toc__brand-name">Tailwind CSS</div><div class="toc__brand-sub">Design System Report</div></div>
+<div class="toc__group-label">Overview</div>
+<ul class="toc__list"><li><a href="#mood"><span class="toc__num">00</span>분위기</a></li><li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">02</span>출처</a></li><li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li></ul>
+<div class="toc__group-label">Foundations</div>
+<ul class="toc__list"><li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">05</span>컬러</a></li></ul>
+<div class="toc__group-label">Tokens</div>
+<ul class="toc__list"><li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li><li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li><li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li><li><a href="#motion"><span class="toc__num">08</span>모션</a></li></ul>
+<div class="toc__group-label">Patterns</div>
+<ul class="toc__list"><li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li><li><a href="#responsive"><span class="toc__num">09R</span>반응형</a></li><li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li></ul>
+<div class="toc__group-label">Guide</div>
+<ul class="toc__list"><li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li><li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li></ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Utility Brutalism — utility class 문자열을 hero copy로 직접 노출하는 개발자 화법</div>
+  <h1>Iris + Teal glow orb · utility-class-as-hero</h1>
+  <p class="lead">Tailwind CSS · <code>https://tailwindcss.com</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Tailwind CSS hero" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Tailwind CSS의 공식 사이트는 본인의 철학 그 자체를 시각화한 <b>Utility Brutalism</b> — 페이지가 곧 '튜토리얼이자 라이브 데모'다. dark base <code>#030712</code>(slate-950) 위에 <b>iris/purple <code>#625FFF</code></b> primary + <b>teal <code>#00B7D7</code></b> secondary 조합으로 시그니처 그라데이션을 만들고, 실제 <code>class="flex items-center gap-x-4"</code> 유틸리티 문자열을 hero copy로 쓰는 과감한 개발자 직접 화법.</p>
+    <p>컬러 시스템은 Tailwind v4.x 공식 팔레트 전체를 사용하지만, 마케팅 axis는 좁다: <code>#625FFF</code> iris (CTA primary) + <code>#00B7D7</code> teal (CTA secondary) + <code>#3080FF</code> blue (link) + <code>#00A5EF</code> cyan-bright (hero orb) + slate neutrals. frequency candidates에 semi-transparent overlays(<code>#FFFFFF1A</code>, <code>#0307120D</code>)가 대량 등장하는 이유는 glass-morphism + dark/light/system 3-mode 때문이다.</p>
+    <p>타이포는 Inter(body) + IBM Plex Mono(utility class expose용 code) 조합. weight 100/400/500/600/bold 중심 — display에 <b>600</b>을 즐겨 쓴다 (700 heavy가 아니라 600 mid-heavy).</p>
+    <p>레이아웃은 Tailwind v4 CSS-first 접근의 실례. <code>group-hover</code>, <code>data-[state=...]</code>, <code>:where(.dark, .dark *)</code> pattern이 source에 그대로 드러난다. dark/light/system 3-mode가 <code>.dark</code> + <code>.system</code> class로 스위칭된다.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Iris #625FFF + Teal #00B7D7 signature</span>
+    <span class="kw">dark-first #030712 (slate-950)</span>
+    <span class="kw">Inter + IBM Plex Mono</span>
+    <span class="kw">dark/light/system 3-mode</span>
+    <span class="kw">glassmorphism overlays</span>
+    <span class="kw">utility class string as hero copy</span>
+    <span class="kw">weight 600 mid-heavy (no 700)</span>
+    <span class="kw">Algolia DocSearch 통합</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기</h2>
+  <p class="lede">5분 안에 Tailwind CSS 공식 사이트처럼 만들기.</p>
+  <div class="quick-steps">
+    <pre><code>/* 1. 토큰 */
+:root {
+  --iris: #625FFF;
+  --teal: #00B7D7;
+  --blue: #3080FF;
+  --bg-base: #030712;
+  --fg: #F8FAFC;
+}</code></pre>
+    <pre><code>/* 2. Inter + Plex Mono */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+}
+code, pre {
+  font-family: "IBM Plex Mono", monospace;
+}</code></pre>
+    <pre><code>/* 3. Iris gradient CTA */
+.btn-iris {
+  background: linear-gradient(180deg, #625FFF, #5149E8);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow:
+    0 8px 32px rgba(98,95,255,.4),
+    inset 0 1px 0 rgba(255,255,255,.2);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> Hero에 utility class 문자열을 노출하지 않으면 Tailwind 느낌이 안 난다. 반드시 <code>class="flex items-center gap-x-4..."</code> 같은 live snippet이 있어야 한다.</div>
+</section>
+
+<section id="provenance" class="sec">
+  <h2>02. 출처</h2>
+  <table class="tbl">
+    <tr><th>Source URL</th><td><code>https://tailwindcss.com</code></td></tr>
+    <tr><th>Fetched</th><td>2026-04-20</td></tr>
+    <tr><th>Framework</th><td>Next.js + Tailwind CSS v4</td></tr>
+    <tr><th>Hosting</th><td>Vercel</td></tr>
+    <tr><th>Search</th><td>Algolia DocSearch integration</td></tr>
+    <tr><th>Theme</th><td>dark / light / system — 3-way</td></tr>
+  </table>
+</section>
+
+<section id="stack" class="sec">
+  <h2>03. 테크 스택</h2>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+    <li><b>Framework</b>: Next.js (Vercel)</li>
+    <li><b>CSS</b>: Tailwind v4 (self-host)</li>
+    <li><b>Typography</b>: Inter + IBM Plex Mono (CSS vars <code>--font-inter</code>, <code>--font-plex-mono</code>)</li>
+    <li><b>Theme mode</b>: <code>.dark</code> / <code>.light</code> / <code>.system</code> 3-way</li>
+    <li><b>Search</b>: Algolia DocSearch</li>
+    <li><b>Container queries</b>: <code>@container</code> native</li>
+    <li><b>Variants</b>: <code>data-*</code>, <code>:where(.dark,.dark *)</code>, <code>group-hover/navitem</code></li>
+  </ul>
+</section>
+
+<section id="typography" class="sec">
+  <h2>04. 타이포그래피</h2>
+  <p class="lede">Inter body + IBM Plex Mono. weight 100/400/500/600/bold. display에 600 mid-heavy.</p>
+  <h3>Font Stack</h3>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+    <li><b>Body/UI</b>: <code>Inter</code>, Inter Fallback, system-ui, sans-serif (via <code>--font-inter</code>)</li>
+    <li><b>Mono</b>: <code>IBM Plex Mono</code> (via <code>--font-plex-mono</code>), Ubuntu Mono</li>
+    <li><b>Alt sans</b>: <code>Source Sans Pro</code></li>
+    <li><b>Weights</b>: 100 / 400 / 500 / 600 / bold(700)</li>
+  </ul>
+  <h3 style="margin-top:32px;">Type Scale</h3>
+  <div class="type-row"><div style="font-size:12px;">text-xs (12px)</div><div class="type-row__spec"><div class="tk">text-xs</div>12px · 400 · lh 1.5</div></div>
+  <div class="type-row"><div style="font-size:14px;">text-sm (14px)</div><div class="type-row__spec"><div class="tk">text-sm</div>14px · 400 · lh 1.5</div></div>
+  <div class="type-row"><div style="font-size:16px;">text-base (16px)</div><div class="type-row__spec"><div class="tk">text-base</div>16px · 400 · lh 1.6</div></div>
+  <div class="type-row"><div style="font-size:20px;font-weight:500;">text-xl</div><div class="type-row__spec"><div class="tk">text-xl</div>20px · 500 · lh 1.4</div></div>
+  <div class="type-row"><div style="font-size:30px;font-weight:600;">text-3xl</div><div class="type-row__spec"><div class="tk">text-3xl</div>30px · 600 · lh 1.25</div></div>
+  <div class="type-row"><div style="font-size:48px;font-weight:600;line-height:1.1;">text-5xl</div><div class="type-row__spec"><div class="tk">text-5xl</div>48px · 600 · lh 1.1</div></div>
+  <div class="type-row"><div style="font-size:60px;font-weight:600;line-height:1.05;letter-spacing:-.02em;">text-6xl</div><div class="type-row__spec"><div class="tk">text-6xl</div>60px · 600 · lh 1.05</div></div>
+  <div class="type-row"><div style="font-size:72px;font-weight:600;line-height:1.0;letter-spacing:-.02em;">text-7xl (hero)</div><div class="type-row__spec"><div class="tk">text-7xl</div>72px · 600 · lh 1.0</div></div>
+</section>
+
+<section id="colors" class="sec">
+  <h2>05. 컬러</h2>
+  <p class="lede">Iris + Teal 시그니처 + slate-950 dark base + glass overlays.</p>
+
+  <div class="ramp-label">Signature Pair</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#625FFF"><div class="n">iris (primary)</div>#625FFF</div>
+    <div class="sw sw--d" style="background:#5149E8"><div class="n">iris-dark</div>#5149E8</div>
+    <div class="sw sw--d" style="background:#00B7D7"><div class="n">teal (secondary)</div>#00B7D7</div>
+    <div class="sw sw--d" style="background:#00A5EF"><div class="n">cyan-bright (orb)</div>#00A5EF</div>
+    <div class="sw sw--d" style="background:#3080FF"><div class="n">blue (link)</div>#3080FF</div>
+  </div>
+
+  <div class="ramp-label">Dark Stack (slate/gray)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#030712"><div class="n">bg-base</div>#030712</div>
+    <div class="sw sw--d" style="background:#0F172A"><div class="n">bg-elev</div>#0F172A</div>
+    <div class="sw sw--d" style="background:#111827"><div class="n">bg-elev-2</div>#111827</div>
+    <div class="sw sw--d" style="background:#1E293B"><div class="n">border</div>#1E293B</div>
+    <div class="sw sw--d" style="background:#71717A"><div class="n">fg-subtle</div>#71717A</div>
+    <div class="sw sw--d" style="background:#94A3B8"><div class="n">fg-muted</div>#94A3B8</div>
+    <div class="sw sw--l" style="background:#F8FAFC"><div class="n">fg</div>#F8FAFC</div>
+    <div class="sw sw--l" style="background:#FFFFFF"><div class="n">inverse-bg</div>#FFFFFF</div>
+  </div>
+
+  <div class="ramp-label">Glass / Translucent Overlays</div>
+  <div class="ramp">
+    <div class="sw sw--l" style="background:rgba(255,255,255,.03);border:1px solid #ccc"><div class="n">white/3</div>#FFFFFF0D</div>
+    <div class="sw sw--l" style="background:rgba(255,255,255,.1);border:1px solid #ccc"><div class="n">white/10</div>#FFFFFF1A</div>
+    <div class="sw sw--l" style="background:rgba(255,255,255,.2);border:1px solid #ccc"><div class="n">white/20</div>#FFFFFF33</div>
+    <div class="sw sw--l" style="background:rgba(255,255,255,.5);border:1px solid #ccc"><div class="n">white/50</div>#FFFFFF80</div>
+    <div class="sw sw--d" style="background:rgba(3,7,18,.5)"><div class="n">base/50</div>#03071280</div>
+    <div class="sw sw--d" style="background:#3641534D"><div class="n">fav-bg</div>#3641534D</div>
+  </div>
+
+  <h3>Dominant Usage</h3>
+  <div class="dom-bar">
+    <div style="flex:103;background:rgba(255,255,255,.1)"></div>
+    <div style="flex:60;background:#030712"></div>
+    <div style="flex:53;background:rgba(0,0,0,.1)"></div>
+    <div style="flex:47;background:#FFFFFF"></div>
+    <div style="flex:41;background:#030712"></div>
+    <div style="flex:35;background:rgba(255,255,255,.05)"></div>
+    <div style="flex:20;background:#625FFF"></div>
+    <div style="flex:14;background:#E5E7EB"></div>
+  </div>
+  <div class="dom-list">
+    <div class="item"><div class="chip" style="background:#FFFFFF1A"></div><div><div class="hex">#FFFFFF1A</div><div class="cnt">103회 · glass surface</div></div></div>
+    <div class="item"><div class="chip" style="background:#030712"></div><div><div class="hex">#030712</div><div class="cnt">60회 · dark bg transparent</div></div></div>
+    <div class="item"><div class="chip" style="background:#0000001A"></div><div><div class="hex">#0000001A</div><div class="cnt">53회 · light divider</div></div></div>
+    <div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">47회 · light bg</div></div></div>
+    <div class="item"><div class="chip" style="background:#0307120D"></div><div><div class="hex">#0307120D</div><div class="cnt">41회 · soft border</div></div></div>
+    <div class="item"><div class="chip" style="background:#625FFF"></div><div><div class="hex">#625FFF</div><div class="cnt">5회 · iris CTA</div></div></div>
+    <div class="item"><div class="chip" style="background:#00B7D780"></div><div><div class="hex">#00B7D780</div><div class="cnt">6회 · teal accent α</div></div></div>
+    <div class="item"><div class="chip" style="background:#00A5EF1A"></div><div><div class="hex">#00A5EF1A</div><div class="cnt">5회 · cyan glow α</div></div></div>
+  </div>
+</section>
+
+<section id="spacing" class="sec">
+  <h2>06. 스페이싱</h2>
+  <p class="lede">Tailwind 4px 기본 scale.</p>
+  <div class="space-row"><div class="tk">1</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline</div></div>
+  <div class="space-row"><div class="tk">2</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">icon gap</div></div>
+  <div class="space-row"><div class="tk">4</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default gap</div></div>
+  <div class="space-row"><div class="tk">6</div><div>24px</div><div class="bar" style="width:24px"></div><div class="use">card padding</div></div>
+  <div class="space-row"><div class="tk">8</div><div>32px</div><div class="bar" style="width:32px"></div><div class="use">section inner</div></div>
+  <div class="space-row"><div class="tk">16</div><div>64px</div><div class="bar" style="width:64px"></div><div class="use">section padding</div></div>
+  <div class="space-row"><div class="tk">24</div><div>96px</div><div class="bar" style="width:96px"></div><div class="use">large section</div></div>
+  <div class="space-row"><div class="tk">32</div><div>128px</div><div class="bar" style="width:128px"></div><div class="use">hero</div></div>
+</section>
+
+<section id="radius" class="sec">
+  <h2>07. 라디우스</h2>
+  <div class="rad-grid">
+    <div class="rad-card"><div style="border-radius:4px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded</div><div class="rad-card__v">4px</div></div>
+    <div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-lg</div><div class="rad-card__v">8px · default CTA</div></div>
+    <div class="rad-card"><div style="border-radius:12px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-xl</div><div class="rad-card__v">12px</div></div>
+    <div class="rad-card"><div style="border-radius:16px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-2xl</div><div class="rad-card__v">16px · card</div></div>
+    <div class="rad-card"><div style="border-radius:24px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-3xl</div><div class="rad-card__v">24px · hero block</div></div>
+    <div class="rad-card"><div style="border-radius:9999px;background:#625FFF;height:64px;"></div><div class="rad-card__n">rounded-full</div><div class="rad-card__v">9999px</div></div>
+  </div>
+</section>
+
+<section id="shadows" class="sec">
+  <h2>07S. 섀도우</h2>
+  <p class="lede">Tailwind의 시그니처는 <b>iris glow</b>. 일반 dark shadow 대신 color-tinted glow로 elevation 표현.</p>
+  <div class="sh-grid">
+    <div class="sh-card" style="box-shadow:0 8px 32px rgba(98,95,255,.4),inset 0 1px 0 rgba(255,255,255,.3);background:#625FFF;color:#FFF;"><div class="sh-card__n">shadow-glow-iris</div><div class="sh-card__d" style="color:#fff;opacity:.8">시그니처 CTA glow</div><div class="sh-card__v" style="color:#fff;opacity:.7">0 8px 32px rgba(98,95,255,.4) + inner shine</div></div>
+    <div class="sh-card" style="box-shadow:0 8px 32px rgba(0,183,215,.3);background:#00B7D7;color:#FFF;"><div class="sh-card__n">shadow-glow-teal</div><div class="sh-card__d" style="color:#fff;opacity:.8">secondary glow</div><div class="sh-card__v" style="color:#fff;opacity:.7">0 8px 32px rgba(0,183,215,.3)</div></div>
+    <div class="sh-card" style="box-shadow:0 1px 2px rgba(0,0,0,.5);background:var(--card);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle</div><div class="sh-card__v">0 1px 2px rgba(0,0,0,.5)</div></div>
+  </div>
+</section>
+
+<section id="motion" class="sec">
+  <h2>08. 모션</h2>
+  <table class="tbl">
+    <thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>hover transition</td><td><code>.15s ease</code></td><td>default</td></tr>
+      <tr><td>theme switch</td><td><code>.3s ease-in-out</code></td><td>dark/light swap</td></tr>
+      <tr><td>group-hover</td><td>instant</td><td>utility class variant</td></tr>
+      <tr><td>nav underline</td><td><code>.2s ease-out</code></td><td>link indicator</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="layout" class="sec">
+  <h2>09. 레이아웃 패턴</h2>
+  <div class="lay-grid">
+    <div class="lay-card"><h3>Hero · utility_class_hero</h3><ul>
+      <li>bg: slate-950 + radial purple glow orb</li>
+      <li>headline: 60-72px weight 600</li>
+      <li><b>Live utility class demo</b> in Plex Mono</li>
+      <li>CTAs: iris gradient + teal ghost</li>
+    </ul></div>
+    <div class="lay-card"><h3>Section Rhythm</h3><ul>
+      <li>padding 96-128px</li>
+      <li>max-width 1280px</li>
+      <li>dark/light 각기 다른 accent ramp</li>
+    </ul></div>
+    <div class="lay-card"><h3>Card</h3><ul>
+      <li>bg: glass <code>rgba(255,255,255,.03)</code></li>
+      <li>border: <code>rgba(255,255,255,.08)</code></li>
+      <li>backdrop-blur 12px</li>
+      <li>radius 16px</li>
+    </ul></div>
+    <div class="lay-card"><h3>Navigation</h3><ul>
+      <li>height 64px</li>
+      <li>transparent → backdrop-blur on scroll</li>
+      <li><code>group/navitem</code> hover → child <code>bg-black/75</code></li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="responsive" class="sec">
+  <h2>09-R. 반응형</h2>
+  <table class="tbl">
+    <thead><tr><th>Name</th><th>Value</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>sm</code></td><td>640px</td><td>mobile</td></tr>
+      <tr><td><code>md</code></td><td>768px</td><td>tablet</td></tr>
+      <tr><td><code>lg</code></td><td>1024px</td><td>desktop</td></tr>
+      <tr><td><code>xl</code></td><td>1280px</td><td>wide</td></tr>
+      <tr><td><code>2xl</code></td><td>1536px</td><td>ultra wide</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="components" class="sec">
+  <h2>10. 컴포넌트</h2>
+  <div class="comp">
+    <h3>Iris Gradient CTA (Primary · 시그니처)</h3>
+    <div class="comp-spec"><b>Spec</b>: gradient #625FFF→#5149E8 · inner shine · purple glow 0 8px 32px rgba(98,95,255,.4)</div>
+    <pre><code>.btn-iris {
+  background: linear-gradient(180deg, #625FFF 0%, #5149E8 100%);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow:
+    0 8px 32px rgba(98,95,255,.4),
+    inset 0 1px 0 rgba(255,255,255,.2);
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Teal Ghost CTA (Secondary)</h3>
+    <pre><code>.btn-teal-ghost {
+  background: rgba(0,183,215,.1);
+  color: #00B7D7;
+  border: 1px solid rgba(0,183,215,.3);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Glass Card</h3>
+    <pre><code>.card-glass {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  padding: 24px;
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Utility String Display</h3>
+    <p>hero에 실제 class 문자열을 보여주는 mono-fonted chip.</p>
+    <pre><code>.utility-string {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  background: rgba(255,255,255,.05);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.1);
+}</code></pre>
+  </div>
+</section>
+
+<section id="agent" class="sec">
+  <h2>11. Agent Prompt Guide</h2>
+  <table class="tbl">
+    <thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+    <tbody>
+      <tr><td>Primary</td><td><code>--iris</code></td><td><span style="width:16px;height:16px;background:#625FFF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#625FFF</code></td></tr>
+      <tr><td>Secondary</td><td><code>--teal</code></td><td><span style="width:16px;height:16px;background:#00B7D7;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#00B7D7</code></td></tr>
+      <tr><td>Link</td><td><code>--blue</code></td><td><span style="width:16px;height:16px;background:#3080FF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#3080FF</code></td></tr>
+      <tr><td>Bg base</td><td><code>--bg-base</code></td><td><span style="width:16px;height:16px;background:#030712;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#030712</code></td></tr>
+      <tr><td>Text</td><td><code>--fg</code></td><td><span style="width:16px;height:16px;background:#F8FAFC;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ccc;"></span><code>#F8FAFC</code></td></tr>
+    </tbody>
+  </table>
+  <h3 style="margin-top:32px;">Example Prompts</h3>
+  <div class="ag-grid">
+    <div class="ag-card"><h4>🎯 Hero</h4><pre>Tailwind CSS hero: bg #030712 + radial purple glow orb from #625FFF fading to transparent. Headline 60px weight 600 #F8FAFC. Below: syntax-highlighted `class="flex items-center gap-x-4..."` utility string in IBM Plex Mono. Dual CTA: iris gradient primary + teal ghost.</pre></div>
+    <div class="ag-card"><h4>🔘 Iris CTA</h4><pre>Iris gradient CTA: linear-gradient(180deg, #625FFF, #5149E8), color white, padding 12px 24px, radius 8px, font-weight 600, box-shadow 0 8px 32px rgba(98,95,255,.4) + inset 0 1px 0 rgba(255,255,255,.2).</pre></div>
+    <div class="ag-card"><h4>🎴 Glass Card</h4><pre>Glass card: bg rgba(255,255,255,.03), border 1px solid rgba(255,255,255,.08), radius 16px, backdrop-blur 12px, padding 24px.</pre></div>
+    <div class="ag-card"><h4>⚙️ Utility String</h4><pre>Utility string chip: IBM Plex Mono 14px, bg rgba(255,255,255,.05), padding 8px 12px, radius 6px, border 1px solid rgba(255,255,255,.1), syntax-highlighted.</pre></div>
+  </div>
+</section>
+
+<section id="dodont" class="sec">
+  <h2>12. DO / DON'T</h2>
+  <div class="do-dont">
+    <div class="do"><h3>✓ DO</h3><ul>
+      <li>✅ iris <code>#625FFF</code> + teal <code>#00B7D7</code> primary pair로</li>
+      <li>✅ Hero에 실제 utility class string 노출</li>
+      <li>✅ dark/light/system 3-mode 토글</li>
+      <li>✅ IBM Plex Mono으로 utility string 강조</li>
+      <li>✅ glass overlays (rgba white .03~.1) 사용</li>
+    </ul></div>
+    <div class="dont"><h3>✗ DON'T</h3><ul>
+      <li>전통적 gradient (blue→pink)로 대체하지 말 것</li>
+      <li>body font를 Roboto/SFPro로 바꾸지 말 것 — Inter 필수</li>
+      <li>hero에 utility class string 없이 marketing copy만 쓰지 말 것</li>
+      <li>radius 9999 pill CTA 쓰지 말 것 — Tailwind은 radius 8 default</li>
+      <li>weight 700 heavy 쓰지 말 것 — 600 mid-heavy가 Tailwind 느낌</li>
+    </ul></div>
+  </div>
+</section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+  <p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

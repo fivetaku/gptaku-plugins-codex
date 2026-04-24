@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Square — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#006AFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{
+    font-family:var(--font-sans);
+    font-feature-settings:"ss01" 1,"ss02" 1;
+    font-size:14px;font-weight:400;line-height:1.6;
+    color:var(--fg);background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+
+  .toc{
+    position:sticky;top:0;align-self:start;height:100vh;
+    padding:28px 24px 28px 40px;
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;gap:22px;
+    overflow-y:auto;
+  }
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--border-str);text-transform:uppercase;
+    letter-spacing:.1em;padding:0 10px;margin-bottom:4px;
+  }
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{
+    display:grid;grid-template-columns:26px 1fr;align-items:center;
+    padding:6px 10px;font-size:13px;color:var(--muted-fg);
+    border-radius:var(--radius);transition:background 140ms,color 140ms;
+  }
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 12px;background:var(--muted);border:1px solid var(--border);
+    border-radius:999px;font-family:var(--font-mono);font-size:11px;
+    color:var(--subtle);margin-bottom:24px;
+  }
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{
+    margin-bottom:32px;max-width:880px;
+    border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);
+  }
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:28px 32px;
+    max-width:880px;margin-top:8px;
+  }
+  .qs__head{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:16px;margin-bottom:20px;
+    border-bottom:1px solid var(--border);
+  }
+  .qs__head-label{
+    font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+  }
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{
+    background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 16px;
+    display:flex;flex-direction:column;gap:6px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.55;
+    border:1px solid #1f2023;
+  }
+  .qs__step-label{
+    color:#7d8ba4;font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{
+    margin-top:16px;padding:14px 18px;
+    background:#fef2f2;border:1px solid #fecaca;
+    border-left:3px solid #dc2626;
+    border-radius:var(--radius);
+    font-size:13px;color:#991b1b;line-height:1.6;
+  }
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    max-width:880px;margin-top:32px;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;
+  }
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.04em;margin-bottom:8px;
+  }
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;max-width:820px;
+  }
+  .prov__row{
+    display:grid;grid-template-columns:180px 1fr;
+    padding:14px 24px;border-bottom:1px solid var(--border);
+    font-size:13px;align-items:center;
+  }
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{
+    padding:20px 22px;background:var(--card);
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+  }
+  .ts__head{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:10px;
+  }
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .ts__body b{font-weight:600;color:var(--fg);}
+
+  .fs-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:24px 28px;
+    max-width:820px;margin-bottom:24px;
+  }
+  .fs-card__row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card__v b{font-weight:600;}
+
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{
+    display:grid;grid-template-columns:minmax(0,1fr) 260px;
+    gap:32px;align-items:baseline;
+    padding:20px 24px;border-bottom:1px solid var(--border);
+  }
+  .type-row:last-child{border-bottom:none;}
+  .type-row__s{
+    font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--fg);
+  }
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-row__spec b{color:var(--fg);font-weight:600;}
+
+  .type-sub{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;
+    margin-bottom:12px;
+  }
+
+  .callout{
+    margin-top:16px;padding:16px 20px;
+    background:var(--muted);border:1px solid var(--border);
+    border-left:2px solid var(--accent);
+    border-radius:var(--radius);
+    font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;
+  }
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{
+    font-family:var(--font-mono);font-size:11px;margin-bottom:10px;
+    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;
+  }
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{
+    display:grid;gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  }
+  .ramp--1{grid-template-columns:repeat(1,minmax(0,1fr));}
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{
+    aspect-ratio:1/2.2;display:flex;flex-direction:column;
+    justify-content:flex-end;padding:8px 6px;
+    font-family:var(--font-mono);font-size:9px;line-height:1.3;
+    transition:transform 160ms;position:relative;cursor:default;
+  }
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{
+    display:grid;grid-template-columns:180px 70px 1fr;
+    gap:16px;padding:8px 20px;
+    border-bottom:1px solid var(--border);align-items:center;
+    font-family:var(--font-mono);font-size:11px;
+  }
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+
+  .rad-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  .rad-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:16px 12px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .rad-card__v .px{font-family:var(--font-mono);}
+
+  .sh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{
+    background:var(--card);padding:24px 24px 20px;
+    border-radius:var(--radius-lg);border:1px solid var(--border);
+    min-height:150px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+
+  .motion-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:820px;}
+  .motion-row{display:grid;grid-template-columns:220px 120px 1fr;gap:20px;padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .motion-row:last-child{border-bottom:none;}
+  .motion-row .pt{font-family:var(--font-mono);font-size:11px;color:var(--fg);}
+  .motion-row .val{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .motion-row .use{color:var(--subtle);line-height:1.55;}
+
+  .lp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .lp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .lp-card h3{font-size:13px;font-weight:600;margin-bottom:12px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);}
+  .lp-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--subtle);line-height:1.6;}
+  .lp-card ul li{padding-left:14px;position:relative;}
+  .lp-card ul li::before{content:"·";position:absolute;left:2px;color:var(--muted-fg);font-weight:700;}
+  .lp-card ul li b{color:var(--fg);font-weight:600;}
+  .lp-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;}
+
+  .cmp-block{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;
+  }
+  .cmp-block__head{
+    display:flex;align-items:baseline;gap:12px;
+    padding-bottom:14px;margin-bottom:18px;
+    border-bottom:1px solid var(--border);flex-wrap:wrap;
+  }
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{
+    padding:24px;background:var(--muted);border-radius:var(--radius);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;
+  }
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+
+  .cmp-code{
+    margin-top:14px;background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 18px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.65;
+    overflow-x:auto;border:1px solid #1f2023;position:relative;
+  }
+
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{
+    padding:14px 16px;background:var(--muted);border-radius:var(--radius);
+    font-family:"SF Pro Display",-apple-system,sans-serif;
+    font-weight:400;color:var(--fg);font-size:15px;line-height:1.5;
+    border-left:2px solid var(--brand-color);
+  }
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{
+    padding:12px 18px;font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+    border-bottom:2px solid transparent;
+  }
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{
+    background:#08090a;color:#f7f8f8;
+    padding:24px 28px;
+    font-family:var(--font-mono);font-size:12px;line-height:1.65;
+    overflow-x:auto;max-height:560px;margin:0;
+  }
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{
+    font-family:var(--font-mono);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:4px 12px;border-radius:999px;
+  }
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{background:var(--muted);font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;}
+  .myth-row--head .kr{font-family:var(--font-sans);text-transform:none;letter-spacing:0;font-size:11px;}
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;text-decoration-color:rgba(220,38,38,.4);}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+
+  /* Square 전용 컴포넌트 스타일 */
+  .sq-btn-primary {
+    background: #006AFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 150ms ease;
+  }
+  .sq-btn-primary:hover { background: #0055CC; }
+  .sq-btn-alt {
+    background: transparent;
+    color: #006AFF;
+    border: 2px solid #006AFF;
+    border-radius: 4px;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .sq-btn-alt:hover { background: #f0f6ff; }
+  .sq-feature-card {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 160px;
+  }
+  .sq-feature-card__icon {
+    width: 40px; height: 40px;
+    background: #006AFF;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 20px;
+  }
+  .sq-feature-card__title { font-size: 15px; font-weight: 600; color: #1A1A1A; margin-bottom: 6px; }
+  .sq-feature-card__desc { font-size: 13px; color: #525252; line-height: 1.55; }
+  .sq-pricing {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+  .sq-pricing__rate { font-size: 22px; font-weight: 600; color: #1A1A1A; }
+  .sq-pricing__label { font-size: 13px; color: #525252; margin-top: 4px; }
+  .sq-nav {
+    background: #FFFFFF;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    border-radius: 8px;
+  }
+  .sq-nav__logo { font-size: 16px; font-weight: 700; color: #1A1A1A; }
+  .sq-nav__link { font-size: 14px; color: #1A1A1A; }
+  .sq-nav__cta { background: #006AFF; color: #fff; border-radius: 4px; padding: 10px 20px; font-size: 14px; font-weight: 600; margin-left: auto; }
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.lp-grid,.voice-grid,.qs__grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .dd-grid{grid-template-columns:1fr;}
+    .rad-grid{grid-template-columns:repeat(3,1fr);}
+    .sh-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Square</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+        <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#layout"><span class="toc__num">09</span>레이아웃 패턴</a></li>
+        <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">11</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">12</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">13</span>Do / Don't</a></li>
+      </ul>
+    </div>
+
+    <div class="toc__foot">
+      insane-design/square/<br>
+      design.md<br>
+      2026-04-13
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Square <span class="sub">— --color-* / Svelte DS</span></h1>
+      <p class="hero__sub">
+        https://squareup.com 이 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        SvelteKit으로 구축된 Square 웹사이트의 Svelte scoped CSS와 `--color-*` 토큰 체계를 분석했다.
+        모든 값은 CSS 파싱 결과이며, AI 추론은 섞이지 않았다.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="phase1/hero-cropped.png" alt="squareup.com hero — 실제 렌더링된 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Square처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight 400</span>
+            <code>body {
+  font-family:
+    'Square Sans Text VF',
+    'Square Sans Text',
+    Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#1A1A1A</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · Square 블루</span>
+            <code>:root {
+  --color-theme: <b>#006AFF</b>;
+}
+/* primary CTA 전용 */</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: <code>Cash Sans</code>를 Square의 메인 UI 폰트로 사용하는 것. <code>Cash Sans</code>는 Square의 Cash App 제품라인 전용 커스텀 폰트다. Square 웹사이트의 메인 UI 폰트는 <code>Square Sans Text VF</code>이며, 두 폰트를 혼용하면 완전히 다른 두 제품의 아이덴티티가 충돌한다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">squareup.com</div>
+          <div class="stat__hint">SvelteKit (Svelte scoped CSS)</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">Square DS — --color-* 토큰</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">Sq Sans Text VF</div>
+          <div class="stat__hint">weight normal = 400 · 64회</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono" style="color:#006AFF;">#006AFF</div>
+          <div class="stat__hint">--color-theme — primary CTA</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 모두 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://squareup.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA</span></div>
+        <div class="prov__row"><span class="prov__k">HTML size</span><span class="prov__v">N/A bytes</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">SvelteKit scoped CSS (<code>.svelte-*</code> 해시) + Square DS 토큰</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--color-*</code>, <code>--action-variant-*</code>, <code>--text-variant-*</code>, <code>--font-family-*</code></span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 파싱 + selector_role 확인 · AI 추론 없음</span></div>
+      </div>
+
+      <div class="callout" style="margin-top:20px;">
+        <b>Svelte 해시 클래스에서 브랜드 확인</b>: <code>.primary.svelte-wxk8im { background-color: var(--color-theme, #006aff) }</code>에서 <code>#006AFF</code> 확인. <code>--action-variant-button-alt-text-color</code>와 <code>--action-variant-button-alt-border-color (light)</code>에서도 동일하게 확인.
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">프레임워크, 디자인 시스템, CSS 아키텍처, 테마, 폰트 로딩 방식.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">SvelteKit — <code>.svelte-kyz8oo</code>, <code>.svelte-wxk8im</code> 등 Svelte 컴파일드 scoped CSS</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">자체 DS — <code>--color-*</code>, <code>--action-variant-*</code>, <code>--text-variant-*</code>, <code>--font-family-*</code> 토큰 체계</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS ARCHITECTURE</div>
+          <div class="ts__body">Svelte scoped CSS + CSS 커스텀 프로퍼티 토큰 병용. 다크/라이트 모드 분리 (<code>-color-mode-dark</code>, <code>-color-mode-light</code>)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body"><b>light</b> — 흰 배경 <code>#FFFFFF</code>, near-black 텍스트 <code>#1A1A1A</code>, 블루 CTA <code>#006AFF</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT LOADING</div>
+          <div class="ts__body">자체 호스트 <code>Square Sans Text VF</code>, <code>Square Sans Display</code>, <code>Square Sans Mono</code> (Square), <code>Cash Sans</code> (Cash App 전용)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body"><code>#006AFF</code> — <code>var(--color-theme, #006aff)</code> primary 버튼 배경, <code>--action-variant-button-alt-*</code> 토큰 동시 확인</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">Square Sans 폰트 패밀리 — Text VF (64회), Display (9회), Mono (4회). Cash Sans는 Cash App 전용.</p>
+
+      <div class="type-sub">Font stack — Square 폰트 패밀리</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Primary / UI</span>
+          <span class="fs-card__v"><code>Square Sans Text VF</code> — 64회 (압도적 1위) · 전체 UI 텍스트</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Text (non-VF)</span>
+          <span class="fs-card__v"><code>Square Sans Text</code> — 8회 · VF 미지원 환경 fallback</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display</span>
+          <span class="fs-card__v"><code>Square Sans Display</code> (9회), <code>Square Sans Display VF</code> (4회) — 히어로 헤드라인</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Mono</span>
+          <span class="fs-card__v"><code>Square Sans Mono</code> (4회), <code>Square Sans Mono VF</code> (1회) — 코드, 데이터</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Cash App 전용</span>
+          <span class="fs-card__v"><code>Cash Sans</code> (12회), <code>Cash Sans Mono</code> (3회) — Cash App 제품 섹션 전용</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight system</span>
+          <span class="fs-card__v"><code>300</code> · <code>400</code> · <code>500</code> · <code>600</code> · <code>700</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight normal</span>
+          <span class="fs-card__v"><b>400</b> — 53회 (전체 weight 중 압도적 1위)</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>Cash Sans 혼동 주의</b>: <code>Cash Sans</code>는 12회 등장하지만 Square 웹사이트 메인이 아니다. Cash App 제품 페이지 전용. 오픈소스 대체재: <code>Square Sans Text VF</code> → <code>Inter</code> 또는 <code>DM Sans</code>.
+      </div>
+
+      <div class="type-sub" style="margin-top:32px;">Typography scale</div>
+      <div class="type-table">
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:clamp(28px,4vw,56px);font-weight:700;letter-spacing:-.02em;line-height:1.15;">Grow your business with Square.</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Hero Display</span>
+            <b>clamp(40px, 6vw, 72px)</b><br>
+            weight: 700 · Square Sans Display VF
+          </div>
+        </div>
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:30px;font-weight:600;letter-spacing:-.01em;">Everything you need to run your business</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Section Heading</span>
+            <b>28px–40px</b><br>
+            weight: 600–700 · Square Sans Display
+          </div>
+        </div>
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:20px;font-weight:600;">Point of Sale</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Card Title</span>
+            <b>16px–20px</b><br>
+            weight: 600 · Square Sans Text VF
+          </div>
+        </div>
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:15px;font-weight:400;line-height:1.65;">Accept credit cards, manage inventory, and grow your business from anywhere.</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Body</span>
+            <b>14px–16px</b><br>
+            weight: 400 · Square Sans Text VF
+          </div>
+        </div>
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:22px;font-weight:600;font-variant-numeric:tabular-nums;">2.6% + 10¢ per swipe</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Pricing / Data</span>
+            <b>18px–24px</b><br>
+            weight: 500–600 · Square Sans Text VF
+          </div>
+        </div>
+        <div class="type-row">
+          <div>
+            <div class="type-row__s" style="font-size:16px;font-weight:600;">Get started for free</div>
+          </div>
+          <div class="type-row__spec">
+            <span class="tk">Button</span>
+            <b>15px–16px</b><br>
+            weight: 600 · Square Sans Text VF
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">
+        CSS 커스텀 프로퍼티 파싱 + Svelte scoped selector_role 확인. #006AFF는 primary CTA와 alt 버튼 border 두 곳에서 모두 확인.
+      </p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand Blue</b> <span class="muted">— --color-theme · primary CTA 배경</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d is-anchor" style="background:#006AFF;">
+            <span class="n">--color-theme / CTA bg</span>
+            #006AFF
+          </div>
+          <div class="sw sw--d" style="background:#0055CC;">
+            <span class="n">--color-theme-focus / hover</span>
+            #0055CC
+          </div>
+          <div class="sw sw--l" style="background:#F0F6FF;border:1px solid #e4e4e7;">
+            <span class="n">블루 tint 배경</span>
+            #F0F6FF
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutrals — 라이트 테마</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#1A1A1A;">
+            <span class="n">메인 텍스트</span>
+            #1A1A1A
+          </div>
+          <div class="sw sw--l" style="background:#D9D9D9;border:1px solid #e4e4e7;">
+            <span class="n">보더</span>
+            #D9D9D9
+          </div>
+          <div class="sw sw--l" style="background:#F7F6F5;border:1px solid #e4e4e7;">
+            <span class="n">accent 배경 (light)</span>
+            #F7F6F5
+          </div>
+          <div class="sw sw--l" style="background:#FFFFFF;border:1px solid #e4e4e7;">
+            <span class="n">기본 배경</span>
+            #FFFFFF
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Dark Mode accent</b></div>
+        <div class="ramp ramp--1">
+          <div class="sw sw--d" style="background:#1F1F1F;aspect-ratio:8/1;justify-content:center;flex-direction:row;gap:16px;align-items:center;">
+            <span>--color-background-accent-color-mode-dark</span>
+            <span>#1F1F1F</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>--color-theme 패턴</b>: Square의 primary 버튼은 <code>background-color: var(--color-theme, #006aff)</code>로 설정된다. CSS 변수를 사용하면서 fallback으로 hex값을 명시하는 패턴. 이 패턴을 그대로 복사해야 Square의 테마 시스템과 호환된다.
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">결제/비즈니스 도구 UI의 레이아웃 리듬 — 4px 베이스 스케일.</p>
+      <div class="space-table">
+        <div class="space-row">
+          <span class="tk">xs</span><span class="val">4px</span>
+          <div class="bar" style="width:4px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">sm</span><span class="val">8px</span>
+          <div class="bar" style="width:8px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">md</span><span class="val">16px</span>
+          <div class="bar" style="width:16px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">lg</span><span class="val">24px</span>
+          <div class="bar" style="width:24px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">xl</span><span class="val">32px</span>
+          <div class="bar" style="width:32px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">2xl</span><span class="val">48px</span>
+          <div class="bar" style="width:48px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">3xl</span><span class="val">64px</span>
+          <div class="bar" style="width:64px;"></div>
+        </div>
+        <div class="space-row">
+          <span class="tk">4xl</span><span class="val">96px</span>
+          <div class="bar" style="width:96px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Border Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">결제 처리 회사 — 샤프하고 신뢰감 있는 비즈니스 느낌. 버튼은 4px로 작다.</p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:0;"></div>
+          <div class="rad-card__n">None</div>
+          <div class="rad-card__v"><span class="px">0px</span><br>구분선, 테이블</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:4px;"></div>
+          <div class="rad-card__n">Button</div>
+          <div class="rad-card__v"><span class="px">4px</span><br>CTA, 보조 버튼</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:5px;"></div>
+          <div class="rad-card__n">Jump Link</div>
+          <div class="rad-card__v"><span class="px">5px</span><br>접근성 skip nav</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:8px;"></div>
+          <div class="rad-card__n">Card</div>
+          <div class="rad-card__v"><span class="px">8px</span><br>제품 카드</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:12px;"></div>
+          <div class="rad-card__n">Modal</div>
+          <div class="rad-card__v"><span class="px">12px</span><br>대화상자</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px;"></div>
+          <div class="rad-card__n">Badge</div>
+          <div class="rad-card__v"><span class="px">999px</span><br>상태 배지</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px;">
+        <b>버튼 radius = 4px</b>: Square는 결제 처리 회사로서 샤프하고 신뢰감 있는 비즈니스 느낌을 유지. Wise의 pill(40px)이나 Robinhood의 완전 원형(999px)과 완전히 다른 포지셔닝. 금융 신뢰성 = 작은 radius.
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">라이트 테마 비즈니스 UI — 섬세한 레이어 구분.</p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 2px 8px rgba(0,0,0,.08);">
+          <div>
+            <div class="sh-card__n">Card</div>
+            <div class="sh-card__d">제품 카드, 기능 패널</div>
+          </div>
+          <div class="sh-card__v">0 2px 8px rgba(0,0,0,.08)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,.12);">
+          <div>
+            <div class="sh-card__n">Dropdown</div>
+            <div class="sh-card__d">nav 드롭다운, 선택 메뉴</div>
+          </div>
+          <div class="sh-card__v">0 4px 16px rgba(0,0,0,.12)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 8px 32px rgba(0,0,0,.16);">
+          <div>
+            <div class="sh-card__n">Modal</div>
+            <div class="sh-card__d">대화상자, 결제 확인</div>
+          </div>
+          <div class="sh-card__v">0 8px 32px rgba(0,0,0,.16)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motion">
+      <div class="section__num">08 · Motion</div>
+      <h2 class="section__title">모션</h2>
+      <p class="section__lede">비즈니스 도구의 인터랙션 — 빠르고 명확한 피드백.</p>
+      <div class="motion-table">
+        <div class="motion-row">
+          <span class="pt">Button hover</span>
+          <span class="val">150ms · ease</span>
+          <span class="use">CTA 색상 변화 — 즉각적 피드백</span>
+        </div>
+        <div class="motion-row">
+          <span class="pt">Nav toggle</span>
+          <span class="val">200ms · ease-out</span>
+          <span class="use">모바일 nav 메뉴 열기/닫기</span>
+        </div>
+        <div class="motion-row">
+          <span class="pt">Card hover</span>
+          <span class="val">180ms · ease</span>
+          <span class="use">제품 카드 인터랙션</span>
+        </div>
+        <div class="motion-row">
+          <span class="pt">Modal open</span>
+          <span class="val">250ms · ease-out</span>
+          <span class="use">결제 확인, 가입 대화상자</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="layout">
+      <div class="section__num">09 · Layout Patterns</div>
+      <h2 class="section__title">레이아웃 패턴</h2>
+      <p class="section__lede">Square의 비즈니스 솔루션 페이지 구조 — 명확하고 전문적인 레이아웃.</p>
+      <div class="lp-grid">
+        <div class="lp-card">
+          <h3>Hero</h3>
+          <ul>
+            <li><b>흰 배경</b> — 비즈니스 명확성</li>
+            <li><b>큰 Display 헤드라인</b> — Square Sans Display</li>
+            <li><b>블루 CTA</b> — "Get started" #006AFF</li>
+            <li>소상공인 친화적 메시지</li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>Feature Grid</h3>
+          <ul>
+            <li><b>POS, 결제, 재고, 대출</b> 제품 카드</li>
+            <li><code>border: 1px solid #D9D9D9</code> 카드</li>
+            <li><b>border-radius: 8px</b> 카드</li>
+            <li>아이콘 + 제목 + 설명 구조</li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>Nav</h3>
+          <ul>
+            <li>흰 배경 <code>DesktopNav</code> + 드롭다운</li>
+            <li>Svelte 컴포넌트 scoped CSS</li>
+            <li>우측 "Get started" 블루 CTA</li>
+            <li>border-bottom: <code>#D9D9D9</code></li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>Dark Mode</h3>
+          <ul>
+            <li><code>--color-background-accent-color-mode-dark: #1F1F1F</code></li>
+            <li>accent 영역 전용 — 전체 페이지 다크 아님</li>
+            <li>light가 primary 테마</li>
+            <li>max-width: 1200px · padding: 0 24px</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">10 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Primary CTA, Alt 버튼, Feature 카드, 가격 표시, 네비게이션 — Square 비즈니스 UI 빌딩 블록.</p>
+
+      <!-- Primary CTA Button -->
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Primary CTA Button</span>
+          <span class="cmp-block__desc">#006AFF — border-radius: 4px · ::before hover overlay</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button class="sq-btn-primary">Get started for free</button>
+              <button class="sq-btn-alt">Talk to sales</button>
+            </div>
+            <div class="cmp-code">/* Primary */
+background: var(--color-theme, #006AFF);
+color: #FFFFFF;
+border-radius: 4px;
+padding: 14px 24px;
+font-weight: 600; font-size: 16px;
+position: relative; overflow: hidden;
+/* Hover overlay (::before) */
+.btn::before { background: #0055CC; opacity: 0; transition: 150ms; }
+.btn:hover::before { opacity: 1; }
+/* Alt variant */
+border: 2px solid #006AFF;
+color: #006AFF; background: transparent;</div>
+          </div>
+          <div class="cmp-spec">
+            <code>bg</code> var(--color-theme, #006AFF)<br>
+            <code>color</code> #FFFFFF<br>
+            <code>radius</code> 4px<br>
+            <code>padding</code> 14px 24px<br>
+            <code>font-weight</code> 600<br>
+            <code>hover</code> ::before overlay #0055CC<br>
+            <code>alt-border</code> 2px solid #006AFF
+            <span class="kr">Square의 primary 버튼 패턴. CSS 변수 var(--color-theme)와 fallback #006AFF를 항상 함께 사용. ::before overlay로 hover 표현.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Card -->
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Feature Card</span>
+          <span class="cmp-block__desc">제품/기능 소개 카드 — border-radius: 8px</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <div class="sq-feature-card">
+                <div class="sq-feature-card__icon">■</div>
+                <div class="sq-feature-card__title">Point of Sale</div>
+                <div class="sq-feature-card__desc">Accept all payment types at your counter, curbside, or on the go.</div>
+              </div>
+              <div class="sq-feature-card">
+                <div class="sq-feature-card__icon">$</div>
+                <div class="sq-feature-card__title">Payments</div>
+                <div class="sq-feature-card__desc">Process cards, invoices, and online payments with competitive rates.</div>
+              </div>
+            </div>
+            <div class="cmp-code">background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+padding: 24px;
+/* icon */
+background: #006AFF;
+border-radius: 8px;
+width/height: 40px;</div>
+          </div>
+          <div class="cmp-spec">
+            <code>bg</code> #FFFFFF<br>
+            <code>border</code> 1px solid #D9D9D9<br>
+            <code>radius</code> 8px<br>
+            <code>padding</code> 24px<br>
+            <code>icon-bg</code> #006AFF<br>
+            <code>icon-radius</code> 8px
+            <span class="kr">제품 카드의 아이콘에 브랜드 블루 #006AFF 사용. 흰 배경 + 회색 보더로 깔끔한 비즈니스 레이아웃.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Display -->
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Pricing Display</span>
+          <span class="cmp-block__desc">거래 수수료 등 요금 정보 — 명확성 우선</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <div class="sq-pricing">
+                <div class="sq-pricing__rate">2.6% + 10¢</div>
+                <div class="sq-pricing__label">per swipe, dip, or tap</div>
+              </div>
+              <div class="sq-pricing">
+                <div class="sq-pricing__rate">3.5% + 15¢</div>
+                <div class="sq-pricing__label">per manually entered transaction</div>
+              </div>
+            </div>
+            <div class="cmp-code">font-size: 22px;
+font-weight: 600;
+color: #1A1A1A;
+font-variant-numeric: tabular-nums;
+/* label */
+font-size: 13px;
+color: #525252;
+margin-top: 4px;</div>
+          </div>
+          <div class="cmp-spec">
+            <code>rate-size</code> 22px<br>
+            <code>rate-weight</code> 600<br>
+            <code>rate-color</code> #1A1A1A<br>
+            <code>label-size</code> 13px<br>
+            <code>label-color</code> #525252
+            <span class="kr">수수료 정보는 명확하게. 큰 숫자 + 작은 레이블 조합. 투명성이 Square의 브랜드 가치.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Navigation Bar (DesktopNav)</span>
+          <span class="cmp-block__desc">흰 배경 · border-bottom #D9D9D9 · Svelte 컴포넌트</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="padding:0;background:#f0f4ff;">
+              <div class="sq-nav" style="width:100%;border-radius:0;">
+                <div class="sq-nav__logo">Square</div>
+                <span class="sq-nav__link">Products</span>
+                <span class="sq-nav__link">Pricing</span>
+                <span class="sq-nav__link">Resources</span>
+                <button class="sq-nav__cta">Get started</button>
+              </div>
+            </div>
+            <div class="cmp-code">background: var(--color-background, #FFFFFF);
+color: var(--color-text, #1a1a1a);
+border-color: var(--color-border, #D9D9D9);
+height: 60px;
+/* CTA */
+background: #006AFF; color: #fff;
+border-radius: 4px; padding: 10px 20px;
+font-weight: 600;</div>
+          </div>
+          <div class="cmp-spec">
+            <code>bg</code> var(--color-background, #FFFFFF)<br>
+            <code>border-bottom</code> 1px solid #D9D9D9<br>
+            <code>text</code> var(--color-text, #1A1A1A)<br>
+            <code>height</code> 60px<br>
+            <code>cta-bg</code> #006AFF<br>
+            <code>cta-radius</code> 4px
+            <span class="kr">Square nav는 CSS 변수 패턴을 엄격하게 적용. var(--color-background, fallback) 형식 유지.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">11 · Content Voice</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">전문적이고 명확. SMB(소상공인) 친화적. 복잡한 결제를 단순하게.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">Headline</div>
+          <div class="voice-card__rule">비즈니스 성장에 직결. 복잡한 설명 없이 가치 전달.</div>
+          <div class="voice-card__ex">"Grow your business with Square."</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">수치 강조</div>
+          <div class="voice-card__rule">요금, 처리 속도 등 구체적 수치로 신뢰감 형성.</div>
+          <div class="voice-card__ex">"2.6% + 10¢ per swipe"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">CTA</div>
+          <div class="voice-card__rule">무료 시작, 영업 문의 등 행동 명확. 진입 장벽 낮춤.</div>
+          <div class="voice-card__ex">"Get started for free" · "Talk to sales" · "See pricing"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">어조</div>
+          <div class="voice-card__rule">전문적이고 명확. 소상공인 친화적. 금융 복잡성을 단순하게.</div>
+          <div class="voice-card__ex">"No monthly fees. No hidden costs. Just one simple rate."</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">12 · Code Export</div>
+      <h2 class="section__title">CSS · Tailwind</h2>
+      <p class="section__lede">복사 즉시 사용 가능한 Drop-in CSS와 Tailwind config.</p>
+
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'pane-css')">CSS</button>
+          <button onclick="switchTab(this,'pane-tw')">Tailwind</button>
+          <span class="code-copy">square design system</span>
+        </div>
+        <div id="pane-css" class="code-pane is-active">
+          <pre><span class="c">/* Square Design System — Drop-in */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Brand */</span>
+  <span class="k">--color-theme</span>:             <span class="v">#006AFF</span>;   <span class="c">/* primary CTA */</span>
+  <span class="k">--color-theme-focus</span>:       <span class="v">#0055CC</span>;   <span class="c">/* hover/focus */</span>
+
+  <span class="c">/* Neutrals */</span>
+  <span class="k">--color-text</span>:              <span class="v">#1A1A1A</span>;
+  <span class="k">--color-background</span>:        <span class="v">#FFFFFF</span>;
+  <span class="k">--color-border</span>:            <span class="v">#D9D9D9</span>;
+  <span class="k">--color-background-accent</span>: <span class="v">#F7F6F5</span>;
+
+  <span class="c">/* Fonts */</span>
+  <span class="k">--font-family-base</span>: <span class="v">'Square Sans Text VF', 'Square Sans Text',
+    Helvetica, Arial, sans-serif</span>;
+  <span class="k">--font-family-display</span>: <span class="v">'Square Sans Display VF', 'Square Sans Display',
+    Helvetica, Arial, sans-serif</span>;
+  <span class="k">--font-family-mono</span>: <span class="v">'Square Sans Mono', monospace</span>;
+}
+
+<span class="k">body</span> {
+  <span class="k">font-family</span>: <span class="v">var(--font-family-base)</span>;
+  <span class="k">font-weight</span>: <span class="v">400</span>;
+  <span class="k">background</span>: <span class="v">var(--color-background)</span>;
+  <span class="k">color</span>: <span class="v">var(--color-text)</span>;
+  <span class="k">-webkit-font-smoothing</span>: <span class="v">antialiased</span>;
+}
+
+<span class="k">.btn-primary</span> {
+  <span class="k">background</span>: <span class="v">var(--color-theme, #006AFF)</span>;
+  <span class="k">color</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">border</span>: <span class="v">none</span>;
+  <span class="k">border-radius</span>: <span class="v">4px</span>;
+  <span class="k">padding</span>: <span class="v">14px 24px</span>;
+  <span class="k">font-weight</span>: <span class="v">600</span>;
+  <span class="k">font-size</span>: <span class="v">16px</span>;
+  <span class="k">position</span>: <span class="v">relative</span>;
+  <span class="k">overflow</span>: <span class="v">hidden</span>;
+}
+<span class="k">.btn-primary::before</span> {
+  <span class="k">content</span>: <span class="v">""</span>;
+  <span class="k">display</span>: <span class="v">block</span>;
+  <span class="k">position</span>: <span class="v">absolute</span>;
+  <span class="k">inset</span>: <span class="v">0</span>;
+  <span class="k">background</span>: <span class="v">var(--color-theme-focus, #0055CC)</span>;
+  <span class="k">opacity</span>: <span class="v">0</span>;
+  <span class="k">transition</span>: <span class="v">opacity 150ms ease</span>;
+}
+<span class="k">.btn-primary:hover::before</span> {
+  <span class="k">opacity</span>: <span class="v">1</span>;
+}
+
+<span class="k">.feature-card</span> {
+  <span class="k">background</span>: <span class="v">var(--color-background, #FFFFFF)</span>;
+  <span class="k">border</span>: <span class="v">1px solid var(--color-border, #D9D9D9)</span>;
+  <span class="k">border-radius</span>: <span class="v">8px</span>;
+  <span class="k">padding</span>: <span class="v">24px</span>;
+}</pre>
+        </div>
+        <div id="pane-tw" class="code-pane">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        square: {
+          blue:         <span class="v">'#006AFF'</span>,
+          <span class="v">'blue-hover'</span>: <span class="v">'#0055CC'</span>,
+          dark:         <span class="v">'#1A1A1A'</span>,
+          border:       <span class="v">'#D9D9D9'</span>,
+          accent:       <span class="v">'#F7F6F5'</span>,
+          <span class="v">'dark-accent'</span>: <span class="v">'#1F1F1F'</span>,
+        },
+      },
+      fontFamily: {
+        sans:    [<span class="v">'"Square Sans Text VF"'</span>, <span class="v">'"Square Sans Text"'</span>, <span class="v">'Helvetica'</span>, <span class="v">'Arial'</span>, <span class="v">'sans-serif'</span>],
+        display: [<span class="v">'"Square Sans Display VF"'</span>, <span class="v">'"Square Sans Display"'</span>, <span class="v">'Helvetica'</span>, <span class="v">'Arial'</span>, <span class="v">'sans-serif'</span>],
+        mono:    [<span class="v">'"Square Sans Mono"'</span>, <span class="v">'monospace'</span>],
+      },
+      borderRadius: {
+        btn:  <span class="v">'4px'</span>,    <span class="c">// CTA 버튼</span>
+        card: <span class="v">'8px'</span>,    <span class="c">// 제품 카드</span>
+        lg:   <span class="v">'12px'</span>,   <span class="c">// 모달</span>
+      },
+      boxShadow: {
+        card:  <span class="v">'0 2px 8px rgba(0,0,0,.08)'</span>,
+        drop:  <span class="v">'0 4px 16px rgba(0,0,0,.12)'</span>,
+        modal: <span class="v">'0 8px 32px rgba(0,0,0,.16)'</span>,
+      },
+    },
+  },
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">13 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Square 디자인 시스템을 올바르게 구현하기 위한 핵심 원칙.</p>
+
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>DO</h3>
+          <ul>
+            <li><code>var(--color-theme, #006AFF)</code> 패턴 — 변수 + fallback 항상 함께</li>
+            <li>버튼 <code>::before</code> overlay 패턴으로 hover 표현</li>
+            <li><b>Square Sans Text VF</b>로 UI 전체 — 압도적 주폰트</li>
+            <li><b>Square Sans Display</b>로 히어로 헤드라인</li>
+            <li>버튼 radius <code>4px</code> — 비즈니스 신뢰감</li>
+            <li>CSS 변수 <code>--color-border: #D9D9D9</code> 패턴 유지</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>DON'T</h3>
+          <ul>
+            <li><code>Cash Sans</code>를 메인 UI 폰트로 사용 — <b>Cash App 전용</b></li>
+            <li>pill shape 버튼 (<code>border-radius: 999px</code>) — 비즈니스 느낌 훼손</li>
+            <li>다크 배경 기본 사용 — <b>라이트가 Square 주 테마</b></li>
+            <li><code>--color-theme</code> 없이 hex만 하드코딩 — 변수 패턴 유지 필요</li>
+            <li>Svelte 해시 클래스(<code>.svelte-*</code>) 직접 작성 — 컴파일 결과물</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <span>오해</span>
+          <span>실제</span>
+          <span class="kr">설명</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">Cash Sans = Square 메인 폰트</span>
+          <span class="right">Square Sans Text VF</span>
+          <span class="why">Cash Sans는 Cash App 전용. Square 웹사이트 메인은 Square Sans Text VF (64회).</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">결제사 = 검정/흰 무채색</span>
+          <span class="right">#006AFF 블루 CTA</span>
+          <span class="why">라이트 테마 + #006AFF 블루 CTA. 흰 배경에 블루 버튼의 신뢰감.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">버튼이 둥글 것 (핀테크 = pill)</span>
+          <span class="right">4px 작은 radius</span>
+          <span class="why">Square는 결제 처리 회사. 샤프하고 비즈니스적인 4px radius. Wise pill과 완전히 다름.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">Svelte 해시 = 의미 없는 CSS</span>
+          <span class="right">브랜드 컬러 직접 확인</span>
+          <span class="why">.primary.svelte-wxk8im에서 #006AFF 직접 확인. Svelte scoped CSS도 파싱 대상.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="rfoot">
+  <span>insane-design/square · 2026-04-13</span>
+  <span class="kr">CSS 파싱 기반 · AI 추론 없음 · hex 값은 실제 CSS에서 확인된 값만 수록</span>
+</div>
+
+<script>
+function switchTab(btn, paneId) {
+  const export_ = btn.closest('.code-export');
+  export_.querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  export_.querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById(paneId).classList.add('is-active');
+}
+</script>
+</body>
+</html>

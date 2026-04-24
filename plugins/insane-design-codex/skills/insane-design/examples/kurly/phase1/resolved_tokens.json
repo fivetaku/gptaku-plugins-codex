@@ -1,0 +1,408 @@
+{
+  "slug": "kurly",
+  "total_vars": 270,
+  "resolved_count": 261,
+  "unresolved_count": 9,
+  "samples": {
+    "--base-color": {
+      "raw": "#ebebeb",
+      "resolved": "#ebebeb",
+      "chain": [
+        "--base-color",
+        "#ebebeb"
+      ]
+    },
+    "--highlight-color": {
+      "raw": "#f5f5f5",
+      "resolved": "#f5f5f5",
+      "chain": [
+        "--highlight-color",
+        "#f5f5f5"
+      ]
+    },
+    "--animation-duration": {
+      "raw": "1.5s",
+      "resolved": "1.5s",
+      "chain": [
+        "--animation-duration",
+        "1.5s"
+      ]
+    },
+    "--animation-direction": {
+      "raw": "normal",
+      "resolved": null,
+      "chain": [
+        "--animation-direction",
+        "normal"
+      ]
+    },
+    "--pseudo-element-display": {
+      "raw": "block",
+      "resolved": null,
+      "chain": [
+        "--pseudo-element-display",
+        "block"
+      ]
+    },
+    "--kpds_ldmw170": {
+      "raw": "Pretendard,\"Pretendard Variable\",-apple-system,BlinkMacSystemFont,system-ui,Roboto,\"Helvetica Neue\",\"Segoe UI\",\"Apple SD Gothic Neo\",\"Noto Sans KR\",\"Malgun Gothic\",\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",sans-serif",
+      "resolved": null,
+      "chain": [
+        "--kpds_ldmw170",
+        "Pretendard,\"Pretendard Variable\",-apple-system,BlinkMacSystemFont,system-ui,Roboto,\"Helvetica Neue\",\"Segoe UI\",\"Apple SD Gothic Neo\",\"Noto Sans KR\",\"Malgun Gothic\",\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",sans-serif"
+      ]
+    },
+    "--kpds_ldmw171": {
+      "raw": "6px",
+      "resolved": "6px",
+      "chain": [
+        "--kpds_ldmw171",
+        "6px"
+      ]
+    },
+    "--kpds_ldmw172": {
+      "raw": "7px",
+      "resolved": "7px",
+      "chain": [
+        "--kpds_ldmw172",
+        "7px"
+      ]
+    },
+    "--kpds_ldmw173": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--kpds_ldmw173",
+        "8px"
+      ]
+    },
+    "--kpds_ldmw174": {
+      "raw": "10px",
+      "resolved": "10px",
+      "chain": [
+        "--kpds_ldmw174",
+        "10px"
+      ]
+    },
+    "--kpds_ldmw175": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--kpds_ldmw175",
+        "12px"
+      ]
+    },
+    "--kpds_ldmw176": {
+      "raw": "13px",
+      "resolved": "13px",
+      "chain": [
+        "--kpds_ldmw176",
+        "13px"
+      ]
+    },
+    "--kpds_ldmw177": {
+      "raw": "14px",
+      "resolved": "14px",
+      "chain": [
+        "--kpds_ldmw177",
+        "14px"
+      ]
+    },
+    "--kpds_ldmw178": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--kpds_ldmw178",
+        "16px"
+      ]
+    },
+    "--kpds_ldmw179": {
+      "raw": "18px",
+      "resolved": "18px",
+      "chain": [
+        "--kpds_ldmw179",
+        "18px"
+      ]
+    },
+    "--kpds_ldmw17a": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--kpds_ldmw17a",
+        "20px"
+      ]
+    },
+    "--kpds_ldmw17b": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--kpds_ldmw17b",
+        "24px"
+      ]
+    },
+    "--kpds_ldmw17c": {
+      "raw": "28px",
+      "resolved": "28px",
+      "chain": [
+        "--kpds_ldmw17c",
+        "28px"
+      ]
+    },
+    "--kpds_ldmw17d": {
+      "raw": "36px",
+      "resolved": "36px",
+      "chain": [
+        "--kpds_ldmw17d",
+        "36px"
+      ]
+    },
+    "--kpds_ldmw17e": {
+      "raw": "64px",
+      "resolved": "64px",
+      "chain": [
+        "--kpds_ldmw17e",
+        "64px"
+      ]
+    },
+    "--kpds_ldmw17f": {
+      "raw": "400",
+      "resolved": "400",
+      "chain": [
+        "--kpds_ldmw17f",
+        "400"
+      ]
+    },
+    "--kpds_ldmw17g": {
+      "raw": "600",
+      "resolved": "600",
+      "chain": [
+        "--kpds_ldmw17g",
+        "600"
+      ]
+    },
+    "--kpds_ldmw17h": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--kpds_ldmw17h",
+        "700"
+      ]
+    },
+    "--kpds_ldmw17i": {
+      "raw": "72px",
+      "resolved": "72px",
+      "chain": [
+        "--kpds_ldmw17i",
+        "72px"
+      ]
+    },
+    "--kpds_ldmw17j": {
+      "raw": "44px",
+      "resolved": "44px",
+      "chain": [
+        "--kpds_ldmw17j",
+        "44px"
+      ]
+    },
+    "--kpds_ldmw17k": {
+      "raw": "36px",
+      "resolved": "36px",
+      "chain": [
+        "--kpds_ldmw17k",
+        "36px"
+      ]
+    },
+    "--kpds_ldmw17l": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--kpds_ldmw17l",
+        "32px"
+      ]
+    },
+    "--kpds_ldmw17m": {
+      "raw": "28px",
+      "resolved": "28px",
+      "chain": [
+        "--kpds_ldmw17m",
+        "28px"
+      ]
+    },
+    "--kpds_ldmw17n": {
+      "raw": "26px",
+      "resolved": "26px",
+      "chain": [
+        "--kpds_ldmw17n",
+        "26px"
+      ]
+    },
+    "--kpds_ldmw17o": {
+      "raw": "22px",
+      "resolved": "22px",
+      "chain": [
+        "--kpds_ldmw17o",
+        "22px"
+      ]
+    },
+    "--kpds_ldmw17p": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--kpds_ldmw17p",
+        "20px"
+      ]
+    },
+    "--kpds_ldmw17q": {
+      "raw": "18px",
+      "resolved": "18px",
+      "chain": [
+        "--kpds_ldmw17q",
+        "18px"
+      ]
+    },
+    "--kpds_ldmw17r": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--kpds_ldmw17r",
+        "16px"
+      ]
+    },
+    "--kpds_ldmw17s": {
+      "raw": "14px",
+      "resolved": "14px",
+      "chain": [
+        "--kpds_ldmw17s",
+        "14px"
+      ]
+    },
+    "--kpds_ldmw17t": {
+      "raw": "2px",
+      "resolved": "2px",
+      "chain": [
+        "--kpds_ldmw17t",
+        "2px"
+      ]
+    },
+    "--kpds_ldmw17u": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--kpds_ldmw17u",
+        "4px"
+      ]
+    },
+    "--kpds_ldmw17v": {
+      "raw": "6px",
+      "resolved": "6px",
+      "chain": [
+        "--kpds_ldmw17v",
+        "6px"
+      ]
+    },
+    "--kpds_ldmw17w": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--kpds_ldmw17w",
+        "8px"
+      ]
+    },
+    "--kpds_ldmw17x": {
+      "raw": "10px",
+      "resolved": "10px",
+      "chain": [
+        "--kpds_ldmw17x",
+        "10px"
+      ]
+    },
+    "--kpds_ldmw17y": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--kpds_ldmw17y",
+        "12px"
+      ]
+    },
+    "--kpds_ldmw17z": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--kpds_ldmw17z",
+        "16px"
+      ]
+    },
+    "--kpds_ldmw1710": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--kpds_ldmw1710",
+        "24px"
+      ]
+    },
+    "--kpds_ldmw1711": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--kpds_ldmw1711",
+        "32px"
+      ]
+    },
+    "--kpds_ldmw1712": {
+      "raw": "40px",
+      "resolved": "40px",
+      "chain": [
+        "--kpds_ldmw1712",
+        "40px"
+      ]
+    },
+    "--kpds_ldmw1713": {
+      "raw": "48px",
+      "resolved": "48px",
+      "chain": [
+        "--kpds_ldmw1713",
+        "48px"
+      ]
+    },
+    "--kpds_ldmw1714": {
+      "raw": "64px",
+      "resolved": "64px",
+      "chain": [
+        "--kpds_ldmw1714",
+        "64px"
+      ]
+    },
+    "--kpds_ldmw1715": {
+      "raw": "80px",
+      "resolved": "80px",
+      "chain": [
+        "--kpds_ldmw1715",
+        "80px"
+      ]
+    },
+    "--kpds_ldmw1716": {
+      "raw": "96px",
+      "resolved": "96px",
+      "chain": [
+        "--kpds_ldmw1716",
+        "96px"
+      ]
+    },
+    "--kpds_ldmw1717": {
+      "raw": "160px",
+      "resolved": "160px",
+      "chain": [
+        "--kpds_ldmw1717",
+        "160px"
+      ]
+    },
+    "--kpds_ldmw1718": {
+      "raw": "0px",
+      "resolved": "0px",
+      "chain": [
+        "--kpds_ldmw1718",
+        "0px"
+      ]
+    }
+  }
+}

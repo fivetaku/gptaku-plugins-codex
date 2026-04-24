@@ -1,0 +1,316 @@
+/* Nav Link */
+.feds-menu-content .feds-navLink {
+  padding: 6px 32px;
+}
+
+.feds-navLink--hoverCaret[aria-expanded = "true"] + .feds-popup,
+.feds-menu-headline[aria-expanded = "true"] + .feds-menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.feds-navLink--hoverCaret[aria-expanded = "true"]:after,
+.feds-menu-headline[aria-expanded = "true"]:after {
+  transform: rotateZ(-135deg);
+}
+
+/* General menu styles */
+.feds-menu-column .feds-cta-wrapper {
+  padding: 6px 32px;
+}
+
+.feds-menu-column > ul {
+  padding: 12px 0;
+}
+
+.feds-menu-section > a:first-child {
+  margin-top: 12px;
+}
+
+.feds-menu-items {
+  display: none;
+  padding: 12px 0;
+}
+
+.feds-menu-column--group .feds-menu-column:not(:last-child) {
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--feds-borderColor-menu);
+}
+
+.feds-menu-headline {
+  position: relative;
+  padding: 12px 44px 12px 32px;
+  border-bottom: 1px solid var(--feds-borderColor-menu);
+  color: var(--feds-color-headline);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.global-footer:not(.mobile) .feds-menu-headline {
+  white-space: normal;
+  display: block;
+}
+
+[dir = "rtl"] .feds-menu-headline {
+  padding-right: 32px;
+  padding-left: 44px;
+}
+
+.feds-menu-headline:after {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  display: flex;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: var(--feds-color-link);
+  transform-origin: 75% 75%;
+  transform: rotateZ(45deg);
+  transition: transform 0.1s ease;
+  content: "";
+  box-sizing: content-box;
+}
+
+.feds-localnav-items .feds-menu-headline:after {
+  right: 38px;
+  top: 20px;
+}
+
+[dir = "rtl"] .feds-menu-headline:after {
+  right: unset;
+  left: 30px;
+}
+
+.feds-menu-items {
+  border-bottom: solid 1px var(--feds-borderColor-menu);
+}
+
+.feds-crossCloudMenu-wrapper {
+  display: none;
+}
+
+.feds-image-wrapper {
+  padding: 12px 38px;
+}
+
+.gnav-image {
+  width: 316px;
+  box-sizing: content-box;
+}
+
+.feds-promo-wrapper {
+  max-width: 260px;
+  box-sizing: content-box;
+  margin: 5px 0 15px 10px;
+}
+
+.feds-promo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--feds-borderColor);
+  background: var(--feds-background-promo);
+  white-space: normal;
+  box-sizing: content-box;
+}
+
+.feds-promo-header {
+  font-weight: bold;
+}
+
+.feds-promo--dark {
+  background: var(--feds-background-promo--dark);
+}
+
+.feds-promo-image,
+.feds-promo picture,
+.feds-promo img {
+  width: 100%;
+  display: block;
+}
+
+/* Next two sets of rules are a compromise between
+content auhtored manually and AEM-imported content */
+.feds-promo > div {
+  padding: 8px 32px;
+}
+
+.feds-promo div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.feds-promo .feds-promo-image {
+  padding: 0;
+}
+
+.feds-promo .feds-cta-wrapper {
+  padding: 0;
+  align-items: flex-start;
+}
+
+.feds-promo a.feds-cta,
+.feds-promo a.feds-cta:hover {
+  text-decoration: none;
+}
+
+.feds-promo--dark,
+.feds-promo--dark a:not(.feds-cta) {
+  color: var(--feds-background-nav);
+}
+
+.feds-promo--dark a,
+.feds-promo--dark a:hover {
+  text-decoration: underline;
+}
+
+.feds-promo-wrapper {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .global-navigation .feds-menu-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--feds-maxWidth-nav);
+  }
+
+  .global-footer:not(.mobile) .feds-menu-content {
+    display: grid;
+    width: 100%;
+    max-width: var(--feds-maxWidth-nav);
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    gap: 16px;
+  }
+
+  .feds-navItem--section .feds-menu-content {
+    column-gap: 12px;
+  }
+
+  .feds-menu-column--group .feds-menu-column:not(:last-child) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .feds-menu-section + .feds-menu-section {
+    margin-top: 12px;
+  }
+
+  .global-footer:not(.mobile) .feds-menu-section + .feds-menu-section {
+    margin-top: 12px;
+  }
+
+  .global-footer:not(.mobile) .feds-menu-headline {
+    position: static;
+    margin: 0 32px;
+    cursor: default;
+  }
+
+  .global-footer:not(.mobile) .feds-menu-headline,
+  .global-footer:not(.mobile) [dir = "rtl"] .feds-menu-headline {
+    padding: 12px 0;
+  }
+
+  .global-navigation .feds-menu-headline,
+  .global-navigation [dir = "rtl"] .feds-menu-headline {
+    padding: 12px 0;
+  }
+
+  .global-navigation .feds-menu-headline {
+    margin-bottom: 12px;
+    position: static;
+    margin: 0 32px;
+    cursor: default;
+  }
+
+  .feds-menu-column--group .feds-menu-headline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .feds-menu-column > ul {
+    padding: 0;
+  }
+
+  .feds-menu-section > a:first-child {
+    margin-top: 0;
+  }
+
+  .global-footer:not(.mobile) .feds-menu-headline:after {
+    content: none;
+  }
+
+  .global-navigation .feds-menu-headline:after {
+    content: none;
+  }
+
+  .global-footer:not(.mobile) .feds-menu-headline + .feds-menu-items {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .global-navigation .feds-menu-headline + .feds-menu-items {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .feds-promo-wrapper {
+    display: flex;
+    width: 260px;
+    padding: 0 32px;
+    margin: 0;
+  }
+
+  /* cross cloud menu */
+  .feds-crossCloudMenu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: solid 1px var(--feds-borderColor);
+    background-color: var(--feds-background-nav);
+  }
+  
+  .feds-crossCloudMenu {
+    width: 100%;
+    max-width: var(--feds-maxWidth-nav);
+  }
+  
+  .feds-crossCloudMenu ul {
+    padding: 20px 0;
+    display: flex;
+  }
+  
+  .feds-crossCloudMenu-item:not(:last-child):after {
+    content: '|';
+  }
+  
+  .feds-crossCloudMenu-item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .feds-crossCloudMenu-item u {
+   text-decoration: none;
+  }
+  
+  .feds-crossCloudMenu .feds-navLink:hover {
+    background-color: transparent;
+  }
+  
+  .feds-crossCloudMenu .feds-navLink {
+    padding: 0 28px;
+  }
+}

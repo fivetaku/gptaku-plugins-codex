@@ -1,0 +1,773 @@
+{
+  "slug": "daangn",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [
+      {
+        "alias": "--dialog-z-index",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--popover-z-index",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--seed-dimension-spacing-y-nav-to-title",
+        "references": [
+          "--seed-dimension-x5"
+        ],
+        "terminal_hint": "--seed-dimension-x5"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--carotene-color-bg-warmth-l1",
+        "references": [],
+        "terminal_hint": "#aeb2b81f"
+      },
+      {
+        "alias": "--carotene-color-bg-warmth-l2",
+        "references": [],
+        "terminal_hint": "#2f9afc1f"
+      },
+      {
+        "alias": "--carotene-color-bg-warmth-l3",
+        "references": [],
+        "terminal_hint": "#51cbff1f"
+      },
+      {
+        "alias": "--carotene-color-bg-warmth-l4",
+        "references": [],
+        "terminal_hint": "#2af3e71f"
+      },
+      {
+        "alias": "--carotene-color-bg-warmth-l5",
+        "references": [],
+        "terminal_hint": "#ffb84d1f"
+      },
+      {
+        "alias": "--carotene-color-bg-warmth-l6",
+        "references": [],
+        "terminal_hint": "#ff6e1d1f"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l1",
+        "references": [],
+        "terminal_hint": "#aeb2b8"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l2",
+        "references": [],
+        "terminal_hint": "#2f9afc"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l3",
+        "references": [],
+        "terminal_hint": "#51cbff"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l4",
+        "references": [],
+        "terminal_hint": "#2af3e7"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l5",
+        "references": [],
+        "terminal_hint": "#ffb84d"
+      },
+      {
+        "alias": "--carotene-color-fg-warmth-l6",
+        "references": [],
+        "terminal_hint": "#ff6e1d"
+      },
+      {
+        "alias": "--carotene-color-palette-static-black",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--carotene-color-palette-static-black-alpha-200",
+        "references": [],
+        "terminal_hint": "#00000033"
+      },
+      {
+        "alias": "--carotene-color-palette-static-black-alpha-50",
+        "references": [],
+        "terminal_hint": "#0000000d"
+      },
+      {
+        "alias": "--carotene-color-palette-static-black-alpha-500",
+        "references": [],
+        "terminal_hint": "#00000080"
+      },
+      {
+        "alias": "--carotene-color-palette-static-white",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--carotene-color-palette-static-white-alpha-200",
+        "references": [],
+        "terminal_hint": "#ffffff33"
+      },
+      {
+        "alias": "--carotene-color-palette-static-white-alpha-50",
+        "references": [],
+        "terminal_hint": "#ffffff0d"
+      },
+      {
+        "alias": "--scroll-fog-from-color",
+        "references": [],
+        "terminal_hint": "#0000"
+      },
+      {
+        "alias": "--scroll-fog-to-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--seed-color-banner-blue",
+        "references": [],
+        "terminal_hint": "#0d2a3a"
+      },
+      {
+        "alias": "--seed-color-banner-cool-gray",
+        "references": [],
+        "terminal_hint": "#242c33"
+      },
+      {
+        "alias": "--seed-color-banner-green",
+        "references": [],
+        "terminal_hint": "#1e361c"
+      },
+      {
+        "alias": "--seed-color-banner-orange",
+        "references": [],
+        "terminal_hint": "#42230a"
+      },
+      {
+        "alias": "--seed-color-banner-pink",
+        "references": [],
+        "terminal_hint": "#3b172c"
+      },
+      {
+        "alias": "--seed-color-banner-purple",
+        "references": [],
+        "terminal_hint": "#2e1e45"
+      },
+      {
+        "alias": "--seed-color-banner-red",
+        "references": [],
+        "terminal_hint": "#3a0f15"
+      },
+      {
+        "alias": "--seed-color-banner-teal",
+        "references": [],
+        "terminal_hint": "#143633"
+      },
+      {
+        "alias": "--seed-color-banner-warm-gray",
+        "references": [],
+        "terminal_hint": "#2f2b27"
+      },
+      {
+        "alias": "--seed-color-banner-yellow",
+        "references": [],
+        "terminal_hint": "#3e2b00"
+      },
+      {
+        "alias": "--seed-color-bg-magic-weak",
+        "references": [],
+        "terminal_hint": "#201f1f"
+      },
+      {
+        "alias": "--seed-color-bg-transparent",
+        "references": [],
+        "terminal_hint": "#fff0"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l1-bg",
+        "references": [],
+        "terminal_hint": "#292929"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l1-text",
+        "references": [],
+        "terminal_hint": "#b8b8b9"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l10-bg",
+        "references": [],
+        "terminal_hint": "#34040a"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l10-text",
+        "references": [],
+        "terminal_hint": "#fb6f82"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l2-bg",
+        "references": [],
+        "terminal_hint": "#332605"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l2-text",
+        "references": [],
+        "terminal_hint": "#f5db97"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l3-bg",
+        "references": [],
+        "terminal_hint": "#372b01"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l3-text",
+        "references": [],
+        "terminal_hint": "#fdda65"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l4-bg",
+        "references": [],
+        "terminal_hint": "#372301"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l4-text",
+        "references": [],
+        "terminal_hint": "#fbbe55"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l5-bg",
+        "references": [],
+        "terminal_hint": "#371f01"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l5-text",
+        "references": [],
+        "terminal_hint": "#faac4b"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l6-bg",
+        "references": [],
+        "terminal_hint": "#351b03"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l6-text",
+        "references": [],
+        "terminal_hint": "#fc9855"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l7-bg",
+        "references": [],
+        "terminal_hint": "#371701"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l7-text",
+        "references": [],
+        "terminal_hint": "#f97a25"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l8-bg",
+        "references": [],
+        "terminal_hint": "#380f00"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l8-text",
+        "references": [],
+        "terminal_hint": "#fe6a34"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l9-bg",
+        "references": [],
+        "terminal_hint": "#380500"
+      },
+      {
+        "alias": "--seed-color-manner-temp-l9-text",
+        "references": [],
+        "terminal_hint": "#fe6a5d"
+      },
+      {
+        "alias": "--seed-color-palette-blue-100",
+        "references": [],
+        "terminal_hint": "#202742"
+      },
+      {
+        "alias": "--seed-color-palette-blue-1000",
+        "references": [],
+        "terminal_hint": "#e5f0fe"
+      },
+      {
+        "alias": "--seed-color-palette-blue-200",
+        "references": [],
+        "terminal_hint": "#1e3352"
+      },
+      {
+        "alias": "--seed-color-palette-blue-300",
+        "references": [],
+        "terminal_hint": "#1a4275"
+      },
+      {
+        "alias": "--seed-color-palette-blue-400",
+        "references": [],
+        "terminal_hint": "#0f559e"
+      },
+      {
+        "alias": "--seed-color-palette-blue-500",
+        "references": [],
+        "terminal_hint": "#1964d8"
+      },
+      {
+        "alias": "--seed-color-palette-blue-600",
+        "references": [],
+        "terminal_hint": "#1e82eb"
+      },
+      {
+        "alias": "--seed-color-palette-blue-700",
+        "references": [],
+        "terminal_hint": "#41a2f9"
+      },
+      {
+        "alias": "--seed-color-palette-blue-800",
+        "references": [],
+        "terminal_hint": "#83bcf9"
+      },
+      {
+        "alias": "--seed-color-palette-blue-900",
+        "references": [],
+        "terminal_hint": "#b9d7fb"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-100",
+        "references": [],
+        "terminal_hint": "#31241f"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-1000",
+        "references": [],
+        "terminal_hint": "#f4eeea"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-200",
+        "references": [],
+        "terminal_hint": "#4b291c"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-300",
+        "references": [],
+        "terminal_hint": "#6b311c"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-400",
+        "references": [],
+        "terminal_hint": "#923600"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-500",
+        "references": [],
+        "terminal_hint": "#bd4201"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-600",
+        "references": [],
+        "terminal_hint": "#e65200"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-700",
+        "references": [],
+        "terminal_hint": "#f60"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-800",
+        "references": [],
+        "terminal_hint": "#ff9e65"
+      },
+      {
+        "alias": "--seed-color-palette-carrot-900",
+        "references": [],
+        "terminal_hint": "#eecebc"
+      },
+      {
+        "alias": "--seed-color-palette-gray-00",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--seed-color-palette-gray-100",
+        "references": [],
+        "terminal_hint": "#16171b"
+      },
+      {
+        "alias": "--seed-color-palette-gray-1000",
+        "references": [],
+        "terminal_hint": "#f3f4f5"
+      },
+      {
+        "alias": "--seed-color-palette-gray-200",
+        "references": [],
+        "terminal_hint": "#1d2025"
+      },
+      {
+        "alias": "--seed-color-palette-gray-300",
+        "references": [],
+        "terminal_hint": "#2b2e35"
+      },
+      {
+        "alias": "--seed-color-palette-gray-400",
+        "references": [],
+        "terminal_hint": "#393d46"
+      },
+      {
+        "alias": "--seed-color-palette-gray-500",
+        "references": [],
+        "terminal_hint": "#5b606a"
+      },
+      {
+        "alias": "--seed-color-palette-gray-600",
+        "references": [],
+        "terminal_hint": "#868b94"
+      },
+      {
+        "alias": "--seed-color-palette-gray-700",
+        "references": [],
+        "terminal_hint": "#b0b3ba"
+      },
+      {
+        "alias": "--seed-color-palette-gray-800",
+        "references": [],
+        "terminal_hint": "#dcdee3"
+      },
+      {
+        "alias": "--seed-color-palette-gray-900",
+        "references": [],
+        "terminal_hint": "#e9eaec"
+      },
+      {
+        "alias": "--seed-color-palette-green-100",
+        "references": [],
+        "terminal_hint": "#202926"
+      },
+      {
+        "alias": "--seed-color-palette-green-1000",
+        "references": [],
+        "terminal_hint": "#d4f6ef"
+      },
+      {
+        "alias": "--seed-color-palette-green-200",
+        "references": [],
+        "terminal_hint": "#20362e"
+      },
+      {
+        "alias": "--seed-color-palette-green-300",
+        "references": [],
+        "terminal_hint": "#20493b"
+      },
+      {
+        "alias": "--seed-color-palette-green-400",
+        "references": [],
+        "terminal_hint": "#19604c"
+      },
+      {
+        "alias": "--seed-color-palette-green-500",
+        "references": [],
+        "terminal_hint": "#117956"
+      },
+      {
+        "alias": "--seed-color-palette-green-600",
+        "references": [],
+        "terminal_hint": "#1b946d"
+      },
+      {
+        "alias": "--seed-color-palette-green-700",
+        "references": [],
+        "terminal_hint": "#22b27f"
+      },
+      {
+        "alias": "--seed-color-palette-green-800",
+        "references": [],
+        "terminal_hint": "#35ce9a"
+      },
+      {
+        "alias": "--seed-color-palette-green-900",
+        "references": [],
+        "terminal_hint": "#93e5c0"
+      },
+      {
+        "alias": "--seed-color-palette-purple-100",
+        "references": [],
+        "terminal_hint": "#28213b"
+      },
+      {
+        "alias": "--seed-color-palette-purple-1000",
+        "references": [],
+        "terminal_hint": "#f0edfc"
+      },
+      {
+        "alias": "--seed-color-palette-purple-200",
+        "references": [],
+        "terminal_hint": "#3b2873"
+      },
+      {
+        "alias": "--seed-color-palette-purple-300",
+        "references": [],
+        "terminal_hint": "#443081"
+      },
+      {
+        "alias": "--seed-color-palette-purple-400",
+        "references": [],
+        "terminal_hint": "#5a3bb1"
+      },
+      {
+        "alias": "--seed-color-palette-purple-500",
+        "references": [],
+        "terminal_hint": "#764fd9"
+      },
+      {
+        "alias": "--seed-color-palette-purple-600",
+        "references": [],
+        "terminal_hint": "#8e6bee"
+      },
+      {
+        "alias": "--seed-color-palette-purple-700",
+        "references": [],
+        "terminal_hint": "#a78df0"
+      },
+      {
+        "alias": "--seed-color-palette-purple-800",
+        "references": [],
+        "terminal_hint": "#beadf2"
+      },
+      {
+        "alias": "--seed-color-palette-purple-900",
+        "references": [],
+        "terminal_hint": "#d9cefa"
+      },
+      {
+        "alias": "--seed-color-palette-red-100",
+        "references": [],
+        "terminal_hint": "#322323"
+      },
+      {
+        "alias": "--seed-color-palette-red-1000",
+        "references": [],
+        "terminal_hint": "#fdf2f2"
+      },
+      {
+        "alias": "--seed-color-palette-red-200",
+        "references": [],
+        "terminal_hint": "#4f2624"
+      },
+      {
+        "alias": "--seed-color-palette-red-300",
+        "references": [],
+        "terminal_hint": "#742826"
+      },
+      {
+        "alias": "--seed-color-palette-red-400",
+        "references": [],
+        "terminal_hint": "#a12621"
+      },
+      {
+        "alias": "--seed-color-palette-red-500",
+        "references": [],
+        "terminal_hint": "#ca2319"
+      },
+      {
+        "alias": "--seed-color-palette-red-600",
+        "references": [],
+        "terminal_hint": "#f73526"
+      },
+      {
+        "alias": "--seed-color-palette-red-700",
+        "references": [],
+        "terminal_hint": "#ff6e60"
+      },
+      {
+        "alias": "--seed-color-palette-red-800",
+        "references": [],
+        "terminal_hint": "#ffa299"
+      },
+      {
+        "alias": "--seed-color-palette-red-900",
+        "references": [],
+        "terminal_hint": "#f8c5c3"
+      },
+      {
+        "alias": "--seed-color-palette-static-black",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-100",
+        "references": [],
+        "terminal_hint": "#00000007"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-1000",
+        "references": [],
+        "terminal_hint": "#000000e3"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-200",
+        "references": [],
+        "terminal_hint": "#0000000c"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-300",
+        "references": [],
+        "terminal_hint": "#00000010"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-400",
+        "references": [],
+        "terminal_hint": "#00000021"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-500",
+        "references": [],
+        "terminal_hint": "#0000002c"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-600",
+        "references": [],
+        "terminal_hint": "#0000004c"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-700",
+        "references": [],
+        "terminal_hint": "#00000074"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-800",
+        "references": [],
+        "terminal_hint": "#000000a2"
+      },
+      {
+        "alias": "--seed-color-palette-static-black-alpha-900",
+        "references": [],
+        "terminal_hint": "#000000d0"
+      },
+      {
+        "alias": "--seed-color-palette-static-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-100",
+        "references": [],
+        "terminal_hint": "#ffffff17"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-1000",
+        "references": [],
+        "terminal_hint": "#fffffff4"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-200",
+        "references": [],
+        "terminal_hint": "#ffffff20"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-300",
+        "references": [],
+        "terminal_hint": "#ffffff2e"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-400",
+        "references": [],
+        "terminal_hint": "#ffffff3d"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-50",
+        "references": [],
+        "terminal_hint": "#ffffff0d"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-500",
+        "references": [],
+        "terminal_hint": "#ffffff60"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-600",
+        "references": [],
+        "terminal_hint": "#ffffff8b"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-700",
+        "references": [],
+        "terminal_hint": "#ffffffb3"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-800",
+        "references": [],
+        "terminal_hint": "#ffffffde"
+      },
+      {
+        "alias": "--seed-color-palette-static-white-alpha-900",
+        "references": [],
+        "terminal_hint": "#ffffffea"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-100",
+        "references": [],
+        "terminal_hint": "#302819"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-1000",
+        "references": [],
+        "terminal_hint": "#f7f0cd"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-200",
+        "references": [],
+        "terminal_hint": "#413218"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-300",
+        "references": [],
+        "terminal_hint": "#543e15"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-400",
+        "references": [],
+        "terminal_hint": "#714e15"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-500",
+        "references": [],
+        "terminal_hint": "#91601b"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-600",
+        "references": [],
+        "terminal_hint": "#b6720d"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-700",
+        "references": [],
+        "terminal_hint": "#ca901c"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-800",
+        "references": [],
+        "terminal_hint": "#dab156"
+      },
+      {
+        "alias": "--seed-color-palette-yellow-900",
+        "references": [],
+        "terminal_hint": "#e5d49b"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 3,
+      "core": 147
+    }
+  }
+}

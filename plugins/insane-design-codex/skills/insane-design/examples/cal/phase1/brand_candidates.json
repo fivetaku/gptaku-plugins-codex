@@ -1,0 +1,275 @@
+{
+  "slug": "cal",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "a.framer-text,span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text,span.framer-text[data-nested-link] {color:var(--framer-blockquote-text-color-rgb,var(--framer-blockquote-text-color,var(--framer-link-text-color-rgb,var(--framer-link-text-color,var(--fr"
+    },
+    {
+      "selector": "code.framer-text a.framer-text,code.framer-text a.framer-text span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-nested-link],code.framer-text span.framer-text[data-nested-link] span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text,code.framer-text a.framer-text span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-nested-link],code.framer-text span.framer-text[data-nested-l"
+    },
+    {
+      "selector": "a.framer-text:hover,span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text:hover,span.framer-text[data-nested-link]:hover {color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-blockquote-text-color-rgb,var(--framer-blockq"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover {color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-blockquote-"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current] {color:var(--framer-link-current-text-color-rgb,var(--framer-link-current-text-color,var(--framer-link-text"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text a.framer-text[data-framer-page-link-current] span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[dat"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover {color:var(--framer-link-hover-text-color-rgb,var(--framer-link-hover-text-color,var(--framer-l"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),code.framer-text span.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text a.framer-text[data-framer-page-link-current]:hover span.framer-text:not([data-text-fill]),code.framer-text span.fra"
+    },
+    {
+      "selector": "a.framer-text,span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text,span.framer-text[data-nested-link] {color:var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-text-color,#000)));-webkit-text-decoration-line:var(--framer-blockq"
+    },
+    {
+      "selector": "code.framer-text a.framer-text,code.framer-text span.framer-text[data-nested-link]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text,code.framer-text span.framer-text[data-nested-link] {color:var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-code-text-color,var(--framer-text"
+    },
+    {
+      "selector": "a.framer-text:hover,span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text:hover,span.framer-text[data-nested-link]:hover {color:var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-color,var(--framer-text-color,#000))));"
+    },
+    {
+      "selector": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text:hover,code.framer-text span.framer-text[data-nested-link]:hover {color:var(--framer-link-hover-text-color,var(--framer-blockquote-text-color,var(--framer-link-text-color"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current],span.framer-text[data-framer-page-link-current] {color:var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color,#000)));-w"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current]",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current],code.framer-text span.framer-text[data-framer-page-link-current] {color:var(--framer-link-current-text-color,var(--framer-link-text-color,"
+    },
+    {
+      "selector": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "a.framer-text[data-framer-page-link-current]:hover,span.framer-text[data-framer-page-link-current]:hover {color:var(--framer-link-hover-text-color,var(--framer-link-current-text-color,var(--framer-lin"
+    },
+    {
+      "selector": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "code.framer-text a.framer-text[data-framer-page-link-current]:hover,code.framer-text span.framer-text[data-framer-page-link-current]:hover {color:var(--framer-link-hover-text-color,var(--framer-link-c"
+    },
+    {
+      "selector": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current],[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-nested-link])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current],[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current] span:not([data-text-fill]):not([data-n"
+    },
+    {
+      "selector": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover,[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill]):not([data-nested-link])",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover,[data-framer-component-type=DeprecatedRichText] a[data-framer-page-link-current]:hover span:not([data-text-fill])"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#000000",
+      "count": 77,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#242424",
+      "count": 57,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#141414",
+      "count": 32,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 29,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#898989",
+      "count": 26,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E1E2E3",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0099FF",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2424240D",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#242424B3",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#6349EA",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#343434",
+      "count": 6,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#F4F4F4",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#19A874",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#4285F4",
+      "count": 4,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#6B7280",
+      "count": 4,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#E4F7F3",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFFB3",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#116600",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#374151",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0D0C27",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#11111180",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#14141426",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#15142E",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#292929",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#34A853",
+      "count": 2,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#352F4B",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#875FE0",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#BFA2FE",
+      "count": 2,
+      "kind": "svg_pattern"
+    }
+  ],
+  "summary": {
+    "total_candidates": 48,
+    "by_role": {
+      "chromatic": 11,
+      "neutral": 14,
+      "selector": 18,
+      "svg_pattern": 5
+    }
+  }
+}

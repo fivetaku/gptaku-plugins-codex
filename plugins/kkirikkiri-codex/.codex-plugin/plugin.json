@@ -1,0 +1,45 @@
+{
+  "name": "kkirikkiri-codex",
+  "version": "0.1.0",
+  "description": "Codex-native agent team assembly and shared-memory orchestration for delegated work.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/kkirikkiri-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "delegation",
+    "team",
+    "orchestration",
+    "shared-memory",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "kkirikkiri Codex",
+    "shortDescription": "Assemble and run a Codex-native agent team",
+    "longDescription": "Package the Codex-native `kkirikkiri` workflow with curated prompt references, shared-memory helpers, and chat-first clarification rules for delegated multi-agent work.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Assemble a small Codex-native team to research this topic and keep the lead role local.",
+      "Split this delegated coding request into a lead plus bounded worker roles with shared memory.",
+      "Use kkirikkiri to run a research or analysis team and produce a final team report."
+    ],
+    "brandColor": "#7C3AED",
+    "composerIcon": "./assets/kkirikkiri-codex.svg",
+    "logo": "./assets/kkirikkiri-codex.svg",
+    "screenshots": []
+  }
+}

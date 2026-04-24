@@ -1,0 +1,128 @@
+#onetrust-banner-sdk>div>div.ot-sdk-container {
+  width:90%;
+  max-width:1280px
+}
+@media only screen and (width<=896px) {
+  #onetrust-banner-sdk #onetrust-group-container {
+  width:100%!important
+}
+#onetrust-banner-sdk #onetrust-group-container #onetrust-policy {
+  margin-bottom:0
+}
+
+}
+#onetrust-banner-sdk #onetrust-group-container #onetrust-policy-text,#onetrust-banner-sdk #onetrust-group-container .ot-b-addl-desc {
+  font-size:.9rem
+}
+#onetrust-banner-sdk #onetrust-group-container #onetrust-policy-text a {
+  margin-left:0;
+  font-weight:400;
+  text-decoration:none
+}
+#onetrust-banner-sdk #onetrust-group-container #onetrust-policy-text a:focus {
+  outline:none
+}
+#onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button #onetrust-button-group {
+  flex-direction:column;
+  gap:4px;
+  margin-left:0;
+  display:flex
+}
+@media only screen and (width>=1280px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button #onetrust-button-group {
+  max-width:250px;
+  margin:0 auto
+}
+
+}
+#onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button #onetrust-button-group button {
+  padding:7px
+}
+@media only screen and (width<=1024px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button {
+  width:32%;
+  margin-top:0
+}
+
+}
+@media only screen and (width<=896px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button {
+  width:100%!important;
+  padding:0!important
+}
+
+}
+@media only screen and (width<=767px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button #onetrust-button-group {
+  align-items:center;
+  width:100%
+}
+#onetrust-banner-sdk #onetrust-button-group-parent.has-reject-all-button #onetrust-button-group button {
+  width:100%
+}
+
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group {
+  flex-direction:row;
+  justify-content:flex-end;
+  gap:12px;
+  margin-top:0;
+  display:flex
+}
+@media only screen and (width<=1280px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group {
+  flex-direction:column;
+  gap:4px
+}
+
+}
+@media only screen and (width<=896px) {
+  #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group {
+  margin-bottom:12px;
+  margin-right:0;
+  width:100%!important
+}
+
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group button {
+  text-transform:uppercase;
+  border-radius:4px;
+  min-width:175px;
+  margin:0;
+  padding:10px;
+  text-decoration:none
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler {
+  order:1
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler {
+  order:2
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler {
+  order:3
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler.cookie-setting-link {
+  color:#4a154b;
+  border:1px solid #592466;
+  margin-bottom:0
+}
+#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover,#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover {
+  opacity:1;
+  background-color:#4a154b;
+  border-color:#4a154b
+}
+#onetrust-banner-sdk #onetrust-close-btn-container .onetrust-close-btn-handler {
+  visibility:hidden
+}
+#onetrust-banner-sdk #onetrust-close-btn-container .onetrust-close-btn-handler:after {
+  visibility:visible;
+  content:"";
+  zoom:.7;
+  background-image:url(data:image/svg+xml;
+  base64,PHN2ZyBhcmlhLWhpZGRlbj0iIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIGNsYXNzPSJjLW9uZXRydXN0LWNsb3NlLWJ1dHRvbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSItMjU1IDM0NyAxMDAgMTAwIj48dGl0bGU+SGlkZSBhbm5vdW5jZW1lbnQ8L3RpdGxlPjxwYXRoIGQ9Ik0tMTYwLjQgNDM0LjJsLTM3LjItMzcuMiAzNy4xLTM3LjEtNy03LTM3LjEgMzcuMS0zNy4xLTM3LjEtNyA3IDM3LjEgMzcuMS0zNy4yIDM3LjIgNy4xIDcgMzcuMS0zNy4yIDM3LjIgMzcuMiI+PC9wYXRoPjwvc3ZnPg==);
+  background-position:50%;
+  background-repeat:no-repeat;
+  width:100%;
+  height:100%;
+  display:block
+}

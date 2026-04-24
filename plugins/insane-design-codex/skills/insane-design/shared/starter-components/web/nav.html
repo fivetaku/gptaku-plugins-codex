@@ -1,0 +1,40 @@
+<!-- insane-build: web/nav.html — sticky top nav, minimal scaffold -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">{BRAND_NAME}</a>
+    <ul class="nav__links">
+      <li><a href="#features">{LINK_1}</a></li>
+      <li><a href="#pricing">{LINK_2}</a></li>
+      <li><a href="#about">{LINK_3}</a></li>
+    </ul>
+    <a href="{CTA_HREF}" class="nav__cta">{CTA_LABEL}</a>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg, #fff);
+    border-bottom: 1px solid var(--border, rgba(0,0,0,0.08));
+  }
+  .nav__inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 var(--space-lg, 48px);
+    height: 64px;
+    display: flex; align-items: center; gap: 32px;
+    font-family: var(--font-family, system-ui, sans-serif);
+  }
+  .nav__logo { font-weight: 600; color: var(--fg, #111); text-decoration: none; }
+  .nav__links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; flex: 1; }
+  .nav__links a { color: var(--fg-muted, #555); text-decoration: none; font-size: 14px; }
+  .nav__links a:hover { color: var(--fg, #111); }
+  .nav__cta {
+    padding: 8px 16px;
+    background: var(--brand, #000);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    font-size: 14px;
+    font-weight: 500;
+  }
+</style>

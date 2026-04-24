@@ -1,0 +1,35 @@
+{
+  "slug": "pitch",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [],
+    "core": [
+      {
+        "alias": "--active-color-1",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--active-color-2",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--rest-color",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,.8)"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 0,
+      "core": 3
+    }
+  }
+}

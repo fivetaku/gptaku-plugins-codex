@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Naver — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root{--font-sans:"Pretendard Variable","Inter",-apple-system,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;--bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;--border:#e4e4e7;--border-str:#d4d4d8;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem;--brand-color:#03C75A;}
+  *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;scroll-padding-top:32px;}body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;}::selection{background:var(--accent);color:#fafafa;}a{color:inherit;text-decoration:none;}code{font-family:var(--font-mono);font-size:.85em;}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}.toc__brand-name{font-size:14px;font-weight:600;}.toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}.toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}.toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}.toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}.toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}.section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}.section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}.hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}.hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}.hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}.hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}.qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}.qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}.qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}.qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}.qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}.qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}.qs__warn b{color:#7f1d1d;font-weight:600;}.qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}.stat{padding:20px 24px;border-right:1px solid var(--border);}.stat:last-child{border-right:none;}.stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}.stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}.stat__val--mono{font-family:var(--font-mono);font-size:15px;}.stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}.prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}.prov__row:last-child{border-bottom:none;}.prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}.prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}.ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}.ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}.ts__body{font-size:14px;line-height:1.7;}.ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}.fs-card__row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}.fs-card__row:last-child{border-bottom:none;padding-bottom:0;}.fs-card__row:first-child{padding-top:0;}.fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}.fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}.type-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;padding:20px 24px;border-bottom:1px solid var(--border);}.type-row:last-child{border-bottom:none;}.type-row__s{font-family:"SF Pro Display",-apple-system,sans-serif;color:var(--fg);}.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}.type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}.type-row__spec b{color:var(--fg);font-weight:600;}
+  .type-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}.callout b{color:var(--fg);font-weight:600;}.callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .ramp-group{margin-bottom:28px;}.ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}.ramp-label b{color:var(--fg);font-weight:600;}.ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}.ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}.ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;cursor:default;}.sw--l{color:#09090b;}.sw--d{color:#fff;}.sw .n{opacity:.7;margin-bottom:2px;}
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}.sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}.sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}.sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}.sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}.sem-card__u{font-size:12px;color:var(--muted-fg);}
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}.space-row{display:grid;grid-template-columns:180px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}.space-row:last-child{border-bottom:none;}.space-row .tk{color:var(--fg);}.space-row .val{color:var(--muted-fg);text-align:right;}.space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}.cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}.cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}.cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}.cmp-demo{padding:24px;background:var(--muted);border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}.cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}.cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}.code-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--muted);}.code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}.code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}.code-pane{display:none;}.code-pane.is-active{display:block;}.code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}.code-pane .k{color:#92adff;}.code-pane .v{color:#f7f8f8;}.code-pane .c{color:#64748d;font-style:italic;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}.dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}.dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}.dd-card--do h3{background:#dcfce7;color:#166534;}.dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}.dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}.dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}.dd-card--do ul li::before{content:"✓";color:#16a34a;}.dd-card--dont ul li::before{content:"✗";color:#dc2626;}.dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}.dd-card ul li b{color:var(--fg);font-weight:600;}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  @media(max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.cmp-block__body,.ts,.dd-grid,.sem-row,.qs__grid{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand"><div class="toc__brand-name">Naver</div><div class="toc__brand-sub">Design System Report</div></div>
+    <div class="toc__group"><div class="toc__group-label">Overview</div><ul class="toc__list"><li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li><li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li></ul></div>
+    <div class="toc__group"><div class="toc__group-label">Foundations</div><ul class="toc__list"><li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">04</span>컬러</a></li></ul></div>
+    <div class="toc__group"><div class="toc__group-label">Tokens</div><ul class="toc__list"><li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li></ul></div>
+    <div class="toc__group"><div class="toc__group-label">Patterns</div><ul class="toc__list"><li><a href="#components"><span class="toc__num">06</span>컴포넌트</a></li></ul></div>
+    <div class="toc__group"><div class="toc__group-label">Code</div><ul class="toc__list"><li><a href="#export"><span class="toc__num">07</span>CSS · Tailwind</a></li></ul></div>
+    <div class="toc__group"><div class="toc__group-label">Rules</div><ul class="toc__list"><li><a href="#verdict"><span class="toc__num">08</span>Do / Don't</a></li></ul></div>
+    <div class="toc__foot">insane-design/naver/<br>design.md<br>2026-04-13</div>
+  </aside>
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Naver <span class="sub">— 시스템 폰트 · 카테고리 컬러 5종</span></h1>
+      <p class="hero__sub">www.naver.com 의 CSS. React CSS Modules + --color_* CSS 변수. #03C75A 네이버 그린은 공식 브랜드색 (CSS 직접 미확인). 카테고리별 필터 색 5종 별도.</p>
+      <div class="hero__screenshot"><img src="screenshots/hero-cropped.png" alt="naver.com — 실제 홈페이지 스크린샷"></div>
+      <div class="qs">
+        <div class="qs__head"><span class="qs__head-label">Quick Start</span><span class="qs__head-title">5분 안에 Naver처럼 만들기</span></div>
+        <div class="qs__grid">
+          <div class="qs__step"><span class="qs__step-label">1 · 시스템 폰트</span><code>body {
+  font-family:
+    -apple-system,
+    "Malgun Gothic",
+    "맑은 고딕",
+    "Apple SD Gothic Neo",
+    sans-serif;
+  font-weight: 400;
+}</code></div>
+          <div class="qs__step"><span class="qs__step-label">2 · 배경 + 텍스트</span><code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#101010</b>;
+}
+body { background:var(--bg);
+  color:var(--fg); }</code></div>
+          <div class="qs__step"><span class="qs__step-label">3 · 브랜드 그린</span><code>:root {
+  --brand: <b>#03C75A</b>;
+  /* 카테고리 필터 */
+  --enter: <b>#E65DA0</b>;
+  --sports: <b>#0147B5</b>;
+}</code></div>
+        </div>
+        <div class="qs__warn"><b>절대 하지 말아야 할 것 하나</b>: 카테고리 필터 색 <code>#E65DA0</code>(엔터), <code>#0147B5</code>(스포츠), <code>#EBAA00</code>(레시피), <code>#008F76</code>(금융)을 네이버 브랜드 색으로 혼동. 이들은 <b>섹션별 필터 버튼 전용색</b>이며, 네이버 브랜드 그린은 <code>#03C75A</code>다.</div>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><div class="stat__label">Source</div><div class="stat__val stat__val--mono">naver.com</div><div class="stat__hint">React CSS Modules</div></div>
+        <div class="stat"><div class="stat__label">Fetched</div><div class="stat__val">2026.04.13</div></div>
+        <div class="stat"><div class="stat__label">Primary Font</div><div class="stat__val stat__val--mono">Malgun Gothic</div><div class="stat__hint">시스템 폰트 스택</div></div>
+        <div class="stat"><div class="stat__label">Brand</div><div class="stat__val stat__val--mono">#03C75A</div><div class="stat__hint">네이버 공식 그린</div></div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://www.naver.com/</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--color_menu_widget_bg</code> (시맨틱 CSS 변수)</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 + 셀렉터 역할 분석</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">React CSS Modules. --color_* 시맨틱 토큰. greenDark 다크 테마 분기.</p>
+      <div class="ts">
+        <div class="ts__item"><div class="ts__head">FRAMEWORK</div><div class="ts__body">React (CSS Modules — <code>__xxxxx</code> 해시 suffix)</div></div>
+        <div class="ts__item"><div class="ts__head">FONT LOADING</div><div class="ts__body">시스템 폰트만 — <code>-apple-system</code>, <code>Malgun Gothic</code>, <code>Apple SD Gothic Neo</code></div></div>
+        <div class="ts__item"><div class="ts__head">DEFAULT THEME</div><div class="ts__body">light (bg = <code>#FFFFFF</code>) + <code>html[data-theme=greenDark]</code> 다크 지원</div></div>
+        <div class="ts__item"><div class="ts__head">COLOR SYSTEM</div><div class="ts__body"><code>--color_*</code> CSS 변수 + 카테고리별 5색 필터</div></div>
+        <div class="ts__item"><div class="ts__head">CANONICAL ANCHOR</div><div class="ts__body"><code>#03C75A</code> — 네이버 공식 브랜드 그린 (등록색)</div></div>
+        <div class="ts__item"><div class="ts__head">RESPONSIVE</div><div class="ts__body">CSS Modules 컴포넌트 단위 반응형</div></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">시스템 폰트 스택 — 전용 폰트 없음</h2>
+      <p class="section__lede">네이버는 별도 전용 폰트 없이 OS 시스템 폰트만 사용. weight는 400~800 다양하게 분포.</p>
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row"><span class="fs-card__k">System stack</span><span class="fs-card__v"><code>-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif</code></span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Weight normal</span><span class="fs-card__v"><code>400</code></span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Weight bold</span><span class="fs-card__v"><code>700</code> (헤드라인, 강조)</span></div>
+        <div class="fs-card__row"><span class="fs-card__k">Weight range</span><span class="fs-card__v"><code>400 / 500 / 600 / 700 / 800</code> — 다양한 굵기 혼용</span></div>
+      </div>
+      <div class="callout"><b>주의</b>: NanumSquare는 네이버 기본 폰트가 아님 — 일부 위젯 전용. 기본값은 시스템 폰트 스택.</div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">카테고리 5색 필터 + 브랜드 그린</h2>
+      <p class="section__lede">카테고리별 전용 필터 색은 브랜드색이 아님. 네이버 브랜드 그린 #03C75A는 공식 등록색.</p>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#03C75A"><div class="n">brand-green</div><div>#03C75A</div></div>
+          <div class="sw sw--d" style="background:#F4361E"><div class="n">live-badge</div><div>#F4361E</div></div>
+          <div class="sw sw--l" style="background:#DADCDF"><div class="n">border</div><div>#DADCDF</div></div>
+          <div class="sw sw--d" style="background:#515254"><div class="n">border-dark</div><div>#515254</div></div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Category Filters</b> <span class="muted">섹션별 필터 버튼색</span></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#E65DA0"><div class="n">enter</div><div>#E65DA0</div></div>
+          <div class="sw sw--d" style="background:#0147B5"><div class="n">sports</div><div>#0147B5</div></div>
+          <div class="sw sw--l" style="background:#EBAA00"><div class="n">recipe</div><div>#EBAA00</div></div>
+          <div class="sw sw--d" style="background:#008F76"><div class="n">finance</div><div>#008F76</div></div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutral</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--l" style="background:#FFFFFF"><div class="n">white</div><div>#FFFFFF</div></div>
+          <div class="sw sw--d" style="background:#888888"><div class="n">text-muted</div><div>#888888</div></div>
+          <div class="sw sw--d" style="background:#101010"><div class="n">text-dark</div><div>#101010</div></div>
+          <div class="sw sw--d" style="background:#080808"><div class="n">arrow</div><div>#080808</div></div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Semantic</b></div>
+        <div class="sem-row">
+          <div class="sem-card"><div class="sem-card__chip" style="background:#03C75A"></div><div><div class="sem-card__n">brand-green</div><div class="sem-card__h">#03C75A</div><div class="sem-card__u">네이버 공식 브랜드 그린</div></div></div>
+          <div class="sem-card"><div class="sem-card__chip" style="background:#F4361E"></div><div><div class="sem-card__n">live-badge</div><div class="sem-card__h">#F4361E</div><div class="sem-card__u">LIVE 배지 배경</div></div></div>
+          <div class="sem-card"><div class="sem-card__chip" style="background:#E65DA0"></div><div><div class="sem-card__n">filter-enter</div><div class="sem-card__h">#E65DA0</div><div class="sem-card__u">엔터 섹션 필터</div></div></div>
+          <div class="sem-card"><div class="sem-card__chip" style="background:#DADCDF;border:1px solid #bbb;"></div><div><div class="sem-card__n">border-widget</div><div class="sem-card__h">#DADCDF</div><div class="sem-card__u">위젯 테두리</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · 스페이싱</div>
+      <h2 class="section__title">미니멀 스페이싱</h2>
+      <p class="section__lede">CSS에서 확인된 명시적 스페이싱 최소화. arrow 아이콘 5px 정사각형.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">arrow-size</span><span class="val">5px</span><div class="bar" style="width:5px"></div></div>
+        <div class="space-row"><span class="tk">badge-live-w</span><span class="val">32px</span><div class="bar" style="width:32px"></div></div>
+        <div class="space-row"><span class="tk">badge-live-h</span><span class="val">14px</span><div class="bar" style="width:14px"></div></div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">06 · 컴포넌트</div>
+      <h2 class="section__title">LIVE 배지 · 더보기 링크 · 카테고리 필터</h2>
+      <p class="section__lede">3가지 핵심 UI 패턴 — 배지, 링크, 필터 버튼.</p>
+      <div class="cmp-block">
+        <div class="cmp-block__head"><span class="cmp-block__name">.badge_live</span><span class="cmp-block__desc">LIVE 배지</span></div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <span style="display:inline-block;width:32px;height:14px;background:#F4361E;color:#fff;font-size:9px;line-height:14px;text-align:center;font-weight:700;border-radius:2px;">LIVE</span>
+            </div>
+            <div class="cmp-code"><pre>&lt;span class="badge-live"&gt;LIVE&lt;/span&gt;</pre></div>
+          </div>
+          <div class="cmp-spec">
+            <code>width: 32px</code><br>
+            <code>height: 14px</code><br>
+            <code>background: #F4361E</code>
+          </div>
+        </div>
+      </div>
+      <div class="cmp-block">
+        <div class="cmp-block__head"><span class="cmp-block__name">[aria-selected=true]</span><span class="cmp-block__desc">카테고리 필터 선택</span></div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="gap:8px;">
+              <a style="display:inline-block;padding:4px 12px;background:#E65DA0;color:#fff;border-radius:16px;font-size:13px;cursor:pointer;">엔터</a>
+              <a style="display:inline-block;padding:4px 12px;background:#0147B5;color:#fff;border-radius:16px;font-size:13px;cursor:pointer;">스포츠</a>
+              <a style="display:inline-block;padding:4px 12px;background:#EBAA00;color:#fff;border-radius:16px;font-size:13px;cursor:pointer;">레시피</a>
+            </div>
+            <div class="cmp-code"><pre>&lt;a aria-selected="true"&gt;엔터&lt;/a&gt;</pre></div>
+          </div>
+          <div class="cmp-spec">
+            <code>엔터: #E65DA0</code><br>
+            <code>스포츠: #0147B5</code><br>
+            <code>레시피: #EBAA00</code><br>
+            <code>금융: #008F76</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">07 · CSS · Tailwind</div>
+      <h2 class="section__title">코드 내보내기</h2>
+      <p class="section__lede">Naver 디자인 토큰 CSS 스니펫.</p>
+      <div class="code-export">
+        <div class="code-tabs"><button class="is-active" data-tab="css">CSS 스니펫</button><button class="code-copy" data-copy-active>Copy</button></div>
+        <div class="code-pane is-active" data-pane="css"><pre><span class="c">/* Naver — copy into your root stylesheet */</span>
+<span class="k">:root</span> <span class="v">{</span>
+  <span class="k">--naver-font-family</span>: <span class="v">-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif</span>;
+  <span class="k">--naver-font-weight-normal</span>: <span class="v">400</span>;
+  <span class="k">--naver-font-weight-bold</span>: <span class="v">700</span>;
+  <span class="k">--naver-color-brand</span>: <span class="v">#03C75A</span>;
+  <span class="k">--naver-bg-page</span>: <span class="v">#FFFFFF</span>;
+  <span class="k">--naver-text</span>: <span class="v">#101010</span>;
+  <span class="k">--naver-text-muted</span>: <span class="v">#888888</span>;
+  <span class="k">--naver-border</span>: <span class="v">#DADCDF</span>;
+  <span class="k">--naver-border-dark</span>: <span class="v">#515254</span>;
+  <span class="k">--naver-color-enter</span>: <span class="v">#E65DA0</span>;
+  <span class="k">--naver-color-sports</span>: <span class="v">#0147B5</span>;
+  <span class="k">--naver-color-recipe</span>: <span class="v">#EBAA00</span>;
+  <span class="k">--naver-color-finance</span>: <span class="v">#008F76</span>;
+  <span class="k">--naver-color-live</span>: <span class="v">#F4361E</span>;
+<span class="v">}</span>
+<span class="c">/* 다크 테마 */</span>
+<span class="k">html[data-theme=greenDark]</span> <span class="v">{</span>
+  <span class="k">--color_menu_widget_bg</span>: <span class="v">/* Naver 내부 변수 */</span>;
+<span class="v">}</span></pre></div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">08 · Do / Don't</div>
+      <h2 class="section__title">자주 틀리는 것들</h2>
+      <p class="section__lede">Naver 웹 구현 시 가장 많이 실수하는 패턴.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do"><h3>✓ DO</h3><ul>
+          <li>시스템 폰트 스택 사용 — 전용 폰트 없음</li>
+          <li><code>--color_*</code> CSS 변수로 테마 대응</li>
+          <li>카테고리별 고유 색상 유지 (엔터=핑크, 스포츠=파랑 등)</li>
+          <li><code>html[data-theme=greenDark]</code> 다크 모드 분기 처리</li>
+        </ul></div>
+        <div class="dd-card dd-card--dont"><h3>✗ DON'T</h3><ul>
+          <li>카테고리 필터 색 <code>#E65DA0</code>, <code>#0147B5</code>를 네이버 브랜드 색으로 사용</li>
+          <li>하드코딩 hex 직접 사용 — <code>--color_*</code> CSS 변수 유지</li>
+          <li>NanumSquare를 네이버 기본 폰트로 설정 — 일부 위젯 전용</li>
+          <li>브랜드 그린 <b>#03C75A</b>를 카테고리 필터에 사용 — 녹색은 금융 섹션만</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <div class="rfoot"><span>insane-design/naver — 2026-04-13</span><span>brand: #03C75A · Malgun Gothic (system) · weight 400</span></div>
+  </main>
+</div>
+<script>
+  document.querySelectorAll('.code-tabs button[data-tab]').forEach(btn=>{btn.addEventListener('click',()=>{const ex=btn.closest('.code-export');ex.querySelectorAll('.code-tabs button[data-tab]').forEach(b=>b.classList.remove('is-active'));ex.querySelectorAll('.code-pane').forEach(p=>p.classList.remove('is-active'));btn.classList.add('is-active');ex.querySelector('.code-pane[data-pane="'+btn.dataset.tab+'"]').classList.add('is-active');});});
+  document.querySelectorAll('[data-copy-active]').forEach(btn=>{btn.addEventListener('click',()=>{const pane=btn.closest('.code-export').querySelector('.code-pane.is-active pre');if(pane)navigator.clipboard.writeText(pane.textContent).then(()=>{btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',1500);});});});
+</script>
+</body>
+</html>

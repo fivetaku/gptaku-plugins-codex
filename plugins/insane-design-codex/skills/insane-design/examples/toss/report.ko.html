@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toss — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--brand-color:#3182F6;--font-display:"Pretendard Variable","Inter",-apple-system,"Apple SD Gothic Neo",sans-serif;--font-sans:"Pretendard Variable","Inter",sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--bg:#fafafa;--fg:#191F28;--card:#fff;--muted:#F2F4F6;--muted-fg:#8B95A1;--subtle:#6B7684;--border:#E5E8EB;--accent:#333D4B;--radius:.75rem;--radius-lg:1.25rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:4px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:700;font-family:var(--font-display);color:var(--brand-color)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:700}
+.hero-big h1{font-family:var(--font-display);font-size:48px;font-weight:700;line-height:1.1;letter-spacing:-.02em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:28px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:12px;font-family:var(--font-mono);font-size:11px;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#191F28}.sw--d{color:#fff}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans)}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:700;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:700}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:4px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:16px;background:var(--card)}
+.sh-card__n{font-weight:700;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:24px;border:1px solid var(--border);border-radius:20px;margin-bottom:16px;background:var(--card);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.comp h3{font-size:16px;margin:0 0 6px}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:8px}
+.comp pre{background:var(--muted);padding:12px;border-radius:8px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#191F28;color:#E8F3FF;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:9999px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#FFEEEE;color:#D22030}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:6px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:700}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:6px 14px;background:#E8F3FF;color:#1B64DA;border-radius:9999px;font-size:11px;font-weight:500}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#191F28;color:#E8F3FF;padding:16px;border-radius:12px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:#FFEEEE;border-left:3px solid #F04452;border-radius:8px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#D22030}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}.main{padding:32px 20px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+<div class="toc__brand"><div class="toc__brand-name">Toss (토스)</div><div class="toc__brand-sub">Design System Report</div></div>
+<div class="toc__group-label">Overview</div><ul class="toc__list"><li><a href="#mood"><span class="toc__num">00</span>분위기</a></li><li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">02</span>출처</a></li><li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li></ul>
+<div class="toc__group-label">Foundations</div><ul class="toc__list"><li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">05</span>컬러</a></li></ul>
+<div class="toc__group-label">Tokens</div><ul class="toc__list"><li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li><li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li><li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li><li><a href="#motion"><span class="toc__num">08</span>모션</a></li></ul>
+<div class="toc__group-label">Patterns</div><ul class="toc__list"><li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li><li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li></ul>
+<div class="toc__group-label">Guide</div><ul class="toc__list"><li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li><li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li></ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Soft-Fintech Minimal · Toss Blue #3182F6 single-primary</div>
+  <h1>신뢰는 딱딱하지 않게, 친근함은 가볍지 않게</h1>
+  <p class="lead">Toss · <code>https://toss.im</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Toss hero" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>토스는 한국 핀테크가 고민하는 "신뢰는 딱딱하지 않게 · 친근함은 가볍지 않게"라는 이중 긴장을 <b>Toss Blue <code>#3182F6</code></b> 하나의 컬러 시스템과 <b>Toss Product Sans</b> 자체 폰트로 풀어낸 <b>Soft-Fintech Minimal</b>이다. 넓은 흰 여백 + big rounded card + 큰 headline + 핵심 CTA 하나 — 금융 UI라기보다 Airbnb/Spotify 류의 B2C lifestyle 앱에 가까운 톤.</p>
+    <p>컬러 시스템은 Toss Blue를 중심으로 <b>Blue ramp 6단</b>(<code>#E8F3FF</code> · <code>#90C2FF</code> · <code>#3182F6</code> · <code>#2272EB</code> · <code>#1B64DA</code> · <code>#052A56</code>)을 풀로 구축하고, <b>Grey-Mauve 9단</b>(<code>#F9FAFB</code>부터 <code>#191F28</code>까지) 으로 텍스트/보더 계단을 만든다. 상태 컬러는 Red <code>#F04452</code>와 그 ramp로 error 표시.</p>
+    <p>타이포는 <b>Toss Product Sans</b>(자체 개발 폰트) 768회 압도적 사용 — 사실상 모든 텍스트가 이 폰트. <b>Tossface</b>가 emoji/pictogram으로 별도 로드(20회), <b>Basier Square</b> · <b>SD Gothic Neo</b>가 fallback. weight 300-950 전 범위를 균형 있게 사용.</p>
+    <p>레이아웃은 모바일-퍼스트 CTA 박스 + large rounded card(radius 20px+)가 시그니처. 인터랙션은 매우 유쾌하다 — button hover에 <code>translateY(-1px)</code> + scale, 페이지 전환 fade+slide. Mobile motion이 그대로 웹에 이식되어 UI 전체가 '앱 같다'.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Toss Blue #3182F6</span>
+    <span class="kw">Blue ramp 6단</span>
+    <span class="kw">Grey-Mauve 9단</span>
+    <span class="kw">Red state ramp 7단</span>
+    <span class="kw">Toss Product Sans (768회)</span>
+    <span class="kw">Tossface emoji</span>
+    <span class="kw">radius 20px card</span>
+    <span class="kw">soft shadow 0.04-0.08 α</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기</h2>
+  <div class="quick-steps">
+    <pre><code>:root {
+  --toss-blue: #3182F6;
+  --toss-blue-hover: #1B64DA;
+  --toss-blue-soft: #E8F3FF;
+  --grey-900: #191F28;  /* NOT #000 */
+  --grey-500: #6B7684;
+  --grey-50: #F9FAFB;
+  --red: #F04452;
+}</code></pre>
+    <pre><code>body {
+  font-family: "Toss Product Sans",
+               Tossface, -apple-system,
+               "Apple SD Gothic Neo",
+               "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #191F28;
+  background: #FFFFFF;
+}</code></pre>
+    <pre><code>.btn-toss {
+  background: #3182F6;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all .15s ease;
+}
+.btn-toss:hover {
+  background: #1B64DA;
+  transform: translateY(-1px);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> 글자색을 <code>#000000</code>으로 두지 마라 — 토스는 <code>#191F28</code> (조금 푸른 near-black)을 쓴다. <code>#000</code>을 쓰면 딱딱하고 '금융 UI'스러워진다.</div>
+</section>
+
+<section id="provenance" class="sec"><h2>02. 출처</h2><table class="tbl">
+<tr><th>Source URL</th><td><code>https://toss.im</code></td></tr>
+<tr><th>Fetched</th><td>2026-04-20</td></tr>
+<tr><th>Framework</th><td>Next.js + Toss UI</td></tr>
+<tr><th>Font usage</th><td>Toss Product Sans 768회 · Tossface 20회</td></tr>
+<tr><th>Theme</th><td>light (default)</td></tr>
+</table></section>
+
+<section id="stack" class="sec"><h2>03. 테크 스택</h2>
+<ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+<li><b>Framework</b>: Next.js + Toss UI (자체 디자인 시스템)</li>
+<li><b>Typography</b>: Toss Product Sans (자체 개발 · 유료/자체 호스팅)</li>
+<li><b>Emoji font</b>: Tossface (pictogram 대체)</li>
+<li><b>i18n</b>: SD Gothic Neo / Noto Sans KR / SF Pro KR</li>
+<li><b>Theme</b>: light default</li>
+</ul></section>
+
+<section id="typography" class="sec">
+<h2>04. 타이포그래피</h2>
+<p class="lede">Toss Product Sans 압도적 · Tossface 이모지 · weight 300-950 전 범위.</p>
+<ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+<li><b>Primary</b>: <code>Toss Product Sans</code> (768회 사용, 자체 폰트)</li>
+<li><b>Emoji/Pictogram</b>: <code>Tossface</code> (20회, 이모지 전용)</li>
+<li><b>English Title</b>: <code>Basier Square</code> (보조 영문)</li>
+<li><b>Korean Fallback</b>: Apple SD Gothic Neo, Noto Sans KR, SF Pro KR</li>
+<li><b>Weights</b>: 300 · 400 · 500 · 600 · 700 · 800 · 900 · 950</li>
+</ul>
+<h3 style="margin-top:32px;">Type Scale</h3>
+<div class="type-row"><div style="font-size:12px;">caption (12px)</div><div class="type-row__spec"><div class="tk">caption</div>12px · 400 · lh 1.5</div></div>
+<div class="type-row"><div style="font-size:14px;">small (14px)</div><div class="type-row__spec"><div class="tk">small</div>14px · 400 · lh 1.5</div></div>
+<div class="type-row"><div style="font-size:16px;">body (16px)</div><div class="type-row__spec"><div class="tk">body</div>16px · 400 · lh 1.5</div></div>
+<div class="type-row"><div style="font-size:20px;font-weight:500;">lead (20px)</div><div class="type-row__spec"><div class="tk">lead</div>18-20px · 500</div></div>
+<div class="type-row"><div style="font-size:26px;font-weight:600;">h3 (26px)</div><div class="type-row__spec"><div class="tk">h3</div>22-26px · 600</div></div>
+<div class="type-row"><div style="font-size:36px;font-weight:700;">h2 (36px)</div><div class="type-row__spec"><div class="tk">h2</div>32-40px · 700</div></div>
+<div class="type-row"><div style="font-size:52px;font-weight:700;line-height:1.1;letter-spacing:-.02em;">h1 (52px)</div><div class="type-row__spec"><div class="tk">h1</div>48-56px · 700 · lh 1.1</div></div>
+<div class="type-row"><div style="font-size:72px;font-weight:800;line-height:1.05;letter-spacing:-.03em;">display</div><div class="type-row__spec"><div class="tk">display</div>64-72px · 800 · lh 1.05</div></div>
+</section>
+
+<section id="colors" class="sec">
+<h2>05. 컬러</h2>
+<p class="lede">Toss Blue ramp 6단 + Grey-Mauve ramp 9단 + Red state ramp 7단. 2-color discipline.</p>
+
+<div class="ramp-label">Toss Blue · primary 6 steps</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:#E8F3FF"><div class="n">blue-50</div>#E8F3FF</div>
+<div class="sw sw--l" style="background:#C9E2FF"><div class="n">blue-100</div>#C9E2FF</div>
+<div class="sw sw--l" style="background:#90C2FF"><div class="n">blue-200</div>#90C2FF</div>
+<div class="sw sw--d" style="background:#3182F6"><div class="n">blue-500 ★</div>#3182F6</div>
+<div class="sw sw--d" style="background:#2272EB"><div class="n">blue-600</div>#2272EB</div>
+<div class="sw sw--d" style="background:#1B64DA"><div class="n">blue-700</div>#1B64DA</div>
+<div class="sw sw--d" style="background:#052A56"><div class="n">blue-900</div>#052A56</div>
+</div>
+
+<div class="ramp-label">Grey-Mauve · neutral 9 steps</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:#F9FAFB"><div class="n">grey-50</div>#F9FAFB</div>
+<div class="sw sw--l" style="background:#F2F4F6"><div class="n">grey-100</div>#F2F4F6</div>
+<div class="sw sw--l" style="background:#D1D6DB"><div class="n">grey-200</div>#D1D6DB</div>
+<div class="sw sw--l" style="background:#B0B8C1"><div class="n">grey-300</div>#B0B8C1</div>
+<div class="sw sw--l" style="background:#8B95A1"><div class="n">grey-400</div>#8B95A1</div>
+<div class="sw sw--d" style="background:#6B7684"><div class="n">grey-500</div>#6B7684</div>
+<div class="sw sw--d" style="background:#4E5968"><div class="n">grey-600</div>#4E5968</div>
+<div class="sw sw--d" style="background:#333D4B"><div class="n">grey-700</div>#333D4B</div>
+<div class="sw sw--d" style="background:#191F28"><div class="n">grey-900 ★</div>#191F28</div>
+</div>
+
+<div class="ramp-label">Red State · 7 steps</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:#FFEEEE"><div class="n">red-50</div>#FFEEEE</div>
+<div class="sw sw--l" style="background:#FFD4D6"><div class="n">red-100</div>#FFD4D6</div>
+<div class="sw sw--l" style="background:#FEAFB4"><div class="n">red-200</div>#FEAFB4</div>
+<div class="sw sw--l" style="background:#FB8890"><div class="n">red-300</div>#FB8890</div>
+<div class="sw sw--d" style="background:#F04452"><div class="n">red-500 ★</div>#F04452</div>
+<div class="sw sw--d" style="background:#E42939"><div class="n">red-600</div>#E42939</div>
+<div class="sw sw--d" style="background:#D22030"><div class="n">red-700</div>#D22030</div>
+</div>
+
+<h3>Dominant Usage</h3>
+<div class="dom-bar">
+<div style="flex:100;background:#FFFFFF"></div>
+<div style="flex:50;background:#3182F6"></div>
+<div style="flex:35;background:#191F28"></div>
+<div style="flex:30;background:#F2F4F6"></div>
+<div style="flex:20;background:#1B64DA"></div>
+<div style="flex:15;background:#6B7684"></div>
+<div style="flex:12;background:#E8F3FF"></div>
+<div style="flex:10;background:#F04452"></div>
+</div>
+<div class="dom-list">
+<div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">bg dominant</div></div></div>
+<div class="item"><div class="chip" style="background:#3182F6"></div><div><div class="hex">#3182F6</div><div class="cnt">Toss Blue brand</div></div></div>
+<div class="item"><div class="chip" style="background:#191F28"></div><div><div class="hex">#191F28</div><div class="cnt">text primary</div></div></div>
+<div class="item"><div class="chip" style="background:#F2F4F6"></div><div><div class="hex">#F2F4F6</div><div class="cnt">section bg</div></div></div>
+<div class="item"><div class="chip" style="background:#1B64DA"></div><div><div class="hex">#1B64DA</div><div class="cnt">Blue hover</div></div></div>
+<div class="item"><div class="chip" style="background:#6B7684"></div><div><div class="hex">#6B7684</div><div class="cnt">text muted</div></div></div>
+<div class="item"><div class="chip" style="background:#E8F3FF"></div><div><div class="hex">#E8F3FF</div><div class="cnt">Blue soft bg</div></div></div>
+<div class="item"><div class="chip" style="background:#F04452"></div><div><div class="hex">#F04452</div><div class="cnt">error</div></div></div>
+</div>
+</section>
+
+<section id="spacing" class="sec"><h2>06. 스페이싱</h2>
+<p class="lede">Toss UI 4px base. section 80-120px.</p>
+<div class="space-row"><div class="tk">1</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline</div></div>
+<div class="space-row"><div class="tk">2</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">icon gap</div></div>
+<div class="space-row"><div class="tk">3</div><div>12px</div><div class="bar" style="width:12px"></div><div class="use">button padding-y</div></div>
+<div class="space-row"><div class="tk">4</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default</div></div>
+<div class="space-row"><div class="tk">6</div><div>24px</div><div class="bar" style="width:24px"></div><div class="use">card padding</div></div>
+<div class="space-row"><div class="tk">12</div><div>48px</div><div class="bar" style="width:48px"></div><div class="use">hero padding-y</div></div>
+<div class="space-row"><div class="tk">20</div><div>80px</div><div class="bar" style="width:80px"></div><div class="use">section</div></div>
+<div class="space-row"><div class="tk">30</div><div>120px</div><div class="bar" style="width:120px"></div><div class="use">large section</div></div>
+</section>
+
+<section id="radius" class="sec"><h2>07. 라디우스 — Rounded-Heavy</h2>
+<p class="lede">Toss의 시그니처는 <b>radius 20px card</b> — 딱딱하지 않게.</p>
+<div class="rad-grid">
+<div class="rad-card"><div style="border-radius:6px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-sm</div><div class="rad-card__v">6px · chip</div></div>
+<div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-md</div><div class="rad-card__v">8px · input</div></div>
+<div class="rad-card"><div style="border-radius:12px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-cta</div><div class="rad-card__v">12px · button</div></div>
+<div class="rad-card"><div style="border-radius:16px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-lg</div><div class="rad-card__v">16px · card small</div></div>
+<div class="rad-card"><div style="border-radius:20px;background:#3182F6;height:64px;"></div><div class="rad-card__n">radius-xl ★</div><div class="rad-card__v">20px · <b>card standard</b></div></div>
+<div class="rad-card"><div style="border-radius:28px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-2xl</div><div class="rad-card__v">28px · hero card</div></div>
+<div class="rad-card"><div style="border-radius:9999px;background:#3182F6;height:64px;"></div><div class="rad-card__n">radius-full</div><div class="rad-card__v">9999 · avatar / tag</div></div>
+</div></section>
+
+<section id="shadows" class="sec"><h2>07S. 섀도우 — Soft-first</h2>
+<p class="lede">Toss는 soft shadow만 쓴다 (알파 0.04-0.08).</p>
+<div class="sh-grid">
+<div class="sh-card" style="box-shadow:0 1px 2px rgba(0,0,0,.04);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle</div><div class="sh-card__v">0 1px 2px rgba(0,0,0,.04)</div></div>
+<div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,.06);"><div class="sh-card__n">shadow-md</div><div class="sh-card__d">card default</div><div class="sh-card__v">0 4px 16px rgba(0,0,0,.06)</div></div>
+<div class="sh-card" style="box-shadow:0 12px 32px rgba(0,0,0,.08);"><div class="sh-card__n">shadow-lg</div><div class="sh-card__d">card hover/modal</div><div class="sh-card__v">0 12px 32px rgba(0,0,0,.08)</div></div>
+<div class="sh-card" style="box-shadow:0 8px 24px rgba(49,130,246,.25);background:#3182F6;color:#FFF;"><div class="sh-card__n">shadow-blue</div><div class="sh-card__d" style="color:#fff;opacity:.8">CTA emphasis</div><div class="sh-card__v" style="color:#fff;opacity:.7">0 8px 24px rgba(49,130,246,.25)</div></div>
+</div></section>
+
+<section id="motion" class="sec"><h2>08. 모션</h2>
+<table class="tbl"><thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>hover transition</td><td><code>.15s ease</code></td><td>button</td></tr>
+<tr><td>button press</td><td><code>scale(.98)</code></td><td>tap feedback</td></tr>
+<tr><td>card hover</td><td><code>translateY(-2px) + shadow</code></td><td>elevate</td></tr>
+<tr><td>page transition</td><td><code>.3s fade + slide</code></td><td>앱스러움</td></tr>
+</tbody></table></section>
+
+<section id="layout" class="sec"><h2>09. 레이아웃</h2>
+<div class="lay-grid">
+<div class="lay-card"><h3>Hero · hero_impact</h3><ul><li>bg #FFFFFF 또는 #F9FAFB</li><li>headline 48-72px 700-800</li><li>서브카피 #6B7684</li><li>단일 Toss Blue CTA</li><li>큰 rounded card 28px</li></ul></div>
+<div class="lay-card"><h3>Section Rhythm</h3><ul><li>padding 80-120px</li><li>max-width 1200px</li><li>흰 + #F9FAFB alternation</li></ul></div>
+<div class="lay-card"><h3>Card (시그니처)</h3><ul><li>bg #FFFFFF</li><li>radius <b>20px</b></li><li>shadow 0 4px 16px rgba(0,0,0,.06)</li><li>hover: translateY(-2px) + shadow-lg</li></ul></div>
+<div class="lay-card"><h3>Navigation</h3><ul><li>height 64-72px</li><li>bg #FFFFFF solid</li><li>Toss Product Sans 500</li><li>mobile: hamburger fullscreen</li></ul></div>
+</div></section>
+
+<section id="components" class="sec"><h2>10. 컴포넌트</h2>
+<div class="comp"><h3>Toss Blue CTA (Primary)</h3>
+<div class="comp-spec"><b>Spec</b>: bg #3182F6 · color #FFF · padding 14px 28px · radius 12 · weight 700 · hover bg #1B64DA + translateY(-1px)</div>
+<pre><code>.btn-toss {
+  background: #3182F6;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: "Toss Product Sans", sans-serif;
+  font-weight: 700;
+  transition: background .15s, transform .1s;
+}
+.btn-toss:hover { background: #1B64DA; transform: translateY(-1px); }
+.btn-toss:active { background: #052A56; transform: scale(.98); }</code></pre></div>
+
+<div class="comp"><h3>Secondary Ghost</h3>
+<pre><code>.btn-toss-ghost {
+  background: #F2F4F6;
+  color: #333D4B;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.btn-toss-ghost:hover { background: #D1D6DB; }</code></pre></div>
+
+<div class="comp"><h3>Rounded Card — 시그니처</h3>
+<div class="comp-spec"><b>Spec</b>: bg #FFFFFF · radius 20px · padding 24px · shadow 0 4px 16px rgba(0,0,0,.06) · hover translateY(-2px)</div>
+<pre><code>.toss-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  transition: transform .15s, box-shadow .15s;
+}
+.toss-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+}</code></pre></div>
+
+<div class="comp"><h3>Error State Chip</h3>
+<pre><code>.chip-error {
+  background: #FFEEEE;
+  color: #D22030;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+}</code></pre></div>
+</section>
+
+<section id="agent" class="sec"><h2>11. Agent Prompt Guide</h2>
+<table class="tbl"><thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+<tbody>
+<tr><td>Brand</td><td><code>--toss-blue</code></td><td><span style="width:16px;height:16px;background:#3182F6;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#3182F6</code></td></tr>
+<tr><td>Blue hover</td><td><code>--toss-blue-hover</code></td><td><span style="width:16px;height:16px;background:#1B64DA;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1B64DA</code></td></tr>
+<tr><td>Blue soft</td><td><code>--toss-blue-soft</code></td><td><span style="width:16px;height:16px;background:#E8F3FF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ccc;"></span><code>#E8F3FF</code></td></tr>
+<tr><td>Text primary</td><td><code>--grey-900</code></td><td><span style="width:16px;height:16px;background:#191F28;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#191F28</code></td></tr>
+<tr><td>Text muted</td><td><code>--grey-500</code></td><td><span style="width:16px;height:16px;background:#6B7684;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#6B7684</code></td></tr>
+<tr><td>Bg alt</td><td><code>--grey-50</code></td><td><span style="width:16px;height:16px;background:#F9FAFB;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ccc;"></span><code>#F9FAFB</code></td></tr>
+<tr><td>Error</td><td><code>--red</code></td><td><span style="width:16px;height:16px;background:#F04452;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#F04452</code></td></tr>
+</tbody></table>
+<h3 style="margin-top:32px;">Example Prompts</h3>
+<div class="ag-grid">
+<div class="ag-card"><h4>🎯 Hero</h4><pre>Toss style hero: bg #FFFFFF, headline 56px weight 700 Toss Product Sans color #191F28. Subheading 18px #6B7684. Single CTA: bg #3182F6 padding 14px 28px radius 12 color white weight 700. Big rounded card radius 28px with soft shadow below.</pre></div>
+<div class="ag-card"><h4>🎴 Rounded Card</h4><pre>Toss rounded card: bg #FFFFFF, radius 20px, padding 24px, shadow 0 4px 16px rgba(0,0,0,.06). Hover translateY(-2px) + shadow 0 12px 32px rgba(0,0,0,.08).</pre></div>
+<div class="ag-card"><h4>🔘 Toss Blue CTA</h4><pre>Toss Blue CTA: bg #3182F6, color white, padding 14px 28px, radius 12, Toss Product Sans weight 700. Hover bg #1B64DA + translateY(-1px). Active bg #052A56 + scale(.98).</pre></div>
+<div class="ag-card"><h4>⚠️ Error Chip</h4><pre>Toss error chip: bg #FFEEEE, color #D22030, padding 6px 12px, radius 9999 pill, weight 500.</pre></div>
+</div></section>
+
+<section id="dodont" class="sec"><h2>12. DO / DON'T</h2>
+<div class="do-dont">
+<div class="do"><h3>✓ DO</h3><ul>
+<li>✅ Toss Blue <code>#3182F6</code> 한 컬러만 primary로</li>
+<li>✅ 텍스트는 <code>#191F28</code> (not <code>#000</code>)</li>
+<li>✅ 카드 radius <b>20px</b> 시그니처 유지</li>
+<li>✅ Toss Product Sans + Tossface 조합</li>
+<li>✅ soft shadow (rgba 알파 0.04-0.08)</li>
+<li>✅ hover에 translateY(-1~-2px) + shadow 증가</li>
+</ul></div>
+<div class="dont"><h3>✗ DON'T</h3><ul>
+<li>텍스트 <code>#000000</code>/<code>black</code> 쓰지 말 것 — <code>#191F28</code></li>
+<li>radius 4px/8px 작게 쓰지 말 것 — 16-20px이 Toss</li>
+<li>Blue를 <code>#1A57D2</code> 어둡게 쓰지 말 것 — <code>#3182F6</code>이 정답</li>
+<li>Tossface 대신 일반 emoji 쓰지 말 것</li>
+<li>shadow를 <code>rgba(0,0,0,.2)</code> 진하게 쓰지 말 것</li>
+<li>Grey-Mauve 대신 pure-grey <code>#EEE</code> 쓰지 말 것 — mauve 끼가 Toss</li>
+</ul></div></div></section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+<p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

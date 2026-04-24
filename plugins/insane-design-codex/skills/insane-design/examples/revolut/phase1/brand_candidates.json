@@ -1,0 +1,537 @@
+{
+  "slug": "revolut",
+  "semantic_vars": [
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#4F55F1",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#EDEEFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#4F55F1",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#EDEEFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-red-action-background",
+      "value_hex": "#FEF6F5",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-on-accent",
+      "value_hex": "#FFFFFF",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#EDEEFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-label",
+      "value_hex": "#FFFFFF",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#494FDF",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#EDEFFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#9539F2",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#F4EBFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#F4EBFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#9539F2",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#F4EBFD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#F12587",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#FDE9F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#FDE9F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#F12587",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#FDE9F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#DD7904",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#FDF2E5",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#FDF2E5",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#C06800",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#FDF2E5",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#00B88B",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#E5F7F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#E5F7F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#00B88B",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#E5F7F3",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#1326FD",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#E7E9FE",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#E7E9FE",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#1326FD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#E7E9FE",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#0666EB",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#E6F0FD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#E6F0FD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#0666EB",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#E6F0FD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#BD0049",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#FFD9DD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#FFD9DD",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#BD0049",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-blue",
+      "value_hex": "#0666EB",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#667DFF",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#F4F4F4",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#667DFF",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-red-action-background",
+      "value_hex": "#330E0C",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#1C1D34",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#7F84F6",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#A04DF4",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#251F34",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#A04DF4",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#F33B94",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#2F1D29",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#F33B94",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#EE8E1E",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#302522",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#EE8E1E",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#1AC097",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#172C2A",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#1AC097",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#4971FF",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#181D35",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#4971FF",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#0A84FF",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#182331",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#0A84FF",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-accent",
+      "value_hex": "#EA035D",
+      "role": "accent"
+    },
+    {
+      "name": "--rui-color-action-background",
+      "value_hex": "#400013",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-background",
+      "value_hex": "#EA035D",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-photo-header-text",
+      "value_hex": "#FFFFFF",
+      "role": "action"
+    },
+    {
+      "name": "--rui-color-action-label",
+      "value_hex": "#400013",
+      "role": "action"
+    }
+  ],
+  "selector_role": [],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 72,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F4F4F4",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7F7F7",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E23B4A",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EE4A59",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#13D1A3",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00B88B",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0666EB",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#191C1F",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1AC097",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EBEBF0",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EDEEFD",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00AE84",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1227FD",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1C1C1E",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4F55F1",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#667DFF",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5F7F3",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E6F0FD",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E7E9FE",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F4EBFD",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FDE9F3",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FDF2E5",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0A84FF",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#30D158",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3B3B3D",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#717173",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#C9C9CD",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E2E2E7",
+      "count": 6,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 104,
+    "by_role": {
+      "accent": 19,
+      "action": 55,
+      "chromatic": 21,
+      "neutral": 9
+    }
+  }
+}

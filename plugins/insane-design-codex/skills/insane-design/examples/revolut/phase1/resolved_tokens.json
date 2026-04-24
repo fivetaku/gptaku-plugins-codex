@@ -1,0 +1,409 @@
+{
+  "slug": "revolut",
+  "total_vars": 237,
+  "resolved_count": 161,
+  "unresolved_count": 76,
+  "samples": {
+    "--rui-duration-xs": {
+      "raw": "100ms",
+      "resolved": "100ms",
+      "chain": [
+        "--rui-duration-xs",
+        "100ms"
+      ]
+    },
+    "--rui-duration-sm": {
+      "raw": "200ms",
+      "resolved": "200ms",
+      "chain": [
+        "--rui-duration-sm",
+        "200ms"
+      ]
+    },
+    "--rui-duration-md": {
+      "raw": "300ms",
+      "resolved": "300ms",
+      "chain": [
+        "--rui-duration-md",
+        "300ms"
+      ]
+    },
+    "--rui-duration-lg": {
+      "raw": "450ms",
+      "resolved": "450ms",
+      "chain": [
+        "--rui-duration-lg",
+        "450ms"
+      ]
+    },
+    "--rui-duration-xl": {
+      "raw": "900ms",
+      "resolved": "900ms",
+      "chain": [
+        "--rui-duration-xl",
+        "900ms"
+      ]
+    },
+    "--rui-duration-skeleton": {
+      "raw": "1500ms",
+      "resolved": "1500ms",
+      "chain": [
+        "--rui-duration-skeleton",
+        "1500ms"
+      ]
+    },
+    "--rui-easing-default": {
+      "raw": "cubic-bezier(0.15, 0.5, 0.5, 1)",
+      "resolved": null,
+      "chain": [
+        "--rui-easing-default",
+        "cubic-bezier(0.15, 0.5, 0.5, 1)"
+      ]
+    },
+    "--rui-easing-shadow": {
+      "raw": "cubic-bezier(0.4, 0.3, 0.8, 0.6)",
+      "resolved": null,
+      "chain": [
+        "--rui-easing-shadow",
+        "cubic-bezier(0.4, 0.3, 0.8, 0.6)"
+      ]
+    },
+    "--rui-easing-toast": {
+      "raw": "cubic-bezier(0.175, 0.885, 0.21, 1.65)",
+      "resolved": null,
+      "chain": [
+        "--rui-easing-toast",
+        "cubic-bezier(0.175, 0.885, 0.21, 1.65)"
+      ]
+    },
+    "--rui-easing-linear": {
+      "raw": "'linear'",
+      "resolved": null,
+      "chain": [
+        "--rui-easing-linear",
+        "'linear'"
+      ]
+    },
+    "--rui-timing-sm": {
+      "raw": "var(--rui-duration-sm) var(--rui-easing-default)",
+      "resolved": null,
+      "chain": [
+        "--rui-timing-sm",
+        "var(--rui-duration-sm) var(--rui-easing-default)"
+      ]
+    },
+    "--rui-timing-md": {
+      "raw": "var(--rui-duration-md) var(--rui-easing-default)",
+      "resolved": null,
+      "chain": [
+        "--rui-timing-md",
+        "var(--rui-duration-md) var(--rui-easing-default)"
+      ]
+    },
+    "--rui-timing-lg": {
+      "raw": "var(--rui-duration-lg) var(--rui-easing-default)",
+      "resolved": null,
+      "chain": [
+        "--rui-timing-lg",
+        "var(--rui-duration-lg) var(--rui-easing-default)"
+      ]
+    },
+    "--rui-timing-xl": {
+      "raw": "var(--rui-duration-xl) var(--rui-easing-default)",
+      "resolved": null,
+      "chain": [
+        "--rui-timing-xl",
+        "var(--rui-duration-xl) var(--rui-easing-default)"
+      ]
+    },
+    "--rui-timing-shadow": {
+      "raw": "var(--rui-duration-sm) var(--rui-easing-shadow)",
+      "resolved": null,
+      "chain": [
+        "--rui-timing-shadow",
+        "var(--rui-duration-sm) var(--rui-easing-shadow)"
+      ]
+    },
+    "--rui-font-default": {
+      "raw": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',\n    'Helvetica Neue', Helvetica, Arial, Arimo, sans-serif",
+      "resolved": null,
+      "chain": [
+        "--rui-font-default",
+        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',\n    'Helvetica Neue', Helvetica, Arial, Arimo, sans-serif"
+      ]
+    },
+    "--rui-font-system": {
+      "raw": "var(--rui-font-default)",
+      "resolved": null,
+      "chain": [
+        "--rui-font-system",
+        "--rui-font-default",
+        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',\n    'Helvetica Neue', Helvetica, Arial, Arimo, sans-serif"
+      ]
+    },
+    "--rui-font-brand": {
+      "raw": "'Inter', var(--rui-font-system)",
+      "resolved": null,
+      "chain": [
+        "--rui-font-brand",
+        "'Inter', var(--rui-font-system)"
+      ]
+    },
+    "--rui-font-emoji": {
+      "raw": "'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',\n    'Noto Color Emoji'",
+      "resolved": null,
+      "chain": [
+        "--rui-font-emoji",
+        "'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',\n    'Noto Color Emoji'"
+      ]
+    },
+    "--rui-font-marketing": {
+      "raw": "'Aeonik Pro', var(--rui-font-system)",
+      "resolved": null,
+      "chain": [
+        "--rui-font-marketing",
+        "'Aeonik Pro', var(--rui-font-system)"
+      ]
+    },
+    "--rui-font-size-marketing-display1": {
+      "raw": "3.5rem",
+      "resolved": "3.5rem",
+      "chain": [
+        "--rui-font-size-marketing-display1",
+        "3.5rem"
+      ]
+    },
+    "--rui-font-size-marketing-display2": {
+      "raw": "2.5rem",
+      "resolved": "2.5rem",
+      "chain": [
+        "--rui-font-size-marketing-display2",
+        "2.5rem"
+      ]
+    },
+    "--rui-font-size-marketing-display3": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--rui-font-size-marketing-display3",
+        "2rem"
+      ]
+    },
+    "--rui-font-size-display1": {
+      "raw": "3.5rem",
+      "resolved": "3.5rem",
+      "chain": [
+        "--rui-font-size-display1",
+        "3.5rem"
+      ]
+    },
+    "--rui-font-size-display2": {
+      "raw": "2.75rem",
+      "resolved": "2.75rem",
+      "chain": [
+        "--rui-font-size-display2",
+        "2.75rem"
+      ]
+    },
+    "--rui-font-size-heading1": {
+      "raw": "2rem",
+      "resolved": "2rem",
+      "chain": [
+        "--rui-font-size-heading1",
+        "2rem"
+      ]
+    },
+    "--rui-font-size-heading2": {
+      "raw": "1.5rem",
+      "resolved": "1.5rem",
+      "chain": [
+        "--rui-font-size-heading2",
+        "1.5rem"
+      ]
+    },
+    "--rui-font-size-heading3": {
+      "raw": "1.25rem",
+      "resolved": "1.25rem",
+      "chain": [
+        "--rui-font-size-heading3",
+        "1.25rem"
+      ]
+    },
+    "--rui-font-size-emphasis1": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--rui-font-size-emphasis1",
+        "1rem"
+      ]
+    },
+    "--rui-font-size-emphasis2": {
+      "raw": "0.875rem",
+      "resolved": "0.875rem",
+      "chain": [
+        "--rui-font-size-emphasis2",
+        "0.875rem"
+      ]
+    },
+    "--rui-font-size-emphasis3": {
+      "raw": "0.75rem",
+      "resolved": "0.75rem",
+      "chain": [
+        "--rui-font-size-emphasis3",
+        "0.75rem"
+      ]
+    },
+    "--rui-font-size-emphasis4": {
+      "raw": "0.6875rem",
+      "resolved": "0.6875rem",
+      "chain": [
+        "--rui-font-size-emphasis4",
+        "0.6875rem"
+      ]
+    },
+    "--rui-font-size-body1": {
+      "raw": "1rem",
+      "resolved": "1rem",
+      "chain": [
+        "--rui-font-size-body1",
+        "1rem"
+      ]
+    },
+    "--rui-font-size-body2": {
+      "raw": "0.875rem",
+      "resolved": "0.875rem",
+      "chain": [
+        "--rui-font-size-body2",
+        "0.875rem"
+      ]
+    },
+    "--rui-font-size-body3": {
+      "raw": "0.75rem",
+      "resolved": "0.75rem",
+      "chain": [
+        "--rui-font-size-body3",
+        "0.75rem"
+      ]
+    },
+    "--rui-font-weight-marketing-display1": {
+      "raw": "900",
+      "resolved": "900",
+      "chain": [
+        "--rui-font-weight-marketing-display1",
+        "900"
+      ]
+    },
+    "--rui-font-weight-marketing-display2": {
+      "raw": "900",
+      "resolved": "900",
+      "chain": [
+        "--rui-font-weight-marketing-display2",
+        "900"
+      ]
+    },
+    "--rui-font-weight-marketing-display3": {
+      "raw": "900",
+      "resolved": "900",
+      "chain": [
+        "--rui-font-weight-marketing-display3",
+        "900"
+      ]
+    },
+    "--rui-font-weight-display1": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--rui-font-weight-display1",
+        "800"
+      ]
+    },
+    "--rui-font-weight-display2": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--rui-font-weight-display2",
+        "800"
+      ]
+    },
+    "--rui-font-weight-heading1": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--rui-font-weight-heading1",
+        "800"
+      ]
+    },
+    "--rui-font-weight-heading2": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--rui-font-weight-heading2",
+        "800"
+      ]
+    },
+    "--rui-font-weight-heading3": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--rui-font-weight-heading3",
+        "800"
+      ]
+    },
+    "--rui-font-weight-emphasis1": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--rui-font-weight-emphasis1",
+        "700"
+      ]
+    },
+    "--rui-font-weight-emphasis2": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--rui-font-weight-emphasis2",
+        "700"
+      ]
+    },
+    "--rui-font-weight-emphasis3": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--rui-font-weight-emphasis3",
+        "700"
+      ]
+    },
+    "--rui-font-weight-emphasis4": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--rui-font-weight-emphasis4",
+        "700"
+      ]
+    },
+    "--rui-font-weight-body1": {
+      "raw": "500",
+      "resolved": "500",
+      "chain": [
+        "--rui-font-weight-body1",
+        "500"
+      ]
+    },
+    "--rui-font-weight-body2": {
+      "raw": "500",
+      "resolved": "500",
+      "chain": [
+        "--rui-font-weight-body2",
+        "500"
+      ]
+    },
+    "--rui-font-weight-body3": {
+      "raw": "500",
+      "resolved": "500",
+      "chain": [
+        "--rui-font-weight-body3",
+        "500"
+      ]
+    }
+  }
+}

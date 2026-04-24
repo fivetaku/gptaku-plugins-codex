@@ -1,0 +1,358 @@
+{
+  "slug": "resend",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".tiptap-extended .htmlContent-selected:not(:empty),.tiptap-extended .socialLinksNode-selected:not(:empty),.tiptap-extended .twitterContent-selected:not(:empty),.tiptap-extended .youtubeContent-selected:not(:empty)",
+      "property": "box-shadow",
+      "hex": "#61A8F8",
+      "rule_snippet": ".tiptap-extended .htmlContent-selected:not(:empty),.tiptap-extended .socialLinksNode-selected:not(:empty),.tiptap-extended .twitterContent-selected:not(:empty),.tiptap-extended .youtubeContent-selecte"
+    },
+    {
+      "selector": "button,input,select,optgroup,textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input,select,optgroup,textarea { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-r"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-radius:0}"
+    },
+    {
+      "selector": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.05\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.1\\)_100\\%\\)\\]",
+      "property": "background-image",
+      "hex": "#FDFDFD0D",
+      "rule_snippet": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.05\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.1\\)_100\\%\\)\\] { background-image:url(/static/texture-btn.png),linear-gra"
+    },
+    {
+      "selector": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.05\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.1\\)_100\\%\\)\\]",
+      "property": "background-image",
+      "hex": "#F0F0E41A",
+      "rule_snippet": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.05\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.1\\)_100\\%\\)\\] { background-image:url(/static/texture-btn.png),linear-gra"
+    },
+    {
+      "selector": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.07\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.07\\)_100\\%\\)\\]",
+      "property": "background-image",
+      "hex": "#FDFDFD12",
+      "rule_snippet": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.07\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.07\\)_100\\%\\)\\] { background-image:url(/static/texture-btn.png),linear-gr"
+    },
+    {
+      "selector": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.07\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.07\\)_100\\%\\)\\]",
+      "property": "background-image",
+      "hex": "#F0F0E412",
+      "rule_snippet": ".bg-\\[url\\(\\\"\\/static\\/texture-btn\\.png\\\"\\)\\,linear-gradient\\(104deg\\,rgba\\(253\\,253\\,253\\,0\\.07\\)_5\\%\\,rgba\\(240\\,240\\,228\\,0\\.07\\)_100\\%\\)\\] { background-image:url(/static/texture-btn.png),linear-gr"
+    },
+    {
+      "selector": ".group-hover\\/nav-card\\:bg-\\[\\#373737\\]:is(:where(.group\\/nav-card):hover *)",
+      "property": "background-color",
+      "hex": "#373737",
+      "rule_snippet": ".group-hover\\/nav-card\\:bg-\\[\\#373737\\]:is(:where(.group\\/nav-card):hover *) { background-color:#373737}"
+    },
+    {
+      "selector": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover",
+      "property": "--tw-shadow",
+      "hex": "#FFFFFF0F",
+      "rule_snippet": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover { --tw-shadow:0px 0px 4px var(--tw-shadow-color,#ffffff0f), 0px 1px 14px var(--tw-shadow-color,#ffffff1f), 0px 3px 32px var(--tw-shadow-color,#"
+    },
+    {
+      "selector": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover",
+      "property": "--tw-shadow",
+      "hex": "#FFFFFF1F",
+      "rule_snippet": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover { --tw-shadow:0px 0px 4px var(--tw-shadow-color,#ffffff0f), 0px 1px 14px var(--tw-shadow-color,#ffffff1f), 0px 3px 32px var(--tw-shadow-color,#"
+    },
+    {
+      "selector": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover",
+      "property": "--tw-shadow",
+      "hex": "#FFFFFF2E",
+      "rule_snippet": ".not-disabled\\:hover\\:shadow-button:not(:disabled):hover { --tw-shadow:0px 0px 4px var(--tw-shadow-color,#ffffff0f), 0px 1px 14px var(--tw-shadow-color,#ffffff1f), 0px 3px 32px var(--tw-shadow-color,#"
+    },
+    {
+      "selector": ".md\\:group-focus-within\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):focus-within *)",
+      "property": "--tw-gradient-from",
+      "hex": "#FFFFFF33",
+      "rule_snippet": ".md\\:group-focus-within\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):focus-within *) { --tw-gradient-from:#fff3}"
+    },
+    {
+      "selector": ".md\\:group-hover\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):hover *)",
+      "property": "--tw-gradient-from",
+      "hex": "#FFFFFF33",
+      "rule_snippet": ".md\\:group-hover\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):hover *) { --tw-gradient-from:#fff3}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:border-white\\/5>button",
+      "property": "border-color",
+      "hex": "#FFFFFF0D",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:border-white\\/5>button { border-color:#ffffff0d}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:\\!bg-transparent>button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:\\!bg-transparent>button { background-color:#0000!important}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:bg-transparent>button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:bg-transparent>button { background-color:#0000}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:bg-white\\/5>button",
+      "property": "background-color",
+      "hex": "#FFFFFF0D",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:bg-white\\/5>button { background-color:#ffffff0d}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:hover\\:bg-transparent>button:hover",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:hover\\:bg-transparent>button:hover { background-color:#0000}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:hover\\:bg-white\\/10>button:hover",
+      "property": "background-color",
+      "hex": "#FFFFFF1A",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:hover\\:bg-white\\/10>button:hover { background-color:#ffffff1a}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:focus-visible\\:ring-white\\/20>button:focus-visible",
+      "property": "--tw-ring-color",
+      "hex": "#FFFFFF33",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:focus-visible\\:ring-white\\/20>button:focus-visible { --tw-ring-color:#fff3}"
+    },
+    {
+      "selector": ".md\\:group-focus-within\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):focus-within *)",
+      "property": "--tw-gradient-from",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".md\\:group-focus-within\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):focus-within *) { --tw-gradient-from:color-mix(in oklab, var(--color-white,#fff) 20%, transparent)}"
+    },
+    {
+      "selector": ".md\\:group-hover\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):hover *)",
+      "property": "--tw-gradient-from",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".md\\:group-hover\\/subtle-cta\\:from-white\\/20:is(:where(.group\\/subtle-cta):hover *) { --tw-gradient-from:color-mix(in oklab, var(--color-white,#fff) 20%, transparent)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:border-white\\/5>button",
+      "property": "border-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:border-white\\/5>button { border-color:color-mix(in oklab, var(--color-white,#fff) 5%, transparent)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:bg-white\\/5>button",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:bg-white\\/5>button { background-color:color-mix(in oklab, var(--color-white,#fff) 5%, transparent)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:text-white>button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:text-white>button { color:var(--color-white,#fff)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:hover\\:bg-white\\/10>button:hover",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:hover\\:bg-white\\/10>button:hover { background-color:color-mix(in oklab, var(--color-white,#fff) 10%, transparent)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:hover\\:text-white>button:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:hover\\:text-white>button:hover { color:var(--color-white,#fff)}"
+    },
+    {
+      "selector": ".\\[\\&\\>button\\]\\:focus-visible\\:ring-white\\/20>button:focus-visible",
+      "property": "--tw-ring-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".\\[\\&\\>button\\]\\:focus-visible\\:ring-white\\/20>button:focus-visible { --tw-ring-color:color-mix(in oklab, var(--color-white,#fff) 20%, transparent)}"
+    },
+    {
+      "selector": ".dark\\:\\[\\&\\>button\\]\\:text-black:is(.dark *)>button",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".dark\\:\\[\\&\\>button\\]\\:text-black:is(.dark *)>button { color:var(--color-black,#000)}"
+    },
+    {
+      "selector": ".header-light button,.header-light .bg-background a,.header-light>header>div>div>div>a,.header-light>header>div>div>div>ul li a,.header-light svg",
+      "property": "fill",
+      "hex": "#000000",
+      "rule_snippet": ".header-light button,.header-light .bg-background a,.header-light>header>div>div>div>a,.header-light>header>div>div>div>ul li a,.header-light svg { fill:#000; color:#000!important}"
+    },
+    {
+      "selector": ".header-light button,.header-light .bg-background a,.header-light>header>div>div>div>a,.header-light>header>div>div>div>ul li a,.header-light svg",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".header-light button,.header-light .bg-background a,.header-light>header>div>div>div>a,.header-light>header>div>div>div>ul li a,.header-light svg { fill:#000; color:#000!important}"
+    },
+    {
+      "selector": ".header-transparent .header_main-button:not(:hover)",
+      "property": "background",
+      "hex": "#FFFFFF47",
+      "rule_snippet": ".header-transparent .header_main-button:not(:hover) { background:#ffffff47}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 264,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 230,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#A0A0A0",
+      "count": 216,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 186,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#ABABAB",
+      "count": 95,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#464A4D",
+      "count": 88,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F8F8F8",
+      "count": 86,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#6C6C6C",
+      "count": 72,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF33",
+      "count": 48,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF00",
+      "count": 45,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 41,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF0D",
+      "count": 40,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 26,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000026",
+      "count": 23,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000080",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000099",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#62FFB3",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF80",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFFCC",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000040",
+      "count": 17,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF4D",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#22C55E",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFFE6",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000033",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000E6",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#2A2A2A",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#323232",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#9C6B2E",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#B6B6B633",
+      "count": 12,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 62,
+    "by_role": {
+      "chromatic": 3,
+      "neutral": 27,
+      "selector": 32
+    }
+  }
+}

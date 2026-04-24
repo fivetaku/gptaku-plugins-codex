@@ -1,0 +1,420 @@
+{
+  "slug": "mckinsey",
+  "total_vars": 340,
+  "resolved_count": 299,
+  "unresolved_count": 41,
+  "samples": {
+    "--icon-svg-stroke-color": {
+      "raw": "var(--mdc-color-neutral-white)",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--icon-svg-stroke-color",
+        "--mdc-color-neutral-white",
+        "#FFFFFF"
+      ]
+    },
+    "--icon-svg-fill-color": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--icon-svg-fill-color",
+        "none"
+      ]
+    },
+    "--icon-primary-radial-color": {
+      "raw": "var(--mdc-color-neutral-black)",
+      "resolved": "#000000",
+      "chain": [
+        "--icon-primary-radial-color",
+        "--mdc-color-neutral-black",
+        "#000000"
+      ]
+    },
+    "--icon-primary-radial-background-color": {
+      "raw": "var(--mdc-color-neutral-white)",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--icon-primary-radial-background-color",
+        "--mdc-color-neutral-white",
+        "#FFFFFF"
+      ]
+    },
+    "--icon-primary-radial-background-color-hover": {
+      "raw": "var(--mdc-color-palette-cyan)",
+      "resolved": "#00A9F4",
+      "chain": [
+        "--icon-primary-radial-background-color-hover",
+        "--mdc-color-palette-cyan",
+        "#00A9F4"
+      ]
+    },
+    "--icon-secondary-radial-color": {
+      "raw": "var(--mdc-color-neutral-white)",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--icon-secondary-radial-color",
+        "--mdc-color-neutral-white",
+        "#FFFFFF"
+      ]
+    },
+    "--icon-secondary-radial-background-color": {
+      "raw": "unset",
+      "resolved": null,
+      "chain": [
+        "--icon-secondary-radial-background-color",
+        "unset"
+      ]
+    },
+    "--icon-secondary-radial-background-color-hover": {
+      "raw": "var(--mdc-color-palette-cyan)",
+      "resolved": "#00A9F4",
+      "chain": [
+        "--icon-secondary-radial-background-color-hover",
+        "--mdc-color-palette-cyan",
+        "#00A9F4"
+      ]
+    },
+    "--paddle-bg-right": {
+      "raw": "linear-gradient(to right,#0000,var(--mdc-color-palette-deep-blue) 50%)",
+      "resolved": null,
+      "chain": [
+        "--paddle-bg-right",
+        "linear-gradient(to right,#0000,var(--mdc-color-palette-deep-blue) 50%)"
+      ]
+    },
+    "--paddle-bg-left": {
+      "raw": "linear-gradient(to left,#0000,var(--mdc-color-palette-deep-blue) 50%)",
+      "resolved": null,
+      "chain": [
+        "--paddle-bg-left",
+        "linear-gradient(to left,#0000,var(--mdc-color-palette-deep-blue) 50%)"
+      ]
+    },
+    "--secondary-tab-border": {
+      "raw": "var(--mdc-size-border-width-1) solid var(--mdc-color-neutral-white)",
+      "resolved": null,
+      "chain": [
+        "--secondary-tab-border",
+        "var(--mdc-size-border-width-1) solid var(--mdc-color-neutral-white)"
+      ]
+    },
+    "--secondary-tab-hover-bg": {
+      "raw": "var(--mdc-color-neutral-white)",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--secondary-tab-hover-bg",
+        "--mdc-color-neutral-white",
+        "#FFFFFF"
+      ]
+    },
+    "--secondary-tab-hover-color": {
+      "raw": "var(--mdc-color-neutral-black)",
+      "resolved": "#000000",
+      "chain": [
+        "--secondary-tab-hover-color",
+        "--mdc-color-neutral-black",
+        "#000000"
+      ]
+    },
+    "--secondary-tab-active-color": {
+      "raw": "var(--mdc-color-neutral-black)!important",
+      "resolved": null,
+      "chain": [
+        "--secondary-tab-active-color",
+        "var(--mdc-color-neutral-black)!important"
+      ]
+    },
+    "--secondary-tab-active-bg": {
+      "raw": "var(--mdc-color-neutral-white)",
+      "resolved": "#FFFFFF",
+      "chain": [
+        "--secondary-tab-active-bg",
+        "--mdc-color-neutral-white",
+        "#FFFFFF"
+      ]
+    },
+    "--secondary-tab-active-hover-bg": {
+      "raw": "var(--mdc-color-palette-cyan)",
+      "resolved": "#00A9F4",
+      "chain": [
+        "--secondary-tab-active-hover-bg",
+        "--mdc-color-palette-cyan",
+        "#00A9F4"
+      ]
+    },
+    "--secondary-tab-active-hover-color": {
+      "raw": "var(--mdc-color-neutral-black)",
+      "resolved": "#000000",
+      "chain": [
+        "--secondary-tab-active-hover-color",
+        "--mdc-color-neutral-black",
+        "#000000"
+      ]
+    },
+    "--ot-footer-space": {
+      "raw": "160px",
+      "resolved": "160px",
+      "chain": [
+        "--ot-footer-space",
+        "160px"
+      ]
+    },
+    "--icon-radial-color": {
+      "raw": "color(neutral-black)",
+      "resolved": null,
+      "chain": [
+        "--icon-radial-color",
+        "color(neutral-black)"
+      ]
+    },
+    "--icon-radial-background-color": {
+      "raw": "color(palette-deep-blue)",
+      "resolved": null,
+      "chain": [
+        "--icon-radial-background-color",
+        "color(palette-deep-blue)"
+      ]
+    },
+    "--icon-radial-background-color-hover": {
+      "raw": "var(--mdc-color-palette-cyan)",
+      "resolved": "#00A9F4",
+      "chain": [
+        "--icon-radial-background-color-hover",
+        "--mdc-color-palette-cyan",
+        "#00A9F4"
+      ]
+    },
+    "--shadow": {
+      "raw": "0 1px 8px rgba(0, 0, 0, 0.1)",
+      "resolved": null,
+      "chain": [
+        "--shadow",
+        "0 1px 8px rgba(0, 0, 0, 0.1)"
+      ]
+    },
+    "--border": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--border",
+        "none"
+      ]
+    },
+    "--swiper-theme-color": {
+      "raw": "#007aff",
+      "resolved": "#007aff",
+      "chain": [
+        "--swiper-theme-color",
+        "#007aff"
+      ]
+    },
+    "--swiper-preloader-color": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--swiper-preloader-color",
+        "#000"
+      ]
+    },
+    "--text": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--text",
+        "#fff"
+      ]
+    },
+    "--link": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--link",
+        "#fff"
+      ]
+    },
+    "--link-border": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--link-border",
+        "#fff"
+      ]
+    },
+    "--mdc-zindex-20": {
+      "raw": "20",
+      "resolved": "20",
+      "chain": [
+        "--mdc-zindex-20",
+        "20"
+      ]
+    },
+    "--mdc-zindex-10": {
+      "raw": "10",
+      "resolved": "10",
+      "chain": [
+        "--mdc-zindex-10",
+        "10"
+      ]
+    },
+    "--mdc-zindex-9": {
+      "raw": "9",
+      "resolved": "9",
+      "chain": [
+        "--mdc-zindex-9",
+        "9"
+      ]
+    },
+    "--mdc-zindex-8": {
+      "raw": "8",
+      "resolved": "8",
+      "chain": [
+        "--mdc-zindex-8",
+        "8"
+      ]
+    },
+    "--mdc-zindex-7": {
+      "raw": "7",
+      "resolved": "7",
+      "chain": [
+        "--mdc-zindex-7",
+        "7"
+      ]
+    },
+    "--mdc-zindex-6": {
+      "raw": "6",
+      "resolved": "6",
+      "chain": [
+        "--mdc-zindex-6",
+        "6"
+      ]
+    },
+    "--mdc-zindex-5": {
+      "raw": "5",
+      "resolved": "5",
+      "chain": [
+        "--mdc-zindex-5",
+        "5"
+      ]
+    },
+    "--mdc-zindex-4": {
+      "raw": "4",
+      "resolved": "4",
+      "chain": [
+        "--mdc-zindex-4",
+        "4"
+      ]
+    },
+    "--mdc-zindex-3": {
+      "raw": "3",
+      "resolved": "3",
+      "chain": [
+        "--mdc-zindex-3",
+        "3"
+      ]
+    },
+    "--mdc-zindex-2": {
+      "raw": "2",
+      "resolved": "2",
+      "chain": [
+        "--mdc-zindex-2",
+        "2"
+      ]
+    },
+    "--mdc-zindex-1": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--mdc-zindex-1",
+        "1"
+      ]
+    },
+    "--mdc-zindex-0": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--mdc-zindex-0",
+        "0"
+      ]
+    },
+    "--mdc-opacity-100": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--mdc-opacity-100",
+        "1"
+      ]
+    },
+    "--mdc-opacity-95": {
+      "raw": "0.95",
+      "resolved": "0.95",
+      "chain": [
+        "--mdc-opacity-95",
+        "0.95"
+      ]
+    },
+    "--mdc-opacity-90": {
+      "raw": "0.9",
+      "resolved": "0.9",
+      "chain": [
+        "--mdc-opacity-90",
+        "0.9"
+      ]
+    },
+    "--mdc-opacity-85": {
+      "raw": "0.85",
+      "resolved": "0.85",
+      "chain": [
+        "--mdc-opacity-85",
+        "0.85"
+      ]
+    },
+    "--mdc-opacity-80": {
+      "raw": "0.8",
+      "resolved": "0.8",
+      "chain": [
+        "--mdc-opacity-80",
+        "0.8"
+      ]
+    },
+    "--mdc-opacity-75": {
+      "raw": "0.75",
+      "resolved": "0.75",
+      "chain": [
+        "--mdc-opacity-75",
+        "0.75"
+      ]
+    },
+    "--mdc-opacity-70": {
+      "raw": "0.7",
+      "resolved": "0.7",
+      "chain": [
+        "--mdc-opacity-70",
+        "0.7"
+      ]
+    },
+    "--mdc-opacity-65": {
+      "raw": "0.65",
+      "resolved": "0.65",
+      "chain": [
+        "--mdc-opacity-65",
+        "0.65"
+      ]
+    },
+    "--mdc-opacity-60": {
+      "raw": "0.6",
+      "resolved": "0.6",
+      "chain": [
+        "--mdc-opacity-60",
+        "0.6"
+      ]
+    },
+    "--mdc-opacity-55": {
+      "raw": "0.55",
+      "resolved": "0.55",
+      "chain": [
+        "--mdc-opacity-55",
+        "0.55"
+      ]
+    }
+  }
+}

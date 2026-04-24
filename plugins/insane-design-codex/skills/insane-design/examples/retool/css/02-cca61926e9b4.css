@@ -1,0 +1,41 @@
+@font-face {
+font-family:saansFont;
+src:url(../media/SaansVF-s.p.84a2bbd5.woff2)format("woff2");
+font-display:swap;
+font-weight:100 900;
+font-style:normal}
+@font-face {
+font-family:saansFont Fallback;
+src:local(Arial);
+ascent-override:91.69%;
+descent-override:22.67%;
+line-gap-override:0.0%;
+size-adjust:99.25%}
+.saansfont_53ad8974-module__GiSBqW__className {
+font-family:saansFont,saansFont Fallback}
+.saansfont_53ad8974-module__GiSBqW__variable {
+--font-saans:"saansFont","saansFont Fallback"}
+
+@font-face {
+font-family:pxGroteskFont;
+src:url(../media/Px_Grotesk_Regular-s.p.9f07335c.woff2)format("woff2");
+font-display:swap;
+font-weight:400;
+font-style:normal}
+@font-face {
+font-family:pxGroteskFont;
+src:url(../media/PxGrotesk_Bold-s.p.b67bfcd7.woff2)format("woff2");
+font-display:swap;
+font-weight:700;
+font-style:normal}
+@font-face {
+font-family:pxGroteskFont Fallback;
+src:local(Arial);
+ascent-override:91.14%;
+descent-override:25.21%;
+line-gap-override:0.0%;
+size-adjust:103.13%}
+.pxgroteskfont_1dd9fc96-module__Qvb1mW__className {
+font-family:pxGroteskFont,pxGroteskFont Fallback}
+.pxgroteskfont_1dd9fc96-module__Qvb1mW__variable {
+--font-px-grotesk:"pxGroteskFont","pxGroteskFont Fallback"}

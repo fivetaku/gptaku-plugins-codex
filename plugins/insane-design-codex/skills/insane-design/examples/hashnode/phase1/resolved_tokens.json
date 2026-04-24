@@ -1,0 +1,418 @@
+{
+  "slug": "hashnode",
+  "total_vars": 327,
+  "resolved_count": 93,
+  "unresolved_count": 234,
+  "samples": {
+    "--_fa-family": {
+      "raw": "var(--fa-family,\nvar(--fa-style-family,\"Font Awesome 7 Pro\"))",
+      "resolved": null,
+      "chain": [
+        "--_fa-family",
+        "--fa-family",
+        "--fa-family-jelly-fill",
+        "\"Font Awesome 7 Jelly Fill\""
+      ]
+    },
+    "--fa-width": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--fa-width",
+        "100%"
+      ]
+    },
+    "--fa-animation-direction": {
+      "raw": "reverse",
+      "resolved": null,
+      "chain": [
+        "--fa-animation-direction",
+        "reverse"
+      ]
+    },
+    "--fa": {
+      "raw": "\"\"",
+      "resolved": null,
+      "chain": [
+        "--fa",
+        "\"\""
+      ]
+    },
+    "--fa-family-brands": {
+      "raw": "\"Font Awesome 7 Brands\"",
+      "resolved": null,
+      "chain": [
+        "--fa-family-brands",
+        "\"Font Awesome 7 Brands\""
+      ]
+    },
+    "--fa-font-brands": {
+      "raw": "normal 400 1em/1 var(--fa-family-brands)",
+      "resolved": null,
+      "chain": [
+        "--fa-font-brands",
+        "normal 400 1em/1 var(--fa-family-brands)"
+      ]
+    },
+    "--fa-family": {
+      "raw": "var(--fa-family-jelly-fill)",
+      "resolved": null,
+      "chain": [
+        "--fa-family",
+        "--fa-family-jelly-fill",
+        "\"Font Awesome 7 Jelly Fill\""
+      ]
+    },
+    "--fa-style": {
+      "raw": "400",
+      "resolved": "400",
+      "chain": [
+        "--fa-style",
+        "400"
+      ]
+    },
+    "--fa-family-classic": {
+      "raw": "\"Font Awesome 7 Pro\"",
+      "resolved": null,
+      "chain": [
+        "--fa-family-classic",
+        "\"Font Awesome 7 Pro\""
+      ]
+    },
+    "--fa-font-regular": {
+      "raw": "normal 400 1em/1 var(--fa-family-classic)",
+      "resolved": null,
+      "chain": [
+        "--fa-font-regular",
+        "normal 400 1em/1 var(--fa-family-classic)"
+      ]
+    },
+    "--fa-style-family-classic": {
+      "raw": "var(--fa-family-classic)",
+      "resolved": null,
+      "chain": [
+        "--fa-style-family-classic",
+        "--fa-family-classic",
+        "\"Font Awesome 7 Pro\""
+      ]
+    },
+    "--fa-family-jelly": {
+      "raw": "\"Font Awesome 7 Jelly\"",
+      "resolved": null,
+      "chain": [
+        "--fa-family-jelly",
+        "\"Font Awesome 7 Jelly\""
+      ]
+    },
+    "--fa-font-jelly-regular": {
+      "raw": "normal 400 1em/1 var(--fa-family-jelly)",
+      "resolved": null,
+      "chain": [
+        "--fa-font-jelly-regular",
+        "normal 400 1em/1 var(--fa-family-jelly)"
+      ]
+    },
+    "--fa-style-family-jelly": {
+      "raw": "var(--fa-family-jelly)",
+      "resolved": null,
+      "chain": [
+        "--fa-style-family-jelly",
+        "--fa-family-jelly",
+        "\"Font Awesome 7 Jelly\""
+      ]
+    },
+    "--fa-family-jelly-fill": {
+      "raw": "\"Font Awesome 7 Jelly Fill\"",
+      "resolved": null,
+      "chain": [
+        "--fa-family-jelly-fill",
+        "\"Font Awesome 7 Jelly Fill\""
+      ]
+    },
+    "--fa-font-jelly-fill-regular": {
+      "raw": "normal 400 1em/1 var(--fa-family-jelly-fill)",
+      "resolved": null,
+      "chain": [
+        "--fa-font-jelly-fill-regular",
+        "normal 400 1em/1 var(--fa-family-jelly-fill)"
+      ]
+    },
+    "--fa-style-family-jelly-fill": {
+      "raw": "var(--fa-family-jelly-fill)",
+      "resolved": null,
+      "chain": [
+        "--fa-style-family-jelly-fill",
+        "--fa-family-jelly-fill",
+        "\"Font Awesome 7 Jelly Fill\""
+      ]
+    },
+    "--font-suisse-mono": {
+      "raw": "\"suisseMono\",\n\"suisseMono Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-suisse-mono",
+        "\"suisseMono\",\n\"suisseMono Fallback\""
+      ]
+    },
+    "--font-suisse-intl": {
+      "raw": "\"suisseIntl\",\n\"suisseIntl Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-suisse-intl",
+        "\"suisseIntl\",\n\"suisseIntl Fallback\""
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "calc(var(--spacing)*1)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-x",
+        "calc(var(--spacing)*1)"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "calc(var(--spacing)*.5)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-y",
+        "calc(var(--spacing)*.5)"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-translate-z",
+        "0"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-x",
+        "90%"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-y",
+        "90%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-z",
+        "90%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "initial"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "initial"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "initial"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "initial"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "initial"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-divide-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-divide-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "none"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to top in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to top in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "color-mix(in oklab,\nvar(--color-blue-950)60%,transparent)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-from",
+        "color-mix(in oklab,\nvar(--color-blue-950)60%,transparent)"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "color-mix(in oklab,\nvar(--color-purple-950)60%,transparent)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-to",
+        "color-mix(in oklab,\nvar(--color-purple-950)60%,transparent)"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops,\nvar(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "0%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "50%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "100%"
+      ]
+    },
+    "--tw-leading": {
+      "raw": "var(--leading-relaxed)",
+      "resolved": "1.625",
+      "chain": [
+        "--tw-leading",
+        "--leading-relaxed",
+        "1.625"
+      ]
+    },
+    "--tw-font-weight": {
+      "raw": "var(--font-weight-semibold)",
+      "resolved": "600",
+      "chain": [
+        "--tw-font-weight",
+        "--font-weight-semibold",
+        "600"
+      ]
+    },
+    "--tw-tracking": {
+      "raw": "var(--tracking-tight)",
+      "resolved": "-.025em",
+      "chain": [
+        "--tw-tracking",
+        "--tracking-tight",
+        "-.025em"
+      ]
+    },
+    "--tw-ordinal": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-ordinal",
+        "initial"
+      ]
+    },
+    "--tw-slashed-zero": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-slashed-zero",
+        "initial"
+      ]
+    },
+    "--tw-numeric-figure": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-figure",
+        "initial"
+      ]
+    },
+    "--tw-numeric-spacing": {
+      "raw": "tabular-nums",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-spacing",
+        "tabular-nums"
+      ]
+    }
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "slug": "neon",
+  "total_vars": 188,
+  "resolved_count": 99,
+  "unresolved_count": 89,
+  "samples": {
+    "--font-geist-mono": {
+      "raw": "\"GeistMono\",\n ui-monospace,\n SFMono-Regular,\n Roboto Mono,\n Menlo,\n Monaco,\n Liberation Mono,\n DejaVu Sans Mono,\n Courier New,\n monospace",
+      "resolved": null,
+      "chain": [
+        "--font-geist-mono",
+        "\"GeistMono\",\n ui-monospace,\n SFMono-Regular,\n Roboto Mono,\n Menlo,\n Monaco,\n Liberation Mono,\n DejaVu Sans Mono,\n Courier New,\n monospace"
+      ]
+    },
+    "--font-inter": {
+      "raw": "\"Inter\",\n \"Inter Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-inter",
+        "\"Inter\",\n \"Inter Fallback\""
+      ]
+    },
+    "--font-esbuild": {
+      "raw": "\"esbuild\",\n \"esbuild Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-esbuild",
+        "\"esbuild\",\n \"esbuild Fallback\""
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "-1px",
+      "resolved": "-1px",
+      "chain": [
+        "--tw-translate-x",
+        "-1px"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "-1px",
+      "resolved": "-1px",
+      "chain": [
+        "--tw-translate-y",
+        "-1px"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-translate-z",
+        "0"
+      ]
+    },
+    "--tw-content": {
+      "raw": "\"–\"",
+      "resolved": null,
+      "chain": [
+        "--tw-content",
+        "\"–\""
+      ]
+    },
+    "--tw-tracking": {
+      "raw": ".02em",
+      "resolved": ".02em",
+      "chain": [
+        "--tw-tracking",
+        ".02em"
+      ]
+    },
+    "--tw-font-weight": {
+      "raw": "var(--font-weight-semibold)",
+      "resolved": "600",
+      "chain": [
+        "--tw-font-weight",
+        "--font-weight-semibold",
+        "600"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-x",
+        "100%"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-y",
+        "100%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-scale-z",
+        "100%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "initial"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "initial"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "initial"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "initial"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "initial"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-space-x-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-x-reverse",
+        "0"
+      ]
+    },
+    "--tw-divide-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-divide-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "dotted",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "dotted"
+      ]
+    },
+    "--tw-duration": {
+      "raw": ".2s",
+      "resolved": ".2s",
+      "chain": [
+        "--tw-duration",
+        ".2s"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to bottom in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to bottom in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "#000",
+      "resolved": "#000",
+      "chain": [
+        "--tw-gradient-from",
+        "#000"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "#0000",
+      "resolved": "#0000",
+      "chain": [
+        "--tw-gradient-via",
+        "#0000"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-to",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops,\nvar(--tw-gradient-position),\n var(--tw-gradient-from) var(--tw-gradient-from-position),\n var(--tw-gradient-to) var(--tw-gradient-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "initial"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "70%",
+      "resolved": "70%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "70%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "50%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "90%"
+      ]
+    },
+    "--tw-leading": {
+      "raw": "var(--leading-relaxed)",
+      "resolved": "1.625",
+      "chain": [
+        "--tw-leading",
+        "--leading-relaxed",
+        "1.625"
+      ]
+    },
+    "--tw-ordinal": {
+      "raw": "ordinal",
+      "resolved": null,
+      "chain": [
+        "--tw-ordinal",
+        "ordinal"
+      ]
+    },
+    "--tw-slashed-zero": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-slashed-zero",
+        "initial"
+      ]
+    },
+    "--tw-numeric-figure": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-figure",
+        "initial"
+      ]
+    },
+    "--tw-numeric-spacing": {
+      "raw": "tabular-nums",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-spacing",
+        "tabular-nums"
+      ]
+    },
+    "--tw-numeric-fraction": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-numeric-fraction",
+        "initial"
+      ]
+    },
+    "--tw-shadow": {
+      "raw": "8px 18px 20px 0px var(--tw-shadow-color,#050505cc)",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow",
+        "8px 18px 20px 0px var(--tw-shadow-color,#050505cc)"
+      ]
+    },
+    "--tw-shadow-color": {
+      "raw": "color-mix(in oklab,\n #0e121659 0px 10px 38px -10px,\n #0e121633 0px 10px 20px -15px var(--tw-shadow-alpha), transparent)",
+      "resolved": null,
+      "chain": [
+        "--tw-shadow-color",
+        "color-mix(in oklab,\n #0e121659 0px 10px 38px -10px,\n #0e121633 0px 10px 20px -15px var(--tw-shadow-alpha), transparent)"
+      ]
+    },
+    "--tw-shadow-alpha": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-shadow-alpha",
+        "100%"
+      ]
+    },
+    "--tw-inset-shadow": {
+      "raw": "0 0 #0000",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-shadow",
+        "0 0 #0000"
+      ]
+    },
+    "--tw-inset-shadow-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-shadow-color",
+        "initial"
+      ]
+    },
+    "--tw-inset-shadow-alpha": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-inset-shadow-alpha",
+        "100%"
+      ]
+    },
+    "--tw-ring-color": {
+      "raw": "#00e599",
+      "resolved": "#00e599",
+      "chain": [
+        "--tw-ring-color",
+        "#00e599"
+      ]
+    },
+    "--tw-ring-shadow": {
+      "raw": "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-shadow",
+        "var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor)"
+      ]
+    },
+    "--tw-inset-ring-color": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-ring-color",
+        "initial"
+      ]
+    },
+    "--tw-inset-ring-shadow": {
+      "raw": "0 0 #0000",
+      "resolved": null,
+      "chain": [
+        "--tw-inset-ring-shadow",
+        "0 0 #0000"
+      ]
+    },
+    "--tw-ring-inset": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-ring-inset",
+        "initial"
+      ]
+    },
+    "--tw-ring-offset-width": {
+      "raw": "2px",
+      "resolved": "2px",
+      "chain": [
+        "--tw-ring-offset-width",
+        "2px"
+      ]
+    },
+    "--tw-ring-offset-color": {
+      "raw": "#131415",
+      "resolved": "#131415",
+      "chain": [
+        "--tw-ring-offset-color",
+        "#131415"
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- insane-build: design-system/catalog.html — token visualization + component catalog -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{SERVICE_NAME} — Design System Catalog</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --fg-muted: #6b7280;
+    --border: rgba(0,0,0,0.08);
+    --brand: #000000;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --radius-md: 8px;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .page { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+  .page__header h1 { font-size: 48px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .page__header p  { color: var(--fg-muted); margin: 0 0 64px; font-size: 16px; }
+  .group { margin-bottom: 72px; }
+  .group > h2 {
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--fg-muted); margin: 0 0 24px; border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; font-size: 12px; }
+  .swatch__chip { height: 80px; }
+  .swatch__meta { padding: 8px 10px; font-family: ui-monospace, monospace; }
+  .swatch__meta b { display: block; font-weight: 600; }
+  .type-row {
+    display: flex; align-items: baseline; gap: 24px;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+  }
+  .type-row code { color: var(--fg-muted); font-size: 12px; min-width: 120px; }
+  .components { display: grid; gap: 16px; }
+  .component {
+    padding: 24px; border: 1px solid var(--border); border-radius: var(--radius-md);
+  }
+  .component h3 { margin: 0 0 12px; font-size: 14px; color: var(--fg-muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page__header">
+    <h1>{SERVICE_NAME} — Design System</h1>
+    <p>{SERVICE_TAGLINE}</p>
+  </header>
+
+  <section class="group">
+    <h2>Colors</h2>
+    <div class="swatches" id="swatches">
+      <!-- Populated from design.md §06 -->
+      <div class="swatch">
+        <div class="swatch__chip" style="background: var(--brand);"></div>
+        <div class="swatch__meta"><b>brand</b>{BRAND_HEX}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="group">
+    <h2>Typography</h2>
+    <div class="type-row"><code>display</code><span style="font-size: 48px; font-weight: 600;">{SAMPLE_DISPLAY}</span></div>
+    <div class="type-row"><code>h1</code><span style="font-size: 32px; font-weight: 600;">{SAMPLE_H1}</span></div>
+    <div class="type-row"><code>body</code><span style="font-size: 16px;">{SAMPLE_BODY}</span></div>
+    <div class="type-row"><code>caption</code><span style="font-size: 12px; color: var(--fg-muted);">{SAMPLE_CAPTION}</span></div>
+  </section>
+
+  <section class="group">
+    <h2>Components</h2>
+    <div class="components">
+      <div class="component">
+        <h3>Primary Button</h3>
+        <button style="padding: 12px 24px; background: var(--brand); color: #fff; border: 0; border-radius: var(--radius-md); font-family: inherit; font-weight: 500;">Primary CTA</button>
+      </div>
+      <div class="component">
+        <h3>Ghost Button</h3>
+        <button style="padding: 12px 24px; background: transparent; color: var(--fg); border: 1px solid var(--fg); border-radius: var(--radius-md); font-family: inherit;">Ghost CTA</button>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

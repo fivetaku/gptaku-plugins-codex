@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deloitte Digital — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#000000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{
+    font-family:var(--font-sans);
+    font-feature-settings:"ss01" 1,"ss02" 1;
+    font-size:14px;font-weight:400;line-height:1.6;
+    color:var(--fg);background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+
+  .toc{
+    position:sticky;top:0;align-self:start;height:100vh;
+    padding:28px 24px 28px 40px;
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;gap:22px;
+    overflow-y:auto;
+  }
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--border-str);text-transform:uppercase;
+    letter-spacing:.1em;padding:0 10px;margin-bottom:4px;
+  }
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{
+    display:grid;grid-template-columns:26px 1fr;align-items:center;
+    padding:6px 10px;font-size:13px;color:var(--muted-fg);
+    border-radius:var(--radius);transition:background 140ms,color 140ms;
+  }
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 12px;background:var(--muted);border:1px solid var(--border);
+    border-radius:999px;font-family:var(--font-mono);font-size:11px;
+    color:var(--subtle);margin-bottom:24px;
+  }
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{
+    margin-bottom:32px;max-width:880px;
+    border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);
+  }
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:28px 32px;
+    max-width:880px;margin-top:8px;
+  }
+  .qs__head{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:16px;margin-bottom:20px;
+    border-bottom:1px solid var(--border);
+  }
+  .qs__head-label{
+    font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+  }
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{
+    background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 16px;
+    display:flex;flex-direction:column;gap:6px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.55;
+    border:1px solid #1f2023;
+  }
+  .qs__step-label{
+    color:#7d8ba4;font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{
+    margin-top:16px;padding:14px 18px;
+    background:#fef2f2;border:1px solid #fecaca;
+    border-left:3px solid #dc2626;
+    border-radius:var(--radius);
+    font-size:13px;color:#991b1b;line-height:1.6;
+  }
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    max-width:880px;margin-top:32px;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;
+  }
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.04em;margin-bottom:8px;
+  }
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;max-width:820px;
+  }
+  .prov__row{
+    display:grid;grid-template-columns:180px 1fr;
+    padding:14px 24px;border-bottom:1px solid var(--border);
+    font-size:13px;align-items:center;
+  }
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{
+    padding:20px 22px;background:var(--card);
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+  }
+  .ts__head{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:10px;
+  }
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .fs-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:24px 28px;
+    max-width:820px;margin-bottom:24px;
+  }
+  .fs-card__row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{
+    display:grid;grid-template-columns:minmax(0,1fr) 260px;
+    gap:32px;align-items:baseline;
+    padding:20px 24px;border-bottom:1px solid var(--border);
+  }
+  .type-row:last-child{border-bottom:none;}
+  .type-row__s{color:var(--fg);}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-row__spec b{color:var(--fg);font-weight:600;}
+
+  .type-sub{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;
+    margin-bottom:12px;
+  }
+
+  .callout{
+    margin-top:16px;padding:16px 20px;
+    background:var(--muted);border:1px solid var(--border);
+    border-left:2px solid var(--accent);
+    border-radius:var(--radius);
+    font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;
+  }
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{
+    font-family:var(--font-mono);font-size:11px;margin-bottom:10px;
+    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;
+  }
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{
+    display:grid;gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  }
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{
+    aspect-ratio:1/2.2;display:flex;flex-direction:column;
+    justify-content:flex-end;padding:8px 6px;
+    font-family:var(--font-mono);font-size:9px;line-height:1.3;
+    transition:transform 160ms;position:relative;cursor:default;
+  }
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+
+  .space-note{
+    font-size:13px;color:var(--subtle);max-width:720px;
+    margin-bottom:24px;padding:14px 20px;
+    background:var(--muted);border:1px solid var(--border);
+    border-left:2px solid var(--accent);border-radius:var(--radius);line-height:1.7;
+  }
+  .space-note b{color:var(--fg);}
+  .space-note code{background:var(--card);padding:1px 5px;border-radius:3px;font-size:11px;border:1px solid var(--border);}
+
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{
+    display:grid;grid-template-columns:180px 70px 1fr;
+    gap:16px;padding:8px 20px;
+    border-bottom:1px solid var(--border);align-items:center;
+    font-family:var(--font-mono);font-size:11px;
+  }
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+
+  .rad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .rad-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:16px 12px;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .rad-card__v .px{font-family:var(--font-mono);}
+
+  .sh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{
+    background:var(--card);padding:24px 24px 20px;
+    border-radius:var(--radius-lg);border:1px solid var(--border);
+    min-height:150px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+
+  .lp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .lp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .lp-card h3{font-size:13px;font-weight:600;margin-bottom:12px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);}
+  .lp-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--subtle);line-height:1.6;}
+  .lp-card ul li{padding-left:14px;position:relative;}
+  .lp-card ul li::before{content:"·";position:absolute;left:2px;color:var(--muted-fg);font-weight:700;}
+  .lp-card ul li b{color:var(--fg);font-weight:600;}
+  .lp-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;}
+  .lp-card pre{background:#08090a;color:#f7f8f8;padding:14px 16px;border-radius:var(--radius);font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;margin-top:12px;}
+
+  .cmp-block{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;
+  }
+  .cmp-block__head{
+    display:flex;align-items:baseline;gap:12px;
+    padding-bottom:14px;margin-bottom:18px;
+    border-bottom:1px solid var(--border);flex-wrap:wrap;
+  }
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{
+    padding:24px;background:var(--muted);border-radius:var(--radius);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;
+  }
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+
+  .cmp-code{
+    margin-top:14px;background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 18px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.65;
+    overflow-x:auto;border:1px solid #1f2023;position:relative;
+  }
+  .cmp-code .copy{
+    position:absolute;top:10px;right:10px;
+    font-family:var(--font-mono);font-size:10px;
+    color:#7d8ba4;background:#1f2023;
+    padding:3px 8px;border-radius:4px;
+    border:1px solid #2f3135;
+  }
+  .cmp-code .copy:hover{color:#f7f8f8;background:#2f3135;}
+
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{
+    padding:14px 16px;background:var(--muted);border-radius:var(--radius);
+    font-weight:300;color:var(--fg);font-size:15px;line-height:1.5;
+    border-left:2px solid var(--brand-color);
+  }
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{
+    display:flex;gap:0;
+    border-bottom:1px solid var(--border);
+    background:var(--muted);
+  }
+  .code-tabs button{
+    padding:12px 18px;font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+    border-bottom:2px solid transparent;
+  }
+  .code-tabs button.is-active{
+    color:var(--fg);background:var(--card);
+    border-bottom-color:var(--accent);
+  }
+  .code-copy{
+    margin-left:auto;padding:12px 18px;
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);
+  }
+  .code-copy:hover{color:var(--fg);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{
+    background:#08090a;color:#f7f8f8;
+    padding:24px 28px;
+    font-family:var(--font-mono);font-size:12px;line-height:1.65;
+    overflow-x:auto;max-height:560px;margin:0;
+  }
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{
+    font-family:var(--font-mono);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:4px 12px;border-radius:999px;
+  }
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{
+    background:var(--muted);font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;
+  }
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;text-decoration-color:rgba(220,38,38,.4);}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.lp-grid,.voice-grid,.qs__grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .dd-grid,.sem-row{grid-template-columns:1fr;}
+    .rad-grid{grid-template-columns:1fr 1fr 1fr;}
+    .sh-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Deloitte Digital</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#layout"><span class="toc__num">08</span>레이아웃 패턴</a></li>
+        <li><a href="#components"><span class="toc__num">09</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">10</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">11</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">12</span>Do / Don't</a></li>
+      </ul>
+    </div>
+
+    <div class="toc__foot">
+      insane-design/deloitte-digital/<br>
+      design.md · 2026-04-13
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Deloitte Digital <span class="sub">— Open Sans Light · near-white</span></h1>
+      <p class="hero__sub">
+        https://www.deloittedigital.com 이 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        body weight 300(Light)과 배경 <code>#FBFBFB</code>(near-white)가 Deloitte Digital의 핵심 정체성이다.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="deloittedigital.com hero — 실제 렌더링된 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Deloitte Digital처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight 300</span>
+            <code>body {
+  font-family: "Open Sans",
+    Calibri, sans-serif;
+  font-weight: 300; /* ⚠️ 400 아님 */
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  /* near-white, NOT #FFFFFF */
+  --bg: <b>#FBFBFB</b>;
+  --fg: <b>#000000</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 컬러</span>
+            <code>:root {
+  /* 흑백 중심 */
+  --brand: <b>#000000</b>;
+  /* Deloitte 녹색 UI 사용 금지 */
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 둘</b>: (1) 배경을 순백(<code>#FFFFFF</code>)으로 두는 것 — Deloitte Digital 배경은 <code>#FBFBFB</code>(극도로 미세하게 따뜻한 near-white)이다.
+          (2) body weight를 <code>400</code>으로 설정하는 것 — <b>300(Light)</b>이 정체성이다. 400으로 두면 전체 느낌이 순식간에 평범해진다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">deloittedigital.com</div>
+          <div class="stat__hint">콘텐츠 중심 컨설팅 사이트</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">Open Sans 단일 폰트</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">Open Sans</div>
+          <div class="stat__hint">weight normal = 300</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono">#000000</div>
+          <div class="stat__hint">흑백 중심 — N/A prefix</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">
+        URL · fetch 시점 · 파싱 방식까지 모두 CSS 번들에서 직접 뽑은 값이다.
+      </p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://www.deloittedigital.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">HTML size</span><span class="prov__v">N/A</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">Open Sans 단일 폰트, 최소 CSS 구조</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">N/A (CSS 커스텀 프로퍼티 미발견)</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">
+        프레임워크, 디자인 시스템, CSS 아키텍처.
+      </p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">N/A (콘텐츠 중심 컨설팅 사이트)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">Bespoke — Open Sans Light 중심, 흑백 구조</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS ARCHITECTURE</div>
+          <div class="ts__body">Flat CSS, Open Sans weight 300 강제. 직접 hex 값으로 텍스트·배경 처리.</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CLASS NAMING</div>
+          <div class="ts__body">기능적 클래스</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body">light (bg = <code>#FBFBFB</code> near-white)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT LOADING</div>
+          <div class="ts__body">외부 로딩 (Google Fonts 또는 셀프 호스트) — <code>Open Sans</code> 300 weight 전용</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body"><code>#000000</code> — primary CTA, 주 텍스트</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">
+        Open Sans Light(300) — 가벼움이 Deloitte Digital의 핵심 정체성.
+      </p>
+
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display / Body</span>
+          <span class="fs-card__v"><code>Open Sans</code> (Google Fonts, SIL 오픈 폰트 라이선스 — 무료)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Fallback</span>
+          <span class="fs-card__v"><code>Calibri</code>, sans-serif</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight normal / bold</span>
+          <span class="fs-card__v"><code>300</code> / <code>700</code></span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>라이선스</b>: <code>Open Sans</code>는 SIL 오픈 폰트 라이선스. 무료 사용·재배포 가능. Google Fonts로 로딩 시 <code>weight=300;700</code>만 지정해 번들 크기를 최소화한다.
+      </div>
+
+      <div class="type-sub" style="margin-top:28px;">Typography scale</div>
+      <div class="type-table">
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:56px;font-weight:700;line-height:1.1;letter-spacing:-0.02em">Display</div>
+          <div class="type-row__spec"><span class="tk">display</span>3.5rem · weight <b>700</b> · lh 1.1 · ls -0.02em</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:36px;font-weight:700;line-height:1.2;letter-spacing:-0.01em">Heading Large</div>
+          <div class="type-row__spec"><span class="tk">heading-l</span>2.25rem · weight <b>700</b> · lh 1.2 · ls -0.01em</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:26px;font-weight:700;line-height:1.3">Heading Medium</div>
+          <div class="type-row__spec"><span class="tk">heading-m</span>1.625rem · weight <b>700</b> · lh 1.3</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:20px;font-weight:700;line-height:1.35">Heading Small</div>
+          <div class="type-row__spec"><span class="tk">heading-s</span>1.25rem · weight <b>700</b> · lh 1.35</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:18px;font-weight:300;line-height:1.7">Body large — 디지털 전환을 위한 통찰력 있는 리드 텍스트</div>
+          <div class="type-row__spec"><span class="tk">body-lg</span>1.125rem · weight <b>300</b> · lh 1.7</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:16px;font-weight:300;line-height:1.65">Body — 본문 텍스트. Open Sans Light의 가벼운 weight가 콘텐츠 밀도감을 조절한다.</div>
+          <div class="type-row__spec"><span class="tk">body</span>1rem · weight <b>300</b> · lh 1.65</div>
+        </div>
+        <div class="type-row">
+          <div class="type-row__s" style="font-size:14px;font-weight:300;line-height:1.6">Small text — 날짜, 메타 정보</div>
+          <div class="type-row__spec"><span class="tk">small</span>0.875rem · weight <b>300</b> · lh 1.6</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">
+        브랜드 램프, 뉴트럴, 시맨틱. 흑백 중심 — Deloitte 녹색은 UI에 금지.
+      </p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand Ramp</b> <span class="muted">3 steps — 흑백 모노크롬</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d is-anchor" style="background:#000000"><div class="n">dark</div><div>#000000</div></div>
+          <div class="sw sw--l" style="background:#DCDCDC"><div class="n">border</div><div>#DCDCDC</div></div>
+          <div class="sw sw--l" style="background:#FBFBFB;border:1px solid #e4e4e7;"><div class="n">bg</div><div>#FBFBFB</div></div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutral Ramp</b> <span class="muted">6 steps</span></div>
+        <div class="ramp ramp--6">
+          <div class="sw sw--l" style="background:#FFFFFF;border:1px solid #e4e4e7;"><div class="n">0</div><div>#FFFFFF</div></div>
+          <div class="sw sw--l" style="background:#FBFBFB;border:1px solid #e4e4e7;"><div class="n">50</div><div>#FBFBFB</div></div>
+          <div class="sw sw--l" style="background:#F5F5F5"><div class="n">100</div><div>#F5F5F5</div></div>
+          <div class="sw sw--l" style="background:#DCDCDC"><div class="n">200</div><div>#DCDCDC</div></div>
+          <div class="sw sw--d" style="background:#555555"><div class="n">700</div><div>#555555</div></div>
+          <div class="sw sw--d" style="background:#1A1A1A"><div class="n">900</div><div>#1A1A1A</div></div>
+        </div>
+      </div>
+
+      <div class="sem-row">
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#FBFBFB;border:1px solid #e4e4e7;"></div>
+          <div>
+            <div class="sem-card__n">bg-page</div>
+            <div class="sem-card__h">#FBFBFB</div>
+            <div class="sem-card__u">페이지 배경 — near-white</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#FFFFFF;border:1px solid #e4e4e7;"></div>
+          <div>
+            <div class="sem-card__n">bg-card</div>
+            <div class="sem-card__h">#FFFFFF</div>
+            <div class="sem-card__u">카드 배경 — 순백</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#000000;"></div>
+          <div>
+            <div class="sem-card__n">fg-primary / btn-primary-bg</div>
+            <div class="sem-card__h">#000000</div>
+            <div class="sem-card__u">주 텍스트 · CTA 배경</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#555555;"></div>
+          <div>
+            <div class="sem-card__n">fg-secondary</div>
+            <div class="sem-card__h">#555555</div>
+            <div class="sem-card__u">보조 텍스트</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#DCDCDC;"></div>
+          <div>
+            <div class="sem-card__n">border</div>
+            <div class="sem-card__h">#DCDCDC</div>
+            <div class="sem-card__u">구분선</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">
+        공간 토큰 스케일. 기본 섹션 패딩 80px.
+      </p>
+      <div class="space-note">
+        기본 패딩 <code>space-md (16px)</code>. 섹션 간격 <code>space-lg (32px)</code>.
+        섹션 자체 패딩은 <b>80px 48px</b>. max-width <b>1280px</b>.
+      </div>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">space-xs</span><span class="val">4px</span><div class="bar" style="width:4px;"></div></div>
+        <div class="space-row"><span class="tk">space-sm</span><span class="val">8px</span><div class="bar" style="width:8px;"></div></div>
+        <div class="space-row"><span class="tk">space-md</span><span class="val">16px</span><div class="bar" style="width:16px;"></div></div>
+        <div class="space-row"><span class="tk">space-lg</span><span class="val">32px</span><div class="bar" style="width:32px;"></div></div>
+        <div class="space-row"><span class="tk">space-xl</span><span class="val">64px</span><div class="bar" style="width:64px;"></div></div>
+        <div class="space-row"><span class="tk">space-xxl</span><span class="val">120px</span><div class="bar" style="width:120px;"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">
+        카드는 직각(0px). 버튼은 4px 미세 라운드.
+      </p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:0px;"></div>
+          <div class="rad-card__n">radius-none</div>
+          <div class="rad-card__v"><span class="px">0px</span><br>카드 (직각)</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:4px;"></div>
+          <div class="rad-card__n">radius-sm</div>
+          <div class="rad-card__v"><span class="px">4px</span><br>버튼</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:8px;"></div>
+          <div class="rad-card__n">radius-md</div>
+          <div class="rad-card__v"><span class="px">8px</span><br>드롭다운·모달</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">
+        light 테마 기준 — 극히 낮은 불투명도. near-white 배경에 최적화.
+      </p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+          <div>
+            <div class="sh-card__n">shadow-sm</div>
+            <div class="sh-card__d">카드 — near-white 배경에서 은은한 부상감</div>
+          </div>
+          <div class="sh-card__v">0 1px 3px rgba(0,0,0,0.06)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+          <div>
+            <div class="sh-card__n">shadow-md</div>
+            <div class="sh-card__d">드롭다운 메뉴</div>
+          </div>
+          <div class="sh-card__v">0 4px 16px rgba(0,0,0,0.08)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layout">
+      <div class="section__num">08 · Layout Patterns</div>
+      <h2 class="section__title">레이아웃 패턴</h2>
+      <p class="section__lede">
+        Hero, 섹션 리듬.
+      </p>
+      <div class="lp-grid">
+        <div class="lp-card">
+          <h3>Hero</h3>
+          <ul>
+            <li>전체폭, 좌측 텍스트 + 우측 이미지</li>
+            <li>배경: <code>#FBFBFB</code></li>
+            <li>H1: <code>3.5rem</code> / weight <code>700</code> / tracking <code>-0.02em</code></li>
+            <li>max-width: <code>1280px</code></li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>Section Rhythm</h3>
+          <pre>section {
+  padding: 80px 48px;
+  max-width: 1280px;
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">09 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">
+        버튼, 인사이트 카드.
+      </p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Primary Button</span>
+          <span class="cmp-block__desc">검정 배경, 흰 텍스트 — border-radius 4px</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="background:#FBFBFB;">
+              <button style="background:#000000;color:#FFFFFF;padding:14px 28px;border-radius:4px;font-weight:700;font-size:14px;border:none;cursor:pointer;">Get Started</button>
+            </div>
+            <div class="cmp-code">
+              <button class="copy" onclick="navigator.clipboard.writeText(this.nextElementSibling.textContent)">copy</button>
+              <pre>&lt;button class="btn btn--primary"&gt;Get Started&lt;/button&gt;</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #000000</code><br>
+            <code>color: #FFFFFF</code><br>
+            <code>padding: 14px 28px</code><br>
+            <code>border-radius: 4px</code><br>
+            <code>font-weight: 700</code><br>
+            <code>font-family: "Open Sans"</code><br>
+            <span class="kr">⚠️ body는 300이지만 버튼은 700</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">Insight Card</span>
+          <span class="cmp-block__desc">직각 카드 — near-white 배경 위 순백 카드</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="background:#FBFBFB;">
+              <div style="background:#FFFFFF;border-radius:0;width:220px;font-size:12px;overflow:hidden;border:1px solid #DCDCDC;">
+                <div style="height:100px;background:#F5F5F5;"></div>
+                <div style="padding:12px;">
+                  <div style="font-size:11px;font-weight:300;color:#555555;margin-bottom:4px;">Technology</div>
+                  <div style="font-weight:700;font-size:14px;color:#000000;margin-bottom:6px;">Transform with Confidence</div>
+                  <div style="font-weight:300;font-size:12px;color:#555555;margin-bottom:8px;">Brief description of the insight.</div>
+                  <div style="color:#000000;font-size:12px;font-weight:300;">Learn more →</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>border-radius: 0px</code><br>
+            <code>background: #FFFFFF</code><br>
+            <code>border: 1px solid #DCDCDC</code><br>
+            <code>title weight: 700</code><br>
+            <code>excerpt weight: 300</code><br>
+            <span class="kr">#FBFBFB 배경 위 #FFFFFF 카드 — 미세한 대비</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">10 · Writing Principles</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">
+        카피 패턴, CTA 규칙, 톤 앤 매너.
+      </p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">Headline</div>
+          <div class="voice-card__rule">혁신·디지털 전환 중심, 동사 강조.</div>
+          <div class="voice-card__ex">"Transform with Confidence"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Primary CTA</div>
+          <div class="voice-card__rule">동사구, 제목어(Title Case).</div>
+          <div class="voice-card__ex">"Get Started"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Secondary CTA</div>
+          <div class="voice-card__rule">소문자, 링크형 텍스트.</div>
+          <div class="voice-card__ex">"Learn more"</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">Tone</div>
+          <div class="voice-card__rule">기술적 전문성, 미래 지향. 과장 적절히 허용.</div>
+          <div class="voice-card__ex">"Reimagine your digital future"</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">11 · Code Export</div>
+      <h2 class="section__title">CSS · Tailwind</h2>
+      <p class="section__lede">
+        복사해서 바로 쓸 수 있는 CSS 변수 선언과 Tailwind 설정.
+      </p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'css')">CSS Variables</button>
+          <button onclick="switchTab(this,'tw')">Tailwind Config</button>
+          <button class="code-copy" onclick="copyActive()">copy</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre><span class="c">/* Deloitte Digital — copy into your root stylesheet */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Fonts */</span>
+  <span class="k">--font-family</span>: <span class="v">"Open Sans", Calibri, sans-serif</span>;
+  <span class="k">--font-family-code</span>: <span class="v">ui-monospace, monospace</span>;
+  <span class="k">--font-weight-normal</span>: <span class="v">300</span>;   <span class="c">/* ← 핵심! 400 아님 */</span>
+  <span class="k">--font-weight-bold</span>:   <span class="v">700</span>;
+
+  <span class="c">/* Brand (anchor + 4 steps) */</span>
+  <span class="k">--color-brand-25</span>:  <span class="v">#F5F5F5</span>;
+  <span class="k">--color-brand-300</span>: <span class="v">#B0B0B0</span>;
+  <span class="k">--color-brand-500</span>: <span class="v">#555555</span>;
+  <span class="k">--color-brand-600</span>: <span class="v">#000000</span>;   <span class="c">/* ← canonical */</span>
+  <span class="k">--color-brand-900</span>: <span class="v">#000000</span>;
+
+  <span class="c">/* Surfaces */</span>
+  <span class="k">--bg-page</span>:   <span class="v">#FBFBFB</span>;   <span class="c">/* ← near-white, NOT #FFFFFF */</span>
+  <span class="k">--bg-card</span>:   <span class="v">#FFFFFF</span>;
+  <span class="k">--bg-dark</span>:   <span class="v">#000000</span>;
+  <span class="k">--text</span>:      <span class="v">#000000</span>;
+  <span class="k">--text-muted</span>:<span class="v">#555555</span>;
+
+  <span class="c">/* Key spacing */</span>
+  <span class="k">--space-sm</span>:  <span class="v">8px</span>;
+  <span class="k">--space-md</span>:  <span class="v">16px</span>;
+  <span class="k">--space-lg</span>:  <span class="v">32px</span>;
+
+  <span class="c">/* Radius */</span>
+  <span class="k">--radius-sm</span>: <span class="v">4px</span>;
+  <span class="k">--radius-md</span>: <span class="v">8px</span>;
+}</pre>
+        </div>
+        <div class="code-pane" id="pane-tw">
+          <pre><span class="c">// tailwind.config.js — Deloitte Digital</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          25:  <span class="v">'#F5F5F5'</span>,
+          300: <span class="v">'#B0B0B0'</span>,
+          500: <span class="v">'#555555'</span>,
+          600: <span class="v">'#000000'</span>,
+          900: <span class="v">'#000000'</span>,
+        },
+        neutral: {
+          0:   <span class="v">'#FFFFFF'</span>,
+          50:  <span class="v">'#FBFBFB'</span>,   <span class="c">// bg-page</span>
+          100: <span class="v">'#F5F5F5'</span>,
+          200: <span class="v">'#DCDCDC'</span>,
+          400: <span class="v">'#B0B0B0'</span>,
+          700: <span class="v">'#555555'</span>,
+          900: <span class="v">'#1A1A1A'</span>,
+        },
+      },
+      fontFamily: {
+        sans: [<span class="v">'"Open Sans"'</span>, <span class="v">'Calibri'</span>, <span class="v">'sans-serif'</span>],
+        mono: [<span class="v">'ui-monospace'</span>, <span class="v">'monospace'</span>],
+      },
+      fontWeight: {
+        normal: <span class="v">'300'</span>,   <span class="c">// ← 핵심</span>
+        bold:   <span class="v">'700'</span>,
+      },
+      borderRadius: {
+        <span class="v">'none'</span>: <span class="v">'0px'</span>,
+        <span class="v">'sm'</span>:   <span class="v">'4px'</span>,
+        <span class="v">'md'</span>:   <span class="v">'8px'</span>,
+      },
+      boxShadow: {
+        <span class="v">'sm'</span>: <span class="v">'0 1px 3px rgba(0,0,0,0.06)'</span>,
+        <span class="v">'md'</span>: <span class="v">'0 4px 16px rgba(0,0,0,0.08)'</span>,
+      },
+    },
+  },
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">12 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">
+        Deloitte Digital 디자인 시스템의 핵심 규칙.
+      </p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>body weight는 <code>300</code>(Open Sans Light)을 쓴다</li>
+            <li>배경은 <code>#FBFBFB</code>(near-white)로 설정한다 — 순백이 아님</li>
+            <li>경계선은 <code>#DCDCDC</code>를 사용한다</li>
+            <li>heading은 <code>font-weight: 700</code>으로 대비를 준다</li>
+            <li>Open Sans는 <code>300</code> weight 전용으로 로딩한다</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>body weight를 <code>400</code>으로 두지 않는다 — <code>300</code>이 정체성</li>
+            <li>배경을 순백(<code>#FFFFFF</code>)으로 두지 않는다 — <code>#FBFBFB</code> 사용</li>
+            <li><code>font-weight: 500</code>, <code>600</code>을 쓰지 않는다</li>
+            <li>브랜드 컬러로 Deloitte 녹색을 UI에 넣지 않는다 — 흑백 중심</li>
+            <li><code>border-radius</code>에 16px 이상 큰 값을 넣지 않는다</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <div>잘못된 구현</div>
+          <div>올바른 구현</div>
+          <div class="kr">이유</div>
+        </div>
+        <div class="myth-row">
+          <div class="wrong">font-weight: 400</div>
+          <div class="right">font-weight: 300</div>
+          <div class="why">300(Light)이 Deloitte Digital 정체성. 400으로 두면 평범한 사이트처럼 보인다.</div>
+        </div>
+        <div class="myth-row">
+          <div class="wrong">background: #FFFFFF</div>
+          <div class="right">background: #FBFBFB</div>
+          <div class="why">페이지 배경은 near-white. 순백은 카드 배경에만 사용한다.</div>
+        </div>
+        <div class="myth-row">
+          <div class="wrong">border: 1px solid #E0E0E0</div>
+          <div class="right">border: 1px solid #DCDCDC</div>
+          <div class="why">#DCDCDC가 Deloitte Digital 기준 경계선 컬러.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span class="kr">insane-design · Deloitte Digital Design System Report · 2026-04-13</span>
+      <span>deloitte-digital / design.md</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+function switchTab(btn, id) {
+  const export_ = btn.closest('.code-export');
+  export_.querySelectorAll('.code-tabs button:not(.code-copy)').forEach(b => b.classList.remove('is-active'));
+  export_.querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  export_.querySelector('#pane-' + id).classList.add('is-active');
+}
+function copyActive() {
+  const pane = document.querySelector('.code-pane.is-active pre');
+  if (pane) navigator.clipboard.writeText(pane.textContent);
+}
+</script>
+</body>
+</html>

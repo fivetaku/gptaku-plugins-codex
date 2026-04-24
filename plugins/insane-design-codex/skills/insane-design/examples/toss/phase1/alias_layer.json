@@ -1,0 +1,2382 @@
+{
+  "slug": "toss",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--btn-addon-margin",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-bg-base",
+        "references": [
+          "--greyOpacity100"
+        ],
+        "terminal_hint": "--greyOpacity100"
+      },
+      {
+        "alias": "--btn-border-radius",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-color-base",
+        "references": [
+          "--greyOpacity700"
+        ],
+        "terminal_hint": "--greyOpacity700"
+      },
+      {
+        "alias": "--btn-danger-bg",
+        "references": [
+          "--red500"
+        ],
+        "terminal_hint": "--red500"
+      },
+      {
+        "alias": "--btn-danger-weak-bg",
+        "references": [
+          "--red50"
+        ],
+        "terminal_hint": "--red50"
+      },
+      {
+        "alias": "--btn-danger-weak-color",
+        "references": [
+          "--red500"
+        ],
+        "terminal_hint": "--red500"
+      },
+      {
+        "alias": "--btn-font-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-font-size-l",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-font-size-s",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-font-size-t",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-font-size-xl",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--btn-line-height",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "component": [
+      {
+        "alias": "--checkable-input-border-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--checkable-input-height",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--checkable-input-left",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--checkable-input-top",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--checkable-input-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--indeterminate-checkable-input-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-background-color",
+        "references": [
+          "--whiteOpacity100"
+        ],
+        "terminal_hint": "--whiteOpacity100"
+      },
+      {
+        "alias": "--input-border-color",
+        "references": [
+          "--whiteOpacity50"
+        ],
+        "terminal_hint": "--whiteOpacity50"
+      },
+      {
+        "alias": "--input-disabled-background-color",
+        "references": [
+          "--whiteOpacity50"
+        ],
+        "terminal_hint": "--whiteOpacity50"
+      },
+      {
+        "alias": "--input-disabled-border-color",
+        "references": [
+          "--whiteOpacity50"
+        ],
+        "terminal_hint": "--whiteOpacity50"
+      },
+      {
+        "alias": "--input-font-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-h-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-h-padding-s",
+        "references": [
+          "--padding-s-horizontal"
+        ],
+        "terminal_hint": "--padding-s-horizontal"
+      },
+      {
+        "alias": "--input-height",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-label-h-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-label-v-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-v-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-v-padding-s",
+        "references": [
+          "--padding-s-vertical"
+        ],
+        "terminal_hint": "--padding-s-vertical"
+      },
+      {
+        "alias": "--nav-index",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--table-cell-input-vertical",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--table-checkbox-input-top-gap",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--table-input-cell-padding",
+        "references": [
+          "--table-cell-vertical-padding",
+          "--table-cell-horizontal-padding"
+        ],
+        "terminal_hint": "--table-cell-vertical-padding"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--adaptiveBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--adaptiveBackgroundDimmed",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0.56)"
+      },
+      {
+        "alias": "--adaptiveBackgroundLevel01",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--adaptiveBackgroundLevel02",
+        "references": [],
+        "terminal_hint": "#2c2c35"
+      },
+      {
+        "alias": "--adaptiveBackgroundLevelB01",
+        "references": [],
+        "terminal_hint": "#101013"
+      },
+      {
+        "alias": "--adaptiveBlue100",
+        "references": [],
+        "terminal_hint": "#23386a"
+      },
+      {
+        "alias": "--adaptiveBlue200",
+        "references": [],
+        "terminal_hint": "#25478c"
+      },
+      {
+        "alias": "--adaptiveBlue300",
+        "references": [],
+        "terminal_hint": "#265ab3"
+      },
+      {
+        "alias": "--adaptiveBlue400",
+        "references": [],
+        "terminal_hint": "#2970d9"
+      },
+      {
+        "alias": "--adaptiveBlue50",
+        "references": [],
+        "terminal_hint": "#202c4d"
+      },
+      {
+        "alias": "--adaptiveBlue500",
+        "references": [],
+        "terminal_hint": "#3485fa"
+      },
+      {
+        "alias": "--adaptiveBlue600",
+        "references": [],
+        "terminal_hint": "#449bff"
+      },
+      {
+        "alias": "--adaptiveBlue700",
+        "references": [],
+        "terminal_hint": "#61b0ff"
+      },
+      {
+        "alias": "--adaptiveBlue800",
+        "references": [],
+        "terminal_hint": "#8fcdff"
+      },
+      {
+        "alias": "--adaptiveBlue900",
+        "references": [],
+        "terminal_hint": "#c8e7ff"
+      },
+      {
+        "alias": "--adaptiveCardBgGrey",
+        "references": [],
+        "terminal_hint": "rgba(209,209,253,0.05)"
+      },
+      {
+        "alias": "--adaptiveCardBgWhite",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--adaptiveDimmedBackground",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0.56)"
+      },
+      {
+        "alias": "--adaptiveDisabledBlue500",
+        "references": [],
+        "terminal_hint": "#c9e2ff"
+      },
+      {
+        "alias": "--adaptiveFloatBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--adaptiveGreen100",
+        "references": [],
+        "terminal_hint": "#135338"
+      },
+      {
+        "alias": "--adaptiveGreen200",
+        "references": [],
+        "terminal_hint": "#136d47"
+      },
+      {
+        "alias": "--adaptiveGreen300",
+        "references": [],
+        "terminal_hint": "#138a59"
+      },
+      {
+        "alias": "--adaptiveGreen400",
+        "references": [],
+        "terminal_hint": "#13a065"
+      },
+      {
+        "alias": "--adaptiveGreen50",
+        "references": [],
+        "terminal_hint": "#153729"
+      },
+      {
+        "alias": "--adaptiveGreen500",
+        "references": [],
+        "terminal_hint": "#16bb76"
+      },
+      {
+        "alias": "--adaptiveGreen600",
+        "references": [],
+        "terminal_hint": "#26cf88"
+      },
+      {
+        "alias": "--adaptiveGreen700",
+        "references": [],
+        "terminal_hint": "#4ee4a6"
+      },
+      {
+        "alias": "--adaptiveGreen800",
+        "references": [],
+        "terminal_hint": "#82f6c5"
+      },
+      {
+        "alias": "--adaptiveGreen900",
+        "references": [],
+        "terminal_hint": "#ccffea"
+      },
+      {
+        "alias": "--adaptiveGrey100",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--adaptiveGrey200",
+        "references": [],
+        "terminal_hint": "#e5e8eb"
+      },
+      {
+        "alias": "--adaptiveGrey300",
+        "references": [],
+        "terminal_hint": "#d1d6db"
+      },
+      {
+        "alias": "--adaptiveGrey400",
+        "references": [],
+        "terminal_hint": "#b0b8c1"
+      },
+      {
+        "alias": "--adaptiveGrey50",
+        "references": [],
+        "terminal_hint": "#f9fafb"
+      },
+      {
+        "alias": "--adaptiveGrey500",
+        "references": [],
+        "terminal_hint": "#8b95a1"
+      },
+      {
+        "alias": "--adaptiveGrey600",
+        "references": [],
+        "terminal_hint": "#6b7684"
+      },
+      {
+        "alias": "--adaptiveGrey700",
+        "references": [],
+        "terminal_hint": "#4e5968"
+      },
+      {
+        "alias": "--adaptiveGrey800",
+        "references": [],
+        "terminal_hint": "#333d4b"
+      },
+      {
+        "alias": "--adaptiveGrey900",
+        "references": [],
+        "terminal_hint": "#191f28"
+      },
+      {
+        "alias": "--adaptiveGreyBackground",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity100",
+        "references": [],
+        "terminal_hint": "rgba(217,217,255,0.11)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity200",
+        "references": [],
+        "terminal_hint": "rgba(222,222,255,0.19)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity300",
+        "references": [],
+        "terminal_hint": "rgba(224,224,255,0.27)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity400",
+        "references": [],
+        "terminal_hint": "rgba(232,232,253,0.36)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity50",
+        "references": [],
+        "terminal_hint": "rgba(209,209,253,0.05)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity500",
+        "references": [],
+        "terminal_hint": "rgba(242,242,255,0.47)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity600",
+        "references": [],
+        "terminal_hint": "rgba(248,248,255,0.6)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity700",
+        "references": [],
+        "terminal_hint": "rgba(253,253,255,0.75)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity800",
+        "references": [],
+        "terminal_hint": "rgba(253,253,254,0.89)"
+      },
+      {
+        "alias": "--adaptiveGreyOpacity900",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--adaptiveHairlineBorder",
+        "references": [],
+        "terminal_hint": "#3c3c47"
+      },
+      {
+        "alias": "--adaptiveLayeredBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--adaptiveOpacity100",
+        "references": [],
+        "terminal_hint": "rgba(2,32,71,0.05)"
+      },
+      {
+        "alias": "--adaptiveOpacity200",
+        "references": [],
+        "terminal_hint": "rgba(0,27,55,0.1)"
+      },
+      {
+        "alias": "--adaptiveOpacity300",
+        "references": [],
+        "terminal_hint": "rgba(0,29,58,0.18)"
+      },
+      {
+        "alias": "--adaptiveOpacity400",
+        "references": [],
+        "terminal_hint": "rgba(0,29,54,0.31)"
+      },
+      {
+        "alias": "--adaptiveOpacity50",
+        "references": [],
+        "terminal_hint": "rgba(0,23,51,0.02)"
+      },
+      {
+        "alias": "--adaptiveOpacity500",
+        "references": [],
+        "terminal_hint": "rgba(3,24,50,0.46)"
+      },
+      {
+        "alias": "--adaptiveOpacity600",
+        "references": [],
+        "terminal_hint": "rgba(0,19,43,0.58)"
+      },
+      {
+        "alias": "--adaptiveOpacity700",
+        "references": [],
+        "terminal_hint": "rgba(3,18,40,0.7)"
+      },
+      {
+        "alias": "--adaptiveOpacity800",
+        "references": [],
+        "terminal_hint": "rgba(0,12,30,0.8)"
+      },
+      {
+        "alias": "--adaptiveOpacity900",
+        "references": [],
+        "terminal_hint": "rgba(2,9,19,0.91)"
+      },
+      {
+        "alias": "--adaptiveOrange100",
+        "references": [],
+        "terminal_hint": "#563200"
+      },
+      {
+        "alias": "--adaptiveOrange200",
+        "references": [],
+        "terminal_hint": "#804600"
+      },
+      {
+        "alias": "--adaptiveOrange300",
+        "references": [],
+        "terminal_hint": "#a85f00"
+      },
+      {
+        "alias": "--adaptiveOrange400",
+        "references": [],
+        "terminal_hint": "#cf7200"
+      },
+      {
+        "alias": "--adaptiveOrange50",
+        "references": [],
+        "terminal_hint": "#3d2500"
+      },
+      {
+        "alias": "--adaptiveOrange500",
+        "references": [],
+        "terminal_hint": "#f18600"
+      },
+      {
+        "alias": "--adaptiveOrange600",
+        "references": [],
+        "terminal_hint": "#fd9528"
+      },
+      {
+        "alias": "--adaptiveOrange700",
+        "references": [],
+        "terminal_hint": "#ffa861"
+      },
+      {
+        "alias": "--adaptiveOrange800",
+        "references": [],
+        "terminal_hint": "#ffc39e"
+      },
+      {
+        "alias": "--adaptiveOrange900",
+        "references": [],
+        "terminal_hint": "#ffe4d6"
+      },
+      {
+        "alias": "--adaptivePcScreenBg",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--adaptivePurple100",
+        "references": [],
+        "terminal_hint": "#522361"
+      },
+      {
+        "alias": "--adaptivePurple200",
+        "references": [],
+        "terminal_hint": "#66247b"
+      },
+      {
+        "alias": "--adaptivePurple300",
+        "references": [],
+        "terminal_hint": "#7b2595"
+      },
+      {
+        "alias": "--adaptivePurple400",
+        "references": [],
+        "terminal_hint": "#962fb5"
+      },
+      {
+        "alias": "--adaptivePurple50",
+        "references": [],
+        "terminal_hint": "#3f2447"
+      },
+      {
+        "alias": "--adaptivePurple500",
+        "references": [],
+        "terminal_hint": "#ae3dd1"
+      },
+      {
+        "alias": "--adaptivePurple600",
+        "references": [],
+        "terminal_hint": "#c353e5"
+      },
+      {
+        "alias": "--adaptivePurple700",
+        "references": [],
+        "terminal_hint": "#d77cf2"
+      },
+      {
+        "alias": "--adaptivePurple800",
+        "references": [],
+        "terminal_hint": "#eaacfc"
+      },
+      {
+        "alias": "--adaptivePurple900",
+        "references": [],
+        "terminal_hint": "#f6d9ff"
+      },
+      {
+        "alias": "--adaptiveRed100",
+        "references": [],
+        "terminal_hint": "#562025"
+      },
+      {
+        "alias": "--adaptiveRed200",
+        "references": [],
+        "terminal_hint": "#7a242d"
+      },
+      {
+        "alias": "--adaptiveRed300",
+        "references": [],
+        "terminal_hint": "#9e2733"
+      },
+      {
+        "alias": "--adaptiveRed400",
+        "references": [],
+        "terminal_hint": "#ca2f3d"
+      },
+      {
+        "alias": "--adaptiveRed50",
+        "references": [],
+        "terminal_hint": "#3c2020"
+      },
+      {
+        "alias": "--adaptiveRed500",
+        "references": [],
+        "terminal_hint": "#f04251"
+      },
+      {
+        "alias": "--adaptiveRed600",
+        "references": [],
+        "terminal_hint": "#fa616d"
+      },
+      {
+        "alias": "--adaptiveRed700",
+        "references": [],
+        "terminal_hint": "#fe818b"
+      },
+      {
+        "alias": "--adaptiveRed800",
+        "references": [],
+        "terminal_hint": "#ffa8ad"
+      },
+      {
+        "alias": "--adaptiveRed900",
+        "references": [],
+        "terminal_hint": "#ffd1d3"
+      },
+      {
+        "alias": "--adaptiveTeal100",
+        "references": [],
+        "terminal_hint": "#224e51"
+      },
+      {
+        "alias": "--adaptiveTeal200",
+        "references": [],
+        "terminal_hint": "#226368"
+      },
+      {
+        "alias": "--adaptiveTeal300",
+        "references": [],
+        "terminal_hint": "#247e85"
+      },
+      {
+        "alias": "--adaptiveTeal400",
+        "references": [],
+        "terminal_hint": "#26939a"
+      },
+      {
+        "alias": "--adaptiveTeal50",
+        "references": [],
+        "terminal_hint": "#203537"
+      },
+      {
+        "alias": "--adaptiveTeal500",
+        "references": [],
+        "terminal_hint": "#2eaab2"
+      },
+      {
+        "alias": "--adaptiveTeal600",
+        "references": [],
+        "terminal_hint": "#43bec7"
+      },
+      {
+        "alias": "--adaptiveTeal700",
+        "references": [],
+        "terminal_hint": "#65d4dc"
+      },
+      {
+        "alias": "--adaptiveTeal800",
+        "references": [],
+        "terminal_hint": "#9be8ee"
+      },
+      {
+        "alias": "--adaptiveTeal900",
+        "references": [],
+        "terminal_hint": "#d6fcff"
+      },
+      {
+        "alias": "--adaptiveYellow100",
+        "references": [],
+        "terminal_hint": "#724c1e"
+      },
+      {
+        "alias": "--adaptiveYellow200",
+        "references": [],
+        "terminal_hint": "#b56f1d"
+      },
+      {
+        "alias": "--adaptiveYellow300",
+        "references": [],
+        "terminal_hint": "#eb8b1e"
+      },
+      {
+        "alias": "--adaptiveYellow400",
+        "references": [],
+        "terminal_hint": "#ffa126"
+      },
+      {
+        "alias": "--adaptiveYellow50",
+        "references": [],
+        "terminal_hint": "#3d2d1a"
+      },
+      {
+        "alias": "--adaptiveYellow500",
+        "references": [],
+        "terminal_hint": "#ffb134"
+      },
+      {
+        "alias": "--adaptiveYellow600",
+        "references": [],
+        "terminal_hint": "#ffc259"
+      },
+      {
+        "alias": "--adaptiveYellow700",
+        "references": [],
+        "terminal_hint": "#ffd68a"
+      },
+      {
+        "alias": "--adaptiveYellow800",
+        "references": [],
+        "terminal_hint": "#ffe5b2"
+      },
+      {
+        "alias": "--adaptiveYellow900",
+        "references": [],
+        "terminal_hint": "#fff1d4"
+      },
+      {
+        "alias": "--background",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--black",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--blue100",
+        "references": [],
+        "terminal_hint": "#c9e2ff"
+      },
+      {
+        "alias": "--blue200",
+        "references": [],
+        "terminal_hint": "#90c2ff"
+      },
+      {
+        "alias": "--blue300",
+        "references": [],
+        "terminal_hint": "#64a8ff"
+      },
+      {
+        "alias": "--blue400",
+        "references": [],
+        "terminal_hint": "#4593fc"
+      },
+      {
+        "alias": "--blue50",
+        "references": [],
+        "terminal_hint": "#e8f3ff"
+      },
+      {
+        "alias": "--blue500",
+        "references": [],
+        "terminal_hint": "#3182f6"
+      },
+      {
+        "alias": "--blue600",
+        "references": [],
+        "terminal_hint": "#2272eb"
+      },
+      {
+        "alias": "--blue700",
+        "references": [],
+        "terminal_hint": "#1b64da"
+      },
+      {
+        "alias": "--blue800",
+        "references": [],
+        "terminal_hint": "#1957c2"
+      },
+      {
+        "alias": "--blue900",
+        "references": [],
+        "terminal_hint": "#194aa6"
+      },
+      {
+        "alias": "--darkBackground",
+        "references": [],
+        "terminal_hint": "#17171c"
+      },
+      {
+        "alias": "--darkFloatBackground",
+        "references": [],
+        "terminal_hint": "#2c2c35"
+      },
+      {
+        "alias": "--darkGreyBackground",
+        "references": [],
+        "terminal_hint": "#101013"
+      },
+      {
+        "alias": "--darkLayeredBackground",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--darkThemeBackground",
+        "references": [],
+        "terminal_hint": "#17171c"
+      },
+      {
+        "alias": "--darkThemeBackgroundDimmed",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0.56)"
+      },
+      {
+        "alias": "--darkThemeBackgroundLevel01",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--darkThemeBackgroundLevel02",
+        "references": [],
+        "terminal_hint": "#2c2c35"
+      },
+      {
+        "alias": "--darkThemeBackgroundLevelB01",
+        "references": [],
+        "terminal_hint": "#101013"
+      },
+      {
+        "alias": "--darkThemeBlue100",
+        "references": [],
+        "terminal_hint": "#23386a"
+      },
+      {
+        "alias": "--darkThemeBlue200",
+        "references": [],
+        "terminal_hint": "#25478c"
+      },
+      {
+        "alias": "--darkThemeBlue300",
+        "references": [],
+        "terminal_hint": "#265ab3"
+      },
+      {
+        "alias": "--darkThemeBlue400",
+        "references": [],
+        "terminal_hint": "#2970d9"
+      },
+      {
+        "alias": "--darkThemeBlue50",
+        "references": [],
+        "terminal_hint": "#202c4d"
+      },
+      {
+        "alias": "--darkThemeBlue500",
+        "references": [],
+        "terminal_hint": "#3485fa"
+      },
+      {
+        "alias": "--darkThemeBlue600",
+        "references": [],
+        "terminal_hint": "#449bff"
+      },
+      {
+        "alias": "--darkThemeBlue700",
+        "references": [],
+        "terminal_hint": "#61b0ff"
+      },
+      {
+        "alias": "--darkThemeBlue800",
+        "references": [],
+        "terminal_hint": "#8fcdff"
+      },
+      {
+        "alias": "--darkThemeBlue900",
+        "references": [],
+        "terminal_hint": "#c8e7ff"
+      },
+      {
+        "alias": "--darkThemeGreen100",
+        "references": [],
+        "terminal_hint": "#135338"
+      },
+      {
+        "alias": "--darkThemeGreen200",
+        "references": [],
+        "terminal_hint": "#136d47"
+      },
+      {
+        "alias": "--darkThemeGreen300",
+        "references": [],
+        "terminal_hint": "#138a59"
+      },
+      {
+        "alias": "--darkThemeGreen400",
+        "references": [],
+        "terminal_hint": "#13a065"
+      },
+      {
+        "alias": "--darkThemeGreen50",
+        "references": [],
+        "terminal_hint": "#153729"
+      },
+      {
+        "alias": "--darkThemeGreen500",
+        "references": [],
+        "terminal_hint": "#16bb76"
+      },
+      {
+        "alias": "--darkThemeGreen600",
+        "references": [],
+        "terminal_hint": "#26cf88"
+      },
+      {
+        "alias": "--darkThemeGreen700",
+        "references": [],
+        "terminal_hint": "#4ee4a6"
+      },
+      {
+        "alias": "--darkThemeGreen800",
+        "references": [],
+        "terminal_hint": "#82f6c5"
+      },
+      {
+        "alias": "--darkThemeGreen900",
+        "references": [],
+        "terminal_hint": "#ccffea"
+      },
+      {
+        "alias": "--darkThemeGrey100",
+        "references": [],
+        "terminal_hint": "#2c2c35"
+      },
+      {
+        "alias": "--darkThemeGrey200",
+        "references": [],
+        "terminal_hint": "#3c3c47"
+      },
+      {
+        "alias": "--darkThemeGrey300",
+        "references": [],
+        "terminal_hint": "#4d4d59"
+      },
+      {
+        "alias": "--darkThemeGrey400",
+        "references": [],
+        "terminal_hint": "#62626d"
+      },
+      {
+        "alias": "--darkThemeGrey50",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--darkThemeGrey500",
+        "references": [],
+        "terminal_hint": "#7e7e87"
+      },
+      {
+        "alias": "--darkThemeGrey600",
+        "references": [],
+        "terminal_hint": "#9e9ea4"
+      },
+      {
+        "alias": "--darkThemeGrey700",
+        "references": [],
+        "terminal_hint": "#c3c3c6"
+      },
+      {
+        "alias": "--darkThemeGrey800",
+        "references": [],
+        "terminal_hint": "#e4e4e5"
+      },
+      {
+        "alias": "--darkThemeGrey900",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--darkThemeHairlineBorder",
+        "references": [],
+        "terminal_hint": "#3c3c47"
+      },
+      {
+        "alias": "--darkThemeOrange100",
+        "references": [],
+        "terminal_hint": "#563200"
+      },
+      {
+        "alias": "--darkThemeOrange200",
+        "references": [],
+        "terminal_hint": "#804600"
+      },
+      {
+        "alias": "--darkThemeOrange300",
+        "references": [],
+        "terminal_hint": "#a85f00"
+      },
+      {
+        "alias": "--darkThemeOrange400",
+        "references": [],
+        "terminal_hint": "#cf7200"
+      },
+      {
+        "alias": "--darkThemeOrange50",
+        "references": [],
+        "terminal_hint": "#3d2500"
+      },
+      {
+        "alias": "--darkThemeOrange500",
+        "references": [],
+        "terminal_hint": "#f18600"
+      },
+      {
+        "alias": "--darkThemeOrange600",
+        "references": [],
+        "terminal_hint": "#fd9528"
+      },
+      {
+        "alias": "--darkThemeOrange700",
+        "references": [],
+        "terminal_hint": "#ffa861"
+      },
+      {
+        "alias": "--darkThemeOrange800",
+        "references": [],
+        "terminal_hint": "#ffc39e"
+      },
+      {
+        "alias": "--darkThemeOrange900",
+        "references": [],
+        "terminal_hint": "#ffe4d6"
+      },
+      {
+        "alias": "--darkThemePurple100",
+        "references": [],
+        "terminal_hint": "#522361"
+      },
+      {
+        "alias": "--darkThemePurple200",
+        "references": [],
+        "terminal_hint": "#66247b"
+      },
+      {
+        "alias": "--darkThemePurple300",
+        "references": [],
+        "terminal_hint": "#7b2595"
+      },
+      {
+        "alias": "--darkThemePurple400",
+        "references": [],
+        "terminal_hint": "#962fb5"
+      },
+      {
+        "alias": "--darkThemePurple50",
+        "references": [],
+        "terminal_hint": "#3f2447"
+      },
+      {
+        "alias": "--darkThemePurple500",
+        "references": [],
+        "terminal_hint": "#ae3dd1"
+      },
+      {
+        "alias": "--darkThemePurple600",
+        "references": [],
+        "terminal_hint": "#c353e5"
+      },
+      {
+        "alias": "--darkThemePurple700",
+        "references": [],
+        "terminal_hint": "#d77cf2"
+      },
+      {
+        "alias": "--darkThemePurple800",
+        "references": [],
+        "terminal_hint": "#eaacfc"
+      },
+      {
+        "alias": "--darkThemePurple900",
+        "references": [],
+        "terminal_hint": "#f6d9ff"
+      },
+      {
+        "alias": "--darkThemeRed100",
+        "references": [],
+        "terminal_hint": "#562025"
+      },
+      {
+        "alias": "--darkThemeRed200",
+        "references": [],
+        "terminal_hint": "#7a242d"
+      },
+      {
+        "alias": "--darkThemeRed300",
+        "references": [],
+        "terminal_hint": "#9e2733"
+      },
+      {
+        "alias": "--darkThemeRed400",
+        "references": [],
+        "terminal_hint": "#ca2f3d"
+      },
+      {
+        "alias": "--darkThemeRed50",
+        "references": [],
+        "terminal_hint": "#3c2020"
+      },
+      {
+        "alias": "--darkThemeRed500",
+        "references": [],
+        "terminal_hint": "#f04251"
+      },
+      {
+        "alias": "--darkThemeRed600",
+        "references": [],
+        "terminal_hint": "#fa616d"
+      },
+      {
+        "alias": "--darkThemeRed700",
+        "references": [],
+        "terminal_hint": "#fe818b"
+      },
+      {
+        "alias": "--darkThemeRed800",
+        "references": [],
+        "terminal_hint": "#ffa8ad"
+      },
+      {
+        "alias": "--darkThemeRed900",
+        "references": [],
+        "terminal_hint": "#ffd1d3"
+      },
+      {
+        "alias": "--darkThemeTeal100",
+        "references": [],
+        "terminal_hint": "#224e51"
+      },
+      {
+        "alias": "--darkThemeTeal200",
+        "references": [],
+        "terminal_hint": "#226368"
+      },
+      {
+        "alias": "--darkThemeTeal300",
+        "references": [],
+        "terminal_hint": "#247e85"
+      },
+      {
+        "alias": "--darkThemeTeal400",
+        "references": [],
+        "terminal_hint": "#26939a"
+      },
+      {
+        "alias": "--darkThemeTeal50",
+        "references": [],
+        "terminal_hint": "#203537"
+      },
+      {
+        "alias": "--darkThemeTeal500",
+        "references": [],
+        "terminal_hint": "#2eaab2"
+      },
+      {
+        "alias": "--darkThemeTeal600",
+        "references": [],
+        "terminal_hint": "#43bec7"
+      },
+      {
+        "alias": "--darkThemeTeal700",
+        "references": [],
+        "terminal_hint": "#65d4dc"
+      },
+      {
+        "alias": "--darkThemeTeal800",
+        "references": [],
+        "terminal_hint": "#9be8ee"
+      },
+      {
+        "alias": "--darkThemeTeal900",
+        "references": [],
+        "terminal_hint": "#d6fcff"
+      },
+      {
+        "alias": "--darkThemeYellow100",
+        "references": [],
+        "terminal_hint": "#724c1e"
+      },
+      {
+        "alias": "--darkThemeYellow200",
+        "references": [],
+        "terminal_hint": "#b56f1d"
+      },
+      {
+        "alias": "--darkThemeYellow300",
+        "references": [],
+        "terminal_hint": "#eb8b1e"
+      },
+      {
+        "alias": "--darkThemeYellow400",
+        "references": [],
+        "terminal_hint": "#ffa126"
+      },
+      {
+        "alias": "--darkThemeYellow50",
+        "references": [],
+        "terminal_hint": "#3d2d1a"
+      },
+      {
+        "alias": "--darkThemeYellow500",
+        "references": [],
+        "terminal_hint": "#ffb134"
+      },
+      {
+        "alias": "--darkThemeYellow600",
+        "references": [],
+        "terminal_hint": "#ffc259"
+      },
+      {
+        "alias": "--darkThemeYellow700",
+        "references": [],
+        "terminal_hint": "#ffd68a"
+      },
+      {
+        "alias": "--darkThemeYellow800",
+        "references": [],
+        "terminal_hint": "#ffe5b2"
+      },
+      {
+        "alias": "--darkThemeYellow900",
+        "references": [],
+        "terminal_hint": "#fff1d4"
+      },
+      {
+        "alias": "--floatBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--green100",
+        "references": [],
+        "terminal_hint": "#aeefd5"
+      },
+      {
+        "alias": "--green200",
+        "references": [],
+        "terminal_hint": "#76e4b8"
+      },
+      {
+        "alias": "--green300",
+        "references": [],
+        "terminal_hint": "#3fd599"
+      },
+      {
+        "alias": "--green400",
+        "references": [],
+        "terminal_hint": "#15c47e"
+      },
+      {
+        "alias": "--green50",
+        "references": [],
+        "terminal_hint": "#f0faf6"
+      },
+      {
+        "alias": "--green500",
+        "references": [],
+        "terminal_hint": "#03b26c"
+      },
+      {
+        "alias": "--green600",
+        "references": [],
+        "terminal_hint": "#02a262"
+      },
+      {
+        "alias": "--green700",
+        "references": [],
+        "terminal_hint": "#029359"
+      },
+      {
+        "alias": "--green800",
+        "references": [],
+        "terminal_hint": "#028450"
+      },
+      {
+        "alias": "--green900",
+        "references": [],
+        "terminal_hint": "#027648"
+      },
+      {
+        "alias": "--grey100",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--grey200",
+        "references": [],
+        "terminal_hint": "#e5e8eb"
+      },
+      {
+        "alias": "--grey300",
+        "references": [],
+        "terminal_hint": "#d1d6db"
+      },
+      {
+        "alias": "--grey400",
+        "references": [],
+        "terminal_hint": "#b0b8c1"
+      },
+      {
+        "alias": "--grey50",
+        "references": [],
+        "terminal_hint": "#f9fafb"
+      },
+      {
+        "alias": "--grey500",
+        "references": [],
+        "terminal_hint": "#8b95a1"
+      },
+      {
+        "alias": "--grey600",
+        "references": [],
+        "terminal_hint": "#6b7684"
+      },
+      {
+        "alias": "--grey700",
+        "references": [],
+        "terminal_hint": "#4e5968"
+      },
+      {
+        "alias": "--grey800",
+        "references": [],
+        "terminal_hint": "#333d4b"
+      },
+      {
+        "alias": "--grey900",
+        "references": [],
+        "terminal_hint": "#191f28"
+      },
+      {
+        "alias": "--greyBackground",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--greyOpacity100",
+        "references": [],
+        "terminal_hint": "rgba(2,32,71,0.05)"
+      },
+      {
+        "alias": "--greyOpacity200",
+        "references": [],
+        "terminal_hint": "rgba(0,27,55,0.1)"
+      },
+      {
+        "alias": "--greyOpacity300",
+        "references": [],
+        "terminal_hint": "rgba(0,29,58,0.18)"
+      },
+      {
+        "alias": "--greyOpacity400",
+        "references": [],
+        "terminal_hint": "rgba(0,25,54,0.31)"
+      },
+      {
+        "alias": "--greyOpacity50",
+        "references": [],
+        "terminal_hint": "rgba(0,23,51,0.02)"
+      },
+      {
+        "alias": "--greyOpacity500",
+        "references": [],
+        "terminal_hint": "rgba(3,24,50,0.46)"
+      },
+      {
+        "alias": "--greyOpacity600",
+        "references": [],
+        "terminal_hint": "rgba(0,19,43,0.58)"
+      },
+      {
+        "alias": "--greyOpacity700",
+        "references": [],
+        "terminal_hint": "rgba(3,18,40,0.7)"
+      },
+      {
+        "alias": "--greyOpacity800",
+        "references": [],
+        "terminal_hint": "rgba(0,12,30,0.8)"
+      },
+      {
+        "alias": "--greyOpacity900",
+        "references": [],
+        "terminal_hint": "rgba(2,9,19,0.91)"
+      },
+      {
+        "alias": "--inverseGrey100",
+        "references": [],
+        "terminal_hint": "#2c2c35"
+      },
+      {
+        "alias": "--inverseGrey200",
+        "references": [],
+        "terminal_hint": "#3c3c47"
+      },
+      {
+        "alias": "--inverseGrey300",
+        "references": [],
+        "terminal_hint": "#4d4d59"
+      },
+      {
+        "alias": "--inverseGrey400",
+        "references": [],
+        "terminal_hint": "#62626d"
+      },
+      {
+        "alias": "--inverseGrey50",
+        "references": [],
+        "terminal_hint": "#202027"
+      },
+      {
+        "alias": "--inverseGrey500",
+        "references": [],
+        "terminal_hint": "#7e7e87"
+      },
+      {
+        "alias": "--inverseGrey600",
+        "references": [],
+        "terminal_hint": "#9e9ea4"
+      },
+      {
+        "alias": "--inverseGrey700",
+        "references": [],
+        "terminal_hint": "#c3c3c6"
+      },
+      {
+        "alias": "--inverseGrey800",
+        "references": [],
+        "terminal_hint": "#e4e4e5"
+      },
+      {
+        "alias": "--inverseGrey900",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--layeredBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--lightThemeBackground",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--lightThemeBackgroundDimmed",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0.2)"
+      },
+      {
+        "alias": "--lightThemeBackgroundLevel01",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--lightThemeBackgroundLevel02",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--lightThemeBackgroundLevelB01",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--lightThemeBlue100",
+        "references": [],
+        "terminal_hint": "#c9e2ff"
+      },
+      {
+        "alias": "--lightThemeBlue200",
+        "references": [],
+        "terminal_hint": "#90c2ff"
+      },
+      {
+        "alias": "--lightThemeBlue300",
+        "references": [],
+        "terminal_hint": "#64a8ff"
+      },
+      {
+        "alias": "--lightThemeBlue400",
+        "references": [],
+        "terminal_hint": "#4593fc"
+      },
+      {
+        "alias": "--lightThemeBlue50",
+        "references": [],
+        "terminal_hint": "#e8f3ff"
+      },
+      {
+        "alias": "--lightThemeBlue500",
+        "references": [],
+        "terminal_hint": "#3182f6"
+      },
+      {
+        "alias": "--lightThemeBlue600",
+        "references": [],
+        "terminal_hint": "#2272eb"
+      },
+      {
+        "alias": "--lightThemeBlue700",
+        "references": [],
+        "terminal_hint": "#1b64da"
+      },
+      {
+        "alias": "--lightThemeBlue800",
+        "references": [],
+        "terminal_hint": "#1957c2"
+      },
+      {
+        "alias": "--lightThemeBlue900",
+        "references": [],
+        "terminal_hint": "#194aa6"
+      },
+      {
+        "alias": "--lightThemeGreen100",
+        "references": [],
+        "terminal_hint": "#aeefd5"
+      },
+      {
+        "alias": "--lightThemeGreen200",
+        "references": [],
+        "terminal_hint": "#76e4b8"
+      },
+      {
+        "alias": "--lightThemeGreen300",
+        "references": [],
+        "terminal_hint": "#3fd599"
+      },
+      {
+        "alias": "--lightThemeGreen400",
+        "references": [],
+        "terminal_hint": "#15c47e"
+      },
+      {
+        "alias": "--lightThemeGreen50",
+        "references": [],
+        "terminal_hint": "#f0faf6"
+      },
+      {
+        "alias": "--lightThemeGreen500",
+        "references": [],
+        "terminal_hint": "#03b26c"
+      },
+      {
+        "alias": "--lightThemeGreen600",
+        "references": [],
+        "terminal_hint": "#02a262"
+      },
+      {
+        "alias": "--lightThemeGreen700",
+        "references": [],
+        "terminal_hint": "#029359"
+      },
+      {
+        "alias": "--lightThemeGreen800",
+        "references": [],
+        "terminal_hint": "#028450"
+      },
+      {
+        "alias": "--lightThemeGreen900",
+        "references": [],
+        "terminal_hint": "#027648"
+      },
+      {
+        "alias": "--lightThemeGrey100",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--lightThemeGrey200",
+        "references": [],
+        "terminal_hint": "#e5e8eb"
+      },
+      {
+        "alias": "--lightThemeGrey300",
+        "references": [],
+        "terminal_hint": "#d1d6db"
+      },
+      {
+        "alias": "--lightThemeGrey400",
+        "references": [],
+        "terminal_hint": "#b0b8c1"
+      },
+      {
+        "alias": "--lightThemeGrey50",
+        "references": [],
+        "terminal_hint": "#f9fafb"
+      },
+      {
+        "alias": "--lightThemeGrey500",
+        "references": [],
+        "terminal_hint": "#8b95a1"
+      },
+      {
+        "alias": "--lightThemeGrey600",
+        "references": [],
+        "terminal_hint": "#6b7684"
+      },
+      {
+        "alias": "--lightThemeGrey700",
+        "references": [],
+        "terminal_hint": "#4e5968"
+      },
+      {
+        "alias": "--lightThemeGrey800",
+        "references": [],
+        "terminal_hint": "#333d4b"
+      },
+      {
+        "alias": "--lightThemeGrey900",
+        "references": [],
+        "terminal_hint": "#191f28"
+      },
+      {
+        "alias": "--lightThemeHairlineBorder",
+        "references": [],
+        "terminal_hint": "#e5e8eb"
+      },
+      {
+        "alias": "--lightThemeOrange100",
+        "references": [],
+        "terminal_hint": "#ffe0b0"
+      },
+      {
+        "alias": "--lightThemeOrange200",
+        "references": [],
+        "terminal_hint": "#ffcd80"
+      },
+      {
+        "alias": "--lightThemeOrange300",
+        "references": [],
+        "terminal_hint": "#ffbd51"
+      },
+      {
+        "alias": "--lightThemeOrange400",
+        "references": [],
+        "terminal_hint": "#ffa927"
+      },
+      {
+        "alias": "--lightThemeOrange50",
+        "references": [],
+        "terminal_hint": "#ffe0b0"
+      },
+      {
+        "alias": "--lightThemeOrange500",
+        "references": [],
+        "terminal_hint": "#fe9800"
+      },
+      {
+        "alias": "--lightThemeOrange600",
+        "references": [],
+        "terminal_hint": "#fb8800"
+      },
+      {
+        "alias": "--lightThemeOrange700",
+        "references": [],
+        "terminal_hint": "#f57800"
+      },
+      {
+        "alias": "--lightThemeOrange800",
+        "references": [],
+        "terminal_hint": "#ed6700"
+      },
+      {
+        "alias": "--lightThemeOrange900",
+        "references": [],
+        "terminal_hint": "#e45600"
+      },
+      {
+        "alias": "--lightThemePurple100",
+        "references": [],
+        "terminal_hint": "#edccf8"
+      },
+      {
+        "alias": "--lightThemePurple200",
+        "references": [],
+        "terminal_hint": "#da9bef"
+      },
+      {
+        "alias": "--lightThemePurple300",
+        "references": [],
+        "terminal_hint": "#c770e4"
+      },
+      {
+        "alias": "--lightThemePurple400",
+        "references": [],
+        "terminal_hint": "#b44bd7"
+      },
+      {
+        "alias": "--lightThemePurple50",
+        "references": [],
+        "terminal_hint": "#f9f0fc"
+      },
+      {
+        "alias": "--lightThemePurple500",
+        "references": [],
+        "terminal_hint": "#a234c7"
+      },
+      {
+        "alias": "--lightThemePurple600",
+        "references": [],
+        "terminal_hint": "#9128b4"
+      },
+      {
+        "alias": "--lightThemePurple700",
+        "references": [],
+        "terminal_hint": "#8222a2"
+      },
+      {
+        "alias": "--lightThemePurple800",
+        "references": [],
+        "terminal_hint": "#73228e"
+      },
+      {
+        "alias": "--lightThemePurple900",
+        "references": [],
+        "terminal_hint": "#65237b"
+      },
+      {
+        "alias": "--lightThemeRed100",
+        "references": [],
+        "terminal_hint": "#ffd4d6"
+      },
+      {
+        "alias": "--lightThemeRed200",
+        "references": [],
+        "terminal_hint": "#feafb4"
+      },
+      {
+        "alias": "--lightThemeRed300",
+        "references": [],
+        "terminal_hint": "#fb8890"
+      },
+      {
+        "alias": "--lightThemeRed400",
+        "references": [],
+        "terminal_hint": "#f66570"
+      },
+      {
+        "alias": "--lightThemeRed50",
+        "references": [],
+        "terminal_hint": "#fee"
+      },
+      {
+        "alias": "--lightThemeRed500",
+        "references": [],
+        "terminal_hint": "#f04452"
+      },
+      {
+        "alias": "--lightThemeRed600",
+        "references": [],
+        "terminal_hint": "#e42939"
+      },
+      {
+        "alias": "--lightThemeRed700",
+        "references": [],
+        "terminal_hint": "#d22030"
+      },
+      {
+        "alias": "--lightThemeRed800",
+        "references": [],
+        "terminal_hint": "#bc1b2a"
+      },
+      {
+        "alias": "--lightThemeRed900",
+        "references": [],
+        "terminal_hint": "#a51926"
+      },
+      {
+        "alias": "--lightThemeTeal100",
+        "references": [],
+        "terminal_hint": "#bce9e9"
+      },
+      {
+        "alias": "--lightThemeTeal200",
+        "references": [],
+        "terminal_hint": "#89d8d8"
+      },
+      {
+        "alias": "--lightThemeTeal300",
+        "references": [],
+        "terminal_hint": "#58c7c7"
+      },
+      {
+        "alias": "--lightThemeTeal400",
+        "references": [],
+        "terminal_hint": "#30b6b6"
+      },
+      {
+        "alias": "--lightThemeTeal50",
+        "references": [],
+        "terminal_hint": "#edf8f8"
+      },
+      {
+        "alias": "--lightThemeTeal500",
+        "references": [],
+        "terminal_hint": "#18a5a5"
+      },
+      {
+        "alias": "--lightThemeTeal600",
+        "references": [],
+        "terminal_hint": "#109595"
+      },
+      {
+        "alias": "--lightThemeTeal700",
+        "references": [],
+        "terminal_hint": "#0c8585"
+      },
+      {
+        "alias": "--lightThemeTeal800",
+        "references": [],
+        "terminal_hint": "#097575"
+      },
+      {
+        "alias": "--lightThemeTeal900",
+        "references": [],
+        "terminal_hint": "#076565"
+      },
+      {
+        "alias": "--lightThemeYellow100",
+        "references": [],
+        "terminal_hint": "#ffefbf"
+      },
+      {
+        "alias": "--lightThemeYellow200",
+        "references": [],
+        "terminal_hint": "#ffe69b"
+      },
+      {
+        "alias": "--lightThemeYellow300",
+        "references": [],
+        "terminal_hint": "#ffdd78"
+      },
+      {
+        "alias": "--lightThemeYellow400",
+        "references": [],
+        "terminal_hint": "#ffd158"
+      },
+      {
+        "alias": "--lightThemeYellow50",
+        "references": [],
+        "terminal_hint": "#fff9e7"
+      },
+      {
+        "alias": "--lightThemeYellow500",
+        "references": [],
+        "terminal_hint": "#ffc342"
+      },
+      {
+        "alias": "--lightThemeYellow600",
+        "references": [],
+        "terminal_hint": "#ffb331"
+      },
+      {
+        "alias": "--lightThemeYellow700",
+        "references": [],
+        "terminal_hint": "#faa131"
+      },
+      {
+        "alias": "--lightThemeYellow800",
+        "references": [],
+        "terminal_hint": "#ee8f11"
+      },
+      {
+        "alias": "--lightThemeYellow900",
+        "references": [],
+        "terminal_hint": "#dd7d02"
+      },
+      {
+        "alias": "--orange100",
+        "references": [],
+        "terminal_hint": "#ffe0b0"
+      },
+      {
+        "alias": "--orange200",
+        "references": [],
+        "terminal_hint": "#ffcd80"
+      },
+      {
+        "alias": "--orange300",
+        "references": [],
+        "terminal_hint": "#ffbd51"
+      },
+      {
+        "alias": "--orange400",
+        "references": [],
+        "terminal_hint": "#ffa927"
+      },
+      {
+        "alias": "--orange50",
+        "references": [],
+        "terminal_hint": "#fff3e0"
+      },
+      {
+        "alias": "--orange500",
+        "references": [],
+        "terminal_hint": "#fe9800"
+      },
+      {
+        "alias": "--orange600",
+        "references": [],
+        "terminal_hint": "#fb8800"
+      },
+      {
+        "alias": "--orange700",
+        "references": [],
+        "terminal_hint": "#f57800"
+      },
+      {
+        "alias": "--orange800",
+        "references": [],
+        "terminal_hint": "#ed6700"
+      },
+      {
+        "alias": "--orange900",
+        "references": [],
+        "terminal_hint": "#e45600"
+      },
+      {
+        "alias": "--pButton-color-disabled",
+        "references": [],
+        "terminal_hint": "rgba(240,68,82,0.38)"
+      },
+      {
+        "alias": "--purple100",
+        "references": [],
+        "terminal_hint": "#edccf8"
+      },
+      {
+        "alias": "--purple200",
+        "references": [],
+        "terminal_hint": "#da9bef"
+      },
+      {
+        "alias": "--purple300",
+        "references": [],
+        "terminal_hint": "#c770e4"
+      },
+      {
+        "alias": "--purple400",
+        "references": [],
+        "terminal_hint": "#b44bd7"
+      },
+      {
+        "alias": "--purple50",
+        "references": [],
+        "terminal_hint": "#f9f0fc"
+      },
+      {
+        "alias": "--purple500",
+        "references": [],
+        "terminal_hint": "#a234c7"
+      },
+      {
+        "alias": "--purple600",
+        "references": [],
+        "terminal_hint": "#9128b4"
+      },
+      {
+        "alias": "--purple700",
+        "references": [],
+        "terminal_hint": "#8222a2"
+      },
+      {
+        "alias": "--purple800",
+        "references": [],
+        "terminal_hint": "#73228e"
+      },
+      {
+        "alias": "--purple900",
+        "references": [],
+        "terminal_hint": "#65237b"
+      },
+      {
+        "alias": "--red100",
+        "references": [],
+        "terminal_hint": "#ffd4d6"
+      },
+      {
+        "alias": "--red200",
+        "references": [],
+        "terminal_hint": "#feafb4"
+      },
+      {
+        "alias": "--red300",
+        "references": [],
+        "terminal_hint": "#fb8890"
+      },
+      {
+        "alias": "--red400",
+        "references": [],
+        "terminal_hint": "#f66570"
+      },
+      {
+        "alias": "--red50",
+        "references": [],
+        "terminal_hint": "#fee"
+      },
+      {
+        "alias": "--red500",
+        "references": [],
+        "terminal_hint": "#f04452"
+      },
+      {
+        "alias": "--red600",
+        "references": [],
+        "terminal_hint": "#e42939"
+      },
+      {
+        "alias": "--red700",
+        "references": [],
+        "terminal_hint": "#d22030"
+      },
+      {
+        "alias": "--red800",
+        "references": [],
+        "terminal_hint": "#bc1b2a"
+      },
+      {
+        "alias": "--red900",
+        "references": [],
+        "terminal_hint": "#a51926"
+      },
+      {
+        "alias": "--tBlueBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(49,130,246,0.16)"
+      },
+      {
+        "alias": "--tBlueBadgeColor",
+        "references": [],
+        "terminal_hint": "#1b64da"
+      },
+      {
+        "alias": "--tDangerWeakButtonBackground",
+        "references": [],
+        "terminal_hint": "#fee"
+      },
+      {
+        "alias": "--tDangerWeakButtonPressedBackground",
+        "references": [],
+        "terminal_hint": "rgba(244,67,54,0.26)"
+      },
+      {
+        "alias": "--tDarkFillButtonBackground",
+        "references": [],
+        "terminal_hint": "#4e5968"
+      },
+      {
+        "alias": "--tDarkWeakButtonBackground",
+        "references": [],
+        "terminal_hint": "#f2f4f6"
+      },
+      {
+        "alias": "--tDarkWeakButtonPressedBackground",
+        "references": [],
+        "terminal_hint": "rgba(78,89,104,0.26)"
+      },
+      {
+        "alias": "--tElephantBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(78,89,104,0.16)"
+      },
+      {
+        "alias": "--tElephantBadgeColor",
+        "references": [],
+        "terminal_hint": "#4e5968"
+      },
+      {
+        "alias": "--tGreenBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(2,162,98,0.16)"
+      },
+      {
+        "alias": "--tGreenBadgeColor",
+        "references": [],
+        "terminal_hint": "#029359"
+      },
+      {
+        "alias": "--tLightWeakButtonBackground",
+        "references": [],
+        "terminal_hint": "rgba(222,222,255,0.19)"
+      },
+      {
+        "alias": "--tLightWeakButtonPressedBackground",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,0.26)"
+      },
+      {
+        "alias": "--tListRowDisabledBackground",
+        "references": [],
+        "terminal_hint": "rgba(253,253,255,0.75)"
+      },
+      {
+        "alias": "--tPrimaryWeakButtonBackground",
+        "references": [],
+        "terminal_hint": "#e8f3ff"
+      },
+      {
+        "alias": "--tPrimaryWeakButtonPressedBackground",
+        "references": [],
+        "terminal_hint": "rgba(49,130,246,0.26)"
+      },
+      {
+        "alias": "--tRadioIndicatorBackgroundColor",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--tRedBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(244,67,54,0.16)"
+      },
+      {
+        "alias": "--tRedBadgeColor",
+        "references": [],
+        "terminal_hint": "#d22030"
+      },
+      {
+        "alias": "--tSwiperBulletBackground",
+        "references": [],
+        "terminal_hint": "rgba(232,232,253,0.36)"
+      },
+      {
+        "alias": "--tTealBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(0,129,138,0.16)"
+      },
+      {
+        "alias": "--tTealBadgeColor",
+        "references": [],
+        "terminal_hint": "#0c8585"
+      },
+      {
+        "alias": "--tToastBackground",
+        "references": [],
+        "terminal_hint": "rgba(25,31,40,0.54)"
+      },
+      {
+        "alias": "--tYellowBadgeBackground",
+        "references": [],
+        "terminal_hint": "rgba(255,179,49,0.16)"
+      },
+      {
+        "alias": "--tYellowBadgeColor",
+        "references": [],
+        "terminal_hint": "#dd7d02"
+      },
+      {
+        "alias": "--teal100",
+        "references": [],
+        "terminal_hint": "#bce9e9"
+      },
+      {
+        "alias": "--teal200",
+        "references": [],
+        "terminal_hint": "#89d8d8"
+      },
+      {
+        "alias": "--teal300",
+        "references": [],
+        "terminal_hint": "#58c7c7"
+      },
+      {
+        "alias": "--teal400",
+        "references": [],
+        "terminal_hint": "#30b6b6"
+      },
+      {
+        "alias": "--teal50",
+        "references": [],
+        "terminal_hint": "#edf8f8"
+      },
+      {
+        "alias": "--teal500",
+        "references": [],
+        "terminal_hint": "#18a5a5"
+      },
+      {
+        "alias": "--teal600",
+        "references": [],
+        "terminal_hint": "#109595"
+      },
+      {
+        "alias": "--teal700",
+        "references": [],
+        "terminal_hint": "#0c8585"
+      },
+      {
+        "alias": "--teal800",
+        "references": [],
+        "terminal_hint": "#097575"
+      },
+      {
+        "alias": "--teal900",
+        "references": [],
+        "terminal_hint": "#076565"
+      },
+      {
+        "alias": "--white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--whiteOpacity100",
+        "references": [],
+        "terminal_hint": "rgba(217,217,255,0.11)"
+      },
+      {
+        "alias": "--whiteOpacity200",
+        "references": [],
+        "terminal_hint": "rgba(222,222,255,0.19)"
+      },
+      {
+        "alias": "--whiteOpacity300",
+        "references": [],
+        "terminal_hint": "rgba(224,224,255,0.27)"
+      },
+      {
+        "alias": "--whiteOpacity400",
+        "references": [],
+        "terminal_hint": "rgba(232,232,253,0.36)"
+      },
+      {
+        "alias": "--whiteOpacity50",
+        "references": [],
+        "terminal_hint": "rgba(209,209,253,0.05)"
+      },
+      {
+        "alias": "--whiteOpacity500",
+        "references": [],
+        "terminal_hint": "rgba(242,242,255,0.47)"
+      },
+      {
+        "alias": "--whiteOpacity600",
+        "references": [],
+        "terminal_hint": "rgba(248,248,255,0.6)"
+      },
+      {
+        "alias": "--whiteOpacity700",
+        "references": [],
+        "terminal_hint": "rgba(253,253,255,0.75)"
+      },
+      {
+        "alias": "--whiteOpacity800",
+        "references": [],
+        "terminal_hint": "rgba(253,253,254,0.89)"
+      },
+      {
+        "alias": "--whiteOpacity900",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--yellow100",
+        "references": [],
+        "terminal_hint": "#ffefbf"
+      },
+      {
+        "alias": "--yellow200",
+        "references": [],
+        "terminal_hint": "#ffe69b"
+      },
+      {
+        "alias": "--yellow300",
+        "references": [],
+        "terminal_hint": "#ffdd78"
+      },
+      {
+        "alias": "--yellow400",
+        "references": [],
+        "terminal_hint": "#ffd158"
+      },
+      {
+        "alias": "--yellow50",
+        "references": [],
+        "terminal_hint": "#fff9e7"
+      },
+      {
+        "alias": "--yellow500",
+        "references": [],
+        "terminal_hint": "#ffc342"
+      },
+      {
+        "alias": "--yellow600",
+        "references": [],
+        "terminal_hint": "#ffb331"
+      },
+      {
+        "alias": "--yellow700",
+        "references": [],
+        "terminal_hint": "#faa131"
+      },
+      {
+        "alias": "--yellow800",
+        "references": [],
+        "terminal_hint": "#ee8f11"
+      },
+      {
+        "alias": "--yellow900",
+        "references": [],
+        "terminal_hint": "#dd7d02"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 13,
+      "component": 22,
+      "core": 432
+    }
+  }
+}

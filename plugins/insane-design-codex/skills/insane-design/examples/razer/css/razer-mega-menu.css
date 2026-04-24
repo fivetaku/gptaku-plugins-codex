@@ -1,0 +1,1333 @@
+.razer-mega-menu {
+    margin-top: -20px;
+}
+
+.razer-mega-menu>ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.razer-mega-menu>ul>li {
+    list-style-type: none;
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+.razer-mega-menu>ul>li>button,
+.razer-mega-menu>ul>li>a {
+    color: #BBB;
+    font-family: RazerF5;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background-color: transparent;
+    text-align: left;
+}
+
+.razer-mega-menu>ul>li.active>button,
+.razer-mega-menu>ul>li.active>a {
+    color: #FFF;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container {
+    background-color: #222;
+    border-bottom: 1px solid #44D62C;
+    left: 50%;
+    overflow: hidden;
+    padding: 24px 0px;
+    position: absolute;
+    top: 60px;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li {
+    padding: 12px 0px 12px 8px;
+    width: 100%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-more-about-container li {
+    padding: 8px 0px 8px 8px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li.active {
+    background: rgba(0, 0, 0, 0.50);
+    border-left: 4px solid #44D62C;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container button,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a {
+    background-color: transparent;
+    border: 0px;
+    color: #FFF;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px 20px 0px 0px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button::after {
+    background: url('/assets/images/mega-menu/arrow-right.svg') center no-repeat;
+    content: '';
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-image 0.5s ease-in-out;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container li:hover>button::after {
+    background: url('/assets/images/mega-menu/arrow-right-hover.svg') center no-repeat;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container li.active>button::after {
+    transition: none;
+    background: url('/assets/images/mega-menu/arrow-right-active.svg') center no-repeat;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li.active>button::after {
+    color: #44D62C;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+    position: relative;
+    width: 25%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container button,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container a {
+    font-size: 14px;
+    line-height: 16px;
+    padding-right: 0px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child)>.submenu-holder {
+    left: 0px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container {
+    min-height: 250px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder {
+    padding-right: 16px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder ul {
+    padding-bottom: 32px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container ul {
+    border-right: 0px;
+}
+
+.razer-mega-menu .razer-mega-menu-container {
+    display: none;
+}
+
+.razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container {
+    display: flex;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child) {
+    visibility: hidden;
+    width: 0px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active:not(:first-child) {
+    transition: width 0.5s;
+    visibility: visible;
+    width: 20%;
+}
+
+#mega-menu-mobile-open,
+#mega-menu-mobile-close,
+.mega-menu-breadcrumb,
+.mega-menu-mobile-overlay {
+    display: none;
+}
+
+.mega-menu-submenu-title {
+    color: #BBB;
+    direction: ltr;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    margin: 0px 0px 0px 8px;
+    padding: 0px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li {
+    padding: 16px 0px 16px 8px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-more-about-container li {
+    padding: 16px 8px 16px 8px;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container button.submenu-button,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a.submenu-button {
+    display: flex;
+    align-items: center;
+}
+
+.razer-mega-menu .submenu-button {
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container button.submenu-button,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a.submenu-button {
+    align-items: center;
+    display: flex;
+    white-space: normal;
+}
+
+.mega-menu-badge {
+    border-radius: 4px;
+    color: #222;
+    font-family: RazerF5;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: auto;
+    margin-right: 4px;
+    padding: 4px;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-container .submenu-container button.submenu-button,
+.razer-mega-menu .no-url-events {
+    cursor: default;
+    pointer-events: none;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-container .submenu-container button.submenu-button:after,
+.razer-mega-menu .no-url-events::after {
+    display: none;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container button,
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a {
+    direction: ltr;
+}
+
+.mega-menu-close-button {
+    display: none;
+}
+
+.displayNone {
+    display: none !important;
+}
+
+.invisible-menu {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-holder {
+    display: none;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container>.submenu-holder {
+    display: block;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-container .submenu-container .submenu-container {
+    display: none !important;
+}
+
+.mega-menu-submenu-title .previous-menu-title {
+    display: none;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-container .submenu-container .mega-menu-submenu-title .previous-menu-title {
+    display: block !important;
+}
+
+.razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-container .submenu-container .mega-menu-submenu-title .current-menu-title {
+    display: none !important;
+}
+
+.search-close-mobile {
+    background: transparent;
+    border: 0;
+    display: none;
+    height: 48px;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    right: auto;
+    top: 0;
+    transform: none;
+    width: 48px;
+    z-index: 22;
+
+    &::before {
+        content: '\276E';
+        color: #fff;
+        font-family: 'Material Icons' !important;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .alg-search-enabled .search-icon[data-expanded=true]+.search-box .search-close-mobile {
+        display: block;
+    }
+
+    .razer-mega-menu-container-bg {
+        display: none;
+    }
+
+    .razer-mobile-custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        left: 0px;
+        position: absolute;
+    }
+
+    .razer-mobile-custom-scrollbar::-webkit-scrollbar-track {
+        background: #333;
+        border-radius: 5px;
+    }
+
+    .razer-mobile-custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+
+    .razer-mobile-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
+
+    .razer-mega-menu-container.open .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container {
+        display: flex;
+        flex-direction: column-reverse;
+        transform: rotate(180deg) translate3d(0, 0, 0);
+    }
+
+    .razer-mega-menu-container.open .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-custom-scroll {
+        order: 1;
+        transform: rotate(180deg) translate3d(0, 0, 0);
+    }
+
+    .razer-mega-menu-container.open .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container {
+        order: 2;
+        transform: rotate(180deg) translate3d(0, 0, 0);
+    }
+
+    #mega-menu-mobile-close,
+    cx-page-layout.navigation {
+        display: block !important;
+    }
+
+    cx-page-layout.navigation cx-page-slot {
+        display: none;
+    }
+
+    cx-page-layout.navigation cx-page-slot.NavigationBar {
+        display: block;
+        min-height: auto;
+    }
+
+    #mega-menu-mobile-close {
+        margin-top: 4px;
+    }
+
+    #mega-menu-mobile-open {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    header .header .MiniCart {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mega-menu-mobile-overlay {
+        visibility: hidden;
+        opacity: 0.8;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 0;
+        z-index: 98;
+        left: -100%;
+        transition: all 0.5s;
+        display: block;
+    }
+
+    .mega-menu-mobile-overlay.open {
+        visibility: visible;
+        left: 0px;
+    }
+
+    .razer-mega-menu-container {
+        visibility: hidden;
+        position: fixed;
+        border-right: 1px solid #44D62C;
+        background: #000;
+        top: 0;
+        z-index: 99;
+        width: 400px;
+        max-width: 90%;
+        left: -100%;
+        transition: all 0.5s;
+        height: 100%;
+        padding-top: 5px;
+    }
+
+    .razer-mega-menu {
+        margin-top: 0px;
+    }
+
+    .razer-mega-menu>ul {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .razer-mega-menu-container.open {
+        visibility: visible;
+        left: 0px;
+    }
+
+    .razer-mega-menu-container.open .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container {
+        border-top: 0px;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        padding-bottom: 8px;
+        padding-left: 0px;
+        padding-top: 24px;
+    }
+
+    .submenu-open .razer-mega-menu>ul>li>a,
+    .submenu-open .razer-mega-menu>ul>li>button {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container button,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a {
+        color: #EEE !important;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .level-one-expanded .razer-mega-menu>ul>li>.razer-mega-menu-bg .submenu-container button,
+    .level-one-expanded .razer-mega-menu>ul>li>.razer-mega-menu-bg .submenu-container a {
+        color: #EEE !important;
+        font-weight: 600;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active:not(:first-child),
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+        width: 100%;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+        display: none;
+        position: static;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child)>.submenu-holder {
+        position: static;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.mobile-active {
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder {
+        border: 0px;
+        padding-right: 0px;
+    }
+
+    .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container {
+        visibility: visible;
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container {
+        top: 146px;
+        left: 0px;
+        transform: none;
+        border: 0px;
+        position: fixed;
+        width: 390px;
+        margin-left: 8px;
+        max-width: calc(90% - 9px);
+        height: calc(100% - 146px);
+        overflow: auto;
+    }
+
+    .razer-mega-menu>ul>li {
+        margin-bottom: 8px;
+        padding: 16px 0px 16px 6px;
+        position: relative;
+        width: calc(100% - 20px);
+    }
+
+    .razer-mega-menu>ul>li>a,
+    .razer-mega-menu>ul>li>button {
+        display: block;
+        font-size: 17px;
+        line-height: 12px;
+        padding: 2px 0px;
+        position: relative;
+        width: 100%;
+    }
+
+    .razer-mega-menu>ul>li.have-children>a:after,
+    .razer-mega-menu>ul>li.have-children>button:after {
+        color: #fff;
+        display: block;
+        content: '\e900';
+        font-family: 'phoenix-icons';
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .razer-mega-menu>ul>li.active {
+        border-bottom: 0px;
+        padding-bottom: 14px;
+    }
+
+    .razer-mega-menu>ul>li.active a,
+    .razer-mega-menu>ul>li.active button {
+        color: #BBB;
+        font-weight: normal;
+    }
+
+
+    .submenu-open .mega-menu-breadcrumb {
+        background: #000;
+        border-bottom: 2px solid #44D62C;
+        display: block;
+        padding: 24px 16px 0px 16px;
+    }
+
+    #razer-mega-menu-container.submenu-open::before {
+        background: #000;
+        content: '';
+        height: 10px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .submenu-open>.razer-mega-menu-container {
+        background: #222;
+    }
+
+    .submenu-open>.razer-mega-menu-container::before {
+        background: #000;
+        content: '';
+        height: 10px;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        top: 0px;
+    }
+
+    .level-one-expanded.submenu-open .mega-menu-breadcrumb {
+        border-color: #fff;
+    }
+
+    .mega-menu-breadcrumb {
+        line-height: 10px;
+    }
+
+    .mega-menu-breadcrumb button {
+        background-color: transparent;
+        border: 0px;
+        color: #EEE;
+        font-family: RazerF5;
+        font-size: 17px;
+        line-height: 18px;
+        margin: 0px;
+        padding: 15px 0px 15px 32px;
+        position: relative;
+    }
+
+    .mega-menu-breadcrumb>button::after {
+        background: url('/assets/images/mega-menu/breadcrumb-back.svg') center no-repeat;
+        color: #fff;
+        content: '';
+        height: 48px;
+        position: absolute;
+        left: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+    }
+
+    .mega-menu-breadcrumb>button {
+        font-size: 14px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .level-one-expanded .mega-menu-breadcrumb>button {
+        color: #FFF;
+        font-size: 17px;
+    }
+
+    .mega-menu-breadcrumb li {
+        display: inline-block;
+        line-height: 10px;
+        padding-right: 15px;
+        position: relative;
+    }
+
+    .mega-menu-breadcrumb li::after {
+        color: #BBB;
+        content: '\e900';
+        font-family: 'phoenix-icons';
+        font-size: 10px;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mega-menu-breadcrumb ul>li:last-child::after {
+        display: none;
+    }
+
+    .mega-menu-breadcrumb li button {
+        color: #BBB;
+        font-family: Roboto;
+        font-size: 12px;
+        height: auto;
+        padding: 0px;
+        margin: 0px;
+        line-height: 14px;
+        max-height: 28px;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .mega-menu-breadcrumb ul>li:last-child button {
+        color: #EEE;
+    }
+
+    .submenu-open .mega-menu-mobile-toggle {
+        background: #000;
+    }
+
+    .razer-search-widget-container {
+        position: absolute;
+        width: calc(100% - 64px);
+        top: 10px;
+        right: 0px;
+        margin-right: 16px;
+    }
+
+    .submenu-open.razer-search-widget-container {
+        background: #000;
+    }
+
+    .razer-search-widget-container .search-box {
+        background: transparent;
+        position: relative;
+        display: block !important;
+        padding: 0px;
+        max-width: none;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .razer-search-widget-container .razer-autocomplete-search .typeahead-container {
+        max-width: 100%;
+    }
+
+    .razer-search-widget-container .search-box .razer-acc-float-input label {
+        left: 30px;
+    }
+
+    .razer-search-widget-container .search-box__icon {
+        color: #BBB;
+        position: absolute;
+        z-index: 22;
+    }
+
+    .razer-search-widget-container .search-box__icon::before {
+        font-size: 12px;
+        top: 12px;
+    }
+
+    cx-page-slot.SearchBox .search-icon,
+    .razer-search-widget-container .search-box--close {
+        display: none !important;
+    }
+
+    .razer-search-widget-container .razer-autocomplete-search .typeahead-container .dropdown-item {
+        padding: 8px 30px;
+    }
+
+    .razer-search-widget-container cx-page-slot app-razer-search-widget,
+    .razer-search-widget-container cx-page-slot {
+        display: block !important;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container {
+        border-right: 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container,
+    header .NavigationBar {
+        min-height: auto;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button::after {
+        font-weight: 600;
+        right: -8px;
+    }
+
+    .submenu-open .razer-mega-menu>ul>li:not(.active),
+    .submenu-open .razer-mega-menu>ul>li:not(.active) ul,
+    .submenu-open .razer-mega-menu>ul>li:not(.active) a,
+    .submenu-open .razer-mega-menu>ul>li:not(.active) button {
+        display: none !important;
+    }
+
+    .mega-menu-badge {
+        margin-right: 20px;
+    }
+
+    .razer-mega-menu>ul>li.have-children>a {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.level-one-toggle-button {
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder li.mobile-active-menu>.submenu-container>.submenu-holder {
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-button[aria-expanded="true"],
+    .mega-menu-submenu-title {
+        display: none;
+    }
+
+    .level-one-expanded .mega-menu-submenu-title,
+    .razer-more-about-container .mega-menu-submenu-title,
+    li.mobile-active-menu>.submenu-container .mega-menu-submenu-title {
+        display: block;
+        margin-left: 0px;
+    }
+
+    li.mobile-active-menu>.submenu-container .razer-custom-scroll>.mega-menu-submenu-title {
+        margin-top: 32px;
+    }
+
+    li.mobile-active-menu>.submenu-container .razer-custom-scroll>.mega-menu-submenu-title:first-child {
+        margin-top: 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder ul {
+        padding-bottom: 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li {
+        padding-left: 0px;
+    }
+
+    .razer-more-about-container .mega-menu-submenu-title,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+        padding-left: 8px;
+    }
+
+    li.mobile-active-menu {
+        padding-top: 0px !important;
+    }
+
+    .razer-more-about-container {
+        margin-bottom: 30px;
+        position: static !important;
+    }
+
+    #razer-mega-menu-container:not(.submenu-open) #razer-mega-menu {
+        direction: rtl;
+        height: calc(100vh - 80px);
+        margin-top: 16px;
+        overflow: auto;
+    }
+
+    .header .SearchBox,
+    .header .SiteLogo,
+    .header .MiniCart {
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .razer-mega-menu>ul>li>.SiteLogo {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .razer-mega-menu>ul>li>.SiteLogo+.SiteLogo,
+    .razer-mega-menu>ul>li>.SearchBox+.SearchBox,
+    .razer-mega-menu>ul>li>.mini-cart-box+.MiniCart {
+        display: none;
+    }
+
+    header .header>.SiteLogo {
+        display: none;
+    }
+
+    .OrderConfirmationPageTemplate header .header>.SiteLogo {
+        display: block;
+    }
+
+    header .NavigationBar {
+        min-height: auto;
+        padding: 0px 10px;
+    }
+
+    .logo-container,
+    .logo-container>cx-page-slot {
+        padding-left: 0px !important;
+    }
+
+    .minicart-icon-container,
+    .minicart-icon-container>cx-page-slot {
+        padding-right: 0px !important;
+    }
+
+    .logo-container .SiteLogo {
+        position: static !important;
+    }
+
+    .razer-mega-menu>ul>li {
+        border: 0px !important;
+        margin: 0px !important;
+        padding: 0px;
+        white-space: nowrap;
+    }
+
+    .razer-mega-menu>ul>li>a,
+    .razer-mega-menu>ul>li>button {
+        border-bottom: 1px solid transparent;
+        display: inline-block;
+        padding: 19px 0;
+        margin: 0px;
+    }
+
+    .razer-mega-menu>ul>li>.level-one-toggle-button {
+        border: 0 !important;
+        padding: 0px !important;
+        height: 1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        margin: 0px 0px 0px -5px;
+        background: url('/assets/images/mega-menu/level-one-btn.svg') center no-repeat;
+    }
+
+    .razer-mega-menu>ul>li>.level-one-toggle-button .nav-menu-title {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.level-one-toggle-button:focus-visible {
+        width: 10px;
+        height: 60px;
+    }
+
+    .razer-mega-menu>ul>li.active>.level-one-toggle-button:focus {
+        transform: rotate(180deg);
+    }
+
+    .razer-mega-menu>ul>li.active>a,
+    .razer-mega-menu>ul>li.active>button {
+        border-bottom: 1px solid #FFF;
+        padding-bottom: 18px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg {
+        background-color: #222;
+        border-bottom: 1px solid #44D62C;
+        left: 50%;
+        overflow: hidden;
+        padding: 24px 0px;
+        position: absolute;
+        top: 59px;
+        transform: translateX(-50%);
+        width: 100%;
+        width: 100vw;
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li.active>.razer-mega-menu-bg {
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container {
+        background-color: #222;
+        border-bottom: 0px;
+        padding: 0px;
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+        min-height: 40vh;
+        max-height: 75vh;
+        padding: 24px 0px 24px 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container[style*="height: 0px"] {
+        min-height: auto;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.razer-more-about-container {
+        background: linear-gradient(90deg, #333 0px, #333 4px, #222 5px, #222 100%);
+        direction: rtl;
+        font-weight: 400;
+        height: 100%;
+        left: 25%;
+        margin: 0px;
+        max-height: calc(100% - 48px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-left: 16px;
+        position: fixed;
+        transition: left 0.5s;
+        z-index: 99;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder {
+        padding: 0px 24px 8px 20px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder {
+        padding-left: 10px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li.active>.submenu-button {
+        padding-left: 4px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li.active {
+        margin-left: -8px;
+        padding-left: 4px;
+        width: calc(100% + 8px);
+    }
+
+    .submenu-holder .mega-menu-submenu-title {
+        margin: 0px 0px 8px 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li {
+        padding: 15px 0px 15px 0px;
+        position: relative;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li button,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li a {
+        line-height: 18px;
+        position: static;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li button::before,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li a::before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-holder ul:last-child {
+        padding-bottom: 30px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-holder ul:last-child {
+        padding-bottom: 50px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .fade-bottom {
+        background: url('/assets/images/mega-menu/fade-bottom.svg') center no-repeat;
+        bottom: 20px;
+        display: none;
+        height: 60px;
+        left: 0px;
+        position: fixed;
+        top: auto;
+        width: 300px;
+        z-index: 100;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-button[aria-expanded="true"]+.submenu-container+.fade-bottom,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container+.fade-bottom,
+    .razer-more-about-container+.fade-bottom {
+        display: block !important;
+    }
+
+    .razer-more-about-container>ul {
+        padding-bottom: 40px;
+    }
+
+    .razer-more-about-container a:hover,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a:hover,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container li:not(.active)>button:hover::after,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li:not(.active)>button:hover,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li:not(.active)>a:hover {
+        transition: all 0.5s;
+        color: #44D62C !important;
+    }
+
+    .razer-more-about-container a:hover,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a:hover,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container li:not(.active)>button:hover::after,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li:not(.active)>button:hover>*,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container li:not(.active)>a:hover>* {
+        text-decoration: underline;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container a:hover {
+        text-decoration: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-more-about-container a:hover {
+        text-decoration: underline;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button::after {
+        text-decoration: none !important;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button.submenu-button {
+        padding-right: 30px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>ul>li {
+        direction: ltr;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>.mega-menu-submenu-title {
+        direction: ltr;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>.mega-menu-submenu-title span {
+        display: block;
+        max-width: calc(50% - 16px);
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>.mega-menu-submenu-title .previous-menu-title {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>ul>li>button,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder>ul>li>.submenu-container>div>ul>li>a {
+        position: relative;
+        width: calc(50% - 16px);
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button.submenu-button::after {
+        right: -5px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button.submenu-button.no-url-events,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container a {
+        padding-right: 0px !important;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container button::after {
+        font-weight: bold;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-more-about-container li {
+        padding: 10px 8px 10px 8px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-more-about-container .mega-menu-submenu-title {
+        margin-bottom: 10px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child) .submenu-holder {
+        transition: opacity 0.4s linear 0.2s;
+        opacity: 0;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active:not(:first-child) .submenu-holder {
+        opacity: 1;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active {
+        padding-left: 4px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child):before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        border-right: 4px solid #333;
+        display: block;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border-radius: 5px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container {
+        min-height: auto;
+        max-height: calc(100vh - 100px);
+        overflow: hidden;
+    }
+
+    .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container.enable-scroll>.submenu-container {
+        overflow: auto;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .submenu-container li.active>button.submenu-button {
+        pointer-events: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container *::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container *::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+        border: 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container *::-webkit-scrollbar-thumb:hover {
+        background: #888;
+    }
+
+    @-moz-document url-prefix() {
+        .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container .razer-custom-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #888 transparent;
+        }
+
+        .razer-more-about-container:before,
+        .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child):before {
+            left: 3px;
+        }
+    }
+
+    .razer-custom-scroll {
+        direction: rtl;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg {
+        max-height: 0px;
+        padding: 0px;
+        transition: all 0.8s cubic-bezier(.4, 0, .6, 1);
+        z-index: 1;
+    }
+
+    #razer-mega-menu-container.keydown-enabled .razer-mega-menu>ul>li>.razer-mega-menu-bg,
+    .razer-mega-menu>ul>li.active.razer-slide-down>.razer-mega-menu-bg {
+        max-height: 5000px;
+    }
+
+    .razer-mega-menu>ul>li.active.razer-slide-down>.razer-mega-menu-bg>.razer-mega-menu-container {
+        transition: height 0.5s;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child) ul,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container:not(:first-child) .mega-menu-submenu-title {
+        display: none;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active:not(:first-child) ul,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.active:not(:first-child) .mega-menu-submenu-title {
+        display: block;
+    }
+
+    .razer-mega-menu>ul>li .razer-mega-menu-container-bg:after {
+        content: '';
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        top: 60px;
+        position: absolute;
+        opacity: 0;
+        background-color: #000;
+        display: block;
+        transform: translateX(-50%);
+        transition: opacity 0.5s, height 0s 0.5s, width 0s 0.5s
+    }
+
+    .razer-mega-menu>ul>li.active .razer-mega-menu-container-bg:after {
+        width: 100%;
+        width: 100vw;
+        height: calc(100vh - 60px);
+        transition: none;
+    }
+
+    .razer-mega-menu>ul>li.razer-slide-down .razer-mega-menu-container-bg:after {
+        transition: none;
+    }
+
+    .razer-mega-menu>ul.bg-animation-enabled>li.active .razer-mega-menu-container-bg:after {
+        transition: opacity 0.5s;
+    }
+
+    .razer-mega-menu>ul>li.active.razer-slide-down .razer-mega-menu-container-bg:after {
+        opacity: 0.8;
+    }
+
+    .razer-mega-menu>ul>li.active .mega-menu-close-button {
+        background: url('/assets/images/mega-menu/desktop-close-icon.svg') center no-repeat;
+        border: 0px !important;
+        display: block;
+        height: 48px;
+        width: 48px;
+        position: absolute;
+        right: 10px;
+        top: 0px;
+        transition: background-image 0.5s ease-in-out;
+    }
+
+    .razer-mega-menu>ul>li.active .mega-menu-close-button:hover {
+        background: url('/assets/images/mega-menu/desktop-close-icon-hover.svg') center no-repeat;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-container {
+        height: 100%;
+        left: 20%;
+        position: fixed;
+        top: 24px;
+        width: 0px;
+        opacity: 0.3;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-container {
+        min-height: 100px;
+        transition: width 0.5s;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-container.fade-animate {
+        transition: opacity 1s linear;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container {
+        background: linear-gradient(90deg, #333 0px, #333 4px, #222 5px, #222 100%);
+        border-left: 0;
+        border-right: 0;
+        z-index: 99;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li {
+        padding: 0;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li>a,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li>button {
+        padding: 15px 30px 15px 0px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li.active {
+        background-color: transparent;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li.active>a,
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button+.submenu-container li.active>button {
+        background-color: rgba(0, 0, 0, 0.50);
+        border-radius: 0px 5px 5px 0;
+        padding-left: 8px;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container .submenu-button[aria-expanded="true"]+.submenu-container {
+        direction: rtl;
+        z-index: 100;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container {
+        opacity: 1;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container .submenu-holder .submenu-container {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.place-on-top>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container {
+        z-index: 100;
+    }
+
+    .razer-mega-menu>ul>li>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.place-on-top>.submenu-holder .submenu-button[aria-expanded="true"]+.submenu-container>.submenu-holder {
+        position: relative;
+        z-index: 1;
+    }
+
+    .razer-mega-menu>ul>li.active>.razer-mega-menu-bg>.razer-mega-menu-container>.submenu-container.place-on-top .submenu-button[aria-expanded="true"]+.submenu-container:after {
+        background: #222;
+        content: '';
+        height: 100%;
+        left: 4px;
+        position: absolute;
+        top: 0px;
+        width: calc(100% - 8px);
+    }
+
+    .razer-mega-menu>ul>li {
+        padding: 0px;
+    }
+
+    .razer-mega-menu>ul>li.default-menu>cx-page-slot {
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+    }
+
+    .razer-mega-menu>ul>li.have-children {
+        cursor: pointer;
+    }
+}

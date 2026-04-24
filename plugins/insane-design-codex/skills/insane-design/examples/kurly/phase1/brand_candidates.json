@@ -1,0 +1,202 @@
+{
+  "slug": "kurly",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "body,button,input,select,textarea",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": "body,button,input,select,textarea {font-size:14px;color:#333}"
+    },
+    {
+      "selector": ".react-datepicker__time-container--with-today-button",
+      "property": "border",
+      "hex": "#AEAEAE",
+      "rule_snippet": ".react-datepicker__time-container--with-today-button {display:inline;border:1px solid #aeaeae;border-radius:.3rem;position:absolute;right:-72px;top:0}"
+    },
+    {
+      "selector": ".react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__year-option:hover .react-datepicker__navigation--years-upcoming",
+      "property": "border-bottom-color",
+      "hex": "#B3B3B3",
+      "rule_snippet": ".react-datepicker__month-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-upcoming,.react-datepicker__year-opt"
+    },
+    {
+      "selector": ".react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__year-option:hover .react-datepicker__navigation--years-previous",
+      "property": "border-top-color",
+      "hex": "#B3B3B3",
+      "rule_snippet": ".react-datepicker__month-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__month-year-option:hover .react-datepicker__navigation--years-previous,.react-datepicker__year-opt"
+    },
+    {
+      "selector": ".react-datepicker__today-button",
+      "property": "background",
+      "hex": "#F0F0F0",
+      "rule_snippet": ".react-datepicker__today-button {background:#f0f0f0;border-top:1px solid #aeaeae;cursor:pointer;text-align:center;font-weight:700;padding:5px 0;clear:left}"
+    },
+    {
+      "selector": ".react-datepicker__today-button",
+      "property": "border-top",
+      "hex": "#AEAEAE",
+      "rule_snippet": ".react-datepicker__today-button {background:#f0f0f0;border-top:1px solid #aeaeae;cursor:pointer;text-align:center;font-weight:700;padding:5px 0;clear:left}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 39,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#222222",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#AEAEAE",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#BD76FF",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F6F4F9",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#CCCCCC",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F2F5F8",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#303337",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#848F9A",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#8D4CC4",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#A7B2BC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#BCC4CC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#DFE4EB",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#ECEFF3",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F0F0F0",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#216BA5",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#333333",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#363A40",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#505760",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#B3B3B3",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#028B61",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#029568",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#192A25",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2B2232",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#341E1E",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#37231D",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#451B6C",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#464B52",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#48B1C8",
+      "count": 2,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 36,
+    "by_role": {
+      "chromatic": 17,
+      "neutral": 13,
+      "selector": 6
+    }
+  }
+}

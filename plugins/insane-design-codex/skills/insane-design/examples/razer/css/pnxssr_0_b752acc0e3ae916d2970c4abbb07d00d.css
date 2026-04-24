@@ -1,0 +1,223 @@
+.footer-container {
+    font-size: 12px;
+    background-color: #111;
+    outline: 0;
+}
+footer .footer {
+    background-color: #111 !important;
+}
+.footer-container .razer-slogan {
+    font-family: RazerF5, Arial;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #44d62c;
+    padding-right: 0.4rem;
+    padding-bottom: 0.25rem;
+}
+.footer-container .footer-top li:not(:last-child)::after {
+    content: "";
+}
+.footer-container .footer-top li {
+    display: block;
+}
+.footer-container .footer-toggle-icon,
+.footer-container .footer-copyright-xs {
+    display: none;
+}
+.footer-toggle-icon:hover {
+    color: #999;
+}
+.footer-container .footer-middle .social-media .icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-left: .125rem;
+    margin-right: .125rem;
+}
+.footer-container .footer-middle .social-media .icon-youtube {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0008-youtube.svg)
+}
+.footer-container .footer-middle .social-media .icon-tiktok {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0014-tiktok.svg)
+}
+.footer-container .footer-middle .social-media .icon-twitch {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0009-twitch.svg)
+}
+.footer-container .footer-middle .social-media .icon-discord {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0015-discord.svg)
+}
+.footer-container address {color: #999} 
+@media (max-width: 767px) { 
+    .footer-container div:nth-child(5) {display: none}
+}
+.footer-container .social-media.grey-icon .icon {
+    height: 1.75rem;
+    width: 1.75rem;
+}
+.footer-container .footer-middle .social-media.grey-icon div {
+    display: inline-block
+}
+.footer-container .social-media.grey-icon li {
+    padding: 0 !important;
+    line-height: 5px
+}
+.footer-container .social-media.grey-icon li a {
+    display: block;
+    height: 1.75rem;
+    width: 1.75rem;
+    margin: 0;
+    padding: 0
+}
+.footer-container .social-media.grey-icon .icon-facebook {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0001-facebook-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-instagram {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0003-instagram-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-threads {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0018-threads-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-twitter {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0005-twitter-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-youtube {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0008-youtube-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-tiktok {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0014-tiktok-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-twitch {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0009-twitch-grey.svg) !important
+}
+.footer-container .social-media.grey-icon .icon-discord {
+    background-image: url(https://assets2.razerzone.com/images/phoenix/SM0015-discord-grey.svg) !important
+}
+@media (min-width: 1200px) {
+    .footer-container {
+        padding-left: 0px;
+    }
+}
+@media (min-width: 768px) {
+    .footer-container .footer-top li a {
+        padding: 0;
+    }
+    .footer-container .label-container ul {
+        margin-left: 0 !important;
+    }
+    .footer-container .label-container ul li {
+        padding-bottom: 0.75rem;
+    }
+    .footer-container .copyright {
+        padding-right: 2.3rem;
+    }
+    .footer-container .footer-bottom .legal-term li::before {
+        padding: 0 1rem !important;
+    }
+    .footer-container .line-divider {
+        border-bottom: 1px solid #555;
+        margin: 1rem 0;
+    }
+}
+@media (max-width: 767px) {
+    .footer-container {
+        padding-top: 0px;
+    }
+    .footer-container .row {
+        margin: 0;
+    }
+    .footer-container .row .col {
+        flex-basis: unset;
+    }
+    .footer-container .footer-top li {
+        display: block;
+        padding: 0.5rem 0 !important;
+    }
+    .footer-container .label-container {
+        padding: 0rem !important;
+        border-bottom: 1px solid #3b3b3b !important;
+    }
+    .footer-container .footer-label {
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+    }
+    .footer-container .label-container ul {
+        padding-bottom: 1.1rem;
+    }
+    .footer-container .razer-slogan {
+        vertical-align: top;
+        padding-top: 0.3rem;
+        font-size: 12px;
+    }
+    .footer-container .footer-top li:not(:last-child)::after {
+        padding-right: 0 !important;
+    }
+    .footer-container .footer-middle {
+        padding-top: 9px;
+    }
+    .footer-container .copyright {
+        padding: 1rem 0 0 !important;
+    }
+    .footer-container .copyright div span {
+        color: white;
+    }
+    .footer-container .location-selector {
+        padding: 0 0 0.5rem !important;
+    }
+    .footer-container .location-selector .label-container {
+        border-top: 1px solid #3b3b3b;
+        border-bottom: 0 !important;
+        padding: 1.75rem 0 0 !important;
+        margin: 0 0.5rem;
+        cursor: default;
+    }
+    .footer-container .footer-bottom li:not(:first-child) a {
+        padding: 0 0.25rem;
+    }
+    .footer-container .footer-toggle-icon {
+        display: block;
+        float: right;
+        font-size: 30px;
+        line-height: 15px;
+        font-weight: 300;
+        text-decoration: none !important;
+    }
+    .footer-container .footer-active .footer-toggle-icon {
+        line-height: 12px;
+    }
+    .footer-container .footer-toggle-icon::after {
+        content: "+";
+    }
+    .footer-container .footer-active .footer-toggle-icon::after {
+        content: "×";
+    }
+    .footer-container .label-toggle {
+        cursor: pointer;
+    }
+    .footer-container .footer-top .label-container div {
+        display: none;
+    }
+    .footer-container .footer-middle .label-container,
+    .footer-container .footer-bottom,
+    .footer-container .location-selector {
+        text-align: center !important;
+    }
+    .footer-container .footer-bottom {
+        padding: 0.8rem 0 1.25rem;
+    }
+    .footer-container .footer-middle {
+        display: none;
+    }
+    .footer-container .footer-copyright-xs {
+        display: block;
+    }
+    .footer-container .footer-middle .social-media .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+.hatchArea .hasStock ul li a {
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #313131;
+}
+ @media screen and (max-width:767px){#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_2]{background-image:none;background-color:#111;min-height:1px;}} @media screen and (-webkit-max-device-pixel-ratio: 1) and (min-width: 1200px), screen and (min-width: 768px) and (max-width: 1200px){#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_2]{background-image:none;background-color:#111;min-height:1px;}#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_3]{max-height:1px;}} @media screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1200px){#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_2]{background-image:none;background-color:#111;min-height:1px;}#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_3]{max-height:1px;}} @media screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1200px){#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_2]{background-image:none;background-color:#111;min-height:1px;}#pnxssr_82905c8dd504730353481020b8a3f2b5 div[pnxssr_3]{max-height:1px;}}

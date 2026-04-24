@@ -1,0 +1,29 @@
+/* 공통 footer 개인정보 처리방침 영역 */
+footer.footer > ul.fnb > li > div.footer_select_box > div.selectric-wrapper > div.selectric {
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+footer.footer > ul.fnb > li > div.footer_select_box > div.selectric-wrapper > div.selectric > .button {
+  background-color: transparent;
+  width: 10px;
+  height: 20px;
+}
+
+footer.footer > ul.fnb > li > div.footer_select_box > div.selectric-wrapper > div.selectric > .label {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  margin: 0 40px 0 0;
+}
+
+footer.footer > ul.fnb > li > div.footer_select_box > div.selectric-wrapper > div.selectric-items > .selectric-scroll > ul > li {
+  color: #666666;
+}
+
+footer.footer > ul.fnb > li > div.footer_select_box > div.selectric-wrapper > div.selectric-items > .selectric-scroll > ul > li:first-child {
+  display: none;
+}

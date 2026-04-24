@@ -1,0 +1,90 @@
+{
+  "slug": "lg",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".mainpop .conbox ul li .btn",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mainpop .conbox ul li .btn {display: inline-block; padding: 0 14px 0 46px; height: 30px; font-size: 15px; color: #fff; line-height: 30px; letter-spacing: -0.02em; vertical-align:middle;}"
+    },
+    {
+      "selector": ".mainpop .conbox ul li .btn.go",
+      "property": "background",
+      "hex": "#DD3C70",
+      "rule_snippet": ".mainpop .conbox ul li .btn.go {background: #dd3c70 url('../images/main/popimg/mainpop_gobtn_bg2.jpg') no-repeat left center; font-size: 14px; height: 26px; line-height: 26px; margin-left: 15px;}"
+    },
+    {
+      "selector": ".mainpop .conbox ul li .btn.down",
+      "property": "background",
+      "hex": "#EBB3A4",
+      "rule_snippet": ".mainpop .conbox ul li .btn.down {background: #ebb3a4 url('../images/main/popimg/mainpop_downbtn_bg1.jpg') no-repeat left center; font-size: 14px; height: 26px; line-height: 26px;}"
+    },
+    {
+      "selector": ".mainpop .conbox ul li .btn",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".mainpop .conbox ul li .btn {padding: 0 14px 0 3rem; height: 1.7rem; font-size: 0.9rem; color: #fff; line-height: 1.7rem;}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#555555",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#494949",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#B31045",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C00000",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D9D9D9",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DD3C70",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EBB3A4",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EBEBEB",
+      "count": 2,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 14,
+    "by_role": {
+      "chromatic": 4,
+      "neutral": 6,
+      "selector": 4
+    }
+  }
+}

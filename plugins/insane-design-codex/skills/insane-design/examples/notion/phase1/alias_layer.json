@@ -1,0 +1,1878 @@
+{
+  "slug": "notion",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--arrow-button-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--border-button-radius",
+        "references": [
+          "--border-radius-500"
+        ],
+        "terminal_hint": "--border-radius-500"
+      },
+      {
+        "alias": "--button-border-radius",
+        "references": [
+          "--border-radius-500"
+        ],
+        "terminal_hint": "--border-radius-500"
+      },
+      {
+        "alias": "--color-button-ghost-background",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-ghost-background-active",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-ghost-background-focus",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-ghost-background-hover",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-ghost-border",
+        "references": [
+          "--color-transparent"
+        ],
+        "terminal_hint": "--color-transparent"
+      },
+      {
+        "alias": "--color-button-ghost-indicator",
+        "references": [
+          "--color-gray-500"
+        ],
+        "terminal_hint": "--color-gray-500"
+      },
+      {
+        "alias": "--color-button-ghost-text",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-primary",
+        "references": [
+          "--color-gray-900"
+        ],
+        "terminal_hint": "--color-gray-900"
+      },
+      {
+        "alias": "--color-button-primary-active",
+        "references": [
+          "--color-gray-700"
+        ],
+        "terminal_hint": "--color-gray-700"
+      },
+      {
+        "alias": "--color-button-primary-background",
+        "references": [
+          "--color-gray-900"
+        ],
+        "terminal_hint": "--color-gray-900"
+      },
+      {
+        "alias": "--color-button-primary-background-active",
+        "references": [
+          "--color-gray-700"
+        ],
+        "terminal_hint": "--color-gray-700"
+      },
+      {
+        "alias": "--color-button-primary-background-focus",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-primary-background-hover",
+        "references": [
+          "--color-gray-800"
+        ],
+        "terminal_hint": "--color-gray-800"
+      },
+      {
+        "alias": "--color-button-primary-border",
+        "references": [
+          "--color-transparent"
+        ],
+        "terminal_hint": "--color-transparent"
+      },
+      {
+        "alias": "--color-button-primary-hover",
+        "references": [
+          "--color-gray-800"
+        ],
+        "terminal_hint": "--color-gray-800"
+      },
+      {
+        "alias": "--color-button-primary-text",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--color-button-secondary",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--color-button-secondary-active",
+        "references": [
+          "--color-gray-100"
+        ],
+        "terminal_hint": "--color-gray-100"
+      },
+      {
+        "alias": "--color-button-secondary-background",
+        "references": [
+          "--color-yellow-200"
+        ],
+        "terminal_hint": "--color-yellow-200"
+      },
+      {
+        "alias": "--color-button-secondary-background-active",
+        "references": [
+          "--color-yellow-100"
+        ],
+        "terminal_hint": "--color-yellow-100"
+      },
+      {
+        "alias": "--color-button-secondary-background-focus",
+        "references": [
+          "--color-yellow-100"
+        ],
+        "terminal_hint": "--color-yellow-100"
+      },
+      {
+        "alias": "--color-button-secondary-background-hover",
+        "references": [
+          "--color-yellow-100"
+        ],
+        "terminal_hint": "--color-yellow-100"
+      },
+      {
+        "alias": "--color-button-secondary-border",
+        "references": [
+          "--color-alpha-black-200"
+        ],
+        "terminal_hint": "--color-alpha-black-200"
+      },
+      {
+        "alias": "--color-button-secondary-hover",
+        "references": [
+          "--color-gray-100"
+        ],
+        "terminal_hint": "--color-gray-100"
+      },
+      {
+        "alias": "--color-button-secondary-text",
+        "references": [
+          "--color-gray-900"
+        ],
+        "terminal_hint": "--color-gray-900"
+      },
+      {
+        "alias": "--color-button-secondary-text-interactive",
+        "references": [
+          "--color-black"
+        ],
+        "terminal_hint": "--color-black"
+      },
+      {
+        "alias": "--color-button-tertiary",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--color-button-tertiary-active",
+        "references": [
+          "--color-gray-200"
+        ],
+        "terminal_hint": "--color-gray-200"
+      },
+      {
+        "alias": "--color-button-tertiary-background",
+        "references": [
+          "--color-transparent"
+        ],
+        "terminal_hint": "--color-transparent"
+      },
+      {
+        "alias": "--color-button-tertiary-background-active",
+        "references": [
+          "--color-alpha-white-200"
+        ],
+        "terminal_hint": "--color-alpha-white-200"
+      },
+      {
+        "alias": "--color-button-tertiary-background-focus",
+        "references": [
+          "--color-alpha-white-100"
+        ],
+        "terminal_hint": "--color-alpha-white-100"
+      },
+      {
+        "alias": "--color-button-tertiary-background-hover",
+        "references": [
+          "--color-alpha-white-100"
+        ],
+        "terminal_hint": "--color-alpha-white-100"
+      },
+      {
+        "alias": "--color-button-tertiary-border",
+        "references": [
+          "--color-alpha-black-200"
+        ],
+        "terminal_hint": "--color-alpha-black-200"
+      },
+      {
+        "alias": "--color-button-tertiary-hover",
+        "references": [
+          "--color-gray-200"
+        ],
+        "terminal_hint": "--color-gray-200"
+      },
+      {
+        "alias": "--color-button-tertiary-text",
+        "references": [
+          "--color-alpha-black-900"
+        ],
+        "terminal_hint": "--color-alpha-black-900"
+      },
+      {
+        "alias": "--color-filter-button-background",
+        "references": [
+          "--color-gray-100"
+        ],
+        "terminal_hint": "--color-gray-100"
+      },
+      {
+        "alias": "--color-filter-button-border",
+        "references": [
+          "--color-gray-100"
+        ],
+        "terminal_hint": "--color-gray-100"
+      },
+      {
+        "alias": "--color-filter-button-border-active",
+        "references": [
+          "--color-alpha-black-200"
+        ],
+        "terminal_hint": "--color-alpha-black-200"
+      },
+      {
+        "alias": "--color-icon-button-active",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--color-icon-button-background-active",
+        "references": [
+          "--color-alpha-white-200"
+        ],
+        "terminal_hint": "--color-alpha-white-200"
+      },
+      {
+        "alias": "--color-icon-button-background-focus",
+        "references": [
+          "--color-alpha-white-200"
+        ],
+        "terminal_hint": "--color-alpha-white-200"
+      },
+      {
+        "alias": "--color-icon-button-background-hover",
+        "references": [
+          "--color-alpha-black-100"
+        ],
+        "terminal_hint": "--color-alpha-black-100"
+      },
+      {
+        "alias": "--color-icon-button-focus",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--color-icon-button-hover",
+        "references": [
+          "--color-gray-600"
+        ],
+        "terminal_hint": "--color-gray-600"
+      },
+      {
+        "alias": "--dialog-header-min-close-button-margin-left",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--icon-button-background-inset-horizontal",
+        "references": [
+          "--icon-button-padding-horizontal",
+          "--icon-button-icon-to-background-distance"
+        ],
+        "terminal_hint": "--icon-button-padding-horizontal"
+      },
+      {
+        "alias": "--icon-button-background-inset-vertical",
+        "references": [
+          "--icon-button-padding-vertical",
+          "--icon-button-icon-to-background-distance"
+        ],
+        "terminal_hint": "--icon-button-padding-vertical"
+      },
+      {
+        "alias": "--icon-button-background-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--icon-button-bottom-edge-margin",
+        "references": [
+          "--icon-button-background-inset-vertical"
+        ],
+        "terminal_hint": "--icon-button-background-inset-vertical"
+      },
+      {
+        "alias": "--icon-button-edge-block-margin",
+        "references": [
+          "--icon-button-surface-inset-block"
+        ],
+        "terminal_hint": "--icon-button-surface-inset-block"
+      },
+      {
+        "alias": "--icon-button-edge-inline-margin",
+        "references": [
+          "--icon-button-surface-inset-inline"
+        ],
+        "terminal_hint": "--icon-button-surface-inset-inline"
+      },
+      {
+        "alias": "--icon-button-focus-ring-box-shadow",
+        "references": [
+          "--color-black",
+          "--color-white"
+        ],
+        "terminal_hint": "--color-black"
+      },
+      {
+        "alias": "--icon-button-font-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--icon-button-icon-size",
+        "references": [
+          "--spacing-20"
+        ],
+        "terminal_hint": "--spacing-20"
+      },
+      {
+        "alias": "--icon-button-icon-to-background-distance",
+        "references": [
+          "--icon-button-background-size",
+          "--icon-button-font-size"
+        ],
+        "terminal_hint": "--icon-button-background-size"
+      },
+      {
+        "alias": "--icon-button-icon-to-surface-distance",
+        "references": [
+          "--icon-button-surface-size",
+          "--icon-button-icon-size"
+        ],
+        "terminal_hint": "--icon-button-surface-size"
+      },
+      {
+        "alias": "--icon-button-left-edge-margin",
+        "references": [
+          "--icon-button-background-inset-horizontal"
+        ],
+        "terminal_hint": "--icon-button-background-inset-horizontal"
+      },
+      {
+        "alias": "--icon-button-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--icon-button-padding-block",
+        "references": [
+          "--spacing-12"
+        ],
+        "terminal_hint": "--spacing-12"
+      },
+      {
+        "alias": "--icon-button-padding-horizontal",
+        "references": [
+          "--icon-button-icon-to-background-distance"
+        ],
+        "terminal_hint": "--icon-button-icon-to-background-distance"
+      },
+      {
+        "alias": "--icon-button-padding-inline",
+        "references": [
+          "--spacing-12"
+        ],
+        "terminal_hint": "--spacing-12"
+      },
+      {
+        "alias": "--icon-button-padding-vertical",
+        "references": [
+          "--icon-button-padding"
+        ],
+        "terminal_hint": "--icon-button-padding"
+      },
+      {
+        "alias": "--icon-button-right-edge-margin",
+        "references": [
+          "--icon-button-background-inset-horizontal"
+        ],
+        "terminal_hint": "--icon-button-background-inset-horizontal"
+      },
+      {
+        "alias": "--icon-button-surface-inset-block",
+        "references": [
+          "--icon-button-padding-block",
+          "--icon-button-icon-to-surface-distance"
+        ],
+        "terminal_hint": "--icon-button-padding-block"
+      },
+      {
+        "alias": "--icon-button-surface-inset-inline",
+        "references": [
+          "--icon-button-padding-inline",
+          "--icon-button-icon-to-surface-distance"
+        ],
+        "terminal_hint": "--icon-button-padding-inline"
+      },
+      {
+        "alias": "--icon-button-surface-size",
+        "references": [
+          "--spacing-28"
+        ],
+        "terminal_hint": "--spacing-28"
+      },
+      {
+        "alias": "--icon-button-top-edge-margin",
+        "references": [
+          "--icon-button-background-inset-vertical"
+        ],
+        "terminal_hint": "--icon-button-background-inset-vertical"
+      },
+      {
+        "alias": "--playback-button-display",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--playback-button-size",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--typography-interaction-button-large-font",
+        "references": [
+          "--typography-sans-200-semibold-font"
+        ],
+        "terminal_hint": "--typography-sans-200-semibold-font"
+      },
+      {
+        "alias": "--typography-interaction-button-large-font-computed",
+        "references": [
+          "--typography-interaction-button-large-xxl-font",
+          "--typography-interaction-button-large-xl-font",
+          "--typography-interaction-button-large-lg-font",
+          "--typography-interaction-button-large-md-font",
+          "--typography-interaction-button-large-sm-font"
+        ],
+        "terminal_hint": "--typography-interaction-button-large-xxl-font"
+      },
+      {
+        "alias": "--typography-interaction-button-large-letter-spacing",
+        "references": [
+          "--typography-sans-200-semibold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-semibold-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-button-large-letter-spacing-computed",
+        "references": [
+          "--typography-interaction-button-large-xxl-letter-spacing",
+          "--typography-interaction-button-large-xl-letter-spacing",
+          "--typography-interaction-button-large-lg-letter-spacing",
+          "--typography-interaction-button-large-md-letter-spacing",
+          "--typography-interaction-button-large-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-interaction-button-large-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-button-medium-font",
+        "references": [
+          "--typography-sans-200-medium-font"
+        ],
+        "terminal_hint": "--typography-sans-200-medium-font"
+      },
+      {
+        "alias": "--typography-interaction-button-medium-font-computed",
+        "references": [
+          "--typography-interaction-button-medium-xxl-font",
+          "--typography-interaction-button-medium-xl-font",
+          "--typography-interaction-button-medium-lg-font",
+          "--typography-interaction-button-medium-md-font",
+          "--typography-interaction-button-medium-sm-font"
+        ],
+        "terminal_hint": "--typography-interaction-button-medium-xxl-font"
+      },
+      {
+        "alias": "--typography-interaction-button-medium-letter-spacing",
+        "references": [
+          "--typography-sans-200-medium-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-medium-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-button-medium-letter-spacing-computed",
+        "references": [
+          "--typography-interaction-button-medium-xxl-letter-spacing",
+          "--typography-interaction-button-medium-xl-letter-spacing",
+          "--typography-interaction-button-medium-lg-letter-spacing",
+          "--typography-interaction-button-medium-md-letter-spacing",
+          "--typography-interaction-button-medium-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-interaction-button-medium-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-button-small-font",
+        "references": [
+          "--typography-sans-100-medium-font"
+        ],
+        "terminal_hint": "--typography-sans-100-medium-font"
+      },
+      {
+        "alias": "--typography-interaction-button-small-font-computed",
+        "references": [
+          "--typography-interaction-button-small-xxl-font",
+          "--typography-interaction-button-small-xl-font",
+          "--typography-interaction-button-small-lg-font",
+          "--typography-interaction-button-small-md-font",
+          "--typography-interaction-button-small-sm-font"
+        ],
+        "terminal_hint": "--typography-interaction-button-small-xxl-font"
+      },
+      {
+        "alias": "--typography-interaction-button-small-letter-spacing",
+        "references": [
+          "--typography-sans-100-medium-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-100-medium-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-button-small-letter-spacing-computed",
+        "references": [
+          "--typography-interaction-button-small-xxl-letter-spacing",
+          "--typography-interaction-button-small-xl-letter-spacing",
+          "--typography-interaction-button-small-lg-letter-spacing",
+          "--typography-interaction-button-small-md-letter-spacing",
+          "--typography-interaction-button-small-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-interaction-button-small-xxl-letter-spacing"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--border-card-radius",
+        "references": [
+          "--border-radius-700"
+        ],
+        "terminal_hint": "--border-radius-700"
+      },
+      {
+        "alias": "--campaign-nav-bg",
+        "references": [
+          "--color-background-base"
+        ],
+        "terminal_hint": "--color-background-base"
+      },
+      {
+        "alias": "--color-card-accent",
+        "references": [
+          "--color-yellow-500"
+        ],
+        "terminal_hint": "--color-yellow-500"
+      },
+      {
+        "alias": "--color-card-background",
+        "references": [
+          "--color-gray-800"
+        ],
+        "terminal_hint": "--color-gray-800"
+      },
+      {
+        "alias": "--color-card-body-block-text",
+        "references": [
+          "--color-alpha-white-800"
+        ],
+        "terminal_hint": "--color-alpha-white-800"
+      },
+      {
+        "alias": "--color-card-body-text",
+        "references": [
+          "--color-card-body-block-text"
+        ],
+        "terminal_hint": "--color-card-body-block-text"
+      },
+      {
+        "alias": "--color-card-border",
+        "references": [
+          "--color-alpha-white-200"
+        ],
+        "terminal_hint": "--color-alpha-white-200"
+      },
+      {
+        "alias": "--color-card-supporting-text",
+        "references": [
+          "--color-alpha-white-600"
+        ],
+        "terminal_hint": "--color-alpha-white-600"
+      },
+      {
+        "alias": "--color-card-title-text",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--dialog-body-horizontal-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-body-top-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-header-horizontal-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-header-min-close-button-margin-left",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--dialog-header-vertical-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--hero-nav-bg",
+        "references": [
+          "--color-white"
+        ],
+        "terminal_hint": "--color-white"
+      },
+      {
+        "alias": "--input-display",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-padding",
+        "references": [
+          "--spacing-24"
+        ],
+        "terminal_hint": "--spacing-24"
+      },
+      {
+        "alias": "--input-padding-horizontal",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--input-padding-vertical",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--nav-height",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--nav-offset",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--nav-top-padding",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--spacing-card-padding-block-end",
+        "references": [
+          "--spacing-16"
+        ],
+        "terminal_hint": "--spacing-16"
+      },
+      {
+        "alias": "--spacing-card-padding-block-end-block",
+        "references": [
+          "--spacing-28"
+        ],
+        "terminal_hint": "--spacing-28"
+      },
+      {
+        "alias": "--spacing-card-padding-block-end-sm",
+        "references": [
+          "--spacing-24"
+        ],
+        "terminal_hint": "--spacing-24"
+      },
+      {
+        "alias": "--spacing-card-padding-block-start",
+        "references": [
+          "--spacing-16"
+        ],
+        "terminal_hint": "--spacing-16"
+      },
+      {
+        "alias": "--spacing-card-padding-block-start-block",
+        "references": [
+          "--spacing-28"
+        ],
+        "terminal_hint": "--spacing-28"
+      },
+      {
+        "alias": "--spacing-card-padding-block-start-sm",
+        "references": [
+          "--spacing-24"
+        ],
+        "terminal_hint": "--spacing-24"
+      },
+      {
+        "alias": "--spacing-card-padding-inline",
+        "references": [
+          "--spacing-16"
+        ],
+        "terminal_hint": "--spacing-16"
+      },
+      {
+        "alias": "--spacing-card-padding-inline-block",
+        "references": [
+          "--spacing-32"
+        ],
+        "terminal_hint": "--spacing-32"
+      },
+      {
+        "alias": "--spacing-card-padding-inline-sm",
+        "references": [
+          "--spacing-24"
+        ],
+        "terminal_hint": "--spacing-24"
+      },
+      {
+        "alias": "--state-dialog-max-width",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--typography-card-body-font",
+        "references": [
+          "--typography-sans-200-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-font"
+      },
+      {
+        "alias": "--typography-card-body-font-computed",
+        "references": [
+          "--typography-card-body-xxl-font",
+          "--typography-card-body-xl-font",
+          "--typography-card-body-lg-font",
+          "--typography-card-body-md-font",
+          "--typography-card-body-sm-font"
+        ],
+        "terminal_hint": "--typography-card-body-xxl-font"
+      },
+      {
+        "alias": "--typography-card-body-letter-spacing",
+        "references": [
+          "--typography-sans-200-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-body-letter-spacing-computed",
+        "references": [
+          "--typography-card-body-xxl-letter-spacing",
+          "--typography-card-body-xl-letter-spacing",
+          "--typography-card-body-lg-letter-spacing",
+          "--typography-card-body-md-letter-spacing",
+          "--typography-card-body-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-body-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-body-summary-font",
+        "references": [
+          "--typography-sans-100-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-font"
+      },
+      {
+        "alias": "--typography-card-body-summary-font-computed",
+        "references": [
+          "--typography-card-body-summary-xxl-font",
+          "--typography-card-body-summary-xl-font",
+          "--typography-card-body-summary-lg-font",
+          "--typography-card-body-summary-md-font",
+          "--typography-card-body-summary-sm-font"
+        ],
+        "terminal_hint": "--typography-card-body-summary-xxl-font"
+      },
+      {
+        "alias": "--typography-card-body-summary-letter-spacing",
+        "references": [
+          "--typography-sans-100-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-body-summary-letter-spacing-computed",
+        "references": [
+          "--typography-card-body-summary-xxl-letter-spacing",
+          "--typography-card-body-summary-xl-letter-spacing",
+          "--typography-card-body-summary-lg-letter-spacing",
+          "--typography-card-body-summary-md-letter-spacing",
+          "--typography-card-body-summary-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-body-summary-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-context-feature-font",
+        "references": [
+          "--typography-sans-100-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-font"
+      },
+      {
+        "alias": "--typography-card-context-feature-font-computed",
+        "references": [
+          "--typography-card-context-feature-xxl-font",
+          "--typography-card-context-feature-xl-font",
+          "--typography-card-context-feature-lg-font",
+          "--typography-card-context-feature-md-font",
+          "--typography-card-context-feature-sm-font"
+        ],
+        "terminal_hint": "--typography-card-context-feature-xxl-font"
+      },
+      {
+        "alias": "--typography-card-context-feature-letter-spacing",
+        "references": [
+          "--typography-sans-100-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-context-feature-letter-spacing-computed",
+        "references": [
+          "--typography-card-context-feature-xxl-letter-spacing",
+          "--typography-card-context-feature-xl-letter-spacing",
+          "--typography-card-context-feature-lg-letter-spacing",
+          "--typography-card-context-feature-md-letter-spacing",
+          "--typography-card-context-feature-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-context-feature-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-context-font",
+        "references": [
+          "--typography-sans-200-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-font"
+      },
+      {
+        "alias": "--typography-card-context-font-computed",
+        "references": [
+          "--typography-card-context-xxl-font",
+          "--typography-card-context-xl-font",
+          "--typography-card-context-lg-font",
+          "--typography-card-context-md-font",
+          "--typography-card-context-sm-font"
+        ],
+        "terminal_hint": "--typography-card-context-xxl-font"
+      },
+      {
+        "alias": "--typography-card-context-letter-spacing",
+        "references": [
+          "--typography-sans-200-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-context-letter-spacing-computed",
+        "references": [
+          "--typography-card-context-xxl-letter-spacing",
+          "--typography-card-context-xl-letter-spacing",
+          "--typography-card-context-lg-letter-spacing",
+          "--typography-card-context-md-letter-spacing",
+          "--typography-card-context-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-context-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-note-font",
+        "references": [
+          "--typography-sans-100-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-font"
+      },
+      {
+        "alias": "--typography-card-note-font-computed",
+        "references": [
+          "--typography-card-note-xxl-font",
+          "--typography-card-note-xl-font",
+          "--typography-card-note-lg-font",
+          "--typography-card-note-md-font",
+          "--typography-card-note-sm-font"
+        ],
+        "terminal_hint": "--typography-card-note-xxl-font"
+      },
+      {
+        "alias": "--typography-card-note-letter-spacing",
+        "references": [
+          "--typography-sans-100-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-100-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-note-letter-spacing-computed",
+        "references": [
+          "--typography-card-note-xxl-letter-spacing",
+          "--typography-card-note-xl-letter-spacing",
+          "--typography-card-note-lg-letter-spacing",
+          "--typography-card-note-md-letter-spacing",
+          "--typography-card-note-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-note-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-quote-font",
+        "references": [
+          "--typography-serif-350-regular-font"
+        ],
+        "terminal_hint": "--typography-serif-350-regular-font"
+      },
+      {
+        "alias": "--typography-card-quote-font-computed",
+        "references": [
+          "--typography-card-quote-xxl-font",
+          "--typography-card-quote-xl-font",
+          "--typography-card-quote-lg-font",
+          "--typography-card-quote-md-font",
+          "--typography-card-quote-sm-font"
+        ],
+        "terminal_hint": "--typography-card-quote-xxl-font"
+      },
+      {
+        "alias": "--typography-card-quote-letter-spacing",
+        "references": [
+          "--typography-serif-350-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-serif-350-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-quote-letter-spacing-computed",
+        "references": [
+          "--typography-card-quote-xxl-letter-spacing",
+          "--typography-card-quote-xl-letter-spacing",
+          "--typography-card-quote-lg-letter-spacing",
+          "--typography-card-quote-md-letter-spacing",
+          "--typography-card-quote-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-quote-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-block-font",
+        "references": [
+          "--typography-sans-300-bold-font"
+        ],
+        "terminal_hint": "--typography-sans-300-bold-font"
+      },
+      {
+        "alias": "--typography-card-title-block-font-computed",
+        "references": [
+          "--typography-card-title-block-xxl-font",
+          "--typography-card-title-block-xl-font",
+          "--typography-card-title-block-lg-font",
+          "--typography-card-title-block-md-font",
+          "--typography-card-title-block-sm-font"
+        ],
+        "terminal_hint": "--typography-card-title-block-xxl-font"
+      },
+      {
+        "alias": "--typography-card-title-block-letter-spacing",
+        "references": [
+          "--typography-sans-300-bold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-300-bold-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-block-letter-spacing-computed",
+        "references": [
+          "--typography-card-title-block-xxl-letter-spacing",
+          "--typography-card-title-block-xl-letter-spacing",
+          "--typography-card-title-block-lg-letter-spacing",
+          "--typography-card-title-block-md-letter-spacing",
+          "--typography-card-title-block-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-title-block-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-feature-font",
+        "references": [
+          "--typography-sans-350-bold-font"
+        ],
+        "terminal_hint": "--typography-sans-350-bold-font"
+      },
+      {
+        "alias": "--typography-card-title-feature-font-computed",
+        "references": [
+          "--typography-card-title-feature-xxl-font",
+          "--typography-card-title-feature-xl-font",
+          "--typography-card-title-feature-lg-font",
+          "--typography-card-title-feature-md-font",
+          "--typography-card-title-feature-sm-font"
+        ],
+        "terminal_hint": "--typography-card-title-feature-xxl-font"
+      },
+      {
+        "alias": "--typography-card-title-feature-letter-spacing",
+        "references": [
+          "--typography-sans-350-bold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-350-bold-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-feature-letter-spacing-computed",
+        "references": [
+          "--typography-card-title-feature-xxl-letter-spacing",
+          "--typography-card-title-feature-xl-letter-spacing",
+          "--typography-card-title-feature-lg-letter-spacing",
+          "--typography-card-title-feature-md-letter-spacing",
+          "--typography-card-title-feature-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-title-feature-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-feature-md-font",
+        "references": [
+          "--typography-sans-400-bold-font"
+        ],
+        "terminal_hint": "--typography-sans-400-bold-font"
+      },
+      {
+        "alias": "--typography-card-title-feature-md-letter-spacing",
+        "references": [
+          "--typography-sans-400-bold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-400-bold-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-font",
+        "references": [
+          "--typography-sans-400-bold-font"
+        ],
+        "terminal_hint": "--typography-sans-400-bold-font"
+      },
+      {
+        "alias": "--typography-card-title-font-computed",
+        "references": [
+          "--typography-card-title-xxl-font",
+          "--typography-card-title-xl-font",
+          "--typography-card-title-lg-font",
+          "--typography-card-title-md-font",
+          "--typography-card-title-sm-font"
+        ],
+        "terminal_hint": "--typography-card-title-xxl-font"
+      },
+      {
+        "alias": "--typography-card-title-letter-spacing",
+        "references": [
+          "--typography-sans-400-bold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-400-bold-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-letter-spacing-computed",
+        "references": [
+          "--typography-card-title-xxl-letter-spacing",
+          "--typography-card-title-xl-letter-spacing",
+          "--typography-card-title-lg-letter-spacing",
+          "--typography-card-title-md-letter-spacing",
+          "--typography-card-title-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-title-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-summary-font",
+        "references": [
+          "--typography-sans-200-bold-font"
+        ],
+        "terminal_hint": "--typography-sans-200-bold-font"
+      },
+      {
+        "alias": "--typography-card-title-summary-font-computed",
+        "references": [
+          "--typography-card-title-summary-xxl-font",
+          "--typography-card-title-summary-xl-font",
+          "--typography-card-title-summary-lg-font",
+          "--typography-card-title-summary-md-font",
+          "--typography-card-title-summary-sm-font"
+        ],
+        "terminal_hint": "--typography-card-title-summary-xxl-font"
+      },
+      {
+        "alias": "--typography-card-title-summary-letter-spacing",
+        "references": [
+          "--typography-sans-200-bold-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-bold-letter-spacing"
+      },
+      {
+        "alias": "--typography-card-title-summary-letter-spacing-computed",
+        "references": [
+          "--typography-card-title-summary-xxl-letter-spacing",
+          "--typography-card-title-summary-xl-letter-spacing",
+          "--typography-card-title-summary-lg-letter-spacing",
+          "--typography-card-title-summary-md-letter-spacing",
+          "--typography-card-title-summary-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-card-title-summary-xxl-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-form-input-font",
+        "references": [
+          "--typography-sans-200-regular-font"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-font"
+      },
+      {
+        "alias": "--typography-interaction-form-input-font-computed",
+        "references": [
+          "--typography-interaction-form-input-xxl-font",
+          "--typography-interaction-form-input-xl-font",
+          "--typography-interaction-form-input-lg-font",
+          "--typography-interaction-form-input-md-font",
+          "--typography-interaction-form-input-sm-font"
+        ],
+        "terminal_hint": "--typography-interaction-form-input-xxl-font"
+      },
+      {
+        "alias": "--typography-interaction-form-input-letter-spacing",
+        "references": [
+          "--typography-sans-200-regular-letter-spacing"
+        ],
+        "terminal_hint": "--typography-sans-200-regular-letter-spacing"
+      },
+      {
+        "alias": "--typography-interaction-form-input-letter-spacing-computed",
+        "references": [
+          "--typography-interaction-form-input-xxl-letter-spacing",
+          "--typography-interaction-form-input-xl-letter-spacing",
+          "--typography-interaction-form-input-lg-letter-spacing",
+          "--typography-interaction-form-input-md-letter-spacing",
+          "--typography-interaction-form-input-sm-letter-spacing"
+        ],
+        "terminal_hint": "--typography-interaction-form-input-xxl-letter-spacing"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--block-media-border-color",
+        "references": [],
+        "terminal_hint": "#00000008"
+      },
+      {
+        "alias": "--border-color-regular",
+        "references": [],
+        "terminal_hint": "#00000014"
+      },
+      {
+        "alias": "--caption-progress-bar-color",
+        "references": [],
+        "terminal_hint": "#84bff5"
+      },
+      {
+        "alias": "--caption-progress-track-color",
+        "references": [],
+        "terminal_hint": "#00000014"
+      },
+      {
+        "alias": "--color-alpha-black-100",
+        "references": [],
+        "terminal_hint": "#0000000d"
+      },
+      {
+        "alias": "--color-alpha-black-200",
+        "references": [],
+        "terminal_hint": "#0000001a"
+      },
+      {
+        "alias": "--color-alpha-black-300",
+        "references": [],
+        "terminal_hint": "#0003"
+      },
+      {
+        "alias": "--color-alpha-black-400",
+        "references": [],
+        "terminal_hint": "#0000004d"
+      },
+      {
+        "alias": "--color-alpha-black-500",
+        "references": [],
+        "terminal_hint": "#0000008a"
+      },
+      {
+        "alias": "--color-alpha-black-600",
+        "references": [],
+        "terminal_hint": "#00000096"
+      },
+      {
+        "alias": "--color-alpha-black-700",
+        "references": [],
+        "terminal_hint": "#000000bf"
+      },
+      {
+        "alias": "--color-alpha-black-800",
+        "references": [],
+        "terminal_hint": "#000000e6"
+      },
+      {
+        "alias": "--color-alpha-black-900",
+        "references": [],
+        "terminal_hint": "#000000f2"
+      },
+      {
+        "alias": "--color-alpha-white-100",
+        "references": [],
+        "terminal_hint": "#ffffff0d"
+      },
+      {
+        "alias": "--color-alpha-white-200",
+        "references": [],
+        "terminal_hint": "#ffffff1a"
+      },
+      {
+        "alias": "--color-alpha-white-300",
+        "references": [],
+        "terminal_hint": "#fff3"
+      },
+      {
+        "alias": "--color-alpha-white-400",
+        "references": [],
+        "terminal_hint": "#ffffff4d"
+      },
+      {
+        "alias": "--color-alpha-white-500",
+        "references": [],
+        "terminal_hint": "#ffffff80"
+      },
+      {
+        "alias": "--color-alpha-white-600",
+        "references": [],
+        "terminal_hint": "#ffffffa8"
+      },
+      {
+        "alias": "--color-alpha-white-700",
+        "references": [],
+        "terminal_hint": "#ffffffbf"
+      },
+      {
+        "alias": "--color-alpha-white-800",
+        "references": [],
+        "terminal_hint": "#ffffffd9"
+      },
+      {
+        "alias": "--color-alpha-white-900",
+        "references": [],
+        "terminal_hint": "#fffffff2"
+      },
+      {
+        "alias": "--color-black",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--color-blue-100",
+        "references": [],
+        "terminal_hint": "#f2f9ff"
+      },
+      {
+        "alias": "--color-blue-200",
+        "references": [],
+        "terminal_hint": "#e6f3fe"
+      },
+      {
+        "alias": "--color-blue-300",
+        "references": [],
+        "terminal_hint": "#93cdfe"
+      },
+      {
+        "alias": "--color-blue-400",
+        "references": [],
+        "terminal_hint": "#62aef0"
+      },
+      {
+        "alias": "--color-blue-500",
+        "references": [],
+        "terminal_hint": "#097fe8"
+      },
+      {
+        "alias": "--color-blue-600",
+        "references": [],
+        "terminal_hint": "#0075de"
+      },
+      {
+        "alias": "--color-blue-700",
+        "references": [],
+        "terminal_hint": "#005bab"
+      },
+      {
+        "alias": "--color-blue-800",
+        "references": [],
+        "terminal_hint": "#00396b"
+      },
+      {
+        "alias": "--color-blue-900",
+        "references": [],
+        "terminal_hint": "#002a4f"
+      },
+      {
+        "alias": "--color-brown-100",
+        "references": [],
+        "terminal_hint": "#fcf8f5"
+      },
+      {
+        "alias": "--color-brown-200",
+        "references": [],
+        "terminal_hint": "#ebd5c5"
+      },
+      {
+        "alias": "--color-brown-300",
+        "references": [],
+        "terminal_hint": "#d9b79f"
+      },
+      {
+        "alias": "--color-brown-400",
+        "references": [],
+        "terminal_hint": "#b18164"
+      },
+      {
+        "alias": "--color-brown-500",
+        "references": [],
+        "terminal_hint": "#9c7054"
+      },
+      {
+        "alias": "--color-brown-600",
+        "references": [],
+        "terminal_hint": "#885d3d"
+      },
+      {
+        "alias": "--color-brown-700",
+        "references": [],
+        "terminal_hint": "#744d2d"
+      },
+      {
+        "alias": "--color-brown-800",
+        "references": [],
+        "terminal_hint": "#654124"
+      },
+      {
+        "alias": "--color-brown-900",
+        "references": [],
+        "terminal_hint": "#523410"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-blue-300",
+        "references": [],
+        "terminal_hint": "#607df6"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-blue-400",
+        "references": [],
+        "terminal_hint": "#455dd3"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-blue-500",
+        "references": [],
+        "terminal_hint": "#394ea3"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-blue-600",
+        "references": [],
+        "terminal_hint": "#213183"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-blue-900",
+        "references": [],
+        "terminal_hint": "#02093a"
+      },
+      {
+        "alias": "--color-campaigns-agents-launch-yellow",
+        "references": [],
+        "terminal_hint": "#fefcd5"
+      },
+      {
+        "alias": "--color-gray-100",
+        "references": [],
+        "terminal_hint": "#f9f9f8"
+      },
+      {
+        "alias": "--color-gray-200",
+        "references": [],
+        "terminal_hint": "#f6f5f4"
+      },
+      {
+        "alias": "--color-gray-300",
+        "references": [],
+        "terminal_hint": "#dfdcd9"
+      },
+      {
+        "alias": "--color-gray-400",
+        "references": [],
+        "terminal_hint": "#a39e98"
+      },
+      {
+        "alias": "--color-gray-500",
+        "references": [],
+        "terminal_hint": "#78736f"
+      },
+      {
+        "alias": "--color-gray-600",
+        "references": [],
+        "terminal_hint": "#615d59"
+      },
+      {
+        "alias": "--color-gray-700",
+        "references": [],
+        "terminal_hint": "#494744"
+      },
+      {
+        "alias": "--color-gray-800",
+        "references": [],
+        "terminal_hint": "#31302e"
+      },
+      {
+        "alias": "--color-gray-900",
+        "references": [],
+        "terminal_hint": "#191918"
+      },
+      {
+        "alias": "--color-green-100",
+        "references": [],
+        "terminal_hint": "#f0faf2"
+      },
+      {
+        "alias": "--color-green-200",
+        "references": [],
+        "terminal_hint": "#d0f4d8"
+      },
+      {
+        "alias": "--color-green-300",
+        "references": [],
+        "terminal_hint": "#abe5b8"
+      },
+      {
+        "alias": "--color-green-400",
+        "references": [],
+        "terminal_hint": "#68ce7e"
+      },
+      {
+        "alias": "--color-green-500",
+        "references": [],
+        "terminal_hint": "#1aae39"
+      },
+      {
+        "alias": "--color-green-600",
+        "references": [],
+        "terminal_hint": "#14832b"
+      },
+      {
+        "alias": "--color-green-700",
+        "references": [],
+        "terminal_hint": "#0f6220"
+      },
+      {
+        "alias": "--color-green-800",
+        "references": [],
+        "terminal_hint": "#0a4216"
+      },
+      {
+        "alias": "--color-green-900",
+        "references": [],
+        "terminal_hint": "#05210b"
+      },
+      {
+        "alias": "--color-header-background",
+        "references": [],
+        "terminal_hint": "#0000"
+      },
+      {
+        "alias": "--color-orange-100",
+        "references": [],
+        "terminal_hint": "#fff5ed"
+      },
+      {
+        "alias": "--color-orange-200",
+        "references": [],
+        "terminal_hint": "#ffdec4"
+      },
+      {
+        "alias": "--color-orange-300",
+        "references": [],
+        "terminal_hint": "#ffad71"
+      },
+      {
+        "alias": "--color-orange-400",
+        "references": [],
+        "terminal_hint": "#ff8a33"
+      },
+      {
+        "alias": "--color-orange-500",
+        "references": [],
+        "terminal_hint": "#ff6d00"
+      },
+      {
+        "alias": "--color-orange-600",
+        "references": [],
+        "terminal_hint": "#dd5b00"
+      },
+      {
+        "alias": "--color-orange-700",
+        "references": [],
+        "terminal_hint": "#ab4a00"
+      },
+      {
+        "alias": "--color-orange-800",
+        "references": [],
+        "terminal_hint": "#793400"
+      },
+      {
+        "alias": "--color-orange-900",
+        "references": [],
+        "terminal_hint": "#532200"
+      },
+      {
+        "alias": "--color-pink-100",
+        "references": [],
+        "terminal_hint": "#fff5fc"
+      },
+      {
+        "alias": "--color-pink-200",
+        "references": [],
+        "terminal_hint": "#ffcdf1"
+      },
+      {
+        "alias": "--color-pink-300",
+        "references": [],
+        "terminal_hint": "#ffb5eb"
+      },
+      {
+        "alias": "--color-pink-400",
+        "references": [],
+        "terminal_hint": "#ff83dd"
+      },
+      {
+        "alias": "--color-pink-500",
+        "references": [],
+        "terminal_hint": "#ff64c8"
+      },
+      {
+        "alias": "--color-pink-600",
+        "references": [],
+        "terminal_hint": "#d13f9d"
+      },
+      {
+        "alias": "--color-pink-700",
+        "references": [],
+        "terminal_hint": "#9d2472"
+      },
+      {
+        "alias": "--color-pink-800",
+        "references": [],
+        "terminal_hint": "#6c1b4f"
+      },
+      {
+        "alias": "--color-pink-900",
+        "references": [],
+        "terminal_hint": "#481034"
+      },
+      {
+        "alias": "--color-purple-100",
+        "references": [],
+        "terminal_hint": "#f8f5fc"
+      },
+      {
+        "alias": "--color-purple-200",
+        "references": [],
+        "terminal_hint": "#eadbfa"
+      },
+      {
+        "alias": "--color-purple-300",
+        "references": [],
+        "terminal_hint": "#d6b6f6"
+      },
+      {
+        "alias": "--color-purple-400",
+        "references": [],
+        "terminal_hint": "#ad6ded"
+      },
+      {
+        "alias": "--color-purple-500",
+        "references": [],
+        "terminal_hint": "#9849e8"
+      },
+      {
+        "alias": "--color-purple-600",
+        "references": [],
+        "terminal_hint": "#7237ae"
+      },
+      {
+        "alias": "--color-purple-700",
+        "references": [],
+        "terminal_hint": "#562983"
+      },
+      {
+        "alias": "--color-purple-800",
+        "references": [],
+        "terminal_hint": "#391c57"
+      },
+      {
+        "alias": "--color-purple-900",
+        "references": [],
+        "terminal_hint": "#1c0e2c"
+      },
+      {
+        "alias": "--color-red-100",
+        "references": [],
+        "terminal_hint": "#fef3f1"
+      },
+      {
+        "alias": "--color-red-200",
+        "references": [],
+        "terminal_hint": "#fdd3cd"
+      },
+      {
+        "alias": "--color-red-300",
+        "references": [],
+        "terminal_hint": "#ff8b7c"
+      },
+      {
+        "alias": "--color-red-400",
+        "references": [],
+        "terminal_hint": "#f77463"
+      },
+      {
+        "alias": "--color-red-500",
+        "references": [],
+        "terminal_hint": "#f64932"
+      },
+      {
+        "alias": "--color-red-600",
+        "references": [],
+        "terminal_hint": "#e32d14"
+      },
+      {
+        "alias": "--color-red-700",
+        "references": [],
+        "terminal_hint": "#b01601"
+      },
+      {
+        "alias": "--color-red-800",
+        "references": [],
+        "terminal_hint": "#6f0d00"
+      },
+      {
+        "alias": "--color-red-900",
+        "references": [],
+        "terminal_hint": "#4f0900"
+      },
+      {
+        "alias": "--color-teal-100",
+        "references": [],
+        "terminal_hint": "#f2fafa"
+      },
+      {
+        "alias": "--color-teal-200",
+        "references": [],
+        "terminal_hint": "#bde6e4"
+      },
+      {
+        "alias": "--color-teal-300",
+        "references": [],
+        "terminal_hint": "#83cbc9"
+      },
+      {
+        "alias": "--color-teal-400",
+        "references": [],
+        "terminal_hint": "#2a9d99"
+      },
+      {
+        "alias": "--color-teal-500",
+        "references": [],
+        "terminal_hint": "#27918d"
+      },
+      {
+        "alias": "--color-teal-600",
+        "references": [],
+        "terminal_hint": "#0a7b77"
+      },
+      {
+        "alias": "--color-teal-700",
+        "references": [],
+        "terminal_hint": "#126764"
+      },
+      {
+        "alias": "--color-teal-800",
+        "references": [],
+        "terminal_hint": "#0a4d4b"
+      },
+      {
+        "alias": "--color-teal-900",
+        "references": [],
+        "terminal_hint": "#042b29"
+      },
+      {
+        "alias": "--color-transparent",
+        "references": [],
+        "terminal_hint": "#fff0"
+      },
+      {
+        "alias": "--color-white",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--color-yellow-100",
+        "references": [],
+        "terminal_hint": "#fff5e0"
+      },
+      {
+        "alias": "--color-yellow-200",
+        "references": [],
+        "terminal_hint": "#ffe4af"
+      },
+      {
+        "alias": "--color-yellow-300",
+        "references": [],
+        "terminal_hint": "#ffd786"
+      },
+      {
+        "alias": "--color-yellow-400",
+        "references": [],
+        "terminal_hint": "#ffc95e"
+      },
+      {
+        "alias": "--color-yellow-500",
+        "references": [],
+        "terminal_hint": "#ffb110"
+      },
+      {
+        "alias": "--color-yellow-600",
+        "references": [],
+        "terminal_hint": "#e89d01"
+      },
+      {
+        "alias": "--color-yellow-700",
+        "references": [],
+        "terminal_hint": "#c78600"
+      },
+      {
+        "alias": "--color-yellow-800",
+        "references": [],
+        "terminal_hint": "#a16c00"
+      },
+      {
+        "alias": "--color-yellow-900",
+        "references": [],
+        "terminal_hint": "#704b00"
+      },
+      {
+        "alias": "--logo-stroke-color",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--section-paint",
+        "references": [],
+        "terminal_hint": "#0000"
+      },
+      {
+        "alias": "--text-color-dark",
+        "references": [],
+        "terminal_hint": "#111"
+      },
+      {
+        "alias": "--text-color-extra-light",
+        "references": [],
+        "terminal_hint": "#0003"
+      },
+      {
+        "alias": "--text-color-light",
+        "references": [],
+        "terminal_hint": "#0006"
+      },
+      {
+        "alias": "--text-color-medium",
+        "references": [],
+        "terminal_hint": "#0009"
+      },
+      {
+        "alias": "--text-color-regular",
+        "references": [],
+        "terminal_hint": "#040404"
+      },
+      {
+        "alias": "--tile-background-color",
+        "references": [],
+        "terminal_hint": "#e1f9ff"
+      },
+      {
+        "alias": "--tile-border-color",
+        "references": [],
+        "terminal_hint": "#19a0ea"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 84,
+      "component": 78,
+      "core": 131
+    }
+  }
+}

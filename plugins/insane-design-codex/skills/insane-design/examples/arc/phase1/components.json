@@ -1,0 +1,46 @@
+{
+  "slug": "arc",
+  "buttons": [
+    {
+      "selector": "button:focus-visible",
+      "props": {
+        "box-shadow": "none",
+        "outline": "2px solid var(--colors-gray7)"
+      }
+    },
+    {
+      "selector": "button",
+      "props": {
+        "background": "transparent",
+        "border": "0",
+        "padding": "0",
+        "margin": "0",
+        "font-family": "var(--font-sans)"
+      },
+      "states": {
+        "focus-visible": {
+          "box-shadow": "none",
+          "outline": "2px solid var(--colors-gray7)"
+        }
+      }
+    }
+  ],
+  "cards": [],
+  "inputs": [
+    {
+      "selector": "input",
+      "props": {
+        "font-family": "var(--font-sans)"
+      }
+    }
+  ],
+  "nav": [],
+  "hero": [],
+  "stats": {
+    "button_count": 2,
+    "card_count": 0,
+    "input_count": 1,
+    "nav_count": 0,
+    "hero_count": 0
+  }
+}

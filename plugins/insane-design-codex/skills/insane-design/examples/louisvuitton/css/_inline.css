@@ -1,0 +1,279 @@
+
+    @font-face {
+      font-family: 'Louis Vuitton Web';
+      font-weight: 400;
+      font-style: normal;
+      src: url('//tp.louisvuitton.com/fonts/bin/LouisVuitton-Regular.woff2') format('woff2'),
+        url('//tp.louisvuitton.com/fonts/bin/LouisVuitton-Regular.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Louis Vuitton Cyrillic';
+      font-weight: 400;
+      font-style: normal;
+      src: url('//tp.louisvuitton.com/fonts/bin/LouisVuitton-Cyrillic.woff2') format('woff2'),
+        url('//tp.louisvuitton.com/fonts/bin/LouisVuitton-Cyrillic.woff') format('woff');
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: normal;
+      margin: 0 0 0.5rem;
+    }
+
+    a {
+      color: #000;
+    }
+
+    p {
+      margin: 0 0 0.5rem;
+    }
+
+    body {
+      font-family: 'Louis Vuitton Web', 'Louis Vuitton', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    body:lang(ja) {
+      font-family: 'Louis Vuitton Web', 'Louis Vuitton', 'Hiragino Kaku Gothic Pro W3', Motoya, Meiryo,
+        'MS PGothic', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body:lang(ko) {
+      font-family: 'Louis Vuitton Web', 'Louis Vuitton', 'Droid Sans Fallback', 'Malgun Gothic', Dotum,
+        'MS Gothic', Georgia, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body:lang(ru) {
+      font-family: 'Louis Vuitton Cyrillic', Arial, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body:lang(zh-Hans) {
+      font-family: 'Louis Vuitton Web', 'STHeiti Light', 'STHeitiTC-Light', 'Droid Sans Fallback',
+        'Microsoft YaHei', SimHei, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body:lang(zh-Hant) {
+      font-family: 'Louis Vuitton Web', 'HeitiTC-Light', 'STHeitiTC-Light', 'Droid Sans Fallback',
+        'Microsoft Jhenghei', 'Arial Unicode MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    [class^='heading'] {
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .heading-m {
+      font-size: 1.5rem;
+      line-height: 28px;
+      letter-spacing: 0.4px;
+    }
+
+    .heading-s {
+      font-size: 1.125rem;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+    }
+
+    .lv-gutters {
+      box-sizing: border-box;
+    }
+
+    .lv-gutters {
+      padding-left: 6.4vw;
+      padding-right: 6.4vw;
+    }
+
+    @media screen and (min-width: 48rem) {
+      .lv-gutters {
+        padding-left: 3.125vw;
+        padding-right: 3.125vw;
+      }
+    }
+
+    @media screen and (min-width: 64rem) {
+      .lv-gutters {
+        padding-left: 4.6875vw;
+        padding-right: 4.6875vw;
+      }
+    }
+
+    @media screen and (min-width: 90rem) {
+      .lv-gutters {
+        padding-left: 8.3333333333vw;
+        padding-right: 8.3333333333vw;
+      }
+    }
+
+    .lv-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /** SPECIFIC STYLES */
+
+    .lv-waiting__header {
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 9;
+      padding: 2rem 0 0;
+    }
+
+    .lv-waiting__logo {
+      width: 9.625rem;
+      height: 1rem;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .lv-waiting__titles {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      color: #fff;
+      text-align: center;
+      transform: translate(0, -50%);
+    }
+
+    .lv-waiting__title-container {
+      margin-bottom: 40px;
+    }
+
+    .lv-waiting__titles a {
+      color: #fff;
+    }
+
+    .lv-waiting__top-title {
+      padding: 0 1.25rem;
+      font-size: 1.125rem;
+      line-height: 24px;
+    }
+
+    .lv-waiting__title {
+      padding: 0 1.25rem;
+      font-size: 0.875rem;
+      line-height: 20px;
+    }
+
+    .lv-waiting__masthead {
+      aspect-ratio: 4/5;
+      position: relative;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+    }
+
+    .lv-waiting__masthead picture:after {
+      content: '';
+      display: block;
+      background-color: #000000;
+      opacity: 0.2;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lv-waiting__masthead img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lv-waiting__primary {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .lv-waiting__secondary {
+      border-top: 1px solid #e1e1e1;
+      margin-top: 5rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .lv-waiting__contacts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    .lv-waiting__zone:not(:first-child) {
+      margin-top: 5rem;
+    }
+
+    .lv-waiting__zone>* {
+      margin-bottom: 1.5rem;
+    }
+
+    @media screen and (min-width: 48rem) {
+      .lv-waiting__masthead {
+        aspect-ratio: 16/9;
+      }
+
+      .lv-waiting__header {
+        padding: 2rem 0 1rem;
+      }
+
+      .lv-waiting__logo {
+        width: 14.1875rem;
+        height: 2.6875rem;
+      }
+
+      .lv-waiting__primary {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+        margin-top: 5rem;
+      }
+
+      .lv-waiting__contacts {
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 2rem;
+      }
+
+      .lv-waiting__titles {
+        max-width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .lv-waiting__title-container {
+        max-width: 45%;
+      }
+
+      .lv-waiting__title {
+        font-size: 1.125rem;
+        line-height: 32px;
+      }
+
+      .lv-waiting__top-title {
+        font-size: 1.5rem;
+        line-height: 32px;
+      }
+    }
+  

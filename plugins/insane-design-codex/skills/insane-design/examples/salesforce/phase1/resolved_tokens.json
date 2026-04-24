@@ -1,0 +1,437 @@
+{
+  "slug": "salesforce",
+  "total_vars": 1450,
+  "resolved_count": 1363,
+  "unresolved_count": 87,
+  "samples": {
+    "--c360-nav-c-logo-height": {
+      "raw": "48.03px",
+      "resolved": "48.03px",
+      "chain": [
+        "--c360-nav-c-logo-height",
+        "48.03px"
+      ]
+    },
+    "--c360-nav-c-logo-width": {
+      "raw": "68px",
+      "resolved": "68px",
+      "chain": [
+        "--c360-nav-c-logo-width",
+        "68px"
+      ]
+    },
+    "--c360-nav-c-overlay-z-index": {
+      "raw": "400",
+      "resolved": "400",
+      "chain": [
+        "--c360-nav-c-overlay-z-index",
+        "400"
+      ]
+    },
+    "--c360-nav-c-padding-top": {
+      "raw": "138px",
+      "resolved": "138px",
+      "chain": [
+        "--c360-nav-c-padding-top",
+        "138px"
+      ]
+    },
+    "--c360-nav-c-header-height": {
+      "raw": "56px",
+      "resolved": "56px",
+      "chain": [
+        "--c360-nav-c-header-height",
+        "56px"
+      ]
+    },
+    "--sds-c-button-text-color": {
+      "raw": "var(--sds-g-color-palette-neutral-30)",
+      "resolved": "#444",
+      "chain": [
+        "--sds-c-button-text-color",
+        "--sds-g-color-palette-neutral-30",
+        "#444"
+      ]
+    },
+    "--sds-c-button-text-color-hover": {
+      "raw": "var(--sds-c-button-secondary-text-color-hover)",
+      "resolved": "#fff",
+      "chain": [
+        "--sds-c-button-text-color-hover",
+        "--sds-c-button-secondary-text-color-hover",
+        "--sds-g-color-brand-inverse-contrast-4",
+        "#fff"
+      ]
+    },
+    "--sds-c-button-color-background": {
+      "raw": "var(--sds-c-button-secondary-color-background)",
+      "resolved": null,
+      "chain": [
+        "--sds-c-button-color-background",
+        "--sds-c-button-secondary-color-background",
+        "transparent"
+      ]
+    },
+    "--sds-c-button-color-background-hover": {
+      "raw": "var(--sds-c-button-secondary-color-background-hover)",
+      "resolved": "#0b5cab",
+      "chain": [
+        "--sds-c-button-color-background-hover",
+        "--sds-c-button-secondary-color-background-hover",
+        "--sds-g-color-brand-inverse-4",
+        "#0b5cab"
+      ]
+    },
+    "--sds-c-button-color-background-active": {
+      "raw": "var(--sds-c-button-secondary-color-background-active)",
+      "resolved": "#0b5cab",
+      "chain": [
+        "--sds-c-button-color-background-active",
+        "--sds-c-button-secondary-color-background-active",
+        "--sds-g-color-brand-inverse-4",
+        "#0b5cab"
+      ]
+    },
+    "--sds-c-button-text-color-active": {
+      "raw": "var(--sds-c-button-secondary-text-color-active)",
+      "resolved": "#fff",
+      "chain": [
+        "--sds-c-button-text-color-active",
+        "--sds-c-button-secondary-text-color-active",
+        "--sds-g-color-brand-inverse-contrast-4",
+        "#fff"
+      ]
+    },
+    "--sds-c-button-spacing-inline-start": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--sds-c-button-spacing-inline-start",
+        "24px"
+      ]
+    },
+    "--sds-c-button-spacing-inline-end": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--sds-c-button-spacing-inline-end",
+        "24px"
+      ]
+    },
+    "--sds-c-button-color-border": {
+      "raw": "var(--sds-c-button-secondary-color-border)",
+      "resolved": "#fff",
+      "chain": [
+        "--sds-c-button-color-border",
+        "--sds-c-button-secondary-color-border",
+        "--sds-g-color-brand-inverse-contrast-4",
+        "#fff"
+      ]
+    },
+    "--sds-c-button-color-border-active": {
+      "raw": "var(--sds-c-button-secondary-color-border-active)",
+      "resolved": "#fff",
+      "chain": [
+        "--sds-c-button-color-border-active",
+        "--sds-c-button-secondary-color-border-active",
+        "--sds-g-color-brand-inverse-contrast-4",
+        "#fff"
+      ]
+    },
+    "--sds-c-button-color-border-focus": {
+      "raw": "var(--sds-c-button-secondary-color-border-focus)",
+      "resolved": "#fff",
+      "chain": [
+        "--sds-c-button-color-border-focus",
+        "--sds-c-button-secondary-color-border-focus",
+        "--sds-g-color-brand-inverse-contrast-4",
+        "#fff"
+      ]
+    },
+    "--sds-c-button-sizing-border": {
+      "raw": "0px",
+      "resolved": "0px",
+      "chain": [
+        "--sds-c-button-sizing-border",
+        "0px"
+      ]
+    },
+    "--sds-c-button-shadow": {
+      "raw": "none",
+      "resolved": null,
+      "chain": [
+        "--sds-c-button-shadow",
+        "none"
+      ]
+    },
+    "--sds-c-button-width": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--sds-c-button-width",
+        "100%"
+      ]
+    },
+    "--sds-c-button-radius-border": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--sds-c-button-radius-border",
+        "4px"
+      ]
+    },
+    "--nav-integration-c-header-height": {
+      "raw": "56px",
+      "resolved": "56px",
+      "chain": [
+        "--nav-integration-c-header-height",
+        "56px"
+      ]
+    },
+    "--nav-integration-c-nav-height": {
+      "raw": "56px",
+      "resolved": "56px",
+      "chain": [
+        "--nav-integration-c-nav-height",
+        "56px"
+      ]
+    },
+    "--c360-nav-l1-padding": {
+      "raw": "var(--sds-g-spacing-3)",
+      "resolved": "0.75rem",
+      "chain": [
+        "--c360-nav-l1-padding",
+        "--sds-g-spacing-3",
+        "0.75rem"
+      ]
+    },
+    "--c360-g-space-between-logo-and-l1": {
+      "raw": "var(--sds-g-spacing-4)",
+      "resolved": "1rem",
+      "chain": [
+        "--c360-g-space-between-logo-and-l1",
+        "--sds-g-spacing-4",
+        "1rem"
+      ]
+    },
+    "--c360-g-font-l1-desktop": {
+      "raw": "14px",
+      "resolved": "14px",
+      "chain": [
+        "--c360-g-font-l1-desktop",
+        "14px"
+      ]
+    },
+    "--sds-c-button-spacing-block-start": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--sds-c-button-spacing-block-start",
+        "8px"
+      ]
+    },
+    "--sds-c-button-spacing-block-end": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--sds-c-button-spacing-block-end",
+        "8px"
+      ]
+    },
+    "--sds-g-line-height": {
+      "raw": "1.5",
+      "resolved": "1.5",
+      "chain": [
+        "--sds-g-line-height",
+        "1.5"
+      ]
+    },
+    "--c360-g-line-height": {
+      "raw": "var(--sds-g-line-height)",
+      "resolved": "1.5",
+      "chain": [
+        "--c360-g-line-height",
+        "--sds-g-line-height",
+        "1.5"
+      ]
+    },
+    "--sds-g-font-scale-10": {
+      "raw": "3.247rem",
+      "resolved": "3.247rem",
+      "chain": [
+        "--sds-g-font-scale-10",
+        "3.247rem"
+      ]
+    },
+    "--sds-g-color-palette-neutral-20": {
+      "raw": "#2e2e2e",
+      "resolved": "#2e2e2e",
+      "chain": [
+        "--sds-g-color-palette-neutral-20",
+        "#2e2e2e"
+      ]
+    },
+    "--c360-g-color-palette-neutral-20": {
+      "raw": "var(--sds-g-color-palette-neutral-20)",
+      "resolved": "#2e2e2e",
+      "chain": [
+        "--c360-g-color-palette-neutral-20",
+        "--sds-g-color-palette-neutral-20",
+        "#2e2e2e"
+      ]
+    },
+    "--sds-g-color-palette-orange-30": {
+      "raw": "#5f3e02",
+      "resolved": "#5f3e02",
+      "chain": [
+        "--sds-g-color-palette-orange-30",
+        "#5f3e02"
+      ]
+    },
+    "--c360-g-color-palette-orange-30": {
+      "raw": "var(--sds-g-color-palette-orange-30)",
+      "resolved": "#5f3e02",
+      "chain": [
+        "--c360-g-color-palette-orange-30",
+        "--sds-g-color-palette-orange-30",
+        "#5f3e02"
+      ]
+    },
+    "--sds-g-color-palette-green-60": {
+      "raw": "#3ba755",
+      "resolved": "#3ba755",
+      "chain": [
+        "--sds-g-color-palette-green-60",
+        "#3ba755"
+      ]
+    },
+    "--c360-g-color-palette-green-60": {
+      "raw": "var(--sds-g-color-palette-green-60)",
+      "resolved": "#3ba755",
+      "chain": [
+        "--c360-g-color-palette-green-60",
+        "--sds-g-color-palette-green-60",
+        "#3ba755"
+      ]
+    },
+    "--sds-g-color-palette-hot-orange-30": {
+      "raw": "#7e2600",
+      "resolved": "#7e2600",
+      "chain": [
+        "--sds-g-color-palette-hot-orange-30",
+        "#7e2600"
+      ]
+    },
+    "--c360-g-color-palette-hot-orange-30": {
+      "raw": "var(--sds-g-color-palette-hot-orange-30)",
+      "resolved": "#7e2600",
+      "chain": [
+        "--c360-g-color-palette-hot-orange-30",
+        "--sds-g-color-palette-hot-orange-30",
+        "#7e2600"
+      ]
+    },
+    "--sds-g-sizing-border-2": {
+      "raw": "2px",
+      "resolved": "2px",
+      "chain": [
+        "--sds-g-sizing-border-2",
+        "2px"
+      ]
+    },
+    "--c360-g-sizing-border-2": {
+      "raw": "var(--sds-g-sizing-border-2)",
+      "resolved": "2px",
+      "chain": [
+        "--c360-g-sizing-border-2",
+        "--sds-g-sizing-border-2",
+        "2px"
+      ]
+    },
+    "--sds-g-color-palette-neutral-10": {
+      "raw": "#181818",
+      "resolved": "#181818",
+      "chain": [
+        "--sds-g-color-palette-neutral-10",
+        "#181818"
+      ]
+    },
+    "--c360-g-color-palette-neutral-10": {
+      "raw": "var(--sds-g-color-palette-neutral-10)",
+      "resolved": "#181818",
+      "chain": [
+        "--c360-g-color-palette-neutral-10",
+        "--sds-g-color-palette-neutral-10",
+        "#181818"
+      ]
+    },
+    "--sds-g-color-palette-yellow-15": {
+      "raw": "#2e2204",
+      "resolved": "#2e2204",
+      "chain": [
+        "--sds-g-color-palette-yellow-15",
+        "#2e2204"
+      ]
+    },
+    "--c360-g-color-palette-yellow-15": {
+      "raw": "var(--sds-g-color-palette-yellow-15)",
+      "resolved": "#2e2204",
+      "chain": [
+        "--c360-g-color-palette-yellow-15",
+        "--sds-g-color-palette-yellow-15",
+        "#2e2204"
+      ]
+    },
+    "--sds-g-color-palette-orange-20": {
+      "raw": "#3e2b02",
+      "resolved": "#3e2b02",
+      "chain": [
+        "--sds-g-color-palette-orange-20",
+        "#3e2b02"
+      ]
+    },
+    "--c360-g-color-palette-orange-20": {
+      "raw": "var(--sds-g-color-palette-orange-20)",
+      "resolved": "#3e2b02",
+      "chain": [
+        "--c360-g-color-palette-orange-20",
+        "--sds-g-color-palette-orange-20",
+        "#3e2b02"
+      ]
+    },
+    "--sds-g-color-palette-neutral-65": {
+      "raw": "#a0a0a0",
+      "resolved": "#a0a0a0",
+      "chain": [
+        "--sds-g-color-palette-neutral-65",
+        "#a0a0a0"
+      ]
+    },
+    "--c360-g-color-palette-neutral-65": {
+      "raw": "var(--sds-g-color-palette-neutral-65)",
+      "resolved": "#a0a0a0",
+      "chain": [
+        "--c360-g-color-palette-neutral-65",
+        "--sds-g-color-palette-neutral-65",
+        "#a0a0a0"
+      ]
+    },
+    "--sds-g-color-palette-green-50": {
+      "raw": "#2e844a",
+      "resolved": "#2e844a",
+      "chain": [
+        "--sds-g-color-palette-green-50",
+        "#2e844a"
+      ]
+    },
+    "--c360-g-color-palette-green-50": {
+      "raw": "var(--sds-g-color-palette-green-50)",
+      "resolved": "#2e844a",
+      "chain": [
+        "--c360-g-color-palette-green-50",
+        "--sds-g-color-palette-green-50",
+        "#2e844a"
+      ]
+    }
+  }
+}

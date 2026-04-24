@@ -1,0 +1,49 @@
+<!-- insane-build: web/hero.html — 100vh hero, minimal scaffold -->
+<!-- Token slots: --brand, --bg, --fg, --fg-muted, --font-family, --radius-md, --space-lg -->
+<section class="hero">
+  <div class="hero__inner">
+    <h1 class="hero__headline">{HEADLINE}</h1>
+    <p class="hero__subhead">{SUBHEADLINE}</p>
+    <div class="hero__cta">
+      <a href="{PRIMARY_HREF}" class="btn btn--primary">{PRIMARY_CTA}</a>
+      <a href="{SECONDARY_HREF}" class="btn btn--ghost">{SECONDARY_CTA}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-lg, 48px);
+    background: var(--bg, #ffffff);
+    color: var(--fg, #111111);
+  }
+  .hero__inner { max-width: 960px; margin: 0 auto; }
+  .hero__headline {
+    font-family: var(--font-family, system-ui, sans-serif);
+    font-size: clamp(48px, 8vw, 120px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    margin: 0 0 24px;
+  }
+  .hero__subhead {
+    font-size: clamp(18px, 1.4vw, 22px);
+    color: var(--fg-muted, #555);
+    margin: 0 0 48px;
+    max-width: 640px;
+  }
+  .hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    padding: 14px 28px;
+    border-radius: var(--radius-md, 8px);
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .btn--primary { background: var(--brand, #000); color: #fff; }
+  .btn--ghost { border: 1px solid var(--fg, #111); color: var(--fg, #111); }
+  .btn:hover { opacity: 0.85; }
+</style>

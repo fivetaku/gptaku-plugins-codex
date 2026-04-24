@@ -1,0 +1,66 @@
+{
+  "slug": "slack",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--button-to-link",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "component": [],
+    "core": [
+      {
+        "alias": "--article-theme-primary",
+        "references": [],
+        "terminal_hint": "#4a154b"
+      },
+      {
+        "alias": "--article-theme-secondary",
+        "references": [],
+        "terminal_hint": "#fff"
+      },
+      {
+        "alias": "--attachment-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--sidebar-color",
+        "references": [],
+        "terminal_hint": "#400d40"
+      },
+      {
+        "alias": "--sidebar-highlight-color",
+        "references": [],
+        "terminal_hint": "#1264a3"
+      },
+      {
+        "alias": "--swiper-pagination-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--swiper-preloader-color",
+        "references": [],
+        "terminal_hint": "#000"
+      },
+      {
+        "alias": "--swiper-theme-color",
+        "references": [],
+        "terminal_hint": "#007aff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 1,
+      "component": 0,
+      "core": 8
+    }
+  }
+}

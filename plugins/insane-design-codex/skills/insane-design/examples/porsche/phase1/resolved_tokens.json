@@ -1,0 +1,176 @@
+{
+  "slug": "porsche",
+  "total_vars": 21,
+  "resolved_count": 5,
+  "unresolved_count": 16,
+  "samples": {
+    "--pds-internal-grid-safe-zone": {
+      "raw": "min(50vw - 880px,400px)",
+      "resolved": null,
+      "chain": [
+        "--pds-internal-grid-safe-zone",
+        "min(50vw - 880px,400px)"
+      ]
+    },
+    "--pds-grid-basic-span-one-half": {
+      "raw": "span 6",
+      "resolved": null,
+      "chain": [
+        "--pds-grid-basic-span-one-half",
+        "span 6"
+      ]
+    },
+    "--pds-grid-basic-span-one-third": {
+      "raw": "span 4",
+      "resolved": null,
+      "chain": [
+        "--pds-grid-basic-span-one-third",
+        "span 4"
+      ]
+    },
+    "--pds-grid-narrow-span-one-half": {
+      "raw": "span 4",
+      "resolved": null,
+      "chain": [
+        "--pds-grid-narrow-span-one-half",
+        "span 4"
+      ]
+    },
+    "--pds-grid-basic-span-two-thirds": {
+      "raw": "span 8",
+      "resolved": null,
+      "chain": [
+        "--pds-grid-basic-span-two-thirds",
+        "span 8"
+      ]
+    },
+    "--pds-grid-extended-span-one-half": {
+      "raw": "span 7",
+      "resolved": null,
+      "chain": [
+        "--pds-grid-extended-span-one-half",
+        "span 7"
+      ]
+    },
+    "--phn-header-height": {
+      "raw": "5.125rem",
+      "resolved": "5.125rem",
+      "chain": [
+        "--phn-header-height",
+        "5.125rem"
+      ]
+    },
+    "--pcom-spacing-x-small": {
+      "raw": "clamp(4px,.25vw + 3px,8px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-x-small",
+        "clamp(4px,.25vw + 3px,8px)"
+      ]
+    },
+    "--pcom-spacing-small": {
+      "raw": "clamp(8px,.5vw + 6px,16px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-small",
+        "clamp(8px,.5vw + 6px,16px)"
+      ]
+    },
+    "--pcom-spacing-medium": {
+      "raw": "clamp(16px,1.25vw + 12px,36px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-medium",
+        "clamp(16px,1.25vw + 12px,36px)"
+      ]
+    },
+    "--pcom-spacing-large": {
+      "raw": "clamp(32px,2.75vw + 23px,76px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-large",
+        "clamp(32px,2.75vw + 23px,76px)"
+      ]
+    },
+    "--pcom-spacing-x-large": {
+      "raw": "clamp(48px,3vw + 38px,96px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-x-large",
+        "clamp(48px,3vw + 38px,96px)"
+      ]
+    },
+    "--pcom-spacing-xx-large": {
+      "raw": "clamp(80px,7.5vw + 56px,200px)",
+      "resolved": null,
+      "chain": [
+        "--pcom-spacing-xx-large",
+        "clamp(80px,7.5vw + 56px,200px)"
+      ]
+    },
+    "--pcom-motion-duration-long": {
+      "raw": ".6s",
+      "resolved": ".6s",
+      "chain": [
+        "--pcom-motion-duration-long",
+        ".6s"
+      ]
+    },
+    "--pcom-motion-duration-moderate": {
+      "raw": ".4s",
+      "resolved": ".4s",
+      "chain": [
+        "--pcom-motion-duration-moderate",
+        ".4s"
+      ]
+    },
+    "--pcom-motion-duration-short": {
+      "raw": ".25s",
+      "resolved": ".25s",
+      "chain": [
+        "--pcom-motion-duration-short",
+        ".25s"
+      ]
+    },
+    "--pcom-motion-duration-very-long": {
+      "raw": "1.2s",
+      "resolved": "1.2s",
+      "chain": [
+        "--pcom-motion-duration-very-long",
+        "1.2s"
+      ]
+    },
+    "--pcom-motion-easing-base": {
+      "raw": "cubic-bezier(.25,.1,.25,1)",
+      "resolved": null,
+      "chain": [
+        "--pcom-motion-easing-base",
+        "cubic-bezier(.25,.1,.25,1)"
+      ]
+    },
+    "--pcom-motion-easing-in": {
+      "raw": "cubic-bezier(0,0,.2,1)",
+      "resolved": null,
+      "chain": [
+        "--pcom-motion-easing-in",
+        "cubic-bezier(0,0,.2,1)"
+      ]
+    },
+    "--pcom-motion-easing-out": {
+      "raw": "cubic-bezier(.4,0,.5,1)",
+      "resolved": null,
+      "chain": [
+        "--pcom-motion-easing-out",
+        "cubic-bezier(.4,0,.5,1)"
+      ]
+    },
+    "--pcom-image-hover-scale": {
+      "raw": "scale3d(1.05,1.05,1.05)",
+      "resolved": null,
+      "chain": [
+        "--pcom-image-hover-scale",
+        "scale3d(1.05,1.05,1.05)"
+      ]
+    }
+  }
+}

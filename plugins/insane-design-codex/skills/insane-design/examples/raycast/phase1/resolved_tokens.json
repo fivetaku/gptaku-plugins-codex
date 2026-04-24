@@ -1,0 +1,408 @@
+{
+  "slug": "raycast",
+  "total_vars": 111,
+  "resolved_count": 98,
+  "unresolved_count": 13,
+  "samples": {
+    "--key-bg-start-color": {
+      "raw": "rgb(21,21,21)",
+      "resolved": "rgb(21,21,21)",
+      "chain": [
+        "--key-bg-start-color",
+        "rgb(21,21,21)"
+      ]
+    },
+    "--key-bg-end-color": {
+      "raw": "rgb(13,13,13)",
+      "resolved": "rgb(13,13,13)",
+      "chain": [
+        "--key-bg-end-color",
+        "rgb(13,13,13)"
+      ]
+    },
+    "--grid-width": {
+      "raw": "min(calc(100vw - 30px * 2),1065px)",
+      "resolved": null,
+      "chain": [
+        "--grid-width",
+        "min(calc(100vw - 30px * 2),1065px)"
+      ]
+    },
+    "--direction": {
+      "raw": "to top",
+      "resolved": null,
+      "chain": [
+        "--direction",
+        "to top"
+      ]
+    },
+    "--column-count": {
+      "raw": "3",
+      "resolved": "3",
+      "chain": [
+        "--column-count",
+        "3"
+      ]
+    },
+    "--font-inter": {
+      "raw": "\"Inter\",\"Inter Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-inter",
+        "\"Inter\",\"Inter Fallback\""
+      ]
+    },
+    "--font-jetbrains-mono": {
+      "raw": "\"JetBrains Mono\",\"JetBrains Mono Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-jetbrains-mono",
+        "\"JetBrains Mono\",\"JetBrains Mono Fallback\""
+      ]
+    },
+    "--font-geist-mono": {
+      "raw": "\"GeistMono\",ui-monospace,SFMono-Regular,Roboto Mono,Menlo,Monaco,Liberation Mono,DejaVu Sans Mono,Courier New,monospace",
+      "resolved": null,
+      "chain": [
+        "--font-geist-mono",
+        "\"GeistMono\",ui-monospace,SFMono-Regular,Roboto Mono,Menlo,Monaco,Liberation Mono,DejaVu Sans Mono,Courier New,monospace"
+      ]
+    },
+    "--size": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--size",
+        "32px"
+      ]
+    },
+    "--rounding-none": {
+      "raw": "0px",
+      "resolved": "0px",
+      "chain": [
+        "--rounding-none",
+        "0px"
+      ]
+    },
+    "--rounding-xs": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--rounding-xs",
+        "4px"
+      ]
+    },
+    "--rounding-sm": {
+      "raw": "6px",
+      "resolved": "6px",
+      "chain": [
+        "--rounding-sm",
+        "6px"
+      ]
+    },
+    "--rounding-normal": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--rounding-normal",
+        "8px"
+      ]
+    },
+    "--rounding-md": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--rounding-md",
+        "12px"
+      ]
+    },
+    "--rounding-lg": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--rounding-lg",
+        "16px"
+      ]
+    },
+    "--rounding-xl": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--rounding-xl",
+        "20px"
+      ]
+    },
+    "--rounding-xxl": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--rounding-xxl",
+        "24px"
+      ]
+    },
+    "--rounding-full": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--rounding-full",
+        "100%"
+      ]
+    },
+    "--spacing-none": {
+      "raw": "0px",
+      "resolved": "0px",
+      "chain": [
+        "--spacing-none",
+        "0px"
+      ]
+    },
+    "--spacing-0-5": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--spacing-0-5",
+        "4px"
+      ]
+    },
+    "--spacing-1": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--spacing-1",
+        "8px"
+      ]
+    },
+    "--spacing-1-5": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--spacing-1-5",
+        "12px"
+      ]
+    },
+    "--spacing-2": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--spacing-2",
+        "16px"
+      ]
+    },
+    "--spacing-2-5": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--spacing-2-5",
+        "20px"
+      ]
+    },
+    "--spacing-3": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--spacing-3",
+        "24px"
+      ]
+    },
+    "--spacing-4": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--spacing-4",
+        "32px"
+      ]
+    },
+    "--spacing-5": {
+      "raw": "40px",
+      "resolved": "40px",
+      "chain": [
+        "--spacing-5",
+        "40px"
+      ]
+    },
+    "--spacing-6": {
+      "raw": "48px",
+      "resolved": "48px",
+      "chain": [
+        "--spacing-6",
+        "48px"
+      ]
+    },
+    "--spacing-7": {
+      "raw": "56px",
+      "resolved": "56px",
+      "chain": [
+        "--spacing-7",
+        "56px"
+      ]
+    },
+    "--spacing-8": {
+      "raw": "64px",
+      "resolved": "64px",
+      "chain": [
+        "--spacing-8",
+        "64px"
+      ]
+    },
+    "--spacing-9": {
+      "raw": "80px",
+      "resolved": "80px",
+      "chain": [
+        "--spacing-9",
+        "80px"
+      ]
+    },
+    "--spacing-10": {
+      "raw": "96px",
+      "resolved": "96px",
+      "chain": [
+        "--spacing-10",
+        "96px"
+      ]
+    },
+    "--spacing-11": {
+      "raw": "112px",
+      "resolved": "112px",
+      "chain": [
+        "--spacing-11",
+        "112px"
+      ]
+    },
+    "--spacing-12": {
+      "raw": "168px",
+      "resolved": "168px",
+      "chain": [
+        "--spacing-12",
+        "168px"
+      ]
+    },
+    "--spacing-13": {
+      "raw": "224px",
+      "resolved": "224px",
+      "chain": [
+        "--spacing-13",
+        "224px"
+      ]
+    },
+    "--Base-White": {
+      "raw": "#ffffff",
+      "resolved": "#ffffff",
+      "chain": [
+        "--Base-White",
+        "#ffffff"
+      ]
+    },
+    "--grey-50": {
+      "raw": "#e6e6e6",
+      "resolved": "#e6e6e6",
+      "chain": [
+        "--grey-50",
+        "#e6e6e6"
+      ]
+    },
+    "--grey-100": {
+      "raw": "#cdcece",
+      "resolved": "#cdcece",
+      "chain": [
+        "--grey-100",
+        "#cdcece"
+      ]
+    },
+    "--grey-200": {
+      "raw": "#9c9c9d",
+      "resolved": "#9c9c9d",
+      "chain": [
+        "--grey-200",
+        "#9c9c9d"
+      ]
+    },
+    "--grey-300": {
+      "raw": "#6a6b6c",
+      "resolved": "#6a6b6c",
+      "chain": [
+        "--grey-300",
+        "#6a6b6c"
+      ]
+    },
+    "--grey-400": {
+      "raw": "#434345",
+      "resolved": "#434345",
+      "chain": [
+        "--grey-400",
+        "#434345"
+      ]
+    },
+    "--grey-500": {
+      "raw": "#2f3031",
+      "resolved": "#2f3031",
+      "chain": [
+        "--grey-500",
+        "#2f3031"
+      ]
+    },
+    "--grey-600": {
+      "raw": "#1b1c1e",
+      "resolved": "#1b1c1e",
+      "chain": [
+        "--grey-600",
+        "#1b1c1e"
+      ]
+    },
+    "--grey-700": {
+      "raw": "#111214",
+      "resolved": "#111214",
+      "chain": [
+        "--grey-700",
+        "#111214"
+      ]
+    },
+    "--grey-800": {
+      "raw": "#0c0d0f",
+      "resolved": "#0c0d0f",
+      "chain": [
+        "--grey-800",
+        "#0c0d0f"
+      ]
+    },
+    "--grey-900": {
+      "raw": "#07080a",
+      "resolved": "#07080a",
+      "chain": [
+        "--grey-900",
+        "#07080a"
+      ]
+    },
+    "--Base-Black": {
+      "raw": "#000000",
+      "resolved": "#000000",
+      "chain": [
+        "--Base-Black",
+        "#000000"
+      ]
+    },
+    "--main-font": {
+      "raw": "var(--font-inter),sans-serif",
+      "resolved": null,
+      "chain": [
+        "--main-font",
+        "var(--font-inter),sans-serif"
+      ]
+    },
+    "--monospace-font": {
+      "raw": "var(--font-jetbrains-mono),Menlo,Monaco,Courier,monospace",
+      "resolved": null,
+      "chain": [
+        "--monospace-font",
+        "var(--font-jetbrains-mono),Menlo,Monaco,Courier,monospace"
+      ]
+    },
+    "--container-xs-width": {
+      "raw": "746px",
+      "resolved": "746px",
+      "chain": [
+        "--container-xs-width",
+        "746px"
+      ]
+    }
+  }
+}

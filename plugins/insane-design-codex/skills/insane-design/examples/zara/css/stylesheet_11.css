@@ -1,0 +1,53 @@
+.home-page {
+	overflow: hidden;
+	-ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.home-page::-webkit-scrollbar {
+	display: none;
+}
+
+[dir] .home-page .layout-content {
+	margin: 0;
+}
+
+.home-page .layout-content,
+.home-page .layout-content__main {
+	min-width: 100%;
+}
+
+.home-page .layout-header-mob {
+	touch-action: none;
+}
+
+.home-page .layout-header-mob__logo {
+	display: flex;
+	grid-row: 2;
+	grid-column: 1 / -1;
+	justify-content: center;
+	max-width: 17.125rem;
+}
+
+[dir] .home-page .layout-header-mob__logo {
+	margin: var(--spacing-03) auto 0;
+}
+
+/* stylelint-disable-next-line selector-max-compound-selectors */
+.home-page .layout-header-mob__logo .layout-catalog-logo__link {
+	justify-content: center;
+}
+
+/* Fixes iOS/Mac Safari bug that causes elements on top of the slide medias to disappear
+   when "translateX" is applied to the slider-spot universes container element */
+/* stylelint-disable-next-line selector-max-compound-selectors */
+[dir] .home-page .slider-spot .media-image__svg, [dir] .home-page .slider-spot .media-video__svg, [dir] .home-page .slider-spot .media-video__controls {
+	transform: translateZ(0);
+}
+
+@media screen and (min-width: 48rem) {
+	[dir] .home-page:not(.mkt) .layout-footer {
+		margin-top: calc(var(--layout-header-height) + 2 * var(--spacing-05));
+	}
+}
+

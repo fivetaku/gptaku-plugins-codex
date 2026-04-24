@@ -1,0 +1,874 @@
+{
+  "slug": "coinbase",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings {color:#fff;background-color:#468254;height:auto;white-space:normal;word-wrap:break-word;padding:.8em 2em;font-size:.8em;line-height:"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings",
+      "property": "background-color",
+      "hex": "#468254",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings,#ot-sdk-btn.optanon-show-settings {color:#fff;background-color:#468254;height:auto;white-space:normal;word-wrap:break-word;padding:.8em 2em;font-size:.8em;line-height:"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover {color:#fff;background-color:#2c6415}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover",
+      "property": "background-color",
+      "hex": "#2C6415",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover,#ot-sdk-btn.optanon-show-settings:hover {color:#fff;background-color:#2c6415}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active {color:#fff;background-color:#2c6415;border:1px solid rgba(162,192,169,.5)}"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active",
+      "property": "background-color",
+      "hex": "#2C6415",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:active,#ot-sdk-btn.optanon-show-settings:active {color:#fff;background-color:#2c6415;border:1px solid rgba(162,192,169,.5)}"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button",
+      "property": "border",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button {flex:1;height:auto;color:#fff;cursor:pointer;line-height:1.2;min-"
+    },
+    {
+      "selector": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button.reject,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button.reject",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk .ot-signature-health .ot-signature-button.reject,#onetrust-consent-sdk .ot-signature-health-group .ot-signature-button.reject {background-color:#fff}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button",
+      "property": "color",
+      "hex": "#555555",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button {display:inlin"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button",
+      "property": "border",
+      "hex": "#BBBBBB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button,#onetrust-banner-sdk button,#onetrust-pc-sdk .ot-sdk-button,#onetrust-pc-sdk button,#ot-sdk-cookie-policy .ot-sdk-button,#ot-sdk-cookie-policy button {display:inlin"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#onetrust-pc-sdk .ot-sdk-button:hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#ot-sdk-cookie-policy .ot-sdk-button:hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-containe"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#onetrust-pc-sdk .ot-sdk-button:hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-pc-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus,#ot-sdk-cookie-policy .ot-sdk-button:hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#ot-sdk-cookie-policy :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):focus",
+      "property": "border-color",
+      "hex": "#888888",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:hover,#onetrust-banner-sdk :not(.ot-leg-btn-container):not(.ot-confirm-dialog-buttons)>button:not(.ot-link-btn):hover,#onetrust-banner-sdk :not(.ot-leg-btn-containe"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:focus,#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus,#onetrust-pc-sdk .ot-sdk-button:focus,#onetrust-pc-sdk :not(.ot-leg-btn-container)>button:focus,#ot-sdk-cookie-policy .ot-sdk-button:focus,#ot-sdk-cookie-policy :not(.ot-leg-btn-container)>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:focus,#onetrust-banner-sdk :not(.ot-leg-btn-container)>button:focus,#onetrust-pc-sdk .ot-sdk-button:focus,#onetrust-pc-sdk :not(.ot-leg-btn-container)>button:focus,"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "background-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-pc-sdk button.ot-sdk-button-primary,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary,#ot-sdk-cookie-policy button.ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary",
+      "property": "border-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary,#onetrust-banner-sdk button.ot-sdk-button-primary,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary,#onetrust-banner-sdk input[typ"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "background-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-banner-sdk button.ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-banner-sdk input[type=button].ot-sdk-button-primary:focus,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-pc-sdk button.ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:hover,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:hover,#onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus,#onetrust-pc-sdk button.ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=submit].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=reset].ot-sdk-button-primary:focus,#onetrust-pc-sdk input[type=button].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy button.ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:hover,#ot-sdk-cookie-policy .ot-sdk-button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy button.ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=submit].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=reset].ot-sdk-button-primary:focus,#ot-sdk-cookie-policy input[type=button].ot-sdk-button-primary:focus",
+      "property": "border-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover,#onetrust-banner-sdk button.ot-sdk-button-primary:hover,#onetrust-banner-sdk input[type=submit].ot-sdk-button-primary:hover,#onetrust-ba"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "background-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "border-color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler,#onetrust-banner-sdk #onetrust-reject-all-handler,#onetrust-banner-sdk #onetrust-pc-btn-handler {background-color:#68b631;color:#fff;border-color:#68b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "border",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler {border:1px solid #68b631;min-width:175px;max-width:40%}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link {background-color:#fff;border:none;color:#68b631;text-decoration:underline;margin-right:1rem}"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link",
+      "property": "color",
+      "hex": "#68B631",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler.cookie-setting-link {background-color:#fff;border:none;color:#68b631;text-decoration:underline;margin-right:1rem}"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn { color: #0052ff; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler",
+      "property": "background-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler { background-color: #0052ff;border-color: #0052ff"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler",
+      "property": "border-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler { background-color: #0052ff;border-color: #0052ff"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler, #onetrust-banner-sdk #ot-dialog-confirm-handler { background-color: #0052ff;border-color: #0052ff"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler",
+      "property": "color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler { color: #0A0B0D; border-color: #0A0"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler",
+      "property": "border-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler { color: #0A0B0D; border-color: #0A0"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler",
+      "property": "background-color",
+      "hex": "#EEF0F3",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-pc-btn-handler.cookie-setting-link, #onetrust-consent-sdk #ot-dialog-cancel-handler { color: #0A0B0D; border-color: #0A0"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings { color: #0052ff; border: 1px solid #0052ff; height: auto; white-space: normal; word-wrap: break-word; padding: 0.8em 2em; font-size"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+      "property": "border",
+      "hex": "#0052FF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings { color: #0052ff; border: 1px solid #0052ff; height: auto; white-space: normal; word-wrap: break-word; padding: 0.8em 2em; font-size"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover, #ot-sdk-btn.optanon-show-settings:hover",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover, #ot-sdk-btn.optanon-show-settings:hover { color: #fff; background-color: #0052ff; }"
+    },
+    {
+      "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover, #ot-sdk-btn.optanon-show-settings:hover",
+      "property": "background-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#ot-sdk-btn.ot-sdk-show-settings:hover, #ot-sdk-btn.optanon-show-settings:hover { color: #fff; background-color: #0052ff; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button, #onetrust-banner-sdk button, #onetrust-pc-sdk .ot-sdk-button, #onetrust-pc-sdk button",
+      "property": "color",
+      "hex": "#555555",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button, #onetrust-banner-sdk button, #onetrust-pc-sdk .ot-sdk-button, #onetrust-pc-sdk button { display: inline-block; height: 38px; padding: 0 30px; color: #555; text-ali"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button, #onetrust-banner-sdk button, #onetrust-pc-sdk .ot-sdk-button, #onetrust-pc-sdk button",
+      "property": "border",
+      "hex": "#BBBBBB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button, #onetrust-banner-sdk button, #onetrust-pc-sdk .ot-sdk-button, #onetrust-pc-sdk button { display: inline-block; height: 38px; padding: 0 30px; color: #555; text-ali"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:hover, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn):hover, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn):focus, #onetrust-pc-sdk .ot-sdk-button:hover, #onetrust-pc-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn):hover, #onetrust-pc-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn):focus",
+      "property": "background-color",
+      "hex": "#014CEC",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:hover, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn):hover, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:not(.ot-link-btn"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button:focus, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:focus, #onetrust-pc-sdk .ot-sdk-button:focus, #onetrust-pc-sdk :not(.ot-leg-btn-container) > button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button:focus, #onetrust-banner-sdk :not(.ot-leg-btn-container) > button:focus, #onetrust-pc-sdk .ot-sdk-button:focus, #onetrust-pc-sdk :not(.ot-leg-btn-container) > button"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-pc-sdk button.ot-sdk-button-primary, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk inpu"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-pc-sdk button.ot-sdk-button-primary, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary",
+      "property": "background-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk inpu"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-pc-sdk button.ot-sdk-button-primary, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary",
+      "property": "border-color",
+      "hex": "#33C3F0",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary, #onetrust-banner-sdk button.ot-sdk-button-primary, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary, #onetrust-banner-sdk inpu"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-banner-sdk button.ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:focus, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-pc-sdk button.ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-pc-sdk button.ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:focus",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetru"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-banner-sdk button.ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:focus, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-pc-sdk button.ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-pc-sdk button.ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:focus",
+      "property": "background-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetru"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-banner-sdk button.ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-banner-sdk input[type='button'].ot-sdk-button-primary:focus, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-pc-sdk button.ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:hover, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:hover, #onetrust-pc-sdk .ot-sdk-button.ot-sdk-button-primary:focus, #onetrust-pc-sdk button.ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='submit'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='reset'].ot-sdk-button-primary:focus, #onetrust-pc-sdk input[type='button'].ot-sdk-button-primary:focus",
+      "property": "border-color",
+      "hex": "#1EAEDB",
+      "rule_snippet": "#onetrust-banner-sdk .ot-sdk-button.ot-sdk-button-primary:hover, #onetrust-banner-sdk button.ot-sdk-button-primary:hover, #onetrust-banner-sdk input[type='submit'].ot-sdk-button-primary:hover, #onetru"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "background-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #0052ff; color: #fff; border-color: #0052ff; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #0052ff; color: #fff; border-color: #0052ff; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-accept-btn-handler",
+      "property": "border-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-accept-btn-handler { background-color: #0052ff; color: #fff; border-color: #0052ff; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: b"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "background-color",
+      "hex": "#EEF0F3",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler { background-color: #eef0f3; color: #0a0b0d; border-color: #eef0f3; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: br"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler { background-color: #eef0f3; color: #0a0b0d; border-color: #eef0f3; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: br"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-pc-btn-handler",
+      "property": "border-color",
+      "hex": "#EEF0F3",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-pc-btn-handler { background-color: #eef0f3; color: #0a0b0d; border-color: #eef0f3; margin-right: 1em; min-width: 125px; height: auto; white-space: normal; word-break: br"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-policy-text #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-policy-text #onetrust-pc-btn-handler { background: none; border: none; color: #0052ff; cursor: pointer; display: inline; font-size: inherit; font-weight: inherit; height"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-policy-text #onetrust-pc-btn-handler:focus-visible",
+      "property": "outline",
+      "hex": "#005FCC",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-policy-text #onetrust-pc-btn-handler:focus-visible { outline: 1px solid #005fcc; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk .onetrust-close-btn-ui:focus-visible",
+      "property": "outline",
+      "hex": "#005FCC",
+      "rule_snippet": "#onetrust-banner-sdk .onetrust-close-btn-ui:focus-visible { outline: 1px solid #005fcc; border-radius: 100%; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-banner-sdk a[href], #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn { color: #0052ff; text-decoration: "
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "background-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #0a0b0d; border-color: #0a0b0d; color: #ffffff; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "border-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #0a0b0d; border-color: #0a0b0d; color: #ffffff; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-reject-all-handler { background-color: #0a0b0d; border-color: #0a0b0d; color: #ffffff; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler { order: 1; border: none; background-color: #fff; text-decoration: underline; padding: 0; text-align:"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler:focus-visible",
+      "property": "outline",
+      "hex": "#005FCC",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler:focus-visible { outline: 1px solid #005fcc; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover",
+      "property": "background-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover",
+      "property": "border-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler { background-color: #3860be; border-radius: 17px; display: inline-block; position: relative; width: 32px; height: 32px; -moz-transition: 0.1s ease; -o-transition: "
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler:hover",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler:hover { background-color: #3860be; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-ven-link, #onetrust-pc-sdk .ot-ven-legclaim-link",
+      "property": "color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk .ot-ven-link, #onetrust-pc-sdk .ot-ven-legclaim-link { color: #3860be; text-decoration: underline; font-weight: 100; display: inline-block; padding-top: 10px; transform: translate(0, "
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-cat-item > button:focus, #onetrust-pc-sdk .ot-acc-cntr > button:focus, #onetrust-pc-sdk li > button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-cat-item > button:focus, #onetrust-pc-sdk .ot-acc-cntr > button:focus, #onetrust-pc-sdk li > button:focus { outline: #000 solid 2px; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus",
+      "property": "border",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus { outline: 0; border: 2px solid #000; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vnd-item > button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vnd-item > button:focus { outline: #000 solid 2px; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*='DPOLink']",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*='DPOLink'] { border-bottom: 1px solid #d8d8d8; padding-bottom: 1rem; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button, #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button, #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button { outline: none; border-bottom: 1px solid #d8d8d8; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*='DPOLink'], #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*='DPOLink']",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*='DPOLink'], #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*='DPOLink'] { border-bottom: 1px solid #"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetrust-pc-sdk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-ven-lst .ot-ven-opts p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-li-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-sel-all-hdr span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info, #onetrust-consent-sdk #onetrust-pc-sdk #ot-fltr-modal #modal-header, #onetrust-consent-sdk #onetrust-pc-sdk .ot-checkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-sel-blk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title h3, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .back-btn-handler p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .ot-ven-name, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-ven-lst .consent-category, #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-label-status, #onetrust-consent-sdk #onetrust-pc-sdk .ot-chkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #clear-filters-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-optout-signal",
+      "property": "color",
+      "hex": "#1D1D1D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetr"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-legclaim-link, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-name a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-acc-hdr .ot-host-expand, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-content #ot-pc-desc .ot-link-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info a",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler, #onetrust-consent"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "background-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expand"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "border-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expand"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expand"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #ffffff; color: #78808e; border-color: #78808e; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "color",
+      "hex": "#78808E",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #ffffff; color: #78808e; border-color: #78808e; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "border-color",
+      "hex": "#78808E",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #ffffff; color: #78808e; border-color: #78808e; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus",
+      "property": "border",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus { border: 1px solid #000000; }"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler",
+      "property": "background-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-h"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler",
+      "property": "border-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-h"
+    },
+    {
+      "selector": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler, #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-h"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk a[href], #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk .ot-link-btn",
+      "property": "color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk a[href], #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk a[href] font, #root:has(> .coinbase.dark) ~ #"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler",
+      "property": "background-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler { order: 1; border: none; background-color: #0a0b"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-pc-btn-handler { order: 1; border: none; background-color: #0a0b"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover",
+      "property": "background-color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrus"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover",
+      "property": "border-color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrus"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler:hover",
+      "property": "color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler:hover, #root:has(> .coinbase.dark) ~ #onetrus"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h3, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h4, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h5, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h6, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk p, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-ven-lst .ot-ven-opts p, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-title, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-li-title, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-sel-all-hdr span, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-fltr-modal #modal-header, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-checkbox label span, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-sel-blk p, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title h3, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .back-btn-handler p, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .ot-ven-name, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-ven-lst .consent-category, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-label-status, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-chkbox label span, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #clear-filters-handler, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-optout-signal",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h3, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk h4, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #o"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-link, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-legclaim-link, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-name a, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-acc-hdr .ot-host-expand, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info a, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-content #ot-pc-desc .ot-link-btn, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info a, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info a",
+      "property": "color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #root:has(> .coinbase.dar"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "background-color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "border-color",
+      "hex": "#578BFA",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not( .ot-remove-objection-handler ):not(.ot-obj-leg"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler",
+      "property": "background-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-cons"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler",
+      "property": "border-color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-cons"
+    },
+    {
+      "selector": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-accept-btn-handler",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#root:has(> .coinbase.dark) ~ #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-button-group-parent #onetrust-button-group #onetrust-reject-all-handler, #root:has(> .coinbase.dark) ~ #onetrust-cons"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler {background-color:#3860be;border-radius:17px;display:inline-block;position:relative;width:32px;height:32px;-moz-transition:.1s ease;-o-transition:.1s ease;-webkit-"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #filter-btn-handler:hover",
+      "property": "background-color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk #filter-btn-handler:hover {background-color:#3860be}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-ven-link,#onetrust-pc-sdk .ot-ven-legclaim-link",
+      "property": "color",
+      "hex": "#3860BE",
+      "rule_snippet": "#onetrust-pc-sdk .ot-ven-link,#onetrust-pc-sdk .ot-ven-legclaim-link {color:#3860be;text-decoration:none;font-weight:100;display:inline-block;padding-top:10px;transform:translate(0, 1%);-o-transform:t"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-cat-item>button:focus,#onetrust-pc-sdk .ot-acc-cntr>button:focus,#onetrust-pc-sdk li>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-cat-item>button:focus,#onetrust-pc-sdk .ot-acc-cntr>button:focus,#onetrust-pc-sdk li>button:focus {outline:#000 solid 2px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item>button:focus,#onetrust-pc-sdk .ot-ven-item>button:focus",
+      "property": "border",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item>button:focus,#onetrust-pc-sdk .ot-ven-item>button:focus {outline:0;border:2px solid #000}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vnd-item>button:focus",
+      "property": "outline",
+      "hex": "#000000",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vnd-item>button:focus {outline:#000 solid 2px}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*=DPOLink]",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info[data-vnd-info-key*=DPOLink] {border-bottom:1px solid #d8d8d8;padding-bottom:1rem}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button,#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item button,#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item button {outline:none;border-bottom:1px solid #d8d8d8}"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink],#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink]",
+      "property": "border-bottom",
+      "hex": "#D8D8D8",
+      "rule_snippet": "#onetrust-pc-sdk .ot-vs-list .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink],#onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info[data-vnd-info-key*=DPOLink] {border-bottom:1px solid #d8d8d8;"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetrust-pc-sdk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-ven-lst .ot-ven-opts p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-li-title, #onetrust-consent-sdk #onetrust-pc-sdk .ot-sel-all-hdr span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info, #onetrust-consent-sdk #onetrust-pc-sdk #ot-fltr-modal #modal-header, #onetrust-consent-sdk #onetrust-pc-sdk .ot-checkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-sel-blk p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title h3, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-lst-title p[aria-level=\"3\"], #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .back-btn-handler p, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst .ot-ven-name, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-lst #ot-ven-lst .consent-category, #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-label-status, #onetrust-consent-sdk #onetrust-pc-sdk .ot-chkbox label span, #onetrust-consent-sdk #onetrust-pc-sdk #clear-filters-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-optout-signal",
+      "property": "color",
+      "hex": "#0A0B0D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk h3, #onetrust-consent-sdk #onetrust-pc-sdk h4, #onetrust-consent-sdk #onetrust-pc-sdk h5, #onetrust-consent-sdk #onetrust-pc-sdk h6, #onetrust-consent-sdk #onetr"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler + a, #onetrust-consent-sdk #onetrust-pc-sdk .category-host-list-handler, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-ven-legclaim-link, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-name a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-acc-hdr .ot-host-expand, #onetrust-consent-sdk #onetrust-pc-sdk #ot-host-lst .ot-host-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-content #ot-pc-desc .ot-link-btn, #onetrust-consent-sdk #onetrust-pc-sdk .ot-vnd-serv .ot-vnd-item .ot-vnd-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-lst-cnt .ot-vnd-info a, #onetrust-consent-sdk #onetrust-pc-sdk #ot-pc-desc a",
+      "property": "color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .privacy-notice-link, #onetrust-consent-sdk #onetrust-pc-sdk .ot-pgph-link, #onetrust-consent-sdk #onetrust-pc-sdk .category-vendors-list-handler, #onetrust-cons"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "background-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "border-color",
+      "hex": "#0052FF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn), #onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-active-leg-btn",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(.ot-remove-objection-handler):not(.ot-obj-leg-btn-handler):not([aria-expanded"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "color",
+      "hex": "#4D4D4D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn",
+      "property": "border-color",
+      "hex": "#4D4D4D",
+      "rule_snippet": "#onetrust-consent-sdk #onetrust-pc-sdk .ot-leg-btn-container .ot-inactive-leg-btn { background-color: #FFFFFF; color: #4D4D4D; border-color: #4D4D4D; }"
+    },
+    {
+      "selector": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus",
+      "property": "border",
+      "hex": "#014CEC",
+      "rule_snippet": "#onetrust-pc-sdk .ot-host-item > button:focus, #onetrust-pc-sdk .ot-ven-item > button:focus { border: 1px solid #014cec; }"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 188,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#D8D8D8",
+      "count": 120,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 84,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0A0B0D",
+      "count": 76,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0052FF",
+      "count": 70,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3860BE",
+      "count": 56,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E2E2E2",
+      "count": 48,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#C7C5C7",
+      "count": 36,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1A73E8",
+      "count": 30,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#C1C1C1",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#578BFA",
+      "count": 28,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2E3644",
+      "count": 25,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#005FCC",
+      "count": 24,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E9E9E9",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#EEF0F3",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#656565",
+      "count": 19,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#565656",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F8F8F8",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#014CEC",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1EAEDB",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#32AE88",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#33C3F0",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#68B631",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#696969",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DDDDDD",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F4F4F4",
+      "count": 12,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F9F9FC",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#AACCCCEE",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D7D7D7",
+      "count": 10,
+      "kind": "neutral"
+    }
+  ],
+  "summary": {
+    "total_candidates": 148,
+    "by_role": {
+      "chromatic": 15,
+      "neutral": 15,
+      "selector": 118
+    }
+  }
+}

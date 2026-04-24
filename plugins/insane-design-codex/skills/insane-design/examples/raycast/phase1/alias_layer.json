@@ -1,0 +1,257 @@
+{
+  "slug": "raycast",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [
+      {
+        "alias": "--button-background",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--button-hover-background",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.1)"
+      },
+      {
+        "alias": "--color-button-bg",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,0.815)"
+      },
+      {
+        "alias": "--color-button-bg-hover",
+        "references": [],
+        "terminal_hint": "hsl(0,0%,100%)"
+      },
+      {
+        "alias": "--color-button-fg",
+        "references": [],
+        "terminal_hint": "rgb(24,25,26)"
+      }
+    ],
+    "component": [
+      {
+        "alias": "--card-padding",
+        "references": [],
+        "terminal_hint": null
+      }
+    ],
+    "core": [
+      {
+        "alias": "--Base-Black",
+        "references": [],
+        "terminal_hint": "#000000"
+      },
+      {
+        "alias": "--Base-White",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      },
+      {
+        "alias": "--blue-dark",
+        "references": [],
+        "terminal_hint": "#56c2ff"
+      },
+      {
+        "alias": "--button-hover-background",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.1)"
+      },
+      {
+        "alias": "--color",
+        "references": [],
+        "terminal_hint": "#ff6363"
+      },
+      {
+        "alias": "--color-bg-100",
+        "references": [],
+        "terminal_hint": "rgb(16,17,17)"
+      },
+      {
+        "alias": "--color-bg-200",
+        "references": [],
+        "terminal_hint": "rgb(24,25,26)"
+      },
+      {
+        "alias": "--color-bg-300",
+        "references": [],
+        "terminal_hint": "rgb(49,49,51)"
+      },
+      {
+        "alias": "--color-bg-400",
+        "references": [],
+        "terminal_hint": "rgb(73,75,77)"
+      },
+      {
+        "alias": "--color-blue",
+        "references": [],
+        "terminal_hint": "hsl(202,100%,67%)"
+      },
+      {
+        "alias": "--color-blue-transparent",
+        "references": [],
+        "terminal_hint": "hsla(202,100%,67%,0.15)"
+      },
+      {
+        "alias": "--color-border",
+        "references": [],
+        "terminal_hint": "hsl(195,5%,15%)"
+      },
+      {
+        "alias": "--color-button-bg",
+        "references": [],
+        "terminal_hint": "hsla(0,0%,100%,0.815)"
+      },
+      {
+        "alias": "--color-button-bg-hover",
+        "references": [],
+        "terminal_hint": "hsl(0,0%,100%)"
+      },
+      {
+        "alias": "--color-button-fg",
+        "references": [],
+        "terminal_hint": "rgb(24,25,26)"
+      },
+      {
+        "alias": "--color-fg",
+        "references": [],
+        "terminal_hint": "hsl(240,11%,96%)"
+      },
+      {
+        "alias": "--color-fg-200",
+        "references": [],
+        "terminal_hint": "rgb(194,199,202)"
+      },
+      {
+        "alias": "--color-fg-300",
+        "references": [],
+        "terminal_hint": "#78787c"
+      },
+      {
+        "alias": "--color-fg-400",
+        "references": [],
+        "terminal_hint": "rgb(94,99,102)"
+      },
+      {
+        "alias": "--color-green",
+        "references": [],
+        "terminal_hint": "hsl(151,59%,59%)"
+      },
+      {
+        "alias": "--color-green-transparent",
+        "references": [],
+        "terminal_hint": "hsla(151,59%,59%,0.15)"
+      },
+      {
+        "alias": "--color-red",
+        "references": [],
+        "terminal_hint": "hsl(0,100%,69%)"
+      },
+      {
+        "alias": "--color-red-transparent",
+        "references": [],
+        "terminal_hint": "hsla(0,100%,69%,0.15)"
+      },
+      {
+        "alias": "--color-step-2",
+        "references": [],
+        "terminal_hint": "#d3b2ff"
+      },
+      {
+        "alias": "--color-yellow",
+        "references": [],
+        "terminal_hint": "hsl(43,100%,60%)"
+      },
+      {
+        "alias": "--color-yellow-transparent",
+        "references": [],
+        "terminal_hint": "hsla(43,100%,60%,0.15)"
+      },
+      {
+        "alias": "--grey-100",
+        "references": [],
+        "terminal_hint": "#cdcece"
+      },
+      {
+        "alias": "--grey-200",
+        "references": [],
+        "terminal_hint": "#9c9c9d"
+      },
+      {
+        "alias": "--grey-300",
+        "references": [],
+        "terminal_hint": "#6a6b6c"
+      },
+      {
+        "alias": "--grey-400",
+        "references": [],
+        "terminal_hint": "#434345"
+      },
+      {
+        "alias": "--grey-50",
+        "references": [],
+        "terminal_hint": "#e6e6e6"
+      },
+      {
+        "alias": "--grey-500",
+        "references": [],
+        "terminal_hint": "#2f3031"
+      },
+      {
+        "alias": "--grey-600",
+        "references": [],
+        "terminal_hint": "#1b1c1e"
+      },
+      {
+        "alias": "--grey-700",
+        "references": [],
+        "terminal_hint": "#111214"
+      },
+      {
+        "alias": "--grey-800",
+        "references": [],
+        "terminal_hint": "#0c0d0f"
+      },
+      {
+        "alias": "--grey-900",
+        "references": [],
+        "terminal_hint": "#07080a"
+      },
+      {
+        "alias": "--hover-color",
+        "references": [],
+        "terminal_hint": "rgba(255,99,99,0.85)"
+      },
+      {
+        "alias": "--key-bg-end-color",
+        "references": [],
+        "terminal_hint": "rgb(13,13,13)"
+      },
+      {
+        "alias": "--key-bg-start-color",
+        "references": [],
+        "terminal_hint": "rgb(21,21,21)"
+      },
+      {
+        "alias": "--red-dark",
+        "references": [],
+        "terminal_hint": "rgba(255,99,99,1)"
+      },
+      {
+        "alias": "--reverse-background",
+        "references": [],
+        "terminal_hint": "#ffffff"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 5,
+      "component": 1,
+      "core": 41
+    }
+  }
+}

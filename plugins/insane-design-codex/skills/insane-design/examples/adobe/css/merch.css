@@ -1,0 +1,133 @@
+span[is='inline-price'],
+a[href^="/tools/ost"] {
+  visibility: hidden; 
+}
+
+span[data-wcs-osi] {
+  display: inline-block;
+}
+
+span.placeholder-resolved[data-template="strikethrough"],
+span.price.price-strikethrough,
+span.price.price-promo-strikethrough {
+  text-decoration: line-through;
+}
+
+.placeholder-resolved[data-wcs-osi] {
+  visibility: inherit;
+}
+
+a[is='checkout-link'].con-button > span {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  min-width: 66px;
+}
+
+.hidden-osi-trial-link {
+  display: none;
+}
+
+.price-unit-type:not(.disabled)::before,
+.price-tax-inclusivity:not(.disabled)::before {
+  content: "\00a0";
+}
+
+.three-in-one {
+  display: flex;
+  height: 100%;
+}
+
+.three-in-one .milo-iframe {
+  padding-bottom: 0;
+}
+
+.three-in-one .loading iframe {
+  visibility: hidden;
+}
+
+.error-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d3150f;
+  margin-top: 40px;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.icon-and-text {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.try-again-btn {
+  padding: 10px 16px;
+  background-color: #d3150f;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  #checkout-link-modal {
+    height: 100vh;
+    border-radius: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#checkout-link-modal {
+  display: flex;
+}
+
+#checkout-link-modal > .section {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1200px) {
+  #checkout-link-modal.twp,
+  #checkout-link-modal.twp .milo-iframe,
+  #checkout-link-modal.d2p,
+  #checkout-link-modal.d2p .milo-iframe {
+    height: 850px;
+  }
+
+  #checkout-link-modal.crm,
+  #checkout-link-modal.crm .milo-iframe {
+    height: 640px;
+  }
+}
+
+#checkout-link-modal iframe {
+  flex: 1;
+}
+
+#checkout-link-modal iframe.twp,
+#checkout-link-modal iframe.d2p {
+  max-height: 850px;
+}
+
+.upgrade-flow-content {
+  display: flex;
+  height: 100%;
+}
+
+.upgrade-flow-content .loading {
+  visibility: hidden;
+}
+
+.upgrade-flow-content sp-theme {
+  width: max-content;
+  height: max-content;
+  left: 50%; 
+  position: relative; 
+  top: 50%; 
+  transform: translate(-50%,-50%);
+}

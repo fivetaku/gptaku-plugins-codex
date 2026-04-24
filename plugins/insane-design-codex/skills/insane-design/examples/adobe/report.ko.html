@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adobe — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#3B63FB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{
+    font-family:var(--font-sans);
+    font-feature-settings:"ss01" 1,"ss02" 1;
+    font-size:14px;font-weight:400;line-height:1.6;
+    color:var(--fg);background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+
+  .toc{
+    position:sticky;top:0;align-self:start;height:100vh;
+    padding:28px 24px 28px 40px;
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;gap:22px;
+    overflow-y:auto;
+  }
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--border-str);text-transform:uppercase;
+    letter-spacing:.1em;padding:0 10px;margin-bottom:4px;
+  }
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{
+    display:grid;grid-template-columns:26px 1fr;align-items:center;
+    padding:6px 10px;font-size:13px;color:var(--muted-fg);
+    border-radius:var(--radius);transition:background 140ms,color 140ms;
+  }
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 12px;background:var(--muted);border:1px solid var(--border);
+    border-radius:999px;font-family:var(--font-mono);font-size:11px;
+    color:var(--subtle);margin-bottom:24px;
+  }
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{
+    margin-bottom:32px;max-width:880px;
+    border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);
+  }
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:28px 32px;
+    max-width:880px;margin-top:8px;
+  }
+  .qs__head{
+    display:flex;align-items:center;gap:12px;
+    padding-bottom:16px;margin-bottom:20px;
+    border-bottom:1px solid var(--border);
+  }
+  .qs__head-label{
+    font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+  }
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{
+    background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 16px;
+    display:flex;flex-direction:column;gap:6px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.55;
+    border:1px solid #1f2023;
+  }
+  .qs__step-label{
+    color:#7d8ba4;font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{
+    margin-top:16px;padding:14px 18px;
+    background:#fef2f2;border:1px solid #fecaca;
+    border-left:3px solid #dc2626;
+    border-radius:var(--radius);
+    font-size:13px;color:#991b1b;line-height:1.6;
+  }
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    max-width:880px;margin-top:32px;
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;
+  }
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.04em;margin-bottom:8px;
+  }
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+    background:var(--card);overflow:hidden;max-width:820px;
+  }
+  .prov__row{
+    display:grid;grid-template-columns:180px 1fr;
+    padding:14px 24px;border-bottom:1px solid var(--border);
+    font-size:13px;align-items:center;
+  }
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{
+    padding:20px 22px;background:var(--card);
+    border:1px solid var(--border);border-radius:var(--radius-lg);
+  }
+  .ts__head{
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);text-transform:uppercase;
+    letter-spacing:.06em;margin-bottom:10px;
+  }
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .ts__body b{font-weight:600;color:var(--fg);}
+
+  .fs-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:24px 28px;
+    max-width:820px;margin-bottom:24px;
+  }
+  .fs-card__row{display:grid;grid-template-columns:100px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card__v b{font-weight:600;}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{
+    font-family:var(--font-mono);font-size:11px;margin-bottom:10px;
+    display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;
+  }
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{
+    display:grid;gap:1px;background:var(--border);
+    border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  }
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--6{grid-template-columns:repeat(6,minmax(0,1fr));}
+  .sw{
+    aspect-ratio:1/2.2;display:flex;flex-direction:column;
+    justify-content:flex-end;padding:8px 6px;
+    font-family:var(--font-mono);font-size:9px;line-height:1.3;
+    transition:transform 160ms;position:relative;cursor:default;
+  }
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+
+  .sem-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  .sem-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:16px;}
+  .sem-card__chip{width:44px;height:44px;border-radius:var(--radius);flex-shrink:0;border:1px solid rgba(0,0,0,.08);}
+  .sem-card__n{font-size:14px;font-weight:500;margin-bottom:2px;}
+  .sem-card__h{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:2px;}
+  .sem-card__u{font-size:12px;color:var(--muted-fg);}
+
+  .cmp-block{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;
+  }
+  .cmp-block__head{
+    display:flex;align-items:baseline;gap:12px;
+    padding-bottom:14px;margin-bottom:18px;
+    border-bottom:1px solid var(--border);flex-wrap:wrap;
+  }
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{
+    padding:24px;background:var(--muted);border-radius:var(--radius);
+    display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;
+  }
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+
+  .cmp-code{
+    margin-top:14px;background:#08090a;color:#f7f8f8;
+    border-radius:var(--radius);padding:14px 18px;
+    font-family:var(--font-mono);font-size:11px;line-height:1.65;
+    overflow-x:auto;border:1px solid #1f2023;position:relative;
+  }
+  .cmp-code .copy{
+    position:absolute;top:10px;right:10px;
+    font-family:var(--font-mono);font-size:10px;
+    color:#7d8ba4;background:#1f2023;
+    padding:3px 8px;border-radius:4px;
+    border:1px solid #2f3135;
+  }
+  .cmp-code .copy:hover{color:#f7f8f8;background:#2f3135;}
+
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{
+    padding:14px 16px;background:var(--muted);border-radius:var(--radius);
+    font-size:15px;line-height:1.5;
+    border-left:2px solid var(--brand-color);
+  }
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{
+    display:flex;gap:0;
+    border-bottom:1px solid var(--border);
+    background:var(--muted);
+  }
+  .code-tabs button{
+    padding:12px 18px;font-family:var(--font-mono);font-size:11px;
+    color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;
+    border-bottom:2px solid transparent;
+  }
+  .code-tabs button.is-active{
+    color:var(--fg);background:var(--card);
+    border-bottom-color:var(--accent);
+  }
+  .code-copy{
+    margin-left:auto;padding:12px 18px;
+    font-family:var(--font-mono);font-size:10px;
+    color:var(--muted-fg);
+  }
+  .code-copy:hover{color:var(--fg);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{
+    background:#08090a;color:#f7f8f8;
+    padding:24px 28px;
+    font-family:var(--font-mono);font-size:12px;line-height:1.65;
+    overflow-x:auto;max-height:560px;margin:0;
+  }
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{
+    font-family:var(--font-mono);font-size:11px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:4px 12px;border-radius:999px;
+  }
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.dd-grid,.sem-row,.qs__grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+  }
+
+  /* Demo buttons */
+  .demo-btn-adobe{
+    display:inline-block;padding:10px 20px;
+    background:#3B63FB;color:#FFFFFF;
+    font-family:"adobe-clean","Helvetica Neue",Arial,sans-serif;
+    font-weight:700;font-size:14px;border-radius:4px;cursor:pointer;
+    transition:background 150ms;
+  }
+  .demo-btn-adobe:hover{background:#274DEA;}
+  .demo-btn-adobe-sec{
+    display:inline-block;padding:10px 20px;
+    background:transparent;color:#292929;
+    border:1px solid #DADADA;
+    font-family:"adobe-clean","Helvetica Neue",Arial,sans-serif;
+    font-weight:400;font-size:14px;border-radius:4px;cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Adobe</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">05</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">06</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">07</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">08</span>Do / Don't</a></li>
+      </ul>
+    </div>
+
+    <div class="toc__foot">
+      insane-design/adobe/<br>
+      design.md<br>
+      2026-04-13
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Adobe <span class="sub">— --feds-* / Spectrum</span></h1>
+      <p class="hero__sub">
+        adobe.com 이 실제 서빙하는 CSS에서 추출한 디자인 토큰. 로고 레드(<code>#EB1000</code>)와 UI CTA 블루(<code>#3B63FB</code>)는 완전히 다른 역할을 한다.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="adobe.com — 실제 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Adobe처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight</span>
+            <code>body {
+  font-family: "adobe-clean",
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#FFFFFF</b>;
+  --fg: <b>#292929</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 CTA 블루</span>
+            <code>:root {
+  /* CTA 버튼 */
+  --brand: <b>#3B63FB</b>;
+  /* ⚠️ 로고 레드는 별도 */
+  --logo: <b>#EB1000</b>;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: Adobe 로고의 빨간 <code>#EB1000</code>을 UI 버튼 색으로 쓰는 것. 실제 CTA 버튼은 Spectrum 파란색 <code>#3B63FB</code>이다. 빨간색은 로고 전용.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">adobe.com</div>
+          <div class="stat__hint">FEDS + Spectrum 레이어</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">CSS custom properties 파싱</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">System</div>
+          <div class="stat__val stat__val--mono">--feds-*</div>
+          <div class="stat__hint">Adobe Spectrum FEDS 레이어</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">CTA Brand</div>
+          <div class="stat__val stat__val--mono" style="color:#3B63FB">#3B63FB</div>
+          <div class="stat__hint">Spectrum Blue 2 (UI 전용)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 모두 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://adobe.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">다수 외부 CSS (Adobe FEDS + Spectrum)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v"><code>--feds-*</code>, <code>--alias-*</code></span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">Adobe 마케팅 사이트의 CSS 아키텍처와 디자인 시스템 구조.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">Framework</div>
+          <div class="ts__body">Adobe 자체 마케팅 플랫폼 (Helix/Franklin 기반)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">Design System</div>
+          <div class="ts__body"><b>Adobe Spectrum</b> + FEDS (Frontend DS) 레이어<br>Prefix: <code>--feds-*</code>, <code>--alias-*</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS Architecture</div>
+          <div class="ts__body">2-tier: <code>--alias-background-semantic-*</code> (역할 토큰) → <code>--feds-cta-*</code> (마케팅 CTA)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">Font Loading</div>
+          <div class="ts__body">자체 호스트 (adobe-clean, adobe-clean-serif, adobe-clean-display)<br>Default theme: <b>light</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · 타이포그래피</div>
+      <h2 class="section__title">로고체와 UI 폰트가 다르다 — adobe-clean 패밀리</h2>
+      <p class="section__lede">adobe-clean, adobe-clean-serif, adobe-clean-display 세 가지 변형. 외부에서는 Source Sans 3 / Inter로 대체.</p>
+
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display</span>
+          <div class="fs-card__v"><code>adobe-clean-display</code> — Adobe 독점, 대형 헤드라인 전용</div>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Body</span>
+          <div class="fs-card__v"><code>adobe-clean</code> — Adobe 독점, 본문 기본</div>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Serif</span>
+          <div class="fs-card__v"><code>adobe-clean-serif</code> — Adobe 독점, 에디토리얼</div>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight</span>
+          <div class="fs-card__v">normal: <b>400</b> / bold: <b>700</b> (heading 21회, body 13회)</div>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Fallback</span>
+          <div class="fs-card__v"><code>"Helvetica Neue", Arial, sans-serif</code> — 외부 대체: Source Sans 3</div>
+        </div>
+      </div>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;">
+        <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;">
+          <div style="font-family:'SF Pro Display',-apple-system,sans-serif;font-size:2.5rem;font-weight:700;line-height:1.2;letter-spacing:-0.02em;">Heading XL</div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;"><span style="color:var(--fg);display:block;margin-bottom:2px;">heading-xl</span>2.5rem · 700 · lh 1.2 · ls -0.02em</div>
+        </div>
+        <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;">
+          <div style="font-family:'SF Pro Display',-apple-system,sans-serif;font-size:2rem;font-weight:700;line-height:1.25;letter-spacing:-0.015em;">Heading LG</div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;"><span style="color:var(--fg);display:block;margin-bottom:2px;">heading-lg</span>2rem · 700 · lh 1.25 · ls -0.015em</div>
+        </div>
+        <div style="padding:20px 24px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;">
+          <div style="font-family:'SF Pro Display',-apple-system,sans-serif;font-size:1.125rem;font-weight:400;line-height:1.6;">Body Large — adobe-clean 기준</div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;"><span style="color:var(--fg);display:block;margin-bottom:2px;">body-lg</span>1.125rem · 400 · lh 1.6</div>
+        </div>
+        <div style="padding:20px 24px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;">
+          <div style="font-family:'SF Pro Display',-apple-system,sans-serif;font-size:0.75rem;font-weight:600;line-height:1.4;letter-spacing:0.04em;text-transform:uppercase;">LABEL</div>
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;"><span style="color:var(--fg);display:block;margin-bottom:2px;">label</span>0.75rem · 600 · lh 1.4 · ls 0.04em · uppercase</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · 컬러</div>
+      <h2 class="section__title">로고 레드와 UI 블루는 완전히 다른 역할</h2>
+      <p class="section__lede">--feds-color-adobeBrand(#EB1000)는 로고 전용. CTA 버튼은 Spectrum Blue 2(#3B63FB). 혼용하면 안 된다.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Spectrum Blue CTA Ramp</b></div>
+        <div class="ramp ramp--6">
+          <div class="sw sw--d is-anchor" style="background:#3B63FB"><span class="n">CTA</span>#3B63FB</div>
+          <div class="sw sw--d" style="background:#274DEA"><span class="n">hover</span>#274DEA</div>
+          <div class="sw sw--d" style="background:#0265DC"><span class="n">spectrum</span>#0265DC</div>
+          <div class="sw sw--d" style="background:#0054B6"><span class="n">s-hover</span>#0054B6</div>
+          <div class="sw sw--d" style="background:#507BFF"><span class="n">focus</span>#507BFF</div>
+          <div class="sw sw--d" style="background:#5258E4"><span class="n">express</span>#5258E4</div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Adobe Brand + Neutral</b></div>
+        <div class="ramp ramp--4">
+          <div class="sw sw--d" style="background:#EB1000"><span class="n">로고 레드</span>#EB1000</div>
+          <div class="sw sw--d" style="background:#292929"><span class="n">텍스트</span>#292929</div>
+          <div class="sw sw--l" style="background:#DADADA"><span class="n">CTA border</span>#DADADA</div>
+          <div class="sw sw--l" style="background:#F5F5F5"><span class="n">hover bg</span>#F5F5F5</div>
+        </div>
+      </div>
+
+      <div class="sem-row">
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#3B63FB"></div>
+          <div>
+            <div class="sem-card__n">CTA Primary</div>
+            <div class="sem-card__h">--feds-cta-primary-bg</div>
+            <div class="sem-card__u">메인 CTA 버튼 배경</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#EB1000"></div>
+          <div>
+            <div class="sem-card__n">Adobe Brand (로고 전용)</div>
+            <div class="sem-card__h">--feds-color-adobeBrand</div>
+            <div class="sem-card__u">로고 · 브랜드 아이덴티티 전용</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#292929"></div>
+          <div>
+            <div class="sem-card__n">기본 텍스트</div>
+            <div class="sem-card__h">--alias-icon-neutral-default</div>
+            <div class="sem-card__u">본문 · 아이콘 기본 색</div>
+          </div>
+        </div>
+        <div class="sem-card">
+          <div class="sem-card__chip" style="background:#507BFF"></div>
+          <div>
+            <div class="sem-card__n">포커스 링</div>
+            <div class="sem-card__h">--alias-icon-neutral-key-focus</div>
+            <div class="sem-card__u">키보드 포커스 표시</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">05 · 컴포넌트</div>
+      <h2 class="section__title">FEDS CTA 버튼 — Primary / Secondary</h2>
+      <p class="section__lede">Adobe 마케팅 사이트의 주요 CTA 패턴. Primary는 Spectrum Blue, Secondary는 투명 배경.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.feds-cta--primary</span>
+          <span class="cmp-block__desc">Primary CTA 버튼</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <a class="demo-btn-adobe" href="#">무료로 시작하기</a>
+            </div>
+            <div class="cmp-code" id="code-adobe-primary">
+              <button class="copy" data-copy="code-adobe-primary">Copy</button>
+<pre>&lt;a href="#" class="feds-cta--primary"&gt;
+  무료로 시작하기
+&lt;/a&gt;</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #3B63FB</code><br>
+            <code>color: #FFFFFF</code><br>
+            <code>font-weight: 700</code><br>
+            <code>hover: #274DEA</code><br>
+            <code>border-radius: 4px</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.feds-cta--secondary</span>
+          <span class="cmp-block__desc">Secondary CTA 버튼</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <a class="demo-btn-adobe-sec" href="#">자세히 알아보기</a>
+            </div>
+            <div class="cmp-code" id="code-adobe-sec">
+              <button class="copy" data-copy="code-adobe-sec">Copy</button>
+<pre>&lt;a href="#" class="feds-cta--secondary"&gt;
+  자세히 알아보기
+&lt;/a&gt;</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: transparent</code><br>
+            <code>color: #292929</code><br>
+            <code>border: 1px solid #DADADA</code><br>
+            <code>font-weight: 400</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">06 · 라이팅 원칙</div>
+      <h2 class="section__title">크리에이터 중심, 능동적 동사</h2>
+      <p class="section__lede">Adobe 카피는 제품 능력보다 사용자의 창작 행위를 강조한다.</p>
+
+      <div class="voice-card">
+        <div class="voice-card__label">Headline</div>
+        <div class="voice-card__rule">제품 능력 중심, 능동형 동사, 간결하게</div>
+        <div class="voice-card__ex">"Make it. Make it real."</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__label">Primary CTA</div>
+        <div class="voice-card__rule">행동 + 무료 강조</div>
+        <div class="voice-card__ex">"무료로 시작하기"</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-card__label">Tone</div>
+        <div class="voice-card__rule">창의적이고 역동적, 전문성 강조, 과장 없이 능력 서술</div>
+        <div class="voice-card__ex">"크리에이터를 위한 모든 것 — Photoshop, Illustrator, Premiere"</div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">07 · CSS · Tailwind</div>
+      <h2 class="section__title">Drop-in CSS 스니펫</h2>
+      <p class="section__lede">핵심 토큰만 추출한 즉시 사용 가능한 CSS. Tailwind 설정도 포함.</p>
+
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" data-tab="css">CSS 스니펫</button>
+          <button data-tab="tw">Tailwind 설정</button>
+          <button class="code-copy" data-copy-active>Copy</button>
+        </div>
+        <div class="code-pane is-active" data-pane="css">
+          <pre><code>/* Adobe — copy into your root stylesheet */
+:root {
+  /* Fonts */
+  --feds-font-family: "adobe-clean", "Helvetica Neue", Arial, sans-serif;
+  --feds-font-weight-normal: 400;
+  --feds-font-weight-bold: 700;
+
+  /* Brand (Spectrum Blue CTA) */
+  --feds-color-brand-logo: #EB1000;   /* 로고 전용 — UI에 쓰지 말 것 */
+  --feds-color-brand-cta: #3B63FB;    /* CTA 버튼 */
+  --feds-color-brand-cta-hover: #274DEA;
+  --feds-color-brand-express: #5258E4;
+
+  /* Surfaces */
+  --feds-bg-page: #FFFFFF;
+  --feds-bg-dark: #292929;
+  --feds-text: #292929;
+  --feds-text-muted: #6E6E6E;
+
+  /* Focus */
+  --feds-focus-ring: #507BFF;
+}</code></pre>
+        </div>
+        <div class="code-pane" data-pane="tw">
+          <pre><code>// tailwind.config.js — Adobe
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          logo:    '#EB1000',
+          cta:     '#3B63FB',
+          hover:   '#274DEA',
+          express: '#5258E4',
+          focus:   '#507BFF',
+        },
+        neutral: {
+          900: '#292929',
+          300: '#DADADA',
+          200: '#E1E1E1',
+          100: '#F5F5F5',
+        },
+      },
+      fontFamily: {
+        sans: ['"adobe-clean"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+      },
+      fontWeight: {
+        normal: '400',
+        bold:   '700',
+      },
+    },
+  },
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">08 · Do / Don't</div>
+      <h2 class="section__title">자주 틀리는 것들</h2>
+      <p class="section__lede">Adobe 디자인을 구현할 때 실제로 가장 많이 틀리는 패턴.</p>
+
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>CTA 버튼 배경에 <code>#3B63FB</code> (Spectrum Blue) 사용</li>
+            <li>본문 색상으로 <code>#292929</code> (거의 검정, 순흑 아님) 사용</li>
+            <li>Heading에 <code>font-weight: 700</code> 적용</li>
+            <li>포커스 링 색으로 <code>#507BFF</code> 사용</li>
+            <li>adobe-clean 대체재로 <b>Source Sans 3</b> 또는 <b>Inter</b> 사용</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>Adobe 로고 빨간 <code>#EB1000</code>을 UI 버튼에 쓰지 말 것 — 로고 전용</li>
+            <li>body에 <code>font-weight: 300</code> 또는 <code>100</code> 쓰지 말 것 — 400이 기준</li>
+            <li>Spectrum Blue와 Express Purple을 같은 화면에 혼합하지 말 것</li>
+            <li>CTA 호버 색을 임의로 만들지 말 것 — <code>#274DEA</code> 고정</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <div>
+        <span class="kr">DesignMD · Adobe Report</span><br>
+        insane-design/adobe/design.md 기반 생성
+      </div>
+      <div style="text-align:right;">
+        2026-04-13<br>
+        <span class="kr">CSS 파싱 기반 · AI 추론 없음</span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('.code-tabs button[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.code-export');
+      group.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('is-active'));
+      group.querySelectorAll('[data-pane]').forEach(p => p.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      group.querySelector(`[data-pane="${btn.dataset.tab}"]`).classList.add('is-active');
+    });
+  });
+
+  document.querySelectorAll('.copy[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      navigator.clipboard.writeText(target.textContent);
+      const original = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => (btn.textContent = original), 1500);
+    });
+  });
+
+  document.querySelectorAll('[data-copy-active]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.code-export');
+      const active = group.querySelector('.code-pane.is-active pre code');
+      if (!active) return;
+      navigator.clipboard.writeText(active.textContent);
+      const original = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => (btn.textContent = original), 1500);
+    });
+  });
+</script>
+
+</body>
+</html>

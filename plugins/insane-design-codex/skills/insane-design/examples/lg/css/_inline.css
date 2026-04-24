@@ -1,0 +1,58 @@
+
+  .mainpop_area {width: 100%; height:100%; position:fixed; z-index:99999; top:0; left:0; text-align: center; display:none; background: rgba(0,0,0,0.6);}
+  .mainpop_box {padding: 0 6%; position:relative; top:50%; transform: translateY(-50%);}
+  .mainpop {margin: 0 auto; width: 100%; max-width: 730px; background: #fff; text-align: left;}
+  .mainpop h2 {padding: 22px 22px 22px 0; font-size: 30px; color: #fff; line-height: 36px; font-family: "LGSmHaTSB"; text-align: center; background: #b31045; position:relative;}
+  .mainpop h2 .close {display: inline-block; width:20px; height:20px; position:absolute; top:13px; right:13px; background: url('../images/main/popimg/mainpop_closebtn_btn2.jpg') no-repeat center center; cursor: pointer;}
+  .mainpop .conbox {padding: 34px;}
+  .mainpop .conbox .infotxt {margin-bottom:25px; font-size: 16px; line-height: 26px; color: #555; word-break: keep-all; text-align:left;}
+  .mainpop .conbox .infotxt strong {font-weight:bold; font-size:18px; display:block;}
+  .mainpop .conbox .infotxt span {font-size: 13px; color: #C00000; line-height: 20px;}
+  .mainpop .conbox ul li {margin-top: 10px; position:relative; display: inline-flex; justify-content: space-between; padding-right: 5px; align-items: center;}
+  .mainpop .conbox ul li:first-child {margin-top:0;}
+  .mainpop .conbox ul li:after {content: none;}
+  .mainpop .conbox ul.service li:after {content: none;}
+  .mainpop .conbox ul li .txt {display: inline-block; font-size: 16px; color: #494949; line-height: 30px; font-family: "LGSmHaTSB"; vertical-align: middle;}
+  .mainpop .conbox ul li .btn {display: inline-block; padding: 0 14px 0 46px; height: 30px; font-size: 15px; color: #fff; line-height: 30px; letter-spacing: -0.02em; vertical-align:middle;}
+  .mainpop .conbox ul li .btn.go {background: #dd3c70 url('../images/main/popimg/mainpop_gobtn_bg2.jpg') no-repeat left center; font-size: 14px; height: 26px; line-height: 26px; margin-left: 15px;}
+  .mainpop .conbox ul li .btn.down {background: #ebb3a4 url('../images/main/popimg/mainpop_downbtn_bg1.jpg') no-repeat left center; font-size: 14px; height: 26px; line-height: 26px;}
+  .mainpop .closebox {padding: 10px 15px; background: #ebebeb; position:relative; bottom:0;}
+  .mainpop .closebox .dayclose input {display: inline-block; width: 15px; height: 15px; vertical-align:middle;}
+  .mainpop .closebox .dayclose label {margin-left: 6px; color: #555; font-size: 13px; letter-spacing: -0.05em; cursor: pointer;}
+  .mainpop .closebox .close {display: inline-block; padding: 0 6px; height:24px; color: #555; font-size: 13px; line-height: 24px; letter-spacing: -0.05em; cursor: pointer; position:absolute; bottom:6px; right:13px; background: #d9d9d9; border-radius: 3px; -webkit-border-radius: 3px;}
+
+  .popup-proxy-vote .mainpop h2 {word-break: keep-all;}
+  .popup-proxy-vote .mainpop .conbox .infotxt {margin-bottom: 18px; line-height: 24px;}
+  .popup-proxy-vote .mainpop .conbox ul li {margin-top: 8px; word-break: keep-all;}
+  .popup-proxy-vote .mainpop .conbox ul li .txt::before {content: "·"; position: absolute; margin-left: -5px;}
+  .popup-proxy-vote .mainpop .conbox ul li {width: 100%;}
+  .popup-proxy-vote .mainpop .conbox ul li .txt {width: max-content; padding-left: 5px;}
+  .popup-proxy-vote .mainpop b {font-weight: 700; color: #111;}
+
+  @media (min-width: 827px) {
+    .popup-proxy-vote .mainpop .conbox ul li:nth-child(odd) {width: 305px;}
+    .popup-proxy-vote .mainpop .conbox ul li:nth-child(even) {width: 340px;}
+    .popup-proxy-vote .mainpop .conbox ul li:nth-child(odd) .txt {width: 148px;}
+    .popup-proxy-vote .mainpop .conbox ul li:nth-child(even) .txt {width: 210px;}
+  }
+
+  @media screen and (max-width: 509px){
+    .mainpop_box {margin-top: 0; transform: translateY(-50%);}
+    .mainpop {height:auto;}
+    .mainpop h2 {padding: 0.85rem 1.1rem 0.85rem 0; font-size:1rem; line-height:1.35rem;}
+    .mainpop h2 .close {width:1.1rem; height:1.1rem; right:0.6rem; background-size: 100% auto; top: 12px;}
+    .mainpop .conbox {padding: 1.4rem;}
+    .mainpop .conbox .infotxt {margin-bottom: 10px; font-size: 12px; line-height: 1.6; word-break: normal;}
+    .mainpop .conbox .infotxt span {font-size: 11px;}
+    .mainpop .conbox .infotxt br {display: none;}
+    .mainpop .conbox .infotxt + .infotxt br {display: block;}
+    .mainpop .conbox ul li {margin-top: 0.5rem; font-size: 0.8rem; width: 100%;}
+    .mainpop .conbox ul li:first-child {margin-top: -0.5rem;}
+    .mainpop .conbox ul li:after {width:0.25rem; height:0.25rem; top:0.75rem;}
+    .mainpop .conbox ul li .txt {width: 8.9rem; line-height: 1.8rem; font-size: 11px;}
+    .mainpop .conbox ul li .btn {padding: 0 14px 0 3rem; height: 1.7rem; font-size: 0.9rem; color: #fff; line-height: 1.7rem;}
+    .mainpop .conbox ul li .btn.go {background-size: auto 82%;}
+    .mainpop .conbox ul li .btn.down {background-size: auto 82%;}
+    .mainpop .closebox .dayclose label {font-size: 0.8rem;}
+    .mainpop .closebox .close {font-size: 0.8rem;}
+  }

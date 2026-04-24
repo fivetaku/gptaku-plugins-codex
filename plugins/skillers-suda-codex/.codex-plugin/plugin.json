@@ -1,0 +1,43 @@
+{
+  "name": "skillers-suda-codex",
+  "version": "0.1.0",
+  "description": "Codex-native workshop for designing, building, reviewing, and packaging skills or plugin bundles.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/skillers-suda-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "skill-builder",
+    "plugin-builder",
+    "workshop",
+    "codex",
+    "korean"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Skillers Suda Codex",
+    "shortDescription": "Design and build Codex skills or plugins from rough ideas",
+    "longDescription": "Packages the Codex-native skillers-suda workshop. It turns vague capability ideas into skills or plugin bundles using chat-first scoping, optional multi-agent review, structured design briefs, and lightweight validation.",
+    "developerName": "GPTaku",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "이 아이디어를 Codex 스킬로 만들어줘.",
+      "이 스킬을 검토하고 트리거 설명을 개선해줘.",
+      "이 스킬 묶음을 Codex 플러그인 패키지로 설계해줘."
+    ],
+    "brandColor": "#0E7490",
+    "composerIcon": "./assets/skillers-suda-codex.svg",
+    "logo": "./assets/skillers-suda-codex.svg",
+    "screenshots": []
+  }
+}

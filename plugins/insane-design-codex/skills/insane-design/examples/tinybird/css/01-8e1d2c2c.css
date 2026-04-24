@@ -1,0 +1,394 @@
+/*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */.styles_wrapper__7EClP {
+  font-size:var(--text-body-1,18px);
+  line-height:var(--tw-leading,var(--text-body-1--line-height,32px))
+}
+.styles_wrapper__7EClP>div>span {
+  font-size:var(--text-body-1,18px)!important;
+  line-height:var(--tw-leading,var(--text-body-1--line-height,32px))!important
+}
+.styles_wrapper__7EClP strong {
+  --tw-font-weight:var(--font-weight-bold,700);
+  font-weight:var(--font-weight-bold,700)
+}
+.styles_wrapper__7EClP h2,.styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4 {
+  margin-bottom:calc(var(--spacing,.25rem) * 4)
+}
+@media (min-width:990px) {
+  .styles_wrapper__7EClP h2,.styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4 {
+  margin-bottom:calc(var(--spacing,.25rem) * 6)
+}
+
+}
+:is(.styles_wrapper__7EClP h2,.styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4):not(:first-child) {
+  margin-top:calc(var(--spacing,.25rem) * 6)
+}
+@media (min-width:990px) {
+  :is(.styles_wrapper__7EClP h2,.styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4):not(:first-child) {
+  margin-top:calc(var(--spacing,.25rem) * 8)
+}
+
+}
+.styles_wrapper__7EClP p {
+  margin-bottom:calc(var(--spacing,.25rem) * 4)
+}
+.styles_wrapper__7EClP li {
+  margin-bottom:calc(var(--spacing,.25rem) * 2)
+}
+@media (min-width:768px) {
+  .styles_wrapper__7EClP li {
+  margin-bottom:calc(var(--spacing,.25rem) * 4)
+}
+
+}
+.styles_wrapper__7EClP li {
+  margin-left:calc(var(--spacing,.25rem) * 6)
+}
+.styles_wrapper__7EClP ol,.styles_wrapper__7EClP ul {
+  padding-inline-start:calc(var(--spacing,.25rem) * 6);
+  list-style-type:disc
+}
+.styles_wrapper__7EClP h2 {
+  font-size:var(--text-h4-mobile,24px);
+  line-height:var(--tw-leading,var(--text-h4-mobile--line-height,32px));
+  letter-spacing:var(--tw-tracking,var(--text-h4-mobile--letter-spacing,-.32px))
+}
+@media (min-width:990px) {
+  .styles_wrapper__7EClP h2 {
+  font-size:var(--text-h4,32px);
+  line-height:var(--tw-leading,var(--text-h4--line-height,40px));
+  letter-spacing:var(--tw-tracking,var(--text-h4--letter-spacing,-1px))
+}
+
+}
+.styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4 {
+  font-size:var(--text-h5-mobile,20px);
+  line-height:var(--tw-leading,var(--text-h5-mobile--line-height,28px))
+}
+@media (min-width:990px) {
+  .styles_wrapper__7EClP h3,.styles_wrapper__7EClP h4 {
+  font-size:var(--text-h5,24px);
+  line-height:var(--tw-leading,var(--text-h5--line-height,32px));
+  letter-spacing:var(--tw-tracking,var(--text-h5--letter-spacing,-.32px))
+}
+
+}
+.styles_wrapper__7EClP a {
+  color:var(--primary);
+  font-family:var(--font-roboto)!important
+}
+@media (hover:hover) {
+  .styles_wrapper__7EClP a:hover {
+  text-decoration-line:underline
+}
+
+}
+@property --tw-font-weight {
+  syntax:"*";
+  inherits:false
+}
+.Button_Button--corners__3q5go span {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .3s ease-in-out
+}
+.Button_Button--corners__3q5go span:after,.Button_Button--corners__3q5go span:before,.Button_Button--corners__3q5go:after,.Button_Button--corners__3q5go:before {
+  content:"";
+  position:absolute;
+  color:var(--primary);
+  width:0;
+  height:0;
+  border:1px solid var(--primary);
+  opacity:0;
+  pointer-events:none;
+  transition:all .3s ease-in-out;
+  z-index:1
+}
+.Button_Button--corners__3q5go:before {
+  top:-.25rem;
+  left:-.25rem;
+  border-right:none;
+  border-bottom:none
+}
+.Button_Button--corners__3q5go span:before {
+  top:-.25rem;
+  right:-.25rem;
+  border-left:none;
+  border-bottom:none
+}
+.Button_Button--corners__3q5go:after {
+  bottom:-.25rem;
+  right:-.25rem;
+  border-top:none;
+  border-left:none
+}
+.Button_Button--corners__3q5go span:after {
+  bottom:-.25rem;
+  left:-.25rem;
+  border-top:none;
+  border-right:none
+}
+.Button_Button--corners__3q5go:hover {
+  color:var(--gray-950);
+  border-color:var(--primary);
+  background-color:var(--primary)
+}
+.Button_Button--corners__3q5go:hover span:after,.Button_Button--corners__3q5go:hover span:before,.Button_Button--corners__3q5go:hover:after,.Button_Button--corners__3q5go:hover:before {
+  animation:none;
+  width:.375rem;
+  height:.375rem;
+  opacity:1
+}
+.Code_code__QAGbG {
+  position:relative;
+  font-size:.875rem;
+  font-family:var(--font-mono);
+  white-space:pre;
+  border-radius:4px;
+  overflow:hidden
+}
+.Code_code__QAGbG .Code_wrapper__Z1CVY {
+  height:100%;
+  display:flex;
+  flex-direction:column
+}
+.Code_code__QAGbG .Code_codeContainer__iCb4v {
+  position:relative;
+  overflow:hidden;
+  flex-grow:1
+}
+@media screen and (max-width:768px) {
+  .Code_codeContainerWithTabs__O4O1Y {
+  padding-top:2rem;
+  background:var(--gray-900)
+}
+
+}
+.Code_code__QAGbG .shiki,.Code_code__QAGbG pre {
+  position:relative;
+  overflow:auto;
+  padding:2.5rem 1.5rem 1.5rem;
+  counter-reset:line;
+  height:100%;
+  scrollbar-color:#3c3c3c #0a0a0a;
+  scrollbar-width:auto;
+  font-family:Roboto Mono,monospace!important
+}
+.Code_code__QAGbG .shiki,.Code_code__QAGbG code,.Code_code__QAGbG pre {
+  font-family:Roboto Mono,monospace!important;
+  white-space:pre;
+  height:100%
+}
+.Code_buttons__THKwR {
+  position:absolute;
+  top:.625rem;
+  right:.625rem;
+  z-index:20;
+  display:flex;
+  gap:.5rem
+}
+.Code_buttonsWithTabs__jxXzV {
+  top:1.5rem;
+  right:1.5rem
+}
+@media screen and (max-width:768px) {
+  .Code_buttonsWithTabs__jxXzV {
+  top:3.125rem;
+  right:.625rem
+}
+
+}
+.Code_tabsContainer__3ao1O {
+  position:relative;
+  padding:1.5rem 1.5rem 0;
+  background:var(--gray-900)
+}
+@media screen and (max-width:768px) {
+  .Code_tabsContainer__3ao1O {
+  padding:0;
+  background:transparent
+}
+
+}
+.Code_outputPanel__k9iv5 {
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  background:var(--gray-900);
+  z-index:10;
+  transform:translateX(100%);
+  transition:transform .3s ease-in-out;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column
+}
+.Code_outputPanel__k9iv5.Code_open__4fWBE {
+  transform:translateX(0)
+}
+.Code_outputPanelHeader__DL45I {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.5rem 1.5rem 0
+}
+.Code_outputPanelTitle__Us_Ax {
+  color:var(--primary);
+  font-family:var(--font-mono);
+  text-transform:uppercase
+}
+.Code_outputPanelContent__v5cI7 {
+  flex-grow:1;
+  overflow:auto
+}
+.Code_explainPanelContent__RNGMl {
+  white-space:pre-wrap
+}
+.Code_explainPanelContent__RNGMl,.Code_explainPanelContent__RNGMl code {
+  font-size:.875rem!important;
+  line-height:1.375rem!important
+}
+.Code_explainPanelContent__RNGMl ul {
+  list-style-type:disc;
+  padding-left:1.25rem
+}
+.Code_explainPanelContent__RNGMl li {
+  font-size:.875rem!important;
+  line-height:1.375rem!important
+}
+.Code_explainPanelAccordion__z60wc {
+  overflow:hidden;
+  will-change:height
+}
+.Code_explainPanelAccordionContent__IQOUW {
+  will-change:transform,opacity
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE {
+  position:relative;
+  border:1px solid white;
+  background-color:var(--gray-950)
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:after,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:before,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE>span:after,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE>span:before {
+  content:"";
+  position:absolute;
+  color:white;
+  width:.375rem;
+  height:.375rem;
+  border:1px solid white;
+  opacity:1;
+  pointer-events:none;
+  transition:all .3s ease-in-out;
+  z-index:1
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:before {
+  top:-.5rem;
+  left:-.5rem;
+  border-right:none;
+  border-bottom:none
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE>span:before {
+  top:-.5rem;
+  right:-.5rem;
+  border-left:none;
+  border-bottom:none
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:after {
+  bottom:-.5rem;
+  right:-.5rem;
+  border-top:none;
+  border-left:none
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE>span:after {
+  bottom:-.5rem;
+  left:-.5rem;
+  border-top:none;
+  border-right:none
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:hover {
+  color:var(--gray-950);
+  border-color:var(--primary);
+  background-color:var(--primary)
+}
+.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:hover:after,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:hover:before,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:hover>span:after,.AboutTeamTableRow_AboutTeamTableRowImage__vGtuE:hover>span:before {
+  animation:none;
+  width:.5rem;
+  height:.5rem;
+  opacity:1
+}
+.Accordion_accordionDetails__rpkEO {
+  overflow:hidden
+}
+.Accordion_accordionContent__hbuTU {
+  overflow:hidden;
+  transition:max-height .3s ease-out,opacity .2s ease-out .1s;
+  max-height:0
+}
+.Accordion_accordionDetails__rpkEO:not([open]) .Accordion_accordionContent__hbuTU {
+  opacity:0;
+  transition:opacity .15s ease-out
+}
+.Accordion_accordionDetails__rpkEO[open] .Accordion_accordionContent__hbuTU {
+  opacity:1
+}
+.Accordion_accordionSummary__Th0am {
+  list-style:none
+}
+.Accordion_accordionSummary__Th0am::-webkit-details-marker {
+  display:none!important
+}
+.Accordion_accordionSummary__Th0am::marker {
+  display:none!important;
+  content:none!important
+}
+@supports (-webkit-touch-callout:none) {
+  .Accordion_accordionSummary__Th0am {
+  -webkit-appearance:none;
+  appearance:none
+}
+.Accordion_accordionSummary__Th0am::-webkit-details-marker {
+  display:none!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  width:0!important;
+  height:0!important;
+  margin:0!important;
+  padding:0!important
+}
+
+}
+.style_wrapper__F1V3d {
+  overflow:hidden;
+  .swiper {
+  overflow:visible
+}
+.swiper-pagination {
+  position:relative;
+  display:flex;
+  justify-content:center;
+  gap:.5rem;
+  margin-top:1.5rem
+}
+.swiper-pagination-bullet {
+  width:.5rem;
+  height:.5rem;
+  border-radius:50%;
+  background:var(--gray-600);
+  cursor:pointer;
+  transition:background .2s ease
+}
+.swiper-pagination-bullet-active {
+  background:var(--primary)
+}
+
+}
+.style_slide__bT_Xg {
+  width:calc(100vw - 2.5rem);
+  @media (min-width:768px) {
+  width:calc(100vw - 3rem)
+}
+@media (min-width:1024px) {
+  width:calc((min(100vw, 90rem) - 5rem) * 10 / 12)
+}
+
+}

@@ -1,0 +1,408 @@
+{
+  "slug": "supabase",
+  "total_vars": 788,
+  "resolved_count": 598,
+  "unresolved_count": 190,
+  "samples": {
+    "--ch-title-bar-height": {
+      "raw": "30px",
+      "resolved": "30px",
+      "chain": [
+        "--ch-title-bar-height",
+        "30px"
+      ]
+    },
+    "--ch-0": {
+      "raw": "light",
+      "resolved": null,
+      "chain": [
+        "--ch-0",
+        "light"
+      ]
+    },
+    "--ch-1": {
+      "raw": "#6e7781",
+      "resolved": "#6e7781",
+      "chain": [
+        "--ch-1",
+        "#6e7781"
+      ]
+    },
+    "--ch-2": {
+      "raw": "#0550ae",
+      "resolved": "#0550ae",
+      "chain": [
+        "--ch-2",
+        "#0550ae"
+      ]
+    },
+    "--ch-3": {
+      "raw": "#953800",
+      "resolved": "#953800",
+      "chain": [
+        "--ch-3",
+        "#953800"
+      ]
+    },
+    "--ch-4": {
+      "raw": "#24292f",
+      "resolved": "#24292f",
+      "chain": [
+        "--ch-4",
+        "#24292f"
+      ]
+    },
+    "--ch-5": {
+      "raw": "#8250df",
+      "resolved": "#8250df",
+      "chain": [
+        "--ch-5",
+        "#8250df"
+      ]
+    },
+    "--ch-6": {
+      "raw": "hsl(var(--brand-600))",
+      "resolved": null,
+      "chain": [
+        "--ch-6",
+        "hsl(var(--brand-600))"
+      ]
+    },
+    "--ch-7": {
+      "raw": "#cf222e",
+      "resolved": "#cf222e",
+      "chain": [
+        "--ch-7",
+        "#cf222e"
+      ]
+    },
+    "--ch-8": {
+      "raw": "hsl(var(--brand-default))",
+      "resolved": null,
+      "chain": [
+        "--ch-8",
+        "hsl(var(--brand-default))"
+      ]
+    },
+    "--ch-9": {
+      "raw": "#82071e",
+      "resolved": "#82071e",
+      "chain": [
+        "--ch-9",
+        "#82071e"
+      ]
+    },
+    "--ch-10": {
+      "raw": "#f6f8fa",
+      "resolved": "#f6f8fa",
+      "chain": [
+        "--ch-10",
+        "#f6f8fa"
+      ]
+    },
+    "--ch-11": {
+      "raw": "#ffebe9",
+      "resolved": "#ffebe9",
+      "chain": [
+        "--ch-11",
+        "#ffebe9"
+      ]
+    },
+    "--ch-12": {
+      "raw": "#dafbe1",
+      "resolved": "#dafbe1",
+      "chain": [
+        "--ch-12",
+        "#dafbe1"
+      ]
+    },
+    "--ch-13": {
+      "raw": "#ffd8b5",
+      "resolved": "#ffd8b5",
+      "chain": [
+        "--ch-13",
+        "#ffd8b5"
+      ]
+    },
+    "--ch-14": {
+      "raw": "#eaeef2",
+      "resolved": "#eaeef2",
+      "chain": [
+        "--ch-14",
+        "#eaeef2"
+      ]
+    },
+    "--ch-15": {
+      "raw": "#57606a",
+      "resolved": "#57606a",
+      "chain": [
+        "--ch-15",
+        "#57606a"
+      ]
+    },
+    "--ch-16": {
+      "raw": "#eeeeee",
+      "resolved": "#eeeeee",
+      "chain": [
+        "--ch-16",
+        "#eeeeee"
+      ]
+    },
+    "--ch-17": {
+      "raw": "#add6ff",
+      "resolved": "#add6ff",
+      "chain": [
+        "--ch-17",
+        "#add6ff"
+      ]
+    },
+    "--ch-18": {
+      "raw": "#1a85ff",
+      "resolved": "#1a85ff",
+      "chain": [
+        "--ch-18",
+        "#1a85ff"
+      ]
+    },
+    "--ch-19": {
+      "raw": "#fdff0033",
+      "resolved": "#fdff0033",
+      "chain": [
+        "--ch-19",
+        "#fdff0033"
+      ]
+    },
+    "--ch-20": {
+      "raw": "#8c959f",
+      "resolved": "#8c959f",
+      "chain": [
+        "--ch-20",
+        "#8c959f"
+      ]
+    },
+    "--ch-21": {
+      "raw": "#f6f8fa",
+      "resolved": "#f6f8fa",
+      "chain": [
+        "--ch-21",
+        "#f6f8fa"
+      ]
+    },
+    "--ch-22": {
+      "raw": "#d0d7de",
+      "resolved": "#d0d7de",
+      "chain": [
+        "--ch-22",
+        "#d0d7de"
+      ]
+    },
+    "--ch-23": {
+      "raw": "#fd8c73",
+      "resolved": "#fd8c73",
+      "chain": [
+        "--ch-23",
+        "#fd8c73"
+      ]
+    },
+    "--ch-24": {
+      "raw": "#afb8c133",
+      "resolved": "#afb8c133",
+      "chain": [
+        "--ch-24",
+        "#afb8c133"
+      ]
+    },
+    "--ch-25": {
+      "raw": "#eaeef280",
+      "resolved": "#eaeef280",
+      "chain": [
+        "--ch-25",
+        "#eaeef280"
+      ]
+    },
+    "--ch-frame-zoom": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--ch-frame-zoom",
+        "1"
+      ]
+    },
+    "--colors-black": {
+      "raw": "0deg 0% 0%",
+      "resolved": null,
+      "chain": [
+        "--colors-black",
+        "0deg 0% 0%"
+      ]
+    },
+    "--colors-white": {
+      "raw": "0deg 0% 100%",
+      "resolved": null,
+      "chain": [
+        "--colors-white",
+        "0deg 0% 100%"
+      ]
+    },
+    "--colors-gray-dark-100": {
+      "raw": "0deg 0% 8.6%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-100",
+        "0deg 0% 8.6%"
+      ]
+    },
+    "--colors-gray-dark-200": {
+      "raw": "0deg 0% 11%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-200",
+        "0deg 0% 11%"
+      ]
+    },
+    "--colors-gray-dark-300": {
+      "raw": "0deg 0% 13.7%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-300",
+        "0deg 0% 13.7%"
+      ]
+    },
+    "--colors-gray-dark-400": {
+      "raw": "0deg 0% 15.7%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-400",
+        "0deg 0% 15.7%"
+      ]
+    },
+    "--colors-gray-dark-500": {
+      "raw": "0deg 0% 18%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-500",
+        "0deg 0% 18%"
+      ]
+    },
+    "--colors-gray-dark-600": {
+      "raw": "0deg 0% 20.4%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-600",
+        "0deg 0% 20.4%"
+      ]
+    },
+    "--colors-gray-dark-700": {
+      "raw": "0deg 0% 24.3%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-700",
+        "0deg 0% 24.3%"
+      ]
+    },
+    "--colors-gray-dark-800": {
+      "raw": "0deg 0% 31.4%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-800",
+        "0deg 0% 31.4%"
+      ]
+    },
+    "--colors-gray-dark-900": {
+      "raw": "0deg 0% 43.9%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-900",
+        "0deg 0% 43.9%"
+      ]
+    },
+    "--colors-gray-dark-1000": {
+      "raw": "0deg 0% 49.4%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-1000",
+        "0deg 0% 49.4%"
+      ]
+    },
+    "--colors-gray-dark-1100": {
+      "raw": "0deg 0% 62.7%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-1100",
+        "0deg 0% 62.7%"
+      ]
+    },
+    "--colors-gray-dark-1200": {
+      "raw": "0deg 0% 92.9%",
+      "resolved": null,
+      "chain": [
+        "--colors-gray-dark-1200",
+        "0deg 0% 92.9%"
+      ]
+    },
+    "--colors-gray-dark-alpha-100": {
+      "raw": "hsla(0,0%,0%,0)",
+      "resolved": "hsla(0,0%,0%,0)",
+      "chain": [
+        "--colors-gray-dark-alpha-100",
+        "hsla(0,0%,0%,0)"
+      ]
+    },
+    "--colors-gray-dark-alpha-200": {
+      "raw": "hsla(0,0%,100%,0.03137254901960784)",
+      "resolved": "hsla(0,0%,100%,0.03137254901960784)",
+      "chain": [
+        "--colors-gray-dark-alpha-200",
+        "hsla(0,0%,100%,0.03137254901960784)"
+      ]
+    },
+    "--colors-gray-dark-alpha-300": {
+      "raw": "hsla(0,0%,100%,0.058823529411764705)",
+      "resolved": "hsla(0,0%,100%,0.058823529411764705)",
+      "chain": [
+        "--colors-gray-dark-alpha-300",
+        "hsla(0,0%,100%,0.058823529411764705)"
+      ]
+    },
+    "--colors-gray-dark-alpha-400": {
+      "raw": "hsla(0,0%,100%,0.0784313725490196)",
+      "resolved": "hsla(0,0%,100%,0.0784313725490196)",
+      "chain": [
+        "--colors-gray-dark-alpha-400",
+        "hsla(0,0%,100%,0.0784313725490196)"
+      ]
+    },
+    "--colors-gray-dark-alpha-500": {
+      "raw": "hsla(0,0%,100%,0.10196078431372549)",
+      "resolved": "hsla(0,0%,100%,0.10196078431372549)",
+      "chain": [
+        "--colors-gray-dark-alpha-500",
+        "hsla(0,0%,100%,0.10196078431372549)"
+      ]
+    },
+    "--colors-gray-dark-alpha-600": {
+      "raw": "hsla(0,0%,100%,0.12941176470588237)",
+      "resolved": "hsla(0,0%,100%,0.12941176470588237)",
+      "chain": [
+        "--colors-gray-dark-alpha-600",
+        "hsla(0,0%,100%,0.12941176470588237)"
+      ]
+    },
+    "--colors-gray-dark-alpha-700": {
+      "raw": "hsla(0,0%,100%,0.16862745098039217)",
+      "resolved": "hsla(0,0%,100%,0.16862745098039217)",
+      "chain": [
+        "--colors-gray-dark-alpha-700",
+        "hsla(0,0%,100%,0.16862745098039217)"
+      ]
+    },
+    "--colors-gray-dark-alpha-800": {
+      "raw": "hsla(0,0%,100%,0.25098039215686274)",
+      "resolved": "hsla(0,0%,100%,0.25098039215686274)",
+      "chain": [
+        "--colors-gray-dark-alpha-800",
+        "hsla(0,0%,100%,0.25098039215686274)"
+      ]
+    }
+  }
+}

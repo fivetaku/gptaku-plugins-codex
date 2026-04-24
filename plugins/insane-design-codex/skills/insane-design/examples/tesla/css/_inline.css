@@ -1,0 +1,19 @@
+
+    @media (min-width: 900px) {
+      .template-landing-page:not(.page-new-homepage) .tds-footer {
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        z-index: 99;
+      }
+    }
+    .template-landing-page:not(.page-new-homepage) footer {
+      --tcl-homepage-hero-footer-padding-block-end: calc(var(--tds-size--1x) + var(--tcl-top-banner-height, 0px));
+    }
+    @media (max-width: 599px) and (orientation: portrait) {
+      .template-landing-page:not(.page-new-homepage) footer {
+        padding-bottom: var(--tds-size--3x) !important;
+        padding-top: var(--tds-size--3x);
+      }
+    }
+  

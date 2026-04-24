@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tesla — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#CC0000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .code-copy:hover{color:var(--fg);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+  @media (max-width:1024px){.layout{grid-template-columns:1fr;}.toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}.hero,section,.rfoot{padding-left:32px;padding-right:32px;}.ts,.dd-grid,.qs__grid{grid-template-columns:1fr;}.hero__stats{grid-template-columns:1fr 1fr;}.stat{border-right:none;border-bottom:1px solid var(--border);}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Tesla</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#colors"><span class="toc__num">03</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">04</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">05</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">06</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">07</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/tesla/<br>design.md<br>2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Tesla <span class="sub">— 모노크롬 + 레드 액센트</span></h1>
+      <p class="hero__sub">tesla.com CSS에서 추출한 디자인 패턴. 극도로 미니멀한 팔레트 — 배경은 #F4F4F4, 레드 #CC0000이 유일한 chromatic 포인트.</p>
+
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="tesla.com — 실제 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Tesla처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight</span>
+            <code>body {
+  font-family: "Gotham SSm A",
+    "Gotham SSm B",
+    "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#F4F4F4</b>;
+  /* ⚠️ 순백 아님 */
+  --fg: <b>#000000</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 브랜드 레드</span>
+            <code>:root {
+  --brand: <b>#CC0000</b>;
+  /* CSS에서 감지된
+     유일한 chromatic */
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: 배경을 순백 <code>#FFFFFF</code>으로 두는 것. Tesla의 마케팅 사이트 배경은 <code>#F4F4F4</code> — 이 차이가 "일반 전자상거래"와 Tesla를 구분한다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">tesla.com</div>
+          <div class="stat__hint">극도로 미니멀한 CSS</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">CSS custom properties 파싱</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">System</div>
+          <div class="stat__val stat__val--mono">Custom</div>
+          <div class="stat__hint">토큰 시스템 미노출</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Palette</div>
+          <div class="stat__val stat__val--mono">3색</div>
+          <div class="stat__hint">#F4F4F4 · #000000 · #CC0000</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">CSS 파싱 결과 단 3가지 컬러만 감지. 토큰 시스템은 인라인 스타일 방식으로 미노출.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://tesla.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA (5-tier fallback)</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">N/A — 커스텀 프로퍼티 시스템 미감지</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · 테크 스택</div>
+      <h2 class="section__title">인라인 중심 최소화 CSS</h2>
+      <p class="section__lede">Tesla 마케팅 사이트는 전역 CSS 토큰보다 컴포넌트별 인라인 스타일을 선호. 정적 파싱으로 추출 가능한 정보가 매우 제한적.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">Framework</div>
+          <div class="ts__body">React / Next.js (추정). 인라인 스타일 방식 채택.</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">Design System</div>
+          <div class="ts__body">자체 내부 시스템 (미공개). 토큰 prefix 없음.</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">Default Theme</div>
+          <div class="ts__body">Light. 배경 <code>#F4F4F4</code> (순백 아님). 차량 사진 hero.</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">Font Loading</div>
+          <div class="ts__body">CSS에서 미감지. 시각 관찰: Gotham SSm 계열.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">03 · 컬러</div>
+      <h2 class="section__title">3색 팔레트 — 극도의 절제</h2>
+      <p class="section__lede">CSS 파싱에서 단 3가지 컬러 후보. 레드 #CC0000이 유일한 chromatic 포인트.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>전체 팔레트 (CSS 감지 3색)</b></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--l" style="background:#F4F4F4"><span class="n">페이지 배경 (8회)</span>#F4F4F4</div>
+          <div class="sw sw--d" style="background:#000000"><span class="n">다크 배경/텍스트</span>#000000</div>
+          <div class="sw sw--d" style="background:#CC0000"><span class="n">브랜드 레드 (유일 chromatic)</span>#CC0000</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>CSS 파싱 한계</b>: Tesla 사이트는 JS 기반 인라인 스타일로 대부분의 값을 주입. 위 3색이 정적 CSS에서 감지된 전부이며, 실제 UI에는 더 많은 값이 동적으로 적용될 수 있음.
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">04 · 컴포넌트</div>
+      <h2 class="section__title">차량 Hero + 미니멀 CTA</h2>
+      <p class="section__lede">Tesla 마케팅의 핵심 패턴: 전체 폭 차량 사진 + 최소한의 텍스트 + 검정 CTA.</p>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;">
+        <div style="display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);">
+          <span style="font-family:var(--font-mono);font-size:12px;font-weight:500;">.hero</span>
+          <span style="font-size:12px;color:var(--muted-fg);">Vehicle Hero 섹션</span>
+        </div>
+        <div style="background:var(--muted);border-radius:var(--radius);padding:24px;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#F4F4F4;border:1px solid var(--border);">
+          <div style="font-size:32px;font-weight:600;letter-spacing:-0.02em;">Model S</div>
+          <div style="display:flex;gap:12px;">
+            <a href="#" style="padding:12px 32px;background:#000000;color:#FFFFFF;font-size:14px;font-weight:500;border-radius:4px;">주문하기</a>
+            <a href="#" style="padding:12px 32px;background:transparent;color:#000000;border:1px solid rgba(0,0,0,0.3);font-size:14px;font-weight:500;border-radius:4px;">시승 신청</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">05 · 라이팅 원칙</div>
+      <h2 class="section__title">모델명만, 수식어 없이</h2>
+      <p class="section__lede">Tesla 카피는 최소한의 단어로 최대의 임팩트. 과장 없이 수치로 말한다.</p>
+
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Headline</div>
+        <div style="font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;">모델명만, 최소한의 수식</div>
+        <div style="padding:14px 16px;background:var(--muted);border-radius:var(--radius);font-size:15px;border-left:2px solid var(--brand-color);">"Model S"</div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Spec Copy</div>
+        <div style="font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;">실제 수치 명시, 과장 없이</div>
+        <div style="padding:14px 16px;background:var(--muted);border-radius:var(--radius);font-size:15px;border-left:2px solid var(--brand-color);">"제로백 1.99초 · 항속거리 628km"</div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">06 · CSS · Tailwind</div>
+      <h2 class="section__title">Drop-in CSS 스니펫</h2>
+      <p class="section__lede">CSS 파싱 데이터 기반 핵심 토큰.</p>
+
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" data-tab="css">CSS 스니펫</button>
+          <button class="code-copy" data-copy-active>Copy</button>
+        </div>
+        <div class="code-pane is-active" data-pane="css">
+          <pre><code>/* Tesla — copy into your root stylesheet */
+:root {
+  /* Fonts (CSS 미감지 — 시각 관찰) */
+  --tesla-font-family: "Gotham SSm A", "Gotham SSm B",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --tesla-font-weight-normal: 400;
+  --tesla-font-weight-bold: 700;
+
+  /* Brand (CSS 파싱 기반) */
+  --tesla-color-brand-red: #CC0000;
+
+  /* Surfaces */
+  --tesla-bg-page: #F4F4F4;   /* ⚠️ 순백 아님 */
+  --tesla-bg-dark: #000000;
+  --tesla-text: #000000;
+  --tesla-text-on-dark: #FFFFFF;
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">07 · Do / Don't</div>
+      <h2 class="section__title">자주 틀리는 것들</h2>
+      <p class="section__lede">Tesla 디자인을 구현할 때 가장 많이 틀리는 패턴.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li>페이지 배경에 <code>#F4F4F4</code> 사용 (순백 아님)</li>
+            <li>Hero는 차량 전체 폭 사진으로 채우기</li>
+            <li>CTA 텍스트 최소화 ("주문하기", "시승 신청")</li>
+            <li>H1은 모델명만, 수식어 없이</li>
+            <li>스펙 표현 시 실제 수치 명시</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>배경을 순백 <code>#FFFFFF</code>으로 쓰지 말 것</li>
+            <li>과장형 마케팅 문구 쓰지 말 것</li>
+            <li>CTA 버튼에 레드 <code>#CC0000</code> 쓰지 말 것 — 버튼은 블랙</li>
+            <li>레이아웃을 복잡하게 만들지 말 것</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <div><span class="kr">DesignMD · Tesla Report</span><br>insane-design/tesla/design.md 기반 생성</div>
+      <div style="text-align:right;">2026-04-13<br><span class="kr">CSS 파싱 기반 · AI 추론 없음</span></div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('.code-tabs button[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.code-export');
+      group.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('is-active'));
+      group.querySelectorAll('[data-pane]').forEach(p => p.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      group.querySelector(`[data-pane="${btn.dataset.tab}"]`).classList.add('is-active');
+    });
+  });
+  document.querySelectorAll('[data-copy-active]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.code-export');
+      const active = group.querySelector('.code-pane.is-active pre code');
+      if (!active) return;
+      navigator.clipboard.writeText(active.textContent);
+      const original = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(() => (btn.textContent = original), 1500);
+    });
+  });
+</script>
+</body>
+</html>

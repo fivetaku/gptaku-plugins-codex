@@ -1,0 +1,408 @@
+{
+  "slug": "discord",
+  "total_vars": 4167,
+  "resolved_count": 203,
+  "unresolved_count": 3964,
+  "samples": {
+    "--application-subscription-end": {
+      "raw": "hsl(var(--application-subscription-end-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--application-subscription-end",
+        "hsl(var(--application-subscription-end-hsl)/1)"
+      ]
+    },
+    "--application-subscription-end-hsl": {
+      "raw": "196.564 calc(var(--saturation-factor, 1)*98.788%) 32.353%",
+      "resolved": null,
+      "chain": [
+        "--application-subscription-end-hsl",
+        "196.564 calc(var(--saturation-factor, 1)*98.788%) 32.353%"
+      ]
+    },
+    "--application-subscription-start": {
+      "raw": "hsl(var(--application-subscription-start-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--application-subscription-start",
+        "hsl(var(--application-subscription-start-hsl)/1)"
+      ]
+    },
+    "--application-subscription-start-hsl": {
+      "raw": "234.909 calc(var(--saturation-factor, 1)*68.465%) 52.745%",
+      "resolved": null,
+      "chain": [
+        "--application-subscription-start-hsl",
+        "234.909 calc(var(--saturation-factor, 1)*68.465%) 52.745%"
+      ]
+    },
+    "--battlenet": {
+      "raw": "hsl(var(--battlenet-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--battlenet",
+        "hsl(var(--battlenet-hsl)/1)"
+      ]
+    },
+    "--battlenet-hsl": {
+      "raw": "199.651 calc(var(--saturation-factor, 1)*100%) 44.902%",
+      "resolved": null,
+      "chain": [
+        "--battlenet-hsl",
+        "199.651 calc(var(--saturation-factor, 1)*100%) 44.902%"
+      ]
+    },
+    "--bg-animated-gradient-background-indigo-1": {
+      "raw": "hsl(var(--bg-animated-gradient-background-indigo-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-indigo-1",
+        "hsl(var(--bg-animated-gradient-background-indigo-1-hsl)/1)"
+      ]
+    },
+    "--bg-animated-gradient-background-indigo-1-hsl": {
+      "raw": "241.5 calc(var(--saturation-factor, 1)*57.143%) 27.451%",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-indigo-1-hsl",
+        "241.5 calc(var(--saturation-factor, 1)*57.143%) 27.451%"
+      ]
+    },
+    "--bg-animated-gradient-background-indigo-2": {
+      "raw": "hsl(var(--bg-animated-gradient-background-indigo-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-indigo-2",
+        "hsl(var(--bg-animated-gradient-background-indigo-2-hsl)/1)"
+      ]
+    },
+    "--bg-animated-gradient-background-indigo-2-hsl": {
+      "raw": "257.059 calc(var(--saturation-factor, 1)*100%) 20%",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-indigo-2-hsl",
+        "257.059 calc(var(--saturation-factor, 1)*100%) 20%"
+      ]
+    },
+    "--bg-animated-gradient-background-not-black": {
+      "raw": "hsl(var(--bg-animated-gradient-background-not-black-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-not-black",
+        "hsl(var(--bg-animated-gradient-background-not-black-hsl)/1)"
+      ]
+    },
+    "--bg-animated-gradient-background-not-black-hsl": {
+      "raw": "240 calc(var(--saturation-factor, 1)*7.143%) 5.49%",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-not-black-hsl",
+        "240 calc(var(--saturation-factor, 1)*7.143%) 5.49%"
+      ]
+    },
+    "--bg-animated-gradient-background-pink-1": {
+      "raw": "hsl(var(--bg-animated-gradient-background-pink-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-pink-1",
+        "hsl(var(--bg-animated-gradient-background-pink-1-hsl)/1)"
+      ]
+    },
+    "--bg-animated-gradient-background-pink-1-hsl": {
+      "raw": "327.831 calc(var(--saturation-factor, 1)*80.583%) 59.608%",
+      "resolved": null,
+      "chain": [
+        "--bg-animated-gradient-background-pink-1-hsl",
+        "327.831 calc(var(--saturation-factor, 1)*80.583%) 59.608%"
+      ]
+    },
+    "--bg-gradient-aurora-1": {
+      "raw": "hsl(var(--bg-gradient-aurora-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-1",
+        "hsl(var(--bg-gradient-aurora-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-aurora-1-hsl": {
+      "raw": "219.74 calc(var(--saturation-factor, 1)*86.517%) 17.451%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-1-hsl",
+        "219.74 calc(var(--saturation-factor, 1)*86.517%) 17.451%"
+      ]
+    },
+    "--bg-gradient-aurora-2": {
+      "raw": "hsl(var(--bg-gradient-aurora-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-2",
+        "hsl(var(--bg-gradient-aurora-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-aurora-2-hsl": {
+      "raw": "237.778 calc(var(--saturation-factor, 1)*76.415%) 41.569%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-2-hsl",
+        "237.778 calc(var(--saturation-factor, 1)*76.415%) 41.569%"
+      ]
+    },
+    "--bg-gradient-aurora-3": {
+      "raw": "hsl(var(--bg-gradient-aurora-3-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-3",
+        "hsl(var(--bg-gradient-aurora-3-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-aurora-3-hsl": {
+      "raw": "183.556 calc(var(--saturation-factor, 1)*78.035%) 33.922%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-3-hsl",
+        "183.556 calc(var(--saturation-factor, 1)*78.035%) 33.922%"
+      ]
+    },
+    "--bg-gradient-aurora-4": {
+      "raw": "hsl(var(--bg-gradient-aurora-4-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-4",
+        "hsl(var(--bg-gradient-aurora-4-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-aurora-4-hsl": {
+      "raw": "169.2 calc(var(--saturation-factor, 1)*60.241%) 32.549%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-4-hsl",
+        "169.2 calc(var(--saturation-factor, 1)*60.241%) 32.549%"
+      ]
+    },
+    "--bg-gradient-aurora-5": {
+      "raw": "hsl(var(--bg-gradient-aurora-5-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-5",
+        "hsl(var(--bg-gradient-aurora-5-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-aurora-5-hsl": {
+      "raw": "229.839 calc(var(--saturation-factor, 1)*92.537%) 26.275%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-aurora-5-hsl",
+        "229.839 calc(var(--saturation-factor, 1)*92.537%) 26.275%"
+      ]
+    },
+    "--bg-gradient-blurple-twilight-1": {
+      "raw": "hsl(var(--bg-gradient-blurple-twilight-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-blurple-twilight-1",
+        "hsl(var(--bg-gradient-blurple-twilight-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-blurple-twilight-1-hsl": {
+      "raw": "233.904 calc(var(--saturation-factor, 1)*79.574%) 53.922%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-blurple-twilight-1-hsl",
+        "233.904 calc(var(--saturation-factor, 1)*79.574%) 53.922%"
+      ]
+    },
+    "--bg-gradient-blurple-twilight-2": {
+      "raw": "hsl(var(--bg-gradient-blurple-twilight-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-blurple-twilight-2",
+        "hsl(var(--bg-gradient-blurple-twilight-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-blurple-twilight-2-hsl": {
+      "raw": "245.294 calc(var(--saturation-factor, 1)*63.75%) 31.373%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-blurple-twilight-2-hsl",
+        "245.294 calc(var(--saturation-factor, 1)*63.75%) 31.373%"
+      ]
+    },
+    "--bg-gradient-chroma-glow-1": {
+      "raw": "hsl(var(--bg-gradient-chroma-glow-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-1",
+        "hsl(var(--bg-gradient-chroma-glow-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-chroma-glow-1-hsl": {
+      "raw": "183.39 calc(var(--saturation-factor, 1)*86.341%) 40.196%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-1-hsl",
+        "183.39 calc(var(--saturation-factor, 1)*86.341%) 40.196%"
+      ]
+    },
+    "--bg-gradient-chroma-glow-2": {
+      "raw": "hsl(var(--bg-gradient-chroma-glow-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-2",
+        "hsl(var(--bg-gradient-chroma-glow-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-chroma-glow-2-hsl": {
+      "raw": "258.113 calc(var(--saturation-factor, 1)*89.831%) 46.275%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-2-hsl",
+        "258.113 calc(var(--saturation-factor, 1)*89.831%) 46.275%"
+      ]
+    },
+    "--bg-gradient-chroma-glow-3": {
+      "raw": "hsl(var(--bg-gradient-chroma-glow-3-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-3",
+        "hsl(var(--bg-gradient-chroma-glow-3-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-chroma-glow-3-hsl": {
+      "raw": "298.491 calc(var(--saturation-factor, 1)*90.857%) 34.314%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-3-hsl",
+        "298.491 calc(var(--saturation-factor, 1)*90.857%) 34.314%"
+      ]
+    },
+    "--bg-gradient-chroma-glow-4": {
+      "raw": "hsl(var(--bg-gradient-chroma-glow-4-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-4",
+        "hsl(var(--bg-gradient-chroma-glow-4-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-chroma-glow-4-hsl": {
+      "raw": "264.767 calc(var(--saturation-factor, 1)*100%) 66.275%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-4-hsl",
+        "264.767 calc(var(--saturation-factor, 1)*100%) 66.275%"
+      ]
+    },
+    "--bg-gradient-chroma-glow-5": {
+      "raw": "hsl(var(--bg-gradient-chroma-glow-5-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-5",
+        "hsl(var(--bg-gradient-chroma-glow-5-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-chroma-glow-5-hsl": {
+      "raw": "206.702 calc(var(--saturation-factor, 1)*75.494%) 50.392%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-chroma-glow-5-hsl",
+        "206.702 calc(var(--saturation-factor, 1)*75.494%) 50.392%"
+      ]
+    },
+    "--bg-gradient-citrus-sherbert-1": {
+      "raw": "hsl(var(--bg-gradient-citrus-sherbert-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-citrus-sherbert-1",
+        "hsl(var(--bg-gradient-citrus-sherbert-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-citrus-sherbert-1-hsl": {
+      "raw": "39.683 calc(var(--saturation-factor, 1)*88.732%) 58.235%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-citrus-sherbert-1-hsl",
+        "39.683 calc(var(--saturation-factor, 1)*88.732%) 58.235%"
+      ]
+    },
+    "--bg-gradient-citrus-sherbert-2": {
+      "raw": "hsl(var(--bg-gradient-citrus-sherbert-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-citrus-sherbert-2",
+        "hsl(var(--bg-gradient-citrus-sherbert-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-citrus-sherbert-2-hsl": {
+      "raw": "18 calc(var(--saturation-factor, 1)*81.522%) 63.922%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-citrus-sherbert-2-hsl",
+        "18 calc(var(--saturation-factor, 1)*81.522%) 63.922%"
+      ]
+    },
+    "--bg-gradient-cotton-candy-1": {
+      "raw": "hsl(var(--bg-gradient-cotton-candy-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-cotton-candy-1",
+        "hsl(var(--bg-gradient-cotton-candy-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-cotton-candy-1-hsl": {
+      "raw": "349.315 calc(var(--saturation-factor, 1)*76.842%) 81.373%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-cotton-candy-1-hsl",
+        "349.315 calc(var(--saturation-factor, 1)*76.842%) 81.373%"
+      ]
+    },
+    "--bg-gradient-cotton-candy-2": {
+      "raw": "hsl(var(--bg-gradient-cotton-candy-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-cotton-candy-2",
+        "hsl(var(--bg-gradient-cotton-candy-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-cotton-candy-2-hsl": {
+      "raw": "226.4 calc(var(--saturation-factor, 1)*92.593%) 84.118%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-cotton-candy-2-hsl",
+        "226.4 calc(var(--saturation-factor, 1)*92.593%) 84.118%"
+      ]
+    },
+    "--bg-gradient-crimson-moon-1": {
+      "raw": "hsl(var(--bg-gradient-crimson-moon-1-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-crimson-moon-1",
+        "hsl(var(--bg-gradient-crimson-moon-1-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-crimson-moon-1-hsl": {
+      "raw": "0 calc(var(--saturation-factor, 1)*88.608%) 30.98%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-crimson-moon-1-hsl",
+        "0 calc(var(--saturation-factor, 1)*88.608%) 30.98%"
+      ]
+    },
+    "--bg-gradient-crimson-moon-2": {
+      "raw": "hsl(var(--bg-gradient-crimson-moon-2-hsl)/1)",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-crimson-moon-2",
+        "hsl(var(--bg-gradient-crimson-moon-2-hsl)/1)"
+      ]
+    },
+    "--bg-gradient-crimson-moon-2-hsl": {
+      "raw": "0 calc(var(--saturation-factor, 1)*0%) 0%",
+      "resolved": null,
+      "chain": [
+        "--bg-gradient-crimson-moon-2-hsl",
+        "0 calc(var(--saturation-factor, 1)*0%) 0%"
+      ]
+    }
+  }
+}

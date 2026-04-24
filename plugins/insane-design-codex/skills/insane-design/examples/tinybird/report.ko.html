@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tinybird — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--brand-color:#27F795;--font-display:"Roboto Mono","JetBrains Mono",monospace;--font-sans:"Pretendard Variable","Inter",sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;--border:#e4e4e7;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:600;font-family:var(--font-display)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:600}
+.hero-big h1{font-family:var(--font-display);font-size:44px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:4px;font-family:var(--font-mono);font-size:11px;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#18181b}.sw--d{color:#fafafa}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans)}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:600;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:600}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:4px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:4px;background:var(--card)}
+.sh-card__n{font-weight:600;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:4px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:20px;border:1px solid var(--border);border-radius:4px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:4px}
+.comp pre{background:var(--muted);padding:12px;border-radius:4px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#08090a;color:#f7f8f8;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:4px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:600}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:5px 12px;background:var(--muted);border-radius:4px;font-size:11px;color:var(--subtle);font-family:var(--font-mono)}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#0a0a0a;color:#27F795;padding:16px;border-radius:4px;font-size:11px;line-height:1.5;overflow-x:auto;font-family:"Roboto Mono",monospace}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}.main{padding:32px 20px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+<div class="toc__brand"><div class="toc__brand-name">Tinybird</div><div class="toc__brand-sub">Design System Report</div></div>
+<div class="toc__group-label">Overview</div><ul class="toc__list"><li><a href="#mood"><span class="toc__num">00</span>분위기</a></li><li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">02</span>출처</a></li><li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li></ul>
+<div class="toc__group-label">Foundations</div><ul class="toc__list"><li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">05</span>컬러</a></li></ul>
+<div class="toc__group-label">Tokens</div><ul class="toc__list"><li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li><li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li><li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li><li><a href="#motion"><span class="toc__num">08</span>모션</a></li></ul>
+<div class="toc__group-label">Patterns</div><ul class="toc__list"><li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li><li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li></ul>
+<div class="toc__group-label">Guide</div><ul class="toc__list"><li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li><li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li></ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Data-Native Terminal — 모든 텍스트를 mono + 숫자는 LCD 폰트</div>
+  <h1>Neon green #27F795 + Roboto Mono everywhere</h1>
+  <p class="lead">Tinybird · <code>https://www.tinybird.co</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Tinybird hero" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Tinybird의 공식 사이트는 real-time analytics infra라는 포지셔닝을 극단적 <b>Data-Native Terminal</b> 비주얼로 풀어냈다. near-black <code>#0A0A0A</code> 바닥 위에 <b>neon green <code>#27F795</code></b> 단 하나의 primary와 <b>dark primary <code>#008060</code></b> (semantic var <code>--primary-dark</code>)로 이원화.</p>
+    <p>가장 특이한 점은 <code>sevenSegment</code> 폰트 패밀리가 별도 로드되어 있어 <b>Bloomberg-terminal 스타일의 시간 표시나 실시간 숫자</b>를 실제로 그려준다는 것. 모든 marketing 텍스트는 <b>Roboto Mono</b> + <b>Fira Mono</b>로 렌더링되어 "우리는 code와 terminal이 native인 회사"라는 메시지를 준다.</p>
+    <p>데이터 상태 표시용 팔레트: <code>#F5C451</code>(amber/warning), <code>#EC6D62</code>(red/error), <code>#00C1FF</code>(cyan/info), <code>#61C454</code>(soft green/success). <code>#303347</code>은 blueprint-paper dark accent로 terminal panel 테두리에 쓰인다.</p>
+    <p>인터랙션은 매우 제한적 — hover는 border-color + green text glow 정도. scale/rotate 없음. "터미널 UI가 과한 애니메이션을 쓰지 않는다"는 일관성.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">--primary #27F795</span>
+    <span class="kw">--primary-dark #008060</span>
+    <span class="kw">bg #0A0A0A</span>
+    <span class="kw">Roboto Mono + Fira Mono + sevenSegment</span>
+    <span class="kw">blueprint #303347</span>
+    <span class="kw">data state: amber/red/cyan</span>
+    <span class="kw">radius 4-8 sharp</span>
+    <span class="kw">mono-everywhere</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기</h2>
+  <div class="quick-steps">
+    <pre><code>:root {
+  --primary: #27F795;
+  --primary-dark: #008060;
+  --bg-base: #0A0A0A;
+  --bg-card: #202020;
+  --border: #3C3C3C;
+  --fg: #FFFFFF;
+  --blueprint: #303347;
+}</code></pre>
+    <pre><code>body {
+  font-family: "Roboto Mono",
+               "Fira Mono", monospace;
+  font-weight: 400;
+  font-size: 14px;
+  background: #0A0A0A;
+  color: #FFFFFF;
+}
+.lcd { font-family: "sevenSegment",monospace; }</code></pre>
+    <pre><code>.btn-primary {
+  background: transparent;
+  border: 1px solid #27F795;
+  color: #27F795;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Roboto Mono",monospace;
+  transition: all .15s ease;
+}
+.btn-primary:hover {
+  background: rgba(39,247,149,.1);
+  box-shadow: 0 0 24px rgba(39,247,149,.2);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> body에 sans-serif(Inter/Roboto) 쓰지 마라 — 모든 marketing 텍스트가 mono로 렌더되는 게 Tinybird의 핵심. sans로 바꾸는 순간 Supabase가 된다.</div>
+</section>
+
+<section id="provenance" class="sec"><h2>02. 출처</h2><table class="tbl"><tr><th>Source URL</th><td><code>https://www.tinybird.co</code></td></tr><tr><th>Fetched</th><td>2026-04-20</td></tr><tr><th>Framework</th><td>Next.js + Tailwind</td></tr><tr><th>Signature font</th><td><code>sevenSegment</code> (LCD display)</td></tr><tr><th>Theme</th><td>dark only</td></tr></table></section>
+
+<section id="stack" class="sec"><h2>03. 테크 스택</h2>
+<ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+<li><b>Framework</b>: Next.js</li>
+<li><b>CSS</b>: Tailwind + custom CSS vars <code>--primary</code>, <code>--primary-dark</code></li>
+<li><b>Typography</b>: Roboto Mono + Fira Mono + sevenSegment (numbers)</li>
+<li><b>Theme</b>: dark only</li>
+<li><b>Signature</b>: mono-everywhere + LCD digit display</li>
+</ul></section>
+
+<section id="typography" class="sec">
+  <h2>04. 타이포그래피</h2>
+  <p class="lede">Roboto Mono primary · Fira Mono secondary · sevenSegment LCD (숫자 전용).</p>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+    <li><b>Primary Mono</b>: <code>Roboto Mono</code> (24회 사용, <code>--font-roboto-mono</code>)</li>
+    <li><b>Secondary Mono</b>: <code>Fira Mono</code> (21회 사용, <code>--font-fira-mono</code>)</li>
+    <li><b>LCD/Display</b>: <code>sevenSegment</code> — 숫자/시간/metric</li>
+    <li><b>Sans (rare)</b>: <code>Roboto</code> (몇몇 UI)</li>
+    <li><b>Weights</b>: 300 · 400 · 500 · 700 · bold</li>
+  </ul>
+  <h3 style="margin-top:32px;">Type Scale</h3>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:11px;">mono-xs</div><div class="type-row__spec"><div class="tk">mono-xs</div>11px · 400 · lh 1.5</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:13px;">mono-sm</div><div class="type-row__spec"><div class="tk">mono-sm</div>13px · 400 · lh 1.5</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:14px;">mono-base (body)</div><div class="type-row__spec"><div class="tk">mono-base</div>14px · 400 · lh 1.6</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:16px;font-weight:500;">mono-lg</div><div class="type-row__spec"><div class="tk">mono-lg</div>16px · 500 · lh 1.5</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:28px;font-weight:700;">heading-2</div><div class="type-row__spec"><div class="tk">heading-2</div>28px · 700 · lh 1.2</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:48px;font-weight:700;line-height:1.1;">heading-1</div><div class="type-row__spec"><div class="tk">heading-1</div>40-56px · 700 · lh 1.1</div></div>
+  <div class="type-row"><div style="font-family:var(--font-mono);font-size:64px;color:#27F795;letter-spacing:.05em;">1234</div><div class="type-row__spec"><div class="tk">display-lcd</div>56-72px · sevenSegment</div></div>
+</section>
+
+<section id="colors" class="sec">
+  <h2>05. 컬러</h2>
+  <p class="lede">Neon green primary 이원화 + dark 4단 + data state palette + blueprint accent.</p>
+
+  <div class="ramp-label">Signature Green (4 steps)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#27F795"><div class="n">primary</div>#27F795</div>
+    <div class="sw sw--d" style="background:#008060"><div class="n">primary-dark</div>#008060</div>
+    <div class="sw sw--d" style="background:#61C454"><div class="n">soft-green</div>#61C454</div>
+    <div class="sw sw--d" style="background:#00FF00"><div class="n">pure-green</div>#00FF00</div>
+  </div>
+
+  <div class="ramp-label">Dark Stack (5 steps)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#0A0A0A"><div class="n">bg-base</div>#0A0A0A</div>
+    <div class="sw sw--d" style="background:#151515"><div class="n">bg-elev</div>#151515</div>
+    <div class="sw sw--d" style="background:#202020"><div class="n">bg-card</div>#202020</div>
+    <div class="sw sw--d" style="background:#262626"><div class="n">bg-card-2</div>#262626</div>
+    <div class="sw sw--d" style="background:#3C3C3C"><div class="n">border</div>#3C3C3C</div>
+  </div>
+
+  <div class="ramp-label">Data State Palette</div>
+  <div class="ramp">
+    <div class="sw sw--l" style="background:#F5C451"><div class="n">amber</div>#F5C451</div>
+    <div class="sw sw--l" style="background:#F8AC49"><div class="n">amber-2</div>#F8AC49</div>
+    <div class="sw sw--d" style="background:#EC6D62"><div class="n">red</div>#EC6D62</div>
+    <div class="sw sw--d" style="background:#FF8389"><div class="n">red-soft</div>#FF8389</div>
+    <div class="sw sw--d" style="background:#00C1FF"><div class="n">cyan</div>#00C1FF</div>
+    <div class="sw sw--d" style="background:#FC9F5B"><div class="n">orange</div>#FC9F5B</div>
+  </div>
+
+  <div class="ramp-label">Blueprint Accent</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#303347"><div class="n">blueprint</div>#303347</div>
+    <div class="sw sw--d" style="background:#25283D"><div class="n">navy</div>#25283D</div>
+  </div>
+
+  <h3>Dominant Usage</h3>
+  <div class="dom-bar">
+    <div style="flex:48;background:#008060"></div>
+    <div style="flex:34;background:#800000"></div>
+    <div style="flex:12;background:#FFFFFF"></div>
+    <div style="flex:5;background:#262626"></div>
+    <div style="flex:5;background:#27F795"></div>
+    <div style="flex:5;background:#F5C451"></div>
+    <div style="flex:5;background:#EC6D62"></div>
+    <div style="flex:5;background:#61C454"></div>
+  </div>
+  <div class="dom-list">
+    <div class="item"><div class="chip" style="background:#008060"></div><div><div class="hex">#008060</div><div class="cnt">48회 · --primary-dark</div></div></div>
+    <div class="item"><div class="chip" style="background:#800000"></div><div><div class="hex">#800000</div><div class="cnt">34회 · anti-brand marker</div></div></div>
+    <div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">12회 · fg</div></div></div>
+    <div class="item"><div class="chip" style="background:#27F795"></div><div><div class="hex">#27F795</div><div class="cnt">3회 · --primary neon</div></div></div>
+    <div class="item"><div class="chip" style="background:#F5C451"></div><div><div class="hex">#F5C451</div><div class="cnt">5회 · warning</div></div></div>
+    <div class="item"><div class="chip" style="background:#EC6D62"></div><div><div class="hex">#EC6D62</div><div class="cnt">5회 · error</div></div></div>
+    <div class="item"><div class="chip" style="background:#00C1FF"></div><div><div class="hex">#00C1FF</div><div class="cnt">2회 · info</div></div></div>
+  </div>
+</section>
+
+<section id="spacing" class="sec"><h2>06. 스페이싱</h2>
+<p class="lede">Tailwind 4px base.</p>
+<div class="space-row"><div class="tk">1</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline</div></div>
+<div class="space-row"><div class="tk">2</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">icon gap</div></div>
+<div class="space-row"><div class="tk">4</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default</div></div>
+<div class="space-row"><div class="tk">8</div><div>32px</div><div class="bar" style="width:32px"></div><div class="use">card</div></div>
+<div class="space-row"><div class="tk">16</div><div>64px</div><div class="bar" style="width:64px"></div><div class="use">section</div></div>
+<div class="space-row"><div class="tk">24</div><div>96px</div><div class="bar" style="width:96px"></div><div class="use">large section</div></div>
+</section>
+
+<section id="radius" class="sec"><h2>07. 라디우스 — Sharp-first</h2>
+<p class="lede">Tinybird는 radius를 강하게 쓰지 않는다 — 4-8px 샤프 모서리가 terminal 느낌.</p>
+<div class="rad-grid">
+<div class="rad-card"><div style="border-radius:4px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded</div><div class="rad-card__v">4px · input / CTA</div></div>
+<div class="rad-card"><div style="border-radius:6px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-md</div><div class="rad-card__v">6px · button</div></div>
+<div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-lg</div><div class="rad-card__v">8px · card</div></div>
+<div class="rad-card"><div style="border-radius:12px;background:var(--muted);height:64px;"></div><div class="rad-card__n">rounded-xl</div><div class="rad-card__v">12px · panel</div></div>
+</div></section>
+
+<section id="shadows" class="sec"><h2>07S. 섀도우 — green aura</h2>
+<div class="sh-grid">
+<div class="sh-card" style="box-shadow:0 0 24px rgba(39,247,149,.2);background:#202020;color:#FFF;"><div class="sh-card__n">glow-green</div><div class="sh-card__d" style="color:#999">시그니처 aura</div><div class="sh-card__v" style="color:#999">0 0 24px rgba(39,247,149,.2)</div></div>
+<div class="sh-card" style="box-shadow:0 0 16px rgba(245,196,81,.3);background:#202020;color:#FFF;"><div class="sh-card__n">glow-amber</div><div class="sh-card__d" style="color:#999">warning</div><div class="sh-card__v" style="color:#999">0 0 16px rgba(245,196,81,.3)</div></div>
+<div class="sh-card" style="box-shadow:0 1px 2px rgba(0,0,0,.3);background:var(--card);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle</div><div class="sh-card__v">0 1px 2px rgba(0,0,0,.3)</div></div>
+</div></section>
+
+<section id="motion" class="sec"><h2>08. 모션</h2>
+<table class="tbl"><thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>hover transition</td><td><code>.15s ease</code></td><td>border/color</td></tr>
+<tr><td>data stream</td><td>smooth scroll</td><td>log-stream UI</td></tr>
+<tr><td>LCD digit flip</td><td>instant</td><td>number change</td></tr>
+</tbody></table></section>
+
+<section id="layout" class="sec">
+<h2>09. 레이아웃</h2>
+<div class="lay-grid">
+<div class="lay-card"><h3>Hero · code_first</h3><ul><li>bg #0A0A0A</li><li>headline mono 700</li><li>live query + streaming dashboard</li><li>green outline CTA</li></ul></div>
+<div class="lay-card"><h3>Terminal Panel</h3><ul><li>bg #0A0A0A</li><li>border 1px #303347</li><li>radius 8</li><li>font Roboto Mono #27F795</li></ul></div>
+<div class="lay-card"><h3>Card</h3><ul><li>bg #202020</li><li>border 1px #3C3C3C</li><li>radius 8</li><li>hover: green border + glow</li></ul></div>
+<div class="lay-card"><h3>Navigation</h3><ul><li>height 56-64px compact</li><li>bg #0A0A0A solid</li><li>mono text</li></ul></div>
+</div></section>
+
+<section id="components" class="sec">
+<h2>10. 컴포넌트</h2>
+<div class="comp"><h3>Green Outline CTA</h3>
+<div class="comp-spec"><b>Spec</b>: transparent · border 1px #27F795 · color #27F795 · radius 4 · Roboto Mono 500</div>
+<pre><code>.btn-primary {
+  background: transparent;
+  border: 1px solid #27F795;
+  color: #27F795;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.btn-primary:hover {
+  background: rgba(39,247,149,.1);
+  box-shadow: 0 0 24px rgba(39,247,149,.2);
+}</code></pre></div>
+
+<div class="comp"><h3>Filled Deep-Green CTA</h3>
+<pre><code>.btn-deep {
+  background: #008060;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: "Roboto Mono", monospace;
+}
+.btn-deep:hover { background: #27F795; color: #0A0A0A; }</code></pre></div>
+
+<div class="comp"><h3>Terminal Panel</h3>
+<pre><code>.terminal {
+  background: #0A0A0A;
+  border: 1px solid #303347;
+  border-radius: 8px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+  padding: 16px;
+  color: #27F795;
+}</code></pre></div>
+
+<div class="comp"><h3>LCD Number Display</h3>
+<pre><code>.lcd {
+  font-family: "sevenSegment", "Roboto Mono", monospace;
+  font-size: 64px;
+  color: #27F795;
+  letter-spacing: .05em;
+  text-shadow: 0 0 12px rgba(39,247,149,.5);
+}</code></pre></div>
+</section>
+
+<section id="agent" class="sec"><h2>11. Agent Prompt Guide</h2>
+<table class="tbl"><thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+<tbody>
+<tr><td>Primary</td><td><code>--primary</code></td><td><span style="width:16px;height:16px;background:#27F795;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#27F795</code></td></tr>
+<tr><td>Primary dark</td><td><code>--primary-dark</code></td><td><span style="width:16px;height:16px;background:#008060;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#008060</code></td></tr>
+<tr><td>Bg</td><td><code>--bg-base</code></td><td><span style="width:16px;height:16px;background:#0A0A0A;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#0A0A0A</code></td></tr>
+<tr><td>Card</td><td><code>--bg-card</code></td><td><span style="width:16px;height:16px;background:#202020;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#202020</code></td></tr>
+<tr><td>Blueprint</td><td><code>--blueprint</code></td><td><span style="width:16px;height:16px;background:#303347;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#303347</code></td></tr>
+</tbody></table>
+<h3 style="margin-top:32px;">Example Prompts</h3>
+<div class="ag-grid">
+<div class="ag-card"><h4>🎯 Hero</h4><pre>Tinybird hero: bg #0A0A0A, headline 48px Roboto Mono 700 white. Below: terminal panel bg #0A0A0A, border 1px #303347, radius 8, showing SQL query with #27F795 green syntax. LCD number beside in sevenSegment 64px #27F795 with green glow.</pre></div>
+<div class="ag-card"><h4>🔘 CTA</h4><pre>Tinybird CTA: transparent bg, 1px solid #27F795, #27F795 text, padding 10px 20px, radius 4, Roboto Mono 500. Hover bg rgba(39,247,149,.1) + glow 0 0 24px.</pre></div>
+<div class="ag-card"><h4>📟 LCD Display</h4><pre>LCD digit display: sevenSegment 64px #27F795, text-shadow 0 0 12px rgba(39,247,149,.5), letter-spacing .05em. Use for real-time metrics.</pre></div>
+<div class="ag-card"><h4>🖥️ Terminal Panel</h4><pre>Terminal: bg #0A0A0A, border 1px #303347, radius 8, Roboto Mono 13px. Prompt prefix ">" in #27F795, output text white.</pre></div>
+</div></section>
+
+<section id="dodont" class="sec"><h2>12. DO / DON'T</h2>
+<div class="do-dont">
+<div class="do"><h3>✓ DO</h3><ul>
+<li>✅ 모든 marketing 텍스트를 Roboto Mono로</li>
+<li>✅ primary <code>#27F795</code> + primary-dark <code>#008060</code> 이원화</li>
+<li>✅ 숫자 강조에 sevenSegment LCD 폰트</li>
+<li>✅ bg <code>#0A0A0A</code> 고수 (true black 아님)</li>
+<li>✅ hover는 border+glow only (scale 없음)</li>
+</ul></div>
+<div class="dont"><h3>✗ DON'T</h3><ul>
+<li>body에 sans-serif 쓰지 말 것 — mono 필수</li>
+<li>green을 bg fill로 쓰지 말 것 — outline/text only</li>
+<li>radius 16px+ 크게 쓰지 말 것 — 4-8 sharp 유지</li>
+<li>primary 외 색상 늘리지 말 것 — amber/red/cyan은 status만</li>
+<li>Motion scale(1.04) 쓰지 말 것 — Spotify 것</li>
+</ul></div></div></section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;font-family:var(--font-mono);">
+<p>// Generated by insane-design v3.1 · CSS-first · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

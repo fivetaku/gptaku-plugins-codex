@@ -1,0 +1,59 @@
+.flip-digit {
+--flip-width:60px;
+--flip-height:70px;
+--flip-bg:#121118;
+--flip-border-color:#ffffff1a;
+--flip-center-border:#000;
+width:var(--flip-width);
+height:var(--flip-height);
+text-align:center;
+color:#fff9fb;
+border-radius:15%;
+padding:0;
+font-size:48px;
+font-weight:600;
+list-style-type:none;
+display:inline-block}
+.flip-digit li {
+width:var(--flip-width);
+height:calc(.5 * var(--flip-height));
+transform-style:preserve-3d;
+transform-origin:100% 100% 0;
+border-radius:15%;
+padding:0;
+position:absolute}
+.flip-digit li>div {
+width:100%;
+height:99%;
+line-height:var(--flip-height);
+border:solid 1px var(--flip-border-color);
+background-color:var(--flip-bg);
+backface-visibility:hidden;
+margin:0;
+padding:0;
+position:absolute;
+overflow:hidden}
+.flip-digit li>div:first-child {
+border-bottom:0;
+border-radius:15% 15% 0 0}
+.flip-digit li>div:last-child {
+border-top:solid 2px var(--flip-center-border);
+transform-origin:0%;
+border-radius:0 0 15% 15%;
+transform:rotateX(-180deg)}
+.flip-digit li>div:last-child div {
+margin-top:calc(-.5 * var(--flip-height))}
+.flip-digit .prev,.flip-digit .curr,.flip-digit .next {
+perspective:200px}
+.flip-digit .prev,.flip-digit .next {
+z-index:5}
+.flip-digit .prev,.flip-digit .curr {
+transform:rotateX(180deg)}
+.flip-digit .prev {
+border-radius:15% 15% 0 0}
+.flip-digit .curr {
+z-index:10;
+transition:transform .3s linear}
+.flip-digit .next {
+transform:rotateX(0)}
+

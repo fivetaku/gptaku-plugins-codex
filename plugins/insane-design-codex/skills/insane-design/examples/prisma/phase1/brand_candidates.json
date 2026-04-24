@@ -1,0 +1,312 @@
+{
+  "slug": "prisma",
+  "semantic_vars": [
+    {
+      "name": "--color-fd-primary",
+      "value_hex": "#171717",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fd-primary-foreground",
+      "value_hex": "#FAFAFA",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fd-accent",
+      "value_hex": "#D1D1D180",
+      "role": "accent"
+    },
+    {
+      "name": "--color-fd-accent-foreground",
+      "value_hex": "#171717",
+      "role": "accent"
+    },
+    {
+      "name": "--color-fd-primary",
+      "value_hex": "#FAFAFA",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fd-primary-foreground",
+      "value_hex": "#171717",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fd-accent",
+      "value_hex": "#6868684D",
+      "role": "accent"
+    },
+    {
+      "name": "--color-fd-accent-foreground",
+      "value_hex": "#E6E6E6",
+      "role": "accent"
+    },
+    {
+      "name": "--primary",
+      "value_hex": "#16A394",
+      "role": "primary"
+    },
+    {
+      "name": "--primary-foreground",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--accent",
+      "value_hex": "#D9F9F6",
+      "role": "accent"
+    },
+    {
+      "name": "--accent-foreground",
+      "value_hex": "#154F47",
+      "role": "accent"
+    },
+    {
+      "name": "--sidebar-primary",
+      "value_hex": "#16A394",
+      "role": "primary"
+    },
+    {
+      "name": "--sidebar-primary-foreground",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--sidebar-accent",
+      "value_hex": "#D9F9F6",
+      "role": "accent"
+    },
+    {
+      "name": "--sidebar-accent-foreground",
+      "value_hex": "#154F47",
+      "role": "accent"
+    },
+    {
+      "name": "--accent",
+      "value_hex": "#0D3A38",
+      "role": "accent"
+    },
+    {
+      "name": "--accent-foreground",
+      "value_hex": "#71E8DF",
+      "role": "accent"
+    },
+    {
+      "name": "--sidebar-accent",
+      "value_hex": "#0D3A38",
+      "role": "accent"
+    },
+    {
+      "name": "--sidebar-accent-foreground",
+      "value_hex": "#71E8DF",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": "button,input,select,optgroup,textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button,input,select,optgroup,textarea { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-r"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button { font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-radius:0}"
+    },
+    {
+      "selector": ".bg-fd-primary\\/10",
+      "property": "background-color",
+      "hex": "#1717171A",
+      "rule_snippet": ".bg-fd-primary\\/10 { background-color:#1717171a}"
+    },
+    {
+      "selector": ".text-fd-primary\\/50",
+      "property": "color",
+      "hex": "#17171780",
+      "rule_snippet": ".text-fd-primary\\/50 { color:#17171780}"
+    },
+    {
+      "selector": ".group-data-\\[viewport\\=false\\]\\/navigation-menu\\:shadow:is(:where(.group\\/navigation-menu)[data-viewport=false] *)",
+      "property": "--tw-shadow",
+      "hex": "#0000001A",
+      "rule_snippet": ".group-data-\\[viewport\\=false\\]\\/navigation-menu\\:shadow:is(:where(.group\\/navigation-menu)[data-viewport=false] *) { --tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a),0 1px 2px -1px var(--tw-s"
+    },
+    {
+      "selector": ".hover\\:bg-fd-primary\\/80:hover",
+      "property": "background-color",
+      "hex": "#171717CC",
+      "rule_snippet": ".hover\\:bg-fd-primary\\/80:hover { background-color:#171717cc}"
+    },
+    {
+      "selector": ".data-\\[active\\=true\\]\\:bg-fd-primary\\/10[data-active=true]",
+      "property": "background-color",
+      "hex": "#1717171A",
+      "rule_snippet": ".data-\\[active\\=true\\]\\:bg-fd-primary\\/10[data-active=true] { background-color:#1717171a}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#14B8A6",
+      "count": 308,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#00000000",
+      "count": 49,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 30,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000000A",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1D242F",
+      "count": 10,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#16A394",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F9FAFB",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0D9488",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#16A3944D",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#CCCCCC",
+      "count": 8,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F7FAFC",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2DD4BF",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#111827",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#000000",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#090A15",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#161D2BCC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#171717",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1717171A",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4F46E5",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6366F1",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#99F6E4",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#DC2626",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5E7EBCC",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#EA580C",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FAFAFA",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0284C7",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0891B2",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0A0A0A1A",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0A101D",
+      "count": 3,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 57,
+    "by_role": {
+      "accent": 12,
+      "chromatic": 19,
+      "neutral": 10,
+      "primary": 8,
+      "selector": 7,
+      "svg_pattern": 1
+    }
+  }
+}

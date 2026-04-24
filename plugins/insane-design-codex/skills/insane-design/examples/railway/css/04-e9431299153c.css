@@ -1,0 +1,91 @@
+.react-flow__selection,.react-flow__nodesselection-rect {
+border-style:solid;
+border-color:var(--pink-200);
+background-color:#d9bef333;
+border-radius:calc(min(5%,4px))}
+.dark .react-flow__selection,.dark .react-flow__nodesselection-rect {
+border-style:solid;
+border-color:var(--pink-200);
+background-color:#532f7333;
+border-radius:calc(min(5%,4px))}
+html::view-transition-group(.group) {
+mix-blend-mode:normal;
+animation-duration:.25s}
+::view-transition-group(root) {
+mix-blend-mode:normal;
+animation:none}
+:root {
+--nested-canvas-shadow:0 0 0 1px #00000014, 0 2px 8px -2px #00000014, 0 4px 16px -4px #00000014;
+--transition-easing:cubic-bezier(.455, .03, .515, .955)}
+.dark {
+--nested-canvas-shadow:0 0 0 1px #ffffff1f, 0 2px 8px -2px #00000040, 0 4px 16px -4px #00000040}
+::view-transition-new(group) {
+animation-timing-function:var(--transition-easing);
+-o-object-fit:cover;
+object-fit:cover;
+border-radius:8px;
+height:100%;
+overflow:clip}
+html:active-view-transition-type(backwards)::view-transition-old(group) {
+box-shadow:var(--nested-canvas-shadow)}
+html:active-view-transition-type(forwards)::view-transition-new(group) {
+box-shadow:var(--nested-canvas-shadow)}
+@keyframes nested-canvas-slide-down {
+0% {
+opacity:1;
+transform:translateY(0)}
+to {
+opacity:0;
+transform:translateY(20%)}
+}
+@keyframes nested-canvas-slide-up {
+0% {
+opacity:0;
+transform:translateY(20%)}
+to {
+opacity:1;
+transform:translateY(0)}
+}
+::view-transition-old(group):only-child {
+animation-name:nested-canvas-slide-down;
+animation-duration:.25s;
+animation-timing-function:ease-out}
+::view-transition-new(group):only-child {
+animation-name:nested-canvas-slide-up;
+animation-duration:.25s;
+animation-timing-function:ease-out}
+.group-view-transition {
+view-transition-name:group;
+view-transition-class:group}
+.project-view-transition {
+view-transition-name:project;
+view-transition-class:project}
+html::view-transition-group(.project) {
+mix-blend-mode:normal;
+animation-duration:.35s;
+animation-timing-function:cubic-bezier(.4,0,.2,1)}
+@keyframes project-zoom-out {
+0% {
+opacity:1;
+transform:scale(1)}
+to {
+opacity:0;
+transform:scale(1.04)}
+}
+@keyframes project-zoom-in {
+0% {
+opacity:0;
+transform:scale(.98)}
+to {
+opacity:1;
+transform:scale(1)}
+}
+html:active-view-transition-type(zoom-in)::view-transition-old(project) {
+animation:.35s ease-out forwards project-zoom-out}
+html:active-view-transition-type(zoom-in)::view-transition-new(project) {
+animation:.35s ease-out forwards project-zoom-in}
+html:active-view-transition-type(zoom-out)::view-transition-old(project) {
+animation:.35s ease-out reverse forwards project-zoom-in}
+html:active-view-transition-type(zoom-out)::view-transition-new(project) {
+animation:.35s ease-out reverse forwards project-zoom-out}
+

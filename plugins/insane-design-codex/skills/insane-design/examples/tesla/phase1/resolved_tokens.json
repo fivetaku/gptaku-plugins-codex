@@ -1,0 +1,16 @@
+{
+  "slug": "tesla",
+  "total_vars": 1,
+  "resolved_count": 0,
+  "unresolved_count": 1,
+  "samples": {
+    "--tcl-homepage-hero-footer-padding-block-end": {
+      "raw": "calc(var(--tds-size--1x) + var(--tcl-top-banner-height, 0px))",
+      "resolved": null,
+      "chain": [
+        "--tcl-homepage-hero-footer-padding-block-end",
+        "calc(var(--tds-size--1x) + var(--tcl-top-banner-height, 0px))"
+      ]
+    }
+  }
+}

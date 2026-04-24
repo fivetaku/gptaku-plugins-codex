@@ -1,0 +1,206 @@
+{
+  "slug": "airbnb",
+  "buttons": [
+    {
+      "selector": "button-content]",
+      "props": {
+        "transition": "transform 0.1s var(--motion-standard-curve-animation-timing-function)"
+      }
+    },
+    {
+      "selector": "button",
+      "props": {
+        "display": "none"
+      },
+      "states": {
+        "active": {
+          "color": "inherit!important"
+        }
+      }
+    },
+    {
+      "selector": "button:focus:not(:focus-visible)",
+      "props": {
+        "outline": "none"
+      }
+    },
+    {
+      "selector": "Button.FadeIn-jrlvi9",
+      "props": {
+        "opacity": "var(--FloatingButton.FadeIn_from,0)"
+      }
+    },
+    {
+      "selector": "button_button_enter_slide-1i2q7u5",
+      "props": {
+        "opacity": "var(--scroll-to-bottom-button_button_enter_slide_from_opacity,0)"
+      }
+    },
+    {
+      "selector": "button::before",
+      "props": {
+        "width": "40px"
+      }
+    },
+    {
+      "selector": "button:first-child",
+      "props": {
+        "border": "0px"
+      }
+    },
+    {
+      "selector": "Button-6vxe8g",
+      "props": {
+        "opacity": "1"
+      }
+    },
+    {
+      "selector": "button:focus-visible::before",
+      "props": {
+        "box-shadow": "none"
+      }
+    },
+    {
+      "selector": "button:active",
+      "props": {
+        "color": "inherit!important"
+      }
+    }
+  ],
+  "cards": [],
+  "inputs": [
+    {
+      "selector": "textarea",
+      "props": {
+        "color": "inherit"
+      }
+    },
+    {
+      "selector": "select",
+      "props": {
+        "color": "inherit"
+      }
+    },
+    {
+      "selector": "input",
+      "props": {
+        "color": "inherit"
+      },
+      "states": {
+        "focus": {
+          "outline": "none"
+        }
+      }
+    },
+    {
+      "selector": "input[type='submit']",
+      "props": {
+        "cursor": "pointer"
+      }
+    },
+    {
+      "selector": "selector(::-webkit-scrollbar))",
+      "props": {
+        "color": "var(--palette-grey600) transparent"
+      }
+    },
+    {
+      "selector": "selectCheckSlideIn-um18ze",
+      "props": {
+        "opacity": "0",
+        "transform": "translateX(5px)"
+      }
+    },
+    {
+      "selector": "selector(::-webkit-calendar-picker-indicator))",
+      "props": {
+        "display": "block"
+      }
+    },
+    {
+      "selector": "input:focus-visible)",
+      "props": {
+        "transition": "box-shadow 0.2s var(--motion-standard-curve-animation-timing-function)"
+      }
+    },
+    {
+      "selector": "selector(:has(*))",
+      "props": {
+        "box-shadow": "0 0 0 2px var(--palette-hof)"
+      }
+    },
+    {
+      "selector": "InputFadeInUp-8izszd",
+      "props": {
+        "opacity": "0",
+        "transform": "translateY(100px)"
+      }
+    }
+  ],
+  "nav": [
+    {
+      "selector": "header_exit-qpkmi8",
+      "props": {
+        "opacity": "var(--p5_postcard_header_exit_from)"
+      }
+    },
+    {
+      "selector": "header_enter-qpkmi8",
+      "props": {
+        "opacity": "var(--p5_postcard_header_enter_from,0)"
+      }
+    },
+    {
+      "selector": "NavFadeIn-a5sqw8",
+      "props": {
+        "opacity": "0"
+      }
+    },
+    {
+      "selector": "NavSlideIn-a5sqw8",
+      "props": {
+        "transform": "translateX( calc((var(--offerings-nav-translate) + 20px) * var(--animation-direction-multiplier,1)) ) translateY(6px)"
+      }
+    },
+    {
+      "selector": "navbar)",
+      "props": {
+        "opacity": "0"
+      }
+    },
+    {
+      "selector": "header_show_details_btn_fade_out-o2womc",
+      "props": {
+        "opacity": "var(--thread-header_show_details_btn_fade_out_from,1)"
+      }
+    },
+    {
+      "selector": "Header-1i5f4kw",
+      "props": {
+        "opacity": "0",
+        "transform": "translateY(12px)"
+      }
+    },
+    {
+      "selector": "Header-ffsrbv",
+      "props": {
+        "opacity": "1",
+        "transform": "translateY(0)"
+      }
+    },
+    {
+      "selector": "HeaderLink",
+      "props": {
+        "display": "none"
+      }
+    }
+  ],
+  "hero": [],
+  "stats": {
+    "button_count": 10,
+    "card_count": 0,
+    "input_count": 10,
+    "nav_count": 9,
+    "hero_count": 0
+  }
+}

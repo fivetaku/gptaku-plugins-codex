@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Twitch — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--brand-color:#9147FF;--font-display:"Inter","Roobert",-apple-system,sans-serif;--font-sans:"Pretendard Variable","Inter",sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--bg:#fafafa;--fg:#09090b;--card:#fff;--muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;--border:#e4e4e7;--accent:#18181b;--radius:.5rem;--radius-lg:.75rem}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);word-break:keep-all}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand-name{font-size:20px;font-weight:700;font-family:var(--font-display);color:var(--brand-color)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:700}
+.hero-big h1{font-family:var(--font-display);font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:12px 0 20px}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:28px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:6px;font-family:var(--font-mono);font-size:11px;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#18181b}.sw--d{color:#fafafa}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans)}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:700;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:200px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:700}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:6px;background:var(--card)}
+.sh-card__n{font-weight:700;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:6px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.comp{padding:20px;border:1px solid var(--border);border-radius:6px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:4px}
+.comp pre{background:var(--muted);padding:12px;border-radius:4px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#18181B;color:#EFEFF1;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:4px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-bar{display:flex;height:40px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:700}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:5px 12px;background:#F3EDFF;color:#5C16C5;border-radius:4px;font-size:11px;font-weight:500}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#18181B;color:#EFEFF1;padding:16px;border-radius:6px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}.main{padding:32px 20px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="toc">
+<div class="toc__brand"><div class="toc__brand-name">Twitch</div><div class="toc__brand-sub">Design System Report</div></div>
+<div class="toc__group-label">Overview</div><ul class="toc__list"><li><a href="#mood"><span class="toc__num">00</span>분위기</a></li><li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li><li><a href="#provenance"><span class="toc__num">02</span>출처</a></li><li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li></ul>
+<div class="toc__group-label">Foundations</div><ul class="toc__list"><li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li><li><a href="#colors"><span class="toc__num">05</span>컬러</a></li></ul>
+<div class="toc__group-label">Tokens</div><ul class="toc__list"><li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li><li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li><li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li><li><a href="#motion"><span class="toc__num">08</span>모션</a></li></ul>
+<div class="toc__group-label">Patterns</div><ul class="toc__list"><li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li><li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li></ul>
+<div class="toc__group-label">Guide</div><ul class="toc__list"><li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li><li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li></ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Streamer Purple — dual theme (.tw-root--theme-dark / --theme-light)</div>
+  <h1>#9147FF + pink gradient · 게이밍 네온 퍼플</h1>
+  <p class="lead">Twitch · <code>https://www.twitch.tv</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Twitch hero" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Twitch는 게임 스트리머 문화를 그대로 색으로 번역한 <b>Streamer Purple</b> 시그니처 — <b><code>#9147FF</code></b> primary와 그 hover pair <b><code>#A970FF</code></b> / dark-hover <b><code>#772CE8</code></b>로 완성된다. Slack의 aubergine과 완전히 다른, 밝고 채도 높고 "게이밍 네온"에 가까운 컬러.</p>
+    <p>가장 특이한 건 <b>dual theme 시스템</b>이다. <code>.tw-root--theme-dark</code> / <code>.tw-root--theme-light</code>가 body/root에 얹혀 모든 컴포넌트 컬러가 완전히 두 트랙으로 재정의된다. Purple도 dark에서 <code>#A970FF</code>(밝게), light에서 <code>#5C16C5</code>(진하게) — 즉 <b>단일 브랜드 hex가 없고 theme pair로만 존재</b>.</p>
+    <p>스트리머 promoted card의 그라데이션이 <code>#9147FF → #FF75E6</code>(purple→pink) 시그니처 — "라이브 콘텐츠가 있다"는 energy 표시. <code>.top-nav__logo</code> bg는 <code>#451093</code> deep purple. side nav는 <code>#EFEFF1</code>(light) / <code>#26262C</code>(dark).</p>
+    <p>소셜 통합 팔레트도 실제 CSS에 박혀 있다 — facebook <code>#3B5998</code>, twitter <code>#000</code>, reddit <code>#FF4500</code>, vkontakte <code>#45668E</code>. native brand color를 재해석 없이 그대로 사용. 타이포는 Inter + Roobert 병용, weight 400/500/600/700 단조로운 scale (스트리머 콘텐츠가 주인공).</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Twitch Purple #9147FF</span>
+    <span class="kw">dual theme dark/light</span>
+    <span class="kw">dark-scope #A970FF / light-scope #5C16C5</span>
+    <span class="kw">logo bg #451093 deep purple</span>
+    <span class="kw">Promoted gradient #9147FF→#FF75E6</span>
+    <span class="kw">Inter + Roobert</span>
+    <span class="kw">body 14px (not 16)</span>
+    <span class="kw">social native colors</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기</h2>
+  <div class="quick-steps">
+    <pre><code>/* dark scope */
+.tw-root--theme-dark {
+  --twitch-purple: #A970FF;
+  --twitch-purple-hover: #BF94FF;
+  --bg: #18181B;
+  --side-nav: #26262C;
+  --fg: #EFEFF1;
+}
+/* light scope */
+.tw-root--theme-light {
+  --twitch-purple: #5C16C5;
+  --twitch-purple-hover: #772CE8;
+  --bg: #FFFFFF;
+  --side-nav: #EFEFF1;
+  --fg: #0E0E10;
+}</code></pre>
+    <pre><code>body {
+  font-family: "Inter","Roobert",
+               -apple-system,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--fg);
+}</code></pre>
+    <pre><code>.btn-twitch {
+  background: var(--twitch-purple);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background .15s ease;
+}
+.btn-twitch:hover {
+  background: var(--twitch-purple-hover);
+}
+/* Promoted gradient */
+.promoted {
+  background: linear-gradient(#9147FF,#FF75E6);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> purple을 한 hex로만 고정하지 마라 — Twitch는 dark/light scope에서 purple을 다르게 쓴다. <code>#9147FF</code> hardcode는 절반의 theme에서 잘못 보인다.</div>
+</section>
+
+<section id="provenance" class="sec"><h2>02. 출처</h2><table class="tbl">
+<tr><th>Source URL</th><td><code>https://www.twitch.tv</code></td></tr>
+<tr><th>Fetched</th><td>2026-04-20</td></tr>
+<tr><th>Framework</th><td>React (Twitch 내부)</td></tr>
+<tr><th>Theme</th><td>dual (<code>.tw-root--theme-dark/light</code>)</td></tr>
+<tr><th>Typography</th><td>Inter + Roobert</td></tr>
+</table></section>
+
+<section id="stack" class="sec"><h2>03. 테크 스택</h2>
+<ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+<li><b>Framework</b>: React + Twitch 내부 컴포넌트</li>
+<li><b>CSS</b>: BEM + dual theme scope</li>
+<li><b>Typography</b>: Inter (<code>--font-display</code>) + Roobert 커스텀</li>
+<li><b>i18n</b>: Tajawal / Noto Sans Arabic</li>
+<li><b>Theme</b>: <code>.tw-root--theme-dark</code> / <code>.tw-root--theme-light</code> root toggle</li>
+<li><b>Social integration</b>: facebook/reddit/twitter/vkontakte native brand colors</li>
+</ul></section>
+
+<section id="typography" class="sec">
+<h2>04. 타이포그래피</h2>
+<p class="lede">Inter(21회) + Roobert(4-6회) 병용. weight 400/500/600/700 4단.</p>
+<ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+<li><b>Primary</b>: <code>Inter</code> (<code>--font-display</code>, 21회)</li>
+<li><b>Custom</b>: <code>Roobert</code> (Twitch 자체, 4-6회)</li>
+<li><b>Arabic</b>: Noto Sans Arabic / Tajawal</li>
+<li><b>Weights</b>: 400 / 500 / 600 / 700</li>
+</ul>
+<h3 style="margin-top:32px;">Type Scale</h3>
+<div class="type-row"><div style="font-size:11px;">tiny</div><div class="type-row__spec"><div class="tk">tiny</div>11px · 400</div></div>
+<div class="type-row"><div style="font-size:12px;">caption</div><div class="type-row__spec"><div class="tk">caption</div>12px · 400</div></div>
+<div class="type-row"><div style="font-size:14px;">body (Twitch default)</div><div class="type-row__spec"><div class="tk">body</div><b>14px</b> · 400 · lh 1.5</div></div>
+<div class="type-row"><div style="font-size:14px;font-weight:600;">body-bold</div><div class="type-row__spec"><div class="tk">body-bold</div>14px · 600</div></div>
+<div class="type-row"><div style="font-size:20px;font-weight:600;">h3</div><div class="type-row__spec"><div class="tk">h3</div>20px · 600</div></div>
+<div class="type-row"><div style="font-size:24px;font-weight:700;">h2</div><div class="type-row__spec"><div class="tk">h2</div>24px · 700</div></div>
+<div class="type-row"><div style="font-size:40px;font-weight:700;line-height:1.1;">h1</div><div class="type-row__spec"><div class="tk">h1</div>32-40px · 700 · lh 1.1</div></div>
+<div class="type-row"><div style="font-size:56px;font-weight:700;line-height:1.05;letter-spacing:-.02em;">display</div><div class="type-row__spec"><div class="tk">display</div>48-64px · 700</div></div>
+</section>
+
+<section id="colors" class="sec">
+<h2>05. 컬러</h2>
+<p class="lede">Twitch Purple dual-scope + Promoted gradient + social native + dark/light ramps.</p>
+
+<div class="ramp-label">Signature Purple Pair (dual theme)</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#451093"><div class="n">logo-bg</div>#451093</div>
+<div class="sw sw--d" style="background:#5C16C5"><div class="n">light-scope ★</div>#5C16C5</div>
+<div class="sw sw--d" style="background:#772CE8"><div class="n">light-hover</div>#772CE8</div>
+<div class="sw sw--d" style="background:#8205B4"><div class="n">purple-deep</div>#8205B4</div>
+<div class="sw sw--d" style="background:#9147FF"><div class="n">purple-shared ★</div>#9147FF</div>
+<div class="sw sw--d" style="background:#A970FF"><div class="n">dark-scope ★</div>#A970FF</div>
+<div class="sw sw--l" style="background:#BF94FF"><div class="n">dark-hover</div>#BF94FF</div>
+</div>
+
+<div class="ramp-label">Dark Theme Ramp</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#18181B"><div class="n">bg-dark</div>#18181B</div>
+<div class="sw sw--d" style="background:#19171C"><div class="n">divider</div>#19171C</div>
+<div class="sw sw--d" style="background:#1F1F23"><div class="n">bg-elev</div>#1F1F23</div>
+<div class="sw sw--d" style="background:#26262C"><div class="n">side-nav-dark</div>#26262C</div>
+<div class="sw sw--l" style="background:#EFEFF1"><div class="n">fg-light</div>#EFEFF1</div>
+</div>
+
+<div class="ramp-label">Light Theme Ramp</div>
+<div class="ramp">
+<div class="sw sw--l" style="background:#FFFFFF"><div class="n">bg-light</div>#FFFFFF</div>
+<div class="sw sw--l" style="background:#F7F7F8"><div class="n">bg-alt</div>#F7F7F8</div>
+<div class="sw sw--l" style="background:#EFEFF1"><div class="n">side-nav-light</div>#EFEFF1</div>
+<div class="sw sw--l" style="background:#D9D8DD"><div class="n">divider</div>#D9D8DD</div>
+<div class="sw sw--d" style="background:#0E0E10"><div class="n">fg-dark</div>#0E0E10</div>
+</div>
+
+<div class="ramp-label">Promoted Gradient & Accents</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#9147FF"><div class="n">gradient-start</div>#9147FF</div>
+<div class="sw sw--l" style="background:#FF75E6"><div class="n">gradient-end</div>#FF75E6</div>
+<div class="sw sw--d" style="background:#BE0078"><div class="n">alt-magenta</div>#BE0078</div>
+<div class="sw sw--d" style="background:#00F593"><div class="n">neon-green</div>#00F593</div>
+<div class="sw sw--d" style="background:#00A3A3"><div class="n">cyan</div>#00A3A3</div>
+<div class="sw sw--l" style="background:#F093F9"><div class="n">pink-soft</div>#F093F9</div>
+<div class="sw sw--d" style="background:#E91916"><div class="n">red-beta</div>#E91916</div>
+<div class="sw sw--l" style="background:#FAFA19"><div class="n">yellow</div>#FAFA19</div>
+</div>
+
+<div class="ramp-label">Social Brand Native</div>
+<div class="ramp">
+<div class="sw sw--d" style="background:#3B5998"><div class="n">facebook</div>#3B5998</div>
+<div class="sw sw--d" style="background:#000000"><div class="n">twitter</div>#000000</div>
+<div class="sw sw--d" style="background:#FF4500"><div class="n">reddit</div>#FF4500</div>
+<div class="sw sw--d" style="background:#45668E"><div class="n">vkontakte</div>#45668E</div>
+</div>
+
+<h3>Dominant Usage</h3>
+<div class="dom-bar">
+<div style="flex:19;background:#FFFFFF"></div>
+<div style="flex:18;background:#9147FF"></div>
+<div style="flex:17;background:#000000"></div>
+<div style="flex:15;background:#0E0E10"></div>
+<div style="flex:13;background:#772CE8"></div>
+<div style="flex:11;background:#5C16C5"></div>
+<div style="flex:11;background:#EFEFF1"></div>
+<div style="flex:8;background:#A970FF"></div>
+<div style="flex:5;background:#18181B"></div>
+<div style="flex:5;background:#8205B4"></div>
+</div>
+<div class="dom-list">
+<div class="item"><div class="chip" style="background:#9147FF"></div><div><div class="hex">#9147FF</div><div class="cnt">18회 · brand purple</div></div></div>
+<div class="item"><div class="chip" style="background:#0E0E10"></div><div><div class="hex">#0E0E10</div><div class="cnt">15회 · fg light scope</div></div></div>
+<div class="item"><div class="chip" style="background:#772CE8"></div><div><div class="hex">#772CE8</div><div class="cnt">13회 · purple-hover</div></div></div>
+<div class="item"><div class="chip" style="background:#5C16C5"></div><div><div class="hex">#5C16C5</div><div class="cnt">11회 · light-scope purple</div></div></div>
+<div class="item"><div class="chip" style="background:#EFEFF1"></div><div><div class="hex">#EFEFF1</div><div class="cnt">11회 · side-nav light</div></div></div>
+<div class="item"><div class="chip" style="background:#A970FF"></div><div><div class="hex">#A970FF</div><div class="cnt">8회 · dark-scope purple</div></div></div>
+<div class="item"><div class="chip" style="background:#18181B"></div><div><div class="hex">#18181B</div><div class="cnt">5회 · bg-dark</div></div></div>
+<div class="item"><div class="chip" style="background:#451093"></div><div><div class="hex">#451093</div><div class="cnt">logo bg</div></div></div>
+</div>
+</section>
+
+<section id="spacing" class="sec"><h2>06. 스페이싱</h2>
+<p class="lede">Tailwind-like rem scale.</p>
+<div class="space-row"><div class="tk">0.5</div><div>4px</div><div class="bar" style="width:4px"></div><div class="use">inline</div></div>
+<div class="space-row"><div class="tk">1</div><div>8px</div><div class="bar" style="width:8px"></div><div class="use">gap</div></div>
+<div class="space-row"><div class="tk">2</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">default</div></div>
+<div class="space-row"><div class="tk">4</div><div>32px</div><div class="bar" style="width:32px"></div><div class="use">card</div></div>
+<div class="space-row"><div class="tk">8</div><div>64px</div><div class="bar" style="width:64px"></div><div class="use">section</div></div>
+</section>
+
+<section id="radius" class="sec"><h2>07. 라디우스 — Sharp</h2>
+<p class="lede">Twitch는 Slack처럼 radius로 성격 내지 않는다. 4px default.</p>
+<div class="rad-grid">
+<div class="rad-card"><div style="border-radius:4px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-xs</div><div class="rad-card__v">4px · button / input</div></div>
+<div class="rad-card"><div style="border-radius:6px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-md</div><div class="rad-card__v">6px · chip</div></div>
+<div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-lg</div><div class="rad-card__v">8px · card</div></div>
+<div class="rad-card"><div style="border-radius:9999px;background:#9147FF;height:64px;"></div><div class="rad-card__n">radius-pill</div><div class="rad-card__v">9999 · avatar</div></div>
+</div></section>
+
+<section id="shadows" class="sec"><h2>07S. 섀도우</h2>
+<div class="sh-grid">
+<div class="sh-card" style="box-shadow:0 1px 2px rgba(0,0,0,.12);"><div class="sh-card__n">shadow-sm</div><div class="sh-card__d">subtle</div><div class="sh-card__v">0 1px 2px rgba(0,0,0,.12)</div></div>
+<div class="sh-card" style="box-shadow:0 4px 8px rgba(0,0,0,.16);"><div class="sh-card__n">shadow-md</div><div class="sh-card__d">card hover</div><div class="sh-card__v">0 4px 8px rgba(0,0,0,.16)</div></div>
+<div class="sh-card" style="box-shadow:0 12px 24px rgba(0,0,0,.24);"><div class="sh-card__n">shadow-lg</div><div class="sh-card__d">modal</div><div class="sh-card__v">0 12px 24px rgba(0,0,0,.24)</div></div>
+</div></section>
+
+<section id="motion" class="sec"><h2>08. 모션</h2>
+<table class="tbl"><thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>hover transition</td><td><code>.15s ease</code></td><td>color/bg</td></tr>
+<tr><td>nav active-indicator</td><td><code>transform .2s ease</code></td><td>translate</td></tr>
+<tr><td>theme toggle</td><td><code>.3s ease-in-out</code></td><td>scope swap</td></tr>
+</tbody></table></section>
+
+<section id="layout" class="sec"><h2>09. 레이아웃</h2>
+<div class="lay-grid">
+<div class="lay-card"><h3>Hero</h3><ul><li>dark default · bg #18181B</li><li>headline 40-64px 700</li><li>promoted gradient card</li><li>dual CTA purple+outline</li></ul></div>
+<div class="lay-card"><h3>Top Nav</h3><ul><li>height 50-64px</li><li>bg #18181B / #FFFFFF</li><li>logo bg #451093</li><li>dual-scope link colors</li></ul></div>
+<div class="lay-card"><h3>Side Nav</h3><ul><li>width 240px (24rem)</li><li>bg #26262C dark / #EFEFF1 light</li><li>promoted gradient card</li></ul></div>
+<div class="lay-card"><h3>Card</h3><ul><li>bg #1F1F23 / #FFFFFF</li><li>border #26262C / #D9D8DD</li><li>radius 8</li></ul></div>
+</div></section>
+
+<section id="components" class="sec"><h2>10. 컴포넌트</h2>
+<div class="comp"><h3>Purple CTA (Dual Theme)</h3>
+<div class="comp-spec"><b>Spec</b>: bg theme-purple · color white · padding 6px 12px · radius 4 · weight 600</div>
+<pre><code>.btn-twitch {
+  background: #9147FF;
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background .15s ease;
+}
+.tw-root--theme-dark .btn-twitch { background: #A970FF; }
+.tw-root--theme-light .btn-twitch { background: #5C16C5; }
+.btn-twitch:hover { background: #772CE8; }
+.tw-root--theme-dark .btn-twitch:hover { background: #BF94FF; }</code></pre></div>
+
+<div class="comp"><h3>Promoted Gradient Card (시그니처)</h3>
+<div class="comp-spec"><b>Spec</b>: linear-gradient(#9147FF, #FF75E6)</div>
+<pre><code>.side-nav-card--promoted-collapsed,
+.side-nav-promoted-followed-card__gradient {
+  background: linear-gradient(#9147FF, #FF75E6);
+  padding: 16px;
+  border-radius: 8px;
+  color: #FFFFFF;
+}</code></pre></div>
+
+<div class="comp"><h3>Nav Active Indicator</h3>
+<pre><code>.navigation-link__active-indicator {
+  background-color: #5C16C5;
+  height: .2rem;
+  margin-bottom: -.1rem;
+  transform-origin: 0 0;
+  transition: transform .2s ease;
+}
+.tw-root--theme-dark .navigation-link__active-indicator {
+  background-color: #BF94FF;
+}</code></pre></div>
+
+<div class="comp"><h3>Beta Badge</h3>
+<pre><code>.top-nav__beta-badge {
+  background: #E91916;
+  color: #000000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.top-nav__beta-badge:hover { background: #BB1411; }</code></pre></div>
+
+<div class="comp"><h3>Social Icon Buttons (native brand)</h3>
+<pre><code>.social-button__icon--twitter  { background: #000000; }
+.social-button__icon--facebook { background: #3B5998; }
+.social-button__icon--reddit   { background: #FF4500; }
+.social-button__icon--vkontakte{ background: #45668E; }
+.social-button__icon--embed    { background: #9147FF; }</code></pre></div>
+</section>
+
+<section id="agent" class="sec"><h2>11. Agent Prompt Guide</h2>
+<table class="tbl"><thead><tr><th>Role</th><th>Token</th><th>Hex (dark / light)</th></tr></thead>
+<tbody>
+<tr><td>Purple primary</td><td><code>--twitch-purple</code></td><td><span style="width:16px;height:16px;background:#A970FF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#A970FF</code> / <code>#5C16C5</code></td></tr>
+<tr><td>Purple shared</td><td>brand</td><td><span style="width:16px;height:16px;background:#9147FF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#9147FF</code></td></tr>
+<tr><td>Bg</td><td><code>--bg</code></td><td><span style="width:16px;height:16px;background:#18181B;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#18181B</code> / <code>#FFFFFF</code></td></tr>
+<tr><td>Side nav</td><td><code>--side-nav</code></td><td><span style="width:16px;height:16px;background:#26262C;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#26262C</code> / <code>#EFEFF1</code></td></tr>
+<tr><td>Text</td><td><code>--fg</code></td><td><code>#EFEFF1</code> / <code>#0E0E10</code></td></tr>
+<tr><td>Gradient</td><td>—</td><td><code>#9147FF → #FF75E6</code></td></tr>
+<tr><td>Logo bg</td><td>—</td><td><span style="width:16px;height:16px;background:#451093;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#451093</code></td></tr>
+</tbody></table>
+<h3 style="margin-top:32px;">Example Prompts</h3>
+<div class="ag-grid">
+<div class="ag-card"><h4>🎯 Hero</h4><pre>Twitch dark hero: bg #18181B, headline 48px Inter weight 700 white. Promoted card with linear-gradient(#9147FF, #FF75E6), radius 8, padding 16. Dual CTA: purple #A970FF primary + outline secondary.</pre></div>
+<div class="ag-card"><h4>🌈 Promoted Gradient</h4><pre>Promoted card: linear-gradient(#9147FF → #FF75E6), radius 8, color white. Use for streamer promotion.</pre></div>
+<div class="ag-card"><h4>🔘 Purple CTA (Dual)</h4><pre>Twitch CTA: theme-scoped purple (#A970FF dark / #5C16C5 light), color white, padding 6px 12px, radius 4, weight 600. Hover bg #BF94FF (dark) / #772CE8 (light).</pre></div>
+<div class="ag-card"><h4>🎭 Dual Theme Setup</h4><pre>Apply .tw-root--theme-dark or .tw-root--theme-light to root div, and all tokens swap automatically. purple / bg / fg / side-nav all re-scoped.</pre></div>
+</div></section>
+
+<section id="dodont" class="sec"><h2>12. DO / DON'T</h2>
+<div class="do-dont">
+<div class="do"><h3>✓ DO</h3><ul>
+<li>✅ dual theme <code>.tw-root--theme-dark/light</code> scope로 purple 재매핑</li>
+<li>✅ purple <code>#9147FF</code> cross + dark <code>#A970FF</code> / light <code>#5C16C5</code> pair</li>
+<li>✅ promoted card에 <code>#9147FF → #FF75E6</code> 그라데이션</li>
+<li>✅ Inter + Roobert 병용</li>
+<li>✅ social brand colors는 native 그대로</li>
+<li>✅ radius 4-8px 유지</li>
+</ul></div>
+<div class="dont"><h3>✗ DON'T</h3><ul>
+<li>Purple을 <code>#5C16C5</code> 한 hex로만 hardcode하지 말 것</li>
+<li>Slack aubergine <code>#4A154B</code> 계열 어두운 보라로 바꾸지 말 것</li>
+<li>body font size를 16px로 키우지 말 것 — 14px default</li>
+<li><code>#000000</code> pure black bg로 쓰지 말 것 — <code>#18181B</code></li>
+<li>gradient를 <code>#9147FF → #A970FF</code> monopurple로 만들지 말 것 — pink까지</li>
+<li>weight 300 light 쓰지 말 것 — 400-700만 사용</li>
+</ul></div></div></section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+<p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

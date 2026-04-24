@@ -1,0 +1,537 @@
+/* marquee temp support. */
+.marquee.mobile-high-contrast,
+.marquee.high-contrast {
+  color: #000;
+}
+
+@media screen and (min-width: 600px) {
+  .marquee.tablet-high-contrast {
+    color: #000;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .marquee.desktop-high-contrast {
+    color: #000;
+  }
+}
+
+/* masonry support */
+
+/* border radius */
+.section.border-radius-s > div,
+.section.border-radius-s > div .background,
+.section.border-radius-s > .homepage-brick.click a {
+  border-radius: 4px;
+}
+
+.section.border-radius-l > div,
+.section.border-radius-l > div .background,
+.section.border-radius-l > .homepage-brick.click a {
+  border-radius: 16px;
+}
+
+.section.no-border-radius > div,
+.section.no-border-radius > div .background {
+  border-radius: 0;
+  padding: var(--spacing-l) 0;
+}
+
+
+.section.masonry:not([class*="border-radius"]) > div,
+.section.masonry:not([class*="border-radius"]) .homepage-brick.click a,
+.section.masonry:not([class*="border-radius"]) > div > div.fragment > div.section > div,
+.section.masonry:not([class*="border-radius"]) > div .background,
+.section.masonry:not([class*="border-radius"]) > div > div.fragment > div.section > div .background {
+  border-radius: 20px;
+}
+
+
+.section[class*='-up'] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+  gap: var(--spacing-m);
+  align-items: start;
+  padding-left: var(--grid-margins-width);
+  padding-right: var(--grid-margins-width);
+}
+
+/* defaults */
+.section.masonry {
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section.masonry > div:not([class]),
+.section.masonry > div:not([class]) > div.fragment,
+.section.masonry > div:not([class]) > div.fragment > div.section {
+  display: grid;
+}
+
+.section.masonry:not([class*="spacing"]) {
+  align-items: stretch;
+  padding: var(--spacing-m) var(--spacing-xl);
+}
+
+.section.masonry:not([class*="spacing"]):not([style]) {
+  max-width: 1920px;
+}
+
+.section.masonry.small-top-padding:not([class*="spacing"]) {
+  padding-top: var(--spacing-s);
+}
+
+.homepage-brick.above-pods .foreground {
+  padding-top: var(--spacing-xs);
+}
+
+@media screen and (max-width: 599px) {
+  .homepage-brick.above-pods .foreground > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage-brick.above-pods .foreground > div .body-m {
+      order: 3;
+  }
+
+  .homepage-brick.above-pods .foreground > div .action-area {
+    order: 2;
+    margin-bottom: var(--spacing-s);
+    display: flex;
+    gap: var(--spacing-s);
+    flex-flow: column wrap;
+    align-items: stretch;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .section.masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section.masonry .full-grid {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section.masonry {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .section.masonry > div { grid-column: span 4; }
+  .section.masonry .half-grid { grid-column: span 6; }
+  .section.masonry .two-thirds-grid { grid-column: span 8; }
+  .section.masonry [class*="full-grid"] {grid-column: span 12; }
+
+  .section.masonry .homepage-brick.click[class*="full-grid"] {
+    padding-top: var(--spacing-xl-static);
+    text-align: center;
+  }
+
+  .section.masonry .homepage-brick.click.left-align-desktop[class*="full-grid"] {
+    text-align: left;
+  }
+
+  .section.masonry .homepage-brick.click.right-align-desktop[class*="full-grid"] {
+    text-align: right;
+  }
+
+  .homepage-brick.above-pods .foreground {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: var(--spacing-m);
+  }
+}
+
+body:not([data-mep-highlight="true"]) .section.masonry [data-removed-manifest-id] {
+  display: none;
+}
+
+/* block CSS */
+.homepage-brick {
+  position: relative;
+  text-size-adjust: none;
+  padding: 0;
+}
+
+.homepage-brick:not(.above-pods) .foreground,
+.homepage-brick.link.split-background .foreground > div,
+.homepage-brick.news > div {
+  padding: var(--spacing-s);
+}
+
+.masonry .homepage-brick {
+  min-height: 450px;
+}
+
+.homepage-brick .background {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.homepage-brick .first-background,
+.homepage-brick.split-background .foreground > :nth-child(2),
+.homepage-brick.news {
+  background-color: #ededed;
+}
+
+.homepage-brick.semi-transparent .first-background {
+  background: linear-gradient(130deg, rgba(255,255,255,0.6), transparent);
+  border: solid 2px #fff;
+}
+
+.homepage-brick .background > div {
+  height: 100%;
+}
+
+.homepage-brick .background img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.homepage-brick .background img[style] {
+  object-fit: contain;
+}
+
+.homepage-brick p,
+.homepage-brick [class^="body-"] { margin: var(--spacing-xxs) 0; }
+.homepage-brick.link .background + .foreground > div:first-child {
+  margin-top: 0px;
+}
+.homepage-brick.link .background + .foreground > div:first-child h3 {
+  margin-top: var(--spacing-xxs);
+}
+
+.homepage-brick [class^="heading"] { margin: 0 0 var(--spacing-xxs) 0; }
+.homepage-brick.link [class^="heading"]:not(:first-child) { margin-top: var(--spacing-xs); }
+
+.homepage-brick.news [class^="heading"] {
+  margin-bottom: 0;
+}
+
+.homepage-brick.heading-xs p.body-m {
+  font-size: var(--type-body-s-size);
+  line-height: var(--type-body-s-lh);
+  margin: 4px 0;
+}
+
+.text.mashup .foreground .body-m:nth-child(3) {
+  font-size: var(--type-body-s-size);
+  line-height: var(--type-body-s-lh);
+}
+
+.homepage-brick [class^="detail"] { margin: 0 0 var(--spacing-xs) 0; }
+.homepage-brick p.action-area { margin-top: var(--spacing-s); }
+.homepage-brick.click p.action-area { margin-top: 0; }
+.homepage-brick div > *:last-child { margin-bottom: 0; }
+.grid .homepage-brick div > *:last-child { margin-bottom: var(--spacing-s); }
+.homepage-brick .foreground > div *:first-child { margin-top: 0; }
+
+.homepage-brick .foreground {
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.homepage-brick:not(.above-pods) .foreground {
+  max-width: var(--grid-container-width);
+}
+
+[class*='-up'] .homepage-brick .foreground {
+  max-width: none;
+  margin: 0;
+}
+
+.homepage-brick .action-area {
+  margin-top: var(--spacing-s);
+  display: flex;
+  gap: var(--spacing-s);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.homepage-brick.link .foreground > div {
+  padding: var(--spacing-s) var(--spacing-s) 0 var(--spacing-s);
+}
+
+.homepage-brick.link:not(.split-background) .foreground > div {
+  padding-bottom: 0;
+}
+
+.homepage-brick.link:not(.split-background) .foreground:last-child > div {
+  padding-top: var(--spacing-xs);
+  /* padding-bottom: var(--spacing-s); */
+}
+
+.homepage-brick.dark,
+.homepage-brick.split-background .foreground > div:first-child {
+  color: #FFF;
+}
+
+.homepage-brick a,
+.homepage-brick.click div.click-link,
+.homepage-brick.link a:not(.con-button) {
+  color: inherit;
+}
+
+.homepage-brick:not(.click):not(.static-links) a:not([class*="button"]),
+.homepage-brick.click div.click-link {
+  color: inherit;
+  font-weight: 700;
+}
+
+.homepage-brick:not(.static-links) a:not([class*="button"]) {
+  text-decoration: none;
+}
+
+.homepage-brick a:not([class*="button"]):hover {
+  text-decoration: underline;
+}
+
+.homepage-brick [class^="detail"].icon-detail {
+    margin-top: var(--spacing-xs) !important;
+}
+
+.homepage-brick [class^="detail"].icon-detail picture img {
+    height: 35px;
+    width: 35px;
+    vertical-align: middle;
+    margin-right: var(--spacing-xxs);
+    margin-top: -5px !important;
+}
+
+.static-links a.foreground,
+.section.static-links .homepage-brick.click a:not([class*="button"]),
+.homepage-brick.click a:hover {
+  text-decoration: none;
+}
+
+.homepage-brick.click:hover div.click-link {
+  text-decoration: underline;
+}
+
+.homepage-brick.click .foreground p.detail-m:first-child {
+  font-size: var(--type-detail-l-size);
+  line-height: var(--type-detail-l-lh);
+}
+
+.homepage-brick.above-pods {
+  padding: var(--spacing-l);
+}
+
+.homepage-brick.click {
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+}
+
+.homepage-brick.click > .foreground {
+  padding: var(--spacing-s) var(--spacing-s) var(--spacing-s);
+  flex-grow: 1;
+}
+
+.homepage-brick.link,
+.homepage-brick.link .foreground,
+.homepage-brick.click.stack > .foreground {
+  padding: 0;
+}
+
+.homepage-brick.click.stack > .foreground > .body-m {
+  padding: var(--spacing-s);
+}
+
+.section:not(.no-border-radius) .homepage-brick .highlight-row,
+.section:not(.no-border-radius) .homepage-brick.homepage-brick.split-background .foreground > :first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+.section.border-radius-s .homepage-brick:not(.click) .foreground > div:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.section:not(.no-border-radius) .homepage-brick.link.split-background .foreground > div:last-child {
+    border-radius: 0 0 16px 16px;
+}
+
+.homepage-brick.news,
+.homepage-brick.link:not(.split-background) {
+  padding: 0 !important;
+}
+
+.homepage-brick.link:not(.split-background) > :first-child {
+  padding: var(--spacing-xs);
+}
+
+.homepage-brick.link .highlight-row,
+.homepage-brick.link.split-background > .foreground > :first-child {
+  color: #FFF;
+  background: linear-gradient(125deg, rgba(237, 5, 41, 1) 0%, rgba(155, 0, 193, 1) 50%, rgba(91, 0, 198, 1) 100%) ;
+  font-weight: 700;
+  padding: var(--spacing-m) var(--spacing-s) var(--spacing-s);
+}
+
+.homepage-brick.news hr {
+  margin: var(--spacing-xs) 0;
+}
+
+.homepage-brick.news .highlight-row {
+  color: #FFF;
+  background: #262530;
+}
+
+.homepage-brick .positioned-background {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.homepage-brick .positioned-background picture {
+  display: none;
+}
+
+.homepage-brick .mobileOnly,
+.homepage-brick .tabletOnly,
+.homepage-brick .desktopOnly {
+  display: none;
+  line-height: 0;
+}
+
+/* mashup */
+.homepage-brick.click:hover .con-button:not(.blue):not(.fill) {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.homepage-brick.dark.click:hover .con-button:not(.blue):not(.fill) {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1023px) {
+  .section.masonry:not([class*="spacing"]) {
+    padding: var(--spacing-s) var(--spacing-s);
+  }
+
+  .homepage-brick .mobileOnly {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .homepage-brick .tabletOnly {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .masonry .homepage-brick {
+    min-height: 500px;
+  }
+
+  .homepage-brick .action-area {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .homepage-brick .desktopOnly {
+    display: block;
+  }
+
+  /* mashup */
+  .homepage-brick.above-pods { text-align: center; }
+  .homepage-brick.above-pods .action-area { justify-content: center; }
+}
+
+/* Alignment */
+.homepage-brick.center {
+  text-align: center;
+  align-items: center;
+}
+
+.homepage-brick.center .action-area { justify-content: center; }
+
+.homepage-brick.right {
+  text-align: right;
+  align-items: end;
+}
+
+.homepage-brick.right .action-area { justify-content: end; }
+
+/* stack background */
+.section.masonry .homepage-brick.stack.click .foreground .background {
+  border-radius: 0 0 20px 20px;
+}
+
+.homepage-brick.stack .foreground {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homepage-brick.stack .background {
+    align-self: center;
+}
+
+.homepage-brick.stack .background {
+  position: static;
+}
+
+.homepage-brick.stack .background img {
+  object-fit: initial;
+  width: initial;
+  height: initial;
+}
+
+.homepage-brick.stack .background .desktopOnly img {
+  max-height: 308px;
+}
+
+.homepage-brick.stack .background .tabletOnly img {
+  max-height: 292px;
+}
+
+.homepage-brick.stack .background .mobileOnly img {
+  max-height: 238px;
+}
+
+@media screen and (min-width: 600px) {
+  .homepage-brick .mobileOnly {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .homepage-brick.two-thirds-grid.stack .foreground {
+    flex-direction: row;
+  }
+
+  .homepage-brick.two-thirds-grid.stack.vertical .foreground {
+    flex-direction: column;
+  }
+
+  .homepage-brick.two-thirds-grid.stack .foreground > .body-m {
+    width: 40%;
+  }
+  
+  .homepage-brick.two-thirds-grid.stack.vertical .foreground > .body-m {
+    width: 100%;
+  }
+
+  .homepage-brick.two-thirds-grid.stack .background .desktopOnly img {
+    max-height: initial;
+  }
+}

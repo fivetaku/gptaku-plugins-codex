@@ -1,0 +1,300 @@
+{
+  "slug": "linear",
+  "semantic_vars": [
+    {
+      "name": "--color-bg-primary",
+      "value_hex": "#08090A",
+      "role": "primary"
+    },
+    {
+      "name": "--color-border-primary",
+      "value_hex": "#23252A",
+      "role": "primary"
+    },
+    {
+      "name": "--color-text-primary",
+      "value_hex": "#F7F8F8",
+      "role": "primary"
+    },
+    {
+      "name": "--color-link-primary",
+      "value_hex": "#828FFF",
+      "role": "primary"
+    },
+    {
+      "name": "--color-brand-bg",
+      "value_hex": "#5E6AD2",
+      "role": "brand"
+    },
+    {
+      "name": "--color-brand-text",
+      "value_hex": "#FFFFFF",
+      "role": "brand"
+    },
+    {
+      "name": "--color-line-primary",
+      "value_hex": "#37393A",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fg-primary",
+      "value_hex": "#F7F8F8",
+      "role": "primary"
+    },
+    {
+      "name": "--color-accent",
+      "value_hex": "#7170FF",
+      "role": "accent"
+    },
+    {
+      "name": "--color-accent-hover",
+      "value_hex": "#828FFF",
+      "role": "accent"
+    },
+    {
+      "name": "--color-accent-tint",
+      "value_hex": "#18182F",
+      "role": "accent"
+    },
+    {
+      "name": "--color-bg-primary",
+      "value_hex": "#000212",
+      "role": "primary"
+    },
+    {
+      "name": "--color-bg-primary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--color-border-primary",
+      "value_hex": "#E9E8EA",
+      "role": "primary"
+    },
+    {
+      "name": "--color-text-primary",
+      "value_hex": "#282A30",
+      "role": "primary"
+    },
+    {
+      "name": "--color-link-primary",
+      "value_hex": "#7070FF",
+      "role": "primary"
+    },
+    {
+      "name": "--color-brand-bg",
+      "value_hex": "#7070FF",
+      "role": "brand"
+    },
+    {
+      "name": "--color-line-primary",
+      "value_hex": "#D4D4D6",
+      "role": "primary"
+    },
+    {
+      "name": "--color-fg-primary",
+      "value_hex": "#282A2F",
+      "role": "primary"
+    },
+    {
+      "name": "--color-accent-hover",
+      "value_hex": "#8989F0",
+      "role": "accent"
+    },
+    {
+      "name": "--color-accent-tint",
+      "value_hex": "#F1F1FF",
+      "role": "accent"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".tweet-media-video_videoButton__kJ7XG",
+      "property": "border",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".tweet-media-video_videoButton__kJ7XG {position:relative;height:67px;width:67px;display:flex;align-items:center;justify-content:center;background-color:var(--tweet-color-blue-primary);transition-prope"
+    },
+    {
+      "selector": ".tweet-media-video_videoButtonIcon__7vqtB",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".tweet-media-video_videoButtonIcon__7vqtB {margin-left:3px;width:calc(50% + 4px);height:calc(50% + 4px);max-width:100%;color:#fff;fill:currentColor;-webkit-user-select:none;-moz-user-select:none;user-"
+    },
+    {
+      "selector": "[data-theme=light] :is(.Button_variant-invert__ECHZN>kbd)",
+      "property": "--kbd-bg",
+      "hex": "#3B3D45",
+      "rule_snippet": "[data-theme=light] :is(.Button_variant-invert__ECHZN>kbd) {--kbd-bg:#3b3d45}"
+    },
+    {
+      "selector": ".HeroMultiPanelAsset_primaryPanel__HamkZ:after",
+      "property": "background",
+      "hex": "#09090B",
+      "rule_snippet": ".HeroMultiPanelAsset_primaryPanel__HamkZ:after {content:\"\";position:absolute;top:0;left:0;bottom:0;width:calc(100vw - 64px - 360px);background:linear-gradient(270deg,#09090b 0,transparent 50%);pointer"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#08090A",
+      "count": 325,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#E4E5E9",
+      "count": 200,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#E2E4E7",
+      "count": 151,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4354B8",
+      "count": 124,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 77,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E5591D",
+      "count": 76,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#8A8F98",
+      "count": 71,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#F79CE0",
+      "count": 51,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2E2E32",
+      "count": 43,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#62666D",
+      "count": 35,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#000000",
+      "count": 25,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#55CDFF",
+      "count": 25,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#9C9DA1",
+      "count": 24,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#3E3E44",
+      "count": 21,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#89D196",
+      "count": 20,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D0D6E0",
+      "count": 14,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#8FA4FF",
+      "count": 13,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFC47C",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#02B8CC",
+      "count": 11,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#0F1011",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#191D20",
+      "count": 9,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#585A5C",
+      "count": 7,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#FFAADDEE",
+      "count": 6,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#008D2C",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#141516",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5E6AD2",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6366F1",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#080808",
+      "count": 4,
+      "kind": "svg_pattern"
+    },
+    {
+      "hex": "#383B3F",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5B5C5A",
+      "count": 4,
+      "kind": "svg_pattern"
+    }
+  ],
+  "summary": {
+    "total_candidates": 55,
+    "by_role": {
+      "accent": 5,
+      "brand": 3,
+      "chromatic": 8,
+      "neutral": 6,
+      "primary": 13,
+      "selector": 4,
+      "svg_pattern": 16
+    }
+  }
+}

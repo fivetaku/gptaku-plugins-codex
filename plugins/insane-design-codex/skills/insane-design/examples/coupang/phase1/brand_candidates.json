@@ -1,0 +1,490 @@
+{
+  "slug": "coupang",
+  "semantic_vars": [],
+  "selector_role": [
+    {
+      "selector": ".gnb-menu-btn",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".gnb-menu-btn {display:none;justify-content:center;align-items:center;position:absolute;top:0;width:20px;height:32px;line-height:32px;padding-left:16px;padding-right:16px;z-index:1;background:#fff 50%"
+    },
+    {
+      "selector": ".gnb-menu-btn>span",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".gnb-menu-btn>span {background:#fff 50%;display:block;flex:none;width:20px;height:20px;background-size:contain;background-repeat:no-repeat;background-position:50%}"
+    },
+    {
+      "selector": ".gnb-menu-btn-left.gnb-menu-btn-active:after",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".gnb-menu-btn-left.gnb-menu-btn-active:after {content:\"\";position:absolute;top:0;left:100%;width:32px;height:32px;background:linear-gradient(90deg,#fff 13.13%,rgba(255,255,255,0))}"
+    },
+    {
+      "selector": ".gnb-menu-btn-right.gnb-menu-btn-active:after",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".gnb-menu-btn-right.gnb-menu-btn-active:after {content:\"\";position:absolute;top:0;right:100%;width:32px;height:32px;background:linear-gradient(270deg,#fff 13.13%,rgba(255,255,255,0))}"
+    },
+    {
+      "selector": ".category-layer .depth .travel-category-nav .travel-home:hover",
+      "property": "color",
+      "hex": "#4285F4",
+      "rule_snippet": ".category-layer .depth .travel-category-nav .travel-home:hover {color:#4285f4;text-decoration:underline}"
+    },
+    {
+      "selector": ".category-layer .depth .travel-category-nav .travel-international,.category-layer .depth .travel-category-nav .travel-leisure",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": ".category-layer .depth .travel-category-nav .travel-international,.category-layer .depth .travel-category-nav .travel-leisure {padding:20px 0 10px 20px;font-weight:700;font-size:12px;letter-spacing:-1"
+    },
+    {
+      "selector": ".select--category--button",
+      "property": "border-top",
+      "hex": "#AAB5C0",
+      "rule_snippet": ".select--category--button {position:absolute;top:15px;right:15px;width:0;height:0;border-left:5px solid rgba(0,0,0,0);border-right:5px solid rgba(0,0,0,0);border-top:5px solid #aab5c0}"
+    },
+    {
+      "selector": ".select--category--option a:link,.select--category--option a:visited",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": ".select--category--option a:link,.select--category--option a:visited {color:#000;text-decoration:none}"
+    },
+    {
+      "selector": ".history-btns",
+      "property": "border",
+      "hex": "#DDDDDD",
+      "rule_snippet": ".history-btns {bottom:0;width:100%;position:absolute;box-sizing:border-box;height:30px;border:1px solid #ddd;z-index:100;padding:0 12px;background-color:#f5f5f5}"
+    },
+    {
+      "selector": ".history-btns",
+      "property": "background-color",
+      "hex": "#F5F5F5",
+      "rule_snippet": ".history-btns {bottom:0;width:100%;position:absolute;box-sizing:border-box;height:30px;border:1px solid #ddd;z-index:100;padding:0 12px;background-color:#f5f5f5}"
+    },
+    {
+      "selector": ".history-btns span",
+      "property": "color",
+      "hex": "#666666",
+      "rule_snippet": ".history-btns span {font-size:12px;color:#666;line-height:27px;cursor:pointer}"
+    },
+    {
+      "selector": "a.del-button:hover,a.kwd:hover",
+      "property": "color",
+      "hex": "#4285F4",
+      "rule_snippet": "a.del-button:hover,a.kwd:hover {color:#4285f4;text-decoration:underline}"
+    },
+    {
+      "selector": "#wa-cart-preview #wa-cart-btn",
+      "property": "border-top",
+      "hex": "#D4D4D4",
+      "rule_snippet": "#wa-cart-preview #wa-cart-btn {position:relative;width:300px;height:60px;display:block;margin-top:-1px;border-top:1px solid #d4d4d4;background:#fafafa}"
+    },
+    {
+      "selector": "#wa-cart-preview #wa-cart-btn",
+      "property": "background",
+      "hex": "#FAFAFA",
+      "rule_snippet": "#wa-cart-preview #wa-cart-btn {position:relative;width:300px;height:60px;display:block;margin-top:-1px;border-top:1px solid #d4d4d4;background:#fafafa}"
+    },
+    {
+      "selector": "#wa-cart-preview #wa-cart-btn>span",
+      "property": "color",
+      "hex": "#333333",
+      "rule_snippet": "#wa-cart-preview #wa-cart-btn>span {position:relative;width:115px;height:13px;display:block;margin:23px auto 0;text-align:center;color:#333}"
+    },
+    {
+      "selector": "#wa-cart-preview #wa-cart-btn:hover>span",
+      "property": "color",
+      "hex": "#4285F4",
+      "rule_snippet": "#wa-cart-preview #wa-cart-btn:hover>span {text-decoration:underline;color:#4285f4}"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-product",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-product {border:1px solid rgba(17,17,17,.15);border-bottom:0;background-color"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-button",
+      "property": "background-color",
+      "hex": "#50A0FF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-button {width:100%;height:32px;background-color:#50a0ff;position:relative;bor"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main .ads-line-banner-list a.ads-line-banner-link .ads-line-banner-button {width:100%;height:32px;background-color:#50a0ff;position:relative;bor"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product {border:1px solid rgba(17,17,17,.15);border-bottom:0;background-color:#fff;border-radius:4p"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .discount-rate",
+      "property": "background-color",
+      "hex": "#E52C0A",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .discount-rate {position:absolute;background-color:#e52c0a;width:36px;height:20px;line-heig"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .discount-rate strong",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .discount-rate strong {color:#fff;font-size:11px;font-weight:600;letter-spacing:-.4px}"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .review-count",
+      "property": "color",
+      "hex": "#888888",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .review-count {margin-bottom:4px;font-size:12px;font-weight:400;font-stretch:normal;font-st"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .title",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .title {width:100%;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellip"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .badge-wrap",
+      "property": "color",
+      "hex": "#888888",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-product .badge-wrap {margin-bottom:4px;font-size:11px;color:#888}"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-button",
+      "property": "background-color",
+      "hex": "#346AFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-button {width:100%;height:32px;background-color:#346aff;position:relative;border-radius:0 0 4px 4px"
+    },
+    {
+      "selector": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-sidebar .ads-line-banner-container .ads-line-banner-main a.ads-line-banner-link .ads-line-banner-button {width:100%;height:32px;background-color:#346aff;position:relative;border-radius:0 0 4px 4px"
+    },
+    {
+      "selector": "#wa-goto-top .goto-top__button",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-goto-top .goto-top__button {display:inline-flex;gap:10px;width:36px;height:36px;padding:10px;background:#fff;box-shadow:0 2px 4px -1px rgba(0,0,0,.5);border-radius:100px}"
+    },
+    {
+      "selector": "#fullBanner button.app-redirect-and-close",
+      "property": "color",
+      "hex": "#DFE3E8",
+      "rule_snippet": "#fullBanner button.app-redirect-and-close {position:absolute;left:50%;bottom:26px;width:36px;margin-left:-18px;height:26px;font-size:16px;text-align:center;color:#dfe3e8;background:none}"
+    },
+    {
+      "selector": ".redirect-app-fail-toast-downloadBTN",
+      "property": "color",
+      "hex": "#7DA0FF",
+      "rule_snippet": ".redirect-app-fail-toast-downloadBTN {flex-shrink:0;color:#7da0ff;margin-left:14px;font-weight:700}"
+    },
+    {
+      "selector": "#wa-top-nudge-button",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": "#wa-top-nudge-button {position:relative;display:flex;align-items:center;padding:6px 8px;border:none;font-size:12px;line-height:15px;font-weight:700;margin-left:4px;border-radius:4px;color:#fff;backgro"
+    },
+    {
+      "selector": "#wa-top-nudge-button",
+      "property": "background-color",
+      "hex": "#346AFF",
+      "rule_snippet": "#wa-top-nudge-button {position:relative;display:flex;align-items:center;padding:6px 8px;border:none;font-size:12px;line-height:15px;font-weight:700;margin-left:4px;border-radius:4px;color:#fff;backgro"
+    },
+    {
+      "selector": ".main-cart .recommend-navi .current-page,.main-recommend .recommend-navi .current-page",
+      "property": "color",
+      "hex": "#888888",
+      "rule_snippet": ".main-cart .recommend-navi .current-page,.main-recommend .recommend-navi .current-page {width:40px;height:32px;display:inline-block;padding-top:8px;color:#888;float:left;font-size:16px;text-align:cent"
+    },
+    {
+      "selector": ".main-cart .recommend-navi .current-page em,.main-recommend .recommend-navi .current-page em",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": ".main-cart .recommend-navi .current-page em,.main-recommend .recommend-navi .current-page em {color:#111;font-weight:700;font-style:normal}"
+    },
+    {
+      "selector": ".category-menu .set-category-layer .buttons",
+      "property": "border-top",
+      "hex": "#EEEEEE",
+      "rule_snippet": ".category-menu .set-category-layer .buttons {display:flex;margin-top:-1px;padding:15px 0;border-top:1px solid #eee;background:#fafafa}"
+    },
+    {
+      "selector": ".category-menu .set-category-layer .buttons",
+      "property": "background",
+      "hex": "#FAFAFA",
+      "rule_snippet": ".category-menu .set-category-layer .buttons {display:flex;margin-top:-1px;padding:15px 0;border-top:1px solid #eee;background:#fafafa}"
+    },
+    {
+      "selector": ".category-menu .set-category-layer .buttons button",
+      "property": "color",
+      "hex": "#555555",
+      "rule_snippet": ".category-menu .set-category-layer .buttons button {width:50%;height:20px;border:0;background:rgba(0,0,0,0);font-size:12px;color:#555}"
+    },
+    {
+      "selector": ".category-menu .set-category-layer .buttons button.confirm",
+      "property": "border-left",
+      "hex": "#DDDDDD",
+      "rule_snippet": ".category-menu .set-category-layer .buttons button.confirm {border-left:1px solid #ddd;margin-left:-1px;color:#4285f4}"
+    },
+    {
+      "selector": ".category-menu .set-category-layer .buttons button.confirm",
+      "property": "color",
+      "hex": "#4285F4",
+      "rule_snippet": ".category-menu .set-category-layer .buttons button.confirm {border-left:1px solid #ddd;margin-left:-1px;color:#4285f4}"
+    },
+    {
+      "selector": ".best-product-list .dot-navi",
+      "property": "background",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".best-product-list .dot-navi {background:#fff}"
+    },
+    {
+      "selector": ".BrandProductTopBanner_mainItemContent__V8vtn .BrandProductTopBanner_description__Df7rp .BrandProductTopBanner_actionButton__JsF7w",
+      "property": "background-color",
+      "hex": "#346AFF",
+      "rule_snippet": ".BrandProductTopBanner_mainItemContent__V8vtn .BrandProductTopBanner_description__Df7rp .BrandProductTopBanner_actionButton__JsF7w {display:table;margin-top:10px;padding:10px 16px 9px;border-radius:2p"
+    },
+    {
+      "selector": ".BrandProductTopBanner_mainItemContent__V8vtn .BrandProductTopBanner_description__Df7rp .BrandProductTopBanner_actionButton__JsF7w .BrandProductTopBanner_text__Y0fni",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".BrandProductTopBanner_mainItemContent__V8vtn .BrandProductTopBanner_description__Df7rp .BrandProductTopBanner_actionButton__JsF7w .BrandProductTopBanner_text__Y0fni {font-size:14px;font-weight:400;fo"
+    },
+    {
+      "selector": ".BrandProductTopBanner_nextBtn__edwvO,.BrandProductTopBanner_prevBtn__EnjC8",
+      "property": "border",
+      "hex": "#EEEEEE",
+      "rule_snippet": ".BrandProductTopBanner_nextBtn__edwvO,.BrandProductTopBanner_prevBtn__EnjC8 {visibility:hidden;position:absolute;top:52px;width:38px;height:54px;border:1px solid #eee;background:url(//img1a.coupangcdn"
+    },
+    {
+      "selector": ".BrandProductTopBanner_empty__w17rN .BrandProductTopBanner_textBtn__8a95E",
+      "property": "color",
+      "hex": "#346AFF",
+      "rule_snippet": ".BrandProductTopBanner_empty__w17rN .BrandProductTopBanner_textBtn__8a95E {margin-top:4px;font-size:16px;font-weight:400;font-stretch:normal;font-style:normal;line-height:normal;letter-spacing:normal;"
+    },
+    {
+      "selector": ".BrandProductTopBanner_brand-product-ads-content__3RvFj .BrandProductTopBanner_scroll-inner__Q_qbj ul .BrandProductTopBanner_bpa-banner-empty-item_content__GC6xk .BrandProductTopBanner_bpa-banner-empty-item_button__YL1ed",
+      "property": "color",
+      "hex": "#346AFF",
+      "rule_snippet": ".BrandProductTopBanner_brand-product-ads-content__3RvFj .BrandProductTopBanner_scroll-inner__Q_qbj ul .BrandProductTopBanner_bpa-banner-empty-item_content__GC6xk .BrandProductTopBanner_bpa-banner-empt"
+    },
+    {
+      "selector": ".BrandProductTopBanner_right-button-wrap__ywmic .BrandProductTopBanner_tip__G_pgk .BrandProductTopBanner_help-coupang-ranking__WxkOO .BrandProductTopBanner_marker__fqdnX",
+      "property": "color",
+      "hex": "#111111",
+      "rule_snippet": ".BrandProductTopBanner_right-button-wrap__ywmic .BrandProductTopBanner_tip__G_pgk .BrandProductTopBanner_help-coupang-ranking__WxkOO .BrandProductTopBanner_marker__fqdnX {color:#111;opacity:.3;font-si"
+    },
+    {
+      "selector": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button",
+      "property": "border",
+      "hex": "#C4CDD5",
+      "rule_snippet": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button {background:url(//image10.coupangcdn.com/image"
+    },
+    {
+      "selector": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button:hover,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button:hover",
+      "property": "border",
+      "hex": "#346AFF",
+      "rule_snippet": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button:hover,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button:hover {background:url(//image10.coupangc"
+    },
+    {
+      "selector": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button:hover,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button:hover",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".carousel-widget-container.rds-exp-B .decker-carousel .carousel-arrow-button:hover,.carousel-widget-container.rds-exp-C .decker-carousel .carousel-arrow-button:hover {background:url(//image10.coupangc"
+    },
+    {
+      "selector": ".also-viewed-products-widget .recommend-widget__title .see-more-link",
+      "property": "color",
+      "hex": "#346AFF",
+      "rule_snippet": ".also-viewed-products-widget .recommend-widget__title .see-more-link {margin-left:11px;color:#346aff;font-size:16px;font-style:normal;font-weight:700;line-height:19px;display:inline-flex;justify-conte"
+    },
+    {
+      "selector": ".also-viewed-products-widget .recommend-widget__title a:active,.also-viewed-products-widget .recommend-widget__title a:hover,.also-viewed-products-widget .recommend-widget__title a:link,.also-viewed-products-widget .recommend-widget__title a:visited",
+      "property": "color",
+      "hex": "#346AFF",
+      "rule_snippet": ".also-viewed-products-widget .recommend-widget__title a:active,.also-viewed-products-widget .recommend-widget__title a:hover,.also-viewed-products-widget .recommend-widget__title a:link,.also-viewed-p"
+    },
+    {
+      "selector": ".latest-viewed-product .latest-viewed-list .info .link",
+      "property": "color",
+      "hex": "#0073E9",
+      "rule_snippet": ".latest-viewed-product .latest-viewed-list .info .link {display:inline-block;line-height:12px;font-size:11px;color:#0073e9}"
+    },
+    {
+      "selector": ".today-discovery .discovery-list .banner-list li .go-btn p",
+      "property": "color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".today-discovery .discovery-list .banner-list li .go-btn p {display:none;color:#fff;height:40px;font-size:13px;margin-left:16px;margin-right:33px;line-height:42px}"
+    },
+    {
+      "selector": ".today-discovery .discovery-list .banner-list li a:hover .go-btn",
+      "property": "background-color",
+      "hex": "#4285F4",
+      "rule_snippet": ".today-discovery .discovery-list .banner-list li a:hover .go-btn {background-color:#4285f4}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 139,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#212B36",
+      "count": 61,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#346AFF",
+      "count": 55,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#CB1400",
+      "count": 53,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#DDDDDD",
+      "count": 40,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "count": 39,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4285F4",
+      "count": 24,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#333333",
+      "count": 23,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#888888",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 16,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#131516",
+      "count": 15,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#454F5B",
+      "count": 14,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#555555",
+      "count": 14,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#AE0000",
+      "count": 13,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0073E9",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00508E",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00AAB4",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00AAD4",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00B599",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#1992DF",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#254E98",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#3E8D86",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#5868BE",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#62AB66",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#7E57C2",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#83BE41",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#92D943",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#97563E",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#9D7A6D",
+      "count": 11,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 84,
+    "by_role": {
+      "chromatic": 21,
+      "neutral": 9,
+      "selector": 54
+    }
+  }
+}

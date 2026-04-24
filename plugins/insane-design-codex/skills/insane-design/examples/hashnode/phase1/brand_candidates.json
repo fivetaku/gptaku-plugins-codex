@@ -1,0 +1,234 @@
+{
+  "slug": "hashnode",
+  "semantic_vars": [
+    {
+      "name": "--primary",
+      "value_hex": "#1D52DE",
+      "role": "primary"
+    },
+    {
+      "name": "--primary-foreground",
+      "value_hex": "#F5F9FF",
+      "role": "primary"
+    },
+    {
+      "name": "--sidebar-primary",
+      "value_hex": "#1D52DE",
+      "role": "primary"
+    },
+    {
+      "name": "--sidebar-primary-foreground",
+      "value_hex": "#F5F9FF",
+      "role": "primary"
+    },
+    {
+      "name": "--primary",
+      "value_hex": "#5288FF",
+      "role": "primary"
+    },
+    {
+      "name": "--sidebar-primary",
+      "value_hex": "#5288FF",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": "button, input, select, optgroup, textarea",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "button, input, select, optgroup, textarea {font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; borde"
+    },
+    {
+      "selector": "::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": "::file-selector-button {font:inherit; font-feature-settings:inherit; font-variation-settings:inherit; letter-spacing:inherit; color:inherit; opacity:1; background-color:#0000; border-radius:0}"
+    },
+    {
+      "selector": ".group-data-\\[viewport\\=false\\]\\/navigation-menu\\:shadow:is(:where(.group\\/navigation-menu)[data-viewport=false] *)",
+      "property": "--tw-shadow",
+      "hex": "#0000001A",
+      "rule_snippet": ".group-data-\\[viewport\\=false\\]\\/navigation-menu\\:shadow:is(:where(.group\\/navigation-menu)[data-viewport=false] *) {--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-s"
+    },
+    {
+      "selector": ".file\\:bg-transparent::file-selector-button",
+      "property": "background-color",
+      "hex": "#00000000",
+      "rule_snippet": ".file\\:bg-transparent::file-selector-button {background-color:#0000}"
+    },
+    {
+      "selector": ".hljs-string, .hljs-doctag",
+      "property": "color",
+      "hex": "#A5D6FF",
+      "rule_snippet": ".hljs-string, .hljs-doctag {color:#a5d6ff}"
+    },
+    {
+      "selector": ".hljs-tag, .hljs-name, .hljs-attribute, .hljs-regexp, .hljs-link",
+      "property": "color",
+      "hex": "#7EE787",
+      "rule_snippet": ".hljs-tag, .hljs-name, .hljs-attribute, .hljs-regexp, .hljs-link {color:#7ee787}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#00000000",
+      "count": 40,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFFFFF",
+      "count": 24,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 21,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#101828",
+      "count": 12,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#364153",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D1D5DC",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E5E7EB",
+      "count": 8,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0F172B",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#171717",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#4A5565",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#99A1AF",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#00000080",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#314158",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#CAD5E2",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#E2E8F0",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#FFFFFF1A",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#1D52DE",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#404040",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#45556C",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#6A7282",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#90A1B9",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D4D4D4",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E5E5E5",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F5F9FF",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#525252",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#62748E",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#A1A1A1",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 2,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#0467DF",
+      "count": 2,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0866FF",
+      "count": 2,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 42,
+    "by_role": {
+      "chromatic": 18,
+      "neutral": 12,
+      "primary": 6,
+      "selector": 6
+    }
+  }
+}

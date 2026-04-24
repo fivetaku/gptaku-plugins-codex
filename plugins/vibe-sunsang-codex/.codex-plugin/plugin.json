@@ -1,0 +1,45 @@
+{
+  "name": "vibe-sunsang-codex",
+  "version": "0.1.0",
+  "description": "Codex-native AI collaboration mentor using local Codex session history.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/vibe-sunsang-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "mentoring",
+    "retrospective",
+    "growth",
+    "sessions",
+    "codex",
+    "korean"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Vibe Sunsang Codex",
+    "shortDescription": "Analyze Codex sessions and coach AI collaboration habits",
+    "longDescription": "Packages the Codex-native vibe-sunsang skill set: onboarding, conversation conversion, retrospectives, mentoring, growth reports, and knowledge-base explanations. It reads local Codex session JSONL files and turns them into coaching signals.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "바선생 시작해줘.",
+      "최근 Codex 대화 회고해줘.",
+      "내 AI 협업 습관 성장 리포트 만들어줘.",
+      "바선생 6축 레벨 시스템 설명해줘."
+    ],
+    "brandColor": "#7F1D1D",
+    "composerIcon": "./assets/vibe-sunsang-codex.svg",
+    "logo": "./assets/vibe-sunsang-codex.svg",
+    "screenshots": []
+  }
+}

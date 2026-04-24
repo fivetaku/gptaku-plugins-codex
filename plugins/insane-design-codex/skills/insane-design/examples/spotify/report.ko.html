@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spotify — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --brand-color:#1ED760;
+  --font-display:"SpotifyMixUITitle","SpotifyMixUI",-apple-system,sans-serif;
+  --font-sans:"Pretendard Variable","Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --bg:#fafafa;--fg:#09090b;--card:#fff;
+  --muted:#f4f4f5;--muted-fg:#71717a;--subtle:#52525b;
+  --border:#e4e4e7;--border-str:#d4d4d8;--accent:#18181b;
+  --radius:.5rem;--radius-lg:.75rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{font-family:var(--font-sans);font-size:14px;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+::selection{background:var(--accent);color:#fafafa}
+a{color:inherit;text-decoration:none}
+code{font-family:var(--font-mono);font-size:.85em;background:var(--muted);padding:1px 5px;border-radius:3px}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;padding:32px 20px;border-right:1px solid var(--border);overflow-y:auto}
+.toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.toc__brand-name{font-size:20px;font-weight:600;color:var(--fg);font-family:var(--font-display)}
+.toc__brand-sub{font-size:11px;color:var(--muted-fg);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
+.toc__group-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin:20px 0 8px}
+.toc__list{list-style:none}
+.toc__list li a{display:flex;gap:10px;padding:6px 0;font-size:13px;color:var(--subtle)}
+.toc__list li a:hover{color:var(--brand-color)}
+.toc__num{font-variant-numeric:tabular-nums;color:var(--muted-fg);width:24px;font-family:var(--font-mono);font-size:10px}
+.main{padding:48px 64px;min-width:0}
+.hero-big{margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.hero-big .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand-color);font-weight:600}
+.hero-big h1{font-family:var(--font-display);font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:12px 0 20px;color:var(--fg)}
+.hero-big p.lead{font-size:17px;color:var(--subtle);max-width:700px;line-height:1.6}
+.hero-big .hero-img{margin-top:32px;width:100%;max-height:400px;object-fit:cover;object-position:top;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.hero-big .mood-body{margin-top:24px;font-size:14px;color:var(--subtle);line-height:1.85;max-width:880px}
+.hero-big .mood-body p{margin-bottom:16px}
+.sec{padding:40px 0;border-bottom:1px solid var(--border);scroll-margin-top:20px}
+.sec:last-of-type{border-bottom:none}
+.sec h2{font-family:var(--font-display);font-size:28px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.sec h3{font-size:16px;font-weight:600;margin:20px 0 10px;color:var(--fg)}
+.sec p.lede{color:var(--subtle);margin-bottom:20px;font-size:15px;max-width:720px}
+.ramp{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:8px 0 20px}
+.sw{padding:16px 12px;border-radius:8px;font-family:var(--font-mono);font-size:11px;font-weight:500;min-height:72px;display:flex;flex-direction:column;justify-content:space-between}
+.sw--l{color:#18181b}
+.sw--d{color:#fafafa}
+.sw .n{font-size:10px;opacity:.8;font-family:var(--font-sans);font-weight:500}
+.ramp-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);margin-top:16px;margin-bottom:6px;font-weight:600}
+.type-row{display:grid;grid-template-columns:1fr 260px;gap:24px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:center}
+.type-row__s{color:var(--fg);word-break:keep-all}
+.type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg)}
+.type-row__spec .tk{color:var(--brand-color);font-weight:600;margin-bottom:4px}
+.space-row{display:grid;grid-template-columns:240px 80px 1fr 200px;gap:16px;padding:10px 0;align-items:center;font-size:12px;font-family:var(--font-mono);border-bottom:1px dashed var(--border)}
+.space-row .tk{color:var(--brand-color);font-weight:600}
+.space-row .bar{height:10px;background:var(--brand-color);border-radius:2px;max-width:240px}
+.space-row .use{color:var(--muted-fg);font-family:var(--font-sans)}
+.rad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.rad-card{padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--brand-color);margin-top:8px}
+.rad-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg)}
+.sh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;padding:20px 0}
+.sh-card{padding:20px;border-radius:8px;background:var(--card)}
+.sh-card__n{font-weight:600;font-size:13px}
+.sh-card__d{font-size:12px;color:var(--muted-fg);margin:4px 0}
+.sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--subtle);word-break:break-all}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted-fg)}
+.lay-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px}
+.lay-card{padding:20px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.lay-card h3{font-size:14px;margin:0 0 10px;color:var(--brand-color)}
+.lay-card ul{list-style:none;padding:0;font-size:13px;line-height:1.7;color:var(--subtle)}
+.lay-card ul li{padding:3px 0}
+.comp{padding:20px;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;background:var(--card)}
+.comp h3{font-size:16px;margin:0 0 6px;color:var(--fg)}
+.comp p{font-size:13px;color:var(--subtle)}
+.comp-spec{font-size:12px;color:var(--muted-fg);margin:10px 0;font-family:var(--font-mono);padding:8px 12px;background:var(--muted);border-radius:4px}
+.comp pre{background:var(--muted);padding:12px;border-radius:4px;font-size:11px;overflow-x:auto}
+pre code{font-family:var(--font-mono);font-size:12px;line-height:1.5;color:var(--fg);background:none;padding:0}
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin:16px 0}
+.ag-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--card)}
+.ag-card h4{padding:14px 18px;border-bottom:1px solid var(--border);font-size:13px}
+.ag-card pre{background:#08090a;color:#f7f8f8;padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.6;overflow-x:auto;margin:0;white-space:pre-wrap}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.do-dont>div{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px 24px}
+.do-dont h3{margin:0 0 16px;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:4px 12px;border-radius:999px;display:inline-block}
+.do h3{background:#dcfce7;color:#166534}
+.dont h3{background:#fee2e2;color:#991b1b}
+.do-dont ul{list-style:none;padding:0;font-size:12px;line-height:1.7;color:var(--subtle)}
+.do-dont ul li{padding:4px 0}
+.dom-chart{margin:16px 0}
+.dom-bar{display:flex;height:40px;border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.dom-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:16px}
+.dom-list .item{display:flex;gap:10px;align-items:center;font-size:12px}
+.dom-list .chip{width:24px;height:24px;border-radius:4px;flex:0 0 auto;border:1px solid var(--border)}
+.dom-list .hex{font-family:var(--font-mono);font-size:11px;color:var(--brand-color);font-weight:600}
+.dom-list .cnt{font-size:10px;color:var(--muted-fg)}
+.kws{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.kw{padding:5px 12px;background:var(--muted);border-radius:9999px;font-size:11px;color:var(--subtle);font-weight:500}
+.quick-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.quick-steps pre{background:#0a0a0a;color:#e5e5e5;padding:16px;border-radius:8px;font-size:11px;line-height:1.5;overflow-x:auto}
+.warn-box{padding:16px 20px;background:rgba(244,63,94,.06);border-left:3px solid #f43f5e;border-radius:4px;font-size:13px;color:var(--subtle);margin-top:16px}
+.warn-box b{color:#f43f5e}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .main{padding:32px 20px}
+  .do-dont{grid-template-columns:1fr}
+  .space-row{grid-template-columns:1fr 60px 1fr 1fr}
+  .type-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="toc">
+  <div class="toc__brand">
+    <div class="toc__brand-name">Spotify</div>
+    <div class="toc__brand-sub">Design System Report</div>
+  </div>
+  <div class="toc__group-label">Overview</div>
+  <ul class="toc__list">
+    <li><a href="#mood"><span class="toc__num">00</span>분위기</a></li>
+    <li><a href="#quickstart"><span class="toc__num">01</span>한눈에 보기</a></li>
+    <li><a href="#provenance"><span class="toc__num">02</span>출처</a></li>
+    <li><a href="#stack"><span class="toc__num">03</span>테크 스택</a></li>
+  </ul>
+  <div class="toc__group-label">Foundations</div>
+  <ul class="toc__list">
+    <li><a href="#typography"><span class="toc__num">04</span>타이포그래피</a></li>
+    <li><a href="#colors"><span class="toc__num">05</span>컬러</a></li>
+  </ul>
+  <div class="toc__group-label">Tokens</div>
+  <ul class="toc__list">
+    <li><a href="#spacing"><span class="toc__num">06</span>스페이싱</a></li>
+    <li><a href="#radius"><span class="toc__num">07</span>라디우스</a></li>
+    <li><a href="#shadows"><span class="toc__num">07S</span>섀도우</a></li>
+    <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+  </ul>
+  <div class="toc__group-label">Patterns</div>
+  <ul class="toc__list">
+    <li><a href="#layout"><span class="toc__num">09</span>레이아웃</a></li>
+    <li><a href="#responsive"><span class="toc__num">09R</span>반응형</a></li>
+    <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+  </ul>
+  <div class="toc__group-label">Guide</div>
+  <ul class="toc__list">
+    <li><a href="#agent"><span class="toc__num">11</span>에이전트 가이드</a></li>
+    <li><a href="#dodont"><span class="toc__num">12</span>DO / DON'T</a></li>
+  </ul>
+</aside>
+
+<main class="main">
+
+<section id="mood" class="sec hero-big">
+  <div class="eyebrow">Vibrant Minimal — black canvas + Spotify green pill의 single-accent 미니멀리즘</div>
+  <h1>검정 위 초록 pill의 Audio-First identity</h1>
+  <p class="lead">Spotify · <code>https://spotify.com</code> · Fetched 2026-04-20</p>
+  <img class="hero-img" src="screenshots/hero-cropped.png" alt="Spotify hero screenshot" onerror="this.style.display='none'" />
+  <div class="mood-body">
+    <p>Spotify의 마케팅 사이트는 검정 배경 위에 시그니처 <code>#1ED760</code> <b>Spotify green</b>이 pill-shape 버튼과 헤드라인 액센트에 그룹 지어져 튀어나오는 <b>Vibrant-on-Dark</b> 구성이다. 이 초록은 임의의 브랜드 컬러가 아니라 2015년 리브랜딩 이후 10년 넘게 고수해온 audio-first identity — true black (<code>#000</code>)과 극명하게 대비되며, 긴 음악 스트리밍 시간 동안 눈의 피로 없이 재생 버튼을 즉시 찾게 만들어주는 <b>기능적 초록</b>이다.</p>
+    <p>컬러 시스템은 <b>Encore design system</b>(Spotify 자체 디자인 시스템)의 semantic token 레이어로 움직인다. <code>--text-bright-accent</code> · <code>--essential-bright-accent</code> 같은 의도 기반 이름이 실제로는 context에 따라 <code>#1ED760</code>(default), <code>#107434</code>, <code>#FFFFFF</code>, <code>#159542</code> 등으로 리맵된다. Campaign별 테마 컬러(빨강 <code>#590810</code>, 갈색 <code>#491E00</code>, 깊은 녹색 <code>#073116</code>, 네이비 <code>#052A56</code>)가 존재해서 각 landing 페이지마다 accent를 localize한다.</p>
+    <p>타이포그래피는 Spotify 전용 <b>SpotifyMixUI</b> + <b>SpotifyMixUITitle</b>(display) 2종을 main stack으로, CircularSp 계열을 다국어(Arab/Cyrl/Deva/Grek/Hebr) fallback으로 병렬 로드한다. weight는 400(body) · 700(bold) · 800(display) · 900(impact)의 4단 계단이고, <code>--encore-text-size-*</code> 시스템이 <code>0.625rem</code>(10px) → <code>6rem</code>(96px)까지 9단 계단을 제공한다.</p>
+    <p>레이아웃은 Encore grid + Svelte 컴포넌트(<code>.svelte-164a8y4</code>)로 조립된다. Hero는 거의 예외없이 <b>full-bleed dark bg + centered headline + 초록 pill CTA</b> 구조다. <code>button-primary</code> 컴포넌트는 <code>border-radius: 9999px</code>의 완전한 pill, <code>:hover</code>에 <code>background-color:#3BE477 + transform:scale(1.04)</code> — scale 94% 상태에서 4% pop이 Spotify 시그니처 인터랙션이다.</p>
+  </div>
+  <div class="kws">
+    <span class="kw">Spotify green #1ED760 — 10년 고수 audio-first</span>
+    <span class="kw">true black #000 + #121212/#141414/#1F1F1F 3단 elevation</span>
+    <span class="kw">Encore semantic token layer</span>
+    <span class="kw">Campaign theme variants (#590810 / #491E00 / #073116 / #052A56)</span>
+    <span class="kw">SpotifyMixUI + CircularSp 다국어 병렬</span>
+    <span class="kw">pill CTA 9999 + scale(1.04) hover #3BE477</span>
+    <span class="kw">weight 400/700/800/900 4단 (중간 없음)</span>
+    <span class="kw">headline 48-96px, line-height 1.0-1.1</span>
+  </div>
+</section>
+
+<section id="quickstart" class="sec">
+  <h2>01. 한눈에 보기 (Quick Start)</h2>
+  <p class="lede">5분 안에 Spotify처럼 만들기 — 3가지만 하면 80%.</p>
+  <div class="quick-steps">
+    <pre><code>/* 1. 다크 + Spotify green */
+:root {
+  --spotify-green: #1ED760;
+  --spotify-green-hover: #3BE477;
+  --spotify-green-active: #1ABC54;
+  --bg-base: #000000;
+  --bg-elevated: #121212;
+  --fg: #FFFFFF;
+}
+body { background: var(--bg-base); color: var(--fg); }</code></pre>
+    <pre><code>/* 2. 폰트 스택 */
+body {
+  font-family: "SpotifyMixUI","CircularSp",
+               Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1 { font-family: "SpotifyMixUITitle",sans-serif;
+     font-weight: 900; }</code></pre>
+    <pre><code>/* 3. 시그니처 pill CTA */
+.btn-primary {
+  background: #1ED760;
+  color: #000;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: background .15s, transform .15s;
+}
+.btn-primary:hover {
+  background: #3BE477;
+  transform: scale(1.04);
+}</code></pre>
+  </div>
+  <div class="warn-box"><b>절대 하지 말 것:</b> pill CTA 모서리를 <code>8px</code>이나 <code>12px</code>로 둥글게 하지 마라 — Spotify의 CTA는 <code>9999px</code> 완전 pill만 쓴다. <code>scale(1.04)</code> hover도 필수. 이 둘 중 하나라도 빠지면 Spotify가 아니라 Twitch/Discord 느낌이 된다.</div>
+</section>
+
+<section id="provenance" class="sec">
+  <h2>02. 출처와 수집 기준</h2>
+  <table class="tbl">
+    <tr><th>Source URL</th><td><code>https://spotify.com</code></td></tr>
+    <tr><th>Fetched</th><td>2026-04-20</td></tr>
+    <tr><th>Extractor</th><td>curl + Chrome UA</td></tr>
+    <tr><th>HTML size</th><td>~180KB (hero landing)</td></tr>
+    <tr><th>CSS files</th><td>6개 외부, 총 ~600KB (Encore + campaign themes)</td></tr>
+    <tr><th>Token system</th><td>Encore (<code>--encore-*</code> + <code>--text-*</code>, <code>--background-*</code>, <code>--essential-*</code>)</td></tr>
+    <tr><th>Vars resolved</th><td>185 / 221 (84%)</td></tr>
+    <tr><th>Method</th><td>CSS custom properties + Svelte hash selectors</td></tr>
+  </table>
+</section>
+
+<section id="stack" class="sec">
+  <h2>03. 테크 스택</h2>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:14px;">
+    <li><b>Framework</b>: Svelte (hash class <code>svelte-164a8y4</code>)</li>
+    <li><b>Design system</b>: Encore (Spotify 자체 디자인 시스템)</li>
+    <li><b>CSS architecture</b>: semantic token layer (<code>--text-*</code>, <code>--essential-*</code>, <code>--background-*</code>, <code>--decorative-*</code>)</li>
+    <li><b>Naming</b>: <code>button-primary__inner</code>, <code>mh-mobile-menu</code>, BEM-ish + Svelte hash</li>
+    <li><b>Default theme</b>: dark (true black base)</li>
+    <li><b>Font loading</b>: 셀프 호스트 SpotifyMixUI + CircularSp 다국어 변형 병렬</li>
+    <li><b>i18n</b>: Arab / Cyrl / Deva / Grek / Hebr · 각 script별 CircularSp-[Script]</li>
+    <li><b>Campaign variants</b>: landing별 <code>--text-bright-accent</code> 재매핑</li>
+  </ul>
+</section>
+
+<section id="typography" class="sec">
+  <h2>04. 타이포그래피</h2>
+  <p class="lede">Encore <code>--encore-text-size-*</code> 9단 계단. body 400 + display 700/800/900 — 중간 weight 300/500/600 없음. 다국어 CircularSp-[Script] 병렬.</p>
+  <h3>Font Stack</h3>
+  <ul style="list-style:none;padding:0;line-height:2;font-size:13px;">
+    <li><b>Body/UI</b>: <code>SpotifyMixUI</code>, <code>CircularSp</code>, Helvetica, Arial, sans-serif</li>
+    <li><b>Display/Title</b>: <code>SpotifyMixUITitle</code>, <code>SpotifyMixUITitleVariable</code> (variable font)</li>
+    <li><b>i18n bodies</b>: CircularSp-Arab / Cyrl / Deva / Grek / Hebr</li>
+    <li><b>Weights</b>: 100 · 400 · 700 · 800 · 900 (중간 weight 없음)</li>
+  </ul>
+  <h3 style="margin-top:32px;">Type Scale</h3>
+  <div class="type-row"><div class="type-row__s" style="font-size:10px;font-weight:400;">smaller-3 (caption)</div><div class="type-row__spec"><div class="tk">--encore-text-size-smaller-3</div><div><b>10px</b> · weight 400 · lh 1.4</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:12px;font-weight:400;">smaller-2</div><div class="type-row__spec"><div class="tk">--encore-text-size-smaller-2</div><div><b>12px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:14px;font-weight:400;">smaller</div><div class="type-row__spec"><div class="tk">--encore-text-size-smaller</div><div><b>14px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:16px;font-weight:400;">base (body)</div><div class="type-row__spec"><div class="tk">--encore-text-size-base</div><div><b>16px</b> · weight 400 · lh 1.5</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:20px;font-weight:400;">large (lead)</div><div class="type-row__spec"><div class="tk">--encore-text-size-large</div><div><b>20px</b> · weight 400 · lh 1.4</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:24px;font-weight:700;">larger (h3)</div><div class="type-row__spec"><div class="tk">--encore-text-size-larger</div><div><b>24px</b> · weight 700 · lh 1.3</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:32px;font-weight:700;line-height:1.2;">larger-2 (h2)</div><div class="type-row__spec"><div class="tk">--encore-text-size-larger-2</div><div><b>32px</b> · weight 700 · lh 1.2</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-.02em;font-family:var(--font-display)">larger-3 (h1)</div><div class="type-row__spec"><div class="tk">--encore-text-size-larger-3</div><div><b>48px</b> · weight 800 · lh 1.1</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:64px;font-weight:800;line-height:1.05;letter-spacing:-.03em;font-family:var(--font-display)">larger-4 (display)</div><div class="type-row__spec"><div class="tk">--encore-text-size-larger-4</div><div><b>64px</b> · weight 800 · lh 1.05</div></div></div>
+  <div class="type-row"><div class="type-row__s" style="font-size:80px;font-weight:900;line-height:1.0;letter-spacing:-.04em;font-family:var(--font-display)">larger-5 (hero)</div><div class="type-row__spec"><div class="tk">--encore-text-size-larger-5</div><div><b>96px</b> · weight 900 · lh 1.0</div></div></div>
+</section>
+
+<section id="colors" class="sec">
+  <h2>05. 컬러</h2>
+  <p class="lede">Black-canvas + Spotify green 축. Campaign별 theme variant 6종. 실제 CSS에서 추출한 ramp.</p>
+
+  <div class="ramp-label">Signature · Spotify green 시리즈 (8 steps)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#1ED760"><div class="n">green (brand)</div>#1ED760</div>
+    <div class="sw sw--d" style="background:#3BE477"><div class="n">green-hover</div>#3BE477</div>
+    <div class="sw sw--d" style="background:#1ABC54"><div class="n">green-active</div>#1ABC54</div>
+    <div class="sw sw--d" style="background:#107434"><div class="n">green-dark</div>#107434</div>
+    <div class="sw sw--d" style="background:#127E38"><div class="n">green-dark-2</div>#127E38</div>
+    <div class="sw sw--d" style="background:#159542"><div class="n">green-mid</div>#159542</div>
+    <div class="sw sw--d" style="background:#169F47"><div class="n">green-mid-2</div>#169F47</div>
+    <div class="sw sw--l" style="background:#96F0B6"><div class="n">green-tint</div>#96F0B6</div>
+  </div>
+
+  <div class="ramp-label">Neutral · dark-first 3단 elevation</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#000000"><div class="n">bg-base</div>#000000</div>
+    <div class="sw sw--d" style="background:#121212"><div class="n">bg-elev-1</div>#121212</div>
+    <div class="sw sw--d" style="background:#141414"><div class="n">bg-elev-2</div>#141414</div>
+    <div class="sw sw--d" style="background:#1F1F1F"><div class="n">bg-elev-3</div>#1F1F1F</div>
+    <div class="sw sw--d" style="background:#2A2A2A"><div class="n">border-alt</div>#2A2A2A</div>
+    <div class="sw sw--d" style="background:#343434"><div class="n">surface-high</div>#343434</div>
+    <div class="sw sw--d" style="background:#919496"><div class="n">fg-subtle</div>#919496</div>
+    <div class="sw sw--l" style="background:#C7C7C7"><div class="n">fg-muted</div>#C7C7C7</div>
+    <div class="sw sw--l" style="background:#F0F0F0"><div class="n">off-white</div>#F0F0F0</div>
+    <div class="sw sw--l" style="background:#FFFFFF"><div class="n">fg</div>#FFFFFF</div>
+  </div>
+
+  <div class="ramp-label">Campaign Theme Variants (8 accents)</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#590810"><div class="n">Deep-Red</div>#590810</div>
+    <div class="sw sw--d" style="background:#491E00"><div class="n">Deep-Brown</div>#491E00</div>
+    <div class="sw sw--d" style="background:#073116"><div class="n">Deep-Green</div>#073116</div>
+    <div class="sw sw--d" style="background:#052A56"><div class="n">Deep-Navy</div>#052A56</div>
+    <div class="sw sw--l" style="background:#FFD2D7"><div class="n">Rose</div>#FFD2D7</div>
+    <div class="sw sw--l" style="background:#FFD97E"><div class="n">Amber</div>#FFD97E</div>
+    <div class="sw sw--l" style="background:#C8E0FC"><div class="n">Sky</div>#C8E0FC</div>
+    <div class="sw sw--l" style="background:#C4B1D4"><div class="n">Violet</div>#C4B1D4</div>
+  </div>
+
+  <div class="ramp-label">Utility Accent</div>
+  <div class="ramp">
+    <div class="sw sw--d" style="background:#0D72EA"><div class="n">link-blue</div>#0D72EA</div>
+    <div class="sw sw--d" style="background:#0C69D8"><div class="n">link-hover</div>#0C69D8</div>
+    <div class="sw sw--d" style="background:#0951A6"><div class="n">link-deep</div>#0951A6</div>
+    <div class="sw sw--l" style="background:#FFA42B"><div class="n">warn-orange</div>#FFA42B</div>
+    <div class="sw sw--d" style="background:#E91429"><div class="n">error-red</div>#E91429</div>
+    <div class="sw sw--d" style="background:#D81326"><div class="n">error-deep</div>#D81326</div>
+  </div>
+
+  <h3>Dominant Usage (frequency 기반)</h3>
+  <div class="dom-chart">
+    <div class="dom-bar">
+      <div style="flex:510;background:#FFFFFF" title="#FFFFFF (510)"></div>
+      <div style="flex:454;background:#000000" title="#000000 (454)"></div>
+      <div style="flex:81;background:#1ED760" title="#1ED760 (81)"></div>
+      <div style="flex:51;background:#FFD2D7" title="#FFD2D7 (51)"></div>
+      <div style="flex:48;background:#96F0B6" title="#96F0B6 (48)"></div>
+      <div style="flex:44;background:#C8E0FC" title="#C8E0FC (44)"></div>
+      <div style="flex:40;background:#052A56" title="#052A56 (40)"></div>
+      <div style="flex:40;background:#073116" title="#073116 (40)"></div>
+      <div style="flex:40;background:#491E00" title="#491E00 (40)"></div>
+      <div style="flex:40;background:#590810" title="#590810 (40)"></div>
+      <div style="flex:40;background:#FFD97E" title="#FFD97E (40)"></div>
+    </div>
+    <div class="dom-list">
+      <div class="item"><div class="chip" style="background:#FFFFFF"></div><div><div class="hex">#FFFFFF</div><div class="cnt">510회 · text primary</div></div></div>
+      <div class="item"><div class="chip" style="background:#000000"></div><div><div class="hex">#000000</div><div class="cnt">454회 · bg-base dominant</div></div></div>
+      <div class="item"><div class="chip" style="background:#1ED760"></div><div><div class="hex">#1ED760</div><div class="cnt">81회 · brand green</div></div></div>
+      <div class="item"><div class="chip" style="background:#FFD2D7"></div><div><div class="hex">#FFD2D7</div><div class="cnt">51회 · rose campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#96F0B6"></div><div><div class="hex">#96F0B6</div><div class="cnt">48회 · green tint</div></div></div>
+      <div class="item"><div class="chip" style="background:#C8E0FC"></div><div><div class="hex">#C8E0FC</div><div class="cnt">44회 · sky campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#052A56"></div><div><div class="hex">#052A56</div><div class="cnt">40회 · navy campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#073116"></div><div><div class="hex">#073116</div><div class="cnt">40회 · deep-green campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#491E00"></div><div><div class="hex">#491E00</div><div class="cnt">40회 · deep-brown campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#590810"></div><div><div class="hex">#590810</div><div class="cnt">40회 · deep-red campaign</div></div></div>
+      <div class="item"><div class="chip" style="background:#FFD97E"></div><div><div class="hex">#FFD97E</div><div class="cnt">40회 · amber campaign</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="spacing" class="sec">
+  <h2>06. 스페이싱</h2>
+  <p class="lede">Encore <code>--encore-graphic-size-decorative-*</code> 계단. 12 → 88px 8단.</p>
+  <div class="space-row"><div class="tk">decorative-smaller-2</div><div>12px</div><div class="bar" style="width:12px"></div><div class="use">chip / badge</div></div>
+  <div class="space-row"><div class="tk">decorative-smaller</div><div>16px</div><div class="bar" style="width:16px"></div><div class="use">icon small</div></div>
+  <div class="space-row"><div class="tk">decorative-base</div><div>24px</div><div class="bar" style="width:24px"></div><div class="use">icon base</div></div>
+  <div class="space-row"><div class="tk">decorative-larger</div><div>32px</div><div class="bar" style="width:32px"></div><div class="use">header icon</div></div>
+  <div class="space-row"><div class="tk">decorative-larger-2</div><div>40px</div><div class="bar" style="width:40px"></div><div class="use">avatar</div></div>
+  <div class="space-row"><div class="tk">decorative-larger-3</div><div>48px</div><div class="bar" style="width:48px"></div><div class="use">CTA icon</div></div>
+  <div class="space-row"><div class="tk">decorative-larger-4</div><div>64px</div><div class="bar" style="width:64px"></div><div class="use">hero mark</div></div>
+  <div class="space-row"><div class="tk">decorative-larger-5</div><div>88px</div><div class="bar" style="width:88px"></div><div class="use">feature icon</div></div>
+</section>
+
+<section id="radius" class="sec">
+  <h2>07. 라디우스</h2>
+  <p class="lede">pill(9999)이 시그니처. card/modal은 8/16px.</p>
+  <div class="rad-grid">
+    <div class="rad-card"><div style="border-radius:4px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-sm</div><div class="rad-card__v">4px · input / small chip</div></div>
+    <div class="rad-card"><div style="border-radius:8px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-md</div><div class="rad-card__v">8px · album cover / card</div></div>
+    <div class="rad-card"><div style="border-radius:16px;background:var(--muted);height:64px;"></div><div class="rad-card__n">radius-lg</div><div class="rad-card__v">16px · modal / hero card</div></div>
+    <div class="rad-card"><div style="border-radius:9999px;background:#1ED760;height:64px;"></div><div class="rad-card__n">radius-pill</div><div class="rad-card__v">9999px · CTA <b style="color:#1ED760">시그니처</b></div></div>
+  </div>
+</section>
+
+<section id="shadows" class="sec">
+  <h2>07S. 섀도우</h2>
+  <p class="lede">Spotify는 그림자 대신 <b>bg-layer elevation</b>으로 높이를 표현한다 — #121212 → #141414 → #1F1F1F.</p>
+  <div class="sh-grid">
+    <div class="sh-card" style="background:#121212;color:#FFF;"><div class="sh-card__n">bg-elev-1</div><div class="sh-card__d" style="color:#C7C7C7">카드 기본</div><div class="sh-card__v" style="color:#919496">#121212</div></div>
+    <div class="sh-card" style="background:#141414;color:#FFF;"><div class="sh-card__n">bg-elev-2</div><div class="sh-card__d" style="color:#C7C7C7">raised card</div><div class="sh-card__v" style="color:#919496">#141414</div></div>
+    <div class="sh-card" style="background:#1F1F1F;color:#FFF;"><div class="sh-card__n">bg-elev-3</div><div class="sh-card__d" style="color:#C7C7C7">popover / hover</div><div class="sh-card__v" style="color:#919496">#1F1F1F</div></div>
+    <div class="sh-card" style="background:var(--card);box-shadow:0 16px 24px rgba(0,0,0,0.5);"><div class="sh-card__n">shadow-lg</div><div class="sh-card__d">modal (거의 사용 안 함)</div><div class="sh-card__v">0 16px 24px rgba(0,0,0,0.5)</div></div>
+  </div>
+</section>
+
+<section id="motion" class="sec">
+  <h2>08. 모션</h2>
+  <table class="tbl">
+    <thead><tr><th>Pattern</th><th>Value</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td>pill hover</td><td><code>.15s cubic-bezier(.3,0,0,1)</code></td><td>button-primary bg + transform</td></tr>
+      <tr><td>pill scale</td><td><code>scale(1.04)</code> hover / <code>scale(1.0)</code> active</td><td>시그니처 interaction</td></tr>
+      <tr><td>link hover</td><td><code>.15s ease</code> color</td><td>text link</td></tr>
+      <tr><td>focus ring</td><td><code>border-width 2px</code></td><td><code>--encore-border-width-focus</code></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="layout" class="sec">
+  <h2>09. 레이아웃 패턴</h2>
+  <div class="lay-grid">
+    <div class="lay-card"><h3>Grid</h3><ul>
+      <li><b>Max-width</b>: 1400px (content container)</li>
+      <li><b>Gutter</b>: 24px (base) / 16px (mobile)</li>
+      <li><b>Columns</b>: 12 grid + Flexbox mix</li>
+      <li><b>Breakpoint</b>: 768 / 1024 / 1280</li>
+    </ul></div>
+    <div class="lay-card"><h3>Hero</h3><ul>
+      <li><b>Layout</b>: full-bleed dark bg · centered 1-column</li>
+      <li><b>Bg</b>: <code>#000</code> 또는 campaign theme solid</li>
+      <li><b>H1</b>: 64-96px · weight 900</li>
+      <li><b>CTA</b>: primary pill <code>#1ED760</code> + secondary outline pill</li>
+    </ul></div>
+    <div class="lay-card"><h3>Section Rhythm</h3><ul>
+      <li><b>Padding</b>: 96-160px (hero) / 64-80px (feature) / 32px (mobile)</li>
+      <li><b>Max-width</b>: 1400px</li>
+      <li><b>Variant</b>: campaign theme scoped <code>--text-bright-accent</code> override</li>
+    </ul></div>
+    <div class="lay-card"><h3>Card</h3><ul>
+      <li><b>Padding</b>: 16-24px</li>
+      <li><b>Radius</b>: 8px / 16px (feature)</li>
+      <li><b>Bg</b>: <code>#121212/#141414/#1F1F1F</code> 3단</li>
+      <li><b>Border</b>: 1px solid <code>#2A2A2A</code> 또는 none</li>
+    </ul></div>
+    <div class="lay-card"><h3>Navigation</h3><ul>
+      <li><b>Type</b>: horizontal desktop + hamburger mobile</li>
+      <li><b>Height</b>: ~72px</li>
+      <li><b>Bg</b>: solid <code>#000</code> 또는 transparent on dark hero</li>
+      <li><b>Mobile menu bg</b>: <code>#000</code> fullscreen · padding 32px</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="responsive" class="sec">
+  <h2>09-R. 반응형 브레이크포인트</h2>
+  <table class="tbl">
+    <thead><tr><th>Name</th><th>Value</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td><code>sm</code></td><td>768px</td><td>mobile stacked · nav → hamburger</td></tr>
+      <tr><td><code>md</code></td><td>1024px</td><td>tablet 2-col · feature grid 2-wide</td></tr>
+      <tr><td><code>lg</code></td><td>1280px</td><td>desktop full · 3-4 column feature grid</td></tr>
+      <tr><td><code>xl</code></td><td>1400px</td><td>max container cap</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="components" class="sec">
+  <h2>10. 컴포넌트</h2>
+  <div class="comp">
+    <h3>Primary Button (Pill CTA) — 시그니처</h3>
+    <p>Spotify의 정체성이자 가장 복제하기 쉬운 패턴.</p>
+    <div class="comp-spec"><b>Spec</b>: bg <code>#1ED760</code> · color <code>#000</code> · radius 9999 · weight 700 · padding 12px 32px · hover <code>#3BE477</code> + scale(1.04)</div>
+    <pre><code>.button-primary__inner {
+  color: #000;
+  background-color: #1ED760;
+  border-radius: 9999px;
+  font-weight: 700;
+  padding: 12px 32px;
+  transition: background-color .15s, transform .15s;
+  transition-timing-function: cubic-bezier(.3,0,0,1);
+}
+.button-primary:hover .button-primary__inner {
+  background-color: #3BE477;
+  transform: scale(1.04);
+}
+.button-primary:active .button-primary__inner {
+  background-color: #1ABC54;
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Secondary Button (Outline Pill)</h3>
+    <div class="comp-spec"><b>Spec</b>: bg transparent · border 1px solid #FFF · radius 9999 · hover bg rgba(255,255,255,0.1)</div>
+    <pre><code>.button-secondary {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  transition: background .15s, transform .15s;
+}
+.button-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.04);
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Card (Album / Playlist)</h3>
+    <div class="comp-spec"><b>Spec</b>: bg #121212 · radius 8px · padding 16px · hover bg #1F1F1F</div>
+    <pre><code>.card {
+  background: #121212;
+  border-radius: 8px;
+  padding: 16px;
+  transition: background .2s ease;
+}
+.card:hover { background: #1F1F1F; }</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Hero Headline (96px impact)</h3>
+    <div class="comp-spec"><b>Spec</b>: font-family SpotifyMixUITitle · 96px · weight 900 · lh 1.0 · ls -0.04em</div>
+    <pre><code>.hero h1 {
+  font-family: "SpotifyMixUITitle",sans-serif;
+  font-size: 6rem; /* 96px */
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+}</code></pre>
+  </div>
+  <div class="comp">
+    <h3>Campaign Section Theme Override</h3>
+    <p>section scope에서 accent를 campaign theme으로 재매핑.</p>
+    <div class="comp-spec"><b>Spec</b>: <code>--text-bright-accent</code> 재매핑 (e.g. Wrapped = Deep-Red)</div>
+    <pre><code>section.theme-wrapped {
+  --text-bright-accent: #590810;
+  --essential-bright-accent: #590810;
+  background: #FFD2D7;
+  color: #590810;
+}</code></pre>
+  </div>
+</section>
+
+<section id="agent" class="sec">
+  <h2>11. Agent Prompt Guide</h2>
+  <p class="lede">복사 가능한 프롬프트 템플릿 — 토큰/폰트/색이 실제 CSS 값.</p>
+  <h3>Quick Color Reference</h3>
+  <table class="tbl">
+    <thead><tr><th>Role</th><th>Token</th><th>Hex</th></tr></thead>
+    <tbody>
+      <tr><td>Brand primary</td><td><code>--spotify-green</code></td><td><span style="width:16px;height:16px;background:#1ED760;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1ED760</code></td></tr>
+      <tr><td>Brand hover</td><td><code>--spotify-green-hover</code></td><td><span style="width:16px;height:16px;background:#3BE477;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#3BE477</code></td></tr>
+      <tr><td>Brand active</td><td><code>--spotify-green-active</code></td><td><span style="width:16px;height:16px;background:#1ABC54;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#1ABC54</code></td></tr>
+      <tr><td>Bg base</td><td><code>--bg-base</code></td><td><span style="width:16px;height:16px;background:#000000;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#000000</code></td></tr>
+      <tr><td>Bg elevated</td><td><code>--bg-elevated</code></td><td><span style="width:16px;height:16px;background:#121212;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#121212</code></td></tr>
+      <tr><td>Text primary</td><td><code>--fg</code></td><td><span style="width:16px;height:16px;background:#FFFFFF;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;border:1px solid #ddd;"></span><code>#FFFFFF</code></td></tr>
+      <tr><td>Text muted</td><td><code>--fg-muted</code></td><td><span style="width:16px;height:16px;background:#C7C7C7;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#C7C7C7</code></td></tr>
+      <tr><td>Text subtle</td><td><code>--fg-subtle</code></td><td><span style="width:16px;height:16px;background:#919496;display:inline-block;vertical-align:middle;border-radius:3px;margin-right:6px;"></span><code>#919496</code></td></tr>
+    </tbody>
+  </table>
+  <h3 style="margin-top:32px;">Example Prompts</h3>
+  <div class="ag-grid">
+    <div class="ag-card">
+      <h4>🎯 Hero Section</h4>
+      <pre>Spotify style hero: black #000 full-bleed, headline 96px / weight 900 / line-height 1.0 / color white, 3-6 word impact. Primary CTA: pill bg #1ED760 color #000 radius 9999. Secondary CTA: outline white pill.</pre>
+    </div>
+    <div class="ag-card">
+      <h4>🔘 Pill CTA</h4>
+      <pre>Spotify pill button: bg #1ED760, color #000 (검정 텍스트!), padding 12px 32px, border-radius 9999. Hover: bg #3BE477 + transform scale(1.04). Active: bg #1ABC54. Transition .15s cubic-bezier(.3,0,0,1).</pre>
+    </div>
+    <div class="ag-card">
+      <h4>🎴 Album Card</h4>
+      <pre>Spotify card: bg #121212, radius 8px, padding 16px. Hover: bg #1F1F1F. Cover image 1:1 radius 4px. Title 16px weight 700 white. Artist 14px weight 400 #C7C7C7.</pre>
+    </div>
+    <div class="ag-card">
+      <h4>🎨 Campaign Theme Variant</h4>
+      <pre>Spotify campaign section: override --text-bright-accent to campaign hex. Wrapped = #590810 on #FFD2D7. Premium = #073116 on #96F0B6. Keep pill CTA shape.</pre>
+    </div>
+  </div>
+</section>
+
+<section id="dodont" class="sec">
+  <h2>12. DO / DON'T</h2>
+  <div class="do-dont">
+    <div class="do"><h3>✓ DO</h3><ul>
+      <li>✅ true black <code>#000</code> 또는 off-black <code>#121212/#141414/#1F1F1F</code> 3단 elevation 사용</li>
+      <li>✅ Spotify green <code>#1ED760</code>을 CTA + heading accent + 재생버튼 icon에만 제한</li>
+      <li>✅ pill CTA는 <code>border-radius: 9999px</code>로 완전 pill</li>
+      <li>✅ hover에 <code>transform: scale(1.04)</code> + <code>background-color: #3BE477</code> 조합 고수</li>
+      <li>✅ display/title은 SpotifyMixUITitle · weight 900 · line-height 1.0~1.05</li>
+      <li>✅ i18n시 CircularSp-[Script] 서브 폰트 병렬 로드</li>
+    </ul></div>
+    <div class="dont"><h3>✗ DON'T</h3><ul>
+      <li>배경을 <code>#1A1A1A</code> 어중간한 그레이로 두지 말 것 — <code>#000/#121212/#141414/#1F1F1F</code> 중 하나</li>
+      <li><code>#1ED760</code> 초록을 body 텍스트 컬러로 쓰지 말 것 — accent 전용</li>
+      <li>pill CTA를 <code>12px</code>/<code>8px</code>/<code>16px</code> radius로 둥글리지 말 것 — <code>9999px</code>만</li>
+      <li>body 폰트를 weight 300/500/600로 두지 말 것 — 400/700만 이원화</li>
+      <li>hover에 transform 없이 color만 바꾸지 말 것 — scale(1.04)가 시그니처</li>
+      <li>true black 위에 <code>box-shadow</code>로 elevation 표현하지 말 것 — bg-layer로 처리</li>
+      <li>초록을 <code>#00E25A</code> / <code>#1DB954</code> (구 로고) 로 쓰지 말 것 — 2015 리브랜딩 이후 <code>#1ED760</code>이 공식</li>
+    </ul></div>
+  </div>
+</section>
+
+<footer style="padding:40px 0;color:var(--muted-fg);font-size:11px;text-align:center;">
+  <p>Generated by insane-design v3.1 · CSS-first analysis · 2026-04-20</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>

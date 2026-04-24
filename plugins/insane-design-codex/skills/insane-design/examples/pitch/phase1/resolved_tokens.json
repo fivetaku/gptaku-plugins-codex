@@ -1,0 +1,208 @@
+{
+  "slug": "pitch",
+  "total_vars": 25,
+  "resolved_count": 21,
+  "unresolved_count": 4,
+  "samples": {
+    "--announcement-bar-height": {
+      "raw": "2.5rem",
+      "resolved": "2.5rem",
+      "chain": [
+        "--announcement-bar-height",
+        "2.5rem"
+      ]
+    },
+    "--navigation-bar-height": {
+      "raw": "4.5rem",
+      "resolved": "4.5rem",
+      "chain": [
+        "--navigation-bar-height",
+        "4.5rem"
+      ]
+    },
+    "--navigation-height": {
+      "raw": "calc(var(--announcement-bar-height, 0px) + var(--navigation-bar-height))",
+      "resolved": null,
+      "chain": [
+        "--navigation-height",
+        "calc(var(--announcement-bar-height, 0px) + var(--navigation-bar-height))"
+      ]
+    },
+    "--links-gap": {
+      "raw": ".75rem",
+      "resolved": ".75rem",
+      "chain": [
+        "--links-gap",
+        ".75rem"
+      ]
+    },
+    "--mobile-transition-duration": {
+      "raw": ".3s",
+      "resolved": ".3s",
+      "chain": [
+        "--mobile-transition-duration",
+        ".3s"
+      ]
+    },
+    "--box-shadow": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--box-shadow",
+        "1"
+      ]
+    },
+    "--rest-color": {
+      "raw": "hsla(0,0%,100%,.8)",
+      "resolved": "hsla(0,0%,100%,.8)",
+      "chain": [
+        "--rest-color",
+        "hsla(0,0%,100%,.8)"
+      ]
+    },
+    "--active-color-1": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--active-color-1",
+        "#fff"
+      ]
+    },
+    "--active-color-2": {
+      "raw": "#fff",
+      "resolved": "#fff",
+      "chain": [
+        "--active-color-2",
+        "#fff"
+      ]
+    },
+    "--content-height": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--content-height",
+        "0"
+      ]
+    },
+    "--delta-left": {
+      "raw": "1fr",
+      "resolved": "1fr",
+      "chain": [
+        "--delta-left",
+        "1fr"
+      ]
+    },
+    "--delta-right": {
+      "raw": "1fr",
+      "resolved": "1fr",
+      "chain": [
+        "--delta-right",
+        "1fr"
+      ]
+    },
+    "--arrow-position": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--arrow-position",
+        "0"
+      ]
+    },
+    "--arrow-size": {
+      "raw": ".5rem",
+      "resolved": ".5rem",
+      "chain": [
+        "--arrow-size",
+        ".5rem"
+      ]
+    },
+    "--duration": {
+      "raw": ".15s",
+      "resolved": ".15s",
+      "chain": [
+        "--duration",
+        ".15s"
+      ]
+    },
+    "--delay": {
+      "raw": "0ms",
+      "resolved": "0ms",
+      "chain": [
+        "--delay",
+        "0ms"
+      ]
+    },
+    "--color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--color",
+        "transparent"
+      ]
+    },
+    "--aspect-ratio": {
+      "raw": "1/1",
+      "resolved": null,
+      "chain": [
+        "--aspect-ratio",
+        "1/1"
+      ]
+    },
+    "--avatar-size": {
+      "raw": "7.5rem",
+      "resolved": "7.5rem",
+      "chain": [
+        "--avatar-size",
+        "7.5rem"
+      ]
+    },
+    "--bodySideMargins": {
+      "raw": "-1.875rem",
+      "resolved": "-1.875rem",
+      "chain": [
+        "--bodySideMargins",
+        "-1.875rem"
+      ]
+    },
+    "--position-x": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--position-x",
+        "0%"
+      ]
+    },
+    "--ratio": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--ratio",
+        "0"
+      ]
+    },
+    "--border-radius": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--border-radius",
+        "24px"
+      ]
+    },
+    "--avatar-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--avatar-color",
+        "transparent"
+      ]
+    },
+    "--gradient-rotation": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--gradient-rotation",
+        "0"
+      ]
+    }
+  }
+}

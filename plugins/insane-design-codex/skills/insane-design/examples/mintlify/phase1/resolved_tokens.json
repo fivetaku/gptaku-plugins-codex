@@ -1,0 +1,410 @@
+{
+  "slug": "mintlify",
+  "total_vars": 253,
+  "resolved_count": 89,
+  "unresolved_count": 164,
+  "samples": {
+    "--font-geist-mono": {
+      "raw": "\"Geist Mono\",\n\"Geist Mono Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-geist-mono",
+        "\"Geist Mono\",\n\"Geist Mono Fallback\""
+      ]
+    },
+    "--font-inter": {
+      "raw": "\"inter\",\n\"inter Fallback\"",
+      "resolved": null,
+      "chain": [
+        "--font-inter",
+        "\"inter\",\n\"inter Fallback\""
+      ]
+    },
+    "--tw-translate-x": {
+      "raw": "calc(var(--spacing)*1)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-x",
+        "calc(var(--spacing)*1)"
+      ]
+    },
+    "--tw-translate-y": {
+      "raw": "2px",
+      "resolved": "2px",
+      "chain": [
+        "--tw-translate-y",
+        "2px"
+      ]
+    },
+    "--tw-translate-z": {
+      "raw": "calc(var(--spacing)*0)",
+      "resolved": null,
+      "chain": [
+        "--tw-translate-z",
+        "calc(var(--spacing)*0)"
+      ]
+    },
+    "--tw-scale-x": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-x",
+        "90%"
+      ]
+    },
+    "--tw-scale-y": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-y",
+        "90%"
+      ]
+    },
+    "--tw-scale-z": {
+      "raw": "90%",
+      "resolved": "90%",
+      "chain": [
+        "--tw-scale-z",
+        "90%"
+      ]
+    },
+    "--tw-rotate-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-x",
+        "initial"
+      ]
+    },
+    "--tw-rotate-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-y",
+        "initial"
+      ]
+    },
+    "--tw-rotate-z": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-rotate-z",
+        "initial"
+      ]
+    },
+    "--tw-skew-x": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-x",
+        "initial"
+      ]
+    },
+    "--tw-skew-y": {
+      "raw": "initial",
+      "resolved": null,
+      "chain": [
+        "--tw-skew-y",
+        "initial"
+      ]
+    },
+    "--tw-space-y-reverse": {
+      "raw": "0",
+      "resolved": "0",
+      "chain": [
+        "--tw-space-y-reverse",
+        "0"
+      ]
+    },
+    "--tw-border-style": {
+      "raw": "solid",
+      "resolved": null,
+      "chain": [
+        "--tw-border-style",
+        "solid"
+      ]
+    },
+    "--tw-gradient-position": {
+      "raw": "to bottom in oklab",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-position",
+        "to bottom in oklab"
+      ]
+    },
+    "--tw-gradient-from": {
+      "raw": "lab(61.2892% 61.8596 71.8781/.7)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-from",
+        "lab(61.2892% 61.8596 71.8781/.7)"
+      ]
+    },
+    "--tw-gradient-via": {
+      "raw": "lab(61.2892% 61.8596 71.8781/.7)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via",
+        "lab(61.2892% 61.8596 71.8781/.7)"
+      ]
+    },
+    "--tw-gradient-to": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-to",
+        "transparent"
+      ]
+    },
+    "--tw-gradient-stops": {
+      "raw": "var(--tw-gradient-via-stops)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-stops",
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-via-stops": {
+      "raw": "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)",
+      "resolved": null,
+      "chain": [
+        "--tw-gradient-via-stops",
+        "var(--tw-gradient-position),\nvar(--tw-gradient-from)var(--tw-gradient-from-position),\nvar(--tw-gradient-via)var(--tw-gradient-via-position),\nvar(--tw-gradient-to)var(--tw-gradient-to-position)"
+      ]
+    },
+    "--tw-gradient-from-position": {
+      "raw": "10%",
+      "resolved": "10%",
+      "chain": [
+        "--tw-gradient-from-position",
+        "10%"
+      ]
+    },
+    "--tw-gradient-via-position": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--tw-gradient-via-position",
+        "50%"
+      ]
+    },
+    "--tw-gradient-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-gradient-to-position",
+        "100%"
+      ]
+    },
+    "--tw-mask-linear": {
+      "raw": "var(--tw-mask-left),\nvar(--tw-mask-right),\nvar(--tw-mask-bottom),\nvar(--tw-mask-top)",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-linear",
+        "var(--tw-mask-left),\nvar(--tw-mask-right),\nvar(--tw-mask-bottom),\nvar(--tw-mask-top)"
+      ]
+    },
+    "--tw-mask-radial": {
+      "raw": "radial-gradient(var(--tw-mask-radial-stops))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-radial",
+        "radial-gradient(var(--tw-mask-radial-stops))"
+      ]
+    },
+    "--tw-mask-conic": {
+      "raw": "linear-gradient(#fff,#fff)",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-conic",
+        "linear-gradient(#fff,#fff)"
+      ]
+    },
+    "--tw-mask-left": {
+      "raw": "linear-gradient(to left,\nvar(--tw-mask-left-from-color)var(--tw-mask-left-from-position),\nvar(--tw-mask-left-to-color)var(--tw-mask-left-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-left",
+        "linear-gradient(to left,\nvar(--tw-mask-left-from-color)var(--tw-mask-left-from-position),\nvar(--tw-mask-left-to-color)var(--tw-mask-left-to-position))"
+      ]
+    },
+    "--tw-mask-right": {
+      "raw": "linear-gradient(to right,\nvar(--tw-mask-right-from-color)var(--tw-mask-right-from-position),\nvar(--tw-mask-right-to-color)var(--tw-mask-right-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right",
+        "linear-gradient(to right,\nvar(--tw-mask-right-from-color)var(--tw-mask-right-from-position),\nvar(--tw-mask-right-to-color)var(--tw-mask-right-to-position))"
+      ]
+    },
+    "--tw-mask-bottom": {
+      "raw": "linear-gradient(to bottom,\nvar(--tw-mask-bottom-from-color)var(--tw-mask-bottom-from-position),\nvar(--tw-mask-bottom-to-color)var(--tw-mask-bottom-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom",
+        "linear-gradient(to bottom,\nvar(--tw-mask-bottom-from-color)var(--tw-mask-bottom-from-position),\nvar(--tw-mask-bottom-to-color)var(--tw-mask-bottom-to-position))"
+      ]
+    },
+    "--tw-mask-top": {
+      "raw": "linear-gradient(to top,\nvar(--tw-mask-top-from-color)var(--tw-mask-top-from-position),\nvar(--tw-mask-top-to-color)var(--tw-mask-top-to-position))",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top",
+        "linear-gradient(to top,\nvar(--tw-mask-top-from-color)var(--tw-mask-top-from-position),\nvar(--tw-mask-top-to-color)var(--tw-mask-top-to-position))"
+      ]
+    },
+    "--tw-mask-top-from-position": {
+      "raw": "30%",
+      "resolved": "30%",
+      "chain": [
+        "--tw-mask-top-from-position",
+        "30%"
+      ]
+    },
+    "--tw-mask-top-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-mask-top-to-position",
+        "100%"
+      ]
+    },
+    "--tw-mask-top-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-top-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-top-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-right-from-position": {
+      "raw": "70%",
+      "resolved": "70%",
+      "chain": [
+        "--tw-mask-right-from-position",
+        "70%"
+      ]
+    },
+    "--tw-mask-right-to-position": {
+      "raw": "95%",
+      "resolved": "95%",
+      "chain": [
+        "--tw-mask-right-to-position",
+        "95%"
+      ]
+    },
+    "--tw-mask-right-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-right-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-right-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-left-from-position": {
+      "raw": "70%",
+      "resolved": "70%",
+      "chain": [
+        "--tw-mask-left-from-position",
+        "70%"
+      ]
+    },
+    "--tw-mask-left-to-position": {
+      "raw": "95%",
+      "resolved": "95%",
+      "chain": [
+        "--tw-mask-left-to-position",
+        "95%"
+      ]
+    },
+    "--tw-mask-left-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-left-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-left-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-left-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-bottom-from-position": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--tw-mask-bottom-from-position",
+        "0%"
+      ]
+    },
+    "--tw-mask-bottom-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-mask-bottom-to-position",
+        "100%"
+      ]
+    },
+    "--tw-mask-bottom-from-color": {
+      "raw": "black",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-from-color",
+        "black"
+      ]
+    },
+    "--tw-mask-bottom-to-color": {
+      "raw": "transparent",
+      "resolved": null,
+      "chain": [
+        "--tw-mask-bottom-to-color",
+        "transparent"
+      ]
+    },
+    "--tw-mask-radial-from-position": {
+      "raw": "0%",
+      "resolved": "0%",
+      "chain": [
+        "--tw-mask-radial-from-position",
+        "0%"
+      ]
+    },
+    "--tw-mask-radial-to-position": {
+      "raw": "100%",
+      "resolved": "100%",
+      "chain": [
+        "--tw-mask-radial-to-position",
+        "100%"
+      ]
+    },
+    "--tw-mask-radial-from-color": {
+      "raw": "var(--color-white)",
+      "resolved": "#fff",
+      "chain": [
+        "--tw-mask-radial-from-color",
+        "--color-white",
+        "#fff"
+      ]
+    }
+  }
+}

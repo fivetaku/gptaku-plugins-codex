@@ -1,0 +1,288 @@
+{
+  "fontsize_top": [
+    [
+      "14px",
+      22
+    ],
+    [
+      "13px",
+      20
+    ],
+    [
+      "12px",
+      16
+    ],
+    [
+      "10px",
+      9
+    ],
+    [
+      "15px",
+      9
+    ],
+    [
+      "16px",
+      8
+    ],
+    [
+      ".9375rem",
+      7
+    ],
+    [
+      ".75rem",
+      6
+    ],
+    [
+      ".8125rem",
+      6
+    ],
+    [
+      "1.25rem",
+      5
+    ],
+    [
+      "1.125rem",
+      4
+    ],
+    [
+      ".6875rem",
+      4
+    ],
+    [
+      ".875rem",
+      3
+    ],
+    [
+      "11px",
+      3
+    ],
+    [
+      "1rem",
+      2
+    ]
+  ],
+  "radius_top": [
+    [
+      "8px",
+      41
+    ],
+    [
+      "50%",
+      36
+    ],
+    [
+      "4px",
+      32
+    ],
+    [
+      "6px",
+      28
+    ],
+    [
+      "12px",
+      24
+    ],
+    [
+      "2px",
+      17
+    ],
+    [
+      "5px",
+      15
+    ],
+    [
+      "9999px",
+      13
+    ],
+    [
+      "100%",
+      8
+    ],
+    [
+      "16px",
+      5
+    ]
+  ],
+  "maxwidth_top": [
+    [
+      "640px",
+      157
+    ],
+    [
+      "768px",
+      114
+    ],
+    [
+      "1024px",
+      74
+    ],
+    [
+      "1280px",
+      24
+    ],
+    [
+      "560px",
+      4
+    ],
+    [
+      "900px",
+      4
+    ],
+    [
+      "250px",
+      3
+    ],
+    [
+      "520px",
+      3
+    ],
+    [
+      "400px",
+      3
+    ],
+    [
+      "1440px",
+      3
+    ]
+  ],
+  "breakpoints": {
+    "1280px": 24,
+    "1024px": 72,
+    "640px": 150,
+    "768px": 110,
+    "641px": 1,
+    "769px": 1,
+    "1025px": 1,
+    "1281px": 1,
+    "928px": 2,
+    "1536px": 2,
+    "700px": 2,
+    "1601px": 1,
+    "1140px": 1,
+    "1420px": 1,
+    "1240px": 1,
+    "1440px": 2,
+    "560px": 2,
+    "1100px": 3,
+    "900px": 4
+  },
+  "shadow_count": 97,
+  "transition_top": [
+    [
+      "var(--speed-regularTransition)",
+      9
+    ],
+    [
+      "filter .16s var(--ease-out-quad)",
+      9
+    ],
+    [
+      ".2s",
+      8
+    ],
+    [
+      "var(--x172lzdp)",
+      6
+    ],
+    [
+      "filter .16s var(--ease-out-quad),transform .16s var(--ease-o",
+      6
+    ],
+    [
+      "0s",
+      5
+    ],
+    [
+      "var(--speed-regularTransition) var(--ease-out-quad)",
+      5
+    ],
+    [
+      "inherit",
+      4
+    ],
+    [
+      "color var(--speed-quickTransition)",
+      4
+    ],
+    [
+      ".16s var(--ease-out-quad)",
+      4
+    ]
+  ],
+  "key_vars": {
+    "--header-height": "72px",
+    "--page-padding-inline": "24px",
+    "--page-padding-block": "64px",
+    "--page-padding-left": "max(env(safe-area-inset-left),var(--page-padding-inline))",
+    "--page-padding-right": "max(env(safe-area-inset-right),var(--page-padding-inline))",
+    "--page-max-width": "1024px",
+    "--prose-max-width": "624px",
+    "--homepage-max-width": "calc(1344px + var(--homepage-outer-padding) * 2)",
+    "--radius-4": "4px",
+    "--radius-6": "6px",
+    "--radius-8": "8px",
+    "--radius-12": "12px",
+    "--radius-16": "16px",
+    "--radius-24": "24px",
+    "--radius-32": "32px",
+    "--radius-rounded": "9999px",
+    "--radius-circle": "50%",
+    "--font-serif-display": "\"Tiempos Headline\",ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+    "--font-monospace": "\"Berkeley Mono\",ui-monospace,\"SF Mono\",\"Menlo\",monospace",
+    "--font-regular": "\"Inter Variable\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Open Sans\",\"Helvetica Neue\",sans-serif",
+    "--font-emoji": "\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Segoe UI\",\"Twemoji Mozilla\",\"Noto Color Emoji\",\"Android Emoji\"",
+    "--font-weight-light": "300",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "510",
+    "--font-weight-semibold": "590",
+    "--font-weight-bold": "680",
+    "--shadow-none": "0px 0px 0px transparent",
+    "--shadow-tiny": "var(--shadow-none)",
+    "--shadow-low": "var(--shadow-none)",
+    "--shadow-medium": "var(--shadow-none)",
+    "--shadow-high": "var(--shadow-none)",
+    "--ease-in-quad": "cubic-bezier(0.55,0.085,0.68,0.53)",
+    "--ease-in-cubic": "cubic-bezier(0.55,0.055,0.675,0.19)",
+    "--ease-in-quart": "cubic-bezier(0.895,0.03,0.685,0.22)",
+    "--ease-in-quint": "cubic-bezier(0.755,0.05,0.855,0.06)",
+    "--ease-in-expo": "cubic-bezier(0.95,0.05,0.795,0.035)",
+    "--ease-in-circ": "cubic-bezier(0.6,0.04,0.98,0.335)",
+    "--ease-out-quad": "cubic-bezier(0.25,0.46,0.45,0.94)",
+    "--ease-out-cubic": "cubic-bezier(0.215,0.61,0.355,1)",
+    "--ease-out-quart": "cubic-bezier(0.165,0.84,0.44,1)",
+    "--ease-out-quint": "cubic-bezier(0.23,1,0.32,1)",
+    "--ease-out-expo": "cubic-bezier(0.19,1,0.22,1)",
+    "--ease-out-circ": "cubic-bezier(0.075,0.82,0.165,1)",
+    "--ease-in-out-quad": "cubic-bezier(0.455,0.03,0.515,0.955)",
+    "--ease-in-out-cubic": "cubic-bezier(0.645,0.045,0.355,1)",
+    "--ease-in-out-quart": "cubic-bezier(0.77,0,0.175,1)",
+    "--ease-in-out-quint": "cubic-bezier(0.86,0,0.07,1)",
+    "--ease-in-out-expo": "cubic-bezier(1,0,0,1)",
+    "--ease-in-out-circ": "cubic-bezier(0.785,0.135,0.15,0.86)",
+    "--font-size-micro": "0.6875rem",
+    "--font-size-microPlus": "0.6875rem",
+    "--font-size-mini": "0.75rem",
+    "--font-size-miniPlus": "0.75rem",
+    "--font-size-small": "0.8125rem",
+    "--font-size-smallPlus": "0.8125rem",
+    "--font-size-regular": "0.9375rem",
+    "--font-size-regularPlus": "0.9375rem",
+    "--font-size-large": "1.125rem",
+    "--font-size-largePlus": "1.125rem",
+    "--font-size-title1": "2.25rem",
+    "--font-size-title2": "1.5rem",
+    "--font-size-title3": "1.25rem",
+    "--page-padding-y": "48px",
+    "--color-bg-primary": "#08090a",
+    "--color-border-primary": "#23252a",
+    "--color-text-primary": "#f7f8f8",
+    "--color-brand-bg": "#5e6ad2",
+    "--shadow-stack-low": "0px 8px 2px 0px rgba(0,0,0,0),0px 5px 2px 0px rgba(0,0,0,0.01),0px 3px 2px 0px rgba(0,0,0,0.04),0px 1px 1px 0px rgba(0,0,0,0.07),0px 0px 1px 0px rgba(0,0,0,0.08)",
+    "--color-accent": "#7170ff",
+    "--color-accent-hover": "#828fff",
+    "--color-accent-tint": "#18182f",
+    "--font-settings": "\"cv01\",\"ss03\"",
+    "--font-variations": "\"opsz\" auto",
+    "--font-size": "13px"
+  }
+}

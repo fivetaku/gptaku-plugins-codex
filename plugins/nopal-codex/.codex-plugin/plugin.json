@@ -1,0 +1,44 @@
+{
+  "name": "nopal-codex",
+  "version": "0.1.0",
+  "description": "Codex-native Google Workspace orchestration through the gws CLI.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/nopal-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "google-workspace",
+    "gmail",
+    "calendar",
+    "drive",
+    "gws",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Nopal Codex",
+    "shortDescription": "Control Google Workspace from Codex through gws",
+    "longDescription": "Packages the Codex-native nopal and nopal-setup skills as one Google Workspace product unit. It routes Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, and Meet requests through the gws CLI with explicit confirmation for write actions.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Use nopal to check my Google Calendar today.",
+      "Draft a Gmail message and ask before sending it.",
+      "Set up nopal so gws can access Google Workspace."
+    ],
+    "brandColor": "#166534",
+    "composerIcon": "./assets/nopal-codex.svg",
+    "logo": "./assets/nopal-codex.svg",
+    "screenshots": []
+  }
+}

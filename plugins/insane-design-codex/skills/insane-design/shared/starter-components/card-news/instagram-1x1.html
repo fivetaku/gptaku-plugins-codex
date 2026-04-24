@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- insane-build: card-news/instagram-1x1.html — 1080×1080 square card -->
+<!-- Safe zone: 60px padding all sides. Export at 2x (2160×2160) for retina. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --fg-muted: #555555;
+    --brand: #000000;
+    --font-family: system-ui, sans-serif;
+  }
+  body { margin: 0; background: #eee; display: flex; justify-content: center; padding: 24px; }
+  .card {
+    width: 1080px; height: 1080px;
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-family);
+    padding: 60px; box-sizing: border-box;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .eyebrow { font-size: 24px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); }
+  .headline { font-size: 96px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; margin: 24px 0; }
+  .body { font-size: 32px; line-height: 1.5; color: var(--fg-muted); max-width: 860px; }
+  .footer { display: flex; justify-content: space-between; align-items: baseline; font-size: 24px; color: var(--fg-muted); }
+  .page-num { font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow">{EYEBROW}</p>
+      <h1 class="headline">{HEADLINE}</h1>
+      <p class="body">{BODY}</p>
+    </div>
+    <div class="footer">
+      <span>@{HANDLE}</span>
+      <span class="page-num">{PAGE}/{TOTAL}</span>
+    </div>
+  </div>
+</body>
+</html>

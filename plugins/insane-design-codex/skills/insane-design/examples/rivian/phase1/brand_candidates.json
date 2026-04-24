@@ -1,0 +1,346 @@
+{
+  "slug": "rivian",
+  "semantic_vars": [
+    {
+      "name": "--surface-primary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--surface-invertPrimary",
+      "value_hex": "#000000",
+      "role": "primary"
+    },
+    {
+      "name": "--surface-primaryAlt",
+      "value_hex": "#FAFAFA",
+      "role": "primary"
+    },
+    {
+      "name": "--text-primary",
+      "value_hex": "#000000",
+      "role": "primary"
+    },
+    {
+      "name": "--text-invertPrimary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--stroke-primary",
+      "value_hex": "#000000",
+      "role": "primary"
+    },
+    {
+      "name": "--stroke-invertPrimary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--surface-primary",
+      "value_hex": "#000000",
+      "role": "primary"
+    },
+    {
+      "name": "--surface-invertPrimary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--surface-primaryAlt",
+      "value_hex": "#151515",
+      "role": "primary"
+    },
+    {
+      "name": "--text-primary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--text-invertPrimary",
+      "value_hex": "#000000",
+      "role": "primary"
+    },
+    {
+      "name": "--stroke-primary",
+      "value_hex": "#FFFFFF",
+      "role": "primary"
+    },
+    {
+      "name": "--stroke-invertPrimary",
+      "value_hex": "#000000",
+      "role": "primary"
+    }
+  ],
+  "selector_role": [
+    {
+      "selector": ".video-js .vjs-big-play-button",
+      "property": "border",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".video-js .vjs-big-play-button {font-size:3em;line-height:1.5em;height:1.63332em;width:3em;display:block;position:absolute;top:10px;left:10px;padding:0;cursor:pointer;opacity:1;border:.06666em solid #"
+    },
+    {
+      "selector": ".video-js .vjs-big-play-button",
+      "property": "background-color",
+      "hex": "#2B333F",
+      "rule_snippet": ".video-js .vjs-big-play-button {font-size:3em;line-height:1.5em;height:1.63332em;width:3em;display:block;position:absolute;top:10px;left:10px;padding:0;cursor:pointer;opacity:1;border:.06666em solid #"
+    },
+    {
+      "selector": ".video-js .vjs-big-play-button:focus,.video-js:hover .vjs-big-play-button",
+      "property": "border-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".video-js .vjs-big-play-button:focus,.video-js:hover .vjs-big-play-button {border-color:#fff;background-color:#73859f;background-color:rgba(115,133,159,.5);transition:all 0s}"
+    },
+    {
+      "selector": ".video-js .vjs-big-play-button:focus,.video-js:hover .vjs-big-play-button",
+      "property": "background-color",
+      "hex": "#73859F",
+      "rule_snippet": ".video-js .vjs-big-play-button:focus,.video-js:hover .vjs-big-play-button {border-color:#fff;background-color:#73859f;background-color:rgba(115,133,159,.5);transition:all 0s}"
+    },
+    {
+      "selector": ".vjs-menu-button-popup .vjs-menu .vjs-menu-content",
+      "property": "background-color",
+      "hex": "#2B333F",
+      "rule_snippet": ".vjs-menu-button-popup .vjs-menu .vjs-menu-content {background-color:#2b333f;background-color:rgba(43,51,63,.7);position:absolute;width:100%;bottom:1.5em;max-height:15em}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button:active,.vjs-track-settings-controls button:focus",
+      "property": "background-image",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".vjs-track-settings-controls button:active,.vjs-track-settings-controls button:focus {outline-style:solid;outline-width:medium;background-image:linear-gradient(0deg,#fff 88%,#73859f)}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button:active,.vjs-track-settings-controls button:focus",
+      "property": "background-image",
+      "hex": "#73859F",
+      "rule_snippet": ".vjs-track-settings-controls button:active,.vjs-track-settings-controls button:focus {outline-style:solid;outline-width:medium;background-image:linear-gradient(0deg,#fff 88%,#73859f)}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".vjs-track-settings-controls button {background-color:#fff;background-image:linear-gradient(-180deg,#fff 88%,#73859f);color:#2b333f;cursor:pointer;border-radius:2px}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button",
+      "property": "background-image",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".vjs-track-settings-controls button {background-color:#fff;background-image:linear-gradient(-180deg,#fff 88%,#73859f);color:#2b333f;cursor:pointer;border-radius:2px}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button",
+      "property": "background-image",
+      "hex": "#73859F",
+      "rule_snippet": ".vjs-track-settings-controls button {background-color:#fff;background-image:linear-gradient(-180deg,#fff 88%,#73859f);color:#2b333f;cursor:pointer;border-radius:2px}"
+    },
+    {
+      "selector": ".vjs-track-settings-controls button",
+      "property": "color",
+      "hex": "#2B333F",
+      "rule_snippet": ".vjs-track-settings-controls button {background-color:#fff;background-image:linear-gradient(-180deg,#fff 88%,#73859f);color:#2b333f;cursor:pointer;border-radius:2px}"
+    },
+    {
+      "selector": ".cld-video-player .interaction-areas-container .vp-ia-item .vp-ia-area-marker .vp-ia-marker-main",
+      "property": "background-color",
+      "hex": "#FFFFFF",
+      "rule_snippet": ".cld-video-player .interaction-areas-container .vp-ia-item .vp-ia-area-marker .vp-ia-marker-main {background-color:#fff;border:2px solid;height:100%;width:100%}"
+    },
+    {
+      "selector": ".sxsw-lead-gen-dropdown>button",
+      "property": "background",
+      "hex": "#F2F2F2",
+      "rule_snippet": ".sxsw-lead-gen-dropdown>button {background:#f2f2f2;border:none}"
+    },
+    {
+      "selector": ".shadow-nav,.shadow-sm",
+      "property": "box-shadow",
+      "hex": "#00000000",
+      "rule_snippet": ".shadow-nav,.shadow-sm {box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}"
+    },
+    {
+      "selector": "#ketch-consent-banner button:hover,#ketch-banner button:hover",
+      "property": "background",
+      "hex": "#333333",
+      "rule_snippet": "#ketch-consent-banner button:hover,#ketch-banner button:hover {background:#333333!important;}"
+    },
+    {
+      "selector": "#ketch-consent-banner button:nth-of-type(3),#ketch-banner button:nth-of-type(3)",
+      "property": "color",
+      "hex": "#000000",
+      "rule_snippet": "#ketch-consent-banner button:nth-of-type(3),#ketch-banner button:nth-of-type(3) {margin:0 auto;padding:0!important;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;background:none!im"
+    },
+    {
+      "selector": "#ketch-consent-banner button:nth-of-type(3):hover,#ketch-banner button:nth-of-type(3):hover",
+      "property": "color",
+      "hex": "#606060",
+      "rule_snippet": "#ketch-consent-banner button:nth-of-type(3):hover,#ketch-banner button:nth-of-type(3):hover {background:none!important;color:#606060!important;}"
+    },
+    {
+      "selector": ".rivian-css-i5r634:link",
+      "property": "color",
+      "hex": "#151515",
+      "rule_snippet": ".rivian-css-i5r634:link {color:#151515;}"
+    }
+  ],
+  "frequency_candidates": [
+    {
+      "hex": "#FFFFFF",
+      "count": 70,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#000000",
+      "count": 43,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#00000000",
+      "count": 35,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#F2F2F2",
+      "count": 20,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#151515",
+      "count": 18,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#CBCBCB",
+      "count": 13,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#494949",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E6E5DF",
+      "count": 11,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#F6F6F6",
+      "count": 11,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#212121",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#636363",
+      "count": 10,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#73859F",
+      "count": 9,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#2B333F",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#8BA8BD",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#9FA1B8",
+      "count": 7,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#ECECEC",
+      "count": 7,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#BBB9AD",
+      "count": 6,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#FFAC00",
+      "count": 6,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#252826",
+      "count": 5,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#E84826",
+      "count": 5,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#0000001A",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#333333",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#5D767D",
+      "count": 4,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#D9D9D9",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#DCDCDC",
+      "count": 4,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#292929",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#3F4348",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#465243",
+      "count": 3,
+      "kind": "chromatic"
+    },
+    {
+      "hex": "#606060",
+      "count": 3,
+      "kind": "neutral"
+    },
+    {
+      "hex": "#BC9C8A",
+      "count": 3,
+      "kind": "chromatic"
+    }
+  ],
+  "summary": {
+    "total_candidates": 62,
+    "by_role": {
+      "chromatic": 10,
+      "neutral": 20,
+      "primary": 14,
+      "selector": 18
+    }
+  }
+}

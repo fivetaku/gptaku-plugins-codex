@@ -1,0 +1,101 @@
+{
+  "slug": "netflix",
+  "tiers": {
+    "util": [],
+    "semantic": [],
+    "action": [],
+    "component": [
+      {
+        "alias": "--wct--input--date-calendar-icon",
+        "references": [],
+        "terminal_hint": null
+      },
+      {
+        "alias": "--wct--input--date-text",
+        "references": [],
+        "terminal_hint": "rgb(255,255,255)"
+      }
+    ],
+    "core": [
+      {
+        "alias": "--wct--focus-ring--color",
+        "references": [],
+        "terminal_hint": "rgb(255,255,255)"
+      },
+      {
+        "alias": "--wct--input--date-text",
+        "references": [],
+        "terminal_hint": "rgb(255,255,255)"
+      },
+      {
+        "alias": "--wct--local-design--Button-Border",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0)"
+      },
+      {
+        "alias": "--wct--local-design--Button-BorderDisabled",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0)"
+      },
+      {
+        "alias": "--wct--local-design--Button-BorderHovered",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0)"
+      },
+      {
+        "alias": "--wct--local-design--Button-BorderPressed",
+        "references": [],
+        "terminal_hint": "rgba(0,0,0,0)"
+      },
+      {
+        "alias": "--wct--local-design--Button-Foreground",
+        "references": [],
+        "terminal_hint": "rgb(255,255,255)"
+      },
+      {
+        "alias": "--wct--local-design--Button-ForegroundDisabled",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.4)"
+      },
+      {
+        "alias": "--wct--local-design--Button-ForegroundPressed",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.7)"
+      },
+      {
+        "alias": "--wct--local-design--Button-Surface",
+        "references": [],
+        "terminal_hint": "rgba(128,128,128,0.4)"
+      },
+      {
+        "alias": "--wct--local-design--Button-SurfaceDisabled",
+        "references": [],
+        "terminal_hint": "rgba(128,128,128,0.2)"
+      },
+      {
+        "alias": "--wct--local-design--Button-SurfaceHovered",
+        "references": [],
+        "terminal_hint": "rgba(128,128,128,0.3)"
+      },
+      {
+        "alias": "--wct--local-design--Button-SurfacePressed",
+        "references": [],
+        "terminal_hint": "rgba(128,128,128,0.3)"
+      },
+      {
+        "alias": "--wct--local-design--Text-Foreground",
+        "references": [],
+        "terminal_hint": "rgba(255,255,255,0.5)"
+      }
+    ]
+  },
+  "stats": {
+    "tier_counts": {
+      "util": 0,
+      "semantic": 0,
+      "action": 0,
+      "component": 2,
+      "core": 14
+    }
+  }
+}

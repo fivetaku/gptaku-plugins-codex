@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nothing — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#000000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ramp--5{grid-template-columns:repeat(5,minmax(0,1fr));}
+  .ramp--7{grid-template-columns:repeat(7,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{display:grid;grid-template-columns:120px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .rad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{padding:24px;background:#111;border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;}
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-pane{display:none;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{background:var(--muted);font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;}
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.dd-grid,.qs__grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .rad-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Nothing</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#components"><span class="toc__num">07</span>컴포넌트</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">08</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">09</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/nothing/<br>design.md · report.ko.html<br>2026-04-13</div>
+  </aside>
+
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Nothing <span class="sub">— NType82 · Ndot</span></h1>
+      <p class="hero__sub">
+        nothing.tech가 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        극도의 흑백 이분법 + 커스텀 도트 매트릭스 폰트가 핵심.
+      </p>
+      <div class="hero__screenshot">
+        <img src="screenshots/hero-cropped.png" alt="nothing.tech hero 스크린샷">
+      </div>
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Nothing처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트</span>
+            <code>body {
+  font-family:
+    "NType82-Regular",
+    sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 다크 배경</span>
+            <code>:root {
+  --bg: <b>#000000</b>;
+  --fg: <b>#FFFFFF</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 샤프 버튼</span>
+            <code>/* radius: 0 — 각진 엣지 */
+.btn {
+  border-radius: 0;
+  border: 1px solid
+    <b>#FFFFFF</b>;
+  padding: 12px 28px;
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: 포인트 컬러 추가. Nothing의 정체성은 <b>순수 흑백 이분법</b>이다. 빨강이든 파랑이든 색상을 넣는 순간 Nothing 미니멀리즘의 전부가 무너진다.
+        </div>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">nothing.tech</div>
+          <div class="stat__hint">Next.js + Tailwind CSS</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">커스텀 폰트 3종</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">NType82</div>
+          <div class="stat__hint">+ Ndot · LatteraMonoLL</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono">#000000</div>
+          <div class="stat__hint">흑백 이분법 — 포인트 없음</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://nothing.tech</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Framework</span><span class="prov__v">Next.js + Tailwind CSS v3</span></div>
+        <div class="prov__row"><span class="prov__k">Custom Fonts</span><span class="prov__v">NType82-Regular, NType82-Headline, Ndot-Regular, LatteraMonoLL</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">N/A — Tailwind utility-first, CSS 변수 없음</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 커스텀 프로퍼티 직접 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">Nothing의 기술 스택 — 미니멀한 CSS 아키텍처.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">Next.js + Tailwind CSS v3 (utility-first)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">자체 미니멀 시스템 — 디자인 토큰 없음, 폰트 3종이 시스템</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT SYSTEM</div>
+          <div class="ts__body">자체 호스트 <code>NType82-Regular</code>, <code>Ndot-Regular</code>, <code>LatteraMonoLL</code> — Nothing 전용</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body">dark 기본 (<code>#000000</code> 배경) ↔ 흰 섹션 교차. 포인트 컬러 없음</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FOCUS RING</div>
+          <div class="ts__body">투명 outline + tw-ring — Tailwind focus-visible 패턴</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body">흑백 이분법 <code>#000000</code> + <code>#FFFFFF</code>. 어떤 포인트 컬러도 없음</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">Nothing의 폰트 시스템 — 3종 커스텀 폰트가 디자인 아이덴티티의 전부.</p>
+      <div class="type-sub">Font Stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Primary</span>
+          <span class="fs-card__v"><code>NType82-Regular</code> — 본문, UI 텍스트 (7회 사용)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Headline</span>
+          <span class="fs-card__v"><code>NType82-Headline</code> — 히어로, 대형 디스플레이</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Dot Matrix</span>
+          <span class="fs-card__v"><code>Ndot-Regular</code> — 레이블, 스펙 수치 (6회, weight 100)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Mono</span>
+          <span class="fs-card__v"><code>LatteraMonoLL</code> — 기술 스펙, 코드 (5회)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight system</span>
+          <span class="fs-card__v"><code>400</code> (normal) · <code>100</code> (Ndot 전용 thin)</span>
+        </div>
+      </div>
+      <div class="callout">
+        <b>도트 매트릭스 폰트 주의</b>: <code>Ndot-Regular</code>는 weight <code>100</code>으로 사용한다. 일반 weight로 사용하면 도트 패턴이 뭉개진다. Nothing의 레이블과 스펙 수치에서 이 폰트가 브랜드 개성을 만든다.
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">흑백 이분법 — 포인트 컬러 없음이 Nothing의 선언이다.</p>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Dark Theme</b> <span class="muted">-- 기본 테마</span></div>
+        <div class="ramp ramp--2">
+          <div class="sw sw--d" style="background:#000000"><span class="n">Background</span>#000000</div>
+          <div class="sw sw--d" style="background:#FFFFFF;color:#000"><span class="n">Foreground</span>#FFFFFF</div>
+        </div>
+      </div>
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutrals</b> <span class="muted">-- 보조 텍스트, 오버레이</span></div>
+        <div class="ramp ramp--5">
+          <div class="sw sw--d" style="background:#B1B3B3"><span class="n">Subtle</span>#B1B3B3</div>
+          <div class="sw sw--d" style="background:#9CA3AF"><span class="n">Muted</span>#9CA3AF</div>
+          <div class="sw sw--d" style="background:rgba(255,255,255,0.8)"><span class="n">fg-80</span>rgba(fff,.8)</div>
+          <div class="sw sw--d" style="background:rgba(255,255,255,0.05)"><span class="n">overlay</span>rgba(fff,.05)</div>
+          <div class="sw sw--l" style="background:#F4F4F4"><span class="n">Light bg</span>#F4F4F4</div>
+        </div>
+      </div>
+      <div class="callout">
+        <b>포인트 컬러 없음</b>: frequency 상위 23개 색상 중 chromatic 3개(#9CA3AF, #002F6C, #E5E7EB)는 모두 Tailwind 기본값이거나 보조 UI. Nothing은 브랜드 컬러를 의도적으로 배제한다.
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">Tailwind 기본 스케일 (4px 베이스).</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">2 (8px)</span><span class="val">8px</span><div class="bar" style="width:8%"></div></div>
+        <div class="space-row"><span class="tk">4 (16px)</span><span class="val">16px</span><div class="bar" style="width:16%"></div></div>
+        <div class="space-row"><span class="tk">6 (24px)</span><span class="val">24px</span><div class="bar" style="width:24%"></div></div>
+        <div class="space-row"><span class="tk">8 (32px)</span><span class="val">32px</span><div class="bar" style="width:32%"></div></div>
+        <div class="space-row"><span class="tk">12 (48px)</span><span class="val">48px</span><div class="bar" style="width:48%"></div></div>
+        <div class="space-row"><span class="tk">20 (80px)</span><span class="val">80px</span><div class="bar" style="width:80%"></div></div>
+        <div class="space-row"><span class="tk">32 (128px)</span><span class="val">128px</span><div class="bar" style="width:100%"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">Nothing은 라디우스를 쓰지 않는다. 각진 엣지가 하드웨어 미학.</p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:0"></div>
+          <div class="rad-card__n">Button</div>
+          <div class="rad-card__v">0px — sharp</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:0"></div>
+          <div class="rad-card__n">Card</div>
+          <div class="rad-card__v">0px — sharp</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:0"></div>
+          <div class="rad-card__n">Input</div>
+          <div class="rad-card__v">0px — sharp</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px"></div>
+          <div class="rad-card__n">Pill (rare)</div>
+          <div class="rad-card__v">999px — 드문 예외</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">07 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">Nothing의 핵심 UI 컴포넌트.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">btn-primary</span>
+          <span class="cmp-block__desc">흰 배경, 검정 텍스트 (다크 배경에서)</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:#fff;color:#000;border:1px solid #fff;border-radius:0;padding:12px 28px;font-size:14px;font-weight:400;letter-spacing:.02em;">Buy now</button>
+              <button style="background:#000;color:#fff;border:1px solid #fff;border-radius:0;padding:12px 28px;font-size:14px;font-weight:400;letter-spacing:.02em;">Ghost</button>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background: #FFFFFF</code><br>
+            <code>color: #000000</code><br>
+            <code>border: 1px solid #FFFFFF</code><br>
+            <code>border-radius: 0</code><br>
+            <code>padding: 12px 28px</code>
+            <span class="kr">hover: 반전 (bg #000, color #fff)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">dot-label</span>
+          <span class="cmp-block__desc">Ndot 도트 매트릭스 레이블</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <span style="font-size:12px;font-weight:100;color:#B1B3B3;letter-spacing:.08em;text-transform:uppercase;">PHONE (1) PRO ·  50MP CAMERA</span>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>font-family: Ndot-Regular</code><br>
+            <code>font-weight: 100</code><br>
+            <code>font-size: 11px–14px</code><br>
+            <code>letter-spacing: .08em</code>
+            <span class="kr">색상: #B1B3B3 (subtle gray)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">08 · CSS · Tailwind</div>
+      <h2 class="section__title">코드 내보내기</h2>
+      <p class="section__lede">바로 붙여넣을 수 있는 CSS 변수와 Tailwind 설정.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'pane-css')">CSS</button>
+          <button onclick="switchTab(this,'pane-tw')">Tailwind</button>
+        </div>
+        <div class="code-pane is-active" id="pane-css">
+          <pre><span class="c">/* Nothing Design System — Drop-in CSS */</span>
+<span class="k">:root</span> {
+  <span class="k">--color-bg</span>:       <span class="v">#000000</span>;
+  <span class="k">--color-fg</span>:       <span class="v">#FFFFFF</span>;
+  <span class="k">--color-fg-muted</span>: <span class="v">rgba(255,255,255,.8)</span>;
+  <span class="k">--color-subtle</span>:   <span class="v">#B1B3B3</span>;
+  <span class="k">--color-border</span>:   <span class="v">rgba(255,255,255,.15)</span>;
+  <span class="k">--color-light-bg</span>: <span class="v">#F4F4F4</span>;
+
+  <span class="k">--font-primary</span>:  <span class="v">"NType82-Regular", sans-serif</span>;
+  <span class="k">--font-headline</span>: <span class="v">"NType82-Headline", sans-serif</span>;
+  <span class="k">--font-dot</span>:      <span class="v">"Ndot-Regular", sans-serif</span>;
+  <span class="k">--font-mono</span>:     <span class="v">"LatteraMonoLL", sans-serif</span>;
+}
+
+<span class="k">body</span> {
+  <span class="k">font-family</span>: <span class="v">var(--font-primary)</span>;
+  <span class="k">font-weight</span>: <span class="v">400</span>;
+  <span class="k">background</span>: <span class="v">var(--color-bg)</span>;
+  <span class="k">color</span>: <span class="v">var(--color-fg)</span>;
+  <span class="k">-webkit-font-smoothing</span>: <span class="v">antialiased</span>;
+}</pre>
+        </div>
+        <div class="code-pane" id="pane-tw">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  darkMode: <span class="v">'class'</span>,
+  theme: {
+    extend: {
+      colors: {
+        nothing: {
+          black: <span class="v">'#000000'</span>,
+          white: <span class="v">'#FFFFFF'</span>,
+          gray:  <span class="v">'#B1B3B3'</span>,
+        },
+      },
+      fontFamily: {
+        ntype:    [<span class="v">'NType82-Regular'</span>, <span class="v">'sans-serif'</span>],
+        headline: [<span class="v">'NType82-Headline'</span>, <span class="v">'sans-serif'</span>],
+        ndot:     [<span class="v">'Ndot-Regular'</span>, <span class="v">'sans-serif'</span>],
+        lattera:  [<span class="v">'LatteraMonoLL'</span>, <span class="v">'sans-serif'</span>],
+      },
+      borderRadius: { DEFAULT: <span class="v">'0px'</span> },
+    },
+  },
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">09 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Nothing 디자인 시스템을 복제할 때 가장 중요한 규칙들.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li><b>흑백 이분법</b> — #000000 + #FFFFFF만</li>
+            <li>버튼 <b>border-radius: 0</b> — 각진 엣지 필수</li>
+            <li><b>Ndot weight 100</b> — 도트 폰트는 thin으로</li>
+            <li>거대한 헤드라인 + 작은 바디의 극적 대비</li>
+            <li>검정 섹션 ↔ 흰 섹션 교차로 리듬 만들기</li>
+            <li>스펙은 수치로만 — <b>"50MP"</b> not "50 megapixel"</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>어떤 포인트 컬러도 추가 — 흑백이 전부</li>
+            <li><code>border-radius</code> 사용 — sharp가 Nothing</li>
+            <li>그림자 효과 — flat, direct가 미학</li>
+            <li>화려한 전환 애니메이션 — 미니멀 모션</li>
+            <li>과도한 마케팅 카피 — 쿨하게 간결하게</li>
+            <li>Ndot을 weight 400으로 — 반드시 weight 100</li>
+          </ul>
+        </div>
+      </div>
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <span>오해</span><span>실제</span><span>설명</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">레드 포인트</span>
+          <span class="right">흑백만</span>
+          <span class="why">UI에 레드 없음. 순수 흑백 이분법</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">다크 테마만</span>
+          <span class="right">교차 사용</span>
+          <span class="why">검정 섹션 ↔ 흰 섹션 교차가 리듬</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">일반 고딕 대체</span>
+          <span class="right">Ndot 필수</span>
+          <span class="why">도트 매트릭스 폰트가 Nothing의 시그니처</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span>insane-design/nothing · 2026-04-13</span>
+      <span>CSS 파싱 기반 · AI 추론 없음</span>
+    </footer>
+  </main>
+</div>
+<script>
+function switchTab(btn, paneId) {
+  btn.closest('.code-export').querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  btn.closest('.code-export').querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  document.getElementById(paneId).classList.add('is-active');
+}
+</script>
+</body>
+</html>

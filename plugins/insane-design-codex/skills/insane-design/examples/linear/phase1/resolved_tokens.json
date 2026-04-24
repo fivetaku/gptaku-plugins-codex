@@ -1,0 +1,408 @@
+{
+  "slug": "linear",
+  "total_vars": 721,
+  "resolved_count": 355,
+  "unresolved_count": 366,
+  "samples": {
+    "--blink-duration": {
+      "raw": "1.2s",
+      "resolved": "1.2s",
+      "chain": [
+        "--blink-duration",
+        "1.2s"
+      ]
+    },
+    "--blink-timing": {
+      "raw": "step-end",
+      "resolved": null,
+      "chain": [
+        "--blink-timing",
+        "step-end"
+      ]
+    },
+    "--header-height": {
+      "raw": "65px",
+      "resolved": "65px",
+      "chain": [
+        "--header-height",
+        "65px"
+      ]
+    },
+    "--header-blur": {
+      "raw": "20px",
+      "resolved": "20px",
+      "chain": [
+        "--header-blur",
+        "20px"
+      ]
+    },
+    "--page-padding-inline": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--page-padding-inline",
+        "24px"
+      ]
+    },
+    "--page-padding-block": {
+      "raw": "64px",
+      "resolved": "64px",
+      "chain": [
+        "--page-padding-block",
+        "64px"
+      ]
+    },
+    "--page-padding-left": {
+      "raw": "max(env(safe-area-inset-left),var(--page-padding-inline))",
+      "resolved": null,
+      "chain": [
+        "--page-padding-left",
+        "max(env(safe-area-inset-left),var(--page-padding-inline))"
+      ]
+    },
+    "--page-padding-right": {
+      "raw": "max(env(safe-area-inset-right),var(--page-padding-inline))",
+      "resolved": null,
+      "chain": [
+        "--page-padding-right",
+        "max(env(safe-area-inset-right),var(--page-padding-inline))"
+      ]
+    },
+    "--page-max-width": {
+      "raw": "1024px",
+      "resolved": "1024px",
+      "chain": [
+        "--page-max-width",
+        "1024px"
+      ]
+    },
+    "--prose-max-width": {
+      "raw": "680px",
+      "resolved": "680px",
+      "chain": [
+        "--prose-max-width",
+        "680px"
+      ]
+    },
+    "--homepage-outer-padding": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--homepage-outer-padding",
+        "16px"
+      ]
+    },
+    "--homepage-max-width": {
+      "raw": "calc(1344px + var(--homepage-outer-padding) * 2)",
+      "resolved": null,
+      "chain": [
+        "--homepage-max-width",
+        "calc(1344px + var(--homepage-outer-padding) * 2)"
+      ]
+    },
+    "--homepage-padding-inset": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--homepage-padding-inset",
+        "8px"
+      ]
+    },
+    "--grid-columns": {
+      "raw": "4",
+      "resolved": "4",
+      "chain": [
+        "--grid-columns",
+        "4"
+      ]
+    },
+    "--page-inset": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--page-inset",
+        "32px"
+      ]
+    },
+    "--layer-max": {
+      "raw": "10000",
+      "resolved": "10000",
+      "chain": [
+        "--layer-max",
+        "10000"
+      ]
+    },
+    "--layer-debug": {
+      "raw": "5100",
+      "resolved": "5100",
+      "chain": [
+        "--layer-debug",
+        "5100"
+      ]
+    },
+    "--layer-skip-nav": {
+      "raw": "5000",
+      "resolved": "5000",
+      "chain": [
+        "--layer-skip-nav",
+        "5000"
+      ]
+    },
+    "--layer-context-menu": {
+      "raw": "1200",
+      "resolved": "1200",
+      "chain": [
+        "--layer-context-menu",
+        "1200"
+      ]
+    },
+    "--layer-tooltip": {
+      "raw": "1100",
+      "resolved": "1100",
+      "chain": [
+        "--layer-tooltip",
+        "1100"
+      ]
+    },
+    "--layer-toasts": {
+      "raw": "800",
+      "resolved": "800",
+      "chain": [
+        "--layer-toasts",
+        "800"
+      ]
+    },
+    "--layer-dialog": {
+      "raw": "700",
+      "resolved": "700",
+      "chain": [
+        "--layer-dialog",
+        "700"
+      ]
+    },
+    "--layer-dialog-overlay": {
+      "raw": "699",
+      "resolved": "699",
+      "chain": [
+        "--layer-dialog-overlay",
+        "699"
+      ]
+    },
+    "--layer-command-menu": {
+      "raw": "650",
+      "resolved": "650",
+      "chain": [
+        "--layer-command-menu",
+        "650"
+      ]
+    },
+    "--layer-popover": {
+      "raw": "600",
+      "resolved": "600",
+      "chain": [
+        "--layer-popover",
+        "600"
+      ]
+    },
+    "--layer-overlay": {
+      "raw": "500",
+      "resolved": "500",
+      "chain": [
+        "--layer-overlay",
+        "500"
+      ]
+    },
+    "--layer-header": {
+      "raw": "100",
+      "resolved": "100",
+      "chain": [
+        "--layer-header",
+        "100"
+      ]
+    },
+    "--layer-scrollbar": {
+      "raw": "75",
+      "resolved": "75",
+      "chain": [
+        "--layer-scrollbar",
+        "75"
+      ]
+    },
+    "--layer-footer": {
+      "raw": "50",
+      "resolved": "50",
+      "chain": [
+        "--layer-footer",
+        "50"
+      ]
+    },
+    "--layer-3": {
+      "raw": "3",
+      "resolved": "3",
+      "chain": [
+        "--layer-3",
+        "3"
+      ]
+    },
+    "--layer-2": {
+      "raw": "2",
+      "resolved": "2",
+      "chain": [
+        "--layer-2",
+        "2"
+      ]
+    },
+    "--layer-1": {
+      "raw": "1",
+      "resolved": "1",
+      "chain": [
+        "--layer-1",
+        "1"
+      ]
+    },
+    "--radius-4": {
+      "raw": "4px",
+      "resolved": "4px",
+      "chain": [
+        "--radius-4",
+        "4px"
+      ]
+    },
+    "--radius-6": {
+      "raw": "6px",
+      "resolved": "6px",
+      "chain": [
+        "--radius-6",
+        "6px"
+      ]
+    },
+    "--radius-8": {
+      "raw": "8px",
+      "resolved": "8px",
+      "chain": [
+        "--radius-8",
+        "8px"
+      ]
+    },
+    "--radius-12": {
+      "raw": "12px",
+      "resolved": "12px",
+      "chain": [
+        "--radius-12",
+        "12px"
+      ]
+    },
+    "--radius-16": {
+      "raw": "16px",
+      "resolved": "16px",
+      "chain": [
+        "--radius-16",
+        "16px"
+      ]
+    },
+    "--radius-24": {
+      "raw": "24px",
+      "resolved": "24px",
+      "chain": [
+        "--radius-24",
+        "24px"
+      ]
+    },
+    "--radius-32": {
+      "raw": "32px",
+      "resolved": "32px",
+      "chain": [
+        "--radius-32",
+        "32px"
+      ]
+    },
+    "--radius-rounded": {
+      "raw": "9999px",
+      "resolved": "9999px",
+      "chain": [
+        "--radius-rounded",
+        "9999px"
+      ]
+    },
+    "--radius-circle": {
+      "raw": "50%",
+      "resolved": "50%",
+      "chain": [
+        "--radius-circle",
+        "50%"
+      ]
+    },
+    "--border-hairline": {
+      "raw": "0.5px",
+      "resolved": "0.5px",
+      "chain": [
+        "--border-hairline",
+        "0.5px"
+      ]
+    },
+    "--font-serif-display": {
+      "raw": "\"Tiempos Headline\",ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+      "resolved": null,
+      "chain": [
+        "--font-serif-display",
+        "\"Tiempos Headline\",ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif"
+      ]
+    },
+    "--font-monospace": {
+      "raw": "\"Berkeley Mono\",ui-monospace,\"SF Mono\",\"Menlo\",monospace",
+      "resolved": null,
+      "chain": [
+        "--font-monospace",
+        "\"Berkeley Mono\",ui-monospace,\"SF Mono\",\"Menlo\",monospace"
+      ]
+    },
+    "--font-regular": {
+      "raw": "\"Inter Variable\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Open Sans\",\"Helvetica Neue\",sans-serif",
+      "resolved": null,
+      "chain": [
+        "--font-regular",
+        "\"Inter Variable\",\"SF Pro Display\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Open Sans\",\"Helvetica Neue\",sans-serif"
+      ]
+    },
+    "--font-emoji": {
+      "raw": "\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Segoe UI\",\"Twemoji Mozilla\",\"Noto Color Emoji\",\"Android Emoji\"",
+      "resolved": null,
+      "chain": [
+        "--font-emoji",
+        "\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Segoe UI\",\"Twemoji Mozilla\",\"Noto Color Emoji\",\"Android Emoji\""
+      ]
+    },
+    "--font-weight-light": {
+      "raw": "300",
+      "resolved": "300",
+      "chain": [
+        "--font-weight-light",
+        "300"
+      ]
+    },
+    "--font-weight-normal": {
+      "raw": "400",
+      "resolved": "400",
+      "chain": [
+        "--font-weight-normal",
+        "400"
+      ]
+    },
+    "--font-weight-medium": {
+      "raw": "510",
+      "resolved": "510",
+      "chain": [
+        "--font-weight-medium",
+        "510"
+      ]
+    },
+    "--font-weight-semibold": {
+      "raw": "590",
+      "resolved": "590",
+      "chain": [
+        "--font-weight-semibold",
+        "590"
+      ]
+    }
+  }
+}

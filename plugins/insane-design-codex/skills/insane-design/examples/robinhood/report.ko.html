@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Robinhood — Design System Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root {
+    --font-sans: "Pretendard Variable", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:#fafafa; --fg:#09090b; --card:#fff;
+    --muted:#f4f4f5; --muted-fg:#71717a; --subtle:#52525b;
+    --border:#e4e4e7; --border-str:#d4d4d8;
+    --accent:#18181b;
+    --radius:.5rem; --radius-lg:.75rem;
+    --brand-color:#CCFF00;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:32px;}
+  body{font-family:var(--font-sans);font-feature-settings:"ss01" 1,"ss02" 1;font-size:14px;font-weight:400;line-height:1.6;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;word-break:keep-all;overflow-wrap:break-word;}
+  ::selection{background:var(--accent);color:#fafafa;}
+  a{color:inherit;text-decoration:none;}
+  code,kbd,samp{font-family:var(--font-mono);font-size:.85em;}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+  .layout{display:grid;grid-template-columns:260px minmax(0,1fr);max-width:1440px;margin:0 auto;}
+  .toc{position:sticky;top:0;align-self:start;height:100vh;padding:28px 24px 28px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:22px;overflow-y:auto;}
+  .toc__brand{padding-bottom:18px;border-bottom:1px solid var(--border);}
+  .toc__brand-name{font-size:14px;font-weight:600;letter-spacing:-.01em;}
+  .toc__brand-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-top:4px;}
+  .toc__group{display:flex;flex-direction:column;gap:2px;}
+  .toc__group-label{font-family:var(--font-mono);font-size:10px;color:var(--border-str);text-transform:uppercase;letter-spacing:.1em;padding:0 10px;margin-bottom:4px;}
+  .toc__list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+  .toc__list a{display:grid;grid-template-columns:26px 1fr;align-items:center;padding:6px 10px;font-size:13px;color:var(--muted-fg);border-radius:var(--radius);transition:background 140ms,color 140ms;}
+  .toc__list a:hover{background:var(--muted);color:var(--fg);}
+  .toc__num{font-family:var(--font-mono);font-size:10px;color:var(--border-str);}
+  .toc__foot{margin-top:auto;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);line-height:1.6;}
+
+  .main{min-width:0;}
+  section{padding:72px 64px;max-width:1040px;border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  .section__num{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);margin-bottom:10px;}
+  .section__title{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin-bottom:12px;}
+  .section__lede{font-size:15px;color:var(--subtle);max-width:720px;line-height:1.7;margin-bottom:40px;}
+
+  .hero{padding:80px 64px 64px;border-bottom:1px solid var(--border);}
+  .hero__eye{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--muted);border:1px solid var(--border);border-radius:999px;font-family:var(--font-mono);font-size:11px;color:var(--subtle);margin-bottom:24px;}
+  .hero__eye .dot{width:6px;height:6px;border-radius:99px;background:var(--brand-color);}
+  .hero__title{font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;max-width:780px;}
+  .hero__title .sub{color:var(--muted-fg);font-weight:400;}
+  .hero__sub{font-size:16px;color:var(--subtle);line-height:1.7;max-width:680px;margin-bottom:32px;}
+  .hero__screenshot{margin-bottom:32px;max-width:880px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);}
+  .hero__screenshot img{width:100%;height:auto;display:block;}
+
+  .qs{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 32px;max-width:880px;margin-top:8px;}
+  .qs__head{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--border);}
+  .qs__head-label{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;}
+  .qs__head-title{font-size:15px;font-weight:600;}
+  .qs__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .qs__step{background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:11px;line-height:1.55;border:1px solid #1f2023;}
+  .qs__step-label{color:#7d8ba4;font-size:10px;letter-spacing:.06em;text-transform:uppercase;}
+  .qs__step code{color:#f7f8f8;font-size:11px;}
+  .qs__step b{color:#c3d3ff;font-weight:500;}
+  .qs__warn{margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #dc2626;border-radius:var(--radius);font-size:13px;color:#991b1b;line-height:1.6;}
+  .qs__warn b{color:#7f1d1d;font-weight:600;}
+  .qs__warn code{background:#fee2e2;padding:1px 6px;border-radius:3px;font-size:12px;}
+
+  .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:880px;margin-top:32px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;}
+  .stat{padding:20px 24px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .stat__val{font-size:18px;font-weight:600;letter-spacing:-.01em;}
+  .stat__val--mono{font-family:var(--font-mono);font-size:15px;}
+  .stat__hint{font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4;}
+
+  .prov{border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;max-width:820px;}
+  .prov__row{display:grid;grid-template-columns:180px 1fr;padding:14px 24px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .prov__row:last-child{border-bottom:none;}
+  .prov__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .prov__v code{font-size:12px;padding:2px 6px;background:var(--muted);border-radius:4px;}
+
+  .ts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:940px;}
+  .ts__item{padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);}
+  .ts__head{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+  .ts__body{font-size:14px;line-height:1.7;}
+  .ts__body code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .fs-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;max-width:820px;margin-bottom:24px;}
+  .fs-card__row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .fs-card__row:last-child{border-bottom:none;padding-bottom:0;}
+  .fs-card__row:first-child{padding-top:0;}
+  .fs-card__k{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .fs-card__v code{background:var(--muted);padding:1px 6px;border-radius:4px;font-size:12px;}
+  .fs-card__v b{font-weight:600;}
+
+  .type-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px;}
+  .type-row{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:baseline;padding:20px 24px;border-bottom:1px solid var(--border);}
+  .type-row:last-child{border-bottom:none;}
+  .type-row__s{font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--fg);}
+  .type-row__spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.6;}
+  .type-row__spec .tk{color:var(--fg);display:block;margin-bottom:2px;}
+  .type-row__spec b{color:var(--fg);font-weight:600;}
+
+  .type-sub{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+
+  .callout{margin-top:16px;padding:16px 20px;background:var(--muted);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:var(--radius);font-size:13px;color:var(--subtle);line-height:1.75;max-width:820px;}
+  .callout b{color:var(--fg);font-weight:600;}
+  .callout code{background:var(--card);padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border);}
+
+  .ramp-group{margin-bottom:28px;}
+  .ramp-label{font-family:var(--font-mono);font-size:11px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}
+  .ramp-label b{color:var(--fg);font-weight:600;}
+  .ramp-label .muted{color:var(--muted-fg);font-family:var(--font-sans);}
+  .ramp{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .ramp--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .ramp--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .sw{aspect-ratio:1/2.2;display:flex;flex-direction:column;justify-content:flex-end;padding:8px 6px;font-family:var(--font-mono);font-size:9px;line-height:1.3;transition:transform 160ms;position:relative;cursor:default;}
+  .sw:hover{transform:scale(1.06);z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.12);}
+  .sw--l{color:#09090b;}
+  .sw--d{color:#fff;}
+  .sw .n{opacity:.7;margin-bottom:2px;}
+  .sw.is-anchor::after{content:"★";position:absolute;top:6px;right:6px;font-size:9px;}
+
+  .space-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .space-row{display:grid;grid-template-columns:180px 70px 1fr;gap:16px;padding:8px 20px;border-bottom:1px solid var(--border);align-items:center;font-family:var(--font-mono);font-size:11px;}
+  .space-row:last-child{border-bottom:none;}
+  .space-row .tk{color:var(--fg);}
+  .space-row .val{color:var(--muted-fg);text-align:right;}
+  .space-row .bar{height:8px;background:var(--accent);border-radius:1px;}
+
+  .rad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .rad-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .rad-box{width:100%;aspect-ratio:1;background:var(--muted);border:1px solid var(--border-str);}
+  .rad-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .rad-card__v{font-size:10px;color:var(--muted-fg);text-align:center;line-height:1.4;}
+  .rad-card__v .px{font-family:var(--font-mono);}
+
+  .sh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:16px;}
+  .sh-card{background:var(--card);padding:24px 24px 20px;border-radius:var(--radius-lg);border:1px solid var(--border);min-height:150px;display:flex;flex-direction:column;justify-content:space-between;}
+  .sh-card__n{font-family:var(--font-mono);font-size:11px;font-weight:500;}
+  .sh-card__d{font-size:13px;color:var(--muted-fg);margin-top:4px;margin-bottom:10px;line-height:1.6;}
+  .sh-card__v{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+
+  .motion-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:820px;}
+  .motion-row{display:grid;grid-template-columns:220px 120px 1fr;gap:20px;padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;align-items:center;}
+  .motion-row:last-child{border-bottom:none;}
+  .motion-row .pt{font-family:var(--font-mono);font-size:11px;color:var(--fg);}
+  .motion-row .val{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .motion-row .use{color:var(--subtle);line-height:1.55;}
+
+  .lp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .lp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .lp-card h3{font-size:13px;font-weight:600;margin-bottom:12px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted-fg);}
+  .lp-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--subtle);line-height:1.6;}
+  .lp-card ul li{padding-left:14px;position:relative;}
+  .lp-card ul li::before{content:"·";position:absolute;left:2px;color:var(--muted-fg);font-weight:700;}
+  .lp-card ul li b{color:var(--fg);font-weight:600;}
+  .lp-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;}
+
+  .cmp-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:12px;}
+  .cmp-block__head{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+  .cmp-block__name{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--fg);}
+  .cmp-block__desc{font-size:12px;color:var(--muted-fg);}
+  .cmp-block__body{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:32px;align-items:start;}
+  .cmp-demo{padding:24px;background:#110E08;border-radius:var(--radius);display:flex;flex-wrap:wrap;gap:12px;align-items:center;min-height:88px;}
+  .cmp-spec{font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);line-height:1.8;}
+  .cmp-spec code{color:var(--fg);font-size:11px;}
+  .cmp-spec .kr{font-family:var(--font-sans);display:block;margin-top:8px;color:var(--subtle);font-size:12px;line-height:1.55;}
+  .cmp-code{margin-top:14px;background:#08090a;color:#f7f8f8;border-radius:var(--radius);padding:14px 18px;font-family:var(--font-mono);font-size:11px;line-height:1.65;overflow-x:auto;border:1px solid #1f2023;}
+
+  .voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .voice-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px;}
+  .voice-card__label{font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .voice-card__rule{font-size:13px;color:var(--subtle);line-height:1.6;margin-bottom:12px;}
+  .voice-card__ex{padding:14px 16px;background:#110E08;border-radius:var(--radius);font-family:"SF Pro Display",-apple-system,sans-serif;font-weight:300;color:#FFFFFF;font-size:15px;line-height:1.5;border-left:2px solid var(--brand-color);}
+
+  .code-export{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;max-width:900px;}
+  .code-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:var(--muted);}
+  .code-tabs button{padding:12px 18px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;}
+  .code-tabs button.is-active{color:var(--fg);background:var(--card);border-bottom-color:var(--accent);}
+  .code-copy{margin-left:auto;padding:12px 18px;font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);}
+  .code-pane{display:none;padding:0;}
+  .code-pane.is-active{display:block;}
+  .code-pane pre{background:#08090a;color:#f7f8f8;padding:24px 28px;font-family:var(--font-mono);font-size:12px;line-height:1.65;overflow-x:auto;max-height:560px;margin:0;}
+  .code-pane .k{color:#92adff;}
+  .code-pane .v{color:#f7f8f8;}
+  .code-pane .c{color:#64748d;font-style:italic;}
+
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;}
+  .dd-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;}
+  .dd-card h3{font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;}
+  .dd-card--do h3{background:#dcfce7;color:#166534;}
+  .dd-card--dont h3{background:#fee2e2;color:#991b1b;}
+  .dd-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .dd-card ul li{font-size:13px;line-height:1.7;color:var(--subtle);padding-left:20px;position:relative;}
+  .dd-card ul li::before{position:absolute;left:0;top:3px;font-family:var(--font-mono);font-size:11px;}
+  .dd-card--do ul li::before{content:"✓";color:#16a34a;}
+  .dd-card--dont ul li::before{content:"✗";color:#dc2626;}
+  .dd-card ul li code{background:var(--muted);padding:1px 5px;border-radius:3px;font-size:11px;font-family:var(--font-mono);}
+  .dd-card ul li b{color:var(--fg);font-weight:600;}
+
+  .myth-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+  .myth-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:center;font-size:12px;}
+  .myth-row:last-child{border-bottom:none;}
+  .myth-row--head{background:var(--muted);font-family:var(--font-mono);font-size:10px;color:var(--muted-fg);text-transform:uppercase;letter-spacing:.06em;padding:10px 20px;}
+  .myth-row--head .kr{font-family:var(--font-sans);text-transform:none;letter-spacing:0;font-size:11px;}
+  .myth-row .wrong{font-family:var(--font-mono);color:#dc2626;text-decoration:line-through;text-decoration-color:rgba(220,38,38,.4);}
+  .myth-row .right{font-family:var(--font-mono);color:#16a34a;}
+  .myth-row .why{color:var(--subtle);line-height:1.65;}
+
+  .rfoot{padding:40px 64px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted-fg);}
+  .rfoot .kr{font-family:var(--font-sans);font-size:12px;}
+
+  @media (max-width:1024px){
+    .layout{grid-template-columns:1fr;}
+    .toc{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:24px 32px;}
+    .hero,section,.rfoot{padding-left:32px;padding-right:32px;}
+    .cmp-block__body,.ts,.lp-grid,.voice-grid,.qs__grid{grid-template-columns:1fr;}
+    .hero__stats{grid-template-columns:1fr 1fr;}
+    .stat{border-right:none;border-bottom:1px solid var(--border);}
+    .dd-grid{grid-template-columns:1fr;}
+    .rad-grid{grid-template-columns:repeat(2,1fr);}
+    .sh-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="toc">
+    <div class="toc__brand">
+      <div class="toc__brand-name">Robinhood</div>
+      <div class="toc__brand-sub">Design System Report</div>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Overview</div>
+      <ul class="toc__list">
+        <li><a href="#hero"><span class="toc__num">00</span>한눈에 보기</a></li>
+        <li><a href="#provenance"><span class="toc__num">01</span>출처와 수집 기준</a></li>
+        <li><a href="#stack"><span class="toc__num">02</span>테크 스택</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Foundations</div>
+      <ul class="toc__list">
+        <li><a href="#typography"><span class="toc__num">03</span>타이포그래피</a></li>
+        <li><a href="#colors"><span class="toc__num">04</span>컬러</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Tokens</div>
+      <ul class="toc__list">
+        <li><a href="#spacing"><span class="toc__num">05</span>스페이싱</a></li>
+        <li><a href="#radius"><span class="toc__num">06</span>라디우스</a></li>
+        <li><a href="#shadows"><span class="toc__num">07</span>섀도우</a></li>
+        <li><a href="#motion"><span class="toc__num">08</span>모션</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Patterns</div>
+      <ul class="toc__list">
+        <li><a href="#layout"><span class="toc__num">09</span>레이아웃 패턴</a></li>
+        <li><a href="#components"><span class="toc__num">10</span>컴포넌트</a></li>
+        <li><a href="#voice"><span class="toc__num">11</span>라이팅 원칙</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Code</div>
+      <ul class="toc__list">
+        <li><a href="#export"><span class="toc__num">12</span>CSS · Tailwind</a></li>
+      </ul>
+    </div>
+    <div class="toc__group">
+      <div class="toc__group-label">Rules</div>
+      <ul class="toc__list">
+        <li><a href="#verdict"><span class="toc__num">13</span>Do / Don't</a></li>
+      </ul>
+    </div>
+    <div class="toc__foot">insane-design/robinhood/<br>design.md<br>2026-04-13</div>
+  </aside>
+
+  <main class="main">
+
+    <section id="hero" class="hero">
+      <div class="hero__eye"><span class="dot"></span>Design System Report</div>
+      <h1 class="hero__title">Robinhood <span class="sub">— Capsule DS</span></h1>
+      <p class="hero__sub">
+        https://robinhood.com 이 실제로 서빙하는 CSS에서 직접 뽑은 디자인 토큰·타이포그래피·컴포넌트 스펙.
+        모든 값은 CSS 주파수 파싱 결과이고, AI 추론이나 추측은 섞이지 않았다.
+      </p>
+
+      <div class="hero__screenshot">
+        <img src="phase1/hero-cropped.png" alt="robinhood.com hero — 실제 렌더링된 홈페이지 스크린샷">
+      </div>
+
+      <div class="qs">
+        <div class="qs__head">
+          <span class="qs__head-label">Quick Start</span>
+          <span class="qs__head-title">5분 안에 Robinhood처럼 만들기 — 3가지만 하면 80%</span>
+        </div>
+        <div class="qs__grid">
+          <div class="qs__step">
+            <span class="qs__step-label">1 · 폰트 + weight 400</span>
+            <code>body {
+  font-family: 'Capsule Sans Text',
+    Phonic, Helvetica, sans-serif;
+  font-weight: 400;
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">2 · 배경 + 텍스트</span>
+            <code>:root {
+  --bg: <b>#110E08</b>;  /* 다크 브라운 */
+  --fg: <b>#FFFFFF</b>;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+}</code>
+          </div>
+          <div class="qs__step">
+            <span class="qs__step-label">3 · 네온 옐로우-그린</span>
+            <code>:root {
+  --brand: <b>#CCFF00</b>;
+}
+
+/* CTA 버튼 */
+.btn {
+  background: <b>#CCFF00</b>;
+  color: <b>#110E08</b>;  /* 다크 텍스트 */
+}</code>
+          </div>
+        </div>
+        <div class="qs__warn">
+          <b>절대 하지 말아야 할 것 하나</b>: <code>#CCFF00</code>을 흰 배경에서 사용하는 것. 다크 브라운 <code>#110E08</code> 배경 위에서만 네온이 제대로 발광한다. 흰 배경에서는 전혀 다른 브랜드가 된다.
+        </div>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <div class="stat__label">Source</div>
+          <div class="stat__val stat__val--mono">robinhood.com</div>
+          <div class="stat__hint">Next.js / React + Emotion</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Fetched</div>
+          <div class="stat__val">2026.04.13</div>
+          <div class="stat__hint">Capsule DS (내부 추정)</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Primary Font</div>
+          <div class="stat__val stat__val--mono">Phonic</div>
+          <div class="stat__hint">weight normal = 400</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">Brand</div>
+          <div class="stat__val stat__val--mono" style="color:#CCFF00;">#CCFF00</div>
+          <div class="stat__hint">주파수 17회 (유일 chromatic)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="provenance">
+      <div class="section__num">01 · Provenance</div>
+      <h2 class="section__title">출처와 수집 기준</h2>
+      <p class="section__lede">URL · fetch 시점 · 파싱 방식까지 모두 CSS 번들에서 직접 뽑은 값이다.</p>
+      <div class="prov">
+        <div class="prov__row"><span class="prov__k">Source URL</span><span class="prov__v"><code>https://robinhood.com</code></span></div>
+        <div class="prov__row"><span class="prov__k">Fetched</span><span class="prov__v">2026-04-13</span></div>
+        <div class="prov__row"><span class="prov__k">Extractor</span><span class="prov__v">curl + Chrome UA</span></div>
+        <div class="prov__row"><span class="prov__k">CSS files</span><span class="prov__v">Emotion CSS-in-JS 해시 클래스 기반 다수</span></div>
+        <div class="prov__row"><span class="prov__k">Token prefix</span><span class="prov__v">N/A — CSS 커스텀 프로퍼티 미사용, Emotion 인라인 해시</span></div>
+        <div class="prov__row"><span class="prov__k">Method</span><span class="prov__v">CSS 주파수 파싱 · AI 추론 없음</span></div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="section__num">02 · Tech Stack</div>
+      <h2 class="section__title">테크 스택</h2>
+      <p class="section__lede">프레임워크, 디자인 시스템, CSS 아키텍처, 테마, 폰트 로딩 방식.</p>
+      <div class="ts">
+        <div class="ts__item">
+          <div class="ts__head">FRAMEWORK</div>
+          <div class="ts__body">Next.js / React (Emotion CSS-in-JS)</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DESIGN SYSTEM</div>
+          <div class="ts__body">Capsule Design System (내부 추정) — Capsule Sans 폰트 패밀리 사용</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CSS ARCHITECTURE</div>
+          <div class="ts__body">Emotion CSS-in-JS 해시 클래스 (<code>.css-wtcfxq</code> 등), 커스텀 프로퍼티 미사용</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">DEFAULT THEME</div>
+          <div class="ts__body">dark — 다크 브라운 <code>#110E08</code>, 네온 옐로우 <code>#CCFF00</code> CTA</div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">FONT LOADING</div>
+          <div class="ts__body">자체 호스트 <code>Phonic</code>, <code>Capsule Sans Text/Display</code>, <code>Nib Pro Display</code></div>
+        </div>
+        <div class="ts__item">
+          <div class="ts__head">CANONICAL ANCHOR</div>
+          <div class="ts__body"><code>#CCFF00</code> — CSS 주파수 17회, 유일한 고채도 chromatic 값. 다크 배경 위 네온 CTA.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <div class="section__num">03 · Typography</div>
+      <h2 class="section__title">타이포그래피</h2>
+      <p class="section__lede">4개 커스텀 폰트로 구성된 Capsule 폰트 패밀리 — 브랜드, 본문, 디스플레이, 모노.</p>
+
+      <div class="type-sub">Font stack</div>
+      <div class="fs-card">
+        <div class="fs-card__row">
+          <span class="fs-card__k">Brand UI font</span>
+          <span class="fs-card__v"><code>Phonic</code> (18회 — 브랜드 전용 커스텀)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Body font</span>
+          <span class="fs-card__v"><code>Capsule Sans Text</code> (9회 — UI 본문)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Display font</span>
+          <span class="fs-card__v"><code>Nib Pro Display</code> (8회) + <code>Capsule Sans Display</code> (4회)</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Mono font</span>
+          <span class="fs-card__v"><code>Capsule Sans Text Mono</code> — 가격, 데이터</span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight system</span>
+          <span class="fs-card__v"><code>300</code> · <code>400</code> · <code>500</code> · <code>600</code> · <code>700</code></span>
+        </div>
+        <div class="fs-card__row">
+          <span class="fs-card__k">Weight normal</span>
+          <span class="fs-card__v"><b>400</b> (dominant: 66회)</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>Robinhood 타이포 특이점</b>: 히어로 대형 타이틀에 <code>Nib Pro Display</code> (serif계) weight 400 — 가늘고 우아한 serif로 투자 브랜드의 프리미엄 감성. 굵은 sans-serif로 바꾸면 즉시 다른 느낌이 된다.
+      </div>
+
+      <div class="type-sub" style="margin-top:32px;">Typography scale</div>
+      <div class="type-table">
+        <div class="type-row">
+          <div><div class="type-row__s" style="font-size:clamp(28px,4vw,52px);font-weight:400;letter-spacing:-.01em;line-height:1.1;">Investing for Everyone.</div></div>
+          <div class="type-row__spec"><span class="tk">Hero Display</span><b>clamp(48px, 8vw, 96px)</b><br>weight: 400 · Nib Pro Display</div>
+        </div>
+        <div class="type-row">
+          <div><div class="type-row__s" style="font-size:28px;font-weight:400;">Commission-free trading</div></div>
+          <div class="type-row__spec"><span class="tk">Section Heading</span><b>28px–40px</b><br>weight: 400–500 · Phonic</div>
+        </div>
+        <div class="type-row">
+          <div><div class="type-row__s" style="font-size:18px;font-weight:500;">Apple Inc.</div></div>
+          <div class="type-row__spec"><span class="tk">Card Title</span><b>16px–20px</b><br>weight: 500 · Capsule Sans Text</div>
+        </div>
+        <div class="type-row">
+          <div><div class="type-row__s" style="font-size:15px;font-weight:400;line-height:1.65;">Trade stocks, ETFs, options, and crypto with no commission.</div></div>
+          <div class="type-row__spec"><span class="tk">Body</span><b>14px–16px</b><br>weight: 400 · Capsule Sans Text</div>
+        </div>
+        <div class="type-row">
+          <div><div class="type-row__s" style="font-size:28px;font-weight:400;color:#CCFF00;background:#110E08;padding:8px 12px;border-radius:4px;display:inline-block;">$182.43 <span style="font-size:14px;color:#aaa;">+2.4%</span></div></div>
+          <div class="type-row__spec"><span class="tk">Data / Price</span><b>20px–32px</b><br>weight: 400 · Capsule Sans Text Mono</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="colors">
+      <div class="section__num">04 · Colors</div>
+      <h2 class="section__title">컬러</h2>
+      <p class="section__lede">CSS 주파수에서 파싱한 값만 수록. #CCFF00이 유일한 고채도 chromatic 값이다.</p>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Brand Neon</b> <span class="muted">— #CCFF00 (17회) — 다크 배경 위에서만 사용</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--l is-anchor" style="background:#CCFF00;">
+            <span class="n">Brand CTA</span>
+            #CCFF00
+          </div>
+          <div class="sw sw--l" style="background:#D9FF33;">
+            <span class="n">hover</span>
+            #D9FF33
+          </div>
+          <div class="sw sw--l" style="background:#B8E600;">
+            <span class="n">active/press</span>
+            #B8E600
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Dark Background</b> <span class="muted">— 브랜드 배경 컬러</span></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d" style="background:#110E08;">
+            <span class="n">메인 배경</span>
+            #110E08
+          </div>
+          <div class="sw sw--d" style="background:#1C180D;">
+            <span class="n">카드 배경</span>
+            #1C180D
+          </div>
+          <div class="sw sw--d" style="background:#35322D;">
+            <span class="n">보조 다크</span>
+            #35322D
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp-group">
+        <div class="ramp-label"><b>Neutrals</b></div>
+        <div class="ramp ramp--3">
+          <div class="sw sw--d" style="background:#FFFFFF;border:none;">
+            <span class="n" style="color:#888;">텍스트·밝은 배경</span>
+            <span style="color:#333;">#FFFFFF</span>
+          </div>
+          <div class="sw sw--d" style="background:#888784;">
+            <span class="n">보조 텍스트</span>
+            #888784
+          </div>
+          <div class="sw sw--d" style="background:#4D4A46;">
+            <span class="n">구분선·보더</span>
+            #4D4A46
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <b>네온의 컨텍스트 의존성</b>: <code>#CCFF00</code>은 다크 브라운 <code>#110E08</code> 배경 위에서만 "네온 발광" 효과가 살아난다. 흰 배경에서는 형광 노란색처럼 보여 브랜드 파워가 완전히 사라진다.
+      </div>
+    </section>
+
+    <section id="spacing">
+      <div class="section__num">05 · Spacing</div>
+      <h2 class="section__title">스페이싱</h2>
+      <p class="section__lede">다크 테마 투자 앱의 레이아웃 리듬.</p>
+      <div class="space-table">
+        <div class="space-row"><span class="tk">xs</span><span class="val">4px</span><div class="bar" style="width:4px;"></div></div>
+        <div class="space-row"><span class="tk">sm</span><span class="val">8px</span><div class="bar" style="width:8px;"></div></div>
+        <div class="space-row"><span class="tk">md</span><span class="val">16px</span><div class="bar" style="width:16px;"></div></div>
+        <div class="space-row"><span class="tk">lg</span><span class="val">24px</span><div class="bar" style="width:24px;"></div></div>
+        <div class="space-row"><span class="tk">xl</span><span class="val">40px</span><div class="bar" style="width:40px;"></div></div>
+        <div class="space-row"><span class="tk">2xl</span><span class="val">64px</span><div class="bar" style="width:64px;"></div></div>
+        <div class="space-row"><span class="tk">3xl</span><span class="val">96px</span><div class="bar" style="width:96px;"></div></div>
+      </div>
+    </section>
+
+    <section id="radius">
+      <div class="section__num">06 · Radius</div>
+      <h2 class="section__title">라디우스</h2>
+      <p class="section__lede">버튼은 pill, 카드는 부드럽게 — 투자 앱의 친근한 모던 언어.</p>
+      <div class="rad-grid">
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px;"></div>
+          <div class="rad-card__n">Button</div>
+          <div class="rad-card__v"><span class="px">999px</span><br>pill</div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:16px;"></div>
+          <div class="rad-card__n">Card</div>
+          <div class="rad-card__v"><span class="px">12px–16px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:8px;"></div>
+          <div class="rad-card__n">Input</div>
+          <div class="rad-card__v"><span class="px">8px</span></div>
+        </div>
+        <div class="rad-card">
+          <div class="rad-box" style="border-radius:999px;"></div>
+          <div class="rad-card__n">Badge</div>
+          <div class="rad-card__v"><span class="px">999px</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="shadows">
+      <div class="section__num">07 · Shadows</div>
+      <h2 class="section__title">섀도우</h2>
+      <p class="section__lede">다크 배경 기반 — 불투명도 높은 다크 섀도우.</p>
+      <div class="sh-grid">
+        <div class="sh-card" style="box-shadow:0 4px 24px rgba(0,0,0,.4);">
+          <div>
+            <div class="sh-card__n">Card</div>
+            <div class="sh-card__d">다크 배경 위 카드 elevation</div>
+          </div>
+          <div class="sh-card__v">0 4px 24px rgba(0,0,0,.4)</div>
+        </div>
+        <div class="sh-card" style="box-shadow:0 8px 48px rgba(0,0,0,.6);">
+          <div>
+            <div class="sh-card__n">Modal</div>
+            <div class="sh-card__d">모달 오버레이 강한 섀도우</div>
+          </div>
+          <div class="sh-card__v">0 8px 48px rgba(0,0,0,.6)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motion">
+      <div class="section__num">08 · Motion</div>
+      <h2 class="section__title">모션</h2>
+      <p class="section__lede">반응적이고 즉각적인 트랜지션 — 실시간 주가 데이터의 시각화.</p>
+      <div class="motion-table">
+        <div class="motion-row"><span class="pt">button-hover</span><span class="val">180ms / ease</span><span class="use">CTA 즉각 반응</span></div>
+        <div class="motion-row"><span class="pt">card-hover</span><span class="val">200ms / ease-out</span><span class="use">주식 카드 elevation</span></div>
+        <div class="motion-row"><span class="pt">price-update</span><span class="val">300ms / ease</span><span class="use">실시간 가격 업데이트</span></div>
+        <div class="motion-row"><span class="pt">page-transition</span><span class="val">400ms / ease-in-out</span><span class="use">페이지 전환</span></div>
+      </div>
+    </section>
+
+    <section id="layout">
+      <div class="section__num">09 · Layout Patterns</div>
+      <h2 class="section__title">레이아웃 패턴</h2>
+      <p class="section__lede">다크 배경 투자 앱 — 히어로 + 차트 + Feature 그리드.</p>
+      <div class="lp-grid">
+        <div class="lp-card">
+          <h3>Hero 섹션</h3>
+          <ul>
+            <li>다크 브라운 배경 <code>#110E08</code></li>
+            <li>가는 serif 대형 헤드라인 (Nib Pro Display)</li>
+            <li><b>네온 옐로우 pill CTA</b> 버튼</li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>차트 섹션</h3>
+          <ul>
+            <li>실시간 주가 차트 — 다크 배경</li>
+            <li>상승 라인에 <b>#CCFF00</b> 적용</li>
+            <li>데이터 수치 mono 폰트</li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>Feature 그리드</h3>
+          <ul>
+            <li>다크 카드 <code>#1C180D</code></li>
+            <li>아이콘 + 텍스트 레이아웃</li>
+            <li>네온 accent 포인트</li>
+          </ul>
+        </div>
+        <div class="lp-card">
+          <h3>컨테이너 · Nav</h3>
+          <ul>
+            <li><code>max-width: 1200px; margin: 0 auto</code></li>
+            <li>Nav: 다크 배경 고정</li>
+            <li>Nav CTA: 네온 pill 버튼</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="components">
+      <div class="section__num">10 · Components</div>
+      <h2 class="section__title">컴포넌트</h2>
+      <p class="section__lede">네온 pill 버튼, 다크 카드, 가격 표시 — Robinhood 핵심 UI.</p>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.btn-primary</span>
+          <span class="cmp-block__desc">네온 옐로우-그린 pill CTA — 다크 배경 필수</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo">
+              <button style="background:#CCFF00;color:#110E08;border:none;border-radius:999px;padding:14px 32px;font-weight:500;font-size:16px;cursor:pointer;transition:all 180ms ease;">Get started</button>
+              <button style="background:#D9FF33;color:#110E08;border:none;border-radius:999px;padding:14px 32px;font-weight:500;font-size:16px;cursor:pointer;box-shadow:0 0 20px rgba(204,255,0,.3);">Sign up free ★</button>
+            </div>
+            <div class="cmp-code">
+              <pre>background: #CCFF00;
+color: #110E08;        /* 다크 텍스트 필수 */
+border: none;
+border-radius: 999px;  /* pill */
+padding: 14px 32px;
+font-weight: 500;
+font-size: 16px;
+
+/* hover */
+background: #D9FF33;
+box-shadow: 0 0 20px rgba(204,255,0,.3);</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background</code>: #CCFF00<br>
+            <code>color</code>: #110E08<br>
+            <code>border-radius</code>: 999px (pill)<br>
+            <code>font-weight</code>: 500<br>
+            <code>hover glow</code>: rgba(204,255,0,.3)<br>
+            <span class="kr">다크 브라운 배경 위에서만. 흰 배경에서는 절대 사용 금지.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cmp-block">
+        <div class="cmp-block__head">
+          <span class="cmp-block__name">.stock-card</span>
+          <span class="cmp-block__desc">주식 카드 — 다크 배경, 네온 상승 표시</span>
+        </div>
+        <div class="cmp-block__body">
+          <div>
+            <div class="cmp-demo" style="gap:16px;">
+              <div style="background:#1C180D;border:1px solid #35322D;border-radius:16px;padding:20px;min-width:160px;">
+                <div style="font-size:12px;color:#888784;margin-bottom:4px;">AAPL</div>
+                <div style="font-size:22px;font-weight:400;color:#FFFFFF;font-family:monospace;">$182.43</div>
+                <div style="font-size:13px;color:#CCFF00;margin-top:4px;">+2.43 (+1.35%)</div>
+              </div>
+            </div>
+            <div class="cmp-code">
+              <pre>background: #1C180D;
+border: 1px solid #35322D;
+border-radius: 16px;
+padding: 20px;
+box-shadow: 0 4px 24px rgba(0,0,0,.4);
+
+/* 상승 가격 */
+color: #CCFF00;
+
+/* 하락 가격 */
+color: #FF4B4B;</pre>
+            </div>
+          </div>
+          <div class="cmp-spec">
+            <code>background</code>: #1C180D<br>
+            <code>border</code>: 1px solid #35322D<br>
+            <code>border-radius</code>: 16px<br>
+            <code>up color</code>: #CCFF00<br>
+            <code>down color</code>: (별도 red)<br>
+            <span class="kr">상승 표시에 브랜드 네온 — 긍정적 연상 강화.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voice">
+      <div class="section__num">11 · Content Voice</div>
+      <h2 class="section__title">라이팅 원칙</h2>
+      <p class="section__lede">투자 민주화 — 월스트리트 엘리트의 반대.</p>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-card__label">헤드라인</div>
+          <div class="voice-card__rule">대담, 민주화 메시지. 짧고 강렬.</div>
+          <div class="voice-card__ex" style="background:#110E08;color:#fff;">Investing for Everyone.<br>Your money. Your future.</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">수치 강조</div>
+          <div class="voice-card__rule">수익률, 수수료 0. 숫자로 직접 설득.</div>
+          <div class="voice-card__ex" style="background:#110E08;color:#CCFF00;">$0 commissions.<br>+12.4% YTD<br>No minimums.</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">CTA</div>
+          <div class="voice-card__rule">진입 장벽 낮춤 강조. 무료, 즉시 시작.</div>
+          <div class="voice-card__ex" style="background:#110E08;color:#fff;">Get started<br>Sign up for free<br>Start investing</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-card__label">어조</div>
+          <div class="voice-card__rule">젊고 대담. 전통 금융의 반대. 포용적.</div>
+          <div class="voice-card__ex" style="background:#110E08;color:#fff;">Built for you,<br>not Wall Street.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="export">
+      <div class="section__num">12 · CSS · Tailwind</div>
+      <h2 class="section__title">코드 익스포트</h2>
+      <p class="section__lede">복사해서 바로 사용할 수 있는 CSS 커스텀 프로퍼티와 Tailwind 설정.</p>
+      <div class="code-export">
+        <div class="code-tabs">
+          <button class="is-active" onclick="switchTab(this,'pane-css')">CSS Drop-in</button>
+          <button onclick="switchTab(this,'pane-tw')">Tailwind Config</button>
+          <span class="code-copy">복사하여 사용</span>
+        </div>
+        <div id="pane-css" class="code-pane is-active">
+          <pre><span class="c">/* Robinhood Design System — Drop-in */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Brand */</span>
+  <span class="k">--brand</span>:    <span class="v">#CCFF00</span>;
+  <span class="k">--bg-dark</span>:  <span class="v">#110E08</span>;
+  <span class="k">--bg-card</span>:  <span class="v">#1C180D</span>;
+  <span class="k">--bg-alt</span>:   <span class="v">#35322D</span>;
+  <span class="k">--fg</span>:       <span class="v">#FFFFFF</span>;
+  <span class="k">--fg-muted</span>: <span class="v">#888784</span>;
+  <span class="k">--border</span>:   <span class="v">#4D4A46</span>;
+
+  <span class="c">/* Typography */</span>
+  <span class="k">--font-brand</span>:   <span class="v">'Phonic', Helvetica, system-ui, sans-serif</span>;
+  <span class="k">--font-body</span>:    <span class="v">'Capsule Sans Text', Phonic, Helvetica, sans-serif</span>;
+  <span class="k">--font-display</span>: <span class="v">'Nib Pro Display', serif</span>;
+  <span class="k">--font-mono</span>:    <span class="v">'Capsule Sans Text Mono', monospace</span>;
+}
+
+<span class="k">body</span> {
+  <span class="k">font-family</span>: <span class="v">var(--font-body)</span>;
+  <span class="k">font-weight</span>: <span class="v">400</span>;
+  <span class="k">background</span>: <span class="v">var(--bg-dark)</span>;
+  <span class="k">color</span>: <span class="v">var(--fg)</span>;
+  <span class="k">-webkit-font-smoothing</span>: <span class="v">antialiased</span>;
+}
+
+<span class="c">/* Neon Pill CTA */</span>
+<span class="k">.btn-primary</span> {
+  <span class="k">background</span>: <span class="v">#CCFF00</span>;
+  <span class="k">color</span>: <span class="v">#110E08</span>;   <span class="c">/* 다크 텍스트 필수 */</span>
+  <span class="k">border-radius</span>: <span class="v">999px</span>;
+  <span class="k">padding</span>: <span class="v">14px 32px</span>;
+  <span class="k">font-weight</span>: <span class="v">500</span>;
+  <span class="k">transition</span>: <span class="v">all 180ms ease</span>;
+}</pre>
+        </div>
+        <div id="pane-tw" class="code-pane">
+          <pre><span class="c">// tailwind.config.js</span>
+<span class="k">module.exports</span> = {
+  theme: {
+    extend: {
+      colors: {
+        robinhood: {
+          neon:        <span class="v">'#CCFF00'</span>,
+          <span class="v">'neon-hover'</span>: <span class="v">'#D9FF33'</span>,
+          dark:        <span class="v">'#110E08'</span>,
+          <span class="v">'dark-card'</span>:  <span class="v">'#1C180D'</span>,
+          <span class="v">'dark-alt'</span>:   <span class="v">'#35322D'</span>,
+          muted:       <span class="v">'#888784'</span>,
+          border:      <span class="v">'#4D4A46'</span>,
+        },
+      },
+      fontFamily: {
+        brand:   [<span class="v">'Phonic'</span>, <span class="v">'Helvetica'</span>, <span class="v">'system-ui'</span>, <span class="v">'sans-serif'</span>],
+        body:    [<span class="v">'Capsule Sans Text'</span>, <span class="v">'Phonic'</span>, <span class="v">'Helvetica'</span>, <span class="v">'sans-serif'</span>],
+        display: [<span class="v">'Nib Pro Display'</span>, <span class="v">'serif'</span>],
+        mono:    [<span class="v">'Capsule Sans Text Mono'</span>, <span class="v">'monospace'</span>],
+      },
+      borderRadius: {
+        btn:  <span class="v">'999px'</span>,
+        card: <span class="v">'16px'</span>,
+      },
+    },
+  },
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="verdict">
+      <div class="section__num">13 · Do / Don't</div>
+      <h2 class="section__title">Do / Don't</h2>
+      <p class="section__lede">Robinhood 디자인 시스템의 핵심 규칙과 자주 하는 오해.</p>
+      <div class="dd-grid">
+        <div class="dd-card dd-card--do">
+          <h3>✓ DO</h3>
+          <ul>
+            <li><b>#CCFF00</b> 네온을 다크 배경 위 CTA에만 사용</li>
+            <li>CTA 텍스트는 <code>#110E08</code> — 네온 위 다크 텍스트</li>
+            <li>다크 브라운 <b>#110E08</b>이 필수 배경 컨텍스트</li>
+            <li><b>Nib Pro Display</b> weight 400으로 우아한 히어로 타이틀</li>
+            <li>주가 상승에 <code>#CCFF00</code> 적용 — 긍정 연상 강화</li>
+          </ul>
+        </div>
+        <div class="dd-card dd-card--dont">
+          <h3>✗ DON'T</h3>
+          <ul>
+            <li>흰 배경에 <code>#CCFF00</code> — 다크 배경 없으면 의미 없음</li>
+            <li>CTA 텍스트 흰색 — 네온 배경엔 다크 텍스트</li>
+            <li>부드러운 그린으로 대체 — <code>#CCFF00</code>은 극단적 네온</li>
+            <li>굵은 sans-serif 히어로 — weight 400 serif가 Robinhood 언어</li>
+            <li>작은 radius 버튼 — pill이 정체성</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="myth-table">
+        <div class="myth-row myth-row--head">
+          <span>오해 <span class="kr">(자주 하는 실수)</span></span>
+          <span>실제</span>
+          <span>이유</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">Robinhood = 초록</span>
+          <span class="right">#CCFF00 네온</span>
+          <span class="why">#CCFF00은 옐로우에 가까운 극단적 네온. 일반 그린이 아님.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">흰 배경이 기본</span>
+          <span class="right">#110E08 다크</span>
+          <span class="why">마케팅 사이트는 다크 브라운이 primary. 네온의 컨텍스트.</span>
+        </div>
+        <div class="myth-row">
+          <span class="wrong">CSS 토큰 기반 DS</span>
+          <span class="right">Emotion 해시 클래스</span>
+          <span class="why">CSS-in-JS Emotion 사용. 커스텀 프로퍼티(--*)를 사용하지 않음.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rfoot">
+      <span>insane-design/robinhood/report.ko.html</span>
+      <span class="kr">CSS 직접 파싱 · AI 추론 없음 · 2026-04-13</span>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+function switchTab(btn, paneId) {
+  const export_ = btn.closest('.code-export');
+  export_.querySelectorAll('.code-tabs button').forEach(b => b.classList.remove('is-active'));
+  export_.querySelectorAll('.code-pane').forEach(p => p.classList.remove('is-active'));
+  btn.classList.add('is-active');
+  export_.querySelector('#' + paneId).classList.add('is-active');
+}
+</script>
+</body>
+</html>

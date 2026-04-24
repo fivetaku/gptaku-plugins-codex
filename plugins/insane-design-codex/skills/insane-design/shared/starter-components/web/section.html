@@ -1,0 +1,56 @@
+<!-- insane-build: web/section.html — content section with heading + grid, minimal scaffold -->
+<section class="section">
+  <div class="section__inner">
+    <h2 class="section__heading">{SECTION_HEADING}</h2>
+    <p class="section__lede">{SECTION_LEDE}</p>
+    <div class="section__grid">
+      <article class="card">
+        <h3 class="card__title">{CARD_1_TITLE}</h3>
+        <p class="card__body">{CARD_1_BODY}</p>
+      </article>
+      <article class="card">
+        <h3 class="card__title">{CARD_2_TITLE}</h3>
+        <p class="card__body">{CARD_2_BODY}</p>
+      </article>
+      <article class="card">
+        <h3 class="card__title">{CARD_3_TITLE}</h3>
+        <p class="card__body">{CARD_3_BODY}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: var(--section-padding-v, 120px) var(--space-lg, 48px);
+    background: var(--bg, #fff);
+    color: var(--fg, #111);
+  }
+  .section__inner { max-width: 1280px; margin: 0 auto; }
+  .section__heading {
+    font-family: var(--font-family, system-ui, sans-serif);
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  .section__lede {
+    font-size: 18px;
+    color: var(--fg-muted, #555);
+    max-width: 720px;
+    margin: 0 0 64px;
+  }
+  .section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    padding: 32px;
+    background: var(--card-bg, var(--bg, #fff));
+    border: 1px solid var(--border, rgba(0,0,0,0.08));
+    border-radius: var(--radius-md, 12px);
+  }
+  .card__title { font-size: 20px; font-weight: 600; margin: 0 0 12px; }
+  .card__body { font-size: 15px; color: var(--fg-muted, #555); line-height: 1.6; margin: 0; }
+</style>

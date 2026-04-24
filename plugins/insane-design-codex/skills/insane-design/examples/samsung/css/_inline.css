@@ -1,0 +1,49 @@
+
+    body:has(.pop-youtube.active) .spr-lc-light {pointer-events:none; opacity:0;}
+
+
+    body:has(.pop-youtube.active) .spr-lc-light {pointer-events:none; opacity:0;}
+
+
+#mask.video-player { background-color: rgba(0,0,0,.5); }
+@media screen(max-width: 800px){
+.wrap-component .component-text.txtm-bottom-right .box-title .title.mo-ver{font-size:7.667vw}
+}
+@media screen(max-width: 300px){
+.wrap-component .component-text.txtm-bottom-right .box-title .title.mo-ver{font-size:6.667vw}
+}
+@media screen and (min-width:801px) and (max-width:1024px){
+    .box-countdown >ul >li,
+    .box-countdown .num{font-size:3.1111vw}
+    .box-countdown >ul{margin:0.9818vw 0 0.9818vw 0}
+    .box-countdown .num span{width:4.3727vw;margin-top:2px;font-size:1.1545vw}
+}
+
+
+
+
+	    #pfpd-compare {
+	        display:none!important;
+	    }
+		
+
+/*!* s : num_5 *!
+.floating-sticky .menu-list .menu01 a {
+	display: none;
+}
+.floating-sticky .menu-list .menu02 a {
+	display: none;
+}
+.floating-sticky .menu-list .menu03 a {
+	display: none;
+}
+.floating-sticky .menu-list .on .menu01 a {
+	display: flex;
+}
+.floating-sticky .menu-list .on .menu02 a {
+	display: flex;
+}
+.floating-sticky .menu-list .on .menu03 a {
+	display: flex;
+}
+!* e : num_5 *!*/

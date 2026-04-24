@@ -1,0 +1,23 @@
+.codeblock {
+-webkit-font-smoothing:initial;
+-moz-osx-font-smoothing:initial;
+position:relative}
+.codeblock pre {
+background-color:var(--gray-50);
+border-radius:.5rem;
+align-items:center;
+min-height:42px;
+margin-top:0;
+margin-bottom:0;
+padding:.5rem .75rem;
+font-family:ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace;
+font-size:14px;
+line-height:1.5rem;
+display:flex}
+.codeblock pre:is(.dark *) {
+background-color:var(--gray-100)}
+.codeblock button {
+opacity:0}
+.codeblock:hover .copy-button-container button {
+opacity:1}
+
