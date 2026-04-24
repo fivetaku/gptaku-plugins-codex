@@ -40,6 +40,10 @@ PORT_NOTE_PATTERNS = {
     "template-codex": re.compile(r"template-codex"),
 }
 
+PERSONAL_PATTERNS = {
+    "local user path": re.compile(r"/Users/(?!me\b)[A-Za-z0-9._-]+"),
+}
+
 TEXT_SUFFIXES = {
     ".css",
     ".html",
@@ -248,6 +252,9 @@ def scan_text(issues: list[Issue]) -> None:
         for label, pattern in PORT_NOTE_PATTERNS.items():
             if pattern.search(text):
                 issues.append(Issue("ERROR", path, f"port-note residue found: {label}"))
+        for label, pattern in PERSONAL_PATTERNS.items():
+            if pattern.search(text):
+                issues.append(Issue("ERROR", path, f"personal residue found: {label}"))
 
 
 def check_legacy_dirs(issues: list[Issue]) -> None:

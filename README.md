@@ -1,155 +1,108 @@
 English | [한국어](README.ko.md)
 
-# GPTaku Codex Plugins
+# gptaku-plugins-codex
 
-> **Codex-native plugin marketplace for GPTaku plugins.**
+> **A Codex plugin marketplace for people who want to become AI Native.**
 
-This repository is the Codex marketplace root. It contains Codex plugin manifests, packaged skills, plugin READMEs, validation scripts, and the marketplace manifest.
+Being AI Native is not about using AI as a tool. It is about weaving AI naturally into every step from planning to execution. That takes practice, and it takes tools built for people who are learning. These plugins exist to remove specific walls you hit while working with Codex.
+
+[Quick Start](#quick-start) | [Plugins](#available-plugins) | [Why these?](#why-these-plugins) | [Requirements](#requirements)
+
+---
 
 ## Quick Start
 
-Add the marketplace:
+### 1. Add the marketplace
 
 ```bash
-codex plugin marketplace add OWNER/gptaku-plugins-codex
+codex plugin marketplace add https://github.com/fivetaku/gptaku-plugins-codex.git
 ```
 
-If the repository is published under `fivetaku`, use:
+### 2. Restart Codex
 
-```bash
-codex plugin marketplace add fivetaku/gptaku-plugins-codex
-```
+Restart Codex after adding the marketplace so the plugin list is reloaded.
 
-Pin a release or branch when you want reproducible installs:
+### 3. Install plugins from Codex
 
-```bash
-codex plugin marketplace add OWNER/gptaku-plugins-codex@v0.1.0
-```
+Open the Codex plugin UI, choose `GPTaku Codex`, and install the plugins you want.
 
-After adding the marketplace:
-- Restart Codex so the marketplace is reloaded.
-- Open the Codex plugin UI and install the plugins you want from `GPTaku Codex`.
-- Start a new Codex session before testing newly installed skills.
+### 4. Use them naturally
 
-Use installed plugins by asking naturally in chat. Examples:
-- `pumasi-codex` — "Use pumasi to build this app with parallel workers."
-- `show-me-the-prd-codex` — "Turn this product idea into a PRD."
-- `insane-search-codex` — "Fetch this blocked page and summarize it."
-- `kkirikkiri-codex` — "Assemble an agent team to investigate this."
-- `docs-guide-codex` — "Explain this using official docs."
-- `deep-research-codex` — "Do deep research with citations."
-- `nopal-codex` — "Help me work with Google Workspace."
-- `git-teacher-codex` — "Teach me this Git workflow step by step."
-- `skillers-suda-codex` — "Help me design a Codex skill."
-- `vibe-sunsang-codex` — "Review my recent Codex sessions and coach me."
-
-Current Codex CLI exposes marketplace management commands:
-- `codex plugin marketplace add <source>` — add a GitHub, Git URL, SSH URL, or local marketplace root.
-- `codex plugin marketplace upgrade [gptaku-codex]` — update the marketplace clone.
-- `codex plugin marketplace remove gptaku-codex` — remove this marketplace.
-
-## Install From Local Checkout
-
-For local testing before publishing:
-
-```bash
-codex plugin marketplace add /absolute/path/to/gptaku-plugins-codex
-```
-
-This staging checkout was verified with:
-
-```bash
-codex plugin marketplace add /Users/chulrolee/gptaku_plugins/gptaku-plugins-codex
-```
-
-Expected result:
+Start a new Codex session and ask in plain language:
 
 ```text
-Added marketplace `gptaku-codex` from /Users/chulrolee/gptaku_plugins/gptaku-plugins-codex.
-Installed marketplace root: /Users/chulrolee/gptaku_plugins/gptaku-plugins-codex
+Turn this idea into a PRD.
+Use pumasi to split this build into parallel workers.
+Fetch this blocked page and summarize it.
+Teach me this Git workflow step by step.
 ```
 
-## Publish Checklist
+### 5. Update when needed
 
-- Run `bash scripts/run_package_smoke_tests.sh`.
-- Ensure `.agents/plugins/marketplace.json` has `"name": "gptaku-codex"`.
-- Ensure every package has `.codex-plugin/plugin.json`, `README.md`, and at least one `skills/<skill-name>/SKILL.md`.
-- Publish the contents of this directory as the `gptaku-plugins-codex` GitHub repository root.
-- Tag releases, then recommend pinned installs such as `OWNER/REPO@v0.1.0`.
-- Tell users to restart Codex after adding or upgrading the marketplace.
-
-## Repository Layout
-
-```text
-gptaku-plugins-codex/
-  .agents/plugins/marketplace.json   # Codex marketplace manifest
-  plugins/
-    <plugin-name>/
-      .codex-plugin/plugin.json      # plugin manifest
-      README.md
-      assets/
-      skills/
-        <skill-name>/
-          SKILL.md
-          references/
-          scripts/
-  scripts/
-    validate_packages.py
-    run_package_smoke_tests.sh
+```bash
+codex plugin marketplace upgrade gptaku-codex
 ```
 
-Use this repository for:
-- Codex marketplace packaging
-- plugin manifests
-- marketplace manifest maintenance
-- packaged plugin README files
+---
 
-Do not publish source-port workspaces, legacy runtime plugin trees, cache directories, or local smoke-test logs in this repository.
+## Why these plugins?
 
-## Current Packaged Plugins
+- **Built for learners, not experts** - If you do not know Git, `git-teacher-codex` explains it step by step. If you cannot write a PRD, `show-me-the-prd-codex` interviews you.
+- **Codex-native** - These are packaged with `.codex-plugin/plugin.json`, Codex skills, Codex sub-agent patterns, and chat-first interaction rules.
+- **Outcomes over features** - Each plugin solves a specific wall: blocked websites, blank PRDs, parallel coding, deep research, docs lookup, workspace orchestration, or growth coaching.
+- **Korean-first, English-available** - Built in Korean, with English docs where useful.
+- **Composable** - Install only what you need. The plugins are designed to work independently.
 
-- `pumasi-codex`
-- `show-me-the-prd-codex`
-- `insane-search-codex`
-- `kkirikkiri-codex`
-- `insane-design-codex`
-- `docs-guide-codex`
-- `deep-research-codex`
-- `nopal-codex`
-- `git-teacher-codex`
-- `skillers-suda-codex`
-- `vibe-sunsang-codex`
+---
 
-## Packaging Flow
+## Available Plugins
 
-1. Edit the packaged plugin under `plugins/<plugin-name>/`.
-2. Keep only runtime-safe files in `skills/<skill-name>/`.
-3. Fill `.codex-plugin/plugin.json`.
-4. Add or update the plugin entry in `.agents/plugins/marketplace.json`.
-5. Run the validation and smoke-test commands below.
+- **docs-guide-codex** - Accurate answers grounded in official documentation, using an `llms.txt`-first strategy and official-source fallbacks.
+- **git-teacher-codex** - Git/GitHub onboarding for non-developers, with cloud-service analogies and safe beginner workflows.
+- **vibe-sunsang-codex** - AI collaboration mentoring for vibecoders, including session retrospectives, mentoring, and growth reports.
+- **deep-research-codex** - Structured deep research with query design, source triangulation, citations, and quality checks.
+- **pumasi-codex** - Codex-native parallel build orchestration, plus a native image-generation companion skill.
+- **show-me-the-prd-codex** - Interview-based PRD generation from a rough idea into an actionable document bundle.
+- **kkirikkiri-codex** - Codex-native agent-team assembly from natural language, with shared memory and bounded delegation.
+- **skillers-suda-codex** - A workshop for designing, reviewing, and packaging Codex skills or plugin bundles.
+- **nopal-codex** - Google Workspace orchestration for Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, and Meet through `gws`.
+- **insane-search-codex** - Auto-bypass workflow for blocked or WAF-heavy pages using generic fetch, public APIs, RSS, Jina, and optional Playwright.
+- **insane-design-codex** - Extract real website CSS into a reusable design system, or reuse the bundled design corpus.
 
-## Marketplace Manifest
+> More plugins can be added over time. Watch the repository to get release updates.
 
-- [`.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json)
+---
 
-## Validation
+## Requirements
 
-Run the package audit from the repository root:
+- **Codex CLI** with plugin marketplace support.
+- **macOS / Linux**: works out of the box.
+- **Windows**: use WSL2 for the best experience.
+- Some plugins use optional tools such as `git`, `gh`, `node`, `python3`, `tmux`, or `gws`. The plugin instructions tell you when a tool is needed.
+
+---
+
+## Validate This Marketplace
+
+For maintainers:
 
 ```bash
 python3 scripts/validate_packages.py
-```
-
-The audit checks marketplace entries, plugin manifests, skill frontmatter, referenced files, legacy-runtime residue, port-note residue, and script syntax.
-
-Run the smoke suite when changing packaged plugin contents:
-
-```bash
 bash scripts/run_package_smoke_tests.sh
 ```
 
-The smoke suite runs the package audit, JSON manifest parsing, available package-level smoke tests, helper-script smoke tests, and the legacy-residue scan.
+The validation checks marketplace entries, plugin manifests, skill frontmatter, referenced files, legacy-runtime residue, port-note residue, script syntax, and available smoke tests.
+
+---
 
 ## License
 
 MIT
+
+---
+
+<div align="center">
+
+**Become AI Native, one wall at a time.**
+
+</div>

@@ -552,8 +552,8 @@ designmd-data/real/{slug}/screenshots/
 ---
 
 ## 관련 문서
-- `/Users/chulrolee/designmd-writer/METHODOLOGY.md` — 분석 5단계
-- `/Users/chulrolee/designmd-writer/WORKFLOW.md` — 전체 파이프라인
-- `/Users/chulrolee/designmd-writer/design-template.md` — 템플릿 v2.0
-- `/Users/chulrolee/insane-search/skills/insane-search/SKILL.md` — 우회 기법 원본
-- `/Users/chulrolee/insane-search/skills/insane-search/references/fallback.md` — Fallback 상세
+- `references/workflow.md` — 전체 파이프라인
+- `references/template.md` — 디자인 문서 템플릿
+- `references/report-prompt.md` — HTML 리포트 생성 가이드
+- `references/pitfalls.md` — 흔한 실패 패턴
+- `references/data-collection.md` — 수집 및 fallback 전략
