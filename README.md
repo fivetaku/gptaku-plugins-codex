@@ -24,7 +24,13 @@ Restart Codex after adding the marketplace so the plugin list is reloaded.
 
 ### 3. Install plugins from Codex
 
-Open the Codex plugin UI, choose `GPTaku Codex`, and install the plugins you want.
+Open the Codex plugin UI:
+
+```text
+/plugins
+```
+
+Choose `GPTaku Codex`, then install the plugins you want.
 
 ### 4. Use them naturally
 
@@ -57,17 +63,19 @@ codex plugin marketplace upgrade gptaku-codex
 
 ## Available Plugins
 
-- **docs-guide-codex** - Accurate answers grounded in official documentation, using an `llms.txt`-first strategy and official-source fallbacks.
-- **git-teacher-codex** - Git/GitHub onboarding for non-developers, with cloud-service analogies and safe beginner workflows.
-- **vibe-sunsang-codex** - AI collaboration mentoring for vibecoders, including session retrospectives, mentoring, and growth reports.
-- **deep-research-codex** - Structured deep research with query design, source triangulation, citations, and quality checks.
-- **pumasi-codex** - Codex-native parallel build orchestration, plus a native image-generation companion skill.
-- **show-me-the-prd-codex** - Interview-based PRD generation from a rough idea into an actionable document bundle.
-- **kkirikkiri-codex** - Codex-native agent-team assembly from natural language, with shared memory and bounded delegation.
-- **skillers-suda-codex** - A workshop for designing, reviewing, and packaging Codex skills or plugin bundles.
-- **nopal-codex** - Google Workspace orchestration for Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, and Meet through `gws`.
-- **insane-search-codex** - Auto-bypass workflow for blocked or WAF-heavy pages using generic fetch, public APIs, RSS, Jina, and optional Playwright.
-- **insane-design-codex** - Extract real website CSS into a reusable design system, or reuse the bundled design corpus.
+| Plugin | Description |
+|--------|-------------|
+| [docs-guide-codex](plugins/docs-guide-codex) | Accurate answers grounded in official documentation, using an `llms.txt`-first strategy and official-source fallbacks. |
+| [git-teacher-codex](plugins/git-teacher-codex) | Git/GitHub onboarding for non-developers, with cloud-service analogies and safe beginner workflows. |
+| [vibe-sunsang-codex](plugins/vibe-sunsang-codex) | AI collaboration mentoring for vibecoders, including session retrospectives, mentoring, and growth reports. |
+| [deep-research-codex](plugins/deep-research-codex) | Structured deep research with query design, source triangulation, citations, and quality checks. |
+| [pumasi-codex](plugins/pumasi-codex) | Codex-native parallel build orchestration, plus a native image-generation companion skill. |
+| [show-me-the-prd-codex](plugins/show-me-the-prd-codex) | Interview-based PRD generation from a rough idea into an actionable document bundle. |
+| [kkirikkiri-codex](plugins/kkirikkiri-codex) | Codex-native agent-team assembly from natural language, with shared memory and bounded delegation. |
+| [skillers-suda-codex](plugins/skillers-suda-codex) | A workshop for designing, reviewing, and packaging Codex skills or plugin bundles. |
+| [nopal-codex](plugins/nopal-codex) | Google Workspace orchestration for Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, and Meet through `gws`. |
+| [insane-search-codex](plugins/insane-search-codex) | Auto-bypass workflow for blocked or WAF-heavy pages using generic fetch, public APIs, RSS, Jina, and optional Playwright. |
+| [insane-design-codex](plugins/insane-design-codex) | Extract real website CSS into a reusable design system, or reuse the bundled design corpus. |
 
 > More plugins can be added over time. Watch the repository to get release updates.
 

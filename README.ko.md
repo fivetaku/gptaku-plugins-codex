@@ -24,7 +24,13 @@ codex plugin marketplace add https://github.com/fivetaku/gptaku-plugins-codex.gi
 
 ### 3. Codex에서 플러그인 설치
 
-Codex 플러그인 UI를 열고 `GPTaku Codex`에서 필요한 플러그인을 설치합니다.
+Codex 플러그인 UI를 엽니다:
+
+```text
+/plugins
+```
+
+`GPTaku Codex`를 선택한 뒤 필요한 플러그인을 설치합니다.
 
 ### 4. 자연어로 사용
 
@@ -57,17 +63,19 @@ codex plugin marketplace upgrade gptaku-codex
 
 ## 사용 가능한 플러그인
 
-- **docs-guide-codex** - 공식문서 기반 답변. `llms.txt` 우선 전략과 공식 출처 fallback을 사용합니다.
-- **git-teacher-codex** - 비개발자를 위한 Git/GitHub 온보딩. 클라우드 서비스 비유와 안전한 초보자 흐름을 제공합니다.
-- **vibe-sunsang-codex** - 바이브코더를 위한 AI 협업 멘토링. 세션 회고, 멘토링, 성장 리포트를 제공합니다.
-- **deep-research-codex** - 질문 설계, 소스 교차검증, 인용, 품질 점검을 포함한 구조화 딥리서치.
-- **pumasi-codex** - Codex 네이티브 병렬 빌드 오케스트레이션과 이미지 생성 companion 스킬.
-- **show-me-the-prd-codex** - 거친 아이디어를 인터뷰 기반 PRD 문서 묶음으로 정리합니다.
-- **kkirikkiri-codex** - 자연어 요청에서 Codex 에이전트 팀을 구성하고, 공유 메모리와 제한된 위임으로 진행합니다.
-- **skillers-suda-codex** - Codex 스킬이나 플러그인 번들을 설계, 리뷰, 패키징하는 워크숍.
-- **nopal-codex** - `gws`를 통해 Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, Meet 작업을 오케스트레이션합니다.
-- **insane-search-codex** - 차단되거나 WAF가 강한 페이지를 generic fetch, public API, RSS, Jina, 선택적 Playwright로 우회합니다.
-- **insane-design-codex** - 실제 웹사이트 CSS를 디자인 시스템으로 추출하거나, 번들된 디자인 코퍼스를 재사용합니다.
+| 플러그인 | 설명 |
+|---------|------|
+| [docs-guide-codex](plugins/docs-guide-codex) | 공식문서 기반 답변. `llms.txt` 우선 전략과 공식 출처 fallback을 사용합니다. |
+| [git-teacher-codex](plugins/git-teacher-codex) | 비개발자를 위한 Git/GitHub 온보딩. 클라우드 서비스 비유와 안전한 초보자 흐름을 제공합니다. |
+| [vibe-sunsang-codex](plugins/vibe-sunsang-codex) | 바이브코더를 위한 AI 협업 멘토링. 세션 회고, 멘토링, 성장 리포트를 제공합니다. |
+| [deep-research-codex](plugins/deep-research-codex) | 질문 설계, 소스 교차검증, 인용, 품질 점검을 포함한 구조화 딥리서치. |
+| [pumasi-codex](plugins/pumasi-codex) | Codex 네이티브 병렬 빌드 오케스트레이션과 이미지 생성 companion 스킬. |
+| [show-me-the-prd-codex](plugins/show-me-the-prd-codex) | 거친 아이디어를 인터뷰 기반 PRD 문서 묶음으로 정리합니다. |
+| [kkirikkiri-codex](plugins/kkirikkiri-codex) | 자연어 요청에서 Codex 에이전트 팀을 구성하고, 공유 메모리와 제한된 위임으로 진행합니다. |
+| [skillers-suda-codex](plugins/skillers-suda-codex) | Codex 스킬이나 플러그인 번들을 설계, 리뷰, 패키징하는 워크숍. |
+| [nopal-codex](plugins/nopal-codex) | `gws`를 통해 Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, Meet 작업을 오케스트레이션합니다. |
+| [insane-search-codex](plugins/insane-search-codex) | 차단되거나 WAF가 강한 페이지를 generic fetch, public API, RSS, Jina, 선택적 Playwright로 우회합니다. |
+| [insane-design-codex](plugins/insane-design-codex) | 실제 웹사이트 CSS를 디자인 시스템으로 추출하거나, 번들된 디자인 코퍼스를 재사용합니다. |
 
 > 플러그인은 계속 추가될 수 있습니다. 릴리스 알림을 받으려면 저장소를 Watch 해두세요.
 
