@@ -68,7 +68,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [docs-guide-codex](plugins/docs-guide-codex) | 공식문서 기반 답변. `llms.txt` 우선 전략과 공식 출처 fallback을 사용합니다. |
 | [git-teacher-codex](plugins/git-teacher-codex) | 비개발자를 위한 Git/GitHub 온보딩. 클라우드 서비스 비유와 안전한 초보자 흐름을 제공합니다. |
 | [vibe-sunsang-codex](plugins/vibe-sunsang-codex) | 바이브코더를 위한 AI 협업 멘토링. 세션 회고, 멘토링, 성장 리포트를 제공합니다. |
-| [deep-research-codex](plugins/deep-research-codex) | 질문 설계, 소스 교차검증, 인용, 품질 점검을 포함한 구조화 딥리서치. |
+| [insane-research-codex](plugins/insane-research-codex) | 질문 설계, 소스 교차검증, 인용, 품질 점검을 포함한 구조화 딥리서치. |
 | [pumasi-codex](plugins/pumasi-codex) | Codex 네이티브 병렬 빌드 오케스트레이션과 이미지 생성 companion 스킬. |
 | [show-me-the-prd-codex](plugins/show-me-the-prd-codex) | 거친 아이디어를 인터뷰 기반 PRD 문서 묶음으로 정리합니다. |
 | [kkirikkiri-codex](plugins/kkirikkiri-codex) | 자연어 요청에서 Codex 에이전트 팀을 구성하고, 공유 메모리와 제한된 위임으로 진행합니다. |

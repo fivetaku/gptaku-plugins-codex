@@ -1,41 +1,109 @@
-# kkirikkiri Validation Guide for Codex
+# 검증 루프 실행 가이드 (Codex)
 
-Use this file when deciding whether to keep the current team, swap one role, or rebuild the team.
+> **2라운드 진입 시(Step 7-6) 참조한다.** §A 번호 블록으로 사용자가 "보강해주세요"를 선택하면 이 파일의 절차대로 실행한다.
 
-## Decision rules
+---
 
-- Keep the team if the direction is right and only depth or clarity is missing.
-- Swap one role if a single contributor is weak but the rest of the team is useful.
-- Rebuild the team if the approach is fundamentally wrong or the user explicitly asks to restart.
+## 자동 판정 로직 (어떤 기준이 미달인지로 A/B/C 결정)
 
-## Keep-the-team pattern
+```
+IF 목표_달성도 = FAIL:
+    → 방식 B (전체 재구성) — 방향 자체가 잘못됨
+ELIF 일관성 = FAIL:
+    → 방식 C (부분 교체) — 모순된 결과를 낸 팀원만 교체
+ELIF 완성도 = FAIL OR 정확성 = FAIL:
+    → 방식 A (팀 유지 + 보강) — 방향은 맞고 양/질이 부족
+ELIF 라운드 >= 3:
+    → 중단 — 현재 최선 결과로 리포트
+```
 
-- Send one focused follow-up to the weakest role.
-- Tighten the scope or acceptance criteria.
-- Add a verifier only if there is a concrete claim, artifact, or code path to check.
+라운드별 권장 전략:
 
-## Partial replacement pattern
+| 라운드 | 기본 전략 | 팀 상태 |
+|--------|----------|---------|
+| 1라운드 | 전력 실행 | 원본 팀 |
+| 2라운드 | 자동 판정에 따라 A/B/C | A: 원본+검증자 / B: 새팀 / C: 혼합팀 |
+| 3라운드 | 무조건 방식 B (재구성) | 새 팀 (공유 메모리 인계) |
 
-- Keep the lead so context stays stable.
-- Replace only the weak explorer, worker, or reviewer.
-- Point the replacement agent to:
-  - `.kkirikkiri/TEAM_PLAN.md`
-  - `.kkirikkiri/TEAM_PROGRESS.md`
-  - `.kkirikkiri/TEAM_FINDINGS.md`
+> 3라운드 돌입 = 기존 팀 접근에 근본적 문제 신호 → 무조건 재구성으로 신선한 관점 확보.
 
-## Rebuild pattern
+---
 
-- Summarize what failed in `TEAM_PROGRESS.md`.
-- Keep any trustworthy findings in `TEAM_FINDINGS.md`.
-- Start a fresh team shape from `presets.md` instead of repeating the exact old roster.
+## 방식 A: 기존 팀 유지 + 추가 지시
 
-## User-facing check
+**조건**: 방향은 맞지만 완성도/정확성이 부족.
 
-When you need confirmation, ask in chat with a compact choice:
+**바이어스 방지책 (반드시 적용):**
+1. **외부 검증자 추가**: 사이드카로 검증자 1명 스폰(`spawn_agent` "reviewer"), 1라운드 결과를 독립 검토 (refute 프롬프트)
+2. **역할 순환**: 팀원들의 담당 영역을 교차 배정하여 교차 검증
+3. **반론 의무**: 팀장에게 "기존 결론에 대한 반론을 먼저 제시하라" 지시
 
-```text
+보강 지시 (팀장 = 로컬 본인):
+```
+"1라운드 결과에서 [부족한 부분]이 부족함. 2라운드 규칙:
+ (1) 검증용 사이드카를 스폰하여 1라운드 결과를 독립 검토 (refute)
+ (2) 팀원들의 담당 영역을 교차 배정
+ (3) 기존 결론에 대한 반론부터 검토"
+```
+
+---
+
+## 방식 B: 팀 해산 + 새 팀 구성
+
+**조건**: 목표 달성도 자체가 미달 (접근이 근본적으로 틀림), 또는 사용자가 "처음부터 다시" 선택.
+
+기존 사이드카 종료. 새 팀 생성 시 반드시 반영:
+- **TEAM_FINDINGS.md + DEAD_ENDS** 내용을 새 팀에 전달
+- 부족했던 부분을 새 팀의 태스크에 반영
+- 새 팀 프롬프트에 "Verify-first 5개" 목록 포함 (이전 팀의 미검증 주장)
+
+세션 내 재구성 시 이전 라운드 스냅샷 보존:
+```bash
+cp .kkirikkiri/teams/{team_name}/TEAM_PLAN.md .kkirikkiri/teams/{team_name}/archive/reconfigure-$(date +%s).md
+```
+→ Step 6으로 돌아가서 재실행.
+
+---
+
+## 방식 C: 부분 교체 (문제 팀원만 교체)
+
+**조건**: 팀원 간 결과가 모순되거나, 특정 팀원의 결과만 부족.
+
+팀장은 유지 (컨텍스트 + 조율 역할 보존). 문제 팀원 사이드카 종료 후 새 팀원 스폰:
+```
+spawn_agent({
+  agent_type: "explorer",   // 또는 역할에 맞는 type
+  prompt: "[역할 지시 + 공유 메모리 3종 읽기 + DEAD_ENDS 확인 필수]"
+})
+```
+새 팀원에게 반드시 TEAM_FINDINGS.md + DEAD_ENDS를 먼저 읽게 한 후 구체 태스크 배정.
+
+**장점**: 정상 팀원의 컨텍스트 보존 + 문제 영역만 바이어스 초기화.
+
+---
+
+## 사용자 확인 (§A 번호 블록)
+
+품질 부족 판정 후 사용자에게 보강 여부를 묻는다:
+
+```
+(1라운드 결과 요약 + 부족한 부분 설명)
+
+보강할까요?
+1. 네, 보강해주세요 (추천) — 부족한 부분을 집중 보완. 시간이 좀 더 걸려요.
+2. 이 정도면 괜찮아요 — 현재 결과를 최종 리포트로 정리.
+3. 처음부터 다시 — 팀을 해산하고 새로 구성.
+(모르면 1번으로 진행할게요)
+```
+
+보강 방식이 갈릴 때(드물게 사용자에게 직접 물을 때):
+```
 지금 팀을 어떻게 할까요?
 1. 그대로 보강 - 방향은 맞고 디테일만 보완
 2. 일부 교체 - 특정 역할만 바꾸기
 3. 새로 구성 - 접근 자체를 바꿔서 다시 시작
 ```
+
+## 최대 라운드 제한
+- **최대 3라운드**. 3라운드 후에도 부족하면 현재까지의 최선 결과로 리포트.
+- 사용자에게 솔직하게: "3번 시도했는데 [이 부분]은 한계가 있어요. 현재 결과를 정리해드릴게요."

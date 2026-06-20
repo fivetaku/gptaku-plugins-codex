@@ -105,10 +105,21 @@ def _build_summary(
     }
 
 
-def extract_semantic_brand_vars(css: str) -> list[dict]:
-    """Return [{name, value_hex, role}] for CSS vars named --*-brand-* / --*-primary-* / --*-accent-*."""
+def extract_semantic_brand_vars(css: str, resolved: dict | None = None) -> list[dict]:
+    """Return [{name, value_hex, role}] for CSS vars named --*-brand-* / --*-primary-* / --*-accent-* / --*-action-* / --*-cta-*.
+
+    🆕 v3.2: var() 체인 해결된 토큰도 검색.
+    Ferrari `--f-color-accent-100: var(--f-color-rosso-corsa-100)` 같은 indirect 토큰을
+    resolved_tokens.json (var_resolver.py 출력)을 통해 잡아낸다.
+
+    Args:
+        css: 원본 CSS 텍스트.
+        resolved: var_resolver.py가 만든 resolved_tokens.json의 dict. None이면 기존 동작 (직접 hex만).
+    """
     results: list[dict] = []
     seen: set[tuple[str, str, str]] = set()
+
+    # Step 1: 직접 hex 정의된 토큰 (기존 동작)
     for match in re.finditer(r"--([\w-]+)\s*:\s*#([0-9a-fA-F]{3,8})", css):
         role = _pick_role(match.group(1))
         if not role:
@@ -120,6 +131,40 @@ def extract_semantic_brand_vars(css: str) -> list[dict]:
             continue
         seen.add(key)
         results.append({"name": name, "value_hex": value_hex, "role": role})
+
+    # Step 2: 🆕 v3.2 — var() 체인 해결된 토큰 (resolved_tokens.json 활용)
+    # Ferrari/Audi 같은 짧은 prefix 사이트에서 모든 토큰이 var() 체인이라 직접 hex 정규식이 miss하는 케이스 보완.
+    if resolved and isinstance(resolved, dict):
+        # resolved_tokens.json 형식: { "tokens": [{"name": "--f-color-accent-100", "terminal_hex": "#DA291C"}, ...] }
+        # 또는 단순 dict: { "--f-color-accent-100": "#DA291C", ... }
+        items: list[tuple[str, str]] = []
+        if "tokens" in resolved and isinstance(resolved["tokens"], list):
+            for entry in resolved["tokens"]:
+                if not isinstance(entry, dict):
+                    continue
+                name = entry.get("name", "")
+                terminal = entry.get("terminal_hex") or entry.get("value") or entry.get("resolved")
+                if name and terminal and isinstance(terminal, str) and terminal.startswith("#"):
+                    items.append((name, terminal))
+        else:
+            for name, value in resolved.items():
+                if isinstance(value, str) and value.startswith("#"):
+                    items.append((name, value))
+
+        for name, hex_value in items:
+            # name에서 leading `--` 제거 후 role 매칭
+            bare_name = name.lstrip("-")
+            role = _pick_role(bare_name)
+            if not role:
+                continue
+            normalized_hex = _normalize_hex(hex_value)
+            full_name = name if name.startswith("--") else f"--{bare_name}"
+            key = (full_name, normalized_hex, role)
+            if key in seen:
+                continue
+            seen.add(key)
+            results.append({"name": full_name, "value_hex": normalized_hex, "role": role})
+
     return results
 
 
@@ -196,7 +241,16 @@ def extract_all(slug: str) -> dict:
     html_path = service_dir / "index.html"
     html = html_path.read_text(encoding="utf-8", errors="replace") if html_path.exists() else ""
 
-    semantic_vars = extract_semantic_brand_vars(css)
+    # 🆕 v3.2: resolved_tokens.json 있으면 var() 체인 해결된 토큰도 활용 (Ferrari `--f-` miss 회귀 방지)
+    resolved_path = service_dir / "phase1" / "resolved_tokens.json"
+    resolved: dict | None = None
+    if resolved_path.exists():
+        try:
+            resolved = json.loads(resolved_path.read_text(encoding="utf-8", errors="replace"))
+        except (json.JSONDecodeError, OSError):
+            resolved = None
+
+    semantic_vars = extract_semantic_brand_vars(css, resolved=resolved)
     selector_role = extract_selector_role_hex(css)
     frequency_candidates = extract_frequency_candidates(css, html)
     result = {

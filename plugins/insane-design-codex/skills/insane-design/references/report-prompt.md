@@ -70,7 +70,7 @@ design.md에 적힌 것만 사용.
 | **출력** | `insane-design/<slug>/report.ko.html` (자체 완결 한글 HTML) |
 | **CSS** | `references/report.css` — Layer 0 규칙으로 삽입 |
 
-소스 파일명: `design.md` 우선. 없으면 `design.md`.
+소스 파일명: `design.md` 우선. 없으면 `DESIGN.claude.manual.md`.
 
 ### 1-2. Input Contract — frontmatter 필드
 

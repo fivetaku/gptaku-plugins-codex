@@ -68,7 +68,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [docs-guide-codex](plugins/docs-guide-codex) | Accurate answers grounded in official documentation, using an `llms.txt`-first strategy and official-source fallbacks. |
 | [git-teacher-codex](plugins/git-teacher-codex) | Git/GitHub onboarding for non-developers, with cloud-service analogies and safe beginner workflows. |
 | [vibe-sunsang-codex](plugins/vibe-sunsang-codex) | AI collaboration mentoring for vibecoders, including session retrospectives, mentoring, and growth reports. |
-| [deep-research-codex](plugins/deep-research-codex) | Structured deep research with query design, source triangulation, citations, and quality checks. |
+| [insane-research-codex](plugins/insane-research-codex) | Structured deep research with query design, source triangulation, citations, and quality checks. |
 | [pumasi-codex](plugins/pumasi-codex) | Codex-native parallel build orchestration, plus a native image-generation companion skill. |
 | [show-me-the-prd-codex](plugins/show-me-the-prd-codex) | Interview-based PRD generation from a rough idea into an actionable document bundle. |
 | [kkirikkiri-codex](plugins/kkirikkiri-codex) | Codex-native agent-team assembly from natural language, with shared memory and bounded delegation. |

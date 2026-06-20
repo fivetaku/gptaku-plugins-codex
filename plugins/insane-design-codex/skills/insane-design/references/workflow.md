@@ -1,43 +1,33 @@
-# insane-design Workflow for Codex
+# insane-design-codex — Skill Router (v3.2)
 
-Use this document instead of the older AI agent-oriented workflow notes.
+This plugin mirrors the Claude Code `insane-design` plugin as **three Codex skills**
+(Codex is skill-first — there is no `commands/` directory):
 
-## Analysis mode
+| Skill | Role | Folds in |
+|-------|------|----------|
+| `insane-design` | analysis — URL → `design.md` + `report.ko.html` | `export` (design.md → DTCG `tokens.json`) |
+| `insane-apply` | apply a `design.md` to an existing project (Lv1/Lv2/Lv3) | synchronous `verify` (§18 DON'T grep) |
+| `insane-build` | build a new artifact from a `design.md` (or synthesize one) | synchronous `verify` (§18 DON'T grep) |
 
-1. Validate the target URL and derive a stable slug.
-2. Create `insane-design/<slug>/`.
-3. Capture raw evidence:
-   - HTML
-   - CSS
-   - screenshots
-   - extracted metadata and tokens
-4. Run helper scripts when useful:
-   - `scripts/brand_candidates.py`
-   - `scripts/var_resolver.py`
-   - `scripts/typo_extractor.py`
-   - `scripts/alias_layer.py`
-5. Synthesize `design.md` using the Codex template.
-6. Render `report.ko.html` from the canonical report prompt and CSS.
+Canonical assets live under `insane-design/` and are shared by all three skills via
+`$PLUGIN_ROOT/skills/insane-design/...`:
 
-## Apply mode
+- `references/schema.v3.2.md` — frontmatter + section single source of truth
+- `references/template.md` — 19-section `design.md` template (v3.2)
+- `references/narrative-vocabulary.md` / `report-prompt.md` / `report.css` / `pitfalls.md` / `data-collection.md` / `methodology.md`
+- `scripts/` — deterministic extractors + `validate.py` + `export_dtcg.py`
+- `shared/README.md` — shared contract (Identity · Contract · Verifier · AI Slop · Starter Components)
+- `shared/starter-components/` — per-medium HTML presets
+- `examples/` — canonical bundled corpus (read-only)
 
-- Read `design.md`.
-- Preserve the `§18 DON'T` contract.
-- Use the design brief to steer edits in an existing project without copying blindly from examples.
+Apply-specific references live under `$PLUGIN_ROOT/skills/insane-apply/references/`
+(`apply-workflow.md`, `redesign-aesthetics.md`).
 
-## Build mode
+## Codex adaptations vs Claude Code
 
-- Read `design.md`.
-- Pick starter components that match the `medium` field.
-- Generate new artifacts that follow the brief rather than cloning the source site.
-
-## Clarification rule
-
-- Ask at most one clarification if the URL or output root is ambiguous.
-- Otherwise proceed and record assumptions in the output notes.
-
-## Verification rule
-
-- Prefer synchronous local verification.
-- Start with grep or lint checks.
-- Only escalate to browser-driven checks when there is a concrete reason.
+- `AskUserQuestion` card UI does not exist → every menu/selection becomes the
+  `shared/questioning-policy.md §A` numbered-options-in-chat pattern.
+- No async `Task(run_in_background)` verifier and no `verify` polling command →
+  all verification is **synchronous** within the same turn (grep first, playwright only if installed).
+- All script/asset/reference paths use `$PLUGIN_ROOT`, not `${CLAUDE_PLUGIN_ROOT}`.
+- `schema_version: 3.2` is the active contract (3.1 deprecated).

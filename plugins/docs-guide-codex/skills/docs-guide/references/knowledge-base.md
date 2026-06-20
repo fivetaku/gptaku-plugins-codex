@@ -1,36 +1,12 @@
 # docs-guide Knowledge Base for Codex
 
-This skill is for official documentation retrieval, not general web search.
+This reference is kept for backward compatibility. The full retrieval logic is now embedded in `SKILL.md`.
 
-## Core idea
+## Quick Reference
 
-Use live documentation so answers are grounded in the current official source instead of model memory.
+- Retrieval order: known llms.txt → official-site llms.txt → GitHub raw → sitemap.xml → platform signals → search
+- When to fetch: library APIs, setup, migration, version-specific behavior, explicit doc requests
+- When to skip: basic syntax, generic CS concepts, architecture without library dependency
+- Citation rule: always cite the URL used; for spec-level claims, cite the detail page URL (not just the index)
 
-## Preferred retrieval order
-
-1. known `llms.txt` URL
-2. official-site `llms.txt`
-3. official GitHub docs source
-4. `sitemap.xml` or platform-specific search index
-5. official-domain search as a last resort
-
-## When to use
-
-- library APIs
-- setup or configuration
-- migration guides
-- version-specific behavior
-- official terminology or exact supported syntax
-
-## When not to use
-
-- basic programming syntax
-- generic CS explanations with no library/version dependency
-- broad architecture advice with no primary-source need
-
-## Citation rule
-
-Always cite the URL used.
-
-If the answer depends on a specific version, say which version you inferred or fetched.
-
+See `SKILL.md` for the full retrieval strategy, spec-level drill-down protocol, quality gate, and error handling.

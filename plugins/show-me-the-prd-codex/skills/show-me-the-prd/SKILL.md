@@ -20,7 +20,7 @@ Use this skill when the user wants a product plan, PRD, app spec, or a structure
    - platform
    - MVP scope
    - constraints
-2. Ask at most one targeted follow-up if the biggest unknown would materially change the plan.
+2. Question per the shared policy (`shared/questioning-policy.md` §0~§2): infer what you can, ask only the genuinely unknown. Do NOT stop at the first surface/polite answer (§2a) — keep engaging until the user reaches their real need in their own words. But if the request is already concrete or the user gives a direct answer, stop asking and proceed (§2c).
 3. Use live research before recommending features, stacks, vendors, or pricing. Prefer current primary sources when possible.
 4. Keep explanations plain-language and production-oriented.
 5. Write the preserved five-file bundle under `PRD/`:
@@ -34,10 +34,14 @@ Use this skill when the user wants a product plan, PRD, app spec, or a structure
 
 ## Interaction Rules
 
-- Ask in chat with compact multiple-choice style prompts when you truly need a decision.
+Codex CLI has no `AskUserQuestion` card UI — substitute it with the chat block in `shared/questioning-policy.md` §A.
+
+- Ask in chat with compact numbered-option prompts (NOT a card tool) when you truly need a decision.
 - Format decision prompts like:
   `1. Recommended option - what it is, why it helps, tradeoff`
   `2. Alternative option - what it is, why it helps, tradeoff`
-- When structure matters, show a short fenced preview before the question so the user can react to something concrete.
+  `3. Tell me a different structure in your own words`  (the "Other" escape)
+- Recommended option always goes first. Multi-pick → "answer like 1,3".
+- When structure matters, show a short fenced preview before the question so the user can react to something concrete (the `preview` substitute).
 - Avoid markdown tables in chat, but keep them in the generated docs where the templates expect them.
 - If the user supplied an existing spec, preserve its intent and only normalize the structure into the bundled templates.

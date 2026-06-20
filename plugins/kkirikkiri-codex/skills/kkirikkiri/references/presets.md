@@ -1,42 +1,351 @@
-# kkirikkiri Presets for Codex
+# 끼리끼리 프리셋 정의 (Codex)
 
-Use this file instead of the legacy preset catalog when running inside Codex.
+> 프리셋은 팀 구성의 출발점. 인터뷰와 환경스캔으로 동적 조정된다.
+> Codex에는 AskUserQuestion 카드가 없으므로 모든 인터뷰는 `shared/questioning-policy.md §A` 번호형 블록으로 채팅에서 진행한다.
 
-## Preset table
+---
 
-- `research` — For broad topic research, competitor scans, source gathering, and synthesis.
-  Use when the user asks to research, compare, investigate, or compile findings.
-  Recommended team: lead + 2 explorers.
-- `development` — For delegated implementation with clear ownership boundaries.
-  Use only when the user explicitly wants delegation or parallel build help.
-  Recommended team: lead + 2 workers, optionally 1 verifier.
-- `analysis` — For codebase exploration, technical review, audits, and architecture mapping.
-  Use when the user wants to understand an existing system rather than change it directly.
-  Recommended team: lead + 2 explorers.
-- `content` — For writing-heavy tasks such as docs, reports, summaries, or polished deliverables.
-  Recommended team: lead + 1 writer + 1 reviewer.
-- `product` — For PRD, roadmap, strategy, prioritization, or positioning work.
-  Recommended team: lead + 1 researcher + 1 planner.
+## 매칭 규칙 (Step 1)
 
-## Classification rules
+| 프리셋 | 키워드 |
+|--------|--------|
+| research | 조사, 리서치, 찾아줘, 알아봐줘, 검색, 분석해줘, 비교해줘 |
+| development | 만들어줘, 구현해줘, 개발해줘, 코딩해줘, 기능 추가, 리팩토링 |
+| analysis | 분석해줘, 파악해줘, 구조 분석, 코드 분석, 리뷰해줘, 검토해줘 |
+| content | 문서, README, 작성해줘, 써줘, 블로그, 가이드, 튜토리얼 |
+| product | PRD, 전략, 기획, OKR, 로드맵, 가설, 검증, 디스커버리, 페르소나, GTM, 런칭, 경쟁분석, 시장분석, 비즈니스모델, 가격, 포지셔닝, North Star, 사용자스토리, 스프린트 |
 
-- If the user explicitly asks for delegation, a team, multiple agents, parallel help, or to "split this up", use the closest preset above.
-- If the request is mostly coding and the user did not ask for delegation, do not use `kkirikkiri`.
-- If the request mixes research and implementation, default to `development` when code changes are the end goal, otherwise `research`.
+매칭 방법: 입력에서 각 프리셋 키워드 매칭 횟수를 세고 가장 많이 매칭된 프리셋 선택. 동점이면 문맥 판단. 매칭 실패 시 범용(generic) 인터뷰로 전환.
 
-## Team sizing
+문맥 주의:
+- "분석해줘"는 research/analysis 둘 다 매칭 → "경쟁사 분석"=research, "코드 분석"=analysis
+- "경쟁분석"/"시장분석"은 product/research 둘 다 매칭 → "3곳 비교"=research, "분석+PRD"=product
+- "기획"/"전략"은 product 강매칭 — 다른 프리셋보다 우선
 
-- Default to 2-4 total agents including the lead.
-- Add a verifier only when there is a concrete review or test gate to run.
-- Avoid larger teams unless the work partitions cleanly.
+---
 
-## Environment scan interpretation
+## 리서치 팀 (research)
 
-Read `scripts/scan_environment.py` output like this:
+- description: 웹 검색 + 문서 분석 + 결과 리포트 작성
 
-- `codex` present — safe to assume Codex-native execution environment
-- `gh` present — PR, issue, and repo workflows are available
-- `gemini` present — optional external comparison path, not required
-- `installed_skills` — can suggest nearby skills, but do not overfit the team shape to them
+### 기본 구성 (3명)
+| 역할 | archetype | 모델 티어 | R&R | 금지 |
+|------|-----------|-----------|-----|------|
+| Lead | Leader | Opus 티어 | 계획·소스 배분·통합·검증·최종 감수 | 직접 검색/작성 |
+| Researcher 1 | Researcher | Sonnet 티어 | 웹 리서치 (뉴스·블로그·업계 리포트) | 리포트 작성·타 리서처 영역 침범 |
+| Researcher 2 | Researcher | Sonnet 티어 | 문서/학술 리서치 (논문·공식 문서·스펙) | 리포트 작성·타 리서처 영역 침범 |
 
-Ignore any legacy external-agent file assumptions from older materials.
+### 확장 구성 (깊이 요청 시)
+- Lead + Researcher 1-3 + Writer. Writer는 리더 지시로 초안만 작성 (최종 감수는 Lead).
+
+### 외부 모델 활용
+- Codex CLI 있으면: 기술 코드 분석 + 대규모 문서 분석 역할 추가
+- 없으면: 로컬 lead(Opus 티어)로 대체
+
+### 인터뷰 질문 (최대 3개 — §A 번호 블록으로 채팅 출력)
+
+Q1. "어떤 주제를 리서치하려고 하시나요?" — 열린 텍스트 질문 (이미 답이 있으면 생략)
+
+Q2. "결과물은 어떤 형태면 좋겠어요?" (단일 선택)
+```
+1. 종합 리포트 (추천) — 깊이 있는 분석 문서. 여러 소스 교차 검증. 시간 좀 걸림.
+2. 비교표 — 여러 옵션을 나란히 비교. 의사결정할 때 좋음.
+3. 핵심 요약 — 1-2페이지. 빠르게 핵심만. 깊이는 얕을 수 있음.
+4. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+Q3. "리서치 깊이는?" (단일 선택)
+```
+1. 깊고 포괄적으로 (추천) — 여러 소스 교차 검증. 팀 확장 가능(4-5명). 시간 더 걸림.
+2. 빠르게 핵심만 — 기본 3명으로 빠르게. 30분 내외. 깊이 제한.
+3. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+### 동적 조정
+- Q3 "깊고 포괄적" → 확장 구성(4-5명)
+- Perplexity MCP 발견 → Researcher에 도구 배정
+- Codex CLI 발견 → 기술 분석 역할 추가 제안
+
+### agent_match_keywords (.codex/agents 등 기존 에이전트 매칭)
+- 리서치, research, 조사, 검색, 수집 / 데이터, data, 분석, analysis, 통계 / 웹, web, 크롤링, scraping
+- description에 키워드 포함 또는 `recommended-for: research`이면 우선 매칭
+
+---
+
+## 개발 팀 (development)
+
+- description: 기획 + 구현 + 테스트를 분업하는 개발 팀
+
+### 기본 구성 (3명)
+| 역할 | archetype | 모델 티어 | R&R | 금지 |
+|------|-----------|-----------|-----|------|
+| Lead | Leader | Opus 티어 | 아키텍처 설계·태스크 분배·코드 리뷰·통합 판단 | 직접 코드 작성 |
+| Developer 1 | Builder | Opus 티어 | 핵심 기능 구현 (메인 로직·API·데이터 레이어) | 테스트 작성·UI 작업 |
+| Developer 2 | Builder | Sonnet 티어 | 보조 기능 구현 (UI·유틸·설정) | 메인 로직·DB 스키마 변경 |
+
+### 확장 구성 (테스트 필요 시)
+- Lead + Developer 1 + Developer 2 + Tester(Critic). Tester는 리더 지시로 테스트만 작성.
+
+### 외부 모델 활용
+- Codex CLI 있으면: 코드 리뷰 전담 역할 추가 (cross-model 1순위 검토자 — refute 프롬프트)
+- Antigravity CLI(agy) 있으면: UI/디자인 리뷰 역할 추가
+- 없으면: 로컬 Opus 적대 검토 인스턴스("결함을 찾아라" 프롬프트)가 리뷰 수행
+
+### 인터뷰 질문 (최대 3개 — §A 번호 블록)
+
+Q1. "뭘 만들고 싶으세요?" — 열린 텍스트 질문
+
+Q2. "기존 코드가 있나요?" (단일 선택)
+```
+1. 새로 시작 (추천) — 처음부터 만들기. 기존 코드 영향 없음. 가장 깔끔.
+2. 기존 코드에 추가 — 현재 프로젝트에 기능 추가. 기존 패턴/구조를 따라야 함.
+3. 기존 코드 수정/리팩토링 — 있는 코드를 고치기. 기존 테스트가 깨지지 않게 주의.
+4. 문장으로 직접 적기
+(모르면 프로젝트를 스캔해서 판단할게요)
+```
+
+Q3. "테스트도 필요해요?" (단일 선택)
+```
+1. 네, 테스트도 같이 (추천) — 테스터 역할 추가. 품질 높지만 시간 더 걸림.
+2. 아니요, 구현만 — 기본 3명으로 빠르게. 테스트는 나중에.
+3. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+### 동적 조정
+- Q3 "테스트도 같이" → 확장 구성(Tester 추가)
+- Q2 "기존 코드에 추가" → 환경스캔으로 기존 패턴/스택 파악 후 팀에 전달
+- gh CLI 발견 → PR 생성 기능 활용 제안
+
+### agent_match_keywords
+- 코드, code, 개발, develop, 구현, implement / 리뷰, review, 아키텍처, architect, 설계 / 테스트, test, QA, 품질
+- description 키워드 포함 또는 `recommended-for: development`이면 우선 매칭
+
+---
+
+## 분석 팀 (analysis)
+
+- description: 코드베이스 탐색 + 구조 분석 + 인사이트 도출
+
+### 기본 구성 (3명)
+| 역할 | archetype | 모델 티어 | R&R | 금지 |
+|------|-----------|-----------|-----|------|
+| Lead | Leader | Opus 티어 | 분석 계획·관점 배분·통합·인사이트 도출 | 직접 코드 탐색 |
+| Explorer 1 | Analyst | Opus 티어 | 코드 구조 탐색 (파일 구조·의존성·아키텍처) | 코드 수정·결론 도출 |
+| Explorer 2 | Analyst | Opus 티어 | 상세 코드 분석 (패턴·품질·보안·성능) | 코드 수정·결론 도출 |
+
+### 외부 모델 활용
+- Codex CLI 있으면: 보안/성능 전문 분석 역할 추가
+- 없으면: Explorer가 해당 관점 포함
+
+### 인터뷰 질문 (최대 3개 — §A 번호 블록)
+
+Q1. "뭘 분석하려고 하시나요?" — 열린 텍스트 질문
+
+Q2. "어떤 관점으로 분석할까요?" (여러 개 선택 가능 — "여러 개면 1,3처럼 적어주세요")
+```
+1. 전체 구조/아키텍처 (추천) — 파일 구조·모듈 관계·의존성 맵.
+2. 코드 품질 — 중복·복잡도·네이밍·패턴 일관성.
+3. 보안 — 취약점·인증/인가·입력 검증·시크릿 관리.
+4. 성능 — 병목·메모리·비효율 쿼리/루프.
+(여러 개면 1,3처럼 적어주세요)
+```
+
+Q3. "분석 결과를 어떤 형태로 받을까요?" (단일 선택)
+```
+1. 구조 다이어그램 + 리포트 (추천) — 시각적 구조도 + 상세 분석. 이해하기 좋음.
+2. 이슈 목록 — 문제점/개선점 목록. 바로 실행 가능.
+3. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+### 동적 조정
+- Q2 "보안" + Codex CLI 있음 → Codex에 보안 전문 분석 위임
+- Q2 여러 관점 선택 → Explorer를 관점별로 분배
+
+### agent_match_keywords
+- 분석, analyze, 탐색, explore, 구조 / 보안, security, 취약점, vulnerability / 코드, code, 패턴, pattern, 품질
+- description 키워드 포함 또는 `recommended-for: analysis`이면 우선 매칭
+
+---
+
+## 콘텐츠 팀 (content)
+
+- description: 문서 작성 + 리뷰 + 편집을 분업하는 콘텐츠 팀
+
+### 기본 구성 (3명)
+| 역할 | archetype | 모델 티어 | R&R | 금지 |
+|------|-----------|-----------|-----|------|
+| Lead | Leader | Opus 티어 | 콘텐츠 기획·목차 구성·톤앤매너·최종 감수 | 직접 문서 작성 |
+| Writer | Writer | Opus 티어 | 초안 작성·예제 코드·스타일 가이드 준수 | 기획 변경·목차 임의 수정 |
+| Reviewer | Critic | Sonnet 티어 | 맞춤법·일관성·정확성 검토. 수정 제안 | 직접 수정 (제안만) |
+
+### 외부 모델 활용
+- Codex CLI 있으면: 대량 텍스트 품질 검토 역할 (cross-model 검토)
+- 없으면: Reviewer(Sonnet 티어)가 검토 수행
+
+### 인터뷰 질문 (최대 3개 — §A 번호 블록)
+
+Q1. "어떤 문서를 만들고 싶으세요?" — 열린 텍스트 질문
+
+Q2. "대상 독자는 누구예요?" (단일 선택)
+```
+1. 개발자 (추천) — 기술 용어 OK, 코드 예제 중심. 간결한 톤.
+2. 비개발자/일반인 — 기술 용어 최소화, 비유 사용, 친절한 톤.
+3. 팀 내부용 — 약어/전문용어 OK, 배경 설명 생략 가능.
+4. 문장으로 직접 적기
+(모르면 1번 개발자 대상으로 진행할게요)
+```
+
+Q3. "톤앤매너는?" (단일 선택)
+```
+1. 실용적/간결 (추천) — 핵심 위주. 불필요한 설명 최소화. README 스타일.
+2. 친절/상세 — 단계별 설명·스크린샷 포함. 튜토리얼 스타일.
+3. 격식/공식 — 프로페셔널 톤. 비즈니스 문서 스타일.
+4. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+### 동적 조정
+- Q2 "비개발자" → Writer에 "기술 용어 대신 비유 사용" 지시 추가
+- 기존 README 발견 → 기존 톤/구조 참조 전달
+
+### agent_match_keywords
+- 문서, document, 작성, write, 콘텐츠, content / 번역, translate, 편집, edit, 교정 / README, 가이드, guide, 튜토리얼, tutorial
+- description 키워드 포함 또는 `recommended-for: content`이면 우선 매칭
+
+---
+
+## PM/Product 팀 (product)
+
+- description: PM 프레임워크 기반 제품 기획 — 디스커버리·전략·PRD·GTM까지
+
+### 기본 구성 (3명)
+| 역할 | archetype | 모델 티어 | R&R | 금지 |
+|------|-----------|-----------|-----|------|
+| Lead | Leader | Opus 티어 | PM 프레임워크 워크플로우 관리·체크포인트 확인·통합·검증 | 직접 리서치/작성 |
+| Researcher | Researcher | Sonnet 티어 | 시장/경쟁/사용자 데이터 수집·트렌드·정량 데이터 | 결론 도출·프레임워크 적용·최종 작성 |
+| Strategist | Analyst | Opus 티어 | 프레임워크 적용(OST·Strategy Canvas·Lean Canvas·Assumption Mapping)·인사이트 도출 | 직접 리서치·최종 작성 |
+
+### 확장 구성 (깊이 요청 또는 복합 작업)
+- Lead + Researcher + Strategist + Writer. Writer는 팀장/Strategist 지시로 최종 문서(PRD·전략 문서)만 작성.
+- 디스커버리+전략+PRD 등 3개 이상 작업 시: Researcher 분업(시장/경쟁 vs 사용자/데이터).
+
+### 외부 모델 활용
+- Codex CLI 있으면: 경쟁사 기술 분석·feasibility 검증·대규모 시장 데이터 분석 역할 추가
+- Perplexity MCP 있으면: Researcher에 실시간 시장 데이터 검색 도구 배정
+- 없으면: 로컬 Opus 티어로 대체
+
+### 인터뷰 질문 (최대 3개 — §A 번호 블록)
+
+Q1. "어떤 제품/서비스에 대한 작업인가요?" — 열린 텍스트 질문
+
+Q2. "어떤 PM 작업이 필요해요?" (여러 개 선택 가능)
+```
+1. 디스커버리 (추천) — 아이디어 발굴·가설 검증·실험 설계. 뭘 만들지 정하기 전 단계.
+2. 제품 전략 — 비전·타겟·포지셔닝·성장 전략. 큰 그림 그리기.
+3. PRD 작성 — 기능 요구사항 문서. 개발팀 전달용 스펙.
+4. 시장/경쟁 분석 — 시장 규모·경쟁사·사용자 세그먼트.
+5. OKR/메트릭 설계 — 목표 지표·North Star·성공 기준.
+6. GTM/런칭 전략 — 출시 계획·타겟 세그먼트·채널 전략.
+(여러 개면 1,3처럼 적어주세요 / 모르면 제품 설명 듣고 추천할게요)
+```
+
+Q3. "어느 정도 깊이로?" (단일 선택)
+```
+1. 제대로 (추천) — 프레임워크 기반 체계적 분석. 여러 관점 교차 검증. 시간 좀 걸림.
+2. 핵심만 빠르게 — 기본 3명으로 빠르게. 핵심 포인트만.
+3. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+### 동적 조정
+- Q2 단일 작업 → 기본 구성(3명) / 2개 이상 → 확장 구성(Writer 추가) 또는 복합 확장
+- Q2 "디스커버리" 포함 → 팀장에 Discovery Workflow 체이닝 패턴 주입
+- Q2 "제품 전략" 포함 → Strategist에 Strategy Canvas 9-section 주입
+- Q2 "PRD 작성" 포함 → Writer에 PRD 8-section 템플릿 주입
+- Q2 "시장/경쟁 분석" 포함 → Researcher에 경쟁 분석 + TAM/SAM/SOM 프레임워크 주입
+- Q2 "OKR/메트릭" 포함 → Strategist에 North Star + Input Metrics 주입
+- Q2 "GTM/런칭" 포함 → Strategist에 GTM 전략 + 비치헤드 세그먼트 주입
+- Q3 "제대로" → 확장 구성 + 체크포인트 포함 워크플로우 / "핵심만" → 기본 구성 + 체크포인트 축소
+- Perplexity MCP 발견 → Researcher에 실시간 검색 도구 배정
+
+### agent_match_keywords
+- PRD, 기획, product, 전략, strategy, 로드맵 / 사용자, user, 페르소나, persona, 리서치 / 데이터, data, 분석, OKR, 지표, metric
+- description 키워드 포함 또는 `recommended-for: product`이면 우선 매칭
+
+### 체이닝 워크플로우 (PM 프리셋 전용)
+팀장은 작업을 순차 단계로 구성하고 단계 사이에 체크포인트를 둔다.
+- 단일 작업: 해당 프레임워크 단계를 순차 진행
+- 복합 작업: 리서치 → 분석/전략 → 문서화 순으로 체이닝
+
+```
+예시: 디스커버리 + PRD
+Step 1: Researcher가 시장/사용자 데이터 수집
+Step 2: Strategist가 OST + Assumption Mapping
+  [CHECKPOINT: 팀장이 사용자에게 중간 결과 보고]
+Step 3: Strategist가 우선순위 정리 + 실험 설계
+Step 4: Writer가 Discovery Plan + PRD 초안 작성
+  [CHECKPOINT: 팀장이 초안 검증 후 보고]
+Step 5: 피드백 반영 → 최종 문서
+```
+
+팀장 프롬프트에 반드시 포함:
+- `references/pm-frameworks.md`의 해당 프레임워크 내용
+- "단계별 진행하되, 다음 단계 전 이전 단계 결과를 TEAM_FINDINGS.md에 기록"
+- "체크포인트에서 메인 세션(사용자)에 중간 결과 보고"
+
+### 프레임워크 레퍼런스
+PM 프리셋 매칭 시 팀원 프롬프트 작성 전 반드시 읽는다:
+- `$PLUGIN_ROOT/skills/kkirikkiri/references/pm-frameworks.md`
+
+이 파일의 "팀원 프롬프트 주입 가이드"에 따라 각 역할에 프레임워크를 주입한다.
+
+---
+
+## 범용 팀 (generic)
+
+> 5개 프리셋에 매칭되지 않는 요청 시 범용 인터뷰로 전환.
+
+agent_match_keywords: 프리셋 매핑 없음. 에이전트 description과 요청의 키워드 유사도로 동적 판단. `recommended-for` 있으면 해당 프리셋으로 매칭 시도.
+
+### 인터뷰 질문 (§A 번호 블록)
+
+Q1. "뭘 하고 싶은지 좀 더 자세히 말해줄 수 있어요?" — 열린 텍스트 질문
+
+Q2. "이 중에 가까운 게 있나요?" (단일 선택)
+```
+1. 조사/리서치 — 리서치 팀으로 전환
+2. 개발/코딩 — 개발 팀으로 전환
+3. 분석/검토 — 분석 팀으로 전환
+4. 문서/글쓰기 — 콘텐츠 팀으로 전환
+5. 문장으로 직접 적기
+```
+
+→ 선택 후 해당 프리셋의 나머지 인터뷰 질문을 이어서 진행.
+
+---
+
+## 공통 규칙
+
+### 팀장(Lead) R&R — 모든 프리셋 공통
+- 팀장은 무조건 Opus 티어
+- 팀장은 코드를 짜지 않는다 (계획/배분/검증/통합만)
+- 팀장은 PM이다 — 직접 구현이 아닌 명확한 지시
+- 팀장이 직접 작업하면 R&R 위반
+
+### 모델 티어 기본 원칙 (Codex 해석은 SKILL.md "모델 티어" 참조)
+- Lead: 항상 Opus 티어
+- 분석·비평·최종 종합·핵심 구현: Opus 티어 (판단이 걸린 역할 전부)
+- 일반 워커 (리서치 수집·쿼리·드래프트·간단 구현): Sonnet 티어 — 워커 기본값
+- 기계적 글루 (파일 수집·포맷·추출): Haiku 티어 가능 (판단 0인 일만)
+- 외부(Codex=코드·대규모 분석 / agy=디자인·UI / gjc=멀티모델): CLI 백그라운드 실행, 없으면 로컬 폴백
+- 검토는 build와 다른 family: Codex → agy → Opus 적대 인스턴스(refute 프롬프트)
+
+### 동적 조정 공통 원칙
+- 프리셋은 출발점, 고정값 아님
+- 인터뷰 답변으로 역할 수/모델 변경
+- 환경스캔으로 도구/리소스 반영
+- 같은 프리셋이라도 매번 다른 팀 구성 가능

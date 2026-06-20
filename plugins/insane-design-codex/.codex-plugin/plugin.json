@@ -1,7 +1,7 @@
 {
   "name": "insane-design-codex",
-  "version": "0.1.0",
-  "description": "Codex-native design system extraction, apply, and build workflow with a bundled corpus.",
+  "version": "0.5.1",
+  "description": "Codex-native design system analyze / apply / build / export — extract real CSS into design.md + report.ko.html, apply a design to an existing project, scaffold new artifacts, and export DTCG tokens.json.",
   "author": {
     "name": "fivetaku",
     "url": "https://github.com/fivetaku"
@@ -20,8 +20,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Insane Design Codex",
-    "shortDescription": "Extract and reuse real design systems in Codex",
-    "longDescription": "Package the Codex-native `insane-design` workflow with the bundled example corpus, helper scripts, starter components, and the clean Codex contract for `design.md` generation.",
+    "shortDescription": "Analyze, apply, build, and export real design systems in Codex",
+    "longDescription": "Package the Codex-native `insane-design` (analysis + DTCG export), `insane-apply`, and `insane-build` skills with the bundled example corpus, helper scripts, starter components, and the v3.2 `design.md` contract. Menu selections use the numbered-options chat pattern instead of card UIs; verification is synchronous.",
     "developerName": "GPTaku",
     "category": "Coding",
     "capabilities": [
@@ -34,8 +34,9 @@
     "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
     "defaultPrompt": [
       "Analyze this site and generate a reusable design.md plus report.ko.html.",
-      "Use insane-design to extract real CSS tokens from this URL and summarize the design system.",
-      "Build a new artifact from this design.md and starter-component set."
+      "Apply the stripe design.md to my existing landing page, keeping the content.",
+      "Build a new landing page from this design.md and the starter components.",
+      "Export this design.md frontmatter to a DTCG tokens.json."
     ],
     "brandColor": "#0B1020",
     "composerIcon": "./assets/insane-design-codex.svg",

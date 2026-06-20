@@ -7,7 +7,7 @@
 | 용도 | 사용 도구 | 사용 조건 | 예시 |
 |------|----------|----------|------|
 | 공식 문서 기반 기술 조사 | docs-guide 스킬 | 플러그인 설치됨 | "Next.js App Router 캐싱" |
-| 종합 리서치 (시장, 트렌드) | deep-research 스킬 | 플러그인 설치됨 | "인보이싱 앱 시장 조사" |
+| 종합 리서치 (시장, 트렌드) | insane-research 스킬 | 플러그인 설치됨 | "인보이싱 앱 시장 조사" |
 | 빠른 검색 (가격, 비교, 팩트) | WebSearch (빌트인) | 항상 사용 가능 | "Supabase 무료 용량 2026" |
 | 페이지 내용 추출 | WebFetch (빌트인) | 항상 사용 가능 | 특정 URL의 가격표 확인 |
 
@@ -19,15 +19,15 @@ Phase 0에서 자동 확인. 유저에게 묻지 않고 내부적으로 기억.
 
 ```
 확인 방법:
-사용 가능한 스킬 목록에 docs-guide, deep-research가 있는지 확인.
+사용 가능한 스킬 목록에 docs-guide, insane-research가 있는지 확인.
 있으면 Skill 도구로 호출, 없거나 호출 실패 시 WebSearch로 폴백.
 
 결과:
-- 있음 -> Skill(skill="docs-guide", args="...") / Skill(skill="deep-research", args="...") 활용
+- 있음 -> Skill(skill="docs-guide", args="...") / Skill(skill="insane-research", args="...") 활용
 - 없음 -> WebSearch로 폴백 (기본 동작에 문제 없음)
 ```
 
-**없어도 동작한다** -- docs-guide/deep-research가 없으면 빌트인 WebSearch로 폴백.
+**없어도 동작한다** -- docs-guide/insane-research가 없으면 빌트인 WebSearch로 폴백.
 있으면 더 정확하고 깊이 있는 리서치가 가능.
 
 ---
@@ -40,7 +40,7 @@ Phase 0에서 자동 확인. 유저에게 묻지 않고 내부적으로 기억.
   -> 폴백: WebSearch("{framework} image optimization guide")
 
 "사진 앱 시장 규모와 트렌드"
-  -> deep-research (멀티소스 종합 리서치)
+  -> insane-research (멀티소스 종합 리서치)
   -> 폴백: WebSearch("{domain} market size trends 2026")
 
 "Supabase Storage 무료 용량"
@@ -55,10 +55,10 @@ Phase 0에서 자동 확인. 유저에게 묻지 않고 내부적으로 기억.
 | 질문 유형 | 1순위 | 2순위 (폴백) |
 |----------|-------|-------------|
 | 프레임워크/라이브러리 사용법 | docs-guide | WebSearch + WebFetch |
-| 시장 조사, 경쟁 분석 | deep-research | WebSearch (여러 쿼리) |
+| 시장 조사, 경쟁 분석 | insane-research | WebSearch (여러 쿼리) |
 | 가격, 용량, 스펙 비교 | WebSearch | WebFetch (공식 페이지) |
 | 베스트 프랙티스, 구조 | docs-guide | WebSearch |
-| 최신 트렌드 | WebSearch | deep-research |
+| 최신 트렌드 | WebSearch | insane-research |
 
 ---
 
@@ -74,7 +74,7 @@ Phase 0에서 자동 확인. 유저에게 묻지 않고 내부적으로 기억.
 | Batch 2 | Step 2 기능 선택 직후 | 기능별 기술 난이도 확인 | WebSearch + docs-guide |
 | Batch 3 | Step 4 Phase 확인 후 | 모던 스택 비교, 공식문서 | docs-guide + WebSearch |
 | Batch 4 | Step 5 스택 선택 후 | 프로젝트 구조, 배포 가이드 | docs-guide |
-| (선택) | 유저 요청 시 | 깊은 시장 조사 | deep-research |
+| (선택) | 유저 요청 시 | 깊은 시장 조사 | insane-research |
 
 ### 배치 원칙
 
@@ -83,7 +83,7 @@ Phase 0에서 자동 확인. 유저에게 묻지 않고 내부적으로 기억.
 | 유저 대기 시간 = 0 | 리서치는 유저가 답변한 직후 or AI 처리 중에 병렬 실행 |
 | 다음 질문에 반영 | 리서치 결과가 바로 다음 질문의 선택지/설명에 녹아듦 |
 | 점진적 구체화 | 처음엔 넓게(WebSearch), 나중엔 깊게(docs-guide) |
-| deep-research는 선택적 | 시장 조사가 필요한 경우에만. 기본 흐름에서는 WebSearch + docs-guide로 충분 |
+| insane-research는 선택적 | 시장 조사가 필요한 경우에만. 기본 흐름에서는 WebSearch + docs-guide로 충분 |
 | 캐싱 | 같은 주제 중복 검색 방지. 배치 1 결과를 배치 2-4에서 재활용 |
 
 ---
@@ -154,7 +154,7 @@ WebSearch: "{도메인} 앱 보안 규정 주의사항"
 
 ---
 
-## docs-guide / deep-research 스킬 호출 방법
+## docs-guide / insane-research 스킬 호출 방법
 
 플러그인이 설치되어 있을 때, 해당 스킬을 Skill 도구로 호출한다.
 
@@ -162,8 +162,8 @@ WebSearch: "{도메인} 앱 보안 규정 주의사항"
 # docs-guide 호출
 Skill(skill="docs-guide", args="Next.js App Router 프로젝트 구조")
 
-# deep-research 호출
-Skill(skill="deep-research", args="인보이싱 앱 시장 분석")
+# insane-research 호출
+Skill(skill="insane-research", args="인보이싱 앱 시장 분석")
 ```
 
-**주의**: deep-research는 시간이 오래 걸린다. 기본 흐름에서는 WebSearch로 충분하고, 유저가 명시적으로 시장 조사를 원할 때만 사용.
+**주의**: insane-research는 시간이 오래 걸린다. 기본 흐름에서는 WebSearch로 충분하고, 유저가 명시적으로 시장 조사를 원할 때만 사용.

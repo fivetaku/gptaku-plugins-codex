@@ -115,6 +115,7 @@ Used by: FastAPI, Pydantic, Traefik, and many Python projects.
 | Elasticsearch | GitHub source (⚠️ version branch) + sitemap | https://github.com/elastic/elasticsearch/tree/8.17/docs |
 
 > **Elasticsearch 주의**: docs가 `main` 브랜치에 없음. `8.17` 등 버전 브랜치를 사용해야 함. 파일 형식은 AsciiDoc.
+
 | OpenSearch | GitHub MD (Jekyll) | https://github.com/opensearch-project/documentation-website |
 
 ### Monitoring / Observability
@@ -130,7 +131,8 @@ Used by: FastAPI, Pydantic, Traefik, and many Python projects.
 |------|--------------|---------|
 | Nginx | WebFetch (⚠️ GitHub repo ≠ 공식 문서) | https://nginx.org/en/docs/http/ngx_http_proxy_module.html |
 
-> **Nginx 주의**: `nginx/documentation` GitHub repo는 NGINX Plus 상용 문서만 포함. 오픈소스 Nginx 문서는 `nginx.org/en/docs/`에서 직접 WebFetch.
+> **Nginx 주의**: `nginx/documentation` GitHub repo는 NGINX Plus 상용 문서만 포함. 오픈소스 Nginx 문서는 `nginx.org/en/docs/`에서 직접 fetch.
+
 | Traefik | GitHub MD (MkDocs) + sitemap | https://github.com/traefik/traefik/tree/master/docs |
 
 ### ML / Data Science
@@ -142,7 +144,8 @@ Used by: FastAPI, Pydantic, Traefik, and many Python projects.
 | scikit-learn | GitHub RST (Sphinx) | https://github.com/scikit-learn/scikit-learn/tree/main/doc |
 | PyTorch | GitHub RST (primary, ⚠️ site is JS-heavy) | https://github.com/pytorch/pytorch/tree/main/docs/source |
 
-> **PyTorch 주의**: pytorch.org는 JS 렌더링이 무거워 WebFetch로 내용 추출 실패 가능. GitHub RST 소스를 우선 사용.
+> **PyTorch 주의**: pytorch.org는 JS 렌더링이 무거워 fetch로 내용 추출 실패 가능. GitHub RST 소스를 우선 사용.
+
 | TensorFlow | GitHub MD + sitemap index | https://github.com/tensorflow/docs |
 | Hugging Face | GitHub MD + sitemap (`sitemap-doc.xml`) | https://huggingface.co/docs |
 
@@ -218,7 +221,7 @@ Used by: FastAPI, Pydantic, Traefik, and many Python projects.
 ## Alternative Machine-Readable Formats
 
 ### sitemap.xml
-Most useful fallback. Parse XML to get URL list, filter for `/docs/` pattern, then WebFetch individual pages.
+Most useful fallback. Parse XML to get URL list, filter for `/docs/` pattern, then fetch individual pages.
 
 ### GitHub Raw Content
 For open-source projects, fetch markdown directly:
@@ -249,7 +252,7 @@ For REST APIs, check:
 2. Try parent path → table of contents 탐색 (`/docs/v1/intro` → `/docs/v1/`)
 3. GitHub branch fallback → `main` 404시 `master`, 버전 브랜치 시도
 
-### JS-rendered sites (WebFetch 실패)
+### JS-rendered sites (fetch 실패)
 - `developer.apple.com`, `docs.oracle.com` 등 SPA 사이트
 - 대안: GitHub 소스 우선, 없으면 내부 지식으로 답변 + 공식 URL 제공
 

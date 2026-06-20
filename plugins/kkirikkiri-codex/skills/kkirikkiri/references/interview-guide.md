@@ -1,64 +1,141 @@
-# kkirikkiri Interview Guide for Codex
+# 끼리끼리 인터뷰 가이드 (Codex)
 
-This file replaces the widget-oriented interview flow with a chat-first approach that works in Codex default mode.
+> 유저의 모호한 요청을 2-3개 질문으로 구체화하는 방법론.
+> 핵심: 유저가 아는 것(목적·대상)은 질문으로, 모르는 것(팀 구성·모델)은 AI가 결정.
+> **kkirikkiri는 Elicitation 유형 플러그인이다** — 진짜 니즈(real job)가 본인 발화로 확인될 때까지 끌어낸다.
 
-## Core rules
+---
 
-- Ask at most one clarification unless a second question is truly necessary to avoid a wrong team shape.
-- Use compact multiple-choice style prompts in chat.
-- Each option should explain:
-  - what it means
-  - why it helps
-  - what tradeoff it introduces
-- Let the user reply with:
-  - a number
-  - comma-separated numbers for multi-select
-  - a short sentence if none of the choices fit
+## ★ Codex 렌더링 — AskUserQuestion 대체 (`shared/questioning-policy.md §A`)
 
-## Prompt shape
+Codex CLI에는 AskUserQuestion 같은 객관식 카드 UI가 **없다.** 모든 인터뷰는 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 진행한다.
+
+### 표준 블록 포맷
 
 ```text
-어떤 결과가 필요해요?
-1. 추천안 — 무엇인지, 왜 좋은지, 단점
-2. 대안 — 무엇인지, 왜 좋은지, 단점
-3. 다른 방향 — 한 줄로 적기
+(예시 프리뷰 — 구조화 정보를 보여줄 때만. 단순 선호 질문이면 생략)
+  [User] --1:N--> [Post]      (실제 결과로 매번 새로 생성, 하드코딩 금지)
+
+질문: <한 줄 질문>
+1. <추천안> — 무엇인지, 왜 좋은지, 트레이드오프
+2. <대안> — 무엇인지, 트레이드오프
+3. 문장으로 직접 적기
+(여러 개 고를 수 있으면: "여러 개면 1,3처럼 적어주세요")
+(모르면 1번으로 진행할게요)
 ```
 
-## When to ask
+규칙:
+- 추천안은 항상 **1번**에 둔다.
+- "잘 모르겠어요"는 별도 선택지로 만들지 말고 "모르면 1번으로 진행할게요" 문장으로 안내.
+- 마지막 선택지는 항상 "문장으로 직접 적기"(자유 텍스트 escape — §A의 "Other" 대체).
+- 핵심 문제 발굴(Turn 1, 열린 질문)은 번호 블록이 아니라 **열린 텍스트 질문**으로 (§1.2).
+- 단순 분류/설정 고르기일수록 번호 블록이 적합.
 
-- Ask only if the answer changes:
-  - team composition
-  - ownership boundaries
-  - acceptance criteria
-  - whether delegation is even appropriate
+---
 
-Do not ask if the answer can be safely assumed and recorded in `.kkirikkiri/TEAM_PLAN.md`.
+## 인터뷰 설계 규칙
 
-## Good clarification targets
+| 규칙 | 설명 | 예시 |
+|------|------|------|
+| 설명 필수 | 모든 옵션에 "뭔지 + 장점 + 단점" | "종합 리포트 — 깊이 있는 분석. 시간 좀 걸림." |
+| 추천 표시 | 가장 적합한 옵션에 (추천) + 첫 번째 배치 | "종합 리포트 (추천)" |
+| 공식 용어 병기 | 공식 용어는 그대로 + 한글 설명 병기 (메타포로 대체 금지) | "Opus (가장 똑똑한 모델)" |
+| 복잡도 힌트 | 설명에 기대치 표시 | "시간 좀 걸림", "빠르게" |
+| 최소 질문 | 프리셋별 2-3개. 절대 4개 초과 금지 | |
+| 열린 질문 최소 | 첫 질문(뭘 하고 싶어?)만 열린 질문 | |
+| 직접 적기 escape | 모든 번호 블록 마지막에 "문장으로 직접 적기" | |
+| 내부 구현 비노출 | spawn_agent·내부 파일 경로는 노출 금지 (모델명·기능명은 공식 용어로 노출 OK) | 배관만 숨김 |
 
-- output depth
-- delivery format
-- whether code changes are expected
-- whether speed or depth matters more
+---
 
-## Bad clarification targets
+## ★ Elicitation 핵심 규칙 (`shared/questioning-policy.md §2a / §2b / §2c`)
 
-- model names
-- exact agent count unless it changes the plan materially
-- implementation trivia that the lead can decide
+> A/B 시뮬레이션에서 이 규칙들이 "진짜 니즈 포착"을 38→95로 끌어올렸다(kkirikkiri v2 검증). 번호 블록 형식보다 우선 적용한다.
 
-## Preview pattern
+### §2a — 조기 종료 금지 (모든 new 설계의 #1 실패 모드)
+- **첫 답변에서 끊지 마라.** 사용자가 표면적·예의상·회피성으로 답하면 그걸 결론으로 채택하지 말 것.
+- 사용자가 **진짜 결과(real job / 본인 통찰)에 본인 발화로 도달**할 때까지 턴을 이어간다. 에이전트가 "이해했다"고 단정 금물.
+- 추론 + 기본팀 선제안: 한 문장 요청에서 팀을 추론해 **기본 팀 구성을 먼저 제안**하고 시작한다(빈 질문부터 던지지 않음).
 
-When structure matters, show a short preview first.
+### §2b — 회피 대응 (이 플러그인에서 가장 중요. 명시적으로 못박는다)
+- 사용자가 deflect하면 **다음 질문은 반드시 구체/과거행동 앵커**로. 또 다른 추상 질문 금지.
+- **나쁜 후속(추상 → 추상):**
+  - 사용자: "그냥 현황 파악하려고요"
+  - 에이전트: "어떤 인사이트를 원하세요?" ❌ (또 추상 질문 → 또 회피 유발)
+- **좋은 후속(추상 → 구체/과거행동 앵커):**
+  - 사용자: "그냥 현황 파악하려고요"
+  - 에이전트: "최근에 누가 '이거 어때?' 하고 물었던 게 언제였어요? 그때 뭐라고 답하셨어요?" ✅
+  - 또는: "이 결과 나오면 **바로 다음에 구체적으로 뭘** 하실 거예요?" ✅
+- 진짜 잡(job)이 확인될 때까지 **최대 3 탐침**.
 
-```text
-현재 팀 초안
-- Lead — plan and integration
-- Researcher — source gathering
-- Reviewer — quality check
+### §2c — 과잉질문 가드 (역방향 — §2a와 균형)
+- 사용자가 **이미 스스로 진단**했거나, **요청이 이미 충분히 구체적**이거나, **직접 팀/실행을 명시적으로 원하면** → 더 캐묻지 말고 **즉시 기본값 확인만 하고 진행**한다.
+- 과잉 질문/코칭 = 마찰의 주범 = 이탈.
+- 구분 신호: 답이 *표면/회피* → 더 캐물음(§2a/§2b). 답이 *진짜 도달/직접 요청* → 멈춤(§2c).
 
-이대로 갈까요?
-1. 네, 이 구성으로 진행
-2. 더 빠르게 — 인원 줄이기
-3. 더 깊게 — 조사 역할 강화
+---
+
+## 인터뷰 흐름
+
+### Phase 1: 의도 파악 (자동)
+유저의 자연어 입력에서 키워드를 매칭하여 프리셋 결정 (presets.md 매칭 규칙).
+
 ```
+"경쟁사 비교 리서치 해줘" → [리서치, 비교] → research
+"이 기능 만들어줘" → [만들어줘] → development
+"코드 구조 파악해줘" → [파악해줘, 구조] → analysis
+"README 써줘" → [써줘, README] → content
+"PRD 만들어줘" → [PRD] → product
+"도움이 필요해요" → 매칭 실패 → generic
+```
+
+### Phase 2: 프리셋별 인터뷰 (§A 번호 블록)
+매칭된 프리셋의 인터뷰 질문을 순서대로 채팅에 §A 번호 블록으로 출력.
+- 질문 최대 3개 (4개 초과 금지)
+- Q1(열린 텍스트)은 이미 자연어로 답했으면 생략 가능. Q2/Q3는 §2c 신호가 없으면 진행.
+- §2b 회피가 감지되면 다음 질문을 과거행동/구체 앵커로 교체.
+
+### Phase 3: 환경 스캔 (자동, 병렬)
+인터뷰와 병렬로 `scripts/scan_environment.py` 실행 (외부 CLI·기존 에이전트·MCP·gh/npm 확인).
+
+### Phase 4: 팀 구성 제안 (유저 확인)
+인터뷰 + 환경스캔 결과를 종합해 팀 구성을 제안하고 유저 확인.
+
+```
+이렇게 팀을 구성할게요:
+├── 팀장 (Opus — 가장 똑똑한 모델) — 전체 계획 + 결과 통합
+├── Researcher 1 (Sonnet — 균형형 모델) — 웹 리서치
+├── Researcher 2 (Sonnet — 균형형 모델) — 문서 분석
+└── (Codex CLI — OpenAI 코드·대규모 분석 도구) — 기술 분석 (있으면)
+
+이대로 진행할까요?
+1. 네, 이 구성으로 진행 (추천)
+2. 팀원을 조정하고 싶어요
+3. 처음부터 다시
+```
+
+모델명은 공식 용어 그대로 + 한글 설명 병기. 내부 구현(spawn_agent 등)만 숨김.
+
+---
+
+## 나쁜 질문 vs 좋은 질문
+
+❌ 나쁜 질문: "팀 규모를 선택하세요: 3명 / 5명 / 7명" → 몇 명이 적당한지 감이 없음
+✅ 좋은 질문: "리서치 깊이는?" + 깊이 옵션 → 유저는 깊이만 고르고, 팀 규모는 AI가 결정
+
+❌ 회피 수용: 사용자 "그냥 보려고요" → "네 알겠습니다, 종합 리포트로 갈게요" (§2b 위반)
+✅ 회피 대응: 사용자 "그냥 보려고요" → "최근에 이 주제로 막혔던 구체적 순간이 있었어요?" (§2b)
+
+---
+
+## 바이브코더 대응 전략
+
+| 유저 상태 | 대응 |
+|----------|------|
+| 뭘 원하는지 모호 | 범용 인터뷰로 전환, "이 중에 가까운 게 있나요?" |
+| 선택지를 이해 못함 | 비유로 재설명, 추천 옵션 강조 |
+| 전부 "잘 모르겠어요" | 모든 추천대로 진행 (기본값이 항상 합리적) — 단 핵심 잡이 여전히 불명하면 §2b 과거행동 앵커 1회 |
+| 표면/회피성 답 | §2b — 구체/과거행동 앵커로 한 번 더 (최대 3 탐침) |
+| 이미 구체적/직접 요청 | §2c — 추가 질문 없이 기본값 확인만 하고 즉시 진행 |
+| 너무 많은 걸 원함 | "한 번에 다 하면 복잡해요. 이것부터 시작할까요?" |
+| 기존 경험 언급 | "그때 뭐가 제일 막혔어요?" → 팀 구성에 반영 |

@@ -1,0 +1,43 @@
+{
+  "name": "insane-research-codex",
+  "version": "2.3.2",
+  "description": "Codex-native insane-research workflow with structured sessions, source-quality checks, and citation-heavy outputs.",
+  "author": {
+    "name": "chulrolee"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/insane-research-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "citations",
+    "sources",
+    "report",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Insane Research Codex",
+    "shortDescription": "Run structured citation-heavy research sessions in Codex",
+    "longDescription": "Packages the Codex-native insane-research and insane-research-query skills as one product unit. It supports research scoping, durable RESEARCH sessions, source-quality tracking, contradiction handling, and citation-backed reports.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Run deep research on this topic and produce a citation-backed report.",
+      "Turn this vague topic into a structured research query first.",
+      "Resume my existing RESEARCH session and summarize the current evidence."
+    ],
+    "brandColor": "#14532D",
+    "composerIcon": "./assets/insane-research-codex.svg",
+    "logo": "./assets/insane-research-codex.svg",
+    "screenshots": []
+  }
+}
