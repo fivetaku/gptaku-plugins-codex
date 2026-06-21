@@ -1,0 +1,46 @@
+{
+  "name": "dd-codex",
+  "version": "0.3.1",
+  "description": "Drop the OS clipboard (text or image) into Codex context and act on it — no pasting, no boilerplate. Triggers: /dd, /ㅇㅇ (Hangul IME alias), 클립보드 보내줘, 이거 분석해줘, 방금 캡처한 거, 이 레퍼런스로, 스크린샷 드롭, drop clipboard, use what I copied, this screenshot, this reference.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/gptaku-plugins-codex/plugins/dd-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "clipboard",
+    "dd",
+    "screenshot",
+    "reference",
+    "image",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "dd — Drop Clipboard",
+    "shortDescription": "Drop the OS clipboard into Codex context and act on it instantly",
+    "longDescription": "Captures the current OS clipboard (text or image) into a local cache and injects only a manifest summary into context — no raw paste, no bloat. Works for screenshots, error logs, code snippets, design references, and URLs. Invoke as /dd or /ㅇㅇ (Korean IME alias). Handles large captures by routing to a sub-agent, keeping the main conversation clean.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Drop my clipboard and tell me what it is.",
+      "Use what I just copied as the reference for my current task.",
+      "이 스크린샷 분석해줘",
+      "방금 복사한 에러 로그 보고 원인 찾아줘"
+    ],
+    "brandColor": "#1D4ED8",
+    "composerIcon": "./assets/dd-codex.svg",
+    "logo": "./assets/dd-codex.svg",
+    "screenshots": []
+  }
+}

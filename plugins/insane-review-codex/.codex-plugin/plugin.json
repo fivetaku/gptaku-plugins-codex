@@ -1,0 +1,43 @@
+{
+  "name": "insane-review-codex",
+  "version": "0.1.0",
+  "description": "GPT-5.5 Pro(웹 전용 — API 없음)를 Codex CLI 안에서 활용 — repomix로 관련 코드만 정밀 패킹하고 구독 ChatGPT Pro에 투입해 분석/의견을 회수한다. agent-council 웹 전용 멤버로도 통합 가능.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/codex-marketplace/plugins/insane-review-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "chatgpt",
+    "gpt-pro",
+    "repomix",
+    "browser-automation",
+    "agent-council",
+    "subscription",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Insane Review Codex",
+    "shortDescription": "Send code to GPT-5.5 Pro (subscription web) and get a review back — inside Codex",
+    "longDescription": "Packs the relevant code with repomix, attaches it to ChatGPT Pro via CDP browser automation, and returns the review. No API cost — uses your existing ChatGPT subscription. Also works as a web-only member of agent-council.",
+    "developerName": "GPTaku",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Use insane-review to get a GPT-5.5 Pro opinion on this code.",
+      "Review this module with GPT Pro and tell me what it thinks.",
+      "Pack the src/ directory and send it to ChatGPT Pro for a design review."
+    ],
+    "brandColor": "#7C3AED",
+    "screenshots": []
+  }
+}

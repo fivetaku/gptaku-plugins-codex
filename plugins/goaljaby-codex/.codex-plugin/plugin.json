@@ -1,0 +1,47 @@
+{
+  "name": "goaljaby-codex",
+  "version": "0.4.2",
+  "description": "Codex-native bridge from a PRD folder to Codex /goal — generates 5 Korean review docs plus a PLANS.md ExecPlan, then hands off a ready-to-copy /goal command after human approval.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku_plugins/tree/main/gptaku-plugins-codex/plugins/goaljaby-codex",
+  "repository": "https://github.com/fivetaku/gptaku_plugins",
+  "license": "MIT",
+  "keywords": [
+    "goal",
+    "goaljaby",
+    "PRD",
+    "validation",
+    "recovery",
+    "execplan",
+    "codex",
+    "korean"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Goaljaby Codex",
+    "shortDescription": "Turn a PRD folder into Korean review docs plus a Codex /goal handoff",
+    "longDescription": "Package the Codex-native goaljaby skill that converts a PRD folder into five Korean review documents (VALIDATION/RECOVERY/PLAN/PROGRESS equivalents) plus a PLANS.md ExecPlan, enforces a 4,000-character compact, shows a Korean review summary in chat, and after a mandatory approval gate hands off a ready-to-copy Codex /goal command.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/fivetaku/gptaku_plugins",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Convert this PRD folder into Korean review docs and a PLANS.md ExecPlan, then give me a /goal command to run.",
+      "Use goaljaby to bridge my PRD into a Codex /goal-driven long-running session.",
+      "Prep VALIDATION/RECOVERY/PLAN/PROGRESS docs from my PRD and a ready-to-copy /goal handoff."
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/goaljaby-codex.svg",
+    "logo": "./assets/goaljaby-codex.svg",
+    "screenshots": []
+  }
+}

@@ -1,47 +1,209 @@
 ---
 name: show-me-the-prd
-description: Turn a rough product idea into a PRD bundle with `PRD/01_PRD.md`, `02_DATA_MODEL.md`, `03_PHASES.md`, `04_PROJECT_SPEC.md`, and `README.md`. Use when the user wants a PRD, planning docs, or an AI-ready build plan from a vague idea or incomplete notes.
+description: Interview-driven PRD generator for vibe coders — turns one sentence into a five-file design bundle (PRD, structure, domain-specific, project spec, README) via a short Mom-Test interview. Use when the user wants a PRD, planning docs, app spec, or an AI-ready build plan from a vague idea or partial notes. Korean — PRD 만들어줘, 기획서 만들어줘, 쇼미더피알디, 앱 기획해줘. English — make PRD, product spec, show me the PRD.
 ---
 
 # Show Me The PRD for Codex
 
-Read these first:
-- `references/interview-guide.md`
-- `references/research-strategy.md`
-- `references/document-templates.md`
+> 한 문장 아이디어 → 5-6번 인터뷰 → 5종 디자인 문서 완성
+> 바이브코더가 개발 지식 없이도 "진짜 제품"을 만들 수 있는 기획 문서를 생성한다.
+> **이 문서는 참고 문서가 아니라 실행 지시서다.** Codex 채팅 환경에서 단계대로 실제로 진행한다.
 
-Use this skill when the user wants a product plan, PRD, app spec, or a structured build handoff. If the user already provided notes or a partial spec, patch the missing parts instead of starting over.
+## 먼저 읽기
 
-## Codex Workflow
+- `$PLUGIN_ROOT/skills/show-me-the-prd/references/interview-guide.md` — 인터뷰 방법론, 채팅 질문 설계, 바이브코더 대응
+- `$PLUGIN_ROOT/skills/show-me-the-prd/references/research-strategy.md` — 리서치 라우팅, 배치 타이밍
+- `$PLUGIN_ROOT/skills/show-me-the-prd/references/document-templates.md` — 5종 문서 템플릿과 섹션 구조
+- `$PLUGIN_ROOT/skills/show-me-the-prd/references/domain-doc-sets.md` — 4종 문서 **동적** 생성 절차 (도메인별)
 
-1. Audit the idea for:
-   - problem to solve
-   - target users
-   - platform
-   - MVP scope
-   - constraints
-2. Question per the shared policy (`shared/questioning-policy.md` §0~§2): infer what you can, ask only the genuinely unknown. Do NOT stop at the first surface/polite answer (§2a) — keep engaging until the user reaches their real need in their own words. But if the request is already concrete or the user gives a direct answer, stop asking and proceed (§2c).
-3. Use live research before recommending features, stacks, vendors, or pricing. Prefer current primary sources when possible.
-4. Keep explanations plain-language and production-oriented.
-5. Write the preserved five-file bundle under `PRD/`:
-   - `01_PRD.md`
-   - `02_DATA_MODEL.md`
-   - `03_PHASES.md`
-   - `04_PROJECT_SPEC.md`
-   - `README.md`
-6. Put unresolved items into `[NEEDS CLARIFICATION]` instead of blocking the whole draft.
-7. End with a short readiness score and next-step handoff.
+## 핵심 원칙
 
-## Interaction Rules
+1. **바이브코더 눈높이** — 기술 용어 금지. 모든 선택지에 설명 + 장단점 필수. (기술 용어 번역표는 `interview-guide.md`)
+2. **AI가 리드, 유저가 결정** — 유저가 아는 것(목적·대상)은 질문으로 끌어내고, 모르는 것(기술·구조)은 AI가 조사해서 선택지로 제안.
+3. **리서치 기반** — 하드코딩된 추천이 아닌, 실시간 리서치 근거 제시.
+4. **"진짜 제품" 지향** — 목업/로컬 데모가 아닌 실제 배포 가능한 수준의 기획.
 
-Codex CLI has no `AskUserQuestion` card UI — substitute it with the chat block in `shared/questioning-policy.md` §A.
+---
 
-- Ask in chat with compact numbered-option prompts (NOT a card tool) when you truly need a decision.
-- Format decision prompts like:
-  `1. Recommended option - what it is, why it helps, tradeoff`
-  `2. Alternative option - what it is, why it helps, tradeoff`
-  `3. Tell me a different structure in your own words`  (the "Other" escape)
-- Recommended option always goes first. Multi-pick → "answer like 1,3".
-- When structure matters, show a short fenced preview before the question so the user can react to something concrete (the `preview` substitute).
-- Avoid markdown tables in chat, but keep them in the generated docs where the templates expect them.
-- If the user supplied an existing spec, preserve its intent and only normalize the structure into the bundled templates.
+## Codex 렌더링 규칙 — AskUserQuestion 대체 (`shared/questioning-policy.md §A`)
+
+Codex CLI에는 Claude Code의 `AskUserQuestion`(객관식 카드 UI)에 해당하는 도구가 **없다.** 결정이 필요한 질문은 모두 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 한다.
+
+```text
+(예시 프리뷰 — 구조화 정보를 보여줄 때만. 단순 선호 질문이면 생략)
+
+질문: <한 줄 질문>
+1. <추천안> — 무엇인지, 왜 좋은지, 트레이드오프
+2. <대안> — 무엇인지, 트레이드오프
+3. 문장으로 직접 적기
+(여러 개 고를 수 있으면: "여러 개면 1,3처럼 적어주세요")
+(모르면 1번으로 진행할게요)
+```
+
+- 추천안은 항상 **1번**. 각 선택지에 "뭔지 + 장점 + 단점"을 한 줄로. 기술 용어 대신 일상 비유.
+- "잘 모르겠어요"는 별도 선택지로 만들지 말고 "모르면 1번으로 진행할게요" 문장으로 안내.
+- 구조화된 결정(데이터 모델 / Phase / 기술 스택 비교)에는 선택지 **위에** 짧은 예시 프리뷰(ASCII 관계도·테이블·트리)를 먼저 보여준다 — Claude의 `preview` 필드 대체.
+- 채팅에서는 마크다운 테이블을 피하고, 생성하는 문서 안에서는 템플릿이 요구하는 테이블을 그대로 쓴다.
+
+### show-me-the-prd = Elicitation 유형 (`shared/questioning-policy.md §2`)
+
+- **Turn 1(핵심 문제 발굴)은 §A 번호 블록이 아니라 열린 텍스트 질문**으로 한다. 과거 행동을 묻는 Mom Test식 — 객관식으로 가두지 않는다.
+- **Turn 2 이후의 선택/확인 질문**만 §A 번호 블록으로 한다.
+- **조기 종료 금지 (§2a):** 첫 답이 표면적·예의상·회피성이면 결론으로 채택하지 말 것. 그 답을 한 문장 **반영**한 뒤 **한 번 더 구체적으로 탐침**한다. 사용자가 진짜 문제에 **본인 발화로 도달**할 때까지 이어간다.
+- **과잉질문 가드 (§2c):** 요청이 이미 충분히 구체적이거나, 사용자가 직접 답/명령을 명시하면 더 캐묻지 말고 즉시 다음 단계로. 과잉 질문/코칭 = 마찰 실패.
+
+---
+
+## Turn 0: 사전 확인 (자동, 유저에게 묻지 않음)
+
+리서치 보강용 플러그인 의존성을 확인한다 (없어도 동작한다):
+
+- 사용 가능한 스킬 목록에 `docs-guide`가 있으면 → 공식 문서 기반 기술 조사에 활용.
+- `insane-research`가 있으면 → 종합 시장 리서치에 활용.
+- 둘 다 없으면 → 빌트인 웹 검색으로 폴백 (기본 동작에 문제 없음).
+
+라우팅 상세: `$PLUGIN_ROOT/skills/show-me-the-prd/references/research-strategy.md`.
+
+---
+
+## Turn 1: 핵심 문제 발굴 (Mom Test식 열린 질문)
+
+사용자 아이디어를 PRD 관점에서 분석해 부족한 정보만 끌어낸다. **표면 기능 뒤의 "진짜 문제"를 드러내는 게 이 Turn의 목적이다.**
+
+### 갭 분석 (내부 처리 — 유저에게 출력하지 않음)
+
+아이디어에서 아래를 추출 시도하고, 추론 가능한 건 묻지 않는다:
+
+| 카테고리 | 파악할 정보 | 처리 |
+|----------|-----------|------|
+| 핵심 문제 | 표면 기능 뒤의 진짜 불편 | ← Turn 1에서 열린 질문으로 발굴 |
+| 사용자 | 누가 쓰는가 | 추론 시도, 모호하면 Turn 1에서 같이 |
+| 도메인 | 비슷한 서비스, 차별점 | 추론 (도메인 감지 → 특화 질문 후보) |
+| 플랫폼·규모 | 웹/모바일, 규모, 제약 | 대개 추론 가능 → 묻지 말고 Turn 5에서 기본값으로 확인 |
+
+도메인 감지 시 특화 질문을 추가 고려: 이커머스(결제/배송/재고) · 소셜(팔로우/피드/신고) · 교육(진도/퀴즈/인증) · 금융(PG/환불/세금) · 생활·헬스(기록 주기/알림/공유). (도메인별 추가 질문 표: `interview-guide.md`)
+
+### 질문 규칙
+
+- **핵심 문제는 객관식이 아니라 열린 텍스트로, 과거 행동을 묻는다:** "지금은 이 문제를 어떻게 해결하고 계세요?" · "최근에 가장 불편했던 순간을 한 장면으로 들려주세요." 가정형("이런 기능 쓰실래요?") 금지. "왜" 대신 "무엇/어떻게".
+- **조기 종료 금지(§2a):** 첫 답이 표면적이면("그냥 기록 앱이요") 한 문장 반영 후 한 번 더 탐침 — "그 방식에서 제일 막히거나 그만두게 된 지점이 언제였어요?". 기존 방식이 왜 안 되는지가 드러날 때까지.
+- **과잉질문 가드(§2c):** 아이디어가 이미 문제를 구체적으로 설명했으면 열린 탐침을 생략하고 바로 Turn 2로.
+- 핵심 문제 + 원하는 결과가 잡히면 한 문장으로 반영·확정하고 Turn 2로.
+
+아이디어가 비어 있으면 "어떤 문제 때문에 이 앱/서비스를 생각하게 되셨어요?" 한 질문으로 시작한다.
+
+### Turn 1 → Turn 2 사이 리서치 (Batch 1)
+
+답을 받으면 다음 질문을 준비하는 동안 시장/경쟁을 빠르게 조사한다:
+`"{도메인} app features 2026"`, `"{유사 서비스} 불만 사항 대안"`, `"{도메인} 앱 필수 기능"`.
+결과는 텍스트로 설명하지 말고 즉시 Turn 2 선택지에 녹인다.
+
+---
+
+## Turn 2: 기능 선택 (§A 번호 블록)
+
+리서치 결과를 바탕으로 기능 목록을 §A 선택지로 바로 제시한다. 텍스트로 먼저 요약하지 않는다.
+
+- 핵심 기능 4개를 후보로 (각 복잡도 표시: 간단해요 / 좀 복잡해요 / 많이 복잡해요 + 한 줄 설명). **여러 개 선택 가능** → "여러 개면 1,3처럼 적어주세요".
+- 이어서 첫 버전(MVP) 기능 조합 — 최소 / 중간 / 풀 3가지 조합. 추천(최소 핵심)을 1번에.
+
+### Turn 2 → Turn 3 사이 리서치 (Batch 2)
+
+선택된 기능에서 데이터 엔티티를 추출하는 동안:
+`"{핵심 기능} implementation best practice"`(docs-guide 있으면), `"{도메인} data model design"`.
+
+---
+
+## Turn 3: 데이터 모델 확인 (§A + 예시 프리뷰)
+
+선택된 기능에서 핵심 데이터를 자동 추출한다. **먼저 예시 프리뷰**(ASCII 관계도 + 필드 테이블)를 채팅에 보여주고, 바로 아래에서 §A로 확인한다. 텍스트로 길게 설명하지 않는다.
+
+```text
+[엔티티1] --1:N--> [엔티티2] --1:N--> [엔티티3]   (실제 인터뷰 결과로 매번 새로 생성)
+
+질문: 데이터 구조를 이렇게 잡았는데 괜찮아요?
+1. 이대로 진행 — 일반적인 구조라 확장하기 좋음
+2. 수정할 부분이 있어요 — 바꾸고 싶은 곳을 알려주세요
+3. 문장으로 직접 적기
+(모르면 1번으로 진행할게요)
+```
+
+---
+
+## Turn 4: Phase 분리 확인 (§A + 예시 프리뷰)
+
+기능 복잡도와 의존성을 기반으로 Phase를 자동 분리한다(Phase 1=MVP, 2=확장, 3=고도화). **먼저 Phase별 기능 체크리스트 프리뷰**를 보여주고, 바로 아래에서 §A로 확인한다.
+
+선택지: 1. 이대로 진행(추천) / 2. 순서 변경 / 3. Phase 합치기·나누기(문장으로).
+
+### Turn 4 → Turn 5 사이 리서치 (Batch 3)
+
+`"best tech stack for {플랫폼} {도메인} app 2026"`, `"{후보A} vs {후보B} 2026 comparison"`, `"{DB 후보} free tier pricing 2026"`, (docs-guide 있으면) `"{후보 프레임워크} getting started"`.
+
+---
+
+## Turn 5: 기술 스택 선택 (§A + 비교 프리뷰)
+
+리서치 기반으로 스택 2-3개를 추천한다. **먼저 비교 프리뷰**(무료 시작 / AI 코딩 호환 / 커뮤니티 / 배포 난이도 / 확장성 테이블)를 보여주고, 바로 아래에서 §A로 묻는다.
+
+- Q1 스택: 추천 스택을 1번에 + 한 줄 요약(무료 시작·AI 코딩 호환성).
+- Q2 로그인 방식: 1. 소셜 로그인(추천 — 구글/카카오, 비밀번호 관리 불필요, 다만 의존) / 2. 이메일+비밀번호 / 3. 매직링크 / 4. 로그인 필요 없음(나만 쓰면).
+
+### Turn 5 → Turn 6 사이 리서치 (Batch 4)
+
+`"{선택된 스택} project structure best practice 2026"`, `"{선택된 스택} deployment guide"`, (docs-guide 있으면) 선택된 스택의 프로젝트 구조.
+
+---
+
+## Turn 6: 문서 생성 (5 파일)
+
+모든 인터뷰가 끝나면 현재 프로젝트 루트에 `PRD/` 폴더를 만들고 **5 파일**을 작성한다.
+
+> **개수 4 + README = 5 파일 항상 출력**(사용자 예측가능성의 본질). **4종이 어떤 4종인지는 매번 도메인을 보고 동적으로 결정**한다 — 카탈로그에서 고르는 게 아니라 4 차원(요구사항 / 구조 / 도메인 특화 / AI 행동 규칙) 슬롯을 도메인 키워드로 채워 즉석 정의. 동적 생성 절차 + 참고 예시 + 사용자 confirm 문구: `$PLUGIN_ROOT/skills/show-me-the-prd/references/domain-doc-sets.md`.
+
+도메인이 모호하면 기본 set을 쓴다:
+
+```
+PRD/
+├── 01_PRD.md            # 요구사항 (Product Requirements Document)
+├── 02_DATA_MODEL.md     # 구조 (개념적 ERD)
+├── 03_PHASES.md         # 도메인 특화 (Phase 분리)
+├── 04_PROJECT_SPEC.md   # AI 행동 규칙
+└── README.md            # 네비게이션
+```
+
+각 문서의 템플릿과 섹션 구조: `$PLUGIN_ROOT/skills/show-me-the-prd/references/document-templates.md`.
+
+**문서 생성 규칙:**
+
+- 모든 기술 선택에 "왜 이걸 골랐는지" 근거 포함 (리서치 결과 인용).
+- 아직 안 정해진 부분은 차단하지 말고 `[NEEDS CLARIFICATION]`로 표시.
+- Phase별 "진짜 제품" 체크리스트 포함.
+- 프로젝트 스펙에 "절대 하지 마(DO NOT)" 목록 5개 이상 반드시 포함.
+
+---
+
+## Turn 7: 완료 + 다음 단계 안내
+
+문서 생성 후:
+
+1. **품질 요약**: "완성도: X/10" + 개선 포인트 3가지.
+2. **문서 위치**: `PRD/` 폴더 내 5 파일 안내.
+3. **다음 단계** (§A 번호 블록):
+   1. Phase 1 바로 시작 — 이 PRD로 Phase 1 개발 시작 (시작 프롬프트 예시 제공).
+   2. SDD 도구로 넘기기 — Spec Kit 등에 PRD를 넘겨 더 상세한 구현 계획.
+   3. 문서 수정 — 바꾸고 싶은 부분을 알려주세요.
+
+완료 요약은 단순 선택 목록이 아니라 **의도+이유 중심**으로 ("로그인 제거 → 나만 쓸 거라 불필요"). 근거가 이후 개발 단계의 마이크로 결정에 반영된다.
+
+---
+
+## Enhancement Mode (기존 기획 보강)
+
+유저가 기존 기획 문서를 공유한 경우:
+
+1. 문서를 읽는다.
+2. 5 파일 기준으로 갭 분석 (빠진 섹션, 모호한 부분 식별).
+3. `[NEEDS CLARIFICATION]` 항목 목록 생성.
+4. 부족한 부분만 인터뷰 (Turn 2-5 중 필요한 부분만, §2c — 이미 충분한 건 묻지 않음).
+5. 보강된 5 파일 생성. 기존 의도는 보존하고 구조만 템플릿에 맞춰 정규화한다.

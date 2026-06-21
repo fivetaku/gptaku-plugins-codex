@@ -28,12 +28,12 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 |--|--|--|--|
 | commands | skills (`SKILL.md`) | 1:1 (콘텐츠만 최신화) | codex/skills |
 | agents | **런타임 multi-agent spawn**(지침을 소유 스킬에 임베드) — ⚠️ 플러그인에 `agents/` 로스터 폴더 **없음**(`agents/openai.yaml`은 인터페이스 메타데이터지 서브에이전트 정의 아님) | 기능은 이식되나 구조는 다름 | 검증: validate_plugin.py |
-| settings.json hooks (`SessionStart`·`UserPromptSubmit`·`PreToolUse`…) | `hooks.json`/config.toml `[hooks]` (**동일 이벤트군**) | **1:1 이식** | codex/hooks |
+| settings.json hooks (`SessionStart`…) | ⚠️ **플러그인 선언형 hook 미지원(0.139)** — `plugin.json "hooks"` 필드는 validator가 거부(실측), `plugin_hooks` feature=removed | **이식 불가(현 버전)** | 실측 P3 |
 | MCP servers | 매니페스트 `mcpServers`(→`.mcp.json`) | 1:1 | codex/plugins/build |
 | `/goal` (OMC ultragoal) | **native `/goal`** + `/plan` + ExecPlan(`PLANS.md`) | 1:1 (이름까지 동일) | codex/use-cases/follow-goals |
 | `${CLAUDE_PLUGIN_ROOT}` | `$PLUGIN_ROOT` (+ `CLAUDE_PLUGIN_ROOT` alias 호환) | 1:1 | codex/plugins/build |
-| auto-star (setup.sh + Step 0) | `SessionStart` hook + marker 게이트 | 1:1 | codex/hooks |
-| update-notifier hook | `SessionStart` hook → `{"systemMessage":"…"}` | 1:1 (마켓 자동알림 無 → 자체 notifier 유지) | codex/hooks · plugins/build |
+| auto-star (setup.sh + Step 0) | ❌ 불가 — 플러그인 hook 미지원(위) | **이식 불가(현 버전)** | 실측 P3 |
+| update-notifier hook | ❌ 불가 — 플러그인 hook 미지원. (단 Codex 마켓은 `codex plugin marketplace upgrade`로 업데이트 자체는 가능) | **이식 불가(현 버전)** | 실측 P3 |
 | **`AskUserQuestion`** | **없음** | ★**유일 실질 갭** → §A 번호채팅 치환 | codex/cli/features |
 
 **결론**: 풀 기능 패리티 재포팅은 전적으로 실현 가능. 창의적 치환이 필요한 건 AskUserQuestion 단 하나(이미 §A로 해결).
@@ -55,11 +55,10 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 - ⚠️ **교정(P1에서 확정)**: Codex 플러그인 스키마에 `agents/` 폴더·`plugin.json "agents"` 필드 **없음**(validate_plugin.py가 거부). `agents/openai.yaml`은 *인터페이스 메타데이터*다.
 - 올바른 이식: 에이전트 지침을 **소유 스킬 안에 임베드**하고, 무거우면 Codex 런타임 `multi_agent` spawn(정의 파일 없이 지침을 프롬프트로 직접 전달)으로 분리, 불가 시 인라인. vibe-sunsang growth가 이 패턴으로 완료됨.
 
-### WS4. hooks 이식 (auto-star + update-notifier)
-- 매니페스트에 `hooks` 필드 추가 → `SessionStart`(`matcher:"startup|resume"`) hook.
-- **auto-star**: hook command가 marker(`~/.gptaku-star/` 등가) 체크 후 1회 star, self-disable.
-- **update-notifier**: hook이 버전 비교 후 `{"systemMessage":"Update available vX.Y.Z — codex plugin marketplace upgrade <name>"}` 출력. (Codex 마켓은 자동 업데이트 알림 없음 → 자체 notifier 필수.)
-- 본진 `setup.sh` 첫-실행 부트스트랩 → 동일 SessionStart hook + marker로 흡수(Codex엔 별도 plugin-load 이벤트 없음).
+### WS4. hooks 이식 — ❌ 현 Codex(0.139)에서 불가 (P3 실측 결론)
+- **실측**: `plugin.json "hooks"` 필드를 넣으면 공식 `validate_plugin.py`가 거부("field `hooks` is not accepted"). `codex features list`에서 `plugin_hooks`=removed. 설치된 플러그인 중 hooks 사용 예 0건. (docs는 hooks를 설명하나 설치 현실과 불일치 — 실측 우선.)
+- 결론: **플러그인 선언형 hook 부재로 auto-star·update-notifier·setup.sh 첫-실행 부트스트랩은 이식 불가.**
+- 대안: ① 업데이트는 Codex 마켓 `codex plugin marketplace upgrade`가 담당(자체 notifier 불필요). ② auto-star는 hook 없이는 자동화 불가 → 보류. ③ Codex가 플러그인 hook을 지원하면 재개(plan §2 행 참조).
 
 ### WS5. 미포팅 3종 풀 포팅
 | 플러그인 | 본진 의존성 | Codex 포팅 방안(결정 반영) |
@@ -78,7 +77,7 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 - **P0 — 토대** ✅: §A SSOT + show-me-the-prd-codex 시연.
 - **P1 — 핵심 인터뷰 3종 풀 재포팅**: kkirikkiri(§2b)·vibe-sunsang(§2c)·git-teacher(§2a) — WS1+WS2(+vibe-sunsang는 WS3 agent).
 - **P2 — 잔여 인터뷰/메뉴 6종**: skillers-suda·insane-research·pumasi·nopal·insane-design·docs-guide(WS3 agent) — WS1+WS2.
-- **P3 — hooks 횡단 적용**: 전 플러그인 auto-star + update-notifier(WS4). shared hook 1벌 + 매니페스트 배선.
+- **P3 — hooks 횡단** ❌ **불가 종결**: 플러그인 hook 미지원(실측). 업데이트는 Codex 마켓이 담당, auto-star 보류. (WS4)
 - **P4 — 미포팅 3종**: goaljaby(native /goal) → dd → insane-review (WS5).
 - **P5 — 버전 정렬·릴리즈**: WS6 + 전수 smoke test.
 
@@ -105,7 +104,9 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 - [x] P0: `show-me-the-prd-codex` SKILL.md — 정책 인용 + §A 명시
 - [x] 리서치: Codex /goal·hooks·notify·skills·agents 프리미티브 패리티 확정(§2)
 - [x] **P1 완료(검증됨)**: kkirikkiri v0.21.3 · vibe-sunsang v2.1.2 · git-teacher v1.5.2 풀 재포팅. §A 치환·§2x 인라인·버전 정렬. 공식 validate_plugin.py 11종 전부 pass. (codex env 확정: goals·hooks·multi_agent 모두 stable/true)
-- [ ] P2~P5: 위 로드맵
+- [x] **P2 완료(검증·배포됨)**: insane-design 0.5.1 · skillers-suda 1.4.2 · pumasi 1.10.2 · nopal 0.7.1 · docs-guide 1.4.1 · insane-research 2.3.2(deep-research 리네임). validate 11종 pass. 3개 레포(서브모듈·codex·부모) 커밋·푸시·배포 검증.
+- [x] **P3 불가 종결(실측)**: 플러그인 hook 미지원(0.139) — auto-star/update-notifier 이식 불가. 업데이트는 Codex 마켓이 담당.
+- [ ] P4(미포팅 3종) · P5(버전정렬·릴리즈): 위 로드맵
 
 ### 결정 로그
 - ① goaljaby → native `/goal` + ExecPlan으로 이식 (비이식 폐기)
