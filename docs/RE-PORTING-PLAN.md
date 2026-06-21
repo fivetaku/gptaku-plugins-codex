@@ -106,7 +106,9 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 - [x] **P1 완료(검증됨)**: kkirikkiri v0.21.3 · vibe-sunsang v2.1.2 · git-teacher v1.5.2 풀 재포팅. §A 치환·§2x 인라인·버전 정렬. 공식 validate_plugin.py 11종 전부 pass. (codex env 확정: goals·hooks·multi_agent 모두 stable/true)
 - [x] **P2 완료(검증·배포됨)**: insane-design 0.5.1 · skillers-suda 1.4.2 · pumasi 1.10.2 · nopal 0.7.1 · docs-guide 1.4.1 · insane-research 2.3.2(deep-research 리네임). validate 11종 pass. 3개 레포(서브모듈·codex·부모) 커밋·푸시·배포 검증.
 - [x] **P3 불가 종결(실측)**: 플러그인 hook 미지원(0.139) — auto-star/update-notifier 이식 불가. 업데이트는 Codex 마켓이 담당.
-- [ ] P4(미포팅 3종) · P5(버전정렬·릴리즈): 위 로드맵
+- [x] **P4 완료(배포됨)**: goaljaby-codex 0.4.2(native /goal+PLANS.md ExecPlan) · dd-codex 0.3.1 · insane-review-codex 0.1.0 신규 포팅. 카탈로그 14종.
+- [x] **P5 완료(배포됨)**: 14종 버전 본진 1:1 정렬(show-me-the-prd 0.8.3·insane-search 0.5.1 풀재포팅, kkirikkiri 0.21.4·insane-research 2.4.0 sync). code-reviewer 5건 수정. quality-gate 통과.
+- ✅ **재포팅 완료(2026-06-21)**: 14/14 validate pass, 본진 버전 일치, 3개 레포(codex 9224636·서브모듈 9833547·부모 479fb9a) 배포. (P3 hooks만 플랫폼 미지원으로 제외)
 
 ### 결정 로그
 - ① goaljaby → native `/goal` + ExecPlan으로 이식 (비이식 폐기)
