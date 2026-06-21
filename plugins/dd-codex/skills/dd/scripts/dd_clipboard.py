@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Capture the current OS clipboard (text or image) into a local cache.
 
-The script is intentionally standalone and stdlib-only so a Claude Code
+The script is intentionally standalone and stdlib-only so a Codex
 command can run it without loading large clipboard content into chat first.
 It always prints a single valid JSON object to stdout (even on failure), so
 the caller can rely on parsing it.

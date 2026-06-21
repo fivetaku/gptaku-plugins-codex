@@ -107,4 +107,4 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 | 원칙만 적용 | skillers-suda, insane-research, pumasi, nopal | §1 + §2c + §A 블록 포맷 |
 | 대부분 현행 | insane-design | 메뉴 선택은 §A 번호 블록 유지, "추론 가능한 건 안 묻기"만 |
 | 대상 외 | docs-guide, insane-search | 실질 인터뷰 없음 |
-| 미포팅(본진에만) | dd, goaljaby, insane-review | Codex 레포에 아직 포트 없음 — 포팅 시 §A·§0~§4 상속 |
+| 신규 포팅 완료(P4) | dd, goaljaby, insane-review | §A·§0~§4 상속. goaljaby는 Claude /goal → native Codex /goal + PLANS.md ExecPlan 핸드오프 |

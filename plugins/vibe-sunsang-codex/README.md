@@ -9,8 +9,8 @@ Included skills:
 - `vibe-sunsang-mentor` — Coaches request quality and collaboration habits.
 - `vibe-sunsang-growth` — Produces growth reports from converted conversations.
 
-Included sub-agent:
-- `growth-analyst` (`agents/openai.yaml`) — Analyzes session data and writes a growth report using the v2 level system (6 axes × 7 levels, 0.5 increments). Delegated to by `vibe-sunsang-growth` to keep the main context lean.
+Heavy analysis offload:
+- `vibe-sunsang-growth` offloads the v2 growth-report analysis (6 axes × 7 levels, 0.5 increments) to a runtime-spawned Codex sub-agent with inline instructions — Codex plugins don't package an agent-roster file — and falls back to inline analysis when spawning isn't available.
 
 Packaging notes:
 - The packaged runtime reads `~/.codex/sessions/` and writes converted Markdown to `~/vibe-sunsang/conversations/`.
