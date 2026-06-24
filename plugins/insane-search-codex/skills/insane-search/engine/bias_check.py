@@ -61,8 +61,11 @@ SCAN_ROOTS_STRICT_OFF = ["engine"]
 SCAN_ROOTS_STRICT_ON = ["engine", "references"]
 
 # Directory names skipped during scan (third-party code, build artefacts).
+# `tests` is excluded because test fixtures legitimately use concrete hosts and
+# IP literals (e.g. SSRF/redirect cases, per-host session keys) — same exemption
+# rationale as SKILL.md examples; tests are not the generic fetch path.
 EXCLUDED_DIR_NAMES = {
-    "node_modules", "__pycache__", ".git", ".venv", "dist", "build",
+    "node_modules", "__pycache__", ".git", ".venv", "dist", "build", "tests",
 }
 
 # Comment markers within which a brand mention is OK (explanation).
@@ -77,7 +80,13 @@ COMMENT_OK_MARKERS = {
 
 # File paths explicitly exempted (full match against relative path from scan root).
 EXPLICIT_ALLOW_FILES = {
-    # None right now — add if needed with justification.
+    # Phase 0 official-API router. Per SKILL.md R5, naming platform hosts here is
+    # the SANCTIONED exception — these are official no-auth public endpoints, not
+    # a bias toward one target. This is the ONLY engine/ file allowed to do so;
+    # keeping it isolated is precisely why the rest of engine/ stays site-agnostic.
+    # NOTE: rel paths are computed against skill_root.parent, so they include the
+    # skill dir name (e.g. "insane-search/engine/phase0.py").
+    "insane-search/engine/phase0.py",
 }
 
 

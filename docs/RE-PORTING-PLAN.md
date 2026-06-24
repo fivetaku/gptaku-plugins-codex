@@ -115,3 +115,36 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 - ② update-notifier → `SessionStart` hook + `systemMessage` (Codex 자체 알림 없음 확인)
 - ③ 버전 → Codex 포트를 본진과 **동일 버전**으로 정렬
 - ④ 깊이 → **풀 기능 패리티** 재포팅
+
+---
+
+## 7. 갭 최신화 #2 (2026-06-24)
+
+2026-06-21 재포팅 직후 본진 14종이 전부 추가 버전 bump됨. 갭을 전수 재측정·해소했다.
+
+### 갭의 성격 — 두 종류
+- **버킷 A (잡음·이식불가)**: 본진 14종 공통 커밋 웨이브 = GitHub-star opt-in(AskUserQuestion) → star prompt 다국어화 → setup.sh ask-mode 첫-실행. **전부 §2·WS4에서 이미 "이식 불가" 종결된 플랫폼 기능**(Codex 플러그인 hook 미지원·AskUserQuestion 없음). → 포팅 대상 아님. patch 버전 갭의 대부분이 여기서 발생.
+- **버킷 B (실질 기능 갭)**: 소수 플러그인의 엔진/로직/문서 변경. → 실제 포팅.
+
+### 플러그인별 판정·작업 (✅ = working tree 반영, validate pass)
+
+| 플러그인 | 버전 | 포팅한 실질 변경 | 이식불가(N/A) |
+|--|--|--|--|
+| **insane-search** | 0.5.1→**0.8.2** | 엔진 대수술: 신규 모듈 `phase0.py`(exhaustive router)·`learning.py`(per-host 자기학습 U5)·`safety.py`(SSRF)·`transport.py`(curl_cffi 0.15·patchright·쿠키브릿지) + `__main__/bias_check/executor/fetch_chain/validators` 갱신 + playwright 템플릿·테스트·references(rss/json-api/twitter/fallback/tls) + SKILL R6 failure-gate | star/setup 웨이브 |
+| **insane-review** | 0.1.0→**0.5.2** | 스텁→완본: `pack_and_ask.py` 엔진 1:1(폴더명 ChatGPT Project 그룹핑·전용프로필·CDP 다이얼로그·self-heal) + SKILL v0.5.2 재작성 + council-setup `--require-model` | setup.sh(pip 설치는 SKILL 수동절차로) · star · update-hook |
+| **insane-research** | 2.4.0→**2.6.1** | claim-verification 코드게이트 `validate_ledger.py`(v2.5.0) + 평가 스코어러 `eval_report.py`(v2.6.0) + SKILL Phase4~7 게이트 배선 | `strict_verification_handoff()`(Claude Workflow 핸드오프) |
+| **pumasi** | 1.10.2→**1.11.2** | `/imagen` base64 캡처: 신규 `extract_image.py` + imagen 래퍼 5종(`codex exec --json`) + SKILL 후처리금지 가드 + sandbox-bypass 신뢰경계 노트 | agy 설치 하드닝(코덱스판 미해당) · star/setup |
+| **goaljaby** | 0.4.2→**0.5.3** | 생성문서 사용자 언어 출력(`output_lang` 자동감지·언어별 헤딩검증) | star/setup |
+| **git-teacher** | 1.5.2→**1.5.4** | rebase ours/theirs 매핑 교정(`--theirs`/`--ours` 반전 + 경고) | star/setup |
+| **nopal** | 0.7.1→**0.7.4** | credential export 절차에 `chmod 600` + "평문 토큰·gws가 OAuth 소유" 문구 교정 | setup.sh chmod · star |
+| insane-design | 0.5.1→**0.5.3** | (CSS/Playwright 셸버그가 코덱스판엔 부재 — 요약 포팅돼 있어 무해) 버전만 | AskUserQuestion frontmatter · CSS셸버그 · star |
+| docs-guide | 1.4.1→**1.4.3** | (소프트닝 대상 과장문구가 코덱스판 README/SKILL에 부재) 버전만 | star/setup |
+| kkirikkiri | 0.21.4→**0.21.6** | (deep-research 토큰 0건 — 이미 리네임됨) 버전만 | star/setup |
+| show-me-the-prd | 0.8.3→**0.8.5** | (deep-research 토큰 0건) 버전만 | star/setup |
+| dd | 0.3.1→**0.4.2** | 없음 — 전 커밋 star/setup/AskUserQuestion 웨이브 | 전부 |
+| skillers-suda | 1.4.2→**1.4.4** | 없음 — 동일 | 전부 |
+| vibe-sunsang | 2.1.2→**2.1.4** | 없음 — 동일 | 전부 |
+
+- ✅ **검증**: 14/14 `validate_plugin.py` pass · 14/14 버전 본진 일치 · 신규 .py 전부 parse · insane-search 엔진 import OK · pumasi imagen 회귀 12/12 PASS · insane-research 게이트 스모크 PASS.
+- ⚠️ **미해결 결정**: 라이선스 웨이브(MIT + per-plugin `DISCLAIMER.md`, 2026-06-23)는 **codex 포트 구조상 미적용** — codex 포트는 per-plugin LICENSE/DISCLAIMER가 없고 라이선스는 repo 루트에만 존재. 본진과 정합하려면 별도 결정 필요.
+- ⚠️ **미커밋**: 위 변경은 working tree에만 있음. 3개 레포 배포(CLAUDE.md Step 1~8 등가)는 사용자 승인 후.

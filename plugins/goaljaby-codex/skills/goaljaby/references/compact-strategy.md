@@ -2,7 +2,7 @@
 
 골잡이의 핵심 약속 중 하나: `goal-command.md` 본문은 **항상 4,000자 이하**다. 경고로 끝내지 않는다. 사용자에게 결정을 미루지 않는다. 컴팩트는 스킬이 직접 수행한다.
 
-**언어 정책**: `goal-command.md` 본문은 한국어 위주 + 영어 식별자. PROTECTED_CLAUSES 정규식도 한국어/영어 둘 다 매칭하도록 OR 패턴으로 구성한다.
+**언어 정책 (shared/language-policy.md)**: `goal-command.md` 본문은 `output_lang`(사용자 언어) + 영어 식별자. PROTECTED_CLAUSES 정규식은 한국어/영어 둘 다 매칭하는 OR 패턴이라 ko/en 본문은 그대로 검증되고, 그 외 언어는 각 보호절에 ko 또는 en 앵커 표현을 유지해 매칭되게 한다.
 
 **Codex 파일 포인터 패턴**: objective 본문은 `./PLANS.md`(및 VALIDATION/RECOVERY/PLAN)를 가리켜 길이를 줄인다. Codex `/goal`은 한 파일(PLANS.md)만 읽어도 컨텍스트를 잡으므로, 본문에 운영 규칙을 다 적지 않고 "상세는 ./PLANS.md / RECOVERY.md를 따른다"로 외부화하는 것이 4,000자 한도를 지키는 1차 수단이다.
 
@@ -126,7 +126,7 @@ def verify_compact(text: str) -> list[str]:
 
 `failures`가 비어 있어야 컴팩트 통과. 비어 있지 않으면 결과 폐기 + 구조적 오버플로우 보고.
 
-**시작 검증 메모**: 영어 명령형 동사 시작 강제는 두지 않는다. `/goal ` 다음에 condition이 있는지만 검증한다. Codex `/goal`의 종료 판정도 한국어 condition을 처리한다. objective는 `./PLANS.md`를 가리키는 파일 포인터 형태를 권장한다.
+**시작 검증 메모**: 영어 명령형 동사 시작 강제는 두지 않는다. `/goal ` 다음에 condition이 있는지만 검증한다. Codex `/goal`의 종료 판정도 비영어 condition(한국어 등 `output_lang`)을 처리한다. objective는 `./PLANS.md`를 가리키는 파일 포인터 형태를 권장한다.
 
 > **Codex 핸드오프 주의**: 컴팩트를 통과한 `goal-command.md` 본문은 SKILL.md Step 10에서 **복사-실행용 `/goal` 명령**으로 그대로 제시한다. Codex 스킬은 슬래시 명령을 마지막 줄로 자동 발사할 수 없다(그건 Claude Code 메커니즘). 따라서 본문은 "사용자가 복사해 붙여넣어 실행할" 한 줄로 완결되어야 한다.
 

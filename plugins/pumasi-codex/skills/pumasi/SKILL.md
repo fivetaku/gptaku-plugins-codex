@@ -181,6 +181,12 @@ python3 $PLUGIN_ROOT/skills/pumasi/scripts/init_workspace.py --root "$PWD" --tas
 
 > 워커는 브리프의 시그니처/요구사항/게이트만 받고 **구현 본문은 워커가 작성**한다. 호스트가 본문을 써서 넘기면 안 된다.
 
+> ⚠️ **샌드박스/승인 우회 경계 (opt-in).** 비대화형 병렬 워커가 승인 프롬프트 없이 파일을 쓰려면
+> `codex exec --dangerously-bypass-approvals-and-sandbox`(또는 `--full-auto`)가 필요하다 — 병렬 외주
+> 자동화를 위해 필요한 동작이다. 따라서 품앗이는 **신뢰하는 본인 레포에서만** 실행하고, 외부에서
+> 받은/검토 안 된 코드베이스나 프롬프트에는 쓰지 않는다. 품앗이 호출 자체가 이 우회에 대한 명시적
+> 동의이며, 우회 없이 돌리려면 codex 기본 샌드박스(`--full-auto` 등)로 워커를 스폰한다.
+
 ### Phase 4: 모니터링 (Host)
 
 워커가 도는 동안 `.pumasi/plan.md`의 통합 컨텍스트를 최신으로 유지한다. 완료 보고/산출 파일을 `.pumasi/reports/`에서 수집한다.

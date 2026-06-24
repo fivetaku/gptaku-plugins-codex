@@ -129,27 +129,33 @@ Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 **없다**. `sha
 - 불일치 처리·모순 기록
 - A~E 등급으로 소스 신뢰도 평가
 
-#### 핵심 주장 검증 레이어 (Claim Verification Layer) — 필수 산출 계약
+#### ⚠️ 핵심 주장 검증 레이어 (Claim Verification Layer) — 필수 산출 계약
 
-핵심 주장(수치·점유율·날짜·법령·인과 등 "틀리면 손해 큰" 주장)은 매끄러운 문장으로 단정하기 전에 **claim ledger**를 만든다. 핵심 주장 1건당 레코드:
+핵심 주장(수치·점유율·날짜·법령·인과 등 "틀리면 손해 큰" 주장)은 매끄러운 문장으로 단정하기 전에 **claim ledger**를 만든다. ledger는 **반드시 `artifacts/claim_ledger.jsonl`에 한 줄당 1개 레코드(JSONL)**로 저장한다 — 이 파일이 Phase 6의 `validate_ledger.py` 게이트 입력이다. 각 핵심 주장 1건당 레코드:
 
 ```json
 {
-  "claim": "주장 텍스트",
-  "status": "verified | refuted | unresolved",
-  "confidence": "high | medium | low",
-  "source_count": 2,
-  "primary_source": true,
-  "counter_search": "반증 검색 1회 결과 요약"
+  "claim_id": "clm_001",
+  "text": "주장 텍스트",
+  "risk": "high | normal",
+  "claim_type": "numeric | legal | causal | descriptive",
+  "source_ids": ["src_001", "src_003"],
+  "counter_search": "반증 검색 1회 결과 요약 (high-risk 필수)",
+  "counter_refuted": false,
+  "conflicting": false,
+  "primary_source": true
 }
 ```
 
-**Abstention 강제 규칙 (불가침)** — 다음 중 하나라도 해당하면 `status=unresolved`("미확정")로 두고 **본문에서 단정 금지**. "미확정 / 확인 필요"로 표기하고 `Unresolved` 섹션에 모은다:
-- 독립 출처 2개 미만 (`source_count < 2`)
-- 출처 간 충돌이 해소되지 않음
-- 1차 소스 미도달 (강한 주장인데 `primary_source=false`)
+> **`status`/`confidence`는 직접 쓰지 않는다.** `validate_ledger.py`가 source_ids를 레지스트리(`sources/sources.jsonl`)와 대조해 독립 도메인 수·counter_search 유무·1차소스·등급을 보고 **status를 계산**한다. `risk:"high"`는 수치/점유율/날짜/법령/인과/재무 주장에 부여한다. `source_ids`는 `sources/sources.jsonl`의 `id`와 정확히 일치해야 한다(불일치 시 게이트가 하드 에러).
 
-**경량 red-team (필수)** — 각 핵심 주장마다 **반증 counter-search 1회**를 수행한다. 신뢰할 만한 반박이 나오면 `status=refuted`로 두고 `Refuted` 섹션으로 보낸다(본문 단정 금지).
+**Abstention 강제 규칙 (불가침)** — 다음 중 하나라도 해당하면 게이트가 `status=unresolved`("미확정")로 계산하고, 해당 주장은 **본문에서 단정 금지**. "미확정 / 확인 필요"로 표기하고 `Unresolved` 섹션에 모은다:
+- 독립 출처(도메인) 2개 미만
+- 출처 간 충돌이 해소되지 않음 (`conflicting=true`)
+- 1차 소스 미도달 (high-risk인데 `primary_source=false`)
+- high-risk인데 B등급 이상 출처 없음
+
+**경량 red-team (필수)** — 각 high-risk 주장마다 **반증 counter-search 1회**를 수행하고 `counter_search`에 요약을 기록한다(비어 있으면 게이트가 프로세스 위반으로 exit 1). 신뢰할 만한 반박이 나오면 `counter_refuted=true`로 두면 게이트가 `status=refuted`로 계산해 `Refuted` 섹션으로 보낸다(본문 단정 금지).
 
 **1차 소스 우선** — 정부/법령 DB(law.go.kr·moleg), 공시(SEC/IR), 피어리뷰를 2차 애그리게이터·블로그보다 **먼저** 시도하고, `quality_rubric.md` 기준으로 등급을 매겨 `primary_source` 충족 여부를 ledger에 기록한다.
 
@@ -161,30 +167,49 @@ Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 **없다**. `sha
 - 모든 주장에 인라인 인용 포함
 - 관련 시 데이터 시각화 추가
 
+#### ⚠️ Verified-only 합성 게이트 (불가침 — 데이터 흐름 락)
+
+**Phase 5에 들어가기 전에 `validate_ledger.py`를 돌려 `outputs/verified_claims.json`을 먼저 생성해야 한다**(아래 Phase 6 "검증 레이어 마감"의 명령). 그 다음:
+
+- **핵심 주장(수치·법령·인과·재무 등 high-risk)은 오직 `outputs/verified_claims.json`에 있는 항목만 본문에 단정형으로 쓴다.** raw 검색 결과(`sources.jsonl`·검색 findings)를 직접 보고 핵심 수치를 단정하지 않는다.
+- `outputs/unresolved_claims.json`·`outputs/refuted_claims.json`의 주장은 **본문 단정 금지** — `Unresolved`/`Refuted` annex 섹션에만 노출한다.
+- 폭넓은 서사·맥락·가독성 문장은 그대로 자유롭게 쓰되, **검증 게이트는 핵심 주장에만** 적용한다.
+
+> 이유: 체커만이 `verified_claims.json`을 생산한다. 체커를 건너뛰면 합성할 입력이 비어 자기파괴적이므로, 검증을 우회할 수 없다(순수 프롬프트 권고가 아니라 데이터 의존성으로 강제).
+
 ### Phase 6: Quality Assurance (품질 보증)
 - 환각·오류 점검
 - 모든 인용이 내용과 일치하는지 검증
 - 완전성·명료성 확보
 - Chain-of-Verification 적용
 
-#### 핵심 주장 검증 레이어 마감 (필수)
-- Phase 4 claim ledger 마감: 모든 핵심 주장이 `verified / refuted / unresolved` 중 하나로 분류됐는지 확인.
-- **Chain-of-Verification은 권장이 아니라 계약**이다. ledger 각 핵심 주장에 `counter_search`가 비어 있으면 미완으로 보고 반증 검색을 수행한다.
-- **보고서 산출물에 다음 3개 필드/섹션을 노출**한다(없으면 미완):
-  - `Confidence` — 각 핵심 발견에 high/medium/low
-  - `Refuted` — 반증으로 폐기된 주장 목록(출처·이유)
-  - `Unresolved` — 미확정(2소스 미만/충돌/1차소스 미도달) 주장 목록 = "확인 필요"
-- 미확정 주장이 본문에 단정형으로 섞이지 않았는지 최종 점검한다.
+#### 핵심 주장 검증 레이어 마감 (필수 — 결정론적 게이트)
+
+**검증은 "권고"가 아니라 코드 게이트다.** `artifacts/claim_ledger.jsonl`과 `sources/sources.jsonl`이 준비되면 반드시 아래를 실행한다(Phase 5 합성 전에 1차 실행해 `verified_claims.json`을 만들고, Phase 7 직전에 재실행해 통과를 확정):
+
+```bash
+python3 "$PLUGIN_ROOT/skills/insane-research-main/scripts/validate_ledger.py" --session "RESEARCH/{topic}_{timestamp}"
+```
+
+종료 코드에 따라:
+- **exit 2 (하드 에러)** — 스키마 깨짐·미등록 source id·A-E 등급 모순. 데이터를 고치고 재실행. **절대 Phase 7로 진행 금지.**
+- **exit 1 (프로세스 위반)** — high-risk 주장에 `counter_search` 누락. 해당 주장에 반증 검색 1회를 수행해 ledger를 갱신하고 재실행.
+- **exit 0 (통과)** — `outputs/{verified,unresolved,refuted}_claims.json` 생성, `state.json.verification.signature` 기록 완료. 이제 Phase 7 진행 가능.
+
+마감 점검:
+- **`state.json`에 `verification.signature`가 있고 `verification.passed=true`인지** 확인한다(없으면 게이트 미실행 = 미완).
+- 보고서에 `Confidence` / `Refuted` / `Unresolved` 3개 섹션을 노출한다.
+- `unresolved`/`refuted` 주장이 본문에 단정형으로 섞이지 않았는지 최종 점검한다(verified-only 합성 게이트 위반 여부).
 
 #### Strict 모드 (옵트인 — 고위험 주장 재검증)
 
-기본 모드는 빠르고 넓게 — 핵심 주장 ledger + abstention으로 충분하다. 그러나 **틀리면 손해가 큰 주제(법률·의료·재무·규제·핵심 수치)** 이거나 사용자가 `strict`를 명시하면, ledger의 `unresolved` 또는 high-risk 주장만 골라 **적대적 재검증**한다:
-1. Phase 4 ledger에서 `status=unresolved` 또는 high-risk(강한 수치·법령·인과) 주장을 추린다.
-2. 각 주장을 검증 가능한 질문으로 바꿔 독립 검색으로 confirm/refute한다 (가능하면 1차 소스로).
-3. 결과를 ledger에 머지: confirmed → confidence 상향, refuted → Refuted 섹션, 여전히 inconclusive → Unresolved 유지.
+기본 모드는 빠르고 넓게 — 핵심 주장 ledger + 결정론적 게이트로 충분하다. 그러나 **틀리면 손해가 큰 주제(법률·의료·재무·규제·핵심 수치)** 이거나 사용자가 `strict`를 명시하면, ledger의 `unresolved` 또는 high-risk 주장만 골라 **적대적 재검증**한다:
+1. Phase 4 ledger에서 게이트가 `unresolved`로 계산했거나 high-risk(강한 수치·법령·인과)인 주장을 추린다.
+2. 각 주장을 검증 가능한 질문으로 바꿔 독립 검색으로 confirm/refute한다 (가능하면 1차 소스로). Codex에는 별도 Workflow 하네스가 없으므로 메인 스레드에서 추가 검색을 직접 수행한다.
+3. 결과를 ledger에 머지(`source_ids`·`counter_search`·`counter_refuted`·`primary_source` 갱신)한 뒤 **`validate_ledger.py`를 재실행**해 status를 다시 계산한다: confirmed → verified 승격, refuted → Refuted, 여전히 inconclusive → Unresolved 유지.
 4. **기본 모드는 이 단계를 건너뛴다(빠름).** strict 모드만 감사 가능한 재검증을 붙인다.
 
-→ 넓이(기본 검색) + 정밀(strict 재검증)을 결합하되 **전체가 아니라 고위험/미확정 주장에만** 적용해 비용을 제어한다. 선별 로직은 `scripts/pipelines.py`의 `strict_verification_handoff()` 참조.
+→ 넓이(기본 검색) + 정밀(strict 재검증)을 결합하되 **전체가 아니라 고위험/미확정 주장에만** 적용해 비용을 제어한다. 단정/합성은 항상 게이트가 만든 `verified_claims.json`만 근거로 한다.
 
 ### Phase 7: Output & Packaging (산출·패키징)
 - 가독성 최적화 포맷
@@ -192,6 +217,17 @@ Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 **없다**. `sha
 - 정식 bibliography 생성
 - 요청 형식으로 export
 - (선택) 인터랙티브 웹사이트 생성
+
+#### 마감 자기검증 (필수 — 측정)
+
+보고서를 다 쓴 뒤 평가 채점기를 돌려 본문이 검증 계약을 실제로 지켰는지 **숫자로 확인**한다:
+
+```bash
+python3 "$PLUGIN_ROOT/skills/insane-research-main/scripts/eval_report.py" --session "RESEARCH/{topic}_{timestamp}"
+```
+
+- `verdict: FAIL`이면(미검증/반박 주장이 본문에 샜거나 인용이 레지스트리에 없음) **고쳐서 다시 돌린다** — 그 상태로 마감 금지.
+- 지표(`leak_rate`·`citation_resolution_rate`·`orphan_source_rate`·`verified_coverage_rate`)는 `outputs/eval_report.json`에 저장된다. 게이트 on/off A/B나 회귀 추적에 쓴다.
 
 ---
 
@@ -448,14 +484,16 @@ for phase_num in range(1, 8):
 
 ## 스크립트와 유틸리티
 
-상태 관리 스크립트: `$PLUGIN_ROOT/skills/insane-research-main/scripts/`
+스크립트: `$PLUGIN_ROOT/skills/insane-research-main/scripts/`
 
-| 스크립트 | 용도 |
-|--|--|
-| `orchestrator.py` | 리서치 상태 머신 컨트롤러 — 세션 생성, 페이즈 관리, 소스 추적 |
-| `pipelines.py` | 파이프라인 정의 — 에이전트 프롬프트, clarification 템플릿, 종합 프롬프트 |
+| 스크립트 | 용도 | 권위 |
+|--|--|--|
+| `validate_ledger.py` | **검증 게이트 (필수).** claim_ledger + sources를 읽어 status를 결정론적으로 계산, `verified_claims.json` 생산, `state.json`에 서명 기록 | **authoritative** — Phase 5/7 진입 게이트 |
+| `eval_report.py` | **평가 채점기 (필수).** 본문이 검증 계약을 지켰는지 측정 — leak/citation-resolution/orphan/coverage 4지표, `eval_report.json` 생산 | **authoritative** — Phase 7 마감 자기검증 |
+| `orchestrator.py` | 세션 폴더/`state.json` 생성·소스 append 등 **상태 헬퍼**. 내부 phase 전이 로직은 권위가 없다(SKILL.md 흐름이 오케스트레이션) | helper (정적 자산) |
+| `pipelines.py` | 에이전트 프롬프트 템플릿·clarification·synthesis 프롬프트 **정적 자산** | helper (정적 자산) |
 
-`python3`로 실행해 세션을 초기화하거나 상태를 프로그래밍적으로 관리할 수 있다.
+> **오케스트레이션은 프롬프트(이 SKILL.md)가, 검증은 코드(`validate_ledger.py`)가 담당한다.** `orchestrator.py`/`pipelines.py`의 state-machine·plan 스텁은 참고용 헬퍼일 뿐 실행 권위가 없으니, 검증/합성 게이트는 반드시 `validate_ledger.py`로 강제한다.
 
 ---
 

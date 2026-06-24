@@ -11,6 +11,24 @@
  * NO-SITE-NAME RULE: same as playwright_real_chrome.js — no hostname branches.
  */
 
+function writeStdoutAsync(payload) {
+  return new Promise((resolve, reject) => {
+    process.stdout.write(payload, (err) => (err ? reject(err) : resolve()));
+  });
+}
+
+async function buildEnvelope(ctx, page, html, resp, automation) {
+  let cookies = [];
+  try { cookies = (await ctx.cookies()).map((c) => ({ name: c.name, value: c.value, domain: c.domain })); } catch (_e) {}
+  let userAgent = '';
+  try { userAgent = await page.evaluate(() => navigator.userAgent); } catch (_e) {}
+  let finalUrl = '';
+  try { finalUrl = page.url(); } catch (_e) {}
+  let status = 0;
+  try { status = resp ? resp.status() : 0; } catch (_e) {}
+  return JSON.stringify({ html, finalUrl, status, cookies, userAgent, automation });
+}
+
 async function readStdinJson() {
   return await new Promise((resolve, reject) => {
     let data = '';
@@ -35,12 +53,21 @@ async function main() {
   const headless = args.headless ?? false;
 
   let chromium, devices;
+  let automation = 'playwright';
   try {
-    ({ chromium, devices } = require('playwright-extra'));
-    const stealth = require('puppeteer-extra-plugin-stealth')();
-    chromium.use(stealth);
-  } catch (_e) {
-    ({ chromium, devices } = require('playwright'));
+    // Patchright drop-in (additive; absent → previous behaviour unchanged).
+    ({ chromium, devices } = require('patchright'));
+    automation = 'patchright';
+  } catch (_e0) {
+    try {
+      ({ chromium, devices } = require('playwright-extra'));
+      const stealth = require('puppeteer-extra-plugin-stealth')();
+      chromium.use(stealth);
+      automation = 'playwright-extra+stealth';
+    } catch (_e) {
+      ({ chromium, devices } = require('playwright'));
+      automation = 'playwright';
+    }
   }
 
   const dev = devices[deviceName];
@@ -57,21 +84,25 @@ async function main() {
       ...dev,
     });
     const page = await ctx.newPage();
-    const navTimeout = Math.min(timeoutMs, 90000);
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: navTimeout });
+    const deadline = Date.now() + timeoutMs;
+    const rem = (cap) => Math.max(1000, Math.min(cap || timeoutMs, deadline - Date.now()));
+    const mainResp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: rem(90000) });
 
     if (waitSelector) {
       try {
-        await page.waitForSelector(waitSelector, { timeout: Math.min(timeoutMs, 20000) });
+        await page.waitForSelector(waitSelector, { timeout: rem(20000) });
       } catch (_e) {}
     }
 
     const html = await page.content();
-    process.stdout.write(html);
-    process.exit(0);
+    const payload = await buildEnvelope(ctx, page, html, mainResp, automation);
+    await writeStdoutAsync(payload);  // flush fully before any exit
+    process.exitCode = 0;
+    return;                           // let finally close ctx, then exit naturally
   } catch (e) {
     process.stderr.write(`${e.name || 'Error'}: ${e.message || e}\n`);
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   } finally {
     try { if (ctx) await ctx.close(); } catch (_e) {}
   }

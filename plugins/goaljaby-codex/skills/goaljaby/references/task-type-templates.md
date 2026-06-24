@@ -2,7 +2,7 @@
 
 작업 유형 6종 각각에 대해 VALIDATION/RECOVERY 슬롯 추가 항목 + 사용할 /goal 템플릿을 정의한다.
 
-**언어 정책**: 모든 추가 항목은 한국어. 식별자(`feature flag`, `viewport`, `design token`, `scope`, `refactor`, `public API`, `DB 스키마`, `eval` 등)는 영어 그대로.
+**언어 정책 (shared/language-policy.md)**: 아래 추가 항목은 한국어로 표기돼 있으나 생성 시 `output_lang`으로 렌더링한다. 식별자(`feature flag`, `viewport`, `design token`, `scope`, `refactor`, `public API`, `DB 스키마`, `eval` 등)는 번역하지 않는다.
 
 기본 템플릿은 `templates.md` 참조. 이 파일은 **유형별 추가/오버라이드**만 명시한다.
 

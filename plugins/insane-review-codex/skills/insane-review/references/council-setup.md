@@ -24,7 +24,7 @@ council:
       color: "BLUE"
     # ── GPT-5.5 Pro (웹 전용, insane-review-codex 경유) ──
     - name: gpt-pro
-      command: "python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --force-answer-after 120"
+      command: "python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model \"GPT-5.5\" --force-answer-after 120"
       emoji: "🌐"
       color: "MAGENTA"
   settings:
@@ -33,6 +33,7 @@ council:
 ```
 
 - `/ABS/PATH`는 절대경로로. (council worker는 셸 없이 execFile 하므로 경로에 공백 없게.)
+- `--require-model "GPT-5.5"`: council 경로에서도 활성 모델명을 검증(불일치/미확정이면 fail-closed로 전송 중단). 빼면 effort만 검증되고 기반 모델은 무엇이든 통과한다.
 - `--force-answer-after 120`: 120초 후 "지금 답변 받기"로 리즈닝을 끊어 회수 시간을 bound. council `timeout`은 그보다 넉넉히(예: 600).
 - council은 멤버를 **병렬 detached**로 띄운다. gpt-pro는 자기 브라우저 탭을 새로 열므로 다른 멤버와 충돌하지 않지만, **동시에 두 개의 insane-review 잡이 같은 브라우저를 몰면 안 된다**(한 council 잡에 gpt-pro 멤버는 하나).
 
@@ -45,7 +46,7 @@ council:
 
 ```bash
 # 단독으로 council 계약 확인: stdout엔 응답만, stderr엔 로그
-python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro \
+python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model "GPT-5.5" \
   --force-answer-after 60 "한 문장으로: 1+1은?" 2>/dev/null
 # → GPT 응답 텍스트만 출력되어야 한다
 ```

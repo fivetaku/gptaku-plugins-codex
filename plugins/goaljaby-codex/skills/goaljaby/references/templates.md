@@ -2,11 +2,45 @@
 
 골잡이 Step 5에서 슬롯 치환에 사용한다. 본진 5종 템플릿의 한국어 적용판 + Codex `PLANS.md` ExecPlan 템플릿(G).
 
-**언어 정책**: 모든 생성 문서는 한국어 본문 + 영어 식별자(파일명/명령/`PRD` 같은 약어). 사용자가 검토하지 않고 그냥 넘기는 일이 없도록 한국어로 자연스럽게 읽혀야 한다.
+**언어 정책 (shared/language-policy.md §1·§5)**: 아래 템플릿은 **한국어로 표기**돼 있지만, 실제 생성 시 **모든 헤딩·본문을 `output_lang`(사용자 요청 언어)으로 렌더링**한다. 식별자(파일명/명령/`PRD` 같은 약어/`{SLOT}` 토큰)와 PLANS.md ExecPlan 표준 섹션명(`Progress`/`Validation`/`Decision-Log`)은 번역하지 않는다. 헤딩은 아래 **§헤딩 맵**의 canonical 번역을 쓰고, 맵에 없는 언어는 en 열을 기준으로 옮긴다. **한국 제작이라고 한국어를 기본값으로 두지 말 것.**
 
 작업 유형별 강조 항목은 `task-type-templates.md` 참조.
 
 슬롯 표기: `{SLOT_NAME}` — Step 1/3/4에서 추출한 값으로 치환. 비어 있으면 해당 줄 자체 제거 (placeholder 잔존 금지).
+
+## §헤딩 맵 (canonical heading set — Step 7 #7 검증과 1:1)
+
+생성 문서의 `## ` 헤딩은 `output_lang`에 맞춰 아래 표대로 렌더링한다. ko/en은 1급(결정론적 검증), 그 외 언어는 en 열을 번역한다. 슬롯(`{N}`,`{NAME}`)은 유지. PLANS.md의 `## Progress`/`## Validation`/`## Decision-Log`는 ExecPlan 표준 섹션명이므로 번역하지 않는다.
+
+| 파일 | ko | en |
+|------|-----|-----|
+| VALIDATION | 필수 검증 | Required Checks |
+| VALIDATION | 마일스톤별 검증 | Targeted Checks |
+| VALIDATION | 수동 확인 절차 | Manual Verification |
+| VALIDATION | 완료 기준 매핑 | Acceptance Criteria Mapping |
+| VALIDATION | 완료로 보지 않는 조건 | Not Done If |
+| VALIDATION | 시각 검증 (UI 작업) | Visual Verification |
+| RECOVERY | 기본 원칙 | Core Rule |
+| RECOVERY | 실패 루프 | Failure Loop |
+| RECOVERY | 재시도 한계 | Retry Limit |
+| RECOVERY | scope 잠금 | Scope Control |
+| RECOVERY | 방향 재확인 규칙 | Reorientation Rule |
+| RECOVERY | 되돌리기 규칙 | Revert Rule |
+| PLAN | 목표 | Goal |
+| PLAN | 참조 문서 | Source Documents |
+| PLAN | 최종 완료 기준 | Final Completion Criteria |
+| PLAN | 마일스톤 {N}: {NAME} | Milestone {N}: {NAME} |
+| PROGRESS | 현재 골 | Current Goal |
+| PROGRESS | 현재 마일스톤 | Current Milestone |
+| PROGRESS | 완료 | Completed |
+| PROGRESS | 마지막 검증 결과 | Last Validation |
+| PROGRESS | 실패 시도 | Failed Attempts |
+| PROGRESS | 현재 가장 안정적인 상태 | Current Best State |
+| PROGRESS | 다음 단계 | Next Step |
+| PROGRESS | 리스크 / 블로커 | Risks / Blockers |
+| PROGRESS | 인수인계 메모 | Handoff Notes |
+
+> 본문 단락·체크리스트·표 내용도 `output_lang`으로 번역한다(식별자 제외). F-1~F-6의 `/goal` 본문도 동일하되, PROTECTED_CLAUSES 앵커(정지조건/scope/3회/문서참조/PROGRESS)는 `compact-strategy.md`의 ko·en OR 정규식에 매칭되게 유지한다.
 
 > **Codex CLI 슬롯 고정 문구** — 본진의 Claude Code 전용 문구를 Codex 전용으로 치환한다:
 > - `{RETRY_PAUSE_PHRASE}` → "자체 수정을 멈추고 PROGRESS.md(및 PLANS.md의 Decision-Log)에 실패 내역을 기록한 뒤 사용자의 결정을 기다린다"
@@ -229,13 +263,13 @@ PLAN.md의 마일스톤 1부터 시작
 
 ## F. goal-command.md (작업 유형별 본문 — 6종)
 
-본문은 `/goal` 다음에 한국어로 시작하는 명령. Step 6 컴팩트 5단계 적용 전 원본은 다음 6개 중 작업 유형에 맞는 것을 사용한다.
+본문은 `/goal` 다음에 `output_lang`으로 시작하는 명령(아래 F-1~F-6은 한국어 표기 예시 — 생성 시 `output_lang`으로 옮긴다). Step 6 컴팩트 5단계 적용 전 원본은 다음 6개 중 작업 유형에 맞는 것을 사용한다.
 
 `{RETRY_PAUSE_PHRASE}` 는 위 Codex 전용 고정 문구다.
 
 각 본문은 **파일 포인터 패턴**을 쓴다 — 첫 줄에서 `./PLANS.md`를 실행 대상으로 가리킨다. 이것이 Codex 핸드오프의 핵심이며 4,000자 한도를 지키는 1차 수단이다.
 
-> ⚠️ 모든 F 템플릿은 PROTECTED_CLAUSES 5종(P1~P5)을 한국어로 포함하도록 작성됐다. 슬롯 치환 후에도 5종 정규식이 모두 매칭되어야 한다 (Step 7 검증, `compact-strategy.md` 참조).
+> ⚠️ 모든 F 템플릿은 PROTECTED_CLAUSES 5종(P1~P5)을 포함한다. `output_lang`으로 옮긴 뒤에도 5종 정규식(ko·en OR)이 모두 매칭되어야 한다 — `output_lang`이 ko/en이 아니면 각 보호절에 ko 또는 en 앵커 표현을 유지한다 (Step 7 검증, `compact-strategy.md` 참조).
 
 ### F-1. 버그 수정
 

@@ -26,7 +26,7 @@ from engine.url_transforms import iter_transformed  # noqa: E402
 
 
 # --- unit-level -------------------------------------------------------------
-def test_validator_tiny_body_is_challenge():
+def t_validator_tiny_body_is_challenge():
     class R:
         status_code = 200
         text = "<html>short</html>"
@@ -38,7 +38,7 @@ def test_validator_tiny_body_is_challenge():
     print("  ✓ tiny body → challenge")
 
 
-def test_validator_marker_is_challenge():
+def t_validator_marker_is_challenge():
     class R:
         status_code = 200
         text = "<html>" + ("x" * 5000) + " sec-if-cpt-container found </html>"
@@ -49,7 +49,7 @@ def test_validator_marker_is_challenge():
     print("  ✓ challenge marker → challenge")
 
 
-def test_validator_weak_ok_without_selectors():
+def t_validator_weak_ok_without_selectors():
     class R:
         status_code = 200
         text = "<html>" + ("x" * 5000) + "</html>"
@@ -60,7 +60,7 @@ def test_validator_weak_ok_without_selectors():
     print("  ✓ clean body w/o selectors → weak_ok")
 
 
-def test_validator_strong_ok_with_selectors():
+def t_validator_strong_ok_with_selectors():
     class R:
         status_code = 200
         text = "<html><body>" + ("x" * 5000) + "<article>hello</article></body></html>"
@@ -72,14 +72,14 @@ def test_validator_strong_ok_with_selectors():
     print("  ✓ selectors matched → strong_ok")
 
 
-def test_profiles_load():
+def t_profiles_load():
     p = _load_profiles()
     for required in ("akamai_bot_manager", "cloudflare_turnstile", "unknown_challenge"):
         assert required in p, f"missing profile: {required}"
     print(f"  ✓ profiles loaded ({len(p)} keys)")
 
 
-def test_url_transforms():
+def t_url_transforms():
     # www → m
     out = iter_transformed("https://www.example.com/a", ["original", "mobile_subdomain"])
     urls = [u for _, u in out]
@@ -93,7 +93,7 @@ def test_url_transforms():
 
 
 # --- online (network) -------------------------------------------------------
-def test_online_benign_site():
+def t_online_benign_site():
     """A simple, usually-open site should pass probe directly when selectors provided."""
     # example.com serves ~1.2KB content — below tiny_body threshold — but with
     # success_selectors we trust caller's "content exists" definition.
@@ -109,7 +109,7 @@ def test_online_benign_site():
     print(f"  ✓ benign site → verdict={r.verdict} size={len(r.content)}")
 
 
-def test_online_trace_shape():
+def t_online_trace_shape():
     """Even on failure, trace should be populated and well-formed."""
     r = fetch("https://httpbin.org/status/403", timeout=10, max_attempts=3, enable_playwright=False)
     assert isinstance(r.trace, list) and len(r.trace) >= 1
@@ -120,14 +120,14 @@ def test_online_trace_shape():
 
 
 ALL_TESTS = [
-    ("validator_tiny_body_is_challenge", test_validator_tiny_body_is_challenge),
-    ("validator_marker_is_challenge", test_validator_marker_is_challenge),
-    ("validator_weak_ok_without_selectors", test_validator_weak_ok_without_selectors),
-    ("validator_strong_ok_with_selectors", test_validator_strong_ok_with_selectors),
-    ("profiles_load", test_profiles_load),
-    ("url_transforms", test_url_transforms),
-    ("online_benign_site", test_online_benign_site),
-    ("online_trace_shape", test_online_trace_shape),
+    ("validator_tiny_body_is_challenge", t_validator_tiny_body_is_challenge),
+    ("validator_marker_is_challenge", t_validator_marker_is_challenge),
+    ("validator_weak_ok_without_selectors", t_validator_weak_ok_without_selectors),
+    ("validator_strong_ok_with_selectors", t_validator_strong_ok_with_selectors),
+    ("profiles_load", t_profiles_load),
+    ("url_transforms", t_url_transforms),
+    ("online_benign_site", t_online_benign_site),
+    ("online_trace_shape", t_online_trace_shape),
 ]
 
 

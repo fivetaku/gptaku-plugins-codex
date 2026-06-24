@@ -82,8 +82,11 @@ GitHub URL은 `git remote get-url origin` 결과에서 추출한다. SSH URL인 
 ```
 
 선택에 따라:
-- "내 거 유지": `git checkout --ours {파일}` → `git add {파일}` → `git rebase --continue`
-- "상대방 거 유지": `git checkout --theirs {파일}` → `git add {파일}` → `git rebase --continue`
+
+> ⚠️ **rebase에서는 `ours`/`theirs`가 merge와 반대다.** `git pull --rebase`는 상대방(upstream) 위에 내 커밋을 재적용하므로, 충돌 시 `--ours`=상대방(upstream) 쪽, `--theirs`=재적용 중인 **내 커밋**이다. 아래 매핑을 절대 바꾸지 말 것.
+
+- "내 거 유지": `git checkout --theirs {파일}` → `git add {파일}` → `git rebase --continue`
+- "상대방 거 유지": `git checkout --ours {파일}` → `git add {파일}` → `git rebase --continue`
 
 충돌 해결 후 자동으로 push를 재시도한다.
 

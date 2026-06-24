@@ -5,25 +5,62 @@
 
 ## Reddit
 
-**Mobile User-Agent 필수** (없으면 403/429).
+> ⚠️ **비인증 `.json`은 WAF로 차단됨** (2026-06 실측). `www`·`old` 서브도메인 모두 403(189KB 챌린지 HTML 반환), curl_cffi TLS impersonation 격자(safari/chrome/firefox/safari_ios × referer) 전수 시도도 전부 403. 비인증 JSON 경로는 더 이상 신뢰할 수 없다.
+>
+> ✅ **우회: 공식 Atom/RSS 피드(`.rss`)** — WAF 예외라 깨끗한 XML로 통과한다.
+
+### 작동하는 경로 — Atom/RSS (비인증)
 
 ```bash
 UA="Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15"
 
-# 서브레딧 핫 포스트
-curl -sL -H "User-Agent: $UA" "https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
+# 서브레딧 피드 (실측: hot.rss·new.rss는 200 안정적)
+curl -sL -H "User-Agent: $UA" "https://www.reddit.com/r/{subreddit}/hot.rss?limit=25"
 
-# 검색
-curl -sL -H "User-Agent: $UA" "https://www.reddit.com/r/{subreddit}/search.json?q={query}&restrict_sr=1"
-
-# 포스트 + 댓글
-curl -sL -H "User-Agent: $UA" "https://www.reddit.com/r/{subreddit}/comments/{post_id}/{slug}/.json"
-
-# 정렬: hot.json / new.json / top.json?t=week
+# 정렬:   hot.rss · new.rss · rising.rss · top.rss?t=week
+# 검색:   search.rss?q={query}&restrict_sr=1
+# 유저:   https://www.reddit.com/user/{name}.rss
+# 글 댓글: https://www.reddit.com/r/{subreddit}/comments/{post_id}.rss
 ```
 
-데이터: `title`, `author`, `score`, `selftext`(전문), `num_comments`, `created_utc`
-댓글: 응답 `[1]` 배열에 재귀적 트리
+획득 필드 (Atom `entry`): `title`, `author/name`(`/u/...`), `updated`(작성일), `link@href`(글 URL), `content`(본문 HTML 전문), `category`(서브레딧)
+
+❌ RSS에 **없는** 것: `score`(추천수)·`num_comments`(댓글수)·`flair` — 이건 차단된 `.json`에만 존재. 필요하면 아래 OAuth.
+
+파싱 (표준 라이브러리만, feedparser 불필요):
+```python
+import xml.etree.ElementTree as ET  # Reddit 공식 피드(신뢰 출처)라 OK. 신뢰 못 할 XML이면 defusedxml 권장(XXE 방지)
+ns = {"a": "http://www.w3.org/2005/Atom"}
+root = ET.fromstring(xml_text)
+for e in root.findall("a:entry", ns):
+    title  = e.findtext("a:title", default="", namespaces=ns)
+    author = e.findtext("a:author/a:name", default="", namespaces=ns)
+    url    = e.find("a:link", ns).get("href")
+    body   = e.findtext("a:content", default="", namespaces=ns)  # HTML 전문
+```
+
+> **rate-limit 주의 (실측)**: `hot.rss`·`new.rss`는 200 안정적. 반면 `top.rss`·`search.rss`는 429를 자주 반환(IP 기준 — 연속 재시도로도 안 풀릴 때 있음). 요청 간격을 벌리거나, 그래도 막히면 아래 OAuth로 전환.
+
+### score·댓글수·flair가 필요하면 — OAuth API (유일한 정식 경로)
+
+비인증 JSON이 막혀, 점수·댓글수는 application-only OAuth(무료, 사용자 로그인 불필요)로만 안정적으로 얻는다:
+
+```bash
+# 1) https://www.reddit.com/prefs/apps 에서 'script' 타입 앱 등록 → client_id / secret
+# 2) application-only 토큰 발급
+TOKEN=$(curl -s -u "$CLIENT_ID:$CLIENT_SECRET" \
+  -d "grant_type=client_credentials" -A "insane-search/1.0" \
+  https://www.reddit.com/api/v1/access_token \
+  | python3 -c "import sys,json;print(json.load(sys.stdin)['access_token'])")
+
+# 3) oauth.reddit.com (www가 아니라 oauth 서브도메인 — 여기는 WAF 차단 없음)
+curl -s -H "Authorization: bearer $TOKEN" -A "insane-search/1.0" \
+  "https://oauth.reddit.com/r/{subreddit}/hot?limit=25"
+```
+
+데이터: `title`, `author`, `score`, `selftext`(전문), `num_comments`, `created_utc`, `link_flair_text`
+댓글: `https://oauth.reddit.com/r/{subreddit}/comments/{post_id}` → 응답 `[1]` 배열에 재귀 트리
+한도: OAuth 클라이언트 기준 100 req/min (차단된 비인증 `.json`보다 안정적)
 
 ## Hacker News (Firebase API)
 

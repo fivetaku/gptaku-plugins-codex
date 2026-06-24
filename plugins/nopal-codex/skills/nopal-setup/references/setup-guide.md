@@ -53,7 +53,10 @@ URL이 표시되면 직접 브라우저에 복사해서 열기. "Google hasn't v
 
 ```bash
 gws auth export --unmasked 2>/dev/null | grep -v '^Using keyring' > ~/.config/gws/credentials.json
+chmod 600 ~/.config/gws/credentials.json   # 평문 토큰 — 본인만 읽도록 제한하고 절대 커밋 금지
 ```
+
+자격증명은 `gws` CLI가 OAuth 흐름을 소유한다. headless 사용을 위해 토큰을 로컬 `~/.config/gws/credentials.json`(평문)으로 내보낼 뿐, nopal 자체에는 자격증명을 담지 않는다.
 
 ## Troubleshooting
 

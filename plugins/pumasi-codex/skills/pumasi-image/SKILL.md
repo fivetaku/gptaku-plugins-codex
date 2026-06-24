@@ -20,7 +20,7 @@ description: Image-generation companion skill for the pumasi plugin family. Use 
 
 1. **백엔드는 Codex 네이티브 이미지 도구 단일** — nanobanana 등 다른 백엔드 사용 안 함
 2. **image-studio 시스템 프롬프트 내면화** — 모드 분류 + Output Template 작성
-3. **후처리 절대 금지** — sips/ImageMagick/재인코딩 금지, 생성 원본 그대로 유지
+3. **후처리 절대 금지** — sips/ImageMagick/재인코딩 금지, 생성 원본(반환된 base64) 그대로 저장. `generated_images/` watch·복사 금지(스테일 중복 버그)
 4. **저장 경로 고정** — `{BASE_DIR}/images/{YYYY-MM-DD}/{slug}-{seq}.png`
 5. **최대 5개 질문** — 기술 2개 + 의도 3개, 조건부 스킵
 6. **텍스트는 이미지 도구가 직접 렌더링한다** — 썸네일·포스터·로고의 한글/영문 카피는 프롬프트의 Text Integration 섹션에 따옴표로 묶어 그대로 명시. **HTML/CSS 분리·후합성·텍스트 레이어 분할 절대 금지.** 구세대 diffusion(SD/Midjourney) 가정으로 "텍스트 못 그림"이라고 회피하지 말 것 — 다음 §의 capability snapshot 참조.
@@ -157,11 +157,44 @@ slug 예: "부산 광안대교 야경" → `busan-gwangan-bridge-night`, "AI 마
 
 Codex의 **네이티브 이미지 생성/편집 도구(`/imagen`, gpt-image-2)** 를 직접 호출한다.
 
-- 외부 래퍼 스크립트를 호출하지 않는다 (`imagen.sh` 등 사용 금지).
 - 백그라운드 CLI 세션을 띄우지 않는다.
 - Step 4의 영문 프롬프트 + Step 5의 타깃 경로를 도구에 전달한다.
 - 프롬프트 끝에 후처리 금지 가드(원본 유지, 재인코딩 금지)를 명시한다.
 - 텍스트가 깨졌으면 합성하지 말고 프롬프트를 보강해 1~2회 재생성한다(운영 룰 3).
+
+#### ⚠️ base64 캡처 규칙 (codex 이미지 도구의 핵심 동작)
+
+`codex` 이미지 생성은 인터랙티브 TUI와 **다르게** 동작한다:
+
+- **이미지를 base64(inline)로만 반환**한다. 도구 결과의 `image_generation_call` / `image_generation_end`
+  이벤트 `result` 필드에 base64 PNG가 실려 온다.
+- `~/.codex/generated_images/` 에 파일을 **저장하지 않는다.** 따라서 그 디렉토리를 watch 하거나
+  "방금 생긴 폴더를 복사"하는 방식은 **금지**한다 — 스테일 이미지를 잘못 집어오는 중복 버그의 원인이다.
+- 호스트는 **이번 호출에서 돌아온 base64를 디코딩해 Step 5의 타깃 경로에 직접 저장**한다.
+  생성이 0장이면 거짓 성공을 보고하지 말고 실패로 처리한다.
+
+#### codex exec 위임 경로 (선택) — scripts 사용
+
+직접 이미지 도구를 부르는 대신 별도 `codex exec` 워커에 위임하려면(또는 영문 프롬프트
+작성까지 위임하려면) `scripts/`의 결정적 래퍼를 쓴다. 래퍼는 `codex exec --json`으로 이벤트(JSONL)를
+받아 `extract_image.py`로 base64를 디코딩해 타깃에 직접 저장한다(스테일 오집음 불가, 0장이면 exit≠0):
+
+```bash
+# 영문 프롬프트는 호스트가 작성, 생성만 위임
+bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen.sh \
+  "{prompt_file_path}" "{target_image_path}" "{aspect e.g. 16:9 — 생략 가능}"
+
+# 영문 프롬프트 작성까지 codex에 위임 (PUMASI_IMAGE_DELEGATE_PROMPT 경로)
+bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-full.sh \
+  "{intent}" "{mode}" "{aspect}" "{quality}" "{target_image_path}"
+
+# 여러 장 일괄 (partial success + per-item retry manifest)
+bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-batch.sh "{batch_json_path}"
+```
+
+> ⚠️ **샌드박스/승인 우회 경계 (opt-in).** 래퍼는 `codex exec --skip-git-repo-check
+> --dangerously-bypass-approvals-and-sandbox`로 비대화형 실행한다 — 동작은 대상 이미지 경로 1개
+> 쓰기로 한정된다. **신뢰하는 본인 프로젝트에서만** 사용한다.
 
 ### Step 7: 결과 확인 + 표시 (모드별)
 
@@ -222,6 +255,16 @@ Codex의 **네이티브 이미지 생성/편집 도구(`/imagen`, gpt-image-2)**
 - `references/image-studio-prompt.md` — 모드 분류 + Output Template 시스템 프롬프트
 - `references/clarification-matrix.md` — 모드별 의도 파악 질문 매트릭스
 - `references/keyword-mapping.md` — 비율·퀄리티 키워드 자동 매핑 + 자연어 힌트 변환표
+
+## Scripts (선택 — codex exec 위임 경로)
+
+- `scripts/extract_image.py` — `codex exec --json` 출력(또는 세션 rollout)의 `image_generation_call`
+  base64를 구조 검증 후 타깃 PNG로 디코딩 저장
+- `scripts/imagen.sh` — feature flag 확인·활성화 + `codex exec --json` 호출 + base64 추출·저장 + SHA1/해상도 검증
+- `scripts/imagen-full.sh` — 영문 프롬프트 작성까지 codex에 위임(manifest/prompt/log 보존)
+- `scripts/imagen-batch.sh` — 여러 장 일괄(partial success + per-item retry manifest)
+- `scripts/imagen-cleanup.sh` — `~/.codex/generated_images/` 누적 정리(기본 DRY-RUN, 디스크 위생용)
+- `scripts/test-imagen-capture.sh` — base64 캡처/실패 처리 회귀 테스트(codex mock)
 
 ## 사전 조건
 

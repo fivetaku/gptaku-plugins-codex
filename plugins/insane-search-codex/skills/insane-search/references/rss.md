@@ -90,6 +90,11 @@ curl -sL "https://v2.velog.io/rss/@{username}"
 # Substack
 curl -sL "https://{publication}.substack.com/feed"
 
+# Reddit (비인증 .json은 WAF 차단 — RSS는 통과: hot/new/top.rss, search.rss?q=, user/{name}.rss)
+# score·댓글수는 RSS에 없음 → OAuth 필요. 상세: json-api.md
+curl -sL -A "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)" \
+  "https://www.reddit.com/r/{subreddit}/hot.rss?limit=25"
+
 # GitHub 릴리즈 (Atom)
 curl -sL "https://github.com/{owner}/{repo}/releases.atom"
 

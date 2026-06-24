@@ -7,7 +7,7 @@
 ## 의존성
 
 ```bash
-python3 -c "import curl_cffi" 2>/dev/null || pip install curl_cffi -q
+python3 -c "import curl_cffi" 2>/dev/null || pip install -U "curl_cffi>=0.15.0" -q
 ```
 
 설치 후 사용 가능. **미설치를 이유로 이 스텝을 건너뛰지 않는다.**

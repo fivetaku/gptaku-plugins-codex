@@ -86,6 +86,33 @@ curl -sL "https://publish.twitter.com/oembed?url=https://x.com/{user}/status/{tw
 | `html` | 트윗 전문이 포함된 HTML blockquote |
 | `url` | 트윗 원본 URL |
 
+## 개별 트윗 조회 — tweet-result (가장 안정적, 권장)
+
+oEmbed는 HTML을 주지만, `cdn.syndication.twimg.com/tweet-result`는 **구조화 JSON**(본문 + 좋아요/리트윗 수 + 작성자)을 바로 준다. 실측에서 oEmbed/syndication보다 차단이 적었다 (engine Phase 0의 X 단일-트윗 1순위 경로).
+
+### 엔드포인트 / 사용법
+
+```
+https://cdn.syndication.twimg.com/tweet-result?id={tweet_id}&token=a
+```
+```bash
+# plain curl은 TLS로 막힐 수 있어 curl_cffi 지문 권장 (engine이 자동 처리)
+python3 -c "from curl_cffi import requests as r; import json; \
+d=r.get('https://cdn.syndication.twimg.com/tweet-result?id={tweet_id}&token=a', impersonate='safari').json(); \
+print(d['user']['name'], '@'+d['user']['screen_name']); print(d['text']); print('♥', d.get('favorite_count'))"
+```
+
+### 응답 (JSON)
+
+| 필드 | 설명 |
+|------|------|
+| `text` | 트윗 전문 (plain text) |
+| `user.name` / `user.screen_name` | 작성자 이름 / 핸들 |
+| `favorite_count` / `conversation_count` | 좋아요 / 댓글 수 |
+| `created_at` | 작성 시각 |
+
+> `token` 파라미터는 임의 값(`a`)이어도 동작한다. `id`는 `/status/{id}` 경로에서 추출.
+
 ## 조합 패턴 (검색 → 상세)
 
 ```

@@ -112,7 +112,10 @@ gws auth login
 
 ```bash
 gws auth export --unmasked 2>/dev/null | grep -v '^Using keyring' > ~/.config/gws/credentials.json
+chmod 600 ~/.config/gws/credentials.json   # 평문 토큰 — 본인만 읽도록 제한하고 절대 커밋 금지
 ```
+
+자격증명은 `gws` CLI가 소유한다. headless 사용을 위해 토큰을 로컬 `~/.config/gws/credentials.json`(평문)으로 내보낼 뿐이며, nopal 자체에는 자격증명을 담지 않는다.
 
 ### 인증 확인
 
