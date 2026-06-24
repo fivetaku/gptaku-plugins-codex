@@ -146,5 +146,5 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 | vibe-sunsang | 2.1.2→**2.1.4** | 없음 — 동일 | 전부 |
 
 - ✅ **검증**: 14/14 `validate_plugin.py` pass · 14/14 버전 본진 일치 · 신규 .py 전부 parse · insane-search 엔진 import OK · pumasi imagen 회귀 12/12 PASS · insane-research 게이트 스모크 PASS.
-- ⚠️ **미해결 결정**: 라이선스 웨이브(MIT + per-plugin `DISCLAIMER.md`, 2026-06-23)는 **codex 포트 구조상 미적용** — codex 포트는 per-plugin LICENSE/DISCLAIMER가 없고 라이선스는 repo 루트에만 존재. 본진과 정합하려면 별도 결정 필요.
-- ⚠️ **미커밋**: 위 변경은 working tree에만 있음. 3개 레포 배포(CLAUDE.md Step 1~8 등가)는 사용자 승인 후.
+- ✅ **배포(2026-06-25)**: codex 레포 단일 배포(자체 origin) — sync 커밋 `c884bdf` push. (standalone 레포라 마켓 캐시/installed_plugins.json 파이프라인 무관, 태그 컨벤션 없어 릴리즈 미생성.) `.omc/` 런타임 상태 제거 + `.gitignore` 등재.
+- ✅ **라이선스 웨이브 적용(2026-06-25, 커밋 `b483fa2`)**: 14종 전부 per-plugin `LICENSE`(본진 verbatim·copyright holder 보존: fivetaku 10종 / chulrolee 4종[docs-guide·git-teacher·pumasi·vibe-sunsang]) + `DISCLAIMER.md`(본진 복제, collection 링크만 `gptaku-plugins-codex`로 리포인트). plugin.json `license`는 이미 MIT였음. validate 14/14 유지.
