@@ -59,7 +59,7 @@ responsibility.
 `insane-search` is a reader for **publicly available content only**. By design it stops
 at logins and paywalls — reporting `authentication required` rather than
 attempting to defeat them — and it never logs in on your behalf and never stores
-or transmits credentials. It is **not** a tool for bypassing authentication,
+or transmits credentials. It is **not** a tool for overriding authentication,
 circumventing access controls, evading security mechanisms, or gaining
 unauthorized access to any system. Using it, or any derivative of it, for such
 purposes is outside its intended design and is solely the responsibility of the

@@ -1,6 +1,6 @@
 # insane-search-codex
 
-Codex marketplace package for the `insane-search` skill — auto-bypass for blocked / WAF-heavy URLs.
+Codex marketplace package for the `insane-search` skill — adaptive access for blocked / WAF-heavy URLs.
 
 Included skills:
 - `insane-search` — generic WAF-profile fetch chain (curl_cffi TLS impersonation, mobile URL

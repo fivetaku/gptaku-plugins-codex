@@ -1,7 +1,7 @@
 {
   "name": "insane-search-codex",
   "version": "0.8.2",
-  "description": "Codex-native auto-bypass for blocked sites (X/Twitter, Reddit, Stack Overflow, Naver, Coupang, LinkedIn, YouTube) — Phase 0→3 adaptive scheduler with curl_cffi TLS impersonation, yt-dlp, Jina, public APIs, and local Playwright fallback. No API keys, auto dependency install.",
+  "description": "Codex-native adaptive access for blocked sites (X/Twitter, Reddit, Stack Overflow, Naver, Coupang, LinkedIn, YouTube) — Phase 0→3 adaptive scheduler with curl_cffi TLS impersonation, yt-dlp, Jina, public APIs, and local Playwright fallback. No API keys, auto dependency install.",
   "author": {
     "name": "fivetaku",
     "url": "https://github.com/fivetaku"
@@ -13,7 +13,7 @@
     "web-access",
     "search",
     "fetch",
-    "bypass",
+    "access-fallback",
     "waf",
     "jina",
     "yt-dlp",
@@ -40,7 +40,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Insane Search Codex",
-    "shortDescription": "Bypass blocked or difficult web pages in Codex",
+    "shortDescription": "Adaptive access to blocked or difficult web pages in Codex",
     "longDescription": "Package the Codex-native `insane-search` skill with the generic fetch engine, platform-specific references, and runnable smoke tests for blocked or WAF-heavy URLs.",
     "developerName": "GPTaku",
     "category": "Productivity",

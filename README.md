@@ -74,7 +74,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [kkirikkiri-codex](plugins/kkirikkiri-codex) | Codex-native agent-team assembly from natural language, with shared memory and bounded delegation. |
 | [skillers-suda-codex](plugins/skillers-suda-codex) | A workshop for designing, reviewing, and packaging Codex skills or plugin bundles. |
 | [nopal-codex](plugins/nopal-codex) | Google Workspace orchestration for Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, and Meet through `gws`. |
-| [insane-search-codex](plugins/insane-search-codex) | Auto-bypass workflow for blocked or WAF-heavy pages using generic fetch, public APIs, RSS, Jina, and optional Playwright. |
+| [insane-search-codex](plugins/insane-search-codex) | Adaptive-access workflow for blocked or WAF-heavy pages using generic fetch, public APIs, RSS, Jina, and optional Playwright. |
 | [insane-design-codex](plugins/insane-design-codex) | Extract real website CSS into a reusable design system, or reuse the bundled design corpus. |
 
 > More plugins can be added over time. Watch the repository to get release updates.

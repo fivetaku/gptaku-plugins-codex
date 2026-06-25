@@ -74,7 +74,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [kkirikkiri-codex](plugins/kkirikkiri-codex) | 자연어 요청에서 Codex 에이전트 팀을 구성하고, 공유 메모리와 제한된 위임으로 진행합니다. |
 | [skillers-suda-codex](plugins/skillers-suda-codex) | Codex 스킬이나 플러그인 번들을 설계, 리뷰, 패키징하는 워크숍. |
 | [nopal-codex](plugins/nopal-codex) | `gws`를 통해 Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Tasks, Meet 작업을 오케스트레이션합니다. |
-| [insane-search-codex](plugins/insane-search-codex) | 차단되거나 WAF가 강한 페이지를 generic fetch, public API, RSS, Jina, 선택적 Playwright로 우회합니다. |
+| [insane-search-codex](plugins/insane-search-codex) | 차단되거나 WAF가 강한 페이지를 generic fetch, public API, RSS, Jina, 선택적 Playwright로 대체 접근합니다. |
 | [insane-design-codex](plugins/insane-design-codex) | 실제 웹사이트 CSS를 디자인 시스템으로 추출하거나, 번들된 디자인 코퍼스를 재사용합니다. |
 
 > 플러그인은 계속 추가될 수 있습니다. 릴리스 알림을 받으려면 저장소를 Watch 해두세요.

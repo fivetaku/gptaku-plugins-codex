@@ -7,7 +7,7 @@
 
 > ⚠️ **비인증 `.json`은 WAF로 차단됨** (2026-06 실측). `www`·`old` 서브도메인 모두 403(189KB 챌린지 HTML 반환), curl_cffi TLS impersonation 격자(safari/chrome/firefox/safari_ios × referer) 전수 시도도 전부 403. 비인증 JSON 경로는 더 이상 신뢰할 수 없다.
 >
-> ✅ **우회: 공식 Atom/RSS 피드(`.rss`)** — WAF 예외라 깨끗한 XML로 통과한다.
+> ✅ **대체 경로: 공식 Atom/RSS 피드(`.rss`)** — WAF 예외라 깨끗한 XML로 통과한다.
 
 ### 작동하는 경로 — Atom/RSS (비인증)
 

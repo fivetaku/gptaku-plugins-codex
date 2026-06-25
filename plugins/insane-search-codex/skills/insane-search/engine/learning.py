@@ -31,7 +31,7 @@ TTL_DAYS = int(os.environ.get("INSANE_LEARN_TTL_DAYS", "30"))
 MAX_ENTRIES = int(os.environ.get("INSANE_LEARN_MAX", "500"))
 EVICT_AFTER_FAILS = 2
 
-# stop_reason values that mean the bypass ROUTE genuinely failed (→ strike).
+# stop_reason values that mean the access ROUTE genuinely failed (→ strike).
 # Everything else (rate_limited / unknown / budget / auth_required / not_found /
 # success / "") is transient or URL-level and never strikes the route.
 PENALIZE_REASONS = frozenset({"exhausted", "challenge", "blocked"})

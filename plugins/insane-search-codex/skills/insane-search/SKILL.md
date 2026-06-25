@@ -1,7 +1,7 @@
 ---
 name: insane-search
 description: >
-  Auto-bypass for blocked websites — tries every method until one works.
+  Adaptive access for blocked websites — tries every method until one works.
   Use when ordinary fetch returns 402/403/blocked, or when accessing X/Twitter,
   Reddit, YouTube, GitHub, Mastodon, Medium, Substack, Stack Overflow, Threads,
   Naver, Coupang, LinkedIn, or any platform with WAF/bot protection. Leverages
@@ -19,7 +19,7 @@ description: >
 
 # Insane Search for Codex
 
-> URL 접근이 차단될 때, **사이트 무관한** 우회 전략을 자동 선택한다.
+> URL 접근이 차단될 때, **사이트 무관한** 대체 접근 전략을 자동 선택한다.
 
 이 스킬은 인터뷰 대상이 아니다 — 사용자에게 거의 묻지 않고 **바로 실행**한다. 진짜 선택지가
 불가피할 때만 `shared/questioning-policy.md` §A 번호형 블록을 쓰되, 준비된 사용자를 과도하게
@@ -57,13 +57,13 @@ description: >
 1. `grid_exhausted=true` — false면 `fetch(max_attempts=None)`(=CLI 기본, exhaustive)로 끝까지 재호출.
 2. `untried_routes`가 **빈 배열** — 비어있지 않으면 그 경로들을 먼저 실행.
 3. `must_invoke_playwright_mcp=false` — true면 **어시스턴트가 직접** 정찰 라우트(`scripts/playwright_recon.js`)를 돌린 뒤에만 통과: Local Node + `channel:'chrome'`로 대상 페이지를 로드 → 발생한 네트워크 요청에서 내부 `/api`·`/graphql`·`.json` 엔드포인트 탐지 → 그 URL을 `bash scripts/run_engine.sh`(= `python3 -m engine`)로 재호출(API는 WAF가 얕음); 또는 렌더된 HTML 회수. (engine은 로컬 Node Chrome만 띄울 수 있으므로, 정찰은 **구조적으로** 어시스턴트의 몫이다 — Codex에는 MCP Playwright가 없으니 `must_invoke_playwright_mcp`는 곧 로컬 정찰 스크립트 호출 신호로 읽는다.)
-4. `stop_reason`이 `auth_required`/`404`/paywall 등 **terminal**일 때만 정직하게 실패 인정 — engine이 `untried_routes`를 **빈 채로** 돌려준다. **429(rate-limit)는 terminal 아님** — 백오프 후 재시도/다른 TLS/정찰로 우회.
+4. `stop_reason`이 `auth_required`/`404`/paywall 등 **terminal**일 때만 정직하게 실패 인정 — engine이 `untried_routes`를 **빈 채로** 돌려준다. **429(rate-limit)는 terminal 아님** — 백오프 후 재시도/다른 TLS/정찰로 재접근.
 
 요지: **engine의 give-up은 "그만해도 된다"는 허가가 아니다.** CLI는 실패 시 `⛔ NOT EXHAUSTED` 블록을 stderr로 출력한다 — 그게 보이면 위 4개를 끝낼 때까지 멈추지 않는다.
 단, R7 조건(WAF 조기 감지)이 성립하면 engine 격자는 계속 돌되, 어시스턴트가 **병렬로** 정찰 루트를 시도할 수 있다. 빠른 쪽이 이긴다.
 
 **R7 — WAF 조기 감지 시 API-first 병행 분기** (분기 결정은 자동이지만 사용자가 결과에서 확인 가능
-— 어떤 우회 경로로 성공/실패했는지 결과 metadata에 명시):
+— 어떤 접근 경로로 성공/실패했는지 결과 metadata에 명시):
 발동 조건 (AND):
 1. engine 실행 초기에 첫 2~3회 attempt가 모두 `verdict=challenge`
 2. `profile_used`가 `akamai_bot_manager`, `cloudflare_turnstile`, `datadome_probable`,
@@ -295,7 +295,7 @@ bash scripts/smoke_test.sh          # bias_check + unit/online smoke (pytest 및
 > `bash scripts/run_engine.sh "<URL>"` (= `python3 -m engine "<URL>"`) 하나면 Phase 0 라우터(`engine/phase0.py`)가
 > **격자보다 먼저** 공식 경로를 시도한다 — Reddit→`.rss`, X 트윗→`tweet-result`/oEmbed, X 프로필→syndication, YouTube→`yt-dlp`.
 > 아래 수동 스니펫은 디버그/참조용이며 trace에 `phase=phase0`로 기록된다.
-> (실측 주의: Reddit `.json`+모바일UA·`syndication-timeline`은 흔히 403/429라 plain `curl`은 신뢰 불가 — engine이 curl_cffi 지문으로 우회한다.)
+> (실측 주의: Reddit `.json`+모바일UA·`syndication-timeline`은 흔히 403/429라 plain `curl`은 신뢰 불가 — engine이 curl_cffi 지문으로 접근한다.)
 
 ```bash
 # ★ 거의 모든 경우 이거면 됨 (Phase 0 자동 + 실패 시 격자→정찰 에스컬레이션)
@@ -381,10 +381,10 @@ curl -sL "https://hacker-news.firebaseio.com/v0/topstories.json?limitToFirst=10&
 
 | 파일 | 언제 읽는가 | 무엇을 다루는가 |
 |------|-------------|-----------------|
-| [`json-api.md`](references/json-api.md) | Reddit/Wikipedia/HN/npm/PyPI 등 **URL 변형만으로** JSON/피드를 주는 사이트 | Reddit Atom/RSS(`.rss`) 우회 + score·댓글용 OAuth(`.json`은 WAF 차단), HN Firebase, Algolia Search, Wikipedia REST, npm/PyPI Registry API |
+| [`json-api.md`](references/json-api.md) | Reddit/Wikipedia/HN/npm/PyPI 등 **URL 변형만으로** JSON/피드를 주는 사이트 | Reddit Atom/RSS(`.rss`) 대체 경로 + score·댓글용 OAuth(`.json`은 WAF 차단), HN Firebase, Algolia Search, Wikipedia REST, npm/PyPI Registry API |
 | [`public-api.md`](references/public-api.md) | Bluesky/Mastodon/arXiv/Stack Overflow/CrossRef/GitHub/OpenLibrary/Wayback 공식 API 사용 시 | 인증 없이 쓰는 공식 공개 REST/AT/Atom API 엔드포인트, 요청 형식, 공통 파라미터 |
 | [`twitter.md`](references/twitter.md) | X/Twitter 접근 — 프로필 타임라인, 특정 트윗, 키워드 검색 | `syndication.twitter.com` 타임라인, tweet-result/oEmbed 개별 트윗, 검색은 web.search_query로 URL 확보 후 tweet-result |
-| [`naver.md`](references/naver.md) | 네이버 블로그·뉴스·증권·검색 접근 | 서비스별 우회(블로그는 `m.blog.naver.com` 변환, 증권은 비공식 JSON, 검색은 `search.naver.com`), 한글 검색 쿼리 패턴 |
+| [`naver.md`](references/naver.md) | 네이버 블로그·뉴스·증권·검색 접근 | 서비스별 대체 접근(블로그는 `m.blog.naver.com` 변환, 증권은 비공식 JSON, 검색은 `search.naver.com`), 한글 검색 쿼리 패턴 |
 | [`media.md`](references/media.md) | YouTube/Vimeo/Twitch/TikTok/SoundCloud 등 미디어 메타·자막·오디오 필요 시 | `yt-dlp --dump-json` 기반 1,858개 사이트 커버, 자막 다운로드(`--write-sub`), 포맷 선택, 라이브/팟캐스트 |
 
 ### D. Engine 코드 직접 읽을 때
