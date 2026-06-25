@@ -92,6 +92,33 @@ def t_url_transforms():
     print(f"  ✓ url_transforms produce expected forms")
 
 
+# Pytest collection wrappers for the marketplace smoke gate. Keep this gate
+# deterministic and offline; the t_online_* checks remain available when this
+# file is run directly.
+def test_validator_tiny_body_is_challenge():
+    t_validator_tiny_body_is_challenge()
+
+
+def test_validator_marker_is_challenge():
+    t_validator_marker_is_challenge()
+
+
+def test_validator_weak_ok_without_selectors():
+    t_validator_weak_ok_without_selectors()
+
+
+def test_validator_strong_ok_with_selectors():
+    t_validator_strong_ok_with_selectors()
+
+
+def test_profiles_load():
+    t_profiles_load()
+
+
+def test_url_transforms():
+    t_url_transforms()
+
+
 # --- online (network) -------------------------------------------------------
 def t_online_benign_site():
     """A simple, usually-open site should pass probe directly when selectors provided."""

@@ -7,7 +7,7 @@ description: Generate an AI-collaboration growth report from converted Codex con
 
 > AI 활용 세션 데이터를 분석하여 성장 리포트를 자동 생성 (서브에이전트 위임, 유형별 맞춤, v2 6축 분석).
 
-Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (`command-routes/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
 
 ## 참조 경로
 
@@ -142,4 +142,4 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
 - 점수는 객관적 정체성 라벨이 아니라 코칭 신호로 다룬다.
 - 세션 3개 미만이면 과적합하지 말고 리포트를 예비(preliminary)로 표시한다.
 - 보이는 세션 증거를 인용한다.
-- Codex CLI에는 `AskUserQuestion` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- Codex CLI에는 `question prompt` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.

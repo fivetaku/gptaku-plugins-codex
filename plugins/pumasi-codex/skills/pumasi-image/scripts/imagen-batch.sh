@@ -4,8 +4,8 @@
 #
 # batch_json 예시:
 # [
-#   {"intent":"BPTC 4회차 표지","mode":"E","aspect":"16:9","quality":"high","target":"/Users/.../1.png"},
-#   {"intent":"노트북 vs 도서관","mode":"D","aspect":"16:9","quality":"high","target":"/Users/.../2.png"}
+#   {"intent":"BPTC 4회차 표지","mode":"E","aspect":"16:9","quality":"high","target":"~/images/1.png"},
+#   {"intent":"노트북 vs 도서관","mode":"D","aspect":"16:9","quality":"high","target":"~/images/2.png"}
 # ]
 
 set -euo pipefail

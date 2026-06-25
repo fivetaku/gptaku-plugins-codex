@@ -32,7 +32,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 ## Case 2 — Preview/beta suffix model IDs
 
-**Trigger**: 모델 비교 / API integration 질문 (e.g., "Claude 4.7 사용법", "OpenAI o1-preview vs o1")
+**Trigger**: 모델 비교 / API integration 질문 (e.g., "Codex 4.7 사용법", "OpenAI o1-preview vs o1")
 
 **Past failure mode**:
 - Generated `claude-4.7` or `o1-mini` from natural reading
@@ -41,7 +41,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 **Expected behavior**:
 1. Trigger spec-level (exact API identifier)
-2. Extract model IDs from `developers.openai.com/api/docs/llms.txt` or `platform.claude.com/llms.txt`
+2. Extract model IDs from `developers.openai.com/api/docs/llms.txt` or `platform.codex.com/llms.txt`
 3. Use Template 2 (detail extraction) with claim "exact model ID string"
 4. Verbatim quote in answer
 
@@ -53,7 +53,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 ## Case 3 — Pricing query
 
-**Trigger**: "GPT-4o 가격" / "Claude Opus pricing per token"
+**Trigger**: "GPT-4o 가격" / "Codex Opus pricing per token"
 
 **Past failure mode**:
 - Quoted from training data (stale), or
@@ -75,7 +75,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 ## Case 4 — Deprecation date / sunset
 
-**Trigger**: "GPT-4 언제 deprecated 돼?" / "Claude 3 sunset date"
+**Trigger**: "GPT-4 언제 deprecated 돼?" / "Codex 3 sunset date"
 
 **Past failure mode**:
 - Guessed from "everyone says 6 months"
@@ -94,7 +94,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 ## Case 5 — Context window / token limit
 
-**Trigger**: "Claude Opus context window" / "Gemini 1.5 Pro 토큰 제한"
+**Trigger**: "Codex Opus context window" / "Gemini 1.5 Pro 토큰 제한"
 
 **Past failure mode**:
 - Numeric value invented (e.g., "200K tokens" without source)
@@ -113,7 +113,7 @@ When updating the skill, run through these and confirm correct behavior.
 
 ## Case 6 — Endpoint compatibility
 
-**Trigger**: "OpenAI Responses API에서 X 가능?" / "Claude Messages API supports vision?"
+**Trigger**: "OpenAI Responses API에서 X 가능?" / "Codex Messages API supports vision?"
 
 **Past failure mode**:
 - Assumed all endpoints support all features (false)

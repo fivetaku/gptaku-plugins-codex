@@ -1,6 +1,6 @@
 # 인터뷰 가이드 — 스킬러들의 수다 (Codex)
 
-채팅-우선 질문을 쓴다. 답이 생성될 결과물을 바꿀 때만 묻는다. 모든 선택 질문은 `shared/questioning-policy.md §A`의 번호형 블록으로 렌더한다 — Codex에는 `AskUserQuestion` 카드가 없다.
+채팅-우선 질문을 쓴다. 답이 생성될 결과물을 바꿀 때만 묻는다. 모든 선택 질문은 `shared/questioning-policy.md §A`의 번호형 블록으로 렌더한다 — Codex에는 `question prompt` 카드가 없다.
 
 ## 1. 4 관점 분석 설계
 

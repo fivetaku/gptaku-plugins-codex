@@ -29,7 +29,7 @@ Never hedge; pick one BOLD direction and defend it.
 
 ## Codex 상호작용 규칙 (§A)
 
-Codex CLI에는 `AskUserQuestion` 카드 UI가 **없다**. 질문이 필요하면
+Codex CLI에는 `question prompt` 카드 UI가 **없다**. 질문이 필요하면
 `shared/questioning-policy.md` §A의 채팅 번호 블록으로 대체한다.
 
 - analysis는 인터뷰형이 아니라 **추출형**이다. URL과 출력 루트가 명확하면 질문 없이 진행하고,
@@ -151,7 +151,7 @@ python3 "$PLUGIN_ROOT/skills/insane-design/scripts/alias_layer.py" {slug}
 결과: `insane-design/{slug}/phase1/`에 4개 JSON (brand_candidates / resolved_tokens / typography / alias_layer).
 
 > §11 Layout / §12 Responsive / §13 Components는 스크립트로 추출하지 않는다. Step 4에서
-> Claude/Codex가 CSS를 직접 읽고 판단한다.
+> Codex/Codex가 CSS를 직접 읽고 판단한다.
 
 CSS custom properties 0개면: "CSS 토큰 부족" 경고 후 hex frequency 기반으로 전환.
 

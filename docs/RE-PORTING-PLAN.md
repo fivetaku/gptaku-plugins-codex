@@ -2,7 +2,7 @@
 
 > 작성: 2026-06-20 · 대상: `gptaku-plugins-codex` · 기준 본진: `gptaku-plugins`(June 2026)
 > v2 변경: docs-guide 리서치로 **"Codex=skill-only·훅 없음" 전제를 폐기**. Codex 플러그인 모델은
-> 본진과 거의 패리티(hooks·agents·MCP·/goal). 실질 갭은 **AskUserQuestion 하나**.
+> 본진과 거의 패리티(hooks·agents·MCP·/goal). 실질 갭은 **question prompt 하나**.
 > 결정 반영: ①goaljaby=native /goal로 이식 ②update-notifier=SessionStart hook ③버전=본진과 동일 ④풀 기능 패리티.
 
 ---
@@ -22,27 +22,27 @@
 
 ## 2. ★ 리서치로 확정된 프리미티브 패리티 (방향의 핵심)
 
-Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 구성요소에 **네이티브 대응**이 있다. 기존 Codex 포트가 skill-only였던 건 v0.1.0 최소 포팅이었을 뿐, **Codex의 한계가 아니다.**
+Codex CLI(~v0.140, 2026-06)는 본진 Codex CLI 플러그인의 거의 모든 구성요소에 **네이티브 대응**이 있다. 기존 Codex 포트가 skill-only였던 건 v0.1.0 최소 포팅이었을 뿐, **Codex의 한계가 아니다.**
 
-| 본진 (Claude Code) | Codex 대응 | 판정 | 출처 |
+| 본진 (Codex CLI) | Codex 대응 | 판정 | 출처 |
 |--|--|--|--|
 | commands | skills (`SKILL.md`) | 1:1 (콘텐츠만 최신화) | codex/skills |
 | agents | **런타임 multi-agent spawn**(지침을 소유 스킬에 임베드) — ⚠️ 플러그인에 `agents/` 로스터 폴더 **없음**(`agents/openai.yaml`은 인터페이스 메타데이터지 서브에이전트 정의 아님) | 기능은 이식되나 구조는 다름 | 검증: validate_plugin.py |
 | settings.json hooks (`SessionStart`…) | ⚠️ **플러그인 선언형 hook 미지원(0.139)** — `plugin.json "hooks"` 필드는 validator가 거부(실측), `plugin_hooks` feature=removed | **이식 불가(현 버전)** | 실측 P3 |
 | MCP servers | 매니페스트 `mcpServers`(→`.mcp.json`) | 1:1 | codex/plugins/build |
 | `/goal` (OMC ultragoal) | **native `/goal`** + `/plan` + ExecPlan(`PLANS.md`) | 1:1 (이름까지 동일) | codex/use-cases/follow-goals |
-| `${CLAUDE_PLUGIN_ROOT}` | `$PLUGIN_ROOT` (+ `CLAUDE_PLUGIN_ROOT` alias 호환) | 1:1 | codex/plugins/build |
+| `${CODEX_PLUGIN_ROOT}` | `$PLUGIN_ROOT` (+ `CODEX_PLUGIN_ROOT` alias 호환) | 1:1 | codex/plugins/build |
 | auto-star (setup.sh + Step 0) | ❌ 불가 — 플러그인 hook 미지원(위) | **이식 불가(현 버전)** | 실측 P3 |
 | update-notifier hook | ❌ 불가 — 플러그인 hook 미지원. (단 Codex 마켓은 `codex plugin marketplace upgrade`로 업데이트 자체는 가능) | **이식 불가(현 버전)** | 실측 P3 |
-| **`AskUserQuestion`** | **없음** | ★**유일 실질 갭** → §A 번호채팅 치환 | codex/cli/features |
+| **`question prompt`** | **없음** | ★**유일 실질 갭** → §A 번호채팅 치환 | codex/cli/features |
 
-**결론**: 풀 기능 패리티 재포팅은 전적으로 실현 가능. 창의적 치환이 필요한 건 AskUserQuestion 단 하나(이미 §A로 해결).
+**결론**: 풀 기능 패리티 재포팅은 전적으로 실현 가능. 창의적 치환이 필요한 건 question prompt 단 하나(이미 §A로 해결).
 
 ---
 
 ## 3. 워크스트림 (v2)
 
-### WS1. AskUserQuestion 치환 — 유일한 실질 갭 / P0 토대 완료
+### WS1. question prompt 치환 — 유일한 실질 갭 / P0 토대 완료
 - Codex에 카드 UI 없음(확정). 치환 = `shared/questioning-policy.md §A`(번호 선택지+예시 프리뷰).
 - **완료**: §A SSOT 신설 + show-me-the-prd-codex 인용·시연.
 - **남음**: 인터뷰 플러그인 7종 §A+§0~§4 인용 연결.
@@ -64,7 +64,7 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 | 플러그인 | 본진 의존성 | Codex 포팅 방안(결정 반영) |
 |--|--|--|
 | **goaljaby** | `/goal` 핸드오프 | **native `/goal`로 이식**(결정 ①). 한국어 검토문서 + `PLANS.md`(ExecPlan: Progress/Validation/Decision-Log) 생성 후 `/goal Execute ./PLANS.md …; keep Progress current; stop when <done>`. 객관식은 §A. ⚠️`codex features list`로 goals 활성화 확인 |
-| **dd** | OS clipboard→Claude 컨텍스트 주입 | clipboard(pbpaste)는 OS-level 유지, 주입은 Codex SKILL.md가 캡처본을 읽어 컨텍스트화 |
+| **dd** | OS clipboard→Codex 컨텍스트 주입 | clipboard(pbpaste)는 OS-level 유지, 주입은 Codex SKILL.md가 캡처본을 읽어 컨텍스트화 |
 | **insane-review** | `bin/pack_and_ask.py`(독립 py 웹브릿지) | 거의 독립 → `$PLUGIN_ROOT` env 치환 + Codex skill 래핑. 본진 안정화(45커밋 활발) 후 막차로 |
 
 ### WS6. 버전·릴리즈 정렬 (결정 ③)
@@ -123,7 +123,7 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 2026-06-21 재포팅 직후 본진 14종이 전부 추가 버전 bump됨. 갭을 전수 재측정·해소했다.
 
 ### 갭의 성격 — 두 종류
-- **버킷 A (잡음·이식불가)**: 본진 14종 공통 커밋 웨이브 = GitHub-star opt-in(AskUserQuestion) → star prompt 다국어화 → setup.sh ask-mode 첫-실행. **전부 §2·WS4에서 이미 "이식 불가" 종결된 플랫폼 기능**(Codex 플러그인 hook 미지원·AskUserQuestion 없음). → 포팅 대상 아님. patch 버전 갭의 대부분이 여기서 발생.
+- **버킷 A (잡음·이식불가)**: 본진 14종 공통 커밋 웨이브 = GitHub-star opt-in(question prompt) → star prompt 다국어화 → setup.sh ask-mode 첫-실행. **전부 §2·WS4에서 이미 "이식 불가" 종결된 플랫폼 기능**(Codex 플러그인 hook 미지원·question prompt 없음). → 포팅 대상 아님. patch 버전 갭의 대부분이 여기서 발생.
 - **버킷 B (실질 기능 갭)**: 소수 플러그인의 엔진/로직/문서 변경. → 실제 포팅.
 
 ### 플러그인별 판정·작업 (✅ = working tree 반영, validate pass)
@@ -132,16 +132,16 @@ Codex CLI(~v0.140, 2026-06)는 본진 Claude Code 플러그인의 거의 모든 
 |--|--|--|--|
 | **insane-search** | 0.5.1→**0.8.2** | 엔진 대수술: 신규 모듈 `phase0.py`(exhaustive router)·`learning.py`(per-host 자기학습 U5)·`safety.py`(SSRF)·`transport.py`(curl_cffi 0.15·patchright·쿠키브릿지) + `__main__/bias_check/executor/fetch_chain/validators` 갱신 + playwright 템플릿·테스트·references(rss/json-api/twitter/fallback/tls) + SKILL R6 failure-gate | star/setup 웨이브 |
 | **insane-review** | 0.1.0→**0.5.2** | 스텁→완본: `pack_and_ask.py` 엔진 1:1(폴더명 ChatGPT Project 그룹핑·전용프로필·CDP 다이얼로그·self-heal) + SKILL v0.5.2 재작성 + council-setup `--require-model` | setup.sh(pip 설치는 SKILL 수동절차로) · star · update-hook |
-| **insane-research** | 2.4.0→**2.6.1** | claim-verification 코드게이트 `validate_ledger.py`(v2.5.0) + 평가 스코어러 `eval_report.py`(v2.6.0) + SKILL Phase4~7 게이트 배선 | `strict_verification_handoff()`(Claude Workflow 핸드오프) |
-| **pumasi** | 1.10.2→**1.11.2** | `/imagen` base64 캡처: 신규 `extract_image.py` + imagen 래퍼 5종(`codex exec --json`) + SKILL 후처리금지 가드 + sandbox-bypass 신뢰경계 노트 | agy 설치 하드닝(코덱스판 미해당) · star/setup |
+| **insane-research** | 2.4.0→**2.6.1** | claim-verification 코드게이트 `validate_ledger.py`(v2.5.0) + 평가 스코어러 `eval_report.py`(v2.6.0) + SKILL Phase4~7 게이트 배선 | `strict_verification_handoff()`(Codex Workflow 핸드오프) |
+| **pumasi** | 1.10.2→**1.11.2** | `/imagen` base64 캡처: 신규 `extract_image.py` + imagen 래퍼 5종(`Codex non-interactive run --json`) + SKILL 후처리금지 가드 + sandbox-bypass 신뢰경계 노트 | agy 설치 하드닝(코덱스판 미해당) · star/setup |
 | **goaljaby** | 0.4.2→**0.5.3** | 생성문서 사용자 언어 출력(`output_lang` 자동감지·언어별 헤딩검증) | star/setup |
 | **git-teacher** | 1.5.2→**1.5.4** | rebase ours/theirs 매핑 교정(`--theirs`/`--ours` 반전 + 경고) | star/setup |
 | **nopal** | 0.7.1→**0.7.4** | credential export 절차에 `chmod 600` + "평문 토큰·gws가 OAuth 소유" 문구 교정 | setup.sh chmod · star |
-| insane-design | 0.5.1→**0.5.3** | (CSS/Playwright 셸버그가 코덱스판엔 부재 — 요약 포팅돼 있어 무해) 버전만 | AskUserQuestion frontmatter · CSS셸버그 · star |
+| insane-design | 0.5.1→**0.5.3** | (CSS/Playwright 셸버그가 코덱스판엔 부재 — 요약 포팅돼 있어 무해) 버전만 | question prompt frontmatter · CSS셸버그 · star |
 | docs-guide | 1.4.1→**1.4.3** | (소프트닝 대상 과장문구가 코덱스판 README/SKILL에 부재) 버전만 | star/setup |
 | kkirikkiri | 0.21.4→**0.21.6** | (deep-research 토큰 0건 — 이미 리네임됨) 버전만 | star/setup |
 | show-me-the-prd | 0.8.3→**0.8.5** | (deep-research 토큰 0건) 버전만 | star/setup |
-| dd | 0.3.1→**0.4.2** | 없음 — 전 커밋 star/setup/AskUserQuestion 웨이브 | 전부 |
+| dd | 0.3.1→**0.4.2** | 없음 — 전 커밋 star/setup/question prompt 웨이브 | 전부 |
 | skillers-suda | 1.4.2→**1.4.4** | 없음 — 동일 | 전부 |
 | vibe-sunsang | 2.1.2→**2.1.4** | 없음 — 동일 | 전부 |
 

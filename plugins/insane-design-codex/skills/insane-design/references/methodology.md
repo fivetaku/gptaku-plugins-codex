@@ -16,7 +16,7 @@
        ↓
 3단계: 스크린샷 + 시각 검증 (멀티모달)
        ↓
-4단계: DESIGN.claude.manual.md 작성
+4단계: DESIGN.codex.manual.md 작성
        ↓
 5단계: HTML 리포트 생성
 ```
@@ -148,7 +148,7 @@ for claimed_hex in designmd_hexes:
 
 ---
 
-## 4단계: DESIGN.claude.manual.md 작성
+## 4단계: DESIGN.codex.manual.md 작성
 
 ### 섹션 구성 (작성 순서)
 

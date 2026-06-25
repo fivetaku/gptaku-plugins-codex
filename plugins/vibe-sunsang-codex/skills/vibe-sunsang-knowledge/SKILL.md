@@ -7,7 +7,7 @@ description: Answer questions about the vibe-sunsang level system (v2 6-axis × 
 
 > 바선생의 핵심 개념, 용어, 프레임워크에 대한 질문에 답한다. 설명 전용 스킬.
 
-Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (`command-routes/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
 
 ## 참조 경로
 
@@ -138,4 +138,4 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
 - 묻지 않은 전체 프레임워크를 한꺼번에 쏟아붓지 않는다.
 - 예시는 AI 협업 행동에 근거를 둔다.
 - 워크스페이스 유형이 불확실하면 가정을 밝힌다.
-- Codex CLI에는 `AskUserQuestion` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- Codex CLI에는 `question prompt` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.

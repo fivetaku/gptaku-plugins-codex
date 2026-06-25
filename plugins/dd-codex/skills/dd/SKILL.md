@@ -60,7 +60,7 @@ Decide whether the captured item should be handled in the main session or delega
 
 The sub-agent reads `content.txt` or `image.png`, analyzes it, and returns only the useful result to the main session. Do not copy the full raw content back into the main conversation.
 
-**Agent tier:** dd's delegated work (summaries, error triage, visual briefs) is lightweight — frame the sub-agent as a light/balanced worker in the prompt. Do NOT pin a model id (`model: sonnet` is a Claude-only mechanism Codex does not accept); the Codex runtime selects the model.
+**Agent tier:** dd's delegated work (summaries, error triage, visual briefs) is lightweight — frame the sub-agent as a light/balanced worker in the prompt. Do NOT pin a model id (`model: sonnet` is a Codex-only mechanism Codex does not accept); the Codex runtime selects the model.
 
 **Diagnosis guidance:** when delegating error/log diagnosis, include this instruction in the sub-agent prompt: locate the FIRST anomaly in the timeline, then look at what changed immediately BEFORE it (deploys, config reloads, version changes, flag flips); treat the error flood at the tail as a consequence, not the cause. Without this, the sub-agent tends to stop at the surface mechanism and prescribe symptom-level fixes.
 

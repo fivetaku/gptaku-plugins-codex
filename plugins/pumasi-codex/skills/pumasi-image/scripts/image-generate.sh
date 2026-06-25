@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # /pumasi:image — Codex /imagen 호출 래퍼
-# Usage: imagen.sh <prompt_file> <target_image_path>
+# Usage: image helper <prompt_file> <target_image_path>
 
 set -euo pipefail
 
@@ -50,7 +50,7 @@ fi
 # 1) feature flag 확인 + 자동 활성화
 FLAG_STATE=$(codex features list 2>&1 | awk '/^image_generation/ {print $NF}' | head -n1)
 if [[ "$FLAG_STATE" != "true" ]]; then
-  echo "[imagen.sh] enabling image_generation feature flag..."
+  echo "[image helper] enabling image_generation feature flag..."
   codex features enable image_generation >/dev/null 2>&1
 fi
 
@@ -61,7 +61,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EXTRACT="${SCRIPT_DIR}/extract_image.py"
 
 # 3) 프롬프트 본문 + image 도구 즉시 호출 지시
-#    핵심: codex exec(headless)는 image_generation 도구로 이미지를 생성해서
+#    핵심: Codex non-interactive run(headless)는 image_generation 도구로 이미지를 생성해서
 #    base64(result)로 돌려주지만, TUI와 달리 generated_images/에 파일로 저장하지 않는다.
 #    그래서 --json 으로 받아 base64를 우리가 직접 디코딩해 저장한다.
 #    "/imagen" 슬래시는 exec에서 inert 텍스트이고, 설치된 codex 스킬을 읽다 도구 호출을
@@ -72,17 +72,17 @@ CODEX_PROMPT="Use your image generation tool to generate EXACTLY ONE image now. 
 
 ${PROMPT_BODY}"
 
-# 4) codex exec --json 호출 — 이벤트(JSONL)를 stdout으로 받는다.
+# 4) Codex non-interactive run --json 호출 — 이벤트(JSONL)를 stdout으로 받는다.
 JSON_OUT=$(mktemp -t imagen-json.XXXXXX)
 LOG_FILE=$(mktemp -t imagen-log.XXXXXX)
-echo "[imagen.sh] calling codex exec --json — target: $TARGET_PATH"
-echo "[imagen.sh] json: $JSON_OUT  log: $LOG_FILE"
+echo "[image helper] calling Codex non-interactive run --json — target: $TARGET_PATH"
+echo "[image helper] json: $JSON_OUT  log: $LOG_FILE"
 
-if ! codex exec --json \
+if ! Codex non-interactive run --json \
     --skip-git-repo-check \
     --dangerously-bypass-approvals-and-sandbox \
     "$CODEX_PROMPT" < /dev/null > "$JSON_OUT" 2> "$LOG_FILE"; then
-  echo "ERROR: codex exec failed. See log: $LOG_FILE" >&2
+  echo "ERROR: Codex non-interactive run failed. See log: $LOG_FILE" >&2
   tail -50 "$LOG_FILE" >&2
   exit 4
 fi
@@ -91,7 +91,7 @@ fi
 #    1차: stdout(JSONL)에서 image_generation_call.result 디코딩.
 #    2차(폴백): 세션 rollout 파일에서 추출(stdout이 result를 안 실어줄 경우).
 if python3 "$EXTRACT" "$JSON_OUT" "$TARGET_PATH" >/dev/null 2>&1; then
-  SOURCE_DESC="codex exec --json (stdout)"
+  SOURCE_DESC="Codex non-interactive run --json (stdout)"
 else
   SID=$(grep -hoE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' "$LOG_FILE" "$JSON_OUT" 2>/dev/null | head -n1 || true)
   ROLL=""
@@ -99,7 +99,7 @@ else
   if [[ -n "$ROLL" ]] && python3 "$EXTRACT" "$ROLL" "$TARGET_PATH" >/dev/null 2>&1; then
     SOURCE_DESC="session rollout ($ROLL)"
   else
-    echo "ERROR: codex exec produced NO image (stdout/rollout에서 base64 이미지 못 찾음)" >&2
+    echo "ERROR: Codex non-interactive run produced NO image (stdout/rollout에서 base64 이미지 못 찾음)" >&2
     echo "       (생성 실패를 성공으로 보고하지 않기 위해 중단)" >&2
     echo "--- codex log tail ---" >&2
     tail -50 "$LOG_FILE" >&2
@@ -123,7 +123,7 @@ if [[ -n "$DIMS" ]]; then
 fi
 
 cat <<EOF
-[imagen.sh] SUCCESS
+[image helper] SUCCESS
   path:    $TARGET_PATH
   source:  $SOURCE_DESC
   size:    $SIZE bytes

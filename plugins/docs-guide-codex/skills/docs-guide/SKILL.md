@@ -1,6 +1,6 @@
 ---
 name: docs-guide
-description: Fetch and explain official documentation for any library, framework, or service — triggers on questions like "How do I…", "What is…", "공식 문서", "문서 기반으로", version-specific or spec-level queries. Covers everything except Claude Code / Claude Agent SDK / Claude API (those go to claude-code-guide).
+description: Fetch and explain official documentation for any library, framework, or service — triggers on questions like "How do I…", "What is…", "공식 문서", "문서 기반으로", version-specific or spec-level queries. Covers everything except Codex CLI / Codex Agent SDK / Codex API (those go to claude-code-guide).
 ---
 
 # docs-guide for Codex
@@ -17,7 +17,7 @@ Load on demand (spec-level or WebFetch workflow questions):
 
 ## Scope
 
-Everything EXCEPT Claude Code, Claude Agent SDK, and Claude API (handled by the built-in claude-code-guide agent).
+Everything EXCEPT Codex CLI, Codex Agent SDK, and Codex API (handled by the built-in claude-code-guide agent).
 
 Trigger on:
 - "How do I…", "What is…", "How does X work", "Best practice for…" about any library or framework
@@ -34,7 +34,7 @@ Per `shared/questioning-policy.md` §2c — if the user already named the librar
 
 If the library OR topic is genuinely ambiguous (e.g., "Router" with no project context), ask exactly ONE numbered-option question per §A below, then proceed.
 
-### §A — Numbered-option format (Codex CLI — no AskUserQuestion)
+### §A — Numbered-option format (Codex CLI — no question prompt)
 
 Codex CLI has no card UI. When you must ask, output a chat block:
 

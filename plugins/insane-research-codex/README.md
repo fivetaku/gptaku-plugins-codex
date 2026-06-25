@@ -8,4 +8,4 @@ Included skills:
 
 Packaging notes:
 - The main research workflow and query builder stay together because the original product shipped them as one research suite.
-- Active docs are Codex-native and chat-first: there is no `AskUserQuestion` widget dependency. Interactive scoping uses the numbered-options chat block from `shared/questioning-policy.md §A`.
+- Active docs are Codex-native and chat-first: there is no `question prompt` widget dependency. Interactive scoping uses the numbered-options chat block from `shared/questioning-policy.md §A`.

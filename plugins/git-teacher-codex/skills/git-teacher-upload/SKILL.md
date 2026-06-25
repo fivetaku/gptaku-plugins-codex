@@ -8,7 +8,7 @@ description: Pushes committed work to GitHub cloud, returning the GitHub URL on 
 저장(Commit)한 내용을 GitHub 클라우드에 올린다(Push). 성공 시 GitHub URL을 제공한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "Push가 뭔지" 헷갈려하는 초보면 "저장(Commit)이랑 뭐가 다를까요?"로 비유+질문 교정(§2a). 그냥 올리기만 원하면 강의하지 않는다(§2c).
-> Codex CLI에는 `AskUserQuestion` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> Codex CLI에는 `question prompt` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
 
 ## 실행 순서
 

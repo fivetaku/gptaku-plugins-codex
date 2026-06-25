@@ -2,7 +2,7 @@
 # /pumasi:image — generated_images 누적 정리 (선택적, 안전 우선)
 #
 # Codex /imagen 은 호출마다 ~/.codex/generated_images/ 아래 새 폴더를 쌓는다.
-# 정확성은 imagen.sh 의 base64 직접 추출이 보장하므로(스테일 오집음 차단),
+# 정확성은 image helper 의 base64 직접 추출이 보장하므로(스테일 오집음 차단),
 # 이 스크립트는 순수 디스크 위생용이다.
 #
 # 기본은 DRY-RUN — 무엇이 지워질지 보여주기만 한다. 실제 삭제는 --apply 필요.

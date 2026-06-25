@@ -8,7 +8,7 @@ description: Translates current Git status into plain-language explanations for 
 `git status`와 관련 명령의 결과를 비개발자가 이해할 수 있는 한국어 자연어로 번역한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. 상태가 헷갈리는 초보에게는 비유로 안심시키며 천천히 짚어준다(§2a). 사용자가 그냥 결과만 빨리 원하면 핵심만 번역해서 준다(§2c).
-> Codex CLI에는 `AskUserQuestion` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> Codex CLI에는 `question prompt` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
 
 ## 실행 순서
 

@@ -42,10 +42,10 @@
 
 > 본문 단락·체크리스트·표 내용도 `output_lang`으로 번역한다(식별자 제외). F-1~F-6의 `/goal` 본문도 동일하되, PROTECTED_CLAUSES 앵커(정지조건/scope/3회/문서참조/PROGRESS)는 `compact-strategy.md`의 ko·en OR 정규식에 매칭되게 유지한다.
 
-> **Codex CLI 슬롯 고정 문구** — 본진의 Claude Code 전용 문구를 Codex 전용으로 치환한다:
+> **Codex CLI 슬롯 고정 문구** — 본진의 Codex CLI 전용 문구를 Codex 전용으로 치환한다:
 > - `{RETRY_PAUSE_PHRASE}` → "자체 수정을 멈추고 PROGRESS.md(및 PLANS.md의 Decision-Log)에 실패 내역을 기록한 뒤 사용자의 결정을 기다린다"
 > - `{RETRY_LIMIT_ACTIONS}` → "골이 진단·검토 모드로 전환되고 자체 수정을 멈춘다. PROGRESS.md와 PLANS.md의 Decision-Log에 3회 시도 내역을 기록하고 사용자 결정을 기다린다. 필요하면 새 `/goal`로 재설정한다."
-> Codex `/goal`은 Claude Code의 `/goal pause`와 다르므로 "보고 후 대기"로 표현한다.
+> Codex `/goal`은 Codex CLI의 `/goal pause`와 다르므로 "보고 후 대기"로 표현한다.
 
 ---
 

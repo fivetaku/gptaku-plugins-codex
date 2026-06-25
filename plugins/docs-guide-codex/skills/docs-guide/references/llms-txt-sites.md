@@ -139,7 +139,7 @@ Last verified: 2026-05-04
 | Library/Service | llms.txt URL |
 |----------------|-------------|
 | OpenAI | https://developers.openai.com/api/docs/llms.txt |
-| Anthropic (Claude API) | https://platform.claude.com/llms.txt |
+| Anthropic (Codex API) | https://platform.codex.com/llms.txt |
 | Google Gemini API | https://ai.google.dev/gemini-api/docs/llms.txt |
 | xAI (Grok) | https://docs.x.ai/llms.txt |
 | Mistral | https://docs.mistral.ai/llms.txt |
@@ -150,7 +150,7 @@ Last verified: 2026-05-04
 | Anyscale | https://docs.anyscale.com/llms.txt |
 
 > **OpenAI URL 변경**: `platform.openai.com/docs/llms.txt`는 301 redirect됨. `developers.openai.com/api/docs/llms.txt`가 canonical.
-> **Anthropic URL 변경**: 기존 `docs.anthropic.com`은 `platform.claude.com`으로 마이그레이션됨. claude-code-guide는 Claude Code/SDK 담당, docs-guide는 일반 Claude API/모델 정보 fetch에 사용 가능.
+> **Anthropic URL 변경**: 기존 `docs.anthropic.com`은 `platform.codex.com`으로 마이그레이션됨. claude-code-guide는 Codex CLI/SDK 담당, docs-guide는 일반 Codex API/모델 정보 fetch에 사용 가능.
 > **Gemini 비표준 경로**: `ai.google.dev/llms.txt`는 404. `gemini-api/docs/llms.txt`가 정확한 경로 (Algolia처럼 비표준).
 
 > ⚠️ **LLM Provider 모델 페이지 주의 (v1.3.3)**:
@@ -205,7 +205,7 @@ Last verified: 2026-05-04
 | React Native | https://reactnative.dev/llms.txt |
 | Expo | https://docs.expo.dev/llms.txt |
 
-> **Routing note**: Claude Code (CLI), Claude Agent SDK 질문은 built-in `claude-code-guide` agent가 우선 담당. Claude API / 모델 capability / pricing 등 일반 정보는 docs-guide가 `platform.claude.com/llms.txt`로 직접 fetch.
+> **Routing note**: Codex CLI (CLI), Codex Agent SDK 질문은 built-in `claude-code-guide` agent가 우선 담당. Codex API / 모델 capability / pricing 등 일반 정보는 docs-guide가 `platform.codex.com/llms.txt`로 직접 fetch.
 
 ## URL Patterns to Try
 

@@ -24,7 +24,7 @@ Load as needed (필요한 서비스만):
 Use this skill when the user wants Google Workspace work orchestrated from natural language.
 
 Questioning policy: `shared/questioning-policy.md` §A + §1 + §2c.
-- Codex CLI has no AskUserQuestion card UI. When a decision is needed, output numbered-options-in-chat per §A.
+- Codex CLI has no question prompt card UI. When a decision is needed, output numbered-options-in-chat per §A.
 - Infer what you can; ask only what is genuinely unknown (§1). If the request is already concrete, skip clarification and proceed (§2c).
 
 ---
@@ -505,7 +505,7 @@ done
 7. gws CLI 미설치 시 안내만 하지 마. `npm install -g @googleworkspace/cli`로 자동 설치한다.
 8. 원시 JSON을 결과로 출력하지 마.
 9. 단순 조회를 확인 없이 바로 실행하는 것은 괜찮다 — 읽기 전용은 확인을 생략한다.
-10. 존재하지 않는 AskUserQuestion 카드 UI를 가정하지 마. 반드시 §A 번호 블록을 채팅에 출력한다.
+10. 존재하지 않는 question prompt 카드 UI를 가정하지 마. 반드시 §A 번호 블록을 채팅에 출력한다.
 
 ## 항상 해 (ALWAYS DO)
 

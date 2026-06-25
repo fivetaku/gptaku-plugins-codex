@@ -337,7 +337,7 @@ def create_agent_tasks(subtopics: List[str], topic: str) -> List[AgentTask]:
 
     for subtopic in subtopics:
         tasks.append(
-            AgentTask(
+            AgentAgentTask(
                 agent_type=AgentType.EXPLORE,
                 description=f"Current state of {subtopic}",
                 prompt=AGENT_PROMPTS["explore_current_state"].format(
@@ -349,7 +349,7 @@ def create_agent_tasks(subtopics: List[str], topic: str) -> List[AgentTask]:
         )
 
         tasks.append(
-            AgentTask(
+            AgentAgentTask(
                 agent_type=AgentType.EXPLORE,
                 description=f"Challenges in {subtopic}",
                 prompt=AGENT_PROMPTS["explore_challenges"].format(
@@ -361,7 +361,7 @@ def create_agent_tasks(subtopics: List[str], topic: str) -> List[AgentTask]:
         )
 
         tasks.append(
-            AgentTask(
+            AgentAgentTask(
                 agent_type=AgentType.LIBRARIAN,
                 description=f"Documentation for {subtopic}",
                 prompt=AGENT_PROMPTS["librarian_docs"].format(subtopic=subtopic),
@@ -371,7 +371,7 @@ def create_agent_tasks(subtopics: List[str], topic: str) -> List[AgentTask]:
         )
 
     tasks.append(
-        AgentTask(
+        AgentAgentTask(
             agent_type=AgentType.EXPLORE,
             description=f"Future developments for {topic}",
             prompt=AGENT_PROMPTS["explore_future"].format(

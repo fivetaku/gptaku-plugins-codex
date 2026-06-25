@@ -15,4 +15,4 @@ Heavy analysis offload:
 Packaging notes:
 - The packaged runtime reads `~/.codex/sessions/` and writes converted Markdown to `~/vibe-sunsang/conversations/`.
 - Config and exports stay in `~/vibe-sunsang/`.
-- Codex CLI has no `AskUserQuestion` card UI; all decisions use the numbered-option chat pattern from `shared/questioning-policy.md` §A.
+- Codex CLI has no `question prompt` card UI; all decisions use the numbered-option chat pattern from `shared/questioning-policy.md` §A.

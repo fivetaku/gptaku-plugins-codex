@@ -13,9 +13,9 @@ Included skills:
 4. Show a Korean review summary in chat (no extra file) and prepend a 4-line summary to `PROGRESS.md` and the `PLANS.md` Progress section.
 5. After a mandatory approval gate, present a ready-to-copy `/goal` command.
 
-## Codex vs Claude Code
+## Codex vs Codex CLI
 
-The Claude Code edition emits `/goal` on the assistant's last line to auto-start the goal loop. **Codex cannot auto-emit a slash command** — so this edition ends by presenting a ready-to-copy command instead:
+The Codex CLI edition emits `/goal` on the assistant's last line to auto-start the goal loop. **Codex cannot auto-emit a slash command** — so this edition ends by presenting a ready-to-copy command instead:
 
 ```
 /goal Execute ./PLANS.md to completion; keep the Progress section current; stop when <verifiable done condition>
@@ -26,7 +26,7 @@ Codex has a native `/goal` (the `goals` feature is stable in codex 0.139) plus `
 ## Packaging notes
 
 - Chat-first interview model (`shared/questioning-policy.md §A`) instead of any widget-based question flow.
-- No hooks. The Claude Code edition's `setup/setup.sh` is intentionally not ported (Codex plugins do not support hooks); the skill needs no bootstrap.
+- No hooks. The Codex CLI edition's `setup/setup.sh` is intentionally not ported (Codex plugins do not support hooks); the skill needs no bootstrap.
 - All paths use `$PLUGIN_ROOT`.
 
 ## License
