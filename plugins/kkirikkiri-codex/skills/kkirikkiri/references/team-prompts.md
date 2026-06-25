@@ -6,7 +6,7 @@
 
 ## Codex 스폰 메커니즘
 
-Codex에는 Claude Code의 `Task`/`subagent_type`/`model: "opus"`가 없다. 대신:
+Codex에는 Codex CLI의 `Task`/`subagent_type`/`model: "opus"`가 없다. 대신:
 
 - 사이드카/병렬 작업이 필요하면 `spawn_agent`(`agent_type: "explorer" | "worker" | "reviewer"`)를 쓴다.
 - **모델 핀(`model: opus`)은 Codex에서 명시하지 않는다** — 런타임이 결정한다. "Opus 티어 / Sonnet 티어"는 *역할의 난이도/판단 무게*를 표현하는 내부 분류일 뿐이며, 스폰 프롬프트에는 archetype + 도메인 카드 경로로 그 무게를 전달한다.

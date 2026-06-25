@@ -37,7 +37,7 @@ description: Comprehensive, citation-heavy research workflow with session state,
 
 ### 인자가 없을 때 — §A 번호형 메뉴
 
-Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 **없다**. `shared/questioning-policy.md §A`의 채팅 번호 블록으로 대체한다. 다음을 채팅에 출력하고 사용자 답변을 기다린다:
+Codex CLI에는 `question prompt` 같은 객관식 카드 UI가 **없다**. `shared/questioning-policy.md §A`의 채팅 번호 블록으로 대체한다. 다음을 채팅에 출력하고 사용자 답변을 기다린다:
 
 ```text
 무엇을 할까요?
@@ -255,7 +255,7 @@ python3 "$PLUGIN_ROOT/skills/insane-research-main/scripts/eval_report.py" --sess
 
 기본 도구(웹 검색, 브라우징, `curl`/`gh` 등 셸)로 리서치를 수행한다. 플랫폼별 최적 접근법은 `tool_strategy.md`를 참조한다. 환경에 MCP 도구(Perplexity, Firecrawl, Exa, 브라우저 등)가 설치돼 있으면 우선 활용하되, 없어도 기본 도구만으로 충분하다.
 
-큰 `run_in_background` 팬아웃은 피한다 — rate-limit에 걸리고 백그라운드 에이전트가 조용히 죽을 수 있으므로, 신뢰성이 중요하면 포그라운드/메인스레드 순차를 우선한다. 상세 전략·예시:
+큰 `background execution flag` 팬아웃은 피한다 — rate-limit에 걸리고 백그라운드 에이전트가 조용히 죽을 수 있으므로, 신뢰성이 중요하면 포그라운드/메인스레드 순차를 우선한다. 상세 전략·예시:
 `$PLUGIN_ROOT/skills/insane-research-main/references/tool_strategy.md`
 
 ---

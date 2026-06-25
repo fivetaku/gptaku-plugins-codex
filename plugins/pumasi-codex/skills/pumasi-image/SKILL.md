@@ -88,7 +88,7 @@ description: Image-generation companion skill for the pumasi plugin family. Use 
 
 ### Step 3: 사용자 질문 (§A 번호형 블록, 최대 5개)
 
-Codex CLI에는 Claude Code의 `AskUserQuestion` 카드 UI가 **없다.** 결정이 꼭 필요하면
+Codex CLI에는 Codex CLI의 `question prompt` 카드 UI가 **없다.** 결정이 꼭 필요하면
 `shared/questioning-policy.md §A`의 **채팅 번호형 선택지 블록**으로 대체한다.
 
 `references/clarification-matrix.md`를 Read하여 모드별 의도 파악 카테고리 3개를 확정한다.
@@ -173,15 +173,15 @@ Codex의 **네이티브 이미지 생성/편집 도구(`/imagen`, gpt-image-2)**
 - 호스트는 **이번 호출에서 돌아온 base64를 디코딩해 Step 5의 타깃 경로에 직접 저장**한다.
   생성이 0장이면 거짓 성공을 보고하지 말고 실패로 처리한다.
 
-#### codex exec 위임 경로 (선택) — scripts 사용
+#### Codex non-interactive run 위임 경로 (선택) — scripts 사용
 
-직접 이미지 도구를 부르는 대신 별도 `codex exec` 워커에 위임하려면(또는 영문 프롬프트
-작성까지 위임하려면) `scripts/`의 결정적 래퍼를 쓴다. 래퍼는 `codex exec --json`으로 이벤트(JSONL)를
+직접 이미지 도구를 부르는 대신 별도 `Codex non-interactive run` 워커에 위임하려면(또는 영문 프롬프트
+작성까지 위임하려면) `scripts/`의 결정적 래퍼를 쓴다. 래퍼는 `Codex non-interactive run --json`으로 이벤트(JSONL)를
 받아 `extract_image.py`로 base64를 디코딩해 타깃에 직접 저장한다(스테일 오집음 불가, 0장이면 exit≠0):
 
 ```bash
 # 영문 프롬프트는 호스트가 작성, 생성만 위임
-bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen.sh \
+bash $PLUGIN_ROOT/skills/pumasi-image/scripts/image-generate.sh \
   "{prompt_file_path}" "{target_image_path}" "{aspect e.g. 16:9 — 생략 가능}"
 
 # 영문 프롬프트 작성까지 codex에 위임 (PUMASI_IMAGE_DELEGATE_PROMPT 경로)
@@ -192,7 +192,7 @@ bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-full.sh \
 bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-batch.sh "{batch_json_path}"
 ```
 
-> ⚠️ **샌드박스/승인 우회 경계 (opt-in).** 래퍼는 `codex exec --skip-git-repo-check
+> ⚠️ **샌드박스/승인 우회 경계 (opt-in).** 래퍼는 `Codex non-interactive run --skip-git-repo-check
 > --dangerously-bypass-approvals-and-sandbox`로 비대화형 실행한다 — 동작은 대상 이미지 경로 1개
 > 쓰기로 한정된다. **신뢰하는 본인 프로젝트에서만** 사용한다.
 
@@ -243,7 +243,7 @@ bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-batch.sh "{batch_json_path}
 |------|---------------|---------------------|
 | 스킬 디렉토리 | `skills/pumasi/` | `skills/pumasi-image/` |
 | 자동 트리거 | "구현", "개발", "기능", "코드" | "이미지", "그림", "썸네일", "로고" |
-| 백엔드 | Codex 워커 (멀티에이전트/`codex exec`) | Codex 네이티브 이미지 도구 |
+| 백엔드 | Codex 워커 (멀티에이전트/`Codex non-interactive run`) | Codex 네이티브 이미지 도구 |
 | 작업 dir | `.pumasi/` | 없음 (단발 요청) |
 
 두 스킬은 같은 플러그인 안의 독립 모듈이며 서로 간섭하지 않는다.
@@ -256,11 +256,11 @@ bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-batch.sh "{batch_json_path}
 - `references/clarification-matrix.md` — 모드별 의도 파악 질문 매트릭스
 - `references/keyword-mapping.md` — 비율·퀄리티 키워드 자동 매핑 + 자연어 힌트 변환표
 
-## Scripts (선택 — codex exec 위임 경로)
+## Scripts (선택 — Codex non-interactive run 위임 경로)
 
-- `scripts/extract_image.py` — `codex exec --json` 출력(또는 세션 rollout)의 `image_generation_call`
+- `scripts/extract_image.py` — `Codex non-interactive run --json` 출력(또는 세션 rollout)의 `image_generation_call`
   base64를 구조 검증 후 타깃 PNG로 디코딩 저장
-- `scripts/imagen.sh` — feature flag 확인·활성화 + `codex exec --json` 호출 + base64 추출·저장 + SHA1/해상도 검증
+- `scripts/image-generate.sh` — feature flag 확인·활성화 + Codex JSON 호출 + base64 추출·저장 + SHA1/해상도 검증
 - `scripts/imagen-full.sh` — 영문 프롬프트 작성까지 codex에 위임(manifest/prompt/log 보존)
 - `scripts/imagen-batch.sh` — 여러 장 일괄(partial success + per-item retry manifest)
 - `scripts/imagen-cleanup.sh` — `~/.codex/generated_images/` 누적 정리(기본 DRY-RUN, 디스크 위생용)

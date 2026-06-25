@@ -14,7 +14,7 @@ description: Structured research-query builder that turns a vague topic into a r
 
 ## 질문 원칙 (shared/questioning-policy.md §A·§1·§2c)
 
-Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 **없다**. `shared/questioning-policy.md §A`의 채팅 번호 블록으로 대체한다. 추론 가능한 건 묻지 말고(§1), 요청이 이미 구체적이면 과잉질문 없이 바로 브리프를 생성한다(§2c). 사용자 입력 언어에 맞춰 모든 질문/선택지/산출물 언어를 일치시킨다.
+Codex CLI에는 `question prompt` 같은 객관식 카드 UI가 **없다**. `shared/questioning-policy.md §A`의 채팅 번호 블록으로 대체한다. 추론 가능한 건 묻지 말고(§1), 요청이 이미 구체적이면 과잉질문 없이 바로 브리프를 생성한다(§2c). 사용자 입력 언어에 맞춰 모든 질문/선택지/산출물 언어를 일치시킨다.
 
 ## Codex 워크플로우
 

@@ -385,7 +385,7 @@ designmd-data/real/{slug}/screenshots/
 </section>
 ```
 
-### 8.5 DESIGN.claude.manual.md 에도 삽입
+### 8.5 DESIGN.codex.manual.md 에도 삽입
 
 ```markdown
 ## 02. Provenance
@@ -446,7 +446,7 @@ designmd-data/real/{slug}/screenshots/
 
 ### 9.3 스크립트화 불가능한 영역 (AI 필수)
 
-이건 반드시 사람 또는 Claude 가 해야:
+이건 반드시 사람 또는 Codex 가 해야:
 
 - **§01 Quick Start 치트시트** — "가장 치명적인 실수 하나"를 고르는 판단
 - **§03 Tech Stack 서술** — framework 이름만 자동, 3-tier 구조 설명은 AI
@@ -486,14 +486,14 @@ designmd-data/real/{slug}/screenshots/
                    ▼
 ┌────────────────────────────────────────────────────────┐
 │ Phase 3: Visual Verification (멀티모달 AI)              │
-│   - Claude 가 screenshots/ + tokens.json 읽기           │
+│   - Codex 가 screenshots/ + tokens.json 읽기           │
 │     → brand color 최종 확정                             │
 │     → 폰트 시각적 특성 확인                              │
 │     → Hero anatomy 서술                                  │
 └──────────────────┬─────────────────────────────────────┘
                    ▼
 ┌────────────────────────────────────────────────────────┐
-│ Phase 4: DESIGN.claude.manual.md 작성 (AI)              │
+│ Phase 4: DESIGN.codex.manual.md 작성 (AI)              │
 │   - 템플릿 v2.0 기반 16 섹션                             │
 │   - validate_designmd.py 로 hex 실존 자동 검증           │
 └──────────────────┬─────────────────────────────────────┘
@@ -508,7 +508,7 @@ designmd-data/real/{slug}/screenshots/
 ┌────────────────────────────────────────────────────────┐
 │ Output:                                                  │
 │   real/{slug}/                                          │
-│   ├── DESIGN.claude.manual.md                           │
+│   ├── DESIGN.codex.manual.md                           │
 │   ├── report.ko.html                                    │
 │   ├── screenshots/*.png  ← 신규                         │
 │   └── tokens.json         ← 신규 (디버깅용)             │
@@ -552,8 +552,8 @@ designmd-data/real/{slug}/screenshots/
 ---
 
 ## 관련 문서
-- `/Users/chulrolee/designmd-writer/METHODOLOGY.md` — 분석 5단계
-- `/Users/chulrolee/designmd-writer/WORKFLOW.md` — 전체 파이프라인
-- `/Users/chulrolee/designmd-writer/DESIGN.claude.template.md` — 템플릿 v2.0
-- `/Users/chulrolee/insane-search/skills/insane-search/SKILL.md` — 우회 기법 원본
-- `/Users/chulrolee/insane-search/skills/insane-search/references/fallback.md` — Fallback 상세
+- `~/designmd-writer/METHODOLOGY.md` — 분석 5단계
+- `~/designmd-writer/WORKFLOW.md` — 전체 파이프라인
+- `~/designmd-writer/DESIGN.template.md` — 템플릿 v2.0
+- `~/insane-search/skills/insane-search/SKILL.md` — 우회 기법 원본
+- `~/insane-search/skills/insane-search/references/fallback.md` — Fallback 상세

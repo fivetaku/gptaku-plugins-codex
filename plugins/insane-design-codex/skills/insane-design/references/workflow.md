@@ -1,7 +1,7 @@
 # insane-design-codex — Skill Router (v3.2)
 
-This plugin mirrors the Claude Code `insane-design` plugin as **three Codex skills**
-(Codex is skill-first — there is no `commands/` directory):
+This plugin mirrors the Codex CLI `insane-design` plugin as **three Codex skills**
+(Codex is skill-first — there is no `command-routes/` directory):
 
 | Skill | Role | Folds in |
 |-------|------|----------|
@@ -23,11 +23,11 @@ Canonical assets live under `insane-design/` and are shared by all three skills 
 Apply-specific references live under `$PLUGIN_ROOT/skills/insane-apply/references/`
 (`apply-workflow.md`, `redesign-aesthetics.md`).
 
-## Codex adaptations vs Claude Code
+## Codex adaptations vs Codex CLI
 
-- `AskUserQuestion` card UI does not exist → every menu/selection becomes the
+- `question prompt` card UI does not exist → every menu/selection becomes the
   `shared/questioning-policy.md §A` numbered-options-in-chat pattern.
-- No async `Task(run_in_background)` verifier and no `verify` polling command →
+- No async `AgentTask(background execution flag)` verifier and no `verify` polling command →
   all verification is **synchronous** within the same turn (grep first, playwright only if installed).
-- All script/asset/reference paths use `$PLUGIN_ROOT`, not `${CLAUDE_PLUGIN_ROOT}`.
+- All script/asset/reference paths use `$PLUGIN_ROOT`, not `${CODEX_PLUGIN_ROOT}`.
 - `schema_version: 3.2` is the active contract (3.1 deprecated).

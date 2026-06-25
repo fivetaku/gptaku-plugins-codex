@@ -1,20 +1,6 @@
 ---
 name: insane-search
-description: >
-  Auto-bypass for blocked websites — tries every method until one works.
-  Use when ordinary fetch returns 402/403/blocked, or when accessing X/Twitter,
-  Reddit, YouTube, GitHub, Mastodon, Medium, Substack, Stack Overflow, Threads,
-  Naver, Coupang, LinkedIn, or any platform with WAF/bot protection. Leverages
-  yt-dlp (1,858 media sites), Jina Reader, public APIs (HN, Bluesky, arXiv), and
-  a generic WAF-profile-driven fetch chain (curl_cffi TLS impersonation, mobile
-  URL transforms, Playwright real-Chrome) with auto dependency install.
-  Korean triggers — 트위터/X 못 열어, 레딧 안 읽혀, 유튜브 자막 뽑아줘, 깃헙 검색,
-  사이트 차단됨, 스레드 안 열려, 마스토돈, 미디엄, 서브스택, 스택오버플로우,
-  네이버 블로그, 디시인사이드, 에펨코리아, 요즘IT, 긱뉴스, 클리앙, 쿠팡, 링크드인,
-  당근마켓. English triggers — twitter access, reddit blocked, youtube subtitles,
-  github search, arxiv papers, threads, mastodon, medium, substack, stackoverflow,
-  naver blog, dcinside, fmkorea, coupang, linkedin, yozm, wishket.
-  Do NOT trigger for simple web searches that web.search_query can handle directly.
+description: "Auto-bypass for blocked websites using public APIs, yt-dlp, Jina Reader, TLS impersonation, URL transforms, and Playwright reconnaissance when ordinary fetch returns 402/403/blocked."
 ---
 
 # Insane Search for Codex
@@ -405,7 +391,7 @@ curl -sL "https://hacker-news.firebaseio.com/v0/topstories.json?limitToFirst=10&
 
 - 단일 진입점은 `bash scripts/run_engine.sh <URL>` (= `python3 -m engine <URL>`). engine의 WAF
   로직을 즉흥으로 재구현하지 않는다.
-- 의존성 점검/설치는 `scripts/bootstrap.sh [--install]`.
+- 의존성 점검/설치는 `scripts/bootstrap.sh` with `--install`.
 - R7 정찰은 `scripts/playwright_recon.js` (stdin JSON → 내부 `/api/`·`graphql`·`.json` 요청 추출).
 - Local Node 브라우저 폴백이 없으면 한계를 보고하고 generic engine / Jina / archive / 플랫폼 API
   경로로 계속 진행한다.

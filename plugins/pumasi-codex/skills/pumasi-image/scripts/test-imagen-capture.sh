@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Regression test for imagen.sh / imagen-full.sh image capture.
+# Regression test for image helper / imagen-full.sh image capture.
 #
 # Contract under test:
-#   codex exec generates the image but returns it as base64 in an
+#   Codex non-interactive run generates the image but returns it as base64 in an
 #   `image_generation_call` event (it does NOT write a PNG to disk). The wrapper
 #   must decode that base64 and write the target PNG itself, and must FAIL loudly
 #   (non-zero, no SUCCESS/MANIFEST line) when no image event is produced.
@@ -12,7 +12,7 @@
 set -uo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-IMAGEN="${SCRIPT_DIR}/imagen.sh"
+IMAGEN="${SCRIPT_DIR}/image helper"
 IMAGEN_FULL="${SCRIPT_DIR}/imagen-full.sh"
 PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/../../.." && pwd)"   # scripts -> pumasi-image -> skills -> <root>
 
@@ -62,7 +62,7 @@ run_imagen_full() {
   echo $?
 }
 
-echo "== Test 1: imagen.sh decodes base64 image event -> writes PNG =="
+echo "== Test 1: image helper decodes base64 image event -> writes PNG =="
 make_sandbox
 export FAKE_CODEX_MODE=generate
 rc=$(run_imagen); unset FAKE_CODEX_MODE
@@ -74,7 +74,7 @@ else
 fi
 rm -rf "$SANDBOX"
 
-echo "== Test 2: imagen.sh NO image event -> must FAIL (no false SUCCESS) =="
+echo "== Test 2: image helper NO image event -> must FAIL (no false SUCCESS) =="
 make_sandbox
 export FAKE_CODEX_MODE=noop
 rc=$(run_imagen); unset FAKE_CODEX_MODE

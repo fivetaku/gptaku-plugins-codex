@@ -8,7 +8,7 @@ description: Automated review request workflow — handles branch creation, comm
 Branch 생성 → Commit → Push → PR 생성을 자동으로 처리한다. Branch 개념은 사용자에게 숨기고 "안전한 작업 공간"으로 설명한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "검토 요청(PR)"은 Google Docs "수정 제안" 모드 비유로 설명한다. 겁먹은 초보면 원샷 금지(§2a), 그냥 PR만 원하면 강의 없이 진행(§2c).
-> Codex CLI에는 `AskUserQuestion` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> Codex CLI에는 `question prompt` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
 
 ## 실행 순서
 

@@ -2,17 +2,17 @@
 
 > 본진(`gptaku-plugins`)의 `shared/questioning-policy.md`를 Codex CLI 환경으로 이식한 것.
 > 정책(§0~§4)은 본진과 동일하다. **유일한 구조적 차이는 §A "Codex 렌더링 규칙"** — Codex CLI에는
-> Claude Code의 `AskUserQuestion`(객관식 카드 UI)에 해당하는 도구가 **없기 때문**이다.
+> Codex CLI의 `question prompt`(객관식 카드 UI)에 해당하는 도구가 **없기 때문**이다.
 > 근거(정책): 딥리서치 2회 + A/B 시뮬레이션 3회. 근거(치환): Codex 공식 문서 확인(아래 §A).
 
 ---
 
-## A. ★ Codex 렌더링 규칙 — AskUserQuestion 대체 (이 레포 전용)
+## A. ★ Codex 렌더링 규칙 — question prompt 대체 (이 레포 전용)
 
 Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.openai.com/codex/cli/features,
 .../config-reference, .../skills — 2026-06 기준)
 
-- ❌ `AskUserQuestion` 같은 라벨형 객관식 카드 UI **없음**.
+- ❌ `question prompt` 같은 라벨형 객관식 카드 UI **없음**.
 - ❌ skill/plugin이 "잠깐 멈춰 객관식을 띄우는" 프리미티브 **없음**.
 - △ MCP elicitation(`approval_policy.granular.mcp_elicitations`)이 유일한 구조화 경로이나
   **기본값 auto-reject + 승인창 형태 + 미성숙** → 플러그인이 의존하지 말 것.
@@ -20,9 +20,9 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 
 ### 치환 매핑 (본진 → Codex)
 
-| 본진(Claude Code) | Codex 치환 |
+| 본진(Codex CLI) | Codex 치환 |
 |--|--|
-| `AskUserQuestion` 카드 호출 | 채팅에 **번호형 선택지 블록** 출력 후 답변 대기 |
+| `question prompt` 카드 호출 | 채팅에 **번호형 선택지 블록** 출력 후 답변 대기 |
 | option `label` + `description` | `N. <라벨> — <무엇인지>, <트레이드오프>` 한 줄 |
 | `preview` 필드 | 선택지 **위에** 짧은 "예시 프리뷰"(ASCII 관계도·테이블·트리)를 먼저 보여줌 |
 | `multiSelect: true` | "여러 개면 `1,3`처럼 쉼표로" 한 줄 안내 |
@@ -107,4 +107,4 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 | 원칙만 적용 | skillers-suda, insane-research, pumasi, nopal | §1 + §2c + §A 블록 포맷 |
 | 대부분 현행 | insane-design | 메뉴 선택은 §A 번호 블록 유지, "추론 가능한 건 안 묻기"만 |
 | 대상 외 | docs-guide, insane-search | 실질 인터뷰 없음 |
-| 신규 포팅 완료(P4) | dd, goaljaby, insane-review | §A·§0~§4 상속. goaljaby는 Claude /goal → native Codex /goal + PLANS.md ExecPlan 핸드오프 |
+| 신규 포팅 완료(P4) | dd, goaljaby, insane-review | §A·§0~§4 상속. goaljaby는 Codex /goal → native Codex /goal + PLANS.md ExecPlan 핸드오프 |

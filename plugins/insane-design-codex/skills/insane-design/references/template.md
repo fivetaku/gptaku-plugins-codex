@@ -95,7 +95,7 @@ components:                                   # named variant map (§13-2와 동
   §18 DO / DON'T       → report §12
 -->
 
-# DESIGN.md — {SERVICE_NAME} (Claude Code Edition)
+# DESIGN.md — {SERVICE_NAME} (Codex CLI Edition)
 
 ---
 
@@ -773,7 +773,7 @@ module.exports = {
 ## 17. Agent Prompt Guide
 <!-- SOURCE: manual -->
 <!--
-  AI 에이전트(Claude, GPT 등)가 이 디자인 시스템으로 구현할 때 참조하는 섹션.
+  AI 에이전트(Codex, GPT 등)가 이 디자인 시스템으로 구현할 때 참조하는 섹션.
   design.md의 토큰을 실전 프롬프트에서 어떻게 활용하는지 빠른 레퍼런스 제공.
 -->
 

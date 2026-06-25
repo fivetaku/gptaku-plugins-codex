@@ -29,9 +29,9 @@ description: Assemble and run a Codex-native agent team from one plain-language 
 
 ---
 
-## Codex 렌더링 규칙 — AskUserQuestion 대체 (`shared/questioning-policy.md §A`)
+## Codex 렌더링 규칙 — question prompt 대체 (`shared/questioning-policy.md §A`)
 
-Codex CLI에는 AskUserQuestion 같은 객관식 카드 UI가 **없다.** 모든 결정 질문은 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 한다.
+Codex CLI에는 question prompt 같은 객관식 카드 UI가 **없다.** 모든 결정 질문은 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 한다.
 
 ```text
 (예시 프리뷰 — 구조화 정보를 보여줄 때만. 단순 선호 질문이면 생략)
@@ -110,7 +110,7 @@ python3 "$PLUGIN_ROOT/skills/kkirikkiri/scripts/scan_environment.py" --root "$PW
 
 > 진입 즉시: `Read("$PLUGIN_ROOT/skills/kkirikkiri/references/interview-guide.md")` + (PM 매칭 시) `references/pm-frameworks.md`.
 
-presets.md의 프리셋별 인터뷰 질문을 §A 번호 블록으로 채팅에 출력한다 (AskUserQuestion 없음).
+presets.md의 프리셋별 인터뷰 질문을 §A 번호 블록으로 채팅에 출력한다 (question prompt 없음).
 
 규칙:
 1. **Q1(열린 질문)은 사용자가 이미 자연어로 답했으면 생략 가능.** Q2/Q3는 §2c 신호(이미 구체적/직접 요청)가 없으면 진행.
@@ -383,7 +383,7 @@ Step 4-B 파이프라인을 라운드별로 실행한다.
 - [ ] Step 3.5 사용자 선택 없이 substrate를 임의로 정하지 마
 - [ ] 프리셋을 고정값으로 쓰지 마 — 인터뷰 + 환경스캔으로 동적 조정
 - [ ] 공식 용어(Opus/Sonnet/Codex/agy/gjc)를 메타포로 대체하지 마 — 그대로 쓰고 한글 병기. 내부 구현(spawn_agent/파일 경로)만 비노출
-- [ ] AskUserQuestion 카드를 가정하지 마 — Codex엔 없다. §A 번호 블록만
+- [ ] question prompt 카드를 가정하지 마 — Codex엔 없다. §A 번호 블록만
 - [ ] **첫 표면/회피 답을 진짜 니즈로 채택하지 마 (§2a). deflect엔 구체/과거행동 앵커로 (§2b)**
 - [ ] 이미 구체적인 요청에 과잉질문하지 마 (§2c)
 - [ ] 인터뷰 질문 4개 이상 하지 마

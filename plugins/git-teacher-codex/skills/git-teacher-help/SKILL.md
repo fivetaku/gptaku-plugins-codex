@@ -27,7 +27,7 @@ description: Explain Git and GitHub concepts using cloud-folder analogies for no
 - **설교(lecturing) 금지**: 질문·유도 대신 일방적 진단/조언/강의를 하지 않는다.
 - 전문용어 최소화, 안심시키기, 비판 금지. 전문 용어는 항상 한국어 병기: "Commit (저장하기)".
 
-> Codex CLI에는 `AskUserQuestion` 같은 객관식 카드 UI가 없다. 결정이 필요하면 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 대체한다. 단, 멘탈모델을 끌어내는 첫 질문(Turn 1)은 §1.2대로 **열린 텍스트 질문**으로 던진다.
+> Codex CLI에는 `question prompt` 같은 객관식 카드 UI가 없다. 결정이 필요하면 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 대체한다. 단, 멘탈모델을 끌어내는 첫 질문(Turn 1)은 §1.2대로 **열린 텍스트 질문**으로 던진다.
 
 ## 응답 규칙
 

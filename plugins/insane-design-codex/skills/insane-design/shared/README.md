@@ -7,9 +7,9 @@
 > **변경 금지 원칙**: 세 스킬이 이 파일을 공통 계약으로 본다. 필드·섹션 번호·frontmatter
 > 스키마를 바꾸면 analysis ↔ apply ↔ build 간 파이프가 즉시 깨진다.
 >
-> **Codex 차이**: 본진(Claude Code) `_shared/README.md`의 Codex 이식판. 정책·계약은 동일하되,
-> (1) `${CLAUDE_PLUGIN_ROOT}` → `$PLUGIN_ROOT`, (2) `AskUserQuestion` 카드 → `shared/questioning-policy.md §A` 번호 블록,
-> (3) 비동기 `Task(run_in_background)` verifier → **동기 grep/lint 검증**으로 치환했다.
+> **Codex 차이**: 본진(Codex CLI) `_shared/README.md`의 Codex 이식판. 정책·계약은 동일하되,
+> (1) `${CODEX_PLUGIN_ROOT}` → `$PLUGIN_ROOT`, (2) `question prompt` 카드 → `shared/questioning-policy.md §A` 번호 블록,
+> (3) 비동기 `AgentTask(background execution flag)` verifier → **동기 grep/lint 검증**으로 치환했다.
 
 ---
 
@@ -167,7 +167,7 @@ components:                          # §13-2 Named Variants와 동기화
 
 ## 3. Verifier Protocol — Codex는 동기 검증
 
-> **Codex 차이**: Claude Code 판은 `Task(run_in_background)`로 비동기 verifier를 포크하고
+> **Codex 차이**: Codex CLI 판은 `AgentTask(background execution flag)`로 비동기 verifier를 포크하고
 > 별도 `verify` 커맨드로 polling 했다. **Codex CLI에는 비동기 백그라운드 Task 포크 계약이
 > 없으므로**, 검증은 **모두 동기(synchronous)** 로 같은 턴 안에서 수행한다. 별도 verify
 > 커맨드/job_id polling은 존재하지 않는다.
@@ -209,7 +209,7 @@ fi
 
 ## 4. AI Slop Extended — 12 패턴 (회피 목록)
 
-`redesign-aesthetics.md` §2의 6개 + Claude Design §Content Guidelines 의 6개를 통합.
+`redesign-aesthetics.md` §2의 6개 + Codex Design §Content Guidelines 의 6개를 통합.
 
 ### 4.1 일반 슬롭 (design.md 명시 없을 때만 적용)
 
@@ -282,8 +282,8 @@ $PLUGIN_ROOT/skills/insane-design/shared/starter-components/
 | 올바른 표기 | 잘못된 표기 | 이유 |
 |------------|-------------|------|
 | `schema_version: 3.2` | `schema_version: 2.0` / `3.1` | v3.2가 active. 3.1은 deprecated |
-| `$PLUGIN_ROOT` | `${CLAUDE_PLUGIN_ROOT}` | Codex 변수명 |
-| `shared/questioning-policy.md §A` 번호 블록 | `AskUserQuestion` 카드 | Codex에 카드 UI 없음 |
-| 동기 grep 검증 (같은 턴) | `Task(run_in_background)` 비동기 verifier | Codex에 백그라운드 Task 포크 계약 없음 |
+| `$PLUGIN_ROOT` | `${CODEX_PLUGIN_ROOT}` | Codex 변수명 |
+| `shared/questioning-policy.md §A` 번호 블록 | `question prompt` 카드 | Codex에 카드 UI 없음 |
+| 동기 grep 검증 (같은 턴) | `AgentTask(background execution flag)` 비동기 verifier | Codex에 백그라운드 Task 포크 계약 없음 |
 | `localStorage + URL hash + 재생성` | `localStorage + postMessage` | postMessage는 호스트 보장 X |
 | `medium: web` (기본값) | `format: website` / `type: landing` | 계약 필드명 고정 |

@@ -7,7 +7,7 @@ description: Initialize vibe-sunsang for Codex — create the local workspace, c
 
 > 바선생 초기 설정. 처음 한 번만 실행한다. 로컬 워크스페이스 생성 → 유형 분류 → CLAUDE.md 생성 → 첫 변환.
 
-Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다 (위젯 흉내 금지).
+Codex는 skill-first다 (`command-routes/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다 (위젯 흉내 금지).
 
 ## 참조 경로
 
@@ -234,5 +234,5 @@ python3 "$PLUGIN_ROOT/skills/vibe-sunsang-retro/scripts/convert_sessions.py" --f
 - CLAUDE-MD-TEMPLATE.md를 인라인으로 하드코딩하지 않는다. 반드시 `$PLUGIN_ROOT/skills/vibe-sunsang-onboard/references/CLAUDE-MD-TEMPLATE.md`에서 읽는다.
 - 기존 데이터가 있는 디렉토리를 덮어쓰지 않는다. 충돌 시 사용자에게 확인받는다.
 - git init은 사용자 워크스페이스(`~/vibe-sunsang/`)에서만 실행한다.
-- Codex 세션 원본은 `~/.codex/sessions/`다 (Claude Code의 `~/.claude/projects/`가 아님).
+- Codex 세션 원본은 `~/.codex/sessions/`다 (Codex CLI의 `~/.codex/projects/`가 아님).
 - 변환 중 분석이 완료됐다고 말하지 않는다. 변환은 데이터 준비일 뿐이다.

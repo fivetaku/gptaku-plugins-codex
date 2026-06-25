@@ -1,6 +1,6 @@
 # Component Decision Guide (Codex)
 
-인터뷰 결과로 **스킬 / 플러그인 / 레퍼런스 / 스크립트** 중 적합한 형태를 판단한다. Claude Code의 command·agent 컴포넌트는 Codex에 없으므로 제안하지 않는다 — 진입은 항상 description 트리거다.
+인터뷰 결과로 **스킬 / 플러그인 / 레퍼런스 / 스크립트** 중 적합한 형태를 판단한다. Codex CLI의 command·agent 컴포넌트는 Codex에 없으므로 제안하지 않는다 — 진입은 항상 description 트리거다.
 
 ## Artifact Types
 
@@ -37,7 +37,7 @@
 
 ## 자율 실행이 필요해 보이는 경우
 
-Claude Code였다면 agent로 갔을 "자율 다단계 실행"도 Codex에서는 **스킬 안의 워크플로우**로 표현한다. 사용자가 명시적으로 요청하고 환경이 지원할 때만 bounded sub-agent에 위임하되, 그 위임은 스킬 워크플로우의 한 단계로 문서화한다. 별도 `agents/` 폴더나 agent 파일을 만들지 않는다.
+Codex CLI였다면 agent로 갔을 "자율 다단계 실행"도 Codex에서는 **스킬 안의 워크플로우**로 표현한다. 사용자가 명시적으로 요청하고 환경이 지원할 때만 bounded sub-agent에 위임하되, 그 위임은 스킬 워크플로우의 한 단계로 문서화한다. 별도 `agents/` 폴더나 agent 파일을 만들지 않는다.
 
 ## Codex Package Shape
 

@@ -128,7 +128,7 @@ def verify_compact(text: str) -> list[str]:
 
 **시작 검증 메모**: 영어 명령형 동사 시작 강제는 두지 않는다. `/goal ` 다음에 condition이 있는지만 검증한다. Codex `/goal`의 종료 판정도 비영어 condition(한국어 등 `output_lang`)을 처리한다. objective는 `./PLANS.md`를 가리키는 파일 포인터 형태를 권장한다.
 
-> **Codex 핸드오프 주의**: 컴팩트를 통과한 `goal-command.md` 본문은 SKILL.md Step 10에서 **복사-실행용 `/goal` 명령**으로 그대로 제시한다. Codex 스킬은 슬래시 명령을 마지막 줄로 자동 발사할 수 없다(그건 Claude Code 메커니즘). 따라서 본문은 "사용자가 복사해 붙여넣어 실행할" 한 줄로 완결되어야 한다.
+> **Codex 핸드오프 주의**: 컴팩트를 통과한 `goal-command.md` 본문은 SKILL.md Step 10에서 **복사-실행용 `/goal` 명령**으로 그대로 제시한다. Codex 스킬은 슬래시 명령을 마지막 줄로 자동 발사할 수 없다(그건 Codex CLI 메커니즘). 따라서 본문은 "사용자가 복사해 붙여넣어 실행할" 한 줄로 완결되어야 한다.
 
 ## 구조적 오버플로우 보고 (모든 컴팩트 실패 시)
 

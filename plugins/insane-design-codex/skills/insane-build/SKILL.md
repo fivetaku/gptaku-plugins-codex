@@ -22,7 +22,7 @@ Never hedge; pick one BOLD direction and defend it.
 
 ## Codex 상호작용 규칙 (§A)
 
-Codex CLI에는 `AskUserQuestion` 카드 UI가 **없다**. 모든 선택지는
+Codex CLI에는 `question prompt` 카드 UI가 **없다**. 모든 선택지는
 `shared/questioning-policy.md` §A의 채팅 번호 블록으로 대체한다.
 추천안은 1번. 마지막은 "문장으로 직접". 추론 가능한 건 묻지 않는다(§1).
 
@@ -233,7 +233,7 @@ V1="$WORK_DIR/insane-build/$SESSION/variations/v1"; mkdir -p "$V1"
 
 ### Step 3: 동기 grep 검증
 
-> **Codex 차이**: Claude Code 판은 비동기 verifier 포크 + verify 커맨드 polling이었다.
+> **Codex 차이**: Codex CLI 판은 비동기 verifier 포크 + verify 커맨드 polling이었다.
 > Codex에는 백그라운드 Task 포크가 없으므로 **모두 동기**로 같은 턴에 수행. (`shared/README.md` §3)
 
 **grep 쿼터 6회 필수** (`shared/README.md` §2.2):

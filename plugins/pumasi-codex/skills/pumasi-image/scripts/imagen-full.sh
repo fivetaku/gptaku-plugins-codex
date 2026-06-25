@@ -101,18 +101,18 @@ EOF
 # Codex 실행 — --json 으로 이미지 base64를 받는다(파일 저장은 wrapper가 결정적으로 수행).
 # < /dev/null: exec가 stdin EOF를 무한 대기(헤드리스 행)하는 것 방지.
 JSON_OUT="${WORK_DIR}/events-${TS}.jsonl"
-if ! codex exec --json \
+if ! Codex non-interactive run --json \
     --skip-git-repo-check \
     --dangerously-bypass-approvals-and-sandbox \
     "$CODEX_PROMPT" < /dev/null > "$JSON_OUT" 2> "$CODEX_LOG"; then
-  echo "ERROR: codex exec failed. Log: $CODEX_LOG" >&2
-  echo "FALLBACK_HINT: caller should retry with imagen.sh + host-written prompt" >&2
+  echo "ERROR: Codex non-interactive run failed. Log: $CODEX_LOG" >&2
+  echo "FALLBACK_HINT: caller should retry with image helper + host-written prompt" >&2
   exit 4
 fi
 
 # 생성 이미지(base64) 추출 → TARGET. 1차 stdout(JSONL), 2차 세션 rollout 폴백.
 if python3 "$EXTRACT" "$JSON_OUT" "$TARGET" >/dev/null 2>&1; then
-  SOURCE_DESC="codex exec --json (stdout)"
+  SOURCE_DESC="Codex non-interactive run --json (stdout)"
 else
   SID=$(grep -hoE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' "$CODEX_LOG" "$JSON_OUT" 2>/dev/null | head -n1 || true)
   ROLL=""
@@ -120,8 +120,8 @@ else
   if [[ -n "$ROLL" ]] && python3 "$EXTRACT" "$ROLL" "$TARGET" >/dev/null 2>&1; then
     SOURCE_DESC="session rollout ($ROLL)"
   else
-    echo "ERROR: codex exec produced NO image (stdout/rollout에서 base64 못 찾음)" >&2
-    echo "FALLBACK_HINT: caller should retry with imagen.sh + host-written prompt" >&2
+    echo "ERROR: Codex non-interactive run produced NO image (stdout/rollout에서 base64 못 찾음)" >&2
+    echo "FALLBACK_HINT: caller should retry with image helper + host-written prompt" >&2
     tail -30 "$CODEX_LOG" >&2
     exit 5
   fi

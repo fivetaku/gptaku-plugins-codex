@@ -5,7 +5,7 @@ Codex marketplace package for the `insane-search` skill — auto-bypass for bloc
 Included skills:
 - `insane-search` — generic WAF-profile fetch chain (curl_cffi TLS impersonation, mobile URL
   transforms, local Playwright fallback) plus Phase 0 platform APIs (yt-dlp, Jina, public APIs)
-  and 12 platform/diagnostic references. Full parity with the upstream Claude plugin (v0.5.1),
+  and 12 platform/diagnostic references. Full parity with the upstream Codex plugin (v0.5.1),
   ported to Codex idiom.
 
 Entry points:

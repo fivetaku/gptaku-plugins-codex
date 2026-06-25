@@ -8,7 +8,7 @@ description: Commits changed files to Git, explained in plain language for non-d
 변경된 파일을 Commit (저장)한다. `git add -A` + `git commit`을 실행하고, 사후에 무엇을 했는지 설명한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "Commit하면 GitHub에 올라간다"는 오개념은 비유+질문으로 교정한다(§2a). 사용자가 그냥 저장만 빨리 원하면 강의하지 않는다(§2c).
-> Codex CLI에는 `AskUserQuestion` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> Codex CLI에는 `question prompt` 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
 
 ## 실행 순서
 

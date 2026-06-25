@@ -7,7 +7,7 @@ description: Convert Codex JSONL session logs into readable Markdown and guide a
 
 > Codex 세션 로그를 읽기 좋은 Markdown으로 변환하고 분석 가이드를 제공한다.
 
-Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (`command-routes/` 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
 
 ## 데이터 경로
 
@@ -100,4 +100,4 @@ python3 "$PLUGIN_ROOT/skills/vibe-sunsang-retro/scripts/convert_sessions.py" --o
 
 - 원본 JSONL 로그를 직접 수정하지 않는다 (읽기 전용).
 - 변환된 로그에 보이지 않는 예시를 지어내지 않는다.
-- Codex CLI에는 `AskUserQuestion` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- Codex CLI에는 `question prompt` 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.

@@ -6,9 +6,9 @@
 
 ---
 
-## ★ Codex 렌더링 — AskUserQuestion 대체 (`shared/questioning-policy.md §A`)
+## ★ Codex 렌더링 — question prompt 대체 (`shared/questioning-policy.md §A`)
 
-Codex CLI에는 AskUserQuestion 같은 객관식 카드 UI가 **없다.** 모든 인터뷰는 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 진행한다.
+Codex CLI에는 question prompt 같은 객관식 카드 UI가 **없다.** 모든 인터뷰는 **채팅에 번호형 선택지 블록을 출력하고 사용자의 다음 자유 텍스트 답변을 읽는** §A 패턴으로 진행한다.
 
 ### 표준 블록 포맷
 

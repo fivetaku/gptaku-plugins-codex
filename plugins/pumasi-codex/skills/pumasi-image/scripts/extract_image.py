@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Extract the generated image from `codex exec --json` output (or a session rollout).
+"""Extract the generated image from `Codex non-interactive run --json` output (or a session rollout).
 
-codex exec generates images via the `image_generation_call` tool but, unlike the
+Codex non-interactive run generates images via the `image_generation_call` tool but, unlike the
 interactive TUI, does NOT persist them to ~/.codex/generated_images/. The PNG is
 returned inline as base64 in the `result` field of `image_generation_call` /
 `image_generation_end` events. This decodes that base64 and writes the PNG.

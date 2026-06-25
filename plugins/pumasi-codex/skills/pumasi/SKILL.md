@@ -9,7 +9,7 @@ description: Codex-native parallel build orchestration. Use when the user explic
 > Host agent = 설계/감독(PM) | Codex worker × N = 병렬 구현자
 >
 > 이 스킬을 실행하는 **호스트 에이전트는 Codex** 자신이다. 병렬 워커는 Codex 멀티에이전트
-> (v0.139에서 안정화) 또는 `codex exec` 세션으로 스폰한다. Claude 전용 도구를 가정하지 않는다.
+> (v0.139에서 안정화) 또는 `Codex non-interactive run` 세션으로 스폰한다. Codex 전용 도구를 가정하지 않는다.
 
 ## 먼저 읽을 것
 
@@ -109,7 +109,7 @@ instruction(작업 브리프) 작성 전 반드시 Read:
 
 ## 사용자 질문 규칙 (§A)
 
-Codex CLI에는 Claude Code의 `AskUserQuestion` 카드 UI가 **없다.** 결정이 꼭 필요할 때는
+Codex CLI에는 Codex CLI의 `question prompt` 카드 UI가 **없다.** 결정이 꼭 필요할 때는
 `shared/questioning-policy.md §A`의 **채팅 번호형 선택지 블록**으로 대체한다.
 
 - 품앗이 요청은 대개 **이미 구체적**이다(만들 것이 명확). §1 + §2c에 따라 추론 가능한 건 묻지 말고,
@@ -172,17 +172,17 @@ python3 $PLUGIN_ROOT/skills/pumasi/scripts/init_workspace.py --root "$PWD" --tas
 4. 강한 게이트 명령 (tsc/build/test 중심)
 5. "다른 워커가 같은 레포를 동시에 편집 중"이라는 알림
 
-### Phase 3: 워커 스폰 (Host → Codex 멀티에이전트 / `codex exec`)
+### Phase 3: 워커 스폰 (Host → Codex 멀티에이전트 / `Codex non-interactive run`)
 
 태스크당 워커 1개를 병렬로 스폰한다. 각 워커 프롬프트에는 해당 `.pumasi/tasks/<task>.md` 브리프를 그대로 전달한다.
 
 - **Codex 멀티에이전트**(v0.139+ 안정): 태스크별 sub-agent를 동시 실행
-- 또는 **`codex exec`** 세션을 태스크별로 백그라운드 스폰
+- 또는 **`Codex non-interactive run`** 세션을 태스크별로 백그라운드 스폰
 
 > 워커는 브리프의 시그니처/요구사항/게이트만 받고 **구현 본문은 워커가 작성**한다. 호스트가 본문을 써서 넘기면 안 된다.
 
 > ⚠️ **샌드박스/승인 우회 경계 (opt-in).** 비대화형 병렬 워커가 승인 프롬프트 없이 파일을 쓰려면
-> `codex exec --dangerously-bypass-approvals-and-sandbox`(또는 `--full-auto`)가 필요하다 — 병렬 외주
+> `Codex non-interactive run --dangerously-bypass-approvals-and-sandbox`(또는 `--full-auto`)가 필요하다 — 병렬 외주
 > 자동화를 위해 필요한 동작이다. 따라서 품앗이는 **신뢰하는 본인 레포에서만** 실행하고, 외부에서
 > 받은/검토 안 된 코드베이스나 프롬프트에는 쓰지 않는다. 품앗이 호출 자체가 이 우회에 대한 명시적
 > 동의이며, 우회 없이 돌리려면 codex 기본 샌드박스(`--full-auto` 등)로 워커를 스폰한다.
@@ -268,7 +268,7 @@ command -v codex   # 설치 확인
 ```
 
 - Codex CLI 설치 + 로그인 완료
-- 워커 스폰: Codex 멀티에이전트(v0.139+) 또는 `codex exec`
+- 워커 스폰: Codex 멀티에이전트(v0.139+) 또는 `Codex non-interactive run`
 
 ---
 

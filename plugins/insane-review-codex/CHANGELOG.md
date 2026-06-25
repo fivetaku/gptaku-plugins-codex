@@ -1,12 +1,12 @@
 # Changelog — insane-review-codex
 
-본진(Claude Code)판 `insane-review`의 기능 업데이트를 Codex 포트로 반영한 이력.
+본진(Codex CLI)판 `insane-review`의 기능 업데이트를 Codex 포트로 반영한 이력.
 엔진(`scripts/pack_and_ask.py`)은 본진 `bin/pack_and_ask.py`와 1:1로 동일한 순수 Python이다.
 
 ## 0.5.2 — 2026-06-24
 
 본진 v0.1.0 → v0.5.2 엔진을 한 번에 동기화. Codex 포트 규약상 setup 훅·GitHub star opt-in·
-업데이트 알림 훅·`AskUserQuestion` 프런트매터는 플랫폼 미지원으로 제외하고, 셋업/온보딩은
+업데이트 알림 훅·`question prompt` 프런트매터는 플랫폼 미지원으로 제외하고, 셋업/온보딩은
 SKILL.md의 수동 선행 단계로 문서화했다. 가져온 기능:
 
 - **폴더명 ChatGPT 프로젝트 그룹핑 (v0.3.0)**: 매 실행이 일반 채팅 목록에 쌓이지 않도록 현재 폴더명
@@ -25,8 +25,8 @@ SKILL.md의 수동 선행 단계로 문서화했다. 가져온 기능:
 - 버전을 본진과 동일하게 0.5.2로 정렬.
 
 플랫폼 N/A(미포팅): `setup/setup.sh`(+ pip 의존성 자동설치 훅 — SKILL.md에 수동 `--check-env --install`로
-대체 문서화), `setup/gptaku-update-check.cjs`(업데이트 알림 훅), GitHub star opt-in, `AskUserQuestion`
-프런트매터. Codex에는 hooks/agents 로스터/`AskUserQuestion`이 없다.
+대체 문서화), `setup/gptaku-update-check.cjs`(업데이트 알림 훅), GitHub star opt-in, `question prompt`
+프런트매터. Codex에는 hooks/agents 로스터/`question prompt`이 없다.
 
 ## 0.1.0
 

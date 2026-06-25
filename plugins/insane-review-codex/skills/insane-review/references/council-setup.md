@@ -19,7 +19,7 @@ council:
       emoji: "🧠"
       color: "CYAN"
     - name: codex
-      command: "codex exec"
+      command: "Codex non-interactive run"
       emoji: "🤖"
       color: "BLUE"
     # ── GPT-5.5 Pro (웹 전용, insane-review-codex 경유) ──

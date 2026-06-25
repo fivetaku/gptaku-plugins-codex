@@ -1,7 +1,7 @@
 # 끼리끼리 프리셋 정의 (Codex)
 
 > 프리셋은 팀 구성의 출발점. 인터뷰와 환경스캔으로 동적 조정된다.
-> Codex에는 AskUserQuestion 카드가 없으므로 모든 인터뷰는 `shared/questioning-policy.md §A` 번호형 블록으로 채팅에서 진행한다.
+> Codex에는 question prompt 카드가 없으므로 모든 인터뷰는 `shared/questioning-policy.md §A` 번호형 블록으로 채팅에서 진행한다.
 
 ---
 
