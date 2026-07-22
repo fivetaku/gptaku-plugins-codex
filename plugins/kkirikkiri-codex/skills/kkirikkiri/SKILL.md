@@ -91,7 +91,7 @@ Step 8:   결과 수집 + 리포트                    Step 8-B: 반환값 리�
 python3 "$PLUGIN_ROOT/skills/kkirikkiri/scripts/scan_environment.py" --root "$PWD"
 ```
 추가 확인 (스크립트가 못 잡는 항목은 직접):
-- 외부 AI CLI: `codex`(코드·대규모 분석, cross-model 검토 1순위) / `agy`(디자인·UI, Gemini CLI 후속) / `gjc`(멀티모델 코드·교차검토)
+- 외부 AI CLI: `codex`(코드·대규모 분석, cross-model 검토 1순위) / `agy`(디자인·UI) / `gjc`(멀티모델 코드·교차검토)
 - 개발 도구: `gh`, `npm`, `bun`, `pnpm`
 - 기존 에이전트: `.codex/agents/*.md` 또는 `~/.codex/agents/*.md` — description/recommended-for로 동적 매칭 (파일명으로 매칭 금지)
 - MCP: `perplexity` 류 도구 있으면 Researcher에 배정
