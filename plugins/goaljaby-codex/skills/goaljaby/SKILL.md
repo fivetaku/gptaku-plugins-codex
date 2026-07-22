@@ -122,6 +122,7 @@ PRD 본문을 읽고 추출:
 - non-goals
 - open questions
 - 작업 유형 추정 (한/영 키워드 동시 매칭 — `references/task-type-classifier.md` 참조)
+- **디자인 레퍼런스 감지**: PRD 디렉토리에 `references/`와 `sources.json`이 있으면 `query.style`과 keep 이미지 목록을 기억한다. 없으면 이후 단계에서 전부 무시하고 재수집하지 않는다.
 
 ### Step 2: 운영 컨텍스트 확정 (자동)
 **타입**: 자동 (인터뷰 없음)
@@ -166,6 +167,12 @@ PRD acceptance criteria를 그룹화하여 마일스톤 초안 생성. ≤5개 �
 `references/templates.md`의 템플릿(VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command + PLANS.md ExecPlan)을 PRD 내용에 맞춰 슬롯 치환하고, **모든 헤딩·본문을 `output_lang`으로 렌더링**한다(템플릿은 한국어로 표기돼 있으니 §헤딩 맵으로 옮긴다. PLANS.md ExecPlan 표준 섹션명은 영어 그대로 유지). 작업 유형에 따라 강조 항목이 달라진다 — 매핑 표는 `references/task-type-templates.md` 참조.
 
 치환 시 빈 슬롯(`{...}`)이 잔존하지 않도록 확인. 빈 슬롯이 남으면 해당 줄 자체 제거.
+
+**디자인 레퍼런스 승계 (감지된 경우 + UI 작업일 때만)**:
+- `PLAN.md` 참조 문서에 `PRD/references/ (디자인 레퍼런스 — 스타일: {query.style})`를 추가한다.
+- `VALIDATION.md`에 "구현 전 레퍼런스 이미지를 열어보고 UI 산출물이 스타일 방향과 부합하는가" 검증을 추가한다.
+- "레퍼런스 이미지는 방향 참고 전용 — 산출물에 복사·재게시 금지" 가드를 승계한다.
+- 4,000자 예산을 보호하기 위해 `goal-command.md` 본문에는 넣지 않고 PLAN/VALIDATION으로 전달한다.
 
 CLI 슬롯은 **codex 전용 고정 문구**로 치환한다:
 - `{RETRY_LIMIT_ACTIONS}` / `{RETRY_PAUSE_PHRASE}` → "자체 수정을 멈추고 PROGRESS.md(및 PLANS.md의 Decision-Log)에 실패 내역을 기록한 뒤 사용자의 결정을 기다린다." (codex `/goal`은 일시정지 대신 보고-후-대기로 운영한다.)
