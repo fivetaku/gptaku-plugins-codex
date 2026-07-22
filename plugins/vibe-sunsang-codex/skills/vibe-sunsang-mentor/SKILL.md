@@ -148,6 +148,8 @@ Codex는 skill-first다 (`commands/` 없음). 본진 `/vibe-sunsang` 커맨드�
 
 ### Step 3: 세션 데이터 수집
 
+먼저 `python3 "$PLUGIN_ROOT/scripts/ensure_workspace.py"`로 워크스페이스를 자동 치유하고, `python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --new`로 지난 리뷰 이후 활동 세션을 우선 계산한다. 본문 전체를 먼저 읽지 말고 frontmatter의 `start`/`end`/`messages`로 1차 선별한 뒤 필요한 구간만 읽는다.
+
 1. `~/vibe-sunsang/conversations/INDEX.md`를 읽어 최신 상태 확인. 변환된 대화가 없으면 vibe-sunsang-retro의 변환기를 먼저 돌린다.
 2. 모드에 따라 범위 선택:
    - 모드 A, B: 최근 3~5개 세션

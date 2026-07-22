@@ -27,10 +27,20 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
 
 ## Step 0: 사전 확인
 
+`python3 "$PLUGIN_ROOT/scripts/ensure_workspace.py"`로 워크스페이스를 자동 치유한다. `CONFIG absent`면 온보딩으로 넘기고, `v1_migrated`면 비파괴 이관 사실을 안내한 뒤 계속한다.
+
 `~/vibe-sunsang/config/workspace_types.json`이 있는지 확인한다. 없으면:
 > "아직 바선생 초기 설정이 안 됐어요. '바선생 시작'(vibe-sunsang-onboard)을 먼저 실행해주세요." → 종료
 
 ## Step 1: 범위 선택
+
+기본 범위는 지난 리뷰 이후다. 먼저 다음을 실행해 신규/이어진 세션을 계산한다:
+
+```bash
+python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --new
+```
+
+첫 리뷰이거나 사용자가 다른 범위를 지정한 경우에만 아래 범위 선택을 사용한다.
 
 사용자가 범위를 명시했으면 그대로 사용한다. 없으면 `shared/questioning-policy.md §A` 번호 블록:
 
@@ -60,6 +70,8 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
    ```bash
    python3 "$PLUGIN_ROOT/skills/vibe-sunsang-retro/scripts/convert_sessions.py" --output-dir "$HOME/vibe-sunsang/conversations" 2>/dev/null || python "$PLUGIN_ROOT/skills/vibe-sunsang-retro/scripts/convert_sessions.py" --output-dir "$HOME/vibe-sunsang/conversations"
    ```
+
+변환 후 `analysis_scope.py --new`를 다시 실행해 최종 대상을 확정한다.
 
 ## Step 4: 서브에이전트 위임
 
@@ -122,6 +134,8 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
    - "다음 레벨까지: [게이트 조건 또는 약한 축]"
 
 ## Gotchas
+
+리포트가 정상 저장된 뒤에만 `python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --mark`로 워터마크를 전진시킨다. 저장 실패 시에는 갱신하지 않는다.
 
 - 서브에이전트가 TIMELINE.md 업데이트에 실패할 수 있다. Step 6에서 반드시 확인하고 보완한다.
 - 첫 리포트면 종단 요약 대신 "첫 리포트가 생성되었습니다. 다음 리포트부터 6축 성장 추이를 비교할 수 있어요."라고 안내한다.

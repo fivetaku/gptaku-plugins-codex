@@ -26,7 +26,7 @@ def text_from_content(content: Any) -> str:
 
 
 def parse_session(path: Path) -> dict[str, Any]:
-    meta: dict[str, Any] = {"id": path.stem, "timestamp": "", "cwd": ""}
+    meta: dict[str, Any] = {"id": path.stem, "timestamp": "", "end": "", "cwd": ""}
     messages: list[dict[str, str]] = []
 
     for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
@@ -37,6 +37,9 @@ def parse_session(path: Path) -> dict[str, Any]:
         except json.JSONDecodeError:
             continue
 
+        event_time = event.get("timestamp") or ""
+        if event_time and event_time > (meta.get("end") or ""):
+            meta["end"] = event_time
         event_type = event.get("type")
         payload = event.get("payload") or {}
 
@@ -76,7 +79,16 @@ def write_session(session: dict[str, Any], output_dir: Path) -> Path:
     safe_id = str(meta.get("id") or session["path"].stem).replace("/", "-")
     out = output_dir / f"{stamp}-{safe_id}.md"
 
+    start = (meta.get("timestamp") or "")[:16].replace("T", " ")
+    end = (meta.get("end") or meta.get("timestamp") or "")[:16].replace("T", " ")
     lines = [
+        "---",
+        f"project: {Path(meta.get('cwd') or 'unknown-workspace').name}",
+        f"start: {start}",
+        f"end: {end}",
+        f"messages: {len(session['messages'])}",
+        "---",
+        "",
         f"# {title_for(session)}",
         "",
         f"- Source: `{session['path']}`",
