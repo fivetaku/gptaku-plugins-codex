@@ -5,7 +5,7 @@ description: Interview-driven PRD generator for vibe coders — turns one senten
 
 # Show Me The PRD for Codex
 
-> 한 문장 아이디어 → 5-6번 인터뷰 → 5종 디자인 문서 완성
+> 한 문장 아이디어 → 3회 응답의 Draft-First 인터뷰 → 5종 디자인 문서 완성
 > 바이브코더가 개발 지식 없이도 "진짜 제품"을 만들 수 있는 기획 문서를 생성한다.
 > **이 문서는 참고 문서가 아니라 실행 지시서다.** Codex 채팅 환경에서 단계대로 실제로 진행한다.
 
@@ -15,6 +15,7 @@ description: Interview-driven PRD generator for vibe coders — turns one senten
 - `$PLUGIN_ROOT/skills/show-me-the-prd/references/research-strategy.md` — 리서치 라우팅, 배치 타이밍
 - `$PLUGIN_ROOT/skills/show-me-the-prd/references/document-templates.md` — 5종 문서 템플릿과 섹션 구조
 - `$PLUGIN_ROOT/skills/show-me-the-prd/references/domain-doc-sets.md` — 4종 문서 **동적** 생성 절차 (도메인별)
+- `$PLUGIN_ROOT/skills/show-me-the-prd/references/design-reference-guide.md` — UI 게이트, 디자인 레퍼런스 수집·시각 선별·출처 스키마
 
 ## 핵심 원칙
 
@@ -60,7 +61,8 @@ Codex CLI에는 Claude Code의 `AskUserQuestion`(객관식 카드 UI)에 해당�
 
 - 사용 가능한 스킬 목록에 `docs-guide`가 있으면 → 공식 문서 기반 기술 조사에 활용.
 - `insane-research`가 있으면 → 종합 시장 리서치에 활용.
-- 둘 다 없으면 → 빌트인 웹 검색으로 폴백 (기본 동작에 문제 없음).
+- `insane-search`가 있으면 → UI 산출물의 디자인 레퍼런스 수집에 활용.
+- 모두 없어도 → 빌트인 웹 검색으로 폴백 (기본 동작에 문제 없음).
 
 라우팅 상세: `$PLUGIN_ROOT/skills/show-me-the-prd/references/research-strategy.md`.
 
@@ -100,62 +102,37 @@ Codex CLI에는 Claude Code의 `AskUserQuestion`(객관식 카드 UI)에 해당�
 
 ---
 
-## Turn 2: 기능 선택 (§A 번호 블록)
+## Turn 2: 방향 결정 카드 (Draft-First, §A 1회)
 
-리서치 결과를 바탕으로 기능 목록을 §A 선택지로 바로 제시한다. 텍스트로 먼저 요약하지 않는다.
+Turn 1에서 드러난 문제를 바탕으로 **한 번의 번호형 질문 블록에 최대 4개 결정**만 묶는다. 기능 우선순위와 플랫폼을 포함하고, UI 산출물일 때만 디자인 스타일을 포함한다. 데이터 모델·Phase·기술 구조는 묻지 않고 AI가 시장 관행 기본값으로 설계해 초안에 반영한다.
 
-- 핵심 기능 4개를 후보로 (각 복잡도 표시: 간단해요 / 좀 복잡해요 / 많이 복잡해요 + 한 줄 설명). **여러 개 선택 가능** → "여러 개면 1,3처럼 적어주세요".
-- 이어서 첫 버전(MVP) 기능 조합 — 최소 / 중간 / 풀 3가지 조합. 추천(최소 핵심)을 1번에.
+- 추천안을 항상 1번에 둔다.
+- 사용자가 이미 결정한 항목은 다시 묻지 않는다.
+- 미확정 항목은 합리적 기본값으로 채우고 `> ⚠️ 가정:` 블록으로 표시한다.
+- 질문 예산: 열린 탐침 1회(필요시 재탐침 +1) + 방향 카드 1회 + 초안 확인 1회.
 
-### Turn 2 → Turn 3 사이 리서치 (Batch 2)
+### Turn 2.5: 디자인 레퍼런스 수집 (UI 게이트)
 
-선택된 기능에서 데이터 엔티티를 추출하는 동안:
-`"{핵심 기능} implementation best practice"`(docs-guide 있으면), `"{도메인} data model design"`.
+UI 산출물일 때만 `$PLUGIN_ROOT/skills/show-me-the-prd/references/design-reference-guide.md`를 읽고 실행한다. `{서비스 도메인}+{스타일}`로 6~8개 후보를 찾고 직접 시각 검토하여 3~5개만 `PRD/references/`에 저장한다. 출처와 query/style/keep 목록은 `PRD/references/sources.json`에 기록한다.
 
----
+- 백엔드/CLI/라이브러리는 전체 생략.
+- 부분 UI는 사용자가 디자인을 먼저 언급한 경우에만 발동.
+- 사용자가 URL을 주면 재수집하지 않고 그 출처를 기록.
+- 이미지는 로컬 방향 참고 전용이며 복사·재게시하지 않는다.
 
-## Turn 3: 데이터 모델 확인 (§A + 예시 프리뷰)
+## Turn 3: 즉시 초안 생성
 
-선택된 기능에서 핵심 데이터를 자동 추출한다. **먼저 예시 프리뷰**(ASCII 관계도 + 필드 테이블)를 채팅에 보여주고, 바로 아래에서 §A로 확인한다. 텍스트로 길게 설명하지 않는다.
+방향 결정 직후 5종 문서를 바로 생성한다. 데이터 모델과 Phase를 포함해 AI가 먼저 설계하고, 불확실한 결정은 `> ⚠️ 가정:`으로 표시한다. `01_PRD.md` 말미에 `## 가정 원장`을 두어 모든 가정, 선택 근거, 확인 상태를 모은다. UI 게이트가 발동했다면 `## 디자인 방향`에 스타일 키워드, 레퍼런스 경로·출처, 참고 포인트를 기록한다.
 
-```text
-[엔티티1] --1:N--> [엔티티2] --1:N--> [엔티티3]   (실제 인터뷰 결과로 매번 새로 생성)
+초안을 만든 뒤 사용자에게 핵심 preview를 보여준다. 백지 상태에서 데이터 모델이나 Phase를 별도로 묻지 않는다.
 
-질문: 데이터 구조를 이렇게 잡았는데 괜찮아요?
-1. 이대로 진행 — 일반적인 구조라 확장하기 좋음
-2. 수정할 부분이 있어요 — 바꾸고 싶은 곳을 알려주세요
-3. 문장으로 직접 적기
-(모르면 1번으로 진행할게요)
-```
+## Turn 4: 초안 확인 카드 (§A 1회)
 
----
+한 번의 확인 블록으로 다음 중 선택하게 한다: 1. 이대로 확정(추천), 2. 표시된 가정 수정, 3. 범위/우선순위 수정, 4. 문장으로 직접 수정사항 전달. 답을 반영해 문서를 갱신하고, 확인받지 못한 항목은 납품 요약에 잔여 가정으로 명시한다.
 
-## Turn 4: Phase 분리 확인 (§A + 예시 프리뷰)
+## 문서 생성 상세
 
-기능 복잡도와 의존성을 기반으로 Phase를 자동 분리한다(Phase 1=MVP, 2=확장, 3=고도화). **먼저 Phase별 기능 체크리스트 프리뷰**를 보여주고, 바로 아래에서 §A로 확인한다.
-
-선택지: 1. 이대로 진행(추천) / 2. 순서 변경 / 3. Phase 합치기·나누기(문장으로).
-
-### Turn 4 → Turn 5 사이 리서치 (Batch 3)
-
-`"best tech stack for {플랫폼} {도메인} app 2026"`, `"{후보A} vs {후보B} 2026 comparison"`, `"{DB 후보} free tier pricing 2026"`, (docs-guide 있으면) `"{후보 프레임워크} getting started"`.
-
----
-
-## Turn 5: 기술 스택 선택 (§A + 비교 프리뷰)
-
-리서치 기반으로 스택 2-3개를 추천한다. **먼저 비교 프리뷰**(무료 시작 / AI 코딩 호환 / 커뮤니티 / 배포 난이도 / 확장성 테이블)를 보여주고, 바로 아래에서 §A로 묻는다.
-
-- Q1 스택: 추천 스택을 1번에 + 한 줄 요약(무료 시작·AI 코딩 호환성).
-- Q2 로그인 방식: 1. 소셜 로그인(추천 — 구글/카카오, 비밀번호 관리 불필요, 다만 의존) / 2. 이메일+비밀번호 / 3. 매직링크 / 4. 로그인 필요 없음(나만 쓰면).
-
-### Turn 5 → Turn 6 사이 리서치 (Batch 4)
-
-`"{선택된 스택} project structure best practice 2026"`, `"{선택된 스택} deployment guide"`, (docs-guide 있으면) 선택된 스택의 프로젝트 구조.
-
----
-
-## Turn 6: 문서 생성 (5 파일)
+ (5 파일)
 
 모든 인터뷰가 끝나면 현재 프로젝트 루트에 `PRD/` 폴더를 만들고 **5 파일**을 작성한다.
 
@@ -183,7 +160,7 @@ PRD/
 
 ---
 
-## Turn 7: 완료 + 다음 단계 안내
+## Turn 5: 완료 + 다음 단계 안내
 
 문서 생성 후:
 
