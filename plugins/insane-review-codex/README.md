@@ -1,13 +1,13 @@
 # insane-review-codex
 
-GPT-5.5 Pro(웹 전용 — API 없음)를 Codex CLI 안으로 끌어오는 브리지 플러그인.
+GPT Pro(웹 전용·API 없음 — 현재 GPT-5.6 Sol 플래그십의 Pro 추론)를 Codex CLI 안으로 끌어오는 브리지 플러그인.
 
 repomix로 관련 코드만 정밀 패킹 → 구독 ChatGPT 웹에 CDP 자동화로 투입 → 분석/리뷰 회수.
 API 비용 0, 사용자의 ChatGPT 요금제로 동작.
 
 ## 사용 조건
 
-- Comet 또는 Chrome — `--remote-debugging-port=9222`로 실행 + chatgpt.com 로그인 + 모델 GPT-5.5 Pro
+- Comet 또는 Chrome — 전용 프로필과 `--remote-debugging-port=9222`로 실행 + chatgpt.com 로그인 + Pro 추론 선택
 - Python 의존성: `pip install playwright pyperclip`
 - Node.js (npx — repomix 자동설치에 사용)
 
@@ -17,6 +17,8 @@ API 비용 0, 사용자의 ChatGPT 요금제로 동작.
 python3 scripts/pack_and_ask.py --check-env
 # 부족한 pip 패키지 자동설치:
 python3 scripts/pack_and_ask.py --check-env --install
+# 저장된 브라우저를 필요할 때 자동 기동하고 재점검:
+python3 scripts/pack_and_ask.py --ensure-env
 ```
 
 ## 기본 사용법
@@ -25,7 +27,7 @@ python3 scripts/pack_and_ask.py --check-env --install
 # 디렉토리를 통째로 패킹해 GPT Pro 리뷰 요청
 python3 scripts/pack_and_ask.py \
   --target ./src \
-  --model pro --require-model "GPT-5.5" \
+  --model pro --require-model "GPT-5.6" \
   --prompt "이 모듈의 설계 리뷰를 해줘. 판정마다 파일:라인 인용 필수."
 
 # 순수 질문만 (코드 없이)
@@ -53,7 +55,7 @@ python3 scripts/pack_and_ask.py --council --model pro \
 | `--target <dir>` | 패킹 대상 디렉토리 (생략 시 프롬프트-only) |
 | `--include <glob>` | repomix 포함 글롭 (정밀 선별) |
 | `--model pro` | 추론단계 선택 |
-| `--require-model "GPT-5.5"` | 모델명 검증 — 불일치 시 전송 중단 (fail-closed) |
+| `--require-model "GPT-5.6"` | 모델명 검증 — 불일치 시 전송 중단 (fail-closed) |
 | `--force-answer-after N` | N초 후 리즈닝 강제 종료 (빠른 의견용; 정밀 리뷰엔 쓰지 말 것) |
 | `--pack-only` | 패킹만 하고 전송하지 않음 |
 | `--council` | agent-council 멤버 모드 — 응답만 stdout |
