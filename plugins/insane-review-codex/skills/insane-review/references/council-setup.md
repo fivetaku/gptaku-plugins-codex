@@ -1,6 +1,6 @@
-# GPT-5.5 Pro를 agent-council 웹 전용 멤버로 등록
+# GPT Pro를 agent-council 웹 전용 멤버로 등록
 
-GPT-5.5 Pro는 API가 없어 기존 council 멤버(claude/codex/gemini, 전부 CLI/API)로는 못 넣는다.
+GPT Pro(현 플래그십 — 지금은 GPT-5.6 Sol — 의 Pro 추론단계)는 API가 없어 기존 council 멤버(claude/codex/gemini, 전부 CLI/API)로는 못 넣는다.
 `scripts/pack_and_ask.py`의 `--council` 모드가 그 간극을 메운다 — **프롬프트를 위치인자로 받고, 응답만 stdout으로** 내보내(진행 로그는 stderr) council worker가 `output.txt`로 그대로 캡처한다.
 
 ## 작동 방식 (council worker 계약)
@@ -22,9 +22,9 @@ council:
       command: "codex exec"
       emoji: "🤖"
       color: "BLUE"
-    # ── GPT-5.5 Pro (웹 전용, insane-review-codex 경유) ──
+    # ── GPT Pro (웹 전용, insane-review-codex 경유) ──
     - name: gpt-pro
-      command: "python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model \"GPT-5.5\" --force-answer-after 120"
+      command: "python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model \"GPT-5.6\" --force-answer-after 120"
       emoji: "🌐"
       color: "MAGENTA"
   settings:
@@ -33,7 +33,7 @@ council:
 ```
 
 - `/ABS/PATH`는 절대경로로. (council worker는 셸 없이 execFile 하므로 경로에 공백 없게.)
-- `--require-model "GPT-5.5"`: council 경로에서도 활성 모델명을 검증(불일치/미확정이면 fail-closed로 전송 중단). 빼면 effort만 검증되고 기반 모델은 무엇이든 통과한다.
+- `--require-model "GPT-5.6"`: council 경로에서도 활성 모델명을 검증(불일치/미확정이면 fail-closed로 전송 중단). 빼면 Pro effort만 검증되고 기반 플래그십은 자동 추종한다. 모델 교체 시 고정 핀은 의도적으로 fail-closed하므로 함께 갱신해야 한다.
 - `--force-answer-after 120`: 120초 후 "지금 답변 받기"로 리즈닝을 끊어 회수 시간을 bound. council `timeout`은 그보다 넉넉히(예: 600).
 - council은 멤버를 **병렬 detached**로 띄운다. gpt-pro는 자기 브라우저 탭을 새로 열므로 다른 멤버와 충돌하지 않지만, **동시에 두 개의 insane-review 잡이 같은 브라우저를 몰면 안 된다**(한 council 잡에 gpt-pro 멤버는 하나).
 
@@ -46,7 +46,7 @@ council:
 
 ```bash
 # 단독으로 council 계약 확인: stdout엔 응답만, stderr엔 로그
-python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model "GPT-5.5" \
+python3 /ABS/PATH/plugins/insane-review-codex/scripts/pack_and_ask.py --council --model pro --require-model "GPT-5.6" \
   --force-answer-after 60 "한 문장으로: 1+1은?" 2>/dev/null
 # → GPT 응답 텍스트만 출력되어야 한다
 ```

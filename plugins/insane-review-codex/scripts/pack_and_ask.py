@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-insane-review-codex — repomix 패킹 → 구독 ChatGPT(웹) GPT-5.5 Pro 투입 → 분석 회수 (API 비용 0)
+insane-review-codex — repomix 패킹 → 구독 ChatGPT(웹) GPT Pro(최신 플래그십) 투입 → 분석 회수 (API 비용 0)
 
 흐름:
   1) 분석 대상 폴더를 repomix로 단일 파일 패킹 (--compress, secretlint 기본 on)
@@ -20,8 +20,8 @@ Codex 포트 (insane-review-codex):
   v0.3.x: 폴더명 ChatGPT '프로젝트' 그룹핑(캐시→탐색→생성, 실패 시 일반채팅 폴백) + 하드닝.
   v0.4.x: 크로스플랫폼(mac/win/linux) 브라우저 스캔/실행 + 전용(격리) 프로필 + insert_text 입력 +
     싱글톤 교착 자가복구. (Chrome 136+는 전용 프로필 없이는 CDP가 안 열린다.)
-  v0.5.x: GPT-5.5 Pro 셀프리뷰 반영 — hermetic repomix config, 첨부→인라인 폴백, 동명 폴더 분리,
-    CDP 다이얼로그 레이스 핸들링.
+  v0.5.x: GPT Pro 셀프리뷰 반영 — hermetic repomix config, 첨부→인라인 폴백, 동명 폴더 분리,
+    CDP 다이얼로그 레이스·로그인 진단·플래그십 자동 추종 하드닝.
 """
 
 from __future__ import annotations
@@ -378,17 +378,44 @@ def _load_config() -> dict:
         return {}
 
 
-def save_browser_choice(name_or_path: str) -> None:
-    """선택한 브라우저(이름 또는 경로)를 config에 영속화 → 다음 실행부터 재질문 안 함."""
+def _save_config_key(key: str, value) -> None:
     try:
         CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
         cfg = _load_config()
-        cfg["browser"] = name_or_path
+        cfg[key] = value
         tmp = CONFIG_PATH.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
         os.replace(tmp, CONFIG_PATH)
     except Exception:
         pass
+
+
+def save_browser_choice(name_or_path: str) -> None:
+    """선택한 브라우저(이름 또는 경로)를 config에 영속화 → 다음 실행부터 재질문 안 함."""
+    _save_config_key("browser", name_or_path)
+
+
+def _slug(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "browser"
+
+
+def profile_dir_for(name: str) -> Path:
+    """브라우저별 전용 프로필 분리. 크로미움 계열은 브라우저(앱)마다 쿠키 암호화 키가 달라
+    (mac Keychain 'X Safe Storage' 항목이 앱별), 같은 user-data-dir을 다른 브라우저로 열면
+    기존 세션 쿠키가 복호화 불가 → 로그인이 통째로 깨진다. 기존 프로필(BROWSER_PROFILE_DIR)은
+    최초 사용 브라우저(owner)가 계속 소유해 기존 로그인을 보존하고, 다른 브라우저는
+    'browser-profile-<이름>' 접미사 디렉토리를 쓴다."""
+    cfg = _load_config()
+    owner = cfg.get("profile_owner")
+    if not owner:
+        # 소유자 미기록: 레거시 프로필이 있으면 저장된 browser(없으면 이번 브라우저)가 승계
+        owner = (cfg.get("browser") if BROWSER_PROFILE_DIR.exists() else None) or name
+        _save_config_key("profile_owner", owner)
+    # owner가 절대경로로 저장됐을 수 있음(--browser <경로>) → stem으로 비교
+    owner_name = Path(owner).stem if os.path.isabs(str(owner)) else str(owner)
+    if _slug(owner_name) == _slug(name):
+        return BROWSER_PROFILE_DIR
+    return BROWSER_PROFILE_DIR.with_name(f"{BROWSER_PROFILE_DIR.name}-{_slug(name)}")
 
 
 def resolve_browser(name_or_path: str | None) -> tuple[str, str] | None:
@@ -410,11 +437,11 @@ def resolve_browser(name_or_path: str | None) -> tuple[str, str] | None:
     return bs[0] if bs else None
 
 
-def _kill_profile_browsers() -> None:
+def _kill_profile_browsers(profile_dir: Path) -> None:
     """전용 프로필을 점유 중인 브라우저 프로세스를 정리(크로스플랫폼 best-effort).
     전용 프로필이라 종료해도 로그인 쿠키는 디스크에 보존된다 — 스테일 인스턴스가
     새 런치를 흡수해(같은 user-data-dir 싱글톤) 디버그 포트가 안 열리는 교착을 푼다."""
-    target = str(BROWSER_PROFILE_DIR)
+    target = str(profile_dir)
     try:
         if host_os() == "win":
             ps = ("Get-CimInstance Win32_Process | "
@@ -429,16 +456,19 @@ def _kill_profile_browsers() -> None:
         pass
 
 
-def launch_browser_exe(path: str) -> bool:
+def launch_browser_exe(path: str, name: str | None = None) -> bool:
     """전용 프로필 + 디버그 포트로 크로미움 직접 실행(크로스플랫폼) 후 CDP가 뜰 때까지 대기.
     전용 프로필에 스테일 인스턴스가 떠 있어 새 런치가 포트를 못 여는 경우(같은 user-data-dir
-    싱글톤 교착)를 감지해 그 프로세스를 정리하고 1회 재시도한다."""
+    싱글톤 교착)를 감지해 그 프로세스를 정리하고 1회 재시도한다.
+    프로필은 브라우저별로 분리(profile_dir_for) — 다른 브라우저가 같은 프로필을 열어
+    쿠키 암호화 키 불일치로 로그인이 깨지는 것을 막는다."""
+    profile_dir = profile_dir_for(name or Path(path).stem)
     try:
-        BROWSER_PROFILE_DIR.mkdir(parents=True, exist_ok=True)
+        profile_dir.mkdir(parents=True, exist_ok=True)
     except OSError:
         pass
     cmd = [path, f"--remote-debugging-port={CDP_PORT}",
-           f"--user-data-dir={BROWSER_PROFILE_DIR}",
+           f"--user-data-dir={profile_dir}",
            "--no-first-run", "--no-default-browser-check"]
 
     def _spawn_and_wait(secs: int) -> bool:
@@ -455,13 +485,13 @@ def launch_browser_exe(path: str) -> bool:
             time.sleep(1)
         return False
 
-    print(f"  브라우저 시작: {Path(path).name} (CDP {CDP_PORT}, 전용 프로필)")
+    print(f"  브라우저 시작: {Path(path).name} (CDP {CDP_PORT}, 전용 프로필 {profile_dir.name})")
     if _spawn_and_wait(15):
         return True
     # 포트 미개방 = 전용 프로필에 떠 있던 스테일 인스턴스가 런치를 흡수했을 가능성.
     # 그 프로세스를 정리(로그인 보존)하고 싱글톤 락이 풀리길 기다린 뒤 1회 재시도.
     print("  ⚠️  디버그 포트 미개방 — 전용 프로필 스테일 인스턴스 정리 후 재시도")
-    _kill_profile_browsers()
+    _kill_profile_browsers(profile_dir)
     time.sleep(3)
     if _spawn_and_wait(20):
         return True
@@ -482,37 +512,94 @@ def ensure_browser(browser_arg: str | None) -> bool:
         avail = ", ".join(n for n, _ in detect_browsers()) or "없음"
         print(f"  ❌ 사용할 브라우저를 찾지 못함 (지정='{browser_arg}', 설치감지=[{avail}])")
         return False
-    return launch_browser_exe(resolved[1])
+    return launch_browser_exe(resolved[1], resolved[0])
 
 
-def probe_login() -> str:
-    """브라우저(CDP) up + playwright 있을 때 ChatGPT 로그인 상태를 best-effort로 확인.
-    반환: 'ok' | 'no' | 'unknown'(프로브 불가/오류)."""
+# 실행 중 브라우저가 디스크에서 자동 업데이트되면(스테일 인스턴스) CDP 연결이 이 에러로 깨진다.
+# 실측(2026-07-09, Chrome 150.46 실행 중 + 디스크 150.101): connect_over_cdp가 아래 메시지로 실패.
+_STALE_CDP_MARKERS = ("Browser context management is not supported",)
+
+
+def _restart_profile_browser() -> bool:
+    """전용 프로필 브라우저를 재기동(쿠키는 디스크 보존 → 로그인 유지)."""
+    saved = _load_config().get("browser")
+    r = resolve_browser(saved) if saved else resolve_browser(None)
+    if not r:
+        return False
+    _kill_profile_browsers(profile_dir_for(r[0]))
+    time.sleep(3)
+    return launch_browser_exe(r[1], r[0])
+
+
+def connect_cdp(pw):
+    """connect_over_cdp + 스테일 브라우저 자동 복구.
+    브라우저가 떠 있는 동안 자동 업데이트되면 CDP가 깨진다(위 마커). 이때 전용 프로필
+    프로세스만 재기동(로그인 보존)하고 1회 재연결 — 사용자에게 '로그인 풀림'으로 보이던
+    상황의 상당수가 이 스테일 케이스다."""
+    try:
+        return pw.chromium.connect_over_cdp(CDP_URL)
+    except Exception as exc:
+        if not any(m in str(exc) for m in _STALE_CDP_MARKERS):
+            raise
+        print("  ♻️  CDP 연결 실패(스테일 브라우저 — 실행 중 자동업데이트 추정) → 전용 브라우저 재기동(로그인 보존)")
+        if not _restart_profile_browser():
+            raise
+        return pw.chromium.connect_over_cdp(CDP_URL)
+
+
+def _cookie_state(ctx) -> tuple[str, str]:
+    """세션 쿠키(__Secure-next-auth.session-token*)의 존재·만료를 확인.
+    반환: (state, expiry) — state ∈ 'ok' | 'expired' | 'missing' | 'unknown'.
+    UI 프로브가 흔들려도(로딩/CF 챌린지) 쿠키로 '세션 자체'의 생사를 진단하기 위한 것."""
+    try:
+        cookies = ctx.cookies("https://chatgpt.com")
+    except Exception:
+        return ("unknown", "-")
+    toks = [c for c in cookies
+            if str(c.get("name", "")).startswith("__Secure-next-auth.session-token")]
+    if not toks:
+        return ("missing", "-")
+    exp = max(float(c.get("expires") or 0) for c in toks)
+    if exp <= 0:
+        return ("ok", "session")   # 만료 미설정(세션 쿠키)
+    exp_s = datetime.fromtimestamp(exp).strftime("%Y-%m-%d")
+    return (("ok" if exp > time.time() else "expired"), exp_s)
+
+
+def probe_login() -> dict:
+    """브라우저(CDP) up + playwright 있을 때 ChatGPT 로그인 상태를 확인.
+    반환: {'login': 'ok'|'no'|'unknown', 'cookie': 'ok'|'expired'|'missing'|'unknown', 'cookie_exp': str}
+    - login='no'는 로그인 벽이 실제로 보일 때만. 컴포저가 늦게 떠도(SPA 로딩/CF 챌린지) 'no'로
+      오판하지 않고 'unknown' — 멀쩡한 세션에 재로그인을 요구하던 거짓 음성 방지.
+    - cookie는 UI와 무관하게 세션 쿠키의 생사를 별도 보고(진단용)."""
     import importlib.util
+    res = {"login": "unknown", "cookie": "unknown", "cookie_exp": "-"}
     if not (is_port_open(CDP_PORT) and cdp_browser_ok()):
-        return "unknown"
+        return res
     if not importlib.util.find_spec("playwright"):
-        return "unknown"
+        return res
     try:
         from playwright.sync_api import sync_playwright as _spw
         with _spw() as pw:
-            b = pw.chromium.connect_over_cdp(CDP_URL)
+            b = connect_cdp(pw)
             ctx = pick_context(b)
             if ctx is None:
-                return "no"
+                res["login"], res["cookie"] = "no", "missing"
+                return res
+            res["cookie"], res["cookie_exp"] = _cookie_state(ctx)
             page = ctx.new_page()
             _guard_dialogs(ctx, page)
             try:
                 page.goto(CHATGPT_URL, wait_until="load", timeout=30000)
-                time.sleep(2)
-                return "ok" if looks_logged_in(page) else "no"
+                res["login"] = login_state(page, wait_secs=15)
             finally:
                 try:
                     page.close()
                 except Exception:
                     pass
     except Exception:
-        return "unknown"
+        pass
+    return res
 
 
 def check_env(do_install: bool = False) -> int:
@@ -558,22 +645,38 @@ def check_env(do_install: bool = False) -> int:
                        "전용 브라우저를 디버그포트+전용프로필로 실행(--launch-browser; 아래 BROWSERS 참고)"))
 
     # ChatGPT 로그인 프로브(브라우저 up + deps 있을 때만)
-    login_state = "unknown"
+    probe = {"login": "unknown", "cookie": "unknown", "cookie_exp": "-"}
     if browser_state == "ok" and deps_ok:
-        login_state = probe_login()
-        if login_state == "ok":
+        probe = probe_login()
+        if probe["login"] == "ok":
             ok.append("ChatGPT 로그인됨 (입력창/모델 어포던스 확인)")
-        elif login_state == "no":
-            issues.append(("ChatGPT 로그인 안 됨", "해당 브라우저에서 chatgpt.com 로그인 + GPT-5.5 Pro 선택"))
+        elif probe["login"] == "no":
+            issues.append(("ChatGPT 로그인 안 됨 (로그인 벽 확인됨)",
+                           "해당 브라우저에서 chatgpt.com 로그인 + Pro 추론 선택"))
+        elif probe["cookie"] == "ok":
+            # UI 미확인이지만 세션 쿠키는 살아있음 → 로그인 요구 대상 아님(로딩/챌린지 가능성)
+            ok.append(f"ChatGPT 세션 쿠키 유효(만료 {probe['cookie_exp']}) — UI 확인만 지연(로딩/챌린지 가능), 재점검 권장")
+        else:
+            issues.append((f"ChatGPT 로그인 확인 불가 (login=unknown, cookie={probe['cookie']})",
+                           "전용 브라우저 창에서 chatgpt.com 상태 확인 후 재점검"))
 
     for o in ok:
         print(f"  ✓ {o}")
     for name, hint in issues:
         print(f"  ✗ {name}\n      → {hint}")
 
-    # 머신 파싱용 상태 라인 — 커맨드 온보딩이 어느 단계가 막혔는지 분기에 사용
+    # 저장된 브라우저 선택값(있으면 이름) — 커맨드가 "최초 1회만 질문" 분기를 명시적으로 판단.
+    _saved = _load_config().get("browser")
+    if _saved:
+        _r = resolve_browser(_saved)
+        saved_browser = _r[0] if _r else _saved
+    else:
+        saved_browser = "none"
+
+    # 머신 파싱용 상태 라인 — 커맨드 온보딩이 어느 단계가 막혔는지 분기에 사용(토큰 additive)
     print(f"\nSTATUS node={'ok' if node_ok else 'missing'} deps={'ok' if deps_ok else 'missing'} "
-          f"browser={browser_state} login={login_state} os={host_os()}")
+          f"browser={browser_state} login={probe['login']} cookie={probe['cookie']} "
+          f"cookie_exp={probe['cookie_exp']} saved_browser={saved_browser} os={host_os()}")
     # 설치된 크로미움 목록 — 커맨드가 브라우저 선택 AskUserQuestion을 구성하는 데 사용
     bs = detect_browsers()
     print("BROWSERS " + ",".join(n for n, _ in bs))
@@ -685,7 +788,9 @@ MODEL_SWITCHER_SELECTORS = [
     'button[data-testid="model-switcher-dropdown-button"]',
     'button[aria-label*="model" i]',
 ]
-# 실측: pill 클릭 → menuitemradio(즉시/중간/높음/매우 높음/Pro=추론단계) + menuitem("GPT-5.5"=모델명)
+# 실측(2026-07-10): pill 클릭 → menuitemradio(즉시/중간/높음/매우 높음/Pro=추론단계)
+#   + menuitem("GPT-5.6 Sol"=모델 서브메뉴 트리거). 트리거를 hover하면 모델 radio들
+#   (GPT-5.6 Sol/GPT-5.5/GPT-5.4/GPT-5.3/o3)이 같은 메뉴 DOM에 menuitemradio로 추가된다.
 EFFORT_ITEM_SELECTORS = ['[role="menuitemradio"]', '[role="menuitem"]', '[role="option"]']
 
 
@@ -739,6 +844,10 @@ def read_menu_state(page) -> dict:
         for it in page.query_selector_all('[role="menuitemradio"]'):
             t = (it.inner_text() or "").strip()
             state["items"].append(t)
+            # 모델 서브메뉴가 펼쳐져 있으면 모델 radio(예: 'GPT-5.6 Sol')도 menuitemradio+checked로
+            # 잡혀 추론단계 판정을 덮어쓴다 — 모델명 패턴은 effort 후보에서 제외.
+            if re.search(r"GPT|gpt|o\d|Claude|Gemini", t):
+                continue
             if it.get_attribute("aria-checked") == "true":
                 state["effort_checked"] = t
     except Exception:
@@ -748,7 +857,7 @@ def read_menu_state(page) -> dict:
 
 def select_model(page, want: str, require_model: str | None = None) -> tuple[bool, str | None]:
     """모델 스위처를 열고 want(추론단계, 예: 'pro')를 선택 + 검증.
-    require_model 지정 시 모델명(예: 'GPT-5.5')이 일치하지 않으면 False(실패) 반환.
+    require_model 지정 시 모델명(예: 'GPT-5.6')이 일치하지 않으면 False(실패) 반환.
     반환: (verified, verified_model_name)"""
     want_l = want.lower()
     if not _open_switcher(page):
@@ -1122,26 +1231,37 @@ def pick_context(browser):
     return browser.contexts[0]
 
 
-def looks_logged_in(page) -> bool:
-    # 음성 신호: 입력창 존재 + 로그인 벽 부재
-    if find_input(page) is None:
-        return False
-    for sel in LOGIN_WALL_SELECTORS:
+def login_state(page, wait_secs: int = 12) -> str:
+    """로그인 3단계 판정: 'ok' | 'no' | 'unknown'.
+    - 'no': 로그인 벽(로그인 버튼 등)이 실제로 보일 때만 — 이것만이 재로그인 요구의 근거.
+    - 'ok': 입력창 + 인증 세션에서만 렌더되는 컴포저 어포던스(모델 pill/파일 input) 확인.
+    - 'unknown': wait_secs 동안 둘 다 안 보임(SPA 로딩 지연/CF 챌린지/UI 변경).
+      기존엔 이 경우를 'no'로 오판해 멀쩡한 세션에 재로그인을 반복 요구했다(거짓 음성).
+    판정 전체를 폴링 — 느린 환경일수록 컴포저가 늦게 떠서 단발 조회는 오판한다."""
+    deadline = time.monotonic() + wait_secs
+    while True:
+        for sel in LOGIN_WALL_SELECTORS:
+            try:
+                el = page.query_selector(sel)
+                if el and el.is_visible():
+                    return "no"
+            except Exception:
+                continue
         try:
-            if page.query_selector(sel):
-                return False
-        except Exception:
-            continue
-    # 양성 신호: 인증된 세션에서만 렌더되는 composer 어포던스(모델 pill 또는 파일첨부 input)를 적극 확인.
-    # 렌더 지연 대비 ~3s 폴링. 끝까지 없으면 fail-closed(인증 증명 실패로 간주).
-    for _ in range(6):
-        try:
-            if page.query_selector('button.__composer-pill') or page.query_selector(FILE_INPUT_SELECTOR):
-                return True
+            if find_input(page) is not None and (
+                    page.query_selector('button.__composer-pill')
+                    or page.query_selector(FILE_INPUT_SELECTOR)):
+                return "ok"
         except Exception:
             pass
+        if time.monotonic() >= deadline:
+            return "unknown"
         time.sleep(0.5)
-    return False
+
+
+def looks_logged_in(page) -> bool:
+    """전송 경로용 fail-closed 래퍼 — 'ok'만 통과(unknown도 전송 안 함)."""
+    return login_state(page) == "ok"
 
 
 # ===========================================================================
@@ -1279,7 +1399,7 @@ def ensure_project(page, name: str, cache_key: str, cache_path: Path) -> str | N
 # main
 # ===========================================================================
 def main():
-    ap = argparse.ArgumentParser(description="repomix → 구독 ChatGPT(GPT-5.5 Pro) 분석")
+    ap = argparse.ArgumentParser(description="repomix → 구독 ChatGPT(GPT Pro, 최신 플래그십) 분석")
     ap.add_argument("--target", default=None, help="분석 대상 폴더(생략 시 프롬프트만 = 의견 모드)")
     ap.add_argument("--include", default=None, help='repomix --include 글롭')
     ap.add_argument("--ignore", default=None, help="repomix --ignore 글롭")
@@ -1295,7 +1415,7 @@ def main():
     ap.add_argument("--prompt-file", default=None)
     ap.add_argument("--model", default=None, help='추론단계 선택(예: "pro")')
     ap.add_argument("--require-model", default=None,
-                    help='모델명 검증(예: "GPT-5.5") — 불일치 시 전송 중단')
+                    help='모델명 검증(예: "GPT-5.6") — 불일치 시 전송 중단')
     ap.add_argument("--force-answer-after", type=int, default=None,
                     help="N초 후 리즈닝 중이면 '지금 답변 받기' 재시도")
     ap.add_argument("--max-wait", type=int, default=None,
@@ -1317,6 +1437,9 @@ def main():
     ap.add_argument("--out-dir", default=None,
                     help="출력 저장 폴더(기본: 현재 프로젝트의 .insane-review/; env INSANE_REVIEW_OUT)")
     ap.add_argument("--check-env", action="store_true")
+    ap.add_argument("--ensure-env", action="store_true",
+                    help="저장된 브라우저가 있고 CDP가 닫혀(down) 있으면 조용히 1회 자동 기동 후 점검 "
+                         "(저장값-only·첫감지 폴백 없음; browser=wrong이면 자동기동 안 함)")
     ap.add_argument("--install", action="store_true")
     ap.add_argument("--council", action="store_true",
                     help="agent-council 멤버 모드: 로그는 stderr, 응답만 stdout")
@@ -1325,6 +1448,18 @@ def main():
     args = ap.parse_args()
 
     if args.check_env:
+        sys.exit(check_env(do_install=args.install))
+
+    if args.ensure_env:
+        # 저장값-only 자동기동: CDP가 '닫힘'(down)이고 저장된 브라우저가 해석되면 한 번만 띄운다.
+        # browser=wrong(포트를 다른 프로세스가 점유)이거나 저장값이 없으면 자동기동하지 않고,
+        # check_env가 상태만 보고한다 → 커맨드가 그때만 사용자에게 묻는다(최초 1회 온보딩).
+        if not is_port_open(CDP_PORT):
+            saved = _load_config().get("browser")
+            if saved:
+                r = resolve_browser(saved)   # 인자 지정 경로 → 첫감지 폴백 없음(저장값-only)
+                if r:
+                    launch_browser_exe(r[1], r[0])
         sys.exit(check_env(do_install=args.install))
 
     if args.list_browsers:
@@ -1342,7 +1477,7 @@ def main():
             avail = ", ".join(n for n, _ in detect_browsers()) or "없음"
             sys.exit(f"❌ 브라우저를 찾지 못함 (지정='{args.launch_browser}', 감지=[{avail}])")
         name, path = resolved
-        if launch_browser_exe(path):
+        if launch_browser_exe(path, name):
             save_browser_choice(name)
             print(f"STATUS_LAUNCH ok browser={name}")
             sys.exit(0)
@@ -1352,7 +1487,7 @@ def main():
     # 스킵되는 fail-open을 차단(fail-closed). 모델/추론단계를 함께 지정해야 검증이 돈다.
     if args.require_model and not args.model:
         sys.exit('❌ --require-model은 --model과 함께 써야 합니다(모델/추론단계를 선택·검증하는 경로).\n'
-                 '     예: --model pro --require-model "GPT-5.5"')
+                 '     예: --model pro --require-model "GPT-5.6"')
 
     real_stdout = sys.stdout
     if args.council:
@@ -1437,7 +1572,7 @@ def main():
             time.sleep(3)
         try:
             with sync_playwright() as pw:
-                browser = pw.chromium.connect_over_cdp(CDP_URL)
+                browser = connect_cdp(pw)
                 ctx = pick_context(browser)
                 if ctx is None:
                     raise RuntimeError("브라우저 context 없음 (로그인된 Comet/Chrome 필요)")
@@ -1450,8 +1585,11 @@ def main():
                         if find_input(page):
                             break
                         time.sleep(1)
-                    if not looks_logged_in(page):
-                        raise RuntimeError("ChatGPT 로그인 안 됨/입력창 없음 — 해당 브라우저에서 chatgpt.com 로그인 확인")
+                    _lst = login_state(page)
+                    if _lst != "ok":
+                        raise RuntimeError(
+                            "ChatGPT 로그인 벽 감지 — 해당 브라우저에서 chatgpt.com 로그인 확인" if _lst == "no"
+                            else "ChatGPT 컴포저 미확인(로딩 지연/CF 챌린지 가능) — 전용 브라우저 창 상태 확인 후 재시도")
 
                     # 프로젝트 그룹핑(기본 on): 현재 폴더명 프로젝트로 채팅을 정리(일반 채팅목록 오염 방지).
                     # 어떤 실패(예외 포함)에도 하드중단 X — 컴포저가 확인되는 일반 채팅으로 폴백(#3).

@@ -3,6 +3,16 @@
 본진(Claude Code)판 `insane-review`의 기능 업데이트를 Codex 포트로 반영한 이력.
 엔진(`scripts/pack_and_ask.py`)은 본진 `bin/pack_and_ask.py`와 1:1로 동일한 순수 Python이다.
 
+## 0.5.7 — 2026-07-22
+
+본진 v0.5.3~v0.5.7을 Codex 포트에 동기화.
+
+- 최신 플래그십 GPT-5.6 Sol의 Pro 티어 자동 추종 및 `--require-model "GPT-5.6"` 검증 예시.
+- 모델 서브메뉴 radio가 Pro effort 판정을 덮어쓰지 않도록 `read_menu_state` 하드닝.
+- 저장 브라우저 `--ensure-env` 자동 기동, 스테일 CDP 재시작, 로그인 3단계 판정과 쿠키 진단.
+- 브라우저별 전용 프로필 분리로 앱별 쿠키 암호화 키 충돌 방지.
+- Codex의 수동 셋업 계약과 `scripts/pack_and_ask.py` 경로는 그대로 유지.
+
 ## 0.5.2 — 2026-06-24
 
 본진 v0.1.0 → v0.5.2 엔진을 한 번에 동기화. Codex 포트 규약상 setup 훅·GitHub star opt-in·

@@ -1,11 +1,11 @@
 ---
 name: insane-review
-description: GPT-5.5 Pro(웹 전용 — API 없음)를 Codex CLI 안에서 활용한다. 검토/수정/리뷰/의견 요청을 받으면 의도를 파악하고 repomix로 관련 코드만 정밀 패킹한 뒤 구독 ChatGPT Pro에 투입해 분석을 회수하고 반영한다. 트리거 — "GPT한테 물어봐", "Pro 모델 의견", "다른 모델로 검토해줘", "GPT Pro로 리뷰", "repomix로 묶어서 GPT에 넣어줘", "GPT는 어떻게 생각해", "ask gpt pro", "second opinion". agent-council의 웹 전용 멤버로도 동작.
+description: GPT Pro(웹 전용·API 없음 — 현 시점 최신 플래그십 모델의 Pro 추론)를 Codex CLI 안에서 활용한다. 검토/수정/리뷰/의견 요청을 받으면 의도를 파악하고 repomix로 관련 코드만 정밀 패킹한 뒤 구독 ChatGPT Pro에 투입해 분석을 회수하고 반영한다. 트리거 — "GPT한테 물어봐", "Pro 모델 의견", "다른 모델로 검토해줘", "GPT Pro로 리뷰", "repomix로 묶어서 GPT에 넣어줘", "GPT는 어떻게 생각해", "ask gpt pro", "second opinion". agent-council의 웹 전용 멤버로도 동작.
 ---
 
 # insane-review (Codex 판)
 
-**왜 존재하나:** GPT-5.5 Pro는 **웹(구독)에서만** 쓸 수 있고 **API가 없다.** Codex CLI의 기존 provider(`omc ask`, agent-council API 경로)로는 못 부른다. 이 스킬은 **구독 ChatGPT 웹을 자동화해 Pro를 Codex CLI 안으로 끌어오는 유일한 경로**다. API 비용 0, 사용자의 요금제로 동작.
+**왜 존재하나:** GPT Pro(최신 플래그십 모델의 Pro 추론)는 **웹(구독)에서만** 쓸 수 있고 **API가 없다.** Codex CLI의 기존 provider(`omc ask`, agent-council API 경로)로는 못 부른다. 이 스킬은 **구독 ChatGPT 웹을 자동화해 Pro를 Codex CLI 안으로 끌어오는 유일한 경로**다. API 비용 0, 사용자의 요금제로 동작.
 
 핵심 가치는 "통째 패킹"이 아니라 **"의도 파악 → 관련 타겟만 정밀 선별 → 그것만 패킹"** 이다. 이 선별을 Codex(너)가 수행하는 것이 이 도구의 차별점이다.
 
@@ -19,7 +19,7 @@ Codex에는 설치 훅이 없다. 그래서 pip 의존성은 **사용자가/네�
    ```bash
    python3 "$PLUGIN_ROOT/scripts/pack_and_ask.py" --check-env
    ```
-   마지막 줄 `STATUS node=… deps=… browser=… login=… os=…` 와 `BROWSERS …`(설치된 크로미움 목록)를 읽고 분기한다.
+   마지막 줄 `STATUS node=… deps=… browser=… login=… cookie=… cookie_exp=… saved_browser=… os=…` 와 `BROWSERS …`(설치된 크로미움 목록)를 읽고 분기한다. 이후 실행에서는 저장된 브라우저가 있으면 `--ensure-env`로 CDP를 자동 기동하고 점검할 수 있다.
 2. **pip 의존성**(`playwright`·`pyperclip`): `deps=missing`이면 자동설치 플래그로 채운다(repomix는 `npx -y`라 사전설치 불필요):
    ```bash
    python3 "$PLUGIN_ROOT/scripts/pack_and_ask.py" --check-env --install
@@ -31,7 +31,7 @@ Codex에는 설치 훅이 없다. 그래서 pip 의존성은 **사용자가/네�
    - 설치 브라우저가 **1개뿐**이면 그게 사용자 메인일 가능성이 높다 — 가벼운 크로미움(Chrome/Brave 등) **하나를 자동화 전용으로 따로 설치**하길 권한다. 같은 앱을 2창으로 띄우면 멀티인스턴스 불안정/오조작 위험.
    - 선택한 브라우저는 `~/.insane-review/config.json`에 저장되어 다음 실행부터 재질문 없이 재사용된다.
    - `browser=wrong`(9222 점유)이면 그 프로세스를 종료한 뒤 `--launch-browser`로 전용 프로필을 다시 띄운다.
-4. **로그인 + Pro 모델**: `login=no`면 **방금 띄운 전용 브라우저 창**에서 `chatgpt.com` 로그인 + `GPT-5.5 Pro` 선택을 끝낸다. **로그인은 자동 불가 → 반드시 사용자에게 요청**(에러로 끝내지 말 것). 전용 프로필이라 쿠키가 디스크에 보존돼 로그인이 유지된다. 모델은 스크립트 `--model pro`가 자동 선택·검증하지만, 안 되면 사용자가 1회 수동 설정하면 새 채팅이 상속한다.
+4. **로그인 + Pro 모델**: `login=no`면 **방금 띄운 전용 브라우저 창**에서 `chatgpt.com` 로그인 + Pro 추론 선택을 끝낸다. **로그인은 자동 불가 → 반드시 사용자에게 요청**(에러로 끝내지 말 것). `login=unknown cookie=ok`면 재로그인을 요구하지 말고 UI 상태를 재점검한다. 전용 프로필은 브라우저별로 분리되고 쿠키가 디스크에 보존된다. 모델은 스크립트 `--model pro`가 최신 플래그십의 Pro 티어를 자동 선택·검증한다. 특정 모델명을 고정해야 할 때만 `--require-model "GPT-5.6"`처럼 부분 일치 핀을 추가한다.
 
 `STATUS … login=ok`까지 가면 본 작업으로 넘어간다.
 
@@ -57,7 +57,7 @@ Codex에는 설치 훅이 없다. 그래서 pip 의존성은 **사용자가/네�
 ```bash
 python3 "$PLUGIN_ROOT/scripts/pack_and_ask.py" \
   --target <repo_root> --include "<관련 파일 글롭>" \
-  --model pro --require-model "GPT-5.5" \
+  --model pro --require-model "GPT-5.6" \
   --prompt "<의도를 담은 정확한 질문 — '판정마다 파일/라인/코드조각을 인용하라'를 반드시 포함>"
 ```
 
@@ -81,7 +81,7 @@ python3 "$PLUGIN_ROOT/scripts/pack_and_ask.py" --model pro --force-answer-after 
 ### 4) 회수 & 반영
 
 - 응답은 **현재 프로젝트의 `.insane-review/response_*.md`**에 저장되고, stdout 끝에 미리보기가 나온다.
-- 그 의견을 읽고 **GPT-5.5 Pro의 의견임을 명시**해 사용자에게 반영/요약한다. 동의/이견을 너의 판단과 함께 제시하라.
+- 그 의견을 읽고 **GPT Pro의 의견임을 명시**하여 사용자에게 반영/요약한다(모델명은 리포트 상단 `- 모델:`의 실제 검증값을 인용). 동의/이견을 너의 판단과 함께 제시하라.
 
 ## 채팅 정리 — 폴더명 ChatGPT 프로젝트 (기본 on)
 
@@ -103,7 +103,7 @@ python3 "$PLUGIN_ROOT/scripts/pack_and_ask.py" --model pro --force-answer-after 
 
 ## 주요 플래그
 
-`--target`(생략=프롬프트only) · `--include`(정밀 글롭) · `--ignore` · `--compress` · `--model pro` · `--require-model "GPT-5.5"` · `--force-answer-after N` · `--max-wait N` · `--retries N` · `--style xml|markdown|plain` · `--attach` · `--browser <이름|경로>`(전용 프로필; 생략=config→첫 감지) · `--launch-browser <이름>`(전용 프로필 실행+저장) · `--list-browsers` · `--project "<이름>"`(기본=폴더명+해시) · `--no-project` · `--pack-only` · `--delete-pack` · `--out-dir <경로>` · `--check-env [--install]` · `--council`
+`--target`(생략=프롬프트only) · `--include`(정밀 글롭) · `--ignore` · `--compress` · `--model pro` · `--require-model "GPT-5.6"` · `--force-answer-after N` · `--max-wait N` · `--retries N` · `--style xml|markdown|plain` · `--attach` · `--browser <이름|경로>`(전용 프로필; 생략=config→첫 감지) · `--launch-browser <이름>`(전용 프로필 실행+저장) · `--list-browsers` · `--project "<이름>"`(기본=폴더명+해시) · `--no-project` · `--pack-only` · `--delete-pack` · `--out-dir <경로>` · `--check-env [--install]` · `--ensure-env [--install]` · `--council`
 
 ## agent-council 멤버로 쓰기
 
