@@ -44,6 +44,8 @@ mkdir -p "$HOME/vibe-sunsang/config" "$HOME/vibe-sunsang/conversations" "$HOME/v
 
 ## Step 0.5: 워크스페이스 환경 구성
 
+먼저 `python3 "$PLUGIN_ROOT/scripts/ensure_workspace.py"`를 실행한다. 이 스크립트는 v2 디렉토리를 보장하고 v1의 대화·리포트·성장로그·설정 JSON을 기존 파일을 덮어쓰지 않고 이관한다. `STATUS v1_migrated`면 이관 사실을 안내하며, 나머지 v1 잔여물은 자동 삭제하지 않는다.
+
 **CLAUDE.md 생성** — `~/vibe-sunsang/CLAUDE.md`가 없으면:
 1. `$PLUGIN_ROOT/skills/vibe-sunsang-onboard/references/CLAUDE-MD-TEMPLATE.md`를 읽는다 (인라인 하드코딩 금지).
 2. `~/vibe-sunsang/CLAUDE.md`로 저장한다.

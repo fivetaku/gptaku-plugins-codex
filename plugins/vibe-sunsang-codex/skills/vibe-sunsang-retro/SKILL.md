@@ -20,6 +20,14 @@ Codex는 skill-first다 (`commands/` 없음). 객관식은 Codex CLI에 카드 U
 
 ## Step 0: 사전 확인
 
+먼저 워크스페이스를 비파괴적으로 자동 치유한다:
+
+```bash
+python3 "$PLUGIN_ROOT/scripts/ensure_workspace.py"
+```
+
+`STATUS v1_migrated`면 이관 사실을 한 줄 안내하고 계속한다. `CONFIG absent`면 온보딩으로 넘기되, 단순히 설정 오류로 종료하지 않는다.
+
 `~/.codex/sessions/`에 JSONL이 있는지 확인한다. 없으면:
 > "아직 Codex 대화 기록이 없어요. Codex로 작업한 뒤 다시 와주세요." → 종료
 
