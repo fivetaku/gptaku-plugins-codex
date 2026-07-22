@@ -124,7 +124,7 @@ print(d['user']['name'], '@'+d['user']['screen_name']); print(d['text']); print(
 
 | 방법 | 결과 | 원인 |
 |------|------|------|
-| WebFetch | 402 Payment Required | 기본 fetch 경로 한계 |
+| WebFetch | 402 Payment Required | Claude Code의 WebFetch 제한 |
 | Nitter | 빈 응답 | Nitter 인스턴스 대부분 종료됨 |
 | Wayback Machine | OG 메타태그만 | SPA 렌더링 안 됨 |
 | Mobile UA curl | OG 메타태그만 | SPA 렌더링 안 됨 |

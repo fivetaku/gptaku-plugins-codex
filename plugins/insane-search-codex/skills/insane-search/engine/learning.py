@@ -54,7 +54,11 @@ def is_real_failure(stop_reason: str) -> bool:
 
 
 def key_for(url: str, device_class: str) -> str:
-    host = (urlsplit(url).netloc or "").lower()
+    # Use hostname (not netloc) so the learning key matches the session pool /
+    # profile-dir host key (transport._host_of, executor._profile_dir_for),
+    # which both drop port + userinfo. netloc kept them, so a URL with a port
+    # (or credentials) learned under a different key than it fetched under.
+    host = (urlsplit(url).hostname or "").lower()
     dev = "mobile" if device_class == "mobile" else "desktop"
     return f"{host}::{dev}"
 
