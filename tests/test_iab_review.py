@@ -107,3 +107,23 @@ def test_prepare_reuses_full_code_pack_and_excludes_output(tmp_path, monkeypatch
     assert calls[0][1]['line_numbers'] is True
     assert calls[0][1]['ignore'] == 'secret/**,out/**'
     assert Path(json.loads(path.read_text())['pack']).read_text() == 'full code'
+
+
+def test_cli_can_resume_sent_manifest_without_resending(tmp_path):
+    path, data = sending(tmp_path)
+    url = 'https://chatgpt.com/c/abc-123'
+    def run(*args):
+        return subprocess.run([sys.executable, '-S', str(BIN / 'iab_review.py'), *args],
+                              capture_output=True, text=True)
+    bound = run('bind', '--manifest', str(path), '--chat-url', url,
+                '--user-message-id', 'user-1')
+    assert bound.returncode == 0, bound.stderr
+    response = tmp_path / 'body.txt'
+    response.write_text('완료된 응답', encoding='utf-8')
+    done = run('complete', '--manifest', str(path), '--chat-url', url,
+               '--message-id', 'assistant-1', '--response-file', str(response),
+               '--completion-observed')
+    assert done.returncode == 0, done.stderr
+    saved = json.loads(path.read_text())
+    assert saved['state'] == 'complete'
+    assert '완료된 응답' in Path(saved['response']).read_text()
