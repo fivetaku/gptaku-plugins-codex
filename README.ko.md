@@ -78,7 +78,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [insane-design-codex](plugins/insane-design-codex) | 실제 웹사이트 CSS를 디자인 시스템으로 추출하거나, 번들된 디자인 코퍼스를 재사용합니다. |
 | [goaljaby-codex](plugins/goaljaby-codex) | PRD 폴더를 Codex 네이티브 `/goal`로 잇는 브릿지. VALIDATION/RECOVERY/PLAN/PROGRESS 검토 문서와 `PLANS.md` ExecPlan을 사용자 언어로 만들고, 승인 후 바로 실행할 `/goal` 명령을 건넵니다. |
 | [dd-codex](plugins/dd-codex) | `/dd`·`/ㅇㅇ`로 OS 클립보드(텍스트·이미지)를 Codex 컨텍스트에 드롭. 로컬 캐시에 저장하고 대화에는 매니페스트와 짧은 미리보기만 넣습니다. |
-| [insane-review-codex](plugins/insane-review-codex) | repomix로 패킹한 코드를 구독 ChatGPT Pro(웹 전용 Pro 추론)에 전용 브라우저 프로필로 투입하고 리뷰를 Codex로 회수합니다. |
+| [insane-review-codex](plugins/insane-review-codex) | repomix로 패킹한 코드를 구독 ChatGPT Pro(웹 전용 Pro 추론)에 Codex Desktop 내장 Browser/IAB로 투입하고 리뷰를 회수합니다. CLI는 기존 CDP 경로를 유지합니다. |
 
 > 플러그인은 계속 추가될 수 있습니다. 릴리스 알림을 받으려면 저장소를 Watch 해두세요.
 

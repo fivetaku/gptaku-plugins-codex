@@ -1,7 +1,15 @@
 # Changelog — insane-review-codex
 
 본진판 `insane-review`의 기능 업데이트를 Codex 포트로 반영한 이력.
-엔진(`bin/pack_and_ask.py`)은 본진 `bin/pack_and_ask.py`와 1:1로 동일한 순수 Python이다.
+CLI 엔진(`bin/pack_and_ask.py`)은 본진 v0.6.8을 유지한다. Desktop 경로는 별도 로컬 기록 도구와 IAB 실행 지침으로 확장한다.
+
+## 0.7.0 — 2026-10-11
+
+- Codex Desktop에서 현재 내장 Browser/IAB 도구가 제공되면 CDP 온보딩보다 먼저 선택한다.
+- `bin/iab_review.py`가 기존 패킹 엔진을 재사용해 준비 파일과 manifest를 만들고 sending/sent/complete를 원자적으로 기록한다.
+- 실제 모델명/Pro, 첨부, 대화 URL, 신규 assistant 턴과 완료 상태를 현재 브라우저 UI에서 확인하는 절차를 추가한다.
+- 중단 뒤 같은 IAB 대화에서 회수하며 별도 브라우저 기동이나 질문 재전송으로 폴백하지 않는다.
+- 내장 도구가 없는 CLI와 agent-council의 CDP 엔진은 변경하지 않는다.
 
 ## 0.6.8 — 2026-09-08
 

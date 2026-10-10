@@ -3,6 +3,8 @@
 GPT Pro(현 플래그십 — 지금은 GPT-5.6 Sol — 의 Pro 추론단계)는 API가 없어 기존 council 멤버(claude/codex/gemini, 전부 CLI/API)로는 못 넣는다.
 insane-review의 `--council` 모드가 그 간극을 메운다 — **프롬프트를 위치인자로 받고, 응답만 stdout으로** 내보내(진행 로그는 stderr) council worker가 `output.txt`로 그대로 캡처한다.
 
+이 문서의 외부 프로세스 `--council` 계약은 CLI/CDP 경로다. Desktop IAB 도구를 외부 Python 프로세스가 호출할 수 있다고 가정하지 않는다.
+
 ## 작동 방식 (council worker 계약)
 
 council worker는 멤버 `command` 문자열을 토큰화한 뒤 **프롬프트를 마지막 인자로 붙여** `spawn(program, [...args, prompt])` 하고 **stdout을 캡처**한다. `--council`은 정확히 그 계약에 맞춰져 있다.

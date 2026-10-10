@@ -78,7 +78,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [insane-design-codex](plugins/insane-design-codex) | Extract real website CSS into a reusable design system, or reuse the bundled design corpus. |
 | [goaljaby-codex](plugins/goaljaby-codex) | Bridge from a PRD folder to Codex's native `/goal`: generates VALIDATION/RECOVERY/PLAN/PROGRESS review docs plus a `PLANS.md` ExecPlan in your language, then hands off a ready-to-run `/goal` command after approval. |
 | [dd-codex](plugins/dd-codex) | Drop the OS clipboard (text or image) into Codex context via `/dd` or `/ㅇㅇ` — captured to a local cache, only a manifest and short preview enter the conversation. |
-| [insane-review-codex](plugins/insane-review-codex) | Send repomix-packed code to a subscribed ChatGPT Pro (web-only Pro reasoning) through a dedicated browser profile and harvest the review back into Codex. |
+| [insane-review-codex](plugins/insane-review-codex) | Send repomix-packed code to a subscribed ChatGPT Pro (web-only Pro reasoning) through Codex Desktop Browser/IAB (CDP for CLI) and harvest the review back into Codex. |
 
 > More plugins can be added over time. Watch the repository to get release updates.
 
