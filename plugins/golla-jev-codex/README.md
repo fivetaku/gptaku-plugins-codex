@@ -1,6 +1,6 @@
 # golla-jev-codex
 
-Codex port of the **golla-jev (골라제브)** plugin (v0.1.1). Describe a task and it finds the "pick one" moments, hands them to Jev (TypeSafe System One), and returns a workflow design you can test.
+Codex port of the **golla-jev (골라제브)** plugin (v0.1.2). Describe a task and it finds the "pick one" moments, hands them to Jev (TypeSafe System One), and returns a workflow design you can test.
 
 ## Triggers
 
