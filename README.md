@@ -79,6 +79,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [goaljaby-codex](plugins/goaljaby-codex) | Bridge from a PRD folder to Codex's native `/goal`: generates VALIDATION/RECOVERY/PLAN/PROGRESS review docs plus a `PLANS.md` ExecPlan in your language, then hands off a ready-to-run `/goal` command after approval. |
 | [dd-codex](plugins/dd-codex) | Drop the OS clipboard (text or image) into Codex context via `/dd` or `/ㅇㅇ` — captured to a local cache, only a manifest and short preview enter the conversation. |
 | [insane-review-codex](plugins/insane-review-codex) | Send repomix-packed code to a subscribed ChatGPT Pro (web-only Pro reasoning) through a dedicated browser profile and harvest the review back into Codex. |
+| [golla-jev-codex](plugins/golla-jev-codex) | 골라제브 — find the pick-one moments in your work and design a Jev (TypeSafe System One) workflow with question JSON, a document preview and a test plan. |
 
 > More plugins can be added over time. Watch the repository to get release updates.
 

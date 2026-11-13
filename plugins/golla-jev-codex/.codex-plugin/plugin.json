@@ -1,0 +1,35 @@
+{
+  "name": "golla-jev-codex",
+  "version": "0.1.1",
+  "description": "골라제브 — find the pick-one moments in your work and design a Jev (TypeSafe System One) workflow: question JSON, document preview, test plan. Triggers: 골라제브, golla-jev, jev 워크플로 짜줘, jev로 자동화할 수 있을까, 제브로 뭐 할 수 있어, design a Jev workflow.",
+  "author": {
+    "name": "fivetaku",
+    "url": "https://github.com/fivetaku"
+  },
+  "homepage": "https://github.com/fivetaku/gptaku-plugins-codex/tree/main/plugins/golla-jev-codex",
+  "repository": "https://github.com/fivetaku/gptaku-plugins-codex",
+  "license": "MIT",
+  "keywords": ["jev", "typesafe", "system-one", "workflow", "automation", "korean", "codex"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "golla-jev — 골라제브",
+    "shortDescription": "Turn the pick-one moments in your work into a Jev workflow design",
+    "longDescription": "Describe a task or business idea and golla-jev finds where a person keeps choosing between options, hands those choices to Jev (TypeSafe System One), and assigns arithmetic, dates and lookups to code, sentences to templates and photo or audio reading to a multimodal model. It returns a flow, a step table, draft question JSON, an output document preview, similar public cases, failure points and a dev/holdout test plan. Includes a 108-item Korean office benchmark template and three example designs.",
+    "developerName": "GPTaku",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/fivetaku/golla-jev",
+    "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
+    "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
+    "defaultPrompt": [
+      "Where could Jev help in my team's work?",
+      "Design a Jev workflow for sorting our shared inbox.",
+      "우리 회사에 제브 쓸 데 있어?",
+      "영수증 지출결의를 jev 워크플로로 짜줘"
+    ],
+    "brandColor": "#E8732A",
+    "composerIcon": "./assets/golla-jev-codex.svg",
+    "logo": "./assets/golla-jev-codex.svg",
+    "screenshots": []
+  }
+}

@@ -79,6 +79,7 @@ codex plugin marketplace upgrade gptaku-codex
 | [goaljaby-codex](plugins/goaljaby-codex) | PRD 폴더를 Codex 네이티브 `/goal`로 잇는 브릿지. VALIDATION/RECOVERY/PLAN/PROGRESS 검토 문서와 `PLANS.md` ExecPlan을 사용자 언어로 만들고, 승인 후 바로 실행할 `/goal` 명령을 건넵니다. |
 | [dd-codex](plugins/dd-codex) | `/dd`·`/ㅇㅇ`로 OS 클립보드(텍스트·이미지)를 Codex 컨텍스트에 드롭. 로컬 캐시에 저장하고 대화에는 매니페스트와 짧은 미리보기만 넣습니다. |
 | [insane-review-codex](plugins/insane-review-codex) | repomix로 패킹한 코드를 구독 ChatGPT Pro(웹 전용 Pro 추론)에 전용 브라우저 프로필로 투입하고 리뷰를 Codex로 회수합니다. |
+| [golla-jev-codex](plugins/golla-jev-codex) | 골라제브 — 업무 속 "고르는 순간"을 찾아 Jev(TypeSafe System One) 워크플로로 설계합니다. 질문 JSON·문서 미리보기·시험 계획까지 냅니다. |
 
 > 플러그인은 계속 추가될 수 있습니다. 릴리스 알림을 받으려면 저장소를 Watch 해두세요.
 

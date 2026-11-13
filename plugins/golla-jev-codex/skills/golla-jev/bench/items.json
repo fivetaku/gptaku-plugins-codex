@@ -1,0 +1,4051 @@
+{
+ "version": 3,
+ "items": [
+  {
+   "id": "r01",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "스타벅스 역삼점 / 아메리카노 T 4 / 카페라떼 T 2 / 합계 27,600",
+    "memo": "거래처 미팅 다과"
+   },
+   "gold": "meeting",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r02",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "카카오T 택시 / 서울역 → 강남구청 / 18,400원",
+    "memo": "교육 장소 이동"
+   },
+   "gold": "travel",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r03",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "GS25 / A4용지 2박스 / 볼펜 12입 / 포스트잇 / 46,300",
+    "memo": "사무실 비품"
+   },
+   "gold": "supplies",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r04",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "코레일 승차권 / KTX 서울-대전 / 왕복 2매 / 47,800",
+    "memo": "고객사 출강"
+   },
+   "gold": "travel",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r05",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "김밥천국 / 라면 3 / 김밥 3 / 22,500 / 21:40",
+    "memo": "야근 저녁"
+   },
+   "gold": "meal",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r06",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "종로 인쇄소 / 교안 컬러 출력 40부 / 스프링 제본 / 132,000",
+    "memo": "교육 교재"
+   },
+   "gold": "print",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r07",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "교보문고 / 「데이터 분석 입문」 외 2권 / 61,200",
+    "memo": "팀 스터디 도서"
+   },
+   "gold": "print",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r08",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "SK에너지 / 휘발유 38.2L / 68,000",
+    "memo": "현장 방문 차량 주유"
+   },
+   "gold": "travel",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r09",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "쿠팡 / HP 정품 토너 206A 세트 / 189,000",
+    "memo": "프린터 토너 교체"
+   },
+   "gold": "supplies",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r10",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "올리브영 / 선크림 / 립밤 / 31,000",
+    "memo": ""
+   },
+   "gold": "none",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r11",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "한우마을 / 등심 4인 / 공기밥 4 / 248,000 / 19:10",
+    "memo": "고객사 담당자 3명과 계약 협의"
+   },
+   "gold": "meeting",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r12",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "이마트24 / 생수 2L 12병 / 종이컵 1000입 / 물티슈 / 28,700",
+    "memo": "세미나실 비치용"
+   },
+   "gold": "supplies",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r13",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "하이패스 통행료 / 서울TG-천안TG / 6,300",
+    "memo": "출장"
+   },
+   "gold": "travel",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r14",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "파리바게뜨 / 샌드위치 15 / 음료 15 / 112,500",
+    "memo": "워크숍 참석자 점심 다과"
+   },
+   "gold": "meeting",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r15",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "본죽 / 전복죽 1 / 12,000 / 12:30",
+    "memo": "점심"
+   },
+   "gold": "meal",
+   "split": "dev",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r16",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "넷플릭스 / 프리미엄 월정액 / 17,000",
+    "memo": ""
+   },
+   "gold": "none",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r17",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "킨코스 / 대형 현수막 출력 1 / 포스터 A1 2 / 85,000",
+    "memo": "교육 행사 현수막"
+   },
+   "gold": "print",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "r18",
+   "wf": "w1_cat",
+   "type": "choice",
+   "state": {
+    "receipt": "주차장 / 강남파이낸스센터 / 3시간 / 18,000",
+    "memo": "고객 방문"
+   },
+   "gold": "travel",
+   "split": "holdout",
+   "ko": "이 영수증은 지출결의서의 어느 비목으로 처리해야 하는가? `receipt`(영수증에서 읽은 글자)와 `memo`(사용자가 적은 용도)를 함께 보고 판단하라.",
+   "en": "Which expense category on an expense report should this receipt be filed under? Judge from `receipt` (text read off the receipt) and `memo` (the purpose the user wrote).",
+   "options": [
+    {
+     "key": "meeting",
+     "ko": "회의비",
+     "ko_desc": "회의·간담회·외부 손님 접대에 쓴 다과·식사",
+     "en": "meeting",
+     "en_desc": "Refreshments or meals for a meeting, workshop or visiting guests."
+    },
+    {
+     "key": "meal",
+     "ko": "식대",
+     "ko_desc": "직원 본인들의 끼니(야근 식대 포함)",
+     "en": "staff_meal",
+     "en_desc": "Meals for the staff themselves, including overtime meals."
+    },
+    {
+     "key": "travel",
+     "ko": "여비교통비",
+     "ko_desc": "택시·기차·버스·주유·통행료·주차 등 이동 비용",
+     "en": "travel",
+     "en_desc": "Transport: taxi, train, bus, fuel, tolls, parking."
+    },
+    {
+     "key": "supplies",
+     "ko": "소모품비",
+     "ko_desc": "사무용품·전산 소모품·청소용품 등",
+     "en": "supplies",
+     "en_desc": "Office supplies, printer consumables, cleaning goods."
+    },
+    {
+     "key": "print",
+     "ko": "도서인쇄비",
+     "ko_desc": "도서 구입·인쇄·제본·출력 비용",
+     "en": "books_printing",
+     "en_desc": "Buying books, printing, binding, copy-shop output."
+    },
+    {
+     "key": "none",
+     "ko": "해당 없음",
+     "ko_desc": "개인 지출이거나 업무 용도가 불분명함",
+     "en": "none_of_these",
+     "en_desc": "Personal spending or no clear business purpose."
+    }
+   ]
+  },
+  {
+   "id": "a01",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "한우마을 / 등심 4인 / 공기밥 4 / 참이슬 2 / 248,000"
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a02",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "스타벅스 / 아메리카노 4 / 케이크 2 / 31,000"
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a03",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "이자카야 하루 / 모둠 사시미 / 하이볼 3 / 생맥주 2 / 128,000"
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a04",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "김밥천국 / 라면 3 / 김밥 3 / 콜라 1 / 24,500"
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a05",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "전주식당 / 비빔밥 5 / 해물파전 1 / 막걸리 1 / 72,000"
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a06",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "빕스 / 런치 샐러드바 4 / 에이드 2 / 무알콜 맥주 1 / 136,000"
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a07",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "이탈리안 키친 / 파스타 3 / 피자 1 / 하우스 레드 와인 1병 / 154,000"
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "a08",
+   "wf": "w1_alcohol",
+   "type": "noul",
+   "state": {
+    "receipt": "본가 / 갈비탕 6 / 공기밥 추가 2 / 사이다 2 / 84,000"
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "`receipt` 의 품목 가운데 술(소주·맥주·와인·막걸리·하이볼 등 주류)이 하나라도 있는가?",
+   "en": "Does any line item in `receipt` contain an alcoholic drink (soju, beer, wine, makgeolli, highball or similar)?"
+  },
+  {
+   "id": "m01",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "하반기 신입사원 AI 교육 문의",
+     "body": "안녕하세요. 신입 40명 대상 생성형 AI 실무 교육을 11월에 진행하려 합니다. 커리큘럼과 강사 프로필을 받아볼 수 있을까요?"
+    }
+   },
+   "gold": "edu",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m02",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "RE: 교육 견적",
+     "body": "보내주신 견적 잘 받았습니다. 1일 8시간 기준 단가를 조금 조정할 수 있을지 여쭙니다. 예산이 400만 원으로 잡혀 있어서요."
+    }
+   },
+   "gold": "deal",
+   "split": "dev",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m03",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "10월 교육비 세금계산서 발행 요청",
+     "body": "10월 15일 교육 건 세금계산서 발행 부탁드립니다. 사업자등록증 첨부합니다. 담당자 이메일로 보내 주세요."
+    }
+   },
+   "gold": "bill",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m04",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "다음 주 미팅 시간 변경 가능할까요",
+     "body": "수요일 오후 2시 미팅을 목요일 오전 10시로 옮길 수 있을지요? 장소는 그대로 저희 회의실입니다."
+    }
+   },
+   "gold": "sched",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m05",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "[광고] 사무실 복합기 렌탈 특가",
+     "body": "월 2만 원대 복합기 렌탈! 지금 상담 신청 시 토너 무료. 수신 거부는 하단 링크."
+    }
+   },
+   "gold": "spam",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m06",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "RE: RE: 교육 커리큘럼",
+     "body": "커리큘럼 확인했습니다. 진행하는 걸로 하겠습니다. 계약서 양식 보내주시면 법무 검토 후 날인하겠습니다.\n\n> 커리큘럼 초안 첨부드립니다.\n> 교육 문의 감사합니다."
+    }
+   },
+   "gold": "deal",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m07",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "입금 확인 부탁드립니다",
+     "body": "어제 오후 교육비 330만 원 입금했습니다. 확인되면 회신 부탁드려요."
+    }
+   },
+   "gold": "bill",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m08",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "귀하의 계정이 일시 정지되었습니다",
+     "body": "보안 확인을 위해 아래 링크에서 비밀번호를 다시 입력하세요. 24시간 내 미확인 시 계정이 삭제됩니다."
+    }
+   },
+   "gold": "spam",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m09",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "교육 장소 안내",
+     "body": "11월 20일 교육 장소가 본관 3층 대회의실에서 별관 1층 세미나실로 바뀌었습니다. 시간은 동일합니다."
+    }
+   },
+   "gold": "sched",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m10",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "중소기업 대상 AI 바우처 교육 가능 여부",
+     "body": "저희가 AI 바우처 수요기업인데, 바우처로 임직원 교육을 받을 수 있는지, 가능하다면 어떤 과정이 있는지 궁금합니다."
+    }
+   },
+   "gold": "edu",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m11",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "RE: 일정",
+     "body": "말씀하신 12월 3일은 어렵고 12월 5일이나 10일이 가능합니다. 둘 중 편하신 날로 정해 주세요.\n\n> 12월 3일 어떠신가요?"
+    }
+   },
+   "gold": "sched",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m12",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "[뉴스레터] 이번 주 AI 트렌드 5가지",
+     "body": "구독해 주셔서 감사합니다. 이번 주에는 에이전트, 멀티모달, 결정 모델 소식을 모았습니다."
+    }
+   },
+   "gold": "spam",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m13",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "거래명세서 및 통장 사본 요청",
+     "body": "정산 처리를 위해 거래명세서와 통장 사본을 보내 주시면 이번 달 말일에 지급하겠습니다."
+    }
+   },
+   "gold": "bill",
+   "split": "dev",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m14",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "계약서 수정본 송부",
+     "body": "2조 지급 조건과 7조 해지 조항을 수정했습니다. 변경 내용 확인 부탁드립니다. 문제없으면 날인본 회신 주세요."
+    }
+   },
+   "gold": "deal",
+   "split": "dev",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m15",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "감사 인사",
+     "body": "어제 교육 정말 유익했습니다. 직원들 반응이 좋아서 내년 상반기에 심화 과정도 하고 싶은데, 어떤 내용으로 구성할 수 있을지 제안 부탁드려요."
+    }
+   },
+   "gold": "edu",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "m16",
+   "wf": "w2_cat",
+   "type": "choice",
+   "state": {
+    "mail": {
+     "subject": "귀사 전용 리드 1,000건 판매합니다",
+     "body": "교육 업계 담당자 연락처 DB를 저렴하게 제공합니다. 샘플 요청 환영."
+    }
+   },
+   "gold": "spam",
+   "split": "holdout",
+   "ko": "이 메일은 업무 보드의 어느 칸으로 보내야 하는가? `mail.subject` 와 `mail.body` 를 보고 판단하라. 인용된 이전 메일보다 새로 쓴 부분을 기준으로 한다.",
+   "en": "Which column of the work board should this email go to? Judge from `mail.subject` and `mail.body`. Go by the newly written part, not the quoted earlier messages.",
+   "options": [
+    {
+     "key": "edu",
+     "ko": "교육 문의",
+     "ko_desc": "강의·교육 개설, 커리큘럼, 강사 섭외 문의",
+     "en": "training_inquiry",
+     "en_desc": "Asking about running a course, curriculum or booking an instructor."
+    },
+    {
+     "key": "deal",
+     "ko": "견적·계약",
+     "ko_desc": "견적 요청, 단가 협의, 계약서 검토·날인",
+     "en": "quote_contract",
+     "en_desc": "Quote requests, price negotiation, contract review or signing."
+    },
+    {
+     "key": "bill",
+     "ko": "정산·세금계산서",
+     "ko_desc": "세금계산서 발행, 입금 확인, 정산 서류",
+     "en": "billing",
+     "en_desc": "Tax invoices, payment confirmation, settlement paperwork."
+    },
+    {
+     "key": "sched",
+     "ko": "일정 조율",
+     "ko_desc": "날짜·시간·장소를 정하거나 바꾸는 일",
+     "en": "scheduling",
+     "en_desc": "Setting or changing dates, times or venues."
+    },
+    {
+     "key": "spam",
+     "ko": "광고·스팸",
+     "ko_desc": "광고, 뉴스레터, 무작위 영업, 피싱",
+     "en": "spam_ads",
+     "en_desc": "Ads, newsletters, cold sales pitches or phishing."
+    }
+   ]
+  },
+  {
+   "id": "p01",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "수요일 미팅을 목요일로 옮길 수 있을지 회신 부탁드립니다."
+    }
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p02",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "교육 장소가 별관 세미나실로 바뀌었습니다. 시간은 같습니다. 참고 바랍니다."
+    }
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p03",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "어제 교육 감사했습니다. 다음에 또 뵙겠습니다."
+    }
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p04",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "세금계산서를 담당자 이메일로 발행해 주세요. 사업자등록증 첨부합니다."
+    }
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p05",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "[광고] 복합기 렌탈 특가. 수신 거부는 하단 링크."
+    }
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p06",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "계약서 수정본 확인하시고 문제 없으면 날인본 보내 주세요."
+    }
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p07",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "입금 완료했습니다. 따로 회신 안 주셔도 됩니다."
+    }
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p08",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "커리큘럼 잘 받았습니다. 내부 검토 후 다음 주 중 연락드리겠습니다."
+    }
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p09",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "강사 프로필과 지난 교육 만족도 자료를 금요일까지 보내 주실 수 있을까요?"
+    }
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "p10",
+   "wf": "w2_reply",
+   "type": "noul",
+   "state": {
+    "mail": {
+     "body": "혹시 12월 5일 가능하시면 그날로 하고, 아니면 10일로 하겠습니다. 편하신 날 알려 주세요."
+    }
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "이 메일을 받은 사람이 답장(회신·확인·자료 송부 등 행동)을 해야 하는가? `mail.body` 를 보고 판단하라. 단순 공지·감사·광고는 답장이 필요 없다.",
+   "en": "Does the recipient of this email need to reply or act (respond, confirm, send something)? Judge from `mail.body`. Pure notices, thank-you notes and ads need no reply."
+  },
+  {
+   "id": "u01",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "그럼 교육은 11월 20일 하루 과정으로 확정합시다."
+   },
+   "gold": "decision",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "김 대리",
+    "utterance": "제가 금요일까지 강의 자료 초안 만들어서 공유드리겠습니다."
+   },
+   "gold": "action",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "박 과장",
+    "utterance": "실습 시간이 너무 짧은 거 아닌가 싶어요. 참가자들이 따라오기 어려울 수도 있고요."
+   },
+   "gold": "discussion",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "이 주임",
+    "utterance": "어제 야구 보셨어요? 9회에 역전하더라고요."
+   },
+   "gold": "chitchat",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "예산은 400만 원 안에서 집행하는 걸로 정리하죠."
+   },
+   "gold": "decision",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "최 사원은 다음 주 화요일까지 장소 세 군데 견적 받아 와 주세요."
+   },
+   "gold": "action",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "김 대리",
+    "utterance": "온라인으로 하면 참석률이 더 높을까요, 아니면 오프라인이 집중이 잘 될까요?"
+   },
+   "gold": "discussion",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "박 과장",
+    "utterance": "다들 점심 맛있게 드셨죠? 오늘 김치찌개 괜찮았어요."
+   },
+   "gold": "chitchat",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "강사는 외부 전문가 대신 내부 인력으로 가기로 합니다."
+   },
+   "gold": "decision",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "이 주임",
+    "utterance": "설문 문항은 제가 이번 주 안에 정리해서 메일로 보낼게요."
+   },
+   "gold": "action",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "최 사원",
+    "utterance": "작년에는 만족도가 4.2였는데 올해도 비슷하게 나올지 모르겠네요."
+   },
+   "gold": "discussion",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "자, 늦었으니 오늘은 여기까지 하고 다음 주에 이어서 보죠. 수고들 했어요."
+   },
+   "gold": "chitchat",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "박 과장",
+    "utterance": "그 부분은 법무팀 의견을 들어 봐야 할 것 같은데요."
+   },
+   "gold": "discussion",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "좋습니다, 그럼 실습은 두 시간으로 늘리는 걸로 결정."
+   },
+   "gold": "decision",
+   "split": "holdout",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "김 대리",
+    "utterance": "박 과장님, 법무팀 검토 요청은 과장님이 이번 주 수요일까지 넣어 주시는 걸로 할까요?"
+   },
+   "gold": "action",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "wf": "w3_kind",
+   "type": "choice",
+   "state": {
+    "speaker": "최 사원",
+    "utterance": "와, 창밖에 눈 온다. 첫눈이네요."
+   },
+   "gold": "chitchat",
+   "split": "dev",
+   "ko": "회의록에 이 발언을 어떻게 적어야 하는가? `utterance` 가 회의에서 한 말이고 `speaker` 가 말한 사람이다.",
+   "en": "How should this remark be recorded in the meeting minutes? `utterance` is what was said in the meeting and `speaker` is who said it.",
+   "options": [
+    {
+     "key": "decision",
+     "ko": "결정사항",
+     "ko_desc": "회의에서 무엇을 하기로 확정한 내용",
+     "en": "decision",
+     "en_desc": "Something the meeting settled or agreed to do."
+    },
+    {
+     "key": "action",
+     "ko": "할 일",
+     "ko_desc": "특정 사람이 언제까지 무엇을 하겠다·하라는 배정",
+     "en": "action_item",
+     "en_desc": "A task assigned to or taken by a specific person, often with a deadline."
+    },
+    {
+     "key": "discussion",
+     "ko": "논의",
+     "ko_desc": "의견·우려·질문·검토 중인 안건으로 아직 확정되지 않음",
+     "en": "discussion",
+     "en_desc": "An opinion, concern, question or proposal still under discussion."
+    },
+    {
+     "key": "chitchat",
+     "ko": "잡담",
+     "ko_desc": "안건과 관계없는 인사·농담·사적인 이야기",
+     "en": "small_talk",
+     "en_desc": "Greetings, jokes or personal talk unrelated to the agenda."
+    }
+   ]
+  },
+  {
+   "id": "o01",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "김 대리",
+    "utterance": "제가 금요일까지 강의 자료 초안 만들어서 공유드리겠습니다."
+   },
+   "gold": "kim",
+   "split": "dev",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "o02",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "최 사원은 다음 주 화요일까지 장소 세 군데 견적 받아 와 주세요."
+   },
+   "gold": "choi",
+   "split": "dev",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "o03",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "김 대리",
+    "utterance": "박 과장님, 법무팀 검토 요청은 과장님이 이번 주 수요일까지 넣어 주시는 걸로 할까요?"
+   },
+   "gold": "park",
+   "split": "holdout",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "o04",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "이 주임",
+    "utterance": "설문 문항은 제가 이번 주 안에 정리해서 메일로 보낼게요."
+   },
+   "gold": "lee",
+   "split": "dev",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "o05",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "팀장",
+    "utterance": "참가자 명단은 누가 좀 정리해 주면 좋겠는데요."
+   },
+   "gold": "none",
+   "split": "dev",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "o06",
+   "wf": "w3_owner",
+   "type": "choice",
+   "state": {
+    "speaker": "박 과장",
+    "utterance": "그건 이 주임이 지난번에 해 봤으니까 이번에도 이 주임이 맡아 줘요."
+   },
+   "gold": "lee",
+   "split": "holdout",
+   "ko": "`utterance` 에서 일을 맡게 된 사람은 누구인가? 말한 사람(`speaker`)이 아니라 그 일을 실제로 하게 될 사람을 고른다.",
+   "en": "Who ends up owning the task in `utterance`? Pick the person who will actually do the work, not necessarily the `speaker`.",
+   "options": [
+    {
+     "key": "kim",
+     "ko": "김 대리",
+     "ko_desc": "김 대리",
+     "en": "kim",
+     "en_desc": "Deputy Kim"
+    },
+    {
+     "key": "park",
+     "ko": "박 과장",
+     "ko_desc": "박 과장",
+     "en": "park",
+     "en_desc": "Manager Park"
+    },
+    {
+     "key": "lee",
+     "ko": "이 주임",
+     "ko_desc": "이 주임",
+     "en": "lee",
+     "en_desc": "Assistant Lee"
+    },
+    {
+     "key": "choi",
+     "ko": "최 사원",
+     "ko_desc": "최 사원",
+     "en": "choi",
+     "en_desc": "Staff Choi"
+    },
+    {
+     "key": "none",
+     "ko": "담당자 없음",
+     "ko_desc": "맡은 사람이 정해지지 않음",
+     "en": "nobody",
+     "en_desc": "No owner was named."
+    }
+   ]
+  },
+  {
+   "id": "s01",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "강사님이 어려운 개념을 비유로 쉽게 풀어 주셔서 이해가 잘 됐어요."
+   },
+   "gold": "instructor",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "실습 PC가 너무 느려서 따라가기가 힘들었습니다."
+   },
+   "gold": "practice",
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "강의실이 너무 추웠어요. 히터 좀 틀어 주세요."
+   },
+   "gold": "venue",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "8시간은 너무 길어요. 이틀로 나누면 좋겠습니다."
+   },
+   "gold": "schedule",
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "실무에 바로 쓸 수 있는 사례가 많아서 좋았습니다."
+   },
+   "gold": "content",
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "중간에 쉬는 시간이 거의 없어서 집중력이 떨어졌어요."
+   },
+   "gold": "schedule",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "질문에 친절하게 답해 주셔서 감사했습니다."
+   },
+   "gold": "instructor",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "기초 내용이 너무 많아서 이미 아는 사람한테는 지루했어요."
+   },
+   "gold": "content",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "직접 만들어 보는 시간이 제일 재밌었어요. 더 늘려 주세요."
+   },
+   "gold": "practice",
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "점심 도시락이 맛있었어요. 주차가 좀 불편했지만요."
+   },
+   "gold": "venue",
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "진도가 빨라서 놓친 부분이 있는데 자료로 복습할 수 있어서 다행이었어요."
+   },
+   "gold": "content",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "wf": "w4_topic",
+   "type": "choice",
+   "state": {
+    "answer": "말씀이 좀 빠르셔서 받아 적기 어려웠습니다."
+   },
+   "gold": "instructor",
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)은 주로 무엇에 대한 이야기인가?",
+   "en": "What is this open-ended answer (`answer`) from a training satisfaction survey mainly about?",
+   "options": [
+    {
+     "key": "instructor",
+     "ko": "강사",
+     "ko_desc": "강사의 설명·태도·전문성",
+     "en": "instructor",
+     "en_desc": "The instructor's explanations, attitude or expertise."
+    },
+    {
+     "key": "content",
+     "ko": "내용",
+     "ko_desc": "교육 내용의 수준·유용성·구성",
+     "en": "content",
+     "en_desc": "The level, usefulness or structure of the course content."
+    },
+    {
+     "key": "practice",
+     "ko": "실습",
+     "ko_desc": "실습 과제·실습 시간·실습 환경",
+     "en": "hands_on",
+     "en_desc": "Hands-on exercises, practice time or practice setup."
+    },
+    {
+     "key": "venue",
+     "ko": "시설·환경",
+     "ko_desc": "장소·의자·냉난방·식사·주차",
+     "en": "venue",
+     "en_desc": "Room, seating, temperature, food or parking."
+    },
+    {
+     "key": "schedule",
+     "ko": "시간·일정",
+     "ko_desc": "교육 시간 길이·시작 시각·휴식",
+     "en": "schedule",
+     "en_desc": "Length of the session, start time or breaks."
+    }
+   ]
+  },
+  {
+   "id": "v01",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "인생 교육이었습니다. 동료들한테 꼭 들으라고 추천했어요."
+   },
+   "gold": 4,
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v02",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "내용은 괜찮았는데 시간이 너무 길었어요."
+   },
+   "gold": 2,
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v03",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "시간 낭비였습니다. 다시는 신청 안 할 겁니다."
+   },
+   "gold": 0,
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v04",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "전반적으로 유익했어요. 실습이 특히 좋았습니다."
+   },
+   "gold": 3,
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v05",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "강사님은 좋았는데 실습 환경이 엉망이라 절반은 따라가지도 못했어요. 아쉬움이 더 큽니다."
+   },
+   "gold": 1,
+   "split": "dev",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v06",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "특별히 할 말 없습니다."
+   },
+   "gold": 2,
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v07",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "네~ 아주 \"유익\"했네요. 8시간 동안 아는 얘기만 들어서요."
+   },
+   "gold": 0,
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "v08",
+   "wf": "w4_score",
+   "type": "score",
+   "state": {
+    "answer": "기대 이상이었어요. 다음 심화 과정도 꼭 듣고 싶습니다!"
+   },
+   "gold": 4,
+   "split": "holdout",
+   "ko": "교육 만족도 설문의 이 주관식 응답(`answer`)에 드러난 전체 만족도는 어느 단계인가?",
+   "en": "What overall satisfaction level does this open-ended survey answer (`answer`) express?",
+   "levels_ko": [
+    "매우 불만: 강한 불만이나 다시는 안 듣겠다는 뜻",
+    "불만: 아쉬운 점이 좋은 점보다 큼",
+    "보통: 좋은 점과 아쉬운 점이 비슷하거나 중립",
+    "만족: 좋았다는 쪽이 분명함",
+    "매우 만족: 강한 칭찬, 추천하겠다는 뜻"
+   ],
+   "levels_en": [
+    "Very dissatisfied: strong complaints or would never attend again.",
+    "Dissatisfied: the downsides outweigh the positives.",
+    "Neutral: positives and negatives balance, or no clear opinion.",
+    "Satisfied: clearly positive overall.",
+    "Very satisfied: strong praise or would recommend it."
+   ]
+  },
+  {
+   "id": "k01",
+   "wf": "w5_autorenew",
+   "type": "noul",
+   "state": {
+    "clause": "제12조(계약기간) 본 계약의 기간은 1년으로 하며, 만료 1개월 전까지 어느 일방의 서면 해지 통보가 없으면 동일 조건으로 1년씩 연장된다."
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "`clause` 는 별도 의사 표시가 없으면 계약이 자동으로 연장·갱신된다는 조항인가?",
+   "en": "Does `clause` say the contract renews or extends automatically unless someone says otherwise?"
+  },
+  {
+   "id": "k02",
+   "wf": "w5_autorenew",
+   "type": "noul",
+   "state": {
+    "clause": "제12조(계약기간) 본 계약의 기간은 2026년 12월 31일까지로 하며, 연장이 필요한 경우 양 당사자가 별도로 합의한다."
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "`clause` 는 별도 의사 표시가 없으면 계약이 자동으로 연장·갱신된다는 조항인가?",
+   "en": "Does `clause` say the contract renews or extends automatically unless someone says otherwise?"
+  },
+  {
+   "id": "k03",
+   "wf": "w5_autorenew",
+   "type": "noul",
+   "state": {
+    "clause": "제5조(구독) 서비스 이용 기간 종료 시 등록된 결제 수단으로 다음 기간 요금이 결제되며 이용 기간이 갱신된다. 갱신을 원하지 않는 회원은 종료 7일 전까지 해지할 수 있다."
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "`clause` 는 별도 의사 표시가 없으면 계약이 자동으로 연장·갱신된다는 조항인가?",
+   "en": "Does `clause` say the contract renews or extends automatically unless someone says otherwise?"
+  },
+  {
+   "id": "k04",
+   "wf": "w5_autorenew",
+   "type": "noul",
+   "state": {
+    "clause": "제8조(계약의 종료) 본 계약은 교육 종료일에 종료되며, 자동으로 연장되지 아니한다."
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`clause` 는 별도 의사 표시가 없으면 계약이 자동으로 연장·갱신된다는 조항인가?",
+   "en": "Does `clause` say the contract renews or extends automatically unless someone says otherwise?"
+  },
+  {
+   "id": "k05",
+   "wf": "w5_autorenew",
+   "type": "noul",
+   "state": {
+    "clause": "제3조(기간) 계약기간은 6개월이다. 갑은 계약 만료 후 을의 실적을 평가하여 재계약 여부를 결정할 수 있다."
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "`clause` 는 별도 의사 표시가 없으면 계약이 자동으로 연장·갱신된다는 조항인가?",
+   "en": "Does `clause` say the contract renews or extends automatically unless someone says otherwise?"
+  },
+  {
+   "id": "k06",
+   "wf": "w5_penalty",
+   "type": "noul",
+   "state": {
+    "clause": "제9조(위약금) 을이 정당한 사유 없이 교육을 취소하는 경우 계약금액의 30%를 위약금으로 갑에게 지급한다."
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "`clause` 는 계약을 지키지 않거나 중도에 해지할 때 돈(위약금·손해배상 예정액·지체상금)을 물어야 한다고 정하는가?",
+   "en": "Does `clause` require paying money (a penalty, liquidated damages or late-delivery charges) for breaching or terminating the contract early?"
+  },
+  {
+   "id": "k07",
+   "wf": "w5_penalty",
+   "type": "noul",
+   "state": {
+    "clause": "제9조(취소) 교육 7일 전까지 취소하는 경우 위약금 없이 전액 환불한다."
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "`clause` 는 계약을 지키지 않거나 중도에 해지할 때 돈(위약금·손해배상 예정액·지체상금)을 물어야 한다고 정하는가?",
+   "en": "Does `clause` require paying money (a penalty, liquidated damages or late-delivery charges) for breaching or terminating the contract early?"
+  },
+  {
+   "id": "k08",
+   "wf": "w5_penalty",
+   "type": "noul",
+   "state": {
+    "clause": "제10조(지체상금) 을이 납품기한을 넘기는 경우 지체일수 1일당 계약금액의 1천분의 1.5를 지체상금으로 공제한다."
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "`clause` 는 계약을 지키지 않거나 중도에 해지할 때 돈(위약금·손해배상 예정액·지체상금)을 물어야 한다고 정하는가?",
+   "en": "Does `clause` require paying money (a penalty, liquidated damages or late-delivery charges) for breaching or terminating the contract early?"
+  },
+  {
+   "id": "k09",
+   "wf": "w5_penalty",
+   "type": "noul",
+   "state": {
+    "clause": "제11조(분쟁) 본 계약과 관련한 분쟁은 갑의 소재지 관할 법원으로 한다."
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`clause` 는 계약을 지키지 않거나 중도에 해지할 때 돈(위약금·손해배상 예정액·지체상금)을 물어야 한다고 정하는가?",
+   "en": "Does `clause` require paying money (a penalty, liquidated damages or late-delivery charges) for breaching or terminating the contract early?"
+  },
+  {
+   "id": "k10",
+   "wf": "w5_penalty",
+   "type": "noul",
+   "state": {
+    "clause": "제9조(해지) 양 당사자는 30일 전 서면 통보로 계약을 해지할 수 있으며, 이 경우 해지일까지 이행된 부분에 한하여 대금을 정산한다."
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`clause` 는 계약을 지키지 않거나 중도에 해지할 때 돈(위약금·손해배상 예정액·지체상금)을 물어야 한다고 정하는가?",
+   "en": "Does `clause` require paying money (a penalty, liquidated damages or late-delivery charges) for breaching or terminating the contract early?"
+  },
+  {
+   "id": "k11",
+   "wf": "w5_onesided",
+   "type": "noul",
+   "state": {
+    "clause": "제13조(해지) 갑은 필요하다고 인정하는 경우 언제든지 을에게 통보하여 본 계약을 해지할 수 있으며, 을은 이에 대하여 이의를 제기할 수 없다."
+   },
+   "gold": true,
+   "split": "dev",
+   "ko": "`clause` 는 갑(발주자) 한쪽만 사유 없이 또는 일방적으로 계약을 해지하거나 내용을 바꿀 수 있게 하는가? 양쪽 모두에게 같은 권리가 있으면 아니다.",
+   "en": "Does `clause` let only party A (the client) terminate or change the contract unilaterally or without cause? If both parties have the same right, the answer is no."
+  },
+  {
+   "id": "k12",
+   "wf": "w5_onesided",
+   "type": "noul",
+   "state": {
+    "clause": "제13조(해지) 갑 또는 을은 상대방이 계약을 위반하고 14일 이내에 시정하지 않는 경우 계약을 해지할 수 있다."
+   },
+   "gold": false,
+   "split": "dev",
+   "ko": "`clause` 는 갑(발주자) 한쪽만 사유 없이 또는 일방적으로 계약을 해지하거나 내용을 바꿀 수 있게 하는가? 양쪽 모두에게 같은 권리가 있으면 아니다.",
+   "en": "Does `clause` let only party A (the client) terminate or change the contract unilaterally or without cause? If both parties have the same right, the answer is no."
+  },
+  {
+   "id": "k13",
+   "wf": "w5_onesided",
+   "type": "noul",
+   "state": {
+    "clause": "제6조(변경) 갑은 교육 일정과 장소를 사정에 따라 변경할 수 있으며 을은 이에 따라야 한다."
+   },
+   "gold": true,
+   "split": "holdout",
+   "ko": "`clause` 는 갑(발주자) 한쪽만 사유 없이 또는 일방적으로 계약을 해지하거나 내용을 바꿀 수 있게 하는가? 양쪽 모두에게 같은 권리가 있으면 아니다.",
+   "en": "Does `clause` let only party A (the client) terminate or change the contract unilaterally or without cause? If both parties have the same right, the answer is no."
+  },
+  {
+   "id": "k14",
+   "wf": "w5_onesided",
+   "type": "noul",
+   "state": {
+    "clause": "제6조(변경) 계약 내용의 변경은 양 당사자의 서면 합의로만 할 수 있다."
+   },
+   "gold": false,
+   "split": "holdout",
+   "ko": "`clause` 는 갑(발주자) 한쪽만 사유 없이 또는 일방적으로 계약을 해지하거나 내용을 바꿀 수 있게 하는가? 양쪽 모두에게 같은 권리가 있으면 아니다.",
+   "en": "Does `clause` let only party A (the client) terminate or change the contract unilaterally or without cause? If both parties have the same right, the answer is no."
+  }
+ ]
+}
