@@ -13,6 +13,30 @@ section() {
   printf '\n== %s ==\n' "$1"
 }
 
+smoke_vibe_sunsang() {
+section "vibe-sunsang converter"
+mkdir -p "$TMP_ROOT/vibe-sunsang-sessions"
+cat > "$TMP_ROOT/vibe-sunsang-sessions/smoke.jsonl" <<'JSONL'
+{"timestamp":"2026-01-01T00:00:00Z","type":"session_meta","payload":{"id":"smoke-session","cwd":"/smoke/vibe_sunsang"}}
+{"timestamp":"2026-01-01T00:00:01Z","type":"response_item","payload":{"type":"message","role":"user","content":[{"type":"input_text","text":"Convert this smoke session."}]}}
+{"timestamp":"2026-01-01T00:00:02Z","type":"response_item","payload":{"type":"message","role":"assistant","content":[{"type":"output_text","text":"Smoke session converted."}]}}
+JSONL
+printf '{}\n' > "$TMP_ROOT/vibe-sunsang-names.json"
+python3 plugins/vibe-sunsang-codex/scripts/convert_sessions.py \
+  --sessions-dir "$TMP_ROOT/vibe-sunsang-sessions" \
+  --names-file "$TMP_ROOT/vibe-sunsang-names.json" \
+  --output-dir "$TMP_ROOT/vibe-sunsang" \
+  --force
+test -s "$TMP_ROOT/vibe-sunsang/INDEX.md"
+rg -Fq 'Convert this smoke session.' "$TMP_ROOT/vibe-sunsang/vibe_sunsang/2026-01-01_smokesession.md"
+rg -Fq 'Smoke session converted.' "$TMP_ROOT/vibe-sunsang/vibe_sunsang/2026-01-01_smokesession.md"
+}
+
+if [[ "${1:-}" == "--vibe-sunsang-only" ]]; then
+  smoke_vibe_sunsang
+  exit 0
+fi
+
 section "package audit"
 python3 scripts/validate_packages.py
 
@@ -40,11 +64,7 @@ section "skillers-suda quick validate"
 python3 plugins/skillers-suda-codex/skills/skillers-suda/scripts/quick_validate.py \
   plugins/skillers-suda-codex/skills/skillers-suda
 
-section "vibe-sunsang converter"
-python3 plugins/vibe-sunsang-codex/skills/vibe-sunsang-retro/scripts/convert_sessions.py \
-  --limit 1 \
-  --output-dir "$TMP_ROOT/vibe-sunsang" \
-  --force
+smoke_vibe_sunsang
 
 section "pumasi workspace init"
 python3 plugins/pumasi-codex/skills/pumasi/scripts/init_workspace.py \
