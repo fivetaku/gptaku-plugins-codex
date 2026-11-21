@@ -15,6 +15,8 @@ class XPost:
     likes: int
     replies: int
     discovered_by: tuple[str, ...]
+    content_complete: bool | None = None
+    incomplete_reason: str = ""
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)

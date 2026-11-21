@@ -128,6 +128,8 @@ class FetchResult:
     # (browser / more routes may help); "infra_or_auth" = every route uniformly
     # 401/404 → a real wall stealth cannot clear.
     block_class: str = ""
+    content_complete: bool | None = None
+    incomplete_reason: str = ""
 
     def __post_init__(self) -> None:
         report = analyze_untrusted_content(self.content, source_url=self.final_url)
@@ -175,6 +177,8 @@ class FetchResult:
             "extraction_source": self.extraction_source,
             "extraction_meta": self.extraction_meta,
             "block_class": self.block_class,
+            "content_complete": self.content_complete,
+            "incomplete_reason": self.incomplete_reason,
         }
 
 
@@ -939,6 +943,8 @@ def _fetch_core(
                     verdict=Verdict.STRONG_OK.value,
                     profile_used=f"phase0:{p0['platform']}", trace=trace,
                     summary=f"Phase 0 official route: {p0['platform']}:{p0['route']}",
+                    content_complete=p0.get("content_complete"),
+                    incomplete_reason=p0.get("incomplete_reason", ""),
                     stop_reason="success",
                 )
             # Recognised platform but every official route failed → fall through

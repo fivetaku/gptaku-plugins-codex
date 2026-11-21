@@ -128,7 +128,13 @@ def _x(url: str, timeout: int) -> dict:
             attempts.append(_attempt("x", "tweet-result", ok, x.status_code, x.text,
                                      "has-text" if ok else f"status={x.status_code}"))
             if ok:
+                incomplete_reason = ",".join(
+                    key for key in ("truncated", "is_note_tweet", "note_tweet", "note_tweet_results", "article")
+                    if d.get(key)
+                )
                 return {"platform": "x", "ok": True, "route": "tweet-result",
+                        "content_complete": False if incomplete_reason else None,
+                        "incomplete_reason": incomplete_reason,
                         "content": x.text, "final_url": url, "attempts": attempts}
         except Exception as e:
             attempts.append(_attempt("x", "tweet-result", False, 0, "", f"{type(e).__name__}"))

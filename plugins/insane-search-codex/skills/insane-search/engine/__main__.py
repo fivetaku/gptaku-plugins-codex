@@ -139,6 +139,9 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(result.to_untrusted_text(), end="")
+        if result.content_complete is False:
+            print(f"[engine] content_complete=False incomplete_reason={result.incomplete_reason}; "
+                  "반환된 본문은 불완전할 수 있습니다. 전문으로 인용하지 마세요.", file=sys.stderr)
         if result.prompt_injection_risk in ("medium", "high"):
             signals = ",".join(result.prompt_injection_signals) or "none"
             print(

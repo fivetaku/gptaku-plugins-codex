@@ -93,7 +93,7 @@ curl -sL "https://publish.twitter.com/oembed?url=https://x.com/{user}/status/{tw
 |------|------|
 | `author_name` | 작성자 표시 이름 |
 | `author_url` | 작성자 프로필 URL |
-| `html` | 트윗 전문이 포함된 HTML blockquote |
+| `html` | 반환된 트윗 HTML blockquote (전문 보장 없음) |
 | `url` | 트윗 원본 URL |
 
 ## 개별 트윗 조회 — tweet-result (가장 안정적, 권장)
@@ -116,12 +116,22 @@ print(d['user']['name'], '@'+d['user']['screen_name']); print(d['text']); print(
 
 | 필드 | 설명 |
 |------|------|
-| `text` | 트윗 전문 (plain text) |
+| `text` | 반환된 트윗 본문 (plain text, 장문은 일부일 수 있음) |
 | `user.name` / `user.screen_name` | 작성자 이름 / 핸들 |
 | `favorite_count` / `conversation_count` | 좋아요 / 댓글 수 |
 | `created_at` | 작성 시각 |
 
 > `token` 파라미터는 임의 값(`a`)이어도 동작한다. `id`는 `/status/{id}` 경로에서 추출.
+
+### 본문 완전성 표시
+
+엔진의 URL 조회 결과와 `engine.x_search`의 각 게시물은 `content_complete`와
+`incomplete_reason`을 제공한다. `truncated`, `is_note_tweet`, `note_tweet`,
+`note_tweet_results`, `article` 신호가 있으면 `content_complete=false`로 표시한다.
+잘림 또는 장문·Article 미리보기 가능성을 뜻하며, `incomplete_reason`에 해당 필드명을 남긴다.
+신호가 없으면 `null`(미확인)이며 전문이 확보됐다는 뜻이 아니다.
+`ok=true`는 기존 경로의 조회 성공만 뜻한다. 부분 본문은 그대로 보존하되 전문으로 인용하지 않는다.
+일반 텍스트 CLI는 불완전 경고를 stderr에 출력한다. 이 표시는 추가 수집을 실행하지 않는다.
 
 ## 조합 패턴 (검색 → 상세)
 

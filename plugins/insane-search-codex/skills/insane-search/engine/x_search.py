@@ -111,6 +111,8 @@ def search_x(
             likes=post.likes,
             replies=post.replies,
             discovered_by=tuple(source_by_url.get(post.url, post.discovered_by)),
+            content_complete=post.content_complete,
+            incomplete_reason=post.incomplete_reason,
         )
         for post in posts
     )
@@ -219,6 +221,8 @@ def _validate_url(url: str, timeout: int) -> XPost | None:
         likes=int(tweet.get("favorite_count") or 0),
         replies=int(tweet.get("conversation_count") or 0),
         discovered_by=(),
+        content_complete=result.get("content_complete"),
+        incomplete_reason=result.get("incomplete_reason", ""),
     )
 
 
