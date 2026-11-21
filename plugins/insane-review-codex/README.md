@@ -1,6 +1,6 @@
 # insane-review-codex
 
-GPT Pro(웹 전용 — API 없음; 현 시점 최신 플래그십 모델의 Pro 추론)를 Codex CLI 안으로 끌어오는 브리지 플러그인. (v0.6.8 — 본진 insane-review v0.6.8과 엔진 1:1)
+GPT Pro(웹 전용 — API 없음; 현 시점 최신 플래그십 모델의 Pro 추론)를 Codex CLI 안으로 끌어오는 브리지 플러그인. (v0.6.9)
 
 repomix로 관련 코드만 정밀 패킹 → 구독 ChatGPT 웹에 CDP 자동화로 투입 → 분석/리뷰 회수.
 API 비용 0, 사용자의 ChatGPT 요금제로 동작.
@@ -88,7 +88,7 @@ insane-review-codex/
     SKILL.md                      — 스킬 실행 지시서 (온보딩 분기 + 리뷰 절차)
     references/council-setup.md  — agent-council 등록 가이드
   bin/
-    pack_and_ask.py               — repomix 패킹 + ChatGPT CDP 브리지 (본진과 1:1)
+    pack_and_ask.py               — repomix 패킹 + ChatGPT CDP 브리지
   shared/questioning-policy.md    — 번호형 선택지 질문 규약
   assets/                         — 아이콘 등 (예비)
   .gitignore

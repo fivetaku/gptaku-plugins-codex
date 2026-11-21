@@ -1,6 +1,6 @@
 # skillers-suda-codex
 
-Codex marketplace package for the `skillers-suda` workshop (v1.4.5, tracks the upstream skillers-suda 1.4.5 release).
+Codex marketplace package for the `skillers-suda` workshop (v1.4.6, tracks the upstream skillers-suda 1.4.5 release).
 
 Included skills:
 - `skillers-suda` — Spawns four expert sub-agents in parallel to debate an idea, interviews the user with numbered chat choices, then designs, builds, verifies, evals, tunes the description of, and packages a working Codex skill (or skill + embedded sub-agent prompts, or a plugin bundle).

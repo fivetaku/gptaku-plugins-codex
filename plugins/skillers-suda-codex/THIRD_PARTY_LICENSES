@@ -1,0 +1,40 @@
+Third-Party Licenses
+====================
+
+This project includes code from the following third-party projects:
+
+--------------------------------------------------------------------------------
+
+Project: skill-creator
+Source: https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator
+License: Apache License 2.0
+Copyright: Copyright 2025 Anthropic, PBC
+
+Files included:
+- skills/skillers-suda/scripts/run_eval.py
+- skills/skillers-suda/scripts/utils.py
+- skills/skillers-suda/scripts/aggregate_benchmark.py
+- skills/skillers-suda/scripts/generate_report.py
+- skills/skillers-suda/scripts/run_loop.py
+- skills/skillers-suda/scripts/improve_description.py
+- skills/skillers-suda/scripts/package_skill.py
+- skills/skillers-suda/scripts/quick_validate.py
+- skills/skillers-suda/references/agents/grader.md
+- skills/skillers-suda/references/agents/comparator.md
+- skills/skillers-suda/references/agents/analyzer.md
+- skills/skillers-suda/references/schemas.md
+- skills/skillers-suda/assets/eval-viewer/generate_review.py
+- skills/skillers-suda/assets/eval-viewer/viewer.html
+- skills/skillers-suda/assets/eval_review.html
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use these files except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

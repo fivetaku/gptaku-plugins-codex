@@ -107,8 +107,12 @@ STREAMING_BTN_SELECTORS = [
     'button[aria-label="Stop streaming"]',
     'button[data-testid*="stop"]',
 ]
-USER_MSG_SELECTORS = ['[data-message-author-role="user"]', 'section[data-turn="user"]', 'article[data-turn="user"]']
-ASSISTANT_MSG_SELECTORS = ['[data-message-author-role="assistant"]', 'section[data-turn="assistant"]', 'article[data-turn="assistant"]']
+USER_MSG_SELECTORS = ['[data-message-author-role="user"]', 'section[data-turn="user"]', 'article[data-turn="user"]',
+                      '[data-content-search-unit-key$=":user"]']
+ASSISTANT_MSG_SELECTORS = ['[data-message-author-role="assistant"]', 'section[data-turn="assistant"]', 'article[data-turn="assistant"]',
+                           '[data-content-search-unit-key$=":assistant"]']
+NEW_ASSISTANT_SELECTOR = '[data-content-search-unit-key$=":assistant"]'
+ASSISTANT_BODY_SELECTOR = '[data-markdown-text-style="assistant-message"]'
 # 턴 컨테이너(실측 2026-08-25: section[data-turn]) — copy 툴바는 메시지 div 바깥, 이 컨테이너 안에 있다
 TURN_CONTAINER_SELECTOR = 'section[data-turn], article[data-turn], [data-turn]'
 
@@ -874,12 +878,14 @@ def is_streaming(page) -> bool:
 
 
 def msg_id_set(page) -> set:
-    """현재 DOM의 data-message-id 집합(역할 무관, 실측 2026-07-19: 모든 메시지 노드에 존재).
+    """현재 DOM의 메시지 UUID 집합(구 data-message-id + 새 selection/search UUID).
     실패 시 빈 집합 — base로 쓰일 때 빈 집합은 '아무것도 제외 안 함'이라 fail-open이 아니다
     (URL 결속이 1차 방어이므로 id는 우리 채팅 안에서만 판정에 쓰인다)."""
     try:
         return set(page.eval_on_selector_all(
-            "[data-message-id]", 'els => els.map(e => e.getAttribute("data-message-id"))'))
+            '[data-message-id], [data-chatgpt-selection-message-id], [data-chatgpt-search-message-ids]',
+            '''els => els.flatMap(e => ['data-message-id', 'data-chatgpt-selection-message-id',
+              'data-chatgpt-search-message-ids'].flatMap(a => (e.getAttribute(a) || '').split(/\\s+/).filter(Boolean)))'''))
     except Exception:
         return set()
 
@@ -894,16 +900,31 @@ def new_assistant_node(page, base_ids: set | None, base_assistant: int = 0):
         if base_ids is None:
             return nodes[-1] if len(nodes) > base_assistant else None
         # id가 없는 컨테이너(section/article 폴백)는 차집합 판정 불가 → 제외(옛 턴을 '신규'로 오인 방지)
-        fresh = [n for n in nodes
-                 if (n.get_attribute("data-message-id") or "") and n.get_attribute("data-message-id") not in base_ids]
-        return fresh[-1] if fresh else None
+        for node in reversed(nodes):
+            ids = set((node.get_attribute('data-chatgpt-search-message-ids') or '').split())
+            for attr in ('data-message-id', 'data-chatgpt-selection-message-id'):
+                value = node.get_attribute(attr)
+                if value:
+                    ids.add(value)
+            if not ids and node.get_attribute('data-content-search-unit-key'):
+                body = node.query_selector('[data-chatgpt-selection-message-id]')
+                if body:
+                    ids.add(body.get_attribute('data-chatgpt-selection-message-id'))
+            if ids - base_ids:
+                return node
+        return None
     except Exception:
         return None
 
 
 def _node_text(node) -> str:
     try:
-        return (node.inner_text() or "") if node is not None else ""
+        if node is None:
+            return ""
+        if node.get_attribute('data-content-search-unit-key'):
+            # Never read the shared user/assistant ancestor, role header or toolbar.
+            return '\n\n'.join((body.inner_text() or '') for body in node.query_selector_all(ASSISTANT_BODY_SELECTOR))
+        return node.inner_text() or ""
     except Exception:
         return ""
 
@@ -964,18 +985,36 @@ def last_assistant_node(page):
 
 
 def last_assistant_text(page) -> str:
-    node = last_assistant_node(page)
-    if node:
-        try:
-            return node.inner_text() or ""
-        except Exception:
-            return ""
-    return ""
+    return _node_text(last_assistant_node(page))
 
 
 def node_copy_button(node):
     """해당 assistant 노드 '안'의 턴 복사 버튼(전역 마지막 버튼이 아님 — 코드블록 copy/다른 턴 오클릭 방지)."""
     if node is None:
+        return None
+    # New UI shares an ancestor with the user turn. Only accept an exact assistant
+    # copy action outside message/code content, in a scope containing this assistant
+    # and no other assistant. Never climb to the conversation/document root.
+    try:
+        wrapper = node.evaluate_handle('(n, sel) => n.closest(sel)', NEW_ASSISTANT_SELECTOR).as_element()
+        if wrapper is not None:
+            return wrapper.evaluate_handle('''(n, sel) => {
+              for (let p=n, depth=0; p && depth<=4; p=p.parentElement, depth++) {
+                if (p===document.body || p===document.documentElement) break;
+                const assistants = [...p.querySelectorAll(sel)];
+                if (p!==n && (assistants.length!==1 || assistants[0]!==n)) break;
+                const buttons = [...p.querySelectorAll('button')].filter(b => {
+                  const label = (b.getAttribute('aria-label') || '').trim().toLowerCase();
+                  return ['copy', '복사'].includes(label) && b.getClientRects().length
+                    && !b.closest('[inert], [aria-hidden="true"], pre, code, '
+                      + '[data-markdown-text-style="assistant-message"], [data-content-search-unit-key$=":user"]');
+                });
+                if (buttons.length===1) return buttons[0];
+                if (buttons.length>1) return null;
+              }
+              return null;
+            }''', NEW_ASSISTANT_SELECTOR).as_element()
+    except Exception:
         return None
     scopes = [node]
     try:
@@ -1013,6 +1052,10 @@ def turn_terminal(page, node) -> bool:
     완성된 답을 두고 최대 대기를 소진시켰다(2026-08-24 GPT Pro 리뷰 P0)."""
     if node is None or is_streaming(page):
         return False
+    if node.evaluate('(n, sel) => !!n.closest(sel)', NEW_ASSISTANT_SELECTOR):
+        # Latest stop-button structure is unverified; a ready composer alone is
+        # not evidence that this specific assistant has finished.
+        return node_copy_button(node) is not None
     return node_copy_button(node) is not None or send_button_ready(page)
 
 
@@ -1660,7 +1703,7 @@ def wait_for_turn_response(page, force_after=None, max_wait=None,
                            skip_sent_check: bool = False, on_bound=None) -> tuple[str, str, str | None]:
     """전송이 만든 '대화 URL' + message-id에 결속해 응답을 회수(v0.6.0 identity 결속).
     - conv_url: 이미 결속된 대화 URL(회수 재시도/harvest). None이면 전송 직후 SPA에서 포착.
-    - base_ids: 전송 직전 DOM의 data-message-id 집합 — 신규 턴을 id 차집합으로 판정.
+    - base_ids: 전송 직전 DOM의 메시지 UUID 집합 — 신규 턴을 id 차집합으로 판정.
     - skip_sent_check: 회수 재시도/harvest 경로 — user 턴 존재를 전제(재전송 없음).
     반환: (status, text, conv_url) — status ∈ {'ok','timeout','not_sent','sent_unknown_location','quota'}."""
     mw = max_wait if max_wait else MAX_WAIT_SECS

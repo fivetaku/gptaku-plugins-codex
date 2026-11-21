@@ -1,7 +1,10 @@
 # Changelog — insane-review-codex
 
 본진판 `insane-review`의 기능 업데이트를 Codex 포트로 반영한 이력.
-엔진(`bin/pack_and_ask.py`)은 본진 `bin/pack_and_ask.py`와 1:1로 동일한 순수 Python이다.
+
+## 0.6.9 — 2026-11-22
+
+새 답변 ID와 본문 영역을 인식하고, 해당 답변의 복사 버튼을 확인한 뒤 회수한다.
 
 ## 0.6.8 — 2026-09-08
 
