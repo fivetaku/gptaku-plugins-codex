@@ -1,7 +1,7 @@
 {
   "name": "goaljaby-codex",
-  "version": "0.6.3",
-  "description": "Codex-native bridge from a PRD folder to Codex /goal — generates 5 review docs (VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command) in the user's language (auto-detected; ko/en first-class with deterministic heading validation) plus a PLANS.md ExecPlan, enforces a 4,000-character compact with Korean+English OR protected-clause regex, inherits design references and kkirikkiri gates when present, then hands off a ready-to-copy /goal command after human approval.",
+  "version": "0.8.1",
+  "description": "Codex-native bridge from a PRD folder to Codex /goal — generates 5 review docs (VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command) in the user's language (auto-detected; ko/en first-class with deterministic heading validation) plus a PLANS.md ExecPlan, enforces a 4,000-character compact with Korean+English OR protected-clause regex, inherits design references and kkirikkiri gates when present, then starts the native goal after human approval.",
   "author": {
     "name": "fivetaku",
     "url": "https://github.com/fivetaku"
@@ -22,8 +22,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Goaljaby Codex",
-    "shortDescription": "Turn a PRD folder into review docs in your language plus a Codex /goal handoff",
-    "longDescription": "Package the Codex-native goaljaby skill that converts a PRD folder into five review documents (VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command) in the user's language plus a PLANS.md ExecPlan, enforces a 4,000-character compact, inherits design references and multi-agent gate rules when present, shows a review summary in chat, and after a mandatory approval gate hands off a ready-to-copy Codex /goal command.",
+    "shortDescription": "Turn a PRD folder into review docs in your language plus an approval-triggered Codex goal",
+    "longDescription": "Package the Codex-native goaljaby skill that converts a PRD folder into five review documents (VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command) in the user's language plus a PLANS.md ExecPlan, enforces a 4,000-character compact, inherits design references and multi-agent gate rules when present, shows a review summary in chat, and after a mandatory approval gate starts the native Codex goal.",
     "developerName": "GPTaku",
     "category": "Productivity",
     "capabilities": [
@@ -35,9 +35,9 @@
     "privacyPolicyURL": "https://github.com/fivetaku/gptaku_plugins",
     "termsOfServiceURL": "https://github.com/fivetaku/gptaku_plugins",
     "defaultPrompt": [
-      "Convert this PRD folder into review docs and a PLANS.md ExecPlan, then give me a /goal command to run.",
+      "Convert this PRD folder into review docs and a PLANS.md ExecPlan, then start the goal once I approve.",
       "Use goaljaby to bridge my PRD into a Codex /goal-driven long-running session.",
-      "Prep VALIDATION/RECOVERY/PLAN/PROGRESS docs from my PRD and a ready-to-copy /goal handoff."
+      "Prep VALIDATION/RECOVERY/PLAN/PROGRESS docs from my PRD and start the goal after review."
     ],
     "brandColor": "#0F766E",
     "composerIcon": "./assets/goaljaby-codex.svg",

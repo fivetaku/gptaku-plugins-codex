@@ -50,7 +50,7 @@ text = text.replace("  ", " ").strip()
 
 컴팩트 후:
 ```
-- 모든 실패 처리·scope 규칙·3회(3 attempts) 룰은 RECOVERY.md를 따른다. 상세 진행은 ./PLANS.md를 읽는다.
+- scope 확장 금지. 모든 실패 처리·3회(3 attempts) 룰은 RECOVERY.md를 따른다. 상세 진행은 ./PLANS.md를 읽는다.
 ```
 
 PROTECTED_CLAUSES P2·P3·P4는 한 줄 안에 압축되어 정규식 매칭이 유지된다.
@@ -69,6 +69,10 @@ PROTECTED_CLAUSES P2·P3·P4는 한 줄 안에 압축되어 정규식 매칭이 
 
 자체 검증: 본문 어디서도 정의 안 된 약어가 등장하지 않는지 확인.
 
+**치환 예외 (v0.7.0)**: 다음 두 문장 안의 파일명은 약어로 바꾸지 않는다 — 정규식 검사가 원래 파일명을 찾기 때문이다.
+- P5 문장의 `PROGRESS.md` ("… PROGRESS.md를 업데이트한다" / "Update PROGRESS.md …"). 바꾸면 P5 정규식이 매칭되지 않아 컴팩트가 실패한다(v0.6.x까지의 잠복 충돌).
+- 작업 상태 규칙 문장의 `PLAN.md` ("작업을 시작하면 PLAN.md의 해당 줄을 `[>]` …"). `TASK_STATUS_RULE` 검사 대상이다.
+
 ### 단계 4: 마일스톤 요약
 
 원본:
@@ -83,7 +87,7 @@ PROTECTED_CLAUSES P2·P3·P4는 한 줄 안에 압축되어 정규식 매칭이 
 P.md의 마일스톤을 순서대로 진행한다 (Auth refactor → 프로필 → 설정).
 ```
 
-상세는 PLAN.md/PLANS.md에 위임. PLANS.md가 운영 단일 진실 원천이 된다.
+상세는 PLAN.md/PLANS.md에 위임. PLANS.md가 운영 단일 진실 원천이며, 세부 작업 상태의 정본은 PLAN.md 체크리스트다. PROGRESS.md와 PLANS.md의 Progress 섹션은 실행 로그·요약을 동기화한다.
 
 ### 단계 5: 작업 유형별 군더더기 제거
 
@@ -122,13 +126,28 @@ def verify_compact(text: str) -> list[str]:
         if abbr not in standard and abbr not in abbreviations_defined:
             failures.append(f"undefined abbreviation: {abbr}.md")
     return failures
+
+
+# v0.7.0 — 생성된 PLAN.md에 작업 체크리스트가 있을 때만 적용 (P1~P5와 별개)
+def verify_task_rule(text: str, plan_has_tasks: bool) -> list[str]:
+    if not plan_has_tasks:
+        return []
+    failures = []
+    if not re.search(r"PLAN\.md", text):
+        failures.append("TASK_STATUS_RULE: PLAN.md not mentioned")
+    for marker in ("[>]", "[x]", "[!]"):
+        if marker not in text:
+            failures.append(f"TASK_STATUS_RULE: marker {marker} missing")
+    return failures
 ```
 
-`failures`가 비어 있어야 컴팩트 통과. 비어 있지 않으면 결과 폐기 + 구조적 오버플로우 보고.
+`TASK_STATUS_RULE`은 PLAN.md에 작업 체크리스트가 있을 때만 적용하며, P1~P5와 별도로 보호한다. 컴팩트의 어느 단계에서도 작업 상태 규칙을 삭제하거나 마커를 바꾸지 않는다. 실패하면 템플릿의 작업 상태 규칙 문장(약 90자)을 P5 문장 바로 앞에 다시 넣고 재검증한다. 그래도 4,000자를 넘으면 구조적 오버플로우로 처리한다.
+
+`verify_compact`와 `verify_task_rule`의 `failures`가 모두 비어 있어야 컴팩트 통과. 비어 있지 않으면 결과 폐기 + 구조적 오버플로우 보고.
 
 **시작 검증 메모**: 영어 명령형 동사 시작 강제는 두지 않는다. `/goal ` 다음에 condition이 있는지만 검증한다. Codex `/goal`의 종료 판정도 비영어 condition(한국어 등 `output_lang`)을 처리한다. objective는 `./PLANS.md`를 가리키는 파일 포인터 형태를 권장한다.
 
-> **Codex 핸드오프 주의**: 컴팩트를 통과한 `goal-command.md` 본문은 SKILL.md Step 10에서 **복사-실행용 `/goal` 명령**으로 그대로 제시한다. Codex 스킬은 슬래시 명령을 마지막 줄로 자동 발사할 수 없다(그건 원판 호스트의 메커니즘). 따라서 본문은 "사용자가 복사해 붙여넣어 실행할" 한 줄로 완결되어야 한다.
+> **Codex 골 시작**: 컴팩트를 통과한 `goal-command.md`는 검토용 명령 기록이다. SKILL.md Step 9에서 사용자가 승인한 뒤에만 Step 10에서 선두 `/goal `을 제거한 본문을 `create_goal`의 `objective`로 전달한다. 검증된 본문의 내용과 `./PLANS.md` 파일 포인터를 그대로 보존한다. `token_budget`은 사용자가 명시적으로 요청한 경우에만 지정한다. 승인 뒤 사용자에게 복사·붙여넣기를 요구하거나 슬래시 명령을 마지막 줄로 자동 발사한다고 설명하지 않는다. `create_goal`을 사용할 수 없거나 호출이 실패하면 시작하지 못한 이유와 문서 위치를 알리며, 골이 시작됐다고 기록하지 않는다.
 
 ## 구조적 오버플로우 보고 (모든 컴팩트 실패 시)
 

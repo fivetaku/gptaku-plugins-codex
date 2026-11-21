@@ -1,11 +1,11 @@
 ---
 name: goaljaby
-description: PRD 폴더를 받아 사용자 언어로 검토 문서 5종(VALIDATION/RECOVERY/PLAN/PROGRESS 대응 + PLANS.md ExecPlan)을 생성하고, 검토 요약을 대화창에 띄운 뒤 사용자 승인을 받으면 복사해서 실행할 수 있는 Codex `/goal` 명령을 건넨다. 트리거 — "/goaljaby", "골잡이", "골 셋업 만들어줘", "PRD에서 골 만들어줘", "PRD 골 변환", "VALIDATION RECOVERY 만들어줘", "골 실행 준비", "set up goal from PRD", "goaljaby", "prep goal docs", "make goal scaffolding". PRD 폴더가 있고 `/goal` 기반 장시간 세션으로 넘어가고 싶을 때 사용한다.
+description: PRD 폴더를 받아 사용자 언어로 검토 문서 5종(VALIDATION/RECOVERY/PLAN/PROGRESS 대응 + PLANS.md ExecPlan)을 생성하고, 검토 요약을 대화창에 띄운 뒤 사용자 승인을 받으면 Codex 목표를 즉시 시작한다. 트리거 — "/goaljaby", "골잡이", "골 셋업 만들어줘", "PRD에서 골 만들어줘", "PRD 골 변환", "VALIDATION RECOVERY 만들어줘", "골 실행 준비", "set up goal from PRD", "goaljaby", "prep goal docs", "make goal scaffolding". PRD 폴더가 있고 `/goal` 기반 장시간 세션으로 넘어가고 싶을 때 사용한다.
 ---
 
 # 골잡이 (goaljaby) — Codex 판
 
-> PRD를 Codex `/goal` 운영 계약으로 변환하는 브릿지 스킬. **사용자 언어로** 검토 문서 5종 + `PLANS.md` ExecPlan을 생성하고, 검토 요약을 대화창에 띄운 뒤 승인을 받으면 **복사해서 바로 실행할 수 있는 `/goal` 명령**을 건넨다.
+> PRD를 Codex `/goal` 운영 계약으로 변환하는 브릿지 스킬. **사용자 언어로** 검토 문서 5종 + `PLANS.md` ExecPlan을 생성하고, 검토 요약을 대화창에 띄운 뒤 승인을 받으면 **현재 세션에서 목표를 시작한다**.
 
 Read these first:
 - `references/templates.md`
@@ -20,21 +20,9 @@ Read these first:
 
 PRD가 "무엇을 만들지"라면, `/goal`은 "어떻게 끝났음을 증명하고 실패에서 어떻게 돌아올지"의 운영 계약이다. 두 단계 사이의 빈 구간(VALIDATION/RECOVERY/PLAN 작성 + 4,000자 컴팩트 + 사용자 언어 검토 + 골 시작)을 매번 손으로 채우는 대신 자동화한다.
 
-## 첫 실행 설정 (수동 — 훅 아님)
+## Codex에서 목표 시작
 
-> Codex 플러그인은 hooks를 지원하지 않는다. 원판 goaljaby의 `setup/setup.sh`(첫 실행 안내·업데이트 체크)는 **이식하지 않는다.**
-> 별도 부트스트랩이 필요하면 사용자가 직접 실행하는 1회 단계로만 안내한다(현재 이 스킬은 외부 부트스트랩이 필요 없다). 이 스킬은 PRD 읽기·검토 문서 쓰기 외에 아무 부수효과도 만들지 않는다.
-
-## 원판(본진)과의 차이 (왜 Codex 판이 따로 있나)
-
-원판 goaljaby는 호스트 CLI 전용이다. 마지막에 어시스턴트가 응답의 *마지막 줄*로 `/goal`을 출력하면 호스트가 그 줄을 다음 턴 입력으로 처리해 골 루프를 자동 시작한다. **Codex에는 이 메커니즘이 없다** — 스킬이 슬래시 명령을 마지막 줄로 "자동 발사"할 수 없다.
-
-대신 Codex에는 **네이티브 `/goal`** (codex 0.139에서 `goals` 기능 stable=true)과 `/plan` 모드, 그리고 `PLANS.md`/ExecPlan 관례가 있다. 그래서 이 판은:
-
-- 원판의 검토 문서 5종(VALIDATION/RECOVERY/PLAN/PROGRESS + goal-command)을 그대로 `output_lang`(사용자 언어)으로 생성하고,
-- 추가로 `PLANS.md` ExecPlan 파일(**Progress / Validation / Decision-Log** 섹션)을 생성해 본진 5종을 그 위에 매핑한다.
-- 마지막에 슬래시 명령을 자동 발사하는 대신, 사용자가 **복사해서 실행**할 `/goal` 명령 한 줄을 제시한다.
-- objective는 ≤ 4,000자로 유지하고, **파일 포인터 패턴**을 쓴다 — objective 본문이 `./PLANS.md`를 가리킨다.
+원판은 승인된 명령을 턴 종료 훅에서 실행한다. Codex판은 Step 9에서 사용자가 시작을 선택하면 같은 세션의 `create_goal`을 호출한다. 검토 문서와 `PLANS.md`를 만든 뒤 승인된 objective를 사용한다.
 
 ## 언어 정책 (shared/language-policy.md · references/policy-excerpt.md 상속)
 
@@ -106,7 +94,7 @@ PRD 디렉토리 인수와 내용을 확인한다.
 - Bash로 acceptance criteria 패턴(`- [ ]`, "Acceptance Criteria", "완료 판정", "completion criteria") 확인. 없으면 Step 1에서 경고하지만 진행은 계속한다.
 - 기존 산출물(VALIDATION.md / RECOVERY.md / PLAN.md / PROGRESS.md / goal-command.md / PLANS.md 중 하나라도) 존재 시 §A 번호 블록:
   - `1. 덮어쓰기 — 기존 6종을 새로 생성 (추천)`
-  - `2. 이어가기 — 기존 PROGRESS.md/PLANS.md만 읽고 /goal 재실행을 안내`
+  - `2. 이어가기 — 기존 문서를 보존하고 PROGRESS.md/PLANS.md와 goal-command.md를 읽어 Step 8부터 재개`
   - `3. 취소`
 - → Step 1 진입.
 
@@ -138,7 +126,7 @@ PRD 본문을 읽고 추출:
 - `goal-command.md`는 4,000자 강제 (objective character 한도).
 - objective는 `./PLANS.md`를 가리키는 파일 포인터 패턴을 쓴다.
 - RECOVERY.md는 codex `/goal` 기준으로 작성한다. codex `/goal`에서 사람 결정 대기는 "자체 수정을 멈추고 PROGRESS.md/Decision-Log에 보고 후 사용자 결정을 기다린다"로 표현한다 (Step 5 CLI 슬롯 치환 참조).
-- Step 10에서 어시스턴트는 슬래시 명령을 자동 발사하지 **않는다** — 사용자가 복사해 실행할 `/goal` 명령 한 줄을 제시한다. (대안: codex `/plan` 모드도 안내.)
+- Step 10에서 승인된 목표를 현재 세션에서 시작한다.
 
 ### Step 3: 작업 유형 + 검증 방식 + 엄격도
 **타입**: §A 번호 블록 (1~2회로 압축)
@@ -172,6 +160,8 @@ PRD acceptance criteria를 그룹화하여 마일스톤 초안 생성. ≤5개 �
 **타입**: rag + generate
 
 `references/templates.md`의 템플릿(VALIDATION/RECOVERY/PLAN/PROGRESS/goal-command + PLANS.md ExecPlan)을 PRD 내용에 맞춰 슬롯 치환하고, **모든 헤딩·본문을 `output_lang`으로 렌더링**한다(템플릿은 한국어로 표기돼 있으니 §헤딩 맵으로 옮긴다. PLANS.md ExecPlan 표준 섹션명은 영어 그대로 유지). 작업 유형에 따라 강조 항목이 달라진다 — 매핑 표는 `references/task-type-templates.md` 참조.
+
+새 PLAN.md의 각 마일스톤에는 목적 한 줄과 2~6개 작업을 쓴다. 작업마다 무엇을 어디에서 끝낼지 쉬운 말로 설명한다.
 
 치환 시 빈 슬롯(`{...}`)이 잔존하지 않도록 확인. 빈 슬롯이 남으면 해당 줄 자체 제거.
 
@@ -216,6 +206,7 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 2. **PROTECTED_CLAUSES 5종 한·영 OR 정규식 매칭**: `compact-strategy.md` §보호 영역의 5개 정규식을 `grep -P` 또는 Python으로 매칭. 5개 모두 hit 필수.
 3. **`/goal ` 시작 검증**: `grep -cE '^/goal ' goal-command.md` 결과가 1 이상.
 4. **약어 치환 후 미정의 약어 없음**: 본문에서 `\b[A-Z]+\.md\b` 패턴 추출 후 표준 약어(VALIDATION/RECOVERY/PLAN/PROGRESS/PRD/SDD/PLANS)와 본문 상단 `[약어]` 범례 정의 외에 등장하는지 확인.
+   - 새 PLAN.md의 각 마일스톤에 목적 줄과 고유한 `- [ ] M{N}-T{K}:` 작업 2~6개가 있는지 확인한다. 컴팩트한 목표 본문에도 PLAN.md와 상태 마커 `[>]`, `[x]`, `[!]`가 있는지 검사한다. 내부 코드명만 있는 행은 쉬운 말로 고친다.
 5. **acceptance 매핑 누락 없음**: VALIDATION.md의 `## 완료 기준 매핑` 테이블 행 수가 PRD acceptance criterion 수 이상인지 확인.
 6. **PLANS.md 필수 섹션 존재**: `grep -cE '^## (Progress|Validation|Decision-Log)' PLANS.md` 결과가 3 (세 섹션 모두 존재).
 7. **헤딩 언어 일관성 검사 (`output_lang` 기준)**: 생성 문서 헤딩이 모두 감지 언어여야 한다 — 교차 언어 헤딩 0건. (단 PLANS.md의 `## Progress`/`## Validation`/`## Decision-Log`는 ExecPlan 표준 섹션명이므로 6번에서 의도적으로 허용하며 이 검사에서 제외한다.)
@@ -284,48 +275,17 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 
 질문: "위 요약을 검토하셨나요? 어떻게 진행할까요?"
 
-- `1. 승인 — /goal 핸드오프 명령을 받는다 (추천)`: Step 10으로 이동, 복사해서 실행할 `/goal` 명령을 제시한다.
+- `1. 승인하고 지금 목표 시작 (추천)`: Step 10을 즉시 실행한다.
 - `2. 수정 필요`: 어느 파일을 어떻게 바꿀지 자유 텍스트 입력 받기. 입력 받은 뒤 해당 파일만 재생성 후 Step 7부터 재검증.
 - `3. 나중에 직접 실행`: 핸드오프 명령을 제시하지 않음. `goal-command.md`/`PLANS.md` 위치만 안내하고 종료.
 - `4. 취소`: 6종 파일을 그대로 두고 종료.
 
-승인 게이트는 우회 불가. Codex는 슬래시 명령을 자동 발사할 수 없으므로 실제 `/goal` 실행은 항상 사용자가 한다 — 그래도 Step 9 확인은 필수다.
+### Step 10: 승인한 목표 즉시 시작
 
-### Step 10: 승인 시 /goal 핸드오프 명령 제시
-**타입**: prompt + Bash
-
-승인이 들어오면:
-
-1. **PROGRESS.md + PLANS.md Progress 섹션에 시작 기록** (Bash로 append):
-   ```
-   ## 골 시작 기록
-   - 시작 시각: {ISO_TIMESTAMP}
-   - 사용 CLI: codex
-   - 컴팩트 후 본문 길이: {CHAR_COUNT}자
-   ```
-
-2. **응답 본문은 `output_lang`으로 간단히 정리**:
-   - "검토 문서 6종이 준비됐습니다. 아래 `/goal` 명령을 복사해 실행하면 골 작업이 시작됩니다. 진척은 PROGRESS.md / PLANS.md의 Progress 섹션에서 확인하세요." 정도 한두 줄.
-   - 생성 파일 6종 경로도 한 줄로 안내.
-
-3. **복사용 `/goal` 명령을 코드블럭으로 제시** (Codex는 자동 발사 불가 → 사용자가 복사해 실행):
-   - 파일 포인터 패턴 + verifiable done condition을 포함한다.
-   - 형식 예:
-
-   ````md
-   아래 명령을 복사해 실행하세요:
-
-   ```
-   /goal Execute ./PLANS.md to completion; keep the Progress section current; PRD.md의 모든 acceptance criterion이 만족되고 VALIDATION.md의 필수 검증이 통과될 때까지 멈추지 말고 PLAN.md의 기능을 구현한다. stop when 모든 마일스톤이 끝나고 VALIDATION.md의 모든 검증이 통과될 때.
-   ```
-
-   (대안) 한 번에 끝까지 자동 실행 대신 단계별로 보고받고 싶으면 codex `/plan` 모드로 `./PLANS.md`를 따라 진행해도 됩니다.
-   ````
-
-   - `<verifiable done condition>` 슬롯은 VALIDATION.md의 필수 검증 + 모든 마일스톤 완료로 채운다 (모호한 "끝낼 때까지" 금지).
-   - 명령 본문은 항상 goal-command.md(컴팩트 완료본)와 일치해야 한다 — Step 6/7을 통과한 본문을 그대로 한 줄로 쓴다.
-
-**중요**: Codex 스킬은 마지막 줄로 슬래시 명령을 자동 발사할 수 없다(그건 원판 호스트의 메커니즘이다). 따라서 이 판은 **복사-실행 핸드오프**로 끝낸다 — 절대 "다음 턴에 자동 시작된다"고 약속하지 말 것.
+1. Step 9에서 사용자가 현재 검토본의 시작을 선택했을 때만 진행한다. `goal-command.md`의 명령 전체에서 맨 앞의 `/goal `만 제거한다. 여러 줄에 걸친 완료 조건과 보호절을 모두 objective에 포함한다. 출력 폴더가 현재 작업 경로와 다르면 Step 6 전에 PLANS.md 포인터를 해당 폴더 기준의 명확한 경로로 작성해 검토받는다.
+2. 현재 세션의 네이티브 `create_goal` 도구에 `objective`를 전달한다. 사용자가 명시한 토큰 예산이 있을 때만 `token_budget`을 추가한다. 이미 진행 중인 목표가 있거나 호출 결과가 불확실하면 `get_goal`로 확인한다. 같은 목표가 활성 상태면 그대로 이어가고, 다른 활성 목표가 있으면 그 상태를 알리고 시작을 보류한다.
+3. 활성 상태를 확인한 뒤에만 PROGRESS.md와 PLANS.md의 Progress에 시작 시각과 사용 CLI를 기록한다. 재개 시 기존 시작 기록을 보존한다. 첫 미완료 작업을 같은 턴에 진행한다.
+4. 목표 도구가 없거나 생성이 실패하면 이유와 `goal-command.md` 위치를 알려 수동 실행할 수 있게 한다. 실패한 시도를 시작으로 기록하지 않는다.
 
 ## Settings (가변 요소)
 
@@ -354,7 +314,7 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 - **자동 컴팩트 (Step 6)**: 어시스턴트가 `compact-strategy.md`의 5단계를 순서대로 적용 (텍스트 변환)
 - **검증 (Step 7)**: Bash `grep -P` + `python3 -c "print(len(...))"`로 PROTECTED_CLAUSES 정규식·문자수·PLANS.md 섹션·교차 언어 헤딩 잔존을 결정론적으로 매칭
 - **검토 요약 (Step 8)**: 대화창에 `output_lang` 요약 출력 + PROGRESS.md/PLANS.md 상단에 4줄 요약 prepend
-- **골 핸드오프 (Step 10)**: 복사-실행용 `/goal` 명령을 코드블럭으로 제시 (자동 발사 아님)
+- **골 핸드오프 (Step 10)**: 승인된 본문으로 create_goal 호출
 
 ## 핵심 원칙
 
@@ -362,8 +322,8 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 - **검토 요약은 채팅에만**: 별도 파일을 만들지 않는다. PROGRESS.md/PLANS.md 상단에 4줄 요약을 prepend해 핸드오프 시 컨텍스트만 보존한다.
 - **경고로 끝내지 않는다**: 4,000자 초과는 항상 컴팩트로 해결. 못 맞추면 결과물 저장 안 함.
 - **PROTECTED_CLAUSES는 불가침**: 5종은 어떤 컴팩트 단계에서도 삭제하지 않는다.
-- **Codex 전용 핸드오프**: 슬래시 명령 자동 발사 불가 → 복사-실행 `/goal` 명령으로 끝낸다. objective는 ≤4,000자, `./PLANS.md` 파일 포인터.
-- **사람 검토 안전장치 우회 금지**: Step 9 승인 게이트 없이 Step 10이 핸드오프 명령을 제시하지 않는다.
+- **Codex 전용 핸드오프**: 승인 후 create_goal로 시작한다. objective는 ≤4,000자, `./PLANS.md` 파일 포인터.
+- **사람 검토 안전장치 우회 금지**: Step 9 승인 게이트 없이 목표를 시작하지 않는다.
 - **§A 상속**: 모든 선택 질문은 `shared/questioning-policy.md §A` 번호 블록으로. 존재하지 않는 카드 UI를 가정하지 말 것.
 - **승계는 있을 때만**: 가정 원장·디자인 레퍼런스(`references/`+`sources.json`)·kkirikkiri 게이트는 감지·설치된 경우에만 PLAN/VALIDATION/RECOVERY에 주입한다. 없으면 무동작이며 재수집·설치 권유를 하지 않는다.
 - **자기 시연 가능**: 이 스킬 자체를 만드는 작업도 골잡이로 가능하다.
