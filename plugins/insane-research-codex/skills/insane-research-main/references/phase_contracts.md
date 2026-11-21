@@ -185,10 +185,13 @@ sources/sources.jsonl (one source per line):
   "counter_search": {"query": "실행한 반증 쿼리", "urls": ["열어본 URL(레지스트리 등록 필수)"], "summary": "결과 요약"},
   "counter_refuted": false,
   "conflicting": false,
-  "valid_at": "2026-06-01"
+  "valid_at": "2026-06-01",
+  "evidence": [{"source_id": "src_001", "quote": "출처 원문 그대로의 구절 (20~300자, 번역 금지)", "locator": "소제목 (선택)"}]
 }
 ```
 **`status`/`confidence`/`primary_source`는 쓰지 않는다** — status는 게이트가 계산해 `outputs/{verified,unresolved,refuted}_claims.json`에 분류하고, primary_source는 소스 `type`에서 파생한다. counter_search를 자유 문자열로 쓰면 절차 위반(exit 1).
+
+**원문 인용 검증**: 새 세션의 `state.json`에 `ledger_schema: 2`를 기록한다. 팬아웃 에이전트는 `evidence[].source_url`로 반환하고 취합기가 `source_id`로 변환한다. 취합 후 `snapshot_sources.py`로 high-risk 출처 원문과 SHA-256을 저장한 다음 `validate_ledger.py`를 실행한다. 실행 증적이 있는 executable 주장을 제외한 high-risk 주장은 20~300자 원문 구절이 최소 하나 일치해야 한다. 인용 누락·길이 위반·원문 불일치·스냅샷 부재·해시 불일치는 unresolved, 주장 밖 source_id는 하드 에러다. numeric 주장은 일치 구절에 주장 문장의 두 자리 이상 숫자가 최소 하나 있어야 한다. 스키마가 없는 기존 세션에는 이전 규칙을 유지한다.
 
 **Abstention 강제**: 독립 조직 2개 미만 OR 미해소 충돌 OR (high-risk인데 1차 type 소스 없음) OR (high-risk인데 소스 type 1종) → `unresolved`. unresolved/refuted 주장은 본문에서 단정 금지.
 

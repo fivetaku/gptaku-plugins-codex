@@ -57,8 +57,12 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
+import unicodedata
 from datetime import datetime, timezone
+
+from snapshot_sources import read_snapshot
 
 VALID_GRADES = {"A", "B", "C", "D", "E"}
 REQUIRED_CLAIM_FIELDS = ("claim_id", "text", "source_ids")
@@ -164,6 +168,76 @@ def _parse_counter(claim):
     if isinstance(c, str) and c.strip():
         return "", [], True
     return "", [], False
+
+
+QUOTE_MIN, QUOTE_MAX = 20, 300
+_QUOTE_MAP = str.maketrans({"“": '"', "”": '"', "„": '"', "‘": "'", "’": "'", "‚": "'",
+                            "*": None, "`": None, "#": None})
+
+
+def _norm_text(s):
+    """구절 대조용 정규화 — NFKC·따옴표 직선화·마크다운 기호/링크 제거·공백 1칸·소문자.
+    퍼지 매칭은 하지 않는다(날조 구절이 비슷하다는 이유로 통과하면 안 된다)."""
+    s = unicodedata.normalize("NFKC", s or "")
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)  # [text](url) → text
+    s = s.translate(_QUOTE_MAP)
+    return " ".join(s.split()).lower()
+
+
+def check_evidence(claim, sources_by_id, session_dir, cache):
+    """7c~7e: 고위험 주장의 evidence 구절을 저장된 원문 스냅샷과 대조.
+    반환: (passed, failed, reasons). cache는 source_id → 정규화된 본문(또는 실패 사유)."""
+    passed, failed, reasons, matched = 0, 0, [], []
+    for e in claim.get("evidence") or []:
+        sid = e.get("source_id")
+        quote = (e.get("quote") or "").strip()
+        if not (QUOTE_MIN <= len(quote) <= QUOTE_MAX):
+            failed += 1
+            reasons.append(f"{sid}: 구절 길이 {len(quote)}자 (허용 {QUOTE_MIN}~{QUOTE_MAX})")
+            continue
+        if sid not in cache:
+            src = sources_by_id.get(sid) or {}
+            snap = src.get("snapshot") or {}
+            if snap.get("status") != "ok" or not snap.get("path"):
+                cache[sid] = (None, f"{sid}: 원문 스냅샷 없음 (status={snap.get('status') or 'missing'})")
+            else:
+                try:
+                    raw = read_snapshot(session_dir, snap)
+                except (OSError, ValueError, RuntimeError) as error:
+                    cache[sid] = (None, f"{sid}: {error}")
+                else:
+                    cache[sid] = (_norm_text(raw.decode("utf-8", errors="replace")), None)
+        body, why = cache[sid]
+        if body is None:
+            failed += 1
+            reasons.append(why)
+        elif _norm_text(quote) in body:
+            passed += 1
+            matched.append(_norm_text(quote))
+        else:
+            failed += 1
+            reasons.append(f"{sid}: 구절이 원문에 없음 — '{quote[:40]}…'")
+    return passed, failed, reasons, matched
+
+
+def numeric_value_missing(claim, matched_quotes):
+    """7f: numeric 주장은 대조 통과 구절 중 하나에 주장 문장의 값(두 자리 이상 숫자)이 있어야 한다.
+    숫자 든 구절은 틀리고 값 없는 일반 구절만 통과해 verified가 되던 빈틈을 막는다(E2E 실측).
+    날짜·버전은 소제목에만 있는 정상 사례가 있어 numeric 유형에만 적용한다."""
+    if (claim.get("claim_type") or "").strip().lower() != "numeric":
+        return False
+    values = set(re.findall(r"\d{2,}", unicodedata.normalize("NFKC", claim.get("text") or "")))
+    if not values:
+        return False
+    return not any(v in q for q in matched_quotes for v in values)
+
+
+def _ledger_schema(state_path):
+    try:
+        with open(state_path, "r", encoding="utf-8") as f:
+            return int(json.load(f).get("ledger_schema") or 1)
+    except (OSError, ValueError, TypeError, AttributeError, json.JSONDecodeError):
+        return 1
 
 
 def check_source_registry(sources):
@@ -309,6 +383,11 @@ def validate(ledger_path, sources_path, out_dir, state_path, max_unresolved_rati
 
     registered_urls = {_norm_url(s.get("url")) for s in sources if s.get("url")}
 
+    # v2.10.0 원문 인용 게이트: ledger_schema>=2 세션만 적용 (기존 세션은 이전 규칙)
+    enforce_evidence = bool(state_path) and _ledger_schema(state_path) >= 2
+    session_dir = os.path.dirname(os.path.dirname(os.path.abspath(sources_path)))
+    snapshot_cache = {}
+
     for i, claim in enumerate(claims):
         # 스키마 하드 검사
         missing = [f for f in REQUIRED_CLAIM_FIELDS if not claim.get(f)]
@@ -333,8 +412,38 @@ def validate(ledger_path, sources_path, out_dir, state_path, max_unresolved_rati
             )
             continue
 
+        # 7b: evidence의 source_id는 그 주장의 source_ids 안에 있어야 한다
+        if enforce_evidence:
+            claim_ids = set(claim.get("source_ids") or [])
+            stray = [e.get("source_id") for e in (claim.get("evidence") or [])
+                     if e.get("source_id") not in claim_ids]
+            if stray:
+                hard_errors.append(
+                    f"claim '{claim.get('claim_id')}': evidence의 source_id {stray}가 source_ids에 없음"
+                )
+                continue
+
         status, reason, violation = classify_claim(claim, sources_by_id)
+        evidence_check = None
+        is_exec = (claim.get("claim_type") or "").strip().lower() == "executable"
+        if (enforce_evidence and status == "verified" and claim.get("risk") == "high"
+                and not is_exec):
+            if not claim.get("evidence"):
+                status, reason = "unresolved", "high-risk인데 evidence 없음 (원문 구절 미제출)"  # 7a
+                evidence_check = {"passed": 0, "failed": 0, "reasons": []}
+            else:
+                ok, bad, why, matched = check_evidence(claim, sources_by_id, session_dir, snapshot_cache)
+                evidence_check = {"passed": ok, "failed": bad, "reasons": why}
+                if ok == 0:  # 7e
+                    status = "unresolved"
+                    reason = "high-risk evidence 대조 통과 0건 — " + "; ".join(why[:3])
+                elif numeric_value_missing(claim, matched):  # 7f
+                    status = "unresolved"
+                    reason = "numeric 주장의 값이 대조 통과 구절에 없음 — 값이 든 원문 구절 필요"
+                    evidence_check["reasons"] = why + ["주장 값(숫자)이 통과 구절에 없음"]
         record = dict(claim)
+        if evidence_check is not None:
+            record["evidence_check"] = evidence_check
         record["status"] = status
         record["status_reason"] = reason
         # primary_source는 자기신고를 버리고 파생값으로 덮어쓴다

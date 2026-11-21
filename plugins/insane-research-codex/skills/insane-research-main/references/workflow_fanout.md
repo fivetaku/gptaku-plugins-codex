@@ -35,7 +35,11 @@ Phase 3의 검색 실행을 런타임 서브에이전트(`spawn_agent`) **병렬
         "source_urls": {"type": "array", "items": {"type": "string"}},
         "counter_search": {"type": "object", "properties": {"query": {"type": "string"}, "urls": {"type": "array", "items": {"type": "string"}}, "summary": {"type": "string"}}, "required": ["query"]},
         "conflicting": {"type": "boolean"}, "valid_at": {"type": "string"},
-        "execution_proof": {"type": "object"}}}},
+        "execution_proof": {"type": "object"},
+        "evidence": {"type": "array", "items": {"type": "object",
+          "required": ["source_url", "quote"],
+          "properties": {"source_url": {"type": "string"}, "quote": {"type": "string", "minLength": 20, "maxLength": 300},
+            "locator": {"type": "string"}}}}}}},
     "expand_leads": {"type": "array", "items": {"type": "object",
       "required": ["lead", "why", "angle"],
       "properties": {"lead": {"type": "string"}, "why": {"type": "string"}, "angle": {"type": "string"}}}},
@@ -45,6 +49,8 @@ Phase 3의 검색 실행을 런타임 서브에이전트(`spawn_agent`) **병렬
   }
 }
 ```
+
+**`evidence` 작성 규칙 (v2.10.0 — `risk: "high"` 주장은 필수)**: 주장을 뒷받침하는 **출처 원문 구절을 그대로** 복사한다(20~300자). 요약·의역·번역 금지 — 한국어 주장이어도 영어 출처면 영어 원문 그대로. `source_url`은 같은 반환의 `sources[].url` 중 하나여야 한다(취합기가 `src_xxx`로 바꾼다). 수치·경로·버전·고유명사가 주장에 있으면 그 값이 들어 있는 구절을 고른다. `claim_type: "numeric"` 주장은 값(숫자)이 든 구절이 최소 1개 없으면 다른 구절이 맞아도 unresolved다. 게이트는 이 구절이 저장된 원문 스냅샷에 실제로 있는지 문자열로 대조하므로, 원문에 없는 문장은 그 주장을 unresolved로 떨어뜨린다. `locator`(소제목·표 이름 등)는 선택.
 
 ## 스폰 템플릿 (주제·축에 맞춰 즉석 변형)
 
@@ -81,7 +87,7 @@ wave2 = [spawn_agent(agent_type="explorer",
 #    → <session>/artifacts/agent_returns.json  ([wave1..., wave2...])
 # 2) 결정론 취합 — sources.jsonl / claim_ledger.jsonl / expansion_log.md / query_log.md 생성
 python3 "$PLUGIN_ROOT/skills/insane-research-main/scripts/merge_agent_returns.py" --session "<session>"
-# 3) 이후는 기존 파이프라인 그대로: 부족 주장 보강 → validate_ledger.py → 합성 → verify_report.py → eval_report.py
+# 3) 이후는 기존 파이프라인 그대로: 부족 주장 보강 → snapshot_sources.py → validate_ledger.py → 합성 → verify_report.py → eval_report.py
 ```
 
 ## 검색 예산 회계 (⚠️ 필수 — 세션 검색 캡 대응)
