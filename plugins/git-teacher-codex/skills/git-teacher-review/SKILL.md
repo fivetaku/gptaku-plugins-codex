@@ -8,7 +8,7 @@ description: Automated review request workflow — handles branch creation, comm
 Branch 생성 → Commit → Push → PR 생성을 자동으로 처리한다. Branch 개념은 사용자에게 숨기고 "안전한 작업 공간"으로 설명한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "검토 요청(PR)"은 Google Docs "수정 제안" 모드 비유로 설명한다. 겁먹은 초보면 원샷 금지(§2a), 그냥 PR만 원하면 강의 없이 진행(§2c).
-> Codex CLI에는 객관식 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양).
 
 ## 실행 순서
 
@@ -49,7 +49,7 @@ Google Docs에서 "수정 제안" 모드 아시죠?
 원본은 그대로 두고, "이렇게 바꾸면 어떨까요?" 하고 보내는 거예요.
 ```
 
-그다음 채팅 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A) — diff나 최근 commit에서 설명을 **추론할 수 있으면 묻지 않고** 추론안을 제시하고 확인만 받는다:
+그다음 §A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양) — diff나 최근 commit에서 설명을 **추론할 수 있으면 묻지 않고** 추론안을 제시하고 확인만 받는다:
 
 ```text
 질문: 어떤 작업을 했는지 한 줄로 적어주세요.
@@ -140,7 +140,7 @@ Step 2에서 현재 branch가 main/master가 아닌 경우:
 
 ## 충돌 해결
 
-Merge Conflict 감지 시 충돌 파일 목록을 보여주고, 채팅 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A):
+Merge Conflict 감지 시 충돌 파일 목록을 보여주고, §A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양):
 
 ```text
 두 사람이 같은 파일의 같은 부분을 동시에 고쳐서 충돌이 생겼어요.

@@ -7,7 +7,7 @@ description: 'Conversation-log converter — transforms Codex session JSONL logs
 
 > Codex 세션 로그를 읽기 좋은 Markdown으로 변환하고 분석 가이드를 제공한다.
 
-Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 번호 블록으로 채팅에서 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 아래 번호 블록 예시는 폴백일 때의 모양이다. 열린 코칭 질문은 도구 없이 평범한 채팅으로 묻는다.
 
 ## 데이터 경로
 
@@ -49,7 +49,7 @@ python3 "$PLUGIN_ROOT/scripts/ensure_workspace.py" 2>/dev/null || python "$PLUGI
 | "상세", "verbose" | `--verbose` 도구 결과 전문 포함 |
 | 프로젝트명 | `--project <이름>` 해당 프로젝트만 (INDEX.md 표시 이름 또는 cwd 경로) |
 
-**프로젝트명이 지정된 경우:** `~/vibe-sunsang/conversations/INDEX.md`에서 프로젝트 목록을 읽어 일치하는 프로젝트를 찾습니다. 정확히 일치하는 프로젝트가 없으면 `shared/questioning-policy.md §A` 번호 블록으로 묻는다:
+**프로젝트명이 지정된 경우:** `~/vibe-sunsang/conversations/INDEX.md`에서 프로젝트 목록을 읽어 일치하는 프로젝트를 찾습니다. 정확히 일치하는 프로젝트가 없으면 `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백)으로 묻는다. 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 어떤 프로젝트의 대화를 변환할까요?
@@ -138,4 +138,4 @@ python3 "$PLUGIN_ROOT/scripts/convert_sessions.py" --names-file "$HOME/vibe-suns
 - 원본 JSONL 로그를 직접 수정하지 않는다 (읽기 전용).
 - 변환된 로그에 보이지 않는 예시를 지어내지 않는다.
 - 변환 중 분석이 완료됐다고 말하지 않는다. 변환은 데이터 준비일 뿐이다.
-- Codex CLI에는 객관식 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- 선택지 질문은 `shared/questioning-policy.md §A` 질문 도구로 묻고, 도구가 없을 때만 번호 블록을 쓴다.

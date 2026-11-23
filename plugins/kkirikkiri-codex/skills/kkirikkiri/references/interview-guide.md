@@ -45,12 +45,12 @@
 "도움이 필요해요" → 매칭 실패 → generic (범용 인터뷰)
 ```
 
-### Phase 2: 프리셋별 인터뷰 (§A 번호 블록)
+### Phase 2: 프리셋별 인터뷰 (§A 질문 도구, 없으면 번호 블록)
 
 매칭된 프리셋의 인터뷰 질문을 순서대로 진행.
 (질문 내용은 presets.md 참조)
 
-§A 번호 블록 출력 시 규칙:
+§A 질문 출력 시 규칙 (도구 호출 후엔 턴을 끝내고 답 메시지가 오면 이어서 진행):
 - questions 배열에 최대 3개 질문 (4개 초과 금지)
 - 각 question에 header (12자 이내), options (2-4개)
 - 각 option에 label, description 필수
@@ -127,9 +127,9 @@
 
 ---
 
-## §A 번호 블록 출력 패턴
+## §A 질문 출력 패턴
 
-모든 인터뷰는 채팅의 §A 번호 블록(`$PLUGIN_ROOT/shared/questioning-policy.md`)으로 진행.
+모든 인터뷰는 §A 질문 도구(`request_user_input_async`, Plan 모드 `request_user_input`)로 진행하고, 둘 다 없을 때만 채팅 번호 블록 폴백을 쓴다(`$PLUGIN_ROOT/shared/questioning-policy.md`).
 
 호출 규칙:
 - 한 번에 최대 3개 질문 (questions 배열)

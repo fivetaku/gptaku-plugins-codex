@@ -8,7 +8,7 @@ description: Adaptive access for blocked websites — tries every method until o
 > URL 접근이 차단될 때, **사이트 무관한** 대체 접근 전략을 자동 선택한다.
 
 이 스킬은 인터뷰 대상이 아니다 — 사용자에게 거의 묻지 않고 **바로 실행**한다. 진짜 선택지가
-불가피할 때만 `$PLUGIN_ROOT/shared/questioning-policy.md` §A 번호형 블록을 쓰되, 준비된 사용자를
+불가피할 때만 `$PLUGIN_ROOT/shared/questioning-policy.md` §A 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호형 블록)를 쓰되, 준비된 사용자를
 과도하게 붙들지 않는다(§2c). 평소엔 차단 감지 → engine 실행 → trace 진단의 결정론적 흐름만 돈다.
 
 ## 하네스 규칙 (어시스턴트에게 강제되는 지침)

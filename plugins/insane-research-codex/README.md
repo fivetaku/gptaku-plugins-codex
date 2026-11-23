@@ -8,7 +8,7 @@ Included skills:
 
 Packaging notes:
 - The main research workflow and query builder stay together because the original product shipped them as one research suite.
-- Active docs are Codex-native and chat-first: there is no multiple-choice widget dependency. Interactive scoping uses the numbered-options chat block from `shared/questioning-policy.md §A`.
+- Active docs are Codex-native and chat-first. Interactive scoping uses the Codex question tool (`request_user_input_async`, or `request_user_input` in Plan mode) per `shared/questioning-policy.md §A`, and falls back to numbered options in chat when neither tool is available.
 - Based on upstream insane-research v2.9.0, with the committed v2.10.0 evidence quote gate (`bd4f7ac`, `8171295`) ported in Codex v2.9.1. New sessions use `ledger_schema: 2`; older sessions retain their existing validation rules. Snapshot collection uses the sibling or installed `insane-search-codex` engine (explicit `--engine-dir` and `INSANE_SEARCH_ENGINE_DIR` take priority). Not ported: the upstream first-run setup hook, update notifier, and the strict-mode hand-off to a separate deep-research workflow harness (strict mode re-verifies in the main thread instead).
 
 Regression verification (from the marketplace root):

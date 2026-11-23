@@ -1,24 +1,42 @@
 # gptaku-codex 플러그인 질문 설계 정책 (Questioning Policy — Codex 판)
 
 > 본진(`gptaku-plugins`)의 `shared/questioning-policy.md`를 Codex CLI 환경으로 이식한 것.
-> 정책(§0~§4)은 본진과 동일하다. **유일한 구조적 차이는 §A "Codex 렌더링 규칙"** — Codex CLI에는
-> Claude Code의 `AskUserQuestion`(객관식 카드 UI)에 해당하는 도구가 **없기 때문**이다.
-> 근거(정책): 딥리서치 2회 + A/B 시뮬레이션 3회. 근거(치환): Codex 공식 문서 확인(아래 §A).
+> 정책(§0~§4)은 본진과 동일하다. **유일한 구조적 차이는 §A "Codex 렌더링 규칙"** — Claude Code의
+> `AskUserQuestion`(객관식 카드)을 Codex의 질문 도구 `request_user_input_async` / `request_user_input`으로
+> 옮기고, 도구가 없을 때만 채팅 번호 블록으로 대신한다.
+> 근거(정책): 딥리서치 2회 + A/B 시뮬레이션 3회. 근거(도구): 2026-11-23 Codex 0.167·0.171 TUI·Codex Desktop 실측 + openai/codex 소스(공식 문서에는 거의 없음, 아래 §A).
 
 ---
 
 ## A. ★ Codex 렌더링 규칙 — AskUserQuestion 대체 (이 레포 전용)
 
-Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.openai.com/codex/cli/features,
-.../config-reference, .../skills — 2026-06 기준)
+Codex에도 이제 질문 도구가 있다(2026-11-23 실측). **선택지가 있는 질문은 먼저 질문 도구로 묻고,
+두 도구가 모두 없을 때만 번호 블록을 쓴다.** 있는지는 이번 세션의 도구 목록으로 판단한다 — 공식 문서에 없는
+실험 도구라 모델·버전에 따라 빠질 수 있으므로, 도구가 있다고 가정하고 쓰지 말 것.
 
-- ❌ `AskUserQuestion` 같은 라벨형 객관식 카드 UI **없음**.
-- ❌ skill/plugin이 "잠깐 멈춰 객관식을 띄우는" 프리미티브 **없음**.
-- △ MCP elicitation(`approval_policy.granular.mcp_elicitations`)이 유일한 구조화 경로이나
-  **기본값 auto-reject + 승인창 형태 + 미성숙** → 플러그인이 의존하지 말 것.
-- ✅ **유일하게 신뢰할 패턴 = 채팅에 번호형 선택지를 출력하고, 사용자의 다음 자유 텍스트 답변을 읽는다.**
+| 순서 | 도구 | 언제 있나 | 동작 |
+|--|--|--|--|
+| 1 | `request_user_input_async` | 모델이 이 도구를 지원할 때(모델 카탈로그의 실험 도구. 2026-11 gpt-6.x 계열은 기본 모드에서 있음 — Desktop은 버튼, TUI는 목록으로 보임) | 질문을 띄우고 **바로 돌아온다**(`{"accepted":true}`). 사용자의 답은 **다음 사용자 메시지**로 온다 |
+| 2 | `request_user_input` | Plan 모드에서만(기본 모드용 플래그 `default_mode_request_user_input`은 개발 중이라 의존하지 않는다. `codex exec`에서는 거부됨) | 답이 올 때까지 기다렸다가 답을 돌려준다. 한 번에 1~3문항, 문항당 선택지 2~3개(라벨 1~5단어) |
+| 3 | (둘 다 없음) | 구버전 Codex 등 도구 목록에 없을 때 | 아래 "번호 블록 폴백" |
 
-### 치환 매핑 (본진 → Codex)
+### 질문 도구 쓰는 법
+
+- **한 번에 묶는다** — 본진의 AskUserQuestion 1콜(≤4문항)은 `request_user_input_async` 1콜로 그대로 묶는다.
+  `request_user_input`(Plan 모드)은 1콜 3문항까지라 넘으면 나눠 부른다.
+- **추천안을 맨 앞에** — 첫 선택지가 기본 선택이다. `request_user_input`은 추천 라벨 끝에 `(Recommended)`를 붙인다.
+- **"기타"를 넣지 않는다** — 두 도구 모두 자유 입력 칸을 자동으로 붙인다.
+- **필드 옮기기**
+  - 본진 `header` + `question` → async는 `title` 한 줄("헤더 — 질문"), Plan 도구는 `header`(12자 이내)·`question`·`id`(snake_case).
+  - 본진 option `label` + `description` → async는 선택지 문자열 `"라벨 — 무엇인지, 트레이드오프"`, Plan 도구는 `label`·`description`.
+  - 본진 `preview` → 도구가 보여 주지 못하므로 **도구를 부르기 직전 채팅 메시지**에 짧은 예시 프리뷰(ASCII 관계도·표·트리)를 먼저 쓴다.
+  - 본진 `multiSelect: true` → 제목 끝에 "(여러 개면 쉼표로 적어 주세요)"를 붙이고 답을 자유 입력으로 받는다.
+- **async는 부르고 나서 턴을 끝낸다** — 한 줄 안내("위 질문에 답해 주시면 이어서 진행합니다")만 쓰고 멈춘다.
+  답에 달린 결정을 추측으로 먼저 진행하지 않는다. 답이 오면 그 메시지를 읽고 다음 단계로 간다.
+- **비대화형 실행(`codex exec`)** — async 도구가 `accepted`를 돌려줘도 아무도 보지 못한다. 사람이 답할 수 없는 실행이면 묻지 말고 기본값과 가정 기록으로 진행한다.
+- **열린 질문은 도구 대신 채팅으로** — 핵심 문제 발굴(Turn 1)처럼 선택지가 없는 질문은 §1.2대로 평범한 채팅 질문으로 묻는다.
+
+### 번호 블록 폴백 (질문 도구가 없을 때만)
 
 | 본진(Claude Code) | Codex 치환 |
 |--|--|
@@ -28,8 +46,6 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 | `multiSelect: true` | "여러 개면 `1,3`처럼 쉼표로" 한 줄 안내 |
 | "Other" 자동 옵션 | 마지막 선택지를 "문장으로 직접 수정 요청"으로 둠 |
 | 카드가 강제하는 1턴 응답 | 사용자가 번호/문장 아무거나로 답할 수 있게(가두지 말 것) |
-
-### 표준 블록 포맷 (모든 인터뷰 플러그인 공통)
 
 ```text
 예시 프리뷰            ← 구조화 정보를 보여줄 때만(§A의 preview 대체). 단순 선호 질문이면 생략.
@@ -44,7 +60,8 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 
 - 추천안은 항상 **1번**에 둔다.
 - "잘 모르겠어요"는 별도 선택지로 만들지 말고 "모르면 1번으로 진행하겠습니다" 문장으로 안내.
-- 단순 분류/설정 고르기일수록 이 번호 블록이 적합. 핵심 문제 발굴(Turn 1)은 §1.2대로 **열린 텍스트 질문**으로.
+- 여러 문항이면 Q1·Q2…로 묶어 한 메시지에 내고, 답은 "Q1-1, Q2-2"처럼 받는다.
+- MCP elicitation(`approval_policy.granular.mcp_elicitations`)은 기본값이 auto-reject라 플러그인이 의존하지 않는다.
 
 ---
 
@@ -59,7 +76,7 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 ## 1. 공통 규칙 (모든 인터뷰형 플러그인)
 
 1. **묻지 말고 추론** — 최초 입력·맥락에서 추론 가능한 건 질문하지 않는다. 물어야 하면 "기본값 제시 + 확인"으로(예: "모바일 앱으로 가정할게요 — 아니면 말씀 주세요").
-2. **핵심 먼저, 한 번에 하나** — 정보가치 가장 높은 질문을 앞에(뒤로 갈수록 답이 짧고 균일해짐=satisficing). 열린 질문은 한 번에 하나. (단순 "분류/설정 고르기"는 §A 번호 블록이 더 낫다.)
+2. **핵심 먼저, 한 번에 하나** — 정보가치 가장 높은 질문을 앞에(뒤로 갈수록 답이 짧고 균일해짐=satisficing). 열린 질문은 한 번에 하나. (단순 "분류/설정 고르기"는 §A 객관식 질문이 더 낫다.)
 3. **과거 행동 > 가정** — "이 기능 쓰실래요?"(가정·X) 대신 "지금은 이 문제를 어떻게 해결하세요?"(과거 실제 행동·O). [The Mom Test]
 4. **"왜" → "무엇/어떻게"** — "왜 그랬어요?"는 방어를 유발. "거기서 무엇을 하려던 거였어요?"로.
 5. **답을 되짚어라(반영)** — 다음 질문 전에 직전 답을 한 문장으로 반영. 신뢰↑·마찰↓. [OARS]
@@ -95,7 +112,7 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 - **과잉 질문/코칭/교육** — 이미 준비된 사용자를 지치게. → 2c
 - **유도신문·가정형 질문** — → 1.3, 1.4
 - **설교(lecturing)** — 질문·유도 대신 일방 진단/조언/강의. [vibe-sunsang old, git-teacher]
-- **(Codex 한정) 카드 흉내** — 존재하지 않는 객관식 UI를 가정하지 말 것. → §A
+- **(Codex 한정) 도구 무시·카드 흉내** — 질문 도구가 있는데 번호 블록으로 때우거나, 도구가 없는데 카드 UI가 있는 척하지 말 것. → §A
 
 ## 5. 플러그인 처분 (Codex 레포 기준)
 
@@ -104,7 +121,7 @@ Codex CLI에는 구조화된 질문 도구가 **없다.** (확인: developers.op
 | ✅ 검증 → 적용 | show-me-the-prd, kkirikkiri(v2) | kkirikkiri는 §2b 못박기. show-me-the-prd는 §A 이미 구현 |
 | 🔧 검증+수정 → 적용 | git-teacher | §2a 적용(겁먹은 학습자 multi-turn) |
 | ✅ 검증 → 적용 | vibe-sunsang | §2c(과잉코칭 가드) 최우선 |
-| 원칙만 적용 | skillers-suda, insane-research, pumasi, nopal | §1 + §2c + §A 블록 포맷 |
-| 대부분 현행 | insane-design | 메뉴 선택은 §A 번호 블록 유지, "추론 가능한 건 안 묻기"만 |
+| 원칙만 적용 | skillers-suda, insane-research, pumasi, nopal | §1 + §2c + §A(질문 도구, 없으면 번호 블록) |
+| 대부분 현행 | insane-design | 메뉴 선택은 §A(질문 도구, 없으면 번호 블록), "추론 가능한 건 안 묻기"만 |
 | 대상 외 | docs-guide, insane-search | 실질 인터뷰 없음 |
 | 신규 포팅 완료(P4) | dd, goaljaby, insane-review | §A·§0~§4 상속. goaljaby는 Claude /goal → native Codex /goal + PLANS.md ExecPlan 핸드오프 |

@@ -23,7 +23,7 @@ Flow, step table (Jev / code / LLM / person), draft question JSON, output docume
 
 - Paths use `$PLUGIN_ROOT`.
 - No first-run setup hook (Codex plugins do not run plugin hooks). Updates come from `codex plugin marketplace upgrade`.
-- Questions, when needed, are shown as numbered options in chat (see `shared/questioning-policy.md` §A).
+- Questions, when needed, use the Codex question tool (`request_user_input_async`, or `request_user_input` in Plan mode) and fall back to numbered options in chat when neither tool exists (see `shared/questioning-policy.md` §A).
 
 ## Requirements
 

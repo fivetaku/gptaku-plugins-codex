@@ -7,7 +7,7 @@ description: 'Growth report generator — analyzes converted Codex conversations
 
 > AI 활용 세션 데이터를 분석하여 성장 리포트를 자동 생성 (서브에이전트 위임, 유형별 맞춤, v2 6축 분석)
 
-Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 번호 블록으로 채팅에서 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 아래 번호 블록 예시는 폴백일 때의 모양이다. 열린 코칭 질문은 도구 없이 평범한 채팅으로 묻는다.
 
 ## 참조 경로
 
@@ -50,10 +50,10 @@ python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --new 2>/dev/null || python "$P
 
 마지막 줄 `SUMMARY total=.. matched=.. new=.. continued=.. watermark=..`를 읽는다.
 
-- `watermark=none`(첫 리뷰)이거나 사용자가 명시적으로 범위를 말한 경우 → 아래 §A 번호 블록으로 범위를 고르게 한다.
+- `watermark=none`(첫 리뷰)이거나 사용자가 명시적으로 범위를 말한 경우 → 아래 §A 질문 도구로 범위를 고르게 한다(폴백은 번호 블록).
 - 그 외 → "지난 리뷰({watermark}) 이후 **새 세션 {new}개, 이어서 진행한 세션 {continued}개**가 있어요. 이걸 바로 분석할까요, 아니면 다른 범위로 볼까요?" 라고 안내한 뒤, 사용자가 다른 범위를 원하지 않으면 **증분 범위(analysis_scope가 출력한 md 경로 목록)를 그대로 분석 대상으로 삼는다.** `matched=0`이면 "지난 리뷰 이후 새로 이어간 대화가 없어요. 전체 기간으로 볼까요?"로 안내.
 
-**사용자가 다른 범위를 원하거나 첫 리뷰면** `shared/questioning-policy.md §A` 번호 블록:
+**사용자가 다른 범위를 원하거나 첫 리뷰면** `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백). 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 성장 리포트를 어떤 범위로 생성할까요?
@@ -65,7 +65,7 @@ python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --new 2>/dev/null || python "$P
 ```
 
 - 1~3번 → `analysis_scope.py --window-days 14|7|30`으로 대상 md 목록을 뽑는다.
-- 4번 → `~/vibe-sunsang/conversations/INDEX.md`에서 프로젝트 목록을 §A 번호 블록으로 보여주고 고르게 한다.
+- 4번 → `~/vibe-sunsang/conversations/INDEX.md`에서 프로젝트 목록을 §A 질문 도구(없으면 번호 블록)로 보여주고 고르게 한다.
 
 ### Step 2: 워크스페이스 유형 확인
 
@@ -186,4 +186,4 @@ python3 "$PLUGIN_ROOT/scripts/analysis_scope.py" --new --mark 2>/dev/null || pyt
 
 - 점수는 객관적 정체성 라벨이 아니라 코칭 신호로 다룬다.
 - 보이는 세션 증거를 인용한다. 변환된 로그에 없는 예시를 지어내지 않는다.
-- Codex CLI에는 객관식 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- 선택지 질문은 `shared/questioning-policy.md §A` 질문 도구로 묻고, 도구가 없을 때만 번호 블록을 쓴다.

@@ -16,6 +16,14 @@ Read these first:
 
 질문 정책은 `shared/questioning-policy.md` (특히 §A 렌더링 규칙 + §0~§2)을 상속한다.
 
+### Codex 렌더링 규칙 — 선택 질문 (`shared/questioning-policy.md §A`)
+
+이 스킬의 "§A 질문 도구" 표기는 모두 이 규칙을 가리킨다. 이번 세션 도구 목록을 보고 고른다.
+
+1. **`request_user_input_async`가 있으면(기본 모드)** — 해당 단계의 문항을 한 번에 넣어 부른다. 문항 `title`은 "헤더 — 한 줄 질문", `options`는 `"라벨 — 설명"` 문자열(추천안을 맨 앞, "기타"는 넣지 않음 — 자유 입력 칸이 자동으로 붙는다). 부른 뒤 "위 질문에 답해 주시면 이어서 진행합니다" 한 줄만 쓰고 **턴을 끝낸다.** 답은 다음 사용자 메시지로 오며, 그때 다음 단계로 이어간다. 프리뷰는 도구 호출 직전 채팅 메시지에 먼저 쓴다. 여러 개 고르는 질문은 제목에 "(여러 개면 쉼표로)"를 붙인다.
+2. **Plan 모드라 `request_user_input`만 있으면** — 1콜 3문항까지, `id`(snake_case)·`header`(12자 이내)·`question`, 선택지 2~3개(`label`·`description`), 추천 라벨 끝에 `(Recommended)`.
+3. **둘 다 없을 때만** 아래 "번호 블록 폴백일 때의 모양"대로 채팅 번호 블록을 낸다. 존재하지 않는 도구를 가정하지 말 것.
+
 ## 이 스킬을 쓰는 이유
 
 PRD가 "무엇을 만들지"라면, `/goal`은 "어떻게 끝났음을 증명하고 실패에서 어떻게 돌아올지"의 운영 계약이다. 두 단계 사이의 빈 구간(VALIDATION/RECOVERY/PLAN 작성 + 4,000자 컴팩트 + 사용자 언어 검토 + 골 시작)을 매번 손으로 채우는 대신 자동화한다.
@@ -43,7 +51,7 @@ PRD가 "무엇을 만들지"라면, `/goal`은 "어떻게 끝났음을 증명하
 상대 경로(`./PRD/`)도 동작하지만 세션 cwd가 달라지면 깨질 수 있으므로 절대 경로가 안전하다.
 
 PRD가 없으면 `show-me-the-prd` 스킬로 위임한다 (Step 0). 인수 파싱:
-- 인수 없음 → §A 번호 블록으로 PRD 디렉토리 경로를 묻는다 (아래 Step 0-B). PRD 자체가 없으면 `show-me-the-prd` 위임 옵션을 1번으로 제시.
+- 인수 없음 → §A 질문 도구로 PRD 디렉토리 경로를 묻는다 (아래 Step 0-B). PRD 자체가 없으면 `show-me-the-prd` 위임 옵션을 1번으로 제시.
 - 절대/상대 경로 → 그 경로를 `prd_dir`로 사용.
 - "분석 [경로]" → 기존 산출물 검토 모드 (덮어쓰기 전 확인).
 - PRD 디렉토리에 `references/` + `sources.json`(디자인 레퍼런스, show-me-the-prd v0.10+ 산출물)이 있으면 Step 1에서 감지해 Step 5에서 PLAN/VALIDATION에 승계한다. 없으면 아무 변화 없음 — 재수집하지 않는다.
@@ -86,13 +94,13 @@ PLANS.md는 5종을 대체하지 않는다 — **Codex /goal이 한 파일만 �
 > **언어 잠금 (먼저)**: 워크플로우 시작 전 `shared/language-policy.md §1`로 `output_lang`을 감지·고정한다. 이후 모든 산출물(6종 문서·헤딩·대화 요약·Step 10 핸드오프 안내)은 `output_lang`을 따른다. 식별자/슬롯/PROTECTED_CLAUSES 앵커/PLANS.md ExecPlan 표준 섹션명은 제외(§2).
 
 ### Step 0: PRD 사전 확인 + 입력 분기
-**타입**: Bash + §A 번호 블록 (조건부)
+**타입**: Bash + §A 질문 도구 (조건부)
 
 PRD 디렉토리 인수와 내용을 확인한다.
 
 **0-A) 인수 있음 + 디렉토리 존재 + `.md` 1개 이상**
 - Bash로 acceptance criteria 패턴(`- [ ]`, "Acceptance Criteria", "완료 판정", "completion criteria") 확인. 없으면 Step 1에서 경고하지만 진행은 계속한다.
-- 기존 산출물(VALIDATION.md / RECOVERY.md / PLAN.md / PROGRESS.md / goal-command.md / PLANS.md 중 하나라도) 존재 시 §A 번호 블록:
+- 기존 산출물(VALIDATION.md / RECOVERY.md / PLAN.md / PROGRESS.md / goal-command.md / PLANS.md 중 하나라도) 존재 시 §A 질문 도구(번호 블록 폴백일 때의 모양):
   - `1. 덮어쓰기 — 기존 6종을 새로 생성 (추천)`
   - `2. 이어가기 — 기존 문서를 보존하고 PROGRESS.md/PLANS.md와 goal-command.md를 읽어 Step 8부터 재개`
   - `3. 취소`
@@ -100,7 +108,7 @@ PRD 디렉토리 인수와 내용을 확인한다.
 
 **0-B) 인수 없음 OR 디렉토리 없음 OR `.md` 0개**
 
-§A 번호 블록 (질문: "PRD가 아직 없네요. 어떻게 시작할까요?"):
+§A 질문 도구 (질문: "PRD가 아직 없네요. 어떻게 시작할까요?" — 번호 블록 폴백일 때의 모양):
 - `1. show-me-the-prd로 지금 만든다 (추천) — show-me-the-prd 스킬로 위임. PRD 폴더 생성 후 그 경로로 0-A 재진입`
 - `2. 수동 작성한 PRD 폴더 경로를 알려준다 — 경로 받아 0-A 재진입`
 - `3. PRD 없이 한 줄 목표만 입력하고 진행 — 임시 PRD.md 생성 (한 문장 goal + 자동 추출 1~2 acceptance), light 엄격도 + 마일스톤 1개 강제`
@@ -129,7 +137,7 @@ PRD 본문을 읽고 추출:
 - Step 10에서 승인된 목표를 현재 세션에서 시작한다.
 
 ### Step 3: 작업 유형 + 검증 방식 + 엄격도
-**타입**: §A 번호 블록 (1~2회로 압축)
+**타입**: §A 질문 도구 (1~2회로 압축)
 
 - 작업 유형 6종: 기능 구현 / 버그 수정 / UI 구현 / 문서 집필 / 마이그레이션 / eval 개선
   - 자동 추정값을 **1번(추천)**에 둔다. 추정 신뢰도가 약하면 6개를 평평하게 나열(`task-type-classifier.md`).
@@ -139,7 +147,7 @@ PRD 본문을 읽고 추출:
 §A 원칙: PRD에서 작업 유형이 명백하면(예: 추정 점수 압도적) 굳이 묻지 말고 기본값으로 확인만 한다(§1·§2c).
 
 ### Step 4: 마일스톤 추출 + 사용자 확정
-**타입**: prompt + §A 번호 블록
+**타입**: prompt + §A 질문 도구
 
 PRD acceptance criteria를 그룹화하여 마일스톤 초안 생성. ≤5개 강제. 5개 초과 시 우선순위 상위 5개만 1차로 가져가고 나머지는 메모로 분리.
 
@@ -271,9 +279,11 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 이 요약을 화면 출력 후 Step 9로 넘어간다.
 
 ### Step 9: 사람 검토 + 승인 / 수정
-**타입**: §A 번호 블록 (필수 게이트)
+**타입**: §A 질문 도구 (필수 게이트)
 
 질문: "위 요약을 검토하셨나요? 어떻게 진행할까요?"
+
+질문 도구로 물었다면 부른 뒤 턴을 끝낸다. 사용자의 답(다음 메시지)이 승인일 때만 Step 10으로 간다.
 
 - `1. 승인하고 지금 목표 시작 (추천)`: Step 10을 즉시 실행한다.
 - `2. 수정 필요`: 어느 파일을 어떻게 바꿀지 자유 텍스트 입력 받기. 입력 받은 뒤 해당 파일만 재생성 후 Step 7부터 재검증.
@@ -291,8 +301,8 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 
 | 설정 | 기본값 | 변경 방법 |
 |------|--------|-----------|
-| `task_type` | 자동 추정 | Step 3 §A 번호 블록 |
-| `strictness` | `standard` | Step 3 §A 번호 블록 |
+| `task_type` | 자동 추정 | Step 3 §A 질문 도구 |
+| `strictness` | `standard` | Step 3 §A 질문 도구 |
 | `output_dir` | PRD 디렉토리와 동일 | 호출 시 인수 |
 | `overwrite_existing` | `false` (확인 받음) | Step 0 분기 |
 
@@ -324,6 +334,6 @@ LLM 인지에만 의존하지 않는다. Bash 도구로 결정론적 검증한�
 - **PROTECTED_CLAUSES는 불가침**: 5종은 어떤 컴팩트 단계에서도 삭제하지 않는다.
 - **Codex 전용 핸드오프**: 승인 후 create_goal로 시작한다. objective는 ≤4,000자, `./PLANS.md` 파일 포인터.
 - **사람 검토 안전장치 우회 금지**: Step 9 승인 게이트 없이 목표를 시작하지 않는다.
-- **§A 상속**: 모든 선택 질문은 `shared/questioning-policy.md §A` 번호 블록으로. 존재하지 않는 카드 UI를 가정하지 말 것.
+- **§A 상속**: 모든 선택 질문은 `shared/questioning-policy.md §A` 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 둘 다 없을 때만 번호 블록으로 낸다. 도구 목록에 없는 도구를 가정하지 말 것.
 - **승계는 있을 때만**: 가정 원장·디자인 레퍼런스(`references/`+`sources.json`)·kkirikkiri 게이트는 감지·설치된 경우에만 PLAN/VALIDATION/RECOVERY에 주입한다. 없으면 무동작이며 재수집·설치 권유를 하지 않는다.
 - **자기 시연 가능**: 이 스킬 자체를 만드는 작업도 골잡이로 가능하다.

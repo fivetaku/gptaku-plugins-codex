@@ -8,7 +8,7 @@ Included skills (Codex is skill-first — the upstream slash-command routers are
 - `insane-build` — scaffold a new site / deck / card-news / design-system catalog from a `design.md` (or synthesize one), writing deterministic HTML+CSS into `insane-build/{session}/variations/v{N}/`.
 
 Codex adaptations vs the upstream plugin:
-- No card-style question UI; every menu/selection uses the numbered-options chat pattern from `shared/questioning-policy.md` §A (recommended option first, "describe in a sentence" last).
+- Menus/selections use the Codex question tool (`request_user_input_async`, or `request_user_input` in Plan mode) per `shared/questioning-policy.md` §A (recommended option first); only when neither tool exists it falls back to the numbered-options chat pattern ("describe in a sentence" last).
 - The upstream opt-in async verifier and its polling command become a Codex runtime `spawn_agent` background sub-agent (agent_type `reviewer`); the main thread reports immediately and the result is collected only when the user asks ("검증 결과 보여줘"). If spawning is unavailable, verification runs inline in the same turn.
 - All script/asset/reference paths use `$PLUGIN_ROOT`.
 - `schema_version: 3.2` is the active `design.md` contract.

@@ -71,7 +71,7 @@ SKILL.md의 수동 선행 단계로 문서화했다. 가져온 기능:
 
 플랫폼 N/A(미포팅): `setup/setup.sh`(+ pip 의존성 자동설치 훅 — SKILL.md에 수동 `--check-env --install`로
 대체 문서화), `setup/gptaku-update-check.cjs`(업데이트 알림 훅), GitHub star opt-in, 선택지 카드 UI
-프런트매터. Codex에는 hooks/agents 로스터/선택지 카드 UI가 없다.
+프런트매터. (당시 기준) Codex는 hooks/agents 로스터/선택지 카드 UI를 지원하지 않았다. 이후 §A 질문 도구로 대체됨.
 
 ## 0.1.0
 

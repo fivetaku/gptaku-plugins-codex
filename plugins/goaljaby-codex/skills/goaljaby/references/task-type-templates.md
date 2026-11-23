@@ -73,6 +73,6 @@
 ## 적용 순서
 
 1. Step 1에서 작업 유형 추정 (`task-type-classifier.md`)
-2. Step 3에서 사용자가 §A 번호 블록으로 최종 확정
+2. Step 3에서 사용자가 §A 질문 도구(없으면 번호 블록)로 최종 확정
 3. Step 5에서 위 표의 해당 행을 가져와 `templates.md`의 슬롯 치환 (6종 파일 + PLANS.md)
 4. 빈 슬롯이 남으면 해당 줄 자체 제거 (placeholder 잔존 금지)

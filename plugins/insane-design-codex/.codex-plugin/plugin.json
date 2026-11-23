@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "Insane Design Codex",
     "shortDescription": "Analyze, apply, build, and export real design systems in Codex",
-    "longDescription": "Package the Codex-native `insane-design` (analysis + DTCG export), `insane-apply`, and `insane-build` skills with the bundled example corpus, helper scripts, starter components, and the v3.2 `design.md` contract. Menu selections use the numbered-options chat pattern instead of card UIs; the deeper verifier is an opt-in background sub-agent spawn.",
+    "longDescription": "Package the Codex-native `insane-design` (analysis + DTCG export), `insane-apply`, and `insane-build` skills with the bundled example corpus, helper scripts, starter components, and the v3.2 `design.md` contract. Menu selections use the Codex question tool (`request_user_input_async` / Plan-mode `request_user_input`) and fall back to numbered options in chat; the deeper verifier is an opt-in background sub-agent spawn.",
     "developerName": "GPTaku",
     "category": "Coding",
     "capabilities": [

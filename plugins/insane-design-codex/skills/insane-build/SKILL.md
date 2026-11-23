@@ -44,9 +44,11 @@ Step 1 인터뷰에서 "어떻게 해드릴까요?" 대신 "**이 방향으로 �
 
 ## 상호작용 규칙 (§A)
 
-Codex CLI에는 객관식 카드 UI가 **없다**. 이 문서의 모든 선택 질문은
-`$PLUGIN_ROOT/shared/questioning-policy.md` §A의 채팅 번호 블록으로 출력하고, 사용자의 다음 답변을 읽는다.
-추천안은 1번. 마지막은 "문장으로 직접". 추론 가능한 건 묻지 않는다(§1). 번호 블록을 쓸 때도 추천안 1번 + 우열 명시 — "중립 나열" 금지.
+이 문서의 모든 선택 질문은 `$PLUGIN_ROOT/shared/questioning-policy.md` §A의 질문 도구
+(`request_user_input_async`, Plan 모드면 `request_user_input`) 1콜로 묻는다. 두 도구가 모두 없을 때만 채팅 번호 블록으로 폴백한다.
+질문 도구를 부른 뒤에는 한 줄 안내만 쓰고 턴을 끝낸다 — 답은 다음 사용자 메시지로 오며, 그때 이어서 진행한다.
+추천안은 첫 선택지(폴백이면 1번). 폴백의 마지막은 "문장으로 직접". 추론 가능한 건 묻지 않는다(§1). 추천안 우선 + 우열 명시 — "중립 나열" 금지.
+이 문서 아래의 번호 블록 예시는 폴백일 때의 모양이다 — 도구를 쓸 때는 같은 내용을 질문·선택지로 옮긴다.
 
 ---
 
@@ -68,7 +70,7 @@ Codex CLI에는 객관식 카드 UI가 **없다**. 이 문서의 모든 선택 �
 
 ```
 Step 0: entry 분기 — 맨바닥 / design.md 입력 / URL 레퍼런스
-   ↓ (§A 번호 블록 1회)
+   ↓ (§A 질문 도구 1콜)
    ├── 맨바닥  → Step 0.5 (design.md 즉석 합성)
    ├── design.md 경로 → Step 1
    └── URL 레퍼런스 → (명시 승인 시에만) analysis 서브호출 → Step 1
@@ -94,7 +96,7 @@ Step 4: 간결 보고 + 브라우저 자동 오픈 + Tweaks 토글 안내
 
 ### Pre-Step 0: 레퍼런스 자동 감지 (필수)
 
-**Step 0 §A 블록을 출력하기 전에 반드시 실행한다.**
+**Step 0 §A 질문 도구를 부르기 전에 반드시 실행한다.**
 사용자 발화 / 첨부 파일 경로 / 첫 1~2턴 대화 컨텍스트에서 **slug 후보**를 자동 추출해
 `examples/{slug}/design.md` 존재 여부를 확인한다. 이 단계는 질문 없이
 스크립트로 처리 — LLM이 임의로 건너뛰지 않도록 Step 0의 **하드 prerequisite**.
@@ -142,7 +144,7 @@ SESSION="$(date +%Y%m%d-%H%M%S)"
 mkdir -p "$WORK_DIR/insane-build/$SESSION"
 ```
 
-**EXECUTE**: Pre-Step 0 결과를 반영하여 §A 번호 블록을 동적 구성한다.
+**EXECUTE**: Pre-Step 0 결과를 반영하여 §A 질문(질문 도구 1콜, 폴백이면 번호 블록)을 동적 구성한다.
 
 **옵션 동적 구성 규칙** (Pre-Step 0 결과 반영):
 
@@ -193,12 +195,12 @@ mkdir -p "$WORK_DIR/insane-build/$SESSION"
 >    (호출 흔적이 대화 기록에 없으면 `false`. "이미 알고 있다"로 스킵 금지.)
 > 2. **감지된 slug 후보 중 사용자가 명시적으로 "모두 거부"했는가?**
 >    (자동 default로 맨바닥을 고르지 말 것. 사용자가 "맨바닥 (마지막 수단)" 옵션을
->    §A 블록에서 직접 선택한 경우에만 이 Step이 valid.)
+>    §A 질문에서 직접 선택한 경우에만 이 Step이 valid.)
 >
-> 두 조건 모두 통과하지 못하면 이 Step 즉시 중단 → Step 0 §A 블록 재출력.
+> 두 조건 모두 통과하지 못하면 이 Step 즉시 중단 → Step 0 §A 질문 재호출.
 > LLM이 "편의상" 맨바닥을 택하는 패턴을 스킬 단계에서 차단한다 (R5 RCA).
 
-**§A 블록 1회 압축** — 분위기 + 매체를 같은 블록에서 받는다. 2+3회 피로 누적 금지.
+**§A 질문 도구 1콜 압축** — 분위기 + 매체를 같은 콜에서 받는다. 2+3회 피로 누적 금지.
 
 ```
 질문: 어떤 분위기와 매체로 만들까요?
@@ -244,7 +246,7 @@ design.md가 확정된 후, 프로젝트 컨텍스트를 파악한다. **3질문
 
 ### Step 1.7: Unforgettable 요소 + 모션 레벨
 
-apply SKILL.md Step 1.7b에서 그대로 이식. 동일한 질문 2개(Unforgettable 1개 + 모션 1개)를 한 §A 블록으로 출력.
+apply SKILL.md Step 1.7b에서 그대로 이식. 동일한 질문 2개(Unforgettable 1개 + 모션 1개)를 한 §A 질문 도구 콜로 묻는다.
 
 #### Signature ↔ Brand 충돌 감지 (Step 1.7 진입 직전 체크)
 
@@ -269,7 +271,7 @@ reference_slug이 있는 경우, design.md frontmatter의 `bold_direction` + `ae
 - **호환**: 그대로 노출.
 
 감지 결과를 Phase 0 Visual Grounding Pass에 연결 — 스크린샷을 보고도 "정보 밀도 최우선"이 명백한데
-사용자가 `hero_impact` 선택 시 **한 번 더 확인**하도록 §A 블록 위에 경고 문장을 삽입.
+사용자가 `hero_impact` 선택 시 **한 번 더 확인**하도록 §A 질문 도구 호출 직전 채팅 메시지(폴백이면 블록 위)에 경고 문장을 삽입.
 
 **맨바닥 합성(Step 0.5 경로)에서는 이 필터 생략.** 합성 design.md가 자기 자신과 호환되므로.
 
@@ -297,7 +299,7 @@ reference_slug이 있는 경우, design.md frontmatter의 `bold_direction` + `ae
 
 3개 variation을 원한다면 사용자가 **명시**해야 한다:
 - 트리거: "variation 3개", "v1 v2 v3", "여러 버전", "explore options", `--variations=3`
-- 또는 별도 §A 블록의 "variation count" 선택 (필요 시)
+- 또는 별도 §A 질문의 "variation count" 선택 (필요 시)
 
 > **⚠️ §18 per-brand 경고**: design.md §18 DON'T는 *해당 브랜드* 재현 기준이다.
 > Coupang 레퍼런스로 빌드하면 `#FFFFFF` 배경이 **정답**이고, Tesla 레퍼런스면 `#F4F4F4`가 정답이다.
@@ -626,9 +628,9 @@ insane-build/{session}/
 | `$PLUGIN_ROOT/skills/insane-design/shared/starter-components/` | 매체별 HTML 프리셋 | Step 2 |
 | `$PLUGIN_ROOT/skills/insane-design/references/template.md` | design.md frontmatter v3.2 스키마 | Step 0.5 |
 | `$PLUGIN_ROOT/skills/insane-apply/references/redesign-aesthetics.md` | BOLD 방향성 / AI Slop / Unforgettable / 모션 카탈로그 | Step 1.7, Step 2 |
-| `$PLUGIN_ROOT/shared/questioning-policy.md` | §A 번호 블록 질문 정책 | 모든 선택 질문 |
+| `$PLUGIN_ROOT/shared/questioning-policy.md` | §A 질문 도구 정책(번호 블록은 폴백) | 모든 선택 질문 |
 
-## §A 질문 블록 횟수
+## §A 질문 도구 호출 횟수
 
 | 경로 | 호출 |
 |------|------|
@@ -636,4 +638,4 @@ insane-build/{session}/
 | **기존 design.md** | 3회: Step 0 + Step 1 + Step 1.7 (+ Step 3.5 opt-in) |
 | **URL 레퍼런스** | 3~N회: Step 0 + analysis 서브 호출 내부 + Step 1 + Step 1.7 (+ Step 3.5 opt-in) |
 
-v1/v2/v3 모드 선택은 별도 §A 블록 1회 추가.
+v1/v2/v3 모드 선택은 별도 §A 질문 도구 1콜 추가.

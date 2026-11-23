@@ -7,7 +7,7 @@ description: 'Vibe-sunsang knowledge base — answers questions about the level 
 
 바선생의 핵심 개념, 용어, 프레임워크에 대한 질문에 답변합니다. 설명 전용 스킬.
 
-Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다.
+Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 번호 블록으로 채팅에서 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 아래 번호 블록 예시는 폴백일 때의 모양이다. 열린 코칭 질문은 도구 없이 평범한 채팅으로 묻는다.
 
 ## 참조 경로
 
@@ -40,7 +40,7 @@ Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI
 유형별 질문인 경우 사용자의 워크스페이스 유형을 먼저 확인합니다:
 
 1. `~/vibe-sunsang/config/workspace_types.json`을 읽어 확인
-2. 파일이 없거나 유형 정보가 없으면 `shared/questioning-policy.md §A` 번호 블록:
+2. 파일이 없거나 유형 정보가 없으면 `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백). 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 어떤 유형의 워크스페이스에 대해 알고 싶으신가요?
@@ -57,7 +57,7 @@ Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI
 
 사용자의 질문에서 관련 주제를 파악합니다. 질문이 모호하면 두 단계 질문으로 좁혀갑니다.
 
-먼저 `shared/questioning-policy.md §A` 번호 블록으로 주제 묶음을 묻습니다:
+먼저 `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백)으로 주제 묶음을 묻습니다. 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 어떤 주제에 대해 알고 싶으신가요?
@@ -164,4 +164,4 @@ Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI
 - 묻지 않은 전체 프레임워크를 한꺼번에 쏟아붓지 않는다.
 - 예시는 AI 협업 행동에 근거를 둔다.
 - 워크스페이스 유형이 불확실하면 가정을 밝힌다.
-- Codex CLI에는 객관식 카드 UI가 없다 → `shared/questioning-policy.md §A` 번호 블록을 쓴다.
+- 선택지 질문은 `shared/questioning-policy.md §A` 질문 도구로 묻고, 도구가 없을 때만 번호 블록을 쓴다.

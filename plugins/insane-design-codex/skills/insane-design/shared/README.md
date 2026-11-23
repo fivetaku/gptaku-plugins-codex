@@ -25,8 +25,8 @@ the manager explicitly overrides.
 **차용 원형**: 상용 AI 디자인 도구(2026-04 런칭)의 시스템 프롬프트 §1–3에서 관찰된
 "expert designer + user as manager" 구조 ("one thousand no's for every yes").
 
-> §A 번호 블록(`$PLUGIN_ROOT/shared/questioning-policy.md`)과 페르소나는 충돌하지 않는다.
-> 번호 블록을 쓸 때도 **추천안을 1번에 두고 우열을 명시**한다. "중립 3옵션 나열"은 금지.
+> §A 질문 도구(번호 블록은 폴백, `$PLUGIN_ROOT/shared/questioning-policy.md`)와 페르소나는 충돌하지 않는다.
+> 질문 도구·번호 블록 어느 쪽을 쓸 때도 **추천안을 1번에 두고 우열을 명시**한다. "중립 3옵션 나열"은 금지.
 
 **페르소나 위반 시그널** (자가 진단용 — 스스로 발견 시 즉시 복귀):
 - 선택지 3개 이상 제시 + 우열 표시 없음
@@ -291,7 +291,7 @@ $PLUGIN_ROOT/skills/insane-design/shared/starter-components/
 |------------|-------------|------|
 | `schema_version: 3.2` | `schema_version: 2.0` / `3.1` | v3.2가 active. 3.1은 deprecated |
 | `$PLUGIN_ROOT` | 본진(원본 플러그인)의 루트 변수 | Codex 플러그인 루트 변수명 |
-| `shared/questioning-policy.md §A` 번호 블록 | 객관식 카드 UI 호출 | Codex에 카드 UI 없음 |
+| `shared/questioning-policy.md §A` 질문 도구(`request_user_input_async` / Plan `request_user_input`), 없으면 번호 블록 | 객관식 카드 UI 호출 | Codex에서는 §A 질문 도구가 카드에 대응 |
 | `spawn_agent` 백그라운드 verifier + "검증 결과 보여줘" 명시 회수 | `자동 다음 턴 주입` / 별도 verify 커맨드 | Codex 플러그인에 commands 디렉터리 없음 — 회수는 명시 요청으로 |
 | `localStorage + URL hash + 재생성` | `localStorage + postMessage` | postMessage는 호스트가 보장하지 않음 |
 | `medium: web` (기본값) | `format: website` / `type: landing` | 계약 필드명 고정 |
@@ -301,4 +301,4 @@ $PLUGIN_ROOT/skills/insane-design/shared/starter-components/
 ## 참고
 
 - 스키마 단일 진실 원천: `$PLUGIN_ROOT/skills/insane-design/references/schema.v3.2.md`
-- 질문 정책(§A 번호 블록): `$PLUGIN_ROOT/shared/questioning-policy.md`
+- 질문 정책(§A 질문 도구, 번호 블록은 폴백): `$PLUGIN_ROOT/shared/questioning-policy.md`

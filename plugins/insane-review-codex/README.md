@@ -25,7 +25,7 @@ python3 bin/pack_and_ask.py --launch-browser "Chrome"
 python3 bin/pack_and_ask.py --set-launch-mode background   # background(기본)|foreground|headless(권장 안 함)
 ```
 
-마지막 줄 `STATUS node=… deps=… browser=… login=… cookie=… saved_browser=… launch_mode=… mode=…`로 막힌 단계를 판단한다. 스킬(`skills/insane-review/SKILL.md`)이 이 분기를 번호 선택지로 안내한다.
+마지막 줄 `STATUS node=… deps=… browser=… login=… cookie=… saved_browser=… launch_mode=… mode=…`로 막힌 단계를 판단한다. 스킬(`skills/insane-review/SKILL.md`)이 이 분기를 Codex 질문 도구(`request_user_input_async`, Plan 모드 `request_user_input`)로 안내하고, 도구가 없으면 번호 선택지로 대신한다.
 
 ## 기본 사용법
 
@@ -89,7 +89,7 @@ insane-review-codex/
     references/council-setup.md  — agent-council 등록 가이드
   bin/
     pack_and_ask.py               — repomix 패킹 + ChatGPT CDP 브리지
-  shared/questioning-policy.md    — 번호형 선택지 질문 규약
+  shared/questioning-policy.md    — 질문 도구 규약(§A, 폴백은 번호형 선택지)
   assets/                         — 아이콘 등 (예비)
   .gitignore
   CHANGELOG.md

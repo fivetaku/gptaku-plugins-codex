@@ -9,7 +9,7 @@ Included skills:
 Structure:
 - `skills/pumasi/` — Parallel build orchestration skill (`scripts/init_workspace.py`, `scripts/codex-output-schema.json`, `references/`).
 - `skills/pumasi-image/` — Image-generation skill (`scripts/imagen*.sh`, `scripts/extract_image.py`, `references/`).
-- `shared/questioning-policy.md` — Numbered-choice question policy used instead of a card UI.
+- `shared/questioning-policy.md` — Question policy: uses the Codex question tool (`request_user_input_async` / `request_user_input`), with numbered-choice blocks as a fallback when neither tool exists.
 - `.codex-plugin/plugin.json` — Codex plugin manifest
 
 Packaging notes:

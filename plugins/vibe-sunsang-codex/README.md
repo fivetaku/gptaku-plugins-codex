@@ -20,5 +20,5 @@ Heavy analysis offload:
 Packaging notes:
 - Session source: `~/.codex/sessions/` (or `$CODEX_HOME/sessions`; override with `--sessions-dir`). Converted Markdown goes to `~/vibe-sunsang/conversations/`, config and exports stay in `~/vibe-sunsang/`.
 - The workspace instruction file is `AGENTS.md` (what Codex reads), generated from `references/AGENTS-MD-TEMPLATE.md`.
-- Codex CLI has no multiple-choice card UI; all decisions use the numbered-option chat pattern from `shared/questioning-policy.md` §A.
+- Choice questions use the Codex question tool (`request_user_input_async`, or `request_user_input` in Plan mode) per `shared/questioning-policy.md` §A, and fall back to numbered options in chat only when neither tool is available. Open coaching questions stay plain chat.
 - Not ported (platform-level, per `docs/RE-PORTING-PLAN.md` §2): first-run setup hook, GitHub-star opt-in, update notifier.

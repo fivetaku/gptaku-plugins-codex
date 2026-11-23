@@ -8,7 +8,7 @@ description: Translates current Git status into plain-language explanations for 
 `git status`와 관련 명령의 결과를 비개발자가 이해할 수 있는 한국어 자연어로 번역한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. 상태가 헷갈리는 초보에게는 비유로 안심시키며 천천히 짚어준다(§2a). 사용자가 그냥 결과만 빨리 원하면 핵심만 번역해서 준다(§2c).
-> Codex CLI에는 객관식 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양).
 
 ## 실행 순서
 
@@ -31,7 +31,7 @@ git stash list                         # 임시 저장(stash) 확인
 
 1. **`.git` 없음**: "여기는 Git 프로젝트 폴더가 아니에요. '깃 시작해줘'로 먼저 설정하세요." → 중단
 2. **Detached HEAD**: "안전한 위치에서 벗어났어요. 자동으로 돌아갈게요." → 대상 브랜치(`main` 또는 `master`)가 **존재할 때만** `git checkout main` (또는 `master`) 실행
-3. **Merge Conflict** (`UU`, `AA` 등): 충돌 파일 목록을 보여주고, 채팅 번호형 선택지로 해결 방법을 묻는다 (`shared/questioning-policy.md` §A):
+3. **Merge Conflict** (`UU`, `AA` 등): 충돌 파일 목록을 보여주고, §A 질문 도구로 해결 방법을 묻는다(없으면 번호 블록. 아래는 폴백 모양):
    ```text
    두 사람이 같은 파일의 같은 부분을 동시에 고쳐서 충돌이 생겼어요.
    충돌 파일: {파일 목록}

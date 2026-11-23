@@ -12,7 +12,7 @@ description: GPT Pro(웹 전용·API 없음 — 현 시점 최신 플래그십 �
 엔진은 `$PLUGIN_ROOT/bin/pack_and_ask.py` 하나(순수 Python)다. 이 문서가 실행 지시서다 — 아래 순서대로 **네가 직접 실행**한다.
 
 > **원칙: 사용자에게 CLI 타이핑을 시키지 않는다.** 환경이 안 갖춰졌으면 네가 `--ensure-env`로 감지하고, 필요한 결정은
-> `$PLUGIN_ROOT/shared/questioning-policy.md §A` 방식(채팅에 번호형 선택지 블록을 출력하고 자유 텍스트 답변을 읽음)으로 물어본 뒤
+> `$PLUGIN_ROOT/shared/questioning-policy.md §A` 방식(질문 도구 `request_user_input_async` / Plan 모드 `request_user_input`, 둘 다 없으면 채팅 번호형 선택지 블록 폴백)으로 물어본 뒤
 > 네가 대신 실행한다. 초보자도 번호만 골라 따라올 수 있어야 한다. 이미 결정 가능하면(§2c) 묻지 말고 즉시 진행한다.
 
 ## Step 0 — 첫 실행 셋업 (1회, 수동)
@@ -31,7 +31,7 @@ python3 "$PLUGIN_ROOT/bin/pack_and_ask.py" --ensure-env
 `--ensure-env`는 **저장된 브라우저가 있고 CDP가 닫혀 있으면 조용히 1회 자동 기동**한 뒤 상태를 보고한다
 (저장값-only·첫감지 폴백 없음, `browser=wrong`이면 자동기동 안 함). **즉 최초 1회 온보딩 이후엔 브라우저를 다시 묻지 않고 알아서 뜬다.**
 마지막 줄 `STATUS node=… deps=… browser=… login=… cookie=… cookie_exp=… saved_browser=… os=… launch_mode=… mode=…`을 파싱한다.
-**전부 ok가 아니면**, 막힌 첫 단계를 아래처럼 §A 번호 선택지로 물어보고 → 선택대로 네가 실행 → `--ensure-env`를 다시 돌려 재확인한다(최대 3~4회 반복).
+**전부 ok가 아니면**, 막힌 첫 단계를 아래처럼 §A 질문 도구(`request_user_input_async`, Plan 모드 `request_user_input`; 둘 다 없으면 번호 선택지 폴백)로 물어보고(async면 부른 뒤 턴을 끝내고 답이 오면 이어서) → 선택대로 네가 실행 → `--ensure-env`를 다시 돌려 재확인한다(최대 3~4회 반복).
 
 - **`deps=missing`** → 선택지(`의존성`):
   1. 지금 자동 설치 (추천) → 네가 `--check-env --install` 실행
@@ -85,7 +85,7 @@ python3 "$PLUGIN_ROOT/bin/pack_and_ask.py" --ensure-env
 
 ### 1) 의도 파악
 사용자의 요청(또는 직전 대화 맥락)에서 GPT Pro에게 물을 핵심 질문을 한 문장으로 정한다. (버그 원인? 설계 리뷰? 리팩터 방향? 특정 함수 검증?)
-타겟/범위가 애매하면 **§A 번호 선택지**를 줘서 고르게 한다(타이핑 요구 금지). 예) `리뷰 대상`: 후보 디렉토리들 + "프로젝트 전체" + "질문만(코드 없이)".
+타겟/범위가 애매하면 **§A 질문 도구**(없으면 번호 선택지 폴백)로 고르게 한다(타이핑 요구 금지). 예) `리뷰 대상`: 후보 디렉토리들 + "프로젝트 전체" + "질문만(코드 없이)".
 
 ### 2) 타겟 선별 — **완전한 관련 집합을 네가(Codex) 판단** (사용자가 누락을 잡아주는 구조면 안 된다)
 "repomix로 무엇을 넣을지 = 무엇이 완전한 관련 집합인지", "repomix만으로 충분한지 vs 관련 파일을 다 넣어야 하는지"의 **판단은 네 책임**이다. 기본은 **"넓게, 빠짐없이"**:
@@ -165,4 +165,4 @@ manifest는 전송 직후 대화 URL이 결속되는 즉시 원자적으로 기�
 
 ## Codex 렌더링 규칙 (질문이 필요할 때)
 
-Codex CLI에는 선택지 카드 UI가 없다. 질문이 반드시 필요하면 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 방식 — 채팅에 번호형 선택지 블록을 출력하고 사용자의 자유 텍스트 답변을 읽는다. 주로 §2c(이미 구체적이면 즉시 진행)가 적용된다. 위 온보딩 분기는 전부 이 규칙으로 렌더한다.
+질문이 반드시 필요하면 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 방식 — 질문 도구(`request_user_input_async`, Plan 모드 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 채팅에 번호형 선택지 블록을 출력해 사용자의 자유 텍스트 답변을 읽는다. async 도구는 부른 뒤 턴을 끝내고 답이 오면 이어서 진행한다. 주로 §2c(이미 구체적이면 즉시 진행)가 적용된다. 위 온보딩 분기는 전부 이 규칙으로 렌더한다.

@@ -48,7 +48,7 @@ Turn 1 인터뷰에서 도메인 추정 후:
 
 각 차원의 슬롯을 도메인에 맞게 명명. 아래 §참고 예시 패턴 학습.
 
-### Step 4: 사용자 confirm (`shared/questioning-policy.md §A` — 채팅 번호 블록)
+### Step 4: 사용자 confirm (`shared/questioning-policy.md §A` — 질문 도구, 없으면 채팅 번호 블록)
 
 ```
 이 PRD는 [추정 도메인] 같아 보입니다. 다음 4종 문서를 생성할까요?

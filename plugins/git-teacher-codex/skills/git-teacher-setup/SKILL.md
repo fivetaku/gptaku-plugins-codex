@@ -9,7 +9,7 @@ Git/GitHub 초기 설정(Phase 1)과 프로젝트 폴더 만들기(Phase 2)를 �
 이미 완료된 단계는 자동으로 스킵한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. 겁먹은 초보에게는 원샷 금지 — 비유로 안심시키며 여러 턴에 걸쳐 손잡고 간다(§2a). 다만 사용자가 그냥 빨리 세팅만 원하면 강의하지 말고 단계만 진행한다(§2c).
-> Codex CLI에는 객관식 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻고, 사용자의 다음 자유 텍스트 답변을 읽는다.
+> 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양). async 도구를 쓰면 질문 뒤 턴을 끝내고, 사용자의 다음 메시지를 답으로 읽는다.
 
 ## Phase 1: 준비하기
 
@@ -96,7 +96,7 @@ Git에 이름과 이메일을 등록해야 해요.
 파일을 저장할 때 "누가 수정했는지" 기록하는 데 쓰여요.
 ```
 
-그다음 채팅에 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A):
+그다음 §A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양):
 
 ```text
 질문: Git에 등록할 이름과 이메일을 어떻게 할까요?
@@ -141,7 +141,7 @@ gh auth login --web --git-protocol https
 
 ### Step 4: 프로젝트 선택
 
-채팅에 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A):
+§A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양):
 
 ```text
 질문: 프로젝트 폴더를 어떻게 만들까요?
@@ -154,7 +154,7 @@ gh auth login --web --git-protocol https
 
 #### 선택 1: 새 프로젝트 시작하기
 
-채팅에서 프로젝트 이름을 받는다. 이어서 공개 여부를 §A 번호 블록으로 확인한다:
+채팅에서 프로젝트 이름을 받는다. 이어서 공개 여부를 §A 질문 도구로 확인한다(없으면 번호 블록. 아래는 폴백 모양):
 
 ```text
 질문: 이 프로젝트를 공개로 만들까요, 비공개로 만들까요?
@@ -182,7 +182,7 @@ gh repo create {project-name} --{public|private} --source=. --remote=origin --pu
 
 #### 선택 3: 현재 폴더를 프로젝트로 만들기
 
-공개 여부를 §A 번호 블록으로 확인한다 (선택 1과 동일, 기본은 비공개).
+공개 여부를 §A 질문 도구로 확인한다 (선택 1과 동일, 기본은 비공개).
 
 ```bash
 git init

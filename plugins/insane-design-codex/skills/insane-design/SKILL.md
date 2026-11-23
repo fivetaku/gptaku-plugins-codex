@@ -29,12 +29,13 @@ Never hedge; pick one BOLD direction and defend it.
 
 ## 상호작용 규칙 (§A)
 
-Codex CLI에는 객관식 카드 UI가 **없다**. 질문이 필요하면
-`$PLUGIN_ROOT/shared/questioning-policy.md` §A의 채팅 번호 블록으로 대체한다.
+질문이 필요하면 `$PLUGIN_ROOT/shared/questioning-policy.md` §A의 질문 도구
+(`request_user_input_async`, Plan 모드면 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 채팅 번호 블록으로 폴백한다.
+질문 도구를 부른 뒤에는 한 줄 안내만 쓰고 턴을 끝내며, 답이 오는 다음 메시지에서 이어서 진행한다.
 
 - analysis는 인터뷰형이 아니라 **추출형**이다. URL과 출력 루트가 명확하면 질문 없이 진행하고,
   추론 가능한 건 묻지 않는다(§1 "추론 가능한 건 안 묻기").
-- URL/출력 루트가 모호할 때만 §A 번호 블록으로 **1회** 확인한다(추천안을 1번에).
+- URL/출력 루트가 모호할 때만 §A 질문 도구로 **1회** 확인한다(추천안을 1번에).
 - 토큰/색/폰트는 **추출**한다 — 환각으로 만들지 않는다.
 
 ---
@@ -49,7 +50,7 @@ Codex CLI에는 객관식 카드 UI가 **없다**. 질문이 필요하면
 | `build` 또는 `build ...` | 새 빌드 (맨바닥 / design.md / URL) | → `$PLUGIN_ROOT/skills/insane-build/SKILL.md` |
 | `export <slug>` / "tokens.json 내보내줘" | design.md → DTCG tokens.json | → Export 모드 (이 스킬, 아래) |
 | `[slug]` (URL이 아닌 문자열) | 해당 design.md를 프로젝트에 적용 | → `$PLUGIN_ROOT/skills/insane-apply/SKILL.md` |
-| (인자 없음) | 모드 선택 요청 | → 아래 §A 블록 |
+| (인자 없음) | 모드 선택 요청 | → 아래 §A 질문 |
 
 **자연어인 경우 → 의도 판별**:
 - "분석해줘", "CSS 뜯어봐", "디자인 시스템 뽑아줘" → analysis (URL 요청)
@@ -60,7 +61,7 @@ Codex CLI에는 객관식 카드 UI가 **없다**. 질문이 필요하면
 **apply / build로 넘길 때**: 해당 SKILL.md를 Read하고 그 워크플로우를 따른다. 남은 인자를 그대로 전달한다
 (`build` 이후 텍스트, 또는 slug). build 진입 전에는 `$PLUGIN_ROOT/skills/insane-design/shared/README.md`(공통 계약)를 먼저 Read한다.
 
-**인자가 없을 때** — §A 번호 블록을 출력한다:
+**인자가 없을 때** — §A 질문 도구 1콜로 묻는다(아래 블록은 번호 블록 폴백일 때의 모양; 도구를 쓰면 같은 질문·선택지로 옮기고 호출 뒤 턴을 끝낸다):
 
 ```
 질문: 무엇을 할까요?
@@ -72,7 +73,7 @@ Codex CLI에는 객관식 카드 UI가 **없다**. 질문이 필요하면
 ```
 
 - 1 → analysis 진입. URL이 없으면 한 줄로 URL을 요청한다 (예시: `https://stripe.com`, `https://linear.app`, `https://vercel.com`).
-- 2 → apply 진입. slug가 없으면 §A 블록으로 레퍼런스를 고르게 한다 (예: `1. stripe — 보라 브랜드, sohne, weight 300 (SaaS 대표)` / `2. apple — 모노크롬, SF Pro, 미니멀` / `3. toss — Toss Blue 핀테크` / `4. nike — Futura/Helvetica 스포티` / `5. 다른 slug 직접 입력`).
+- 2 → apply 진입. slug가 없으면 §A 질문으로 레퍼런스를 고르게 한다 (예: `1. stripe — 보라 브랜드, sohne, weight 300 (SaaS 대표)` / `2. apple — 모노크롬, SF Pro, 미니멀` / `3. toss — Toss Blue 핀테크` / `4. nike — Futura/Helvetica 스포티` / `5. 다른 slug 직접 입력`).
 - 3 → build 진입 (Step 0 entry 분기부터).
 - 4 → Export 모드.
 
@@ -1122,7 +1123,7 @@ frontmatter 토큰 그래프 객체(colors:/typography:/...)가 비어 있으면
 | **`references/pitfalls.md`** | 35개 서비스 분석에서 발견된 14가지 함정 (가상 토큰명, 리브랜딩, light/dark 역전 등) | Step 4 |
 | **`references/narrative-vocabulary.md`** | v3.3 archetype별 metaphor 카탈로그 + first-sentence 패턴 5종 (71 getdesign.md ref 분석 기반) | Step 4 §00 작성 |
 | `shared/README.md` | 세 스킬 공통 계약 (Identity · Contract · Verifier · AI Slop · Starter Components) | 전체 |
-| `$PLUGIN_ROOT/shared/questioning-policy.md` | §A 번호 블록 질문 정책 | Router, 모호한 입력 |
+| `$PLUGIN_ROOT/shared/questioning-policy.md` | §A 질문 도구 정책(번호 블록은 폴백) | Router, 모호한 입력 |
 | W3C DTCG spec | https://tr.designtokens.org/format/ | Export |
 
 ## Scripts

@@ -8,7 +8,7 @@ description: Commits changed files to Git, explained in plain language for non-d
 변경된 파일을 Commit (저장)한다. `git add -A` + `git commit`을 실행하고, 사후에 무엇을 했는지 설명한다.
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "Commit하면 GitHub에 올라간다"는 오개념은 비유+질문으로 교정한다(§2a). 사용자가 그냥 저장만 빨리 원하면 강의하지 않는다(§2c).
-> Codex CLI에는 객관식 카드 UI가 없다. 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **채팅 번호형 선택지 블록**으로 묻는다.
+> 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양).
 
 ## 실행 순서
 
@@ -28,7 +28,7 @@ ls .gitignore 2>/dev/null              # .gitignore 존재 여부
 
 1. **`.git` 없음**: "여기는 Git 프로젝트 폴더가 아니에요. '깃 시작해줘'로 먼저 설정하세요." → 중단
 2. **Detached HEAD**: "안전한 위치에서 벗어났어요." → `git checkout main` 실행 후 재시도
-3. **Merge Conflict** (`UU`, `AA` 등): 충돌 파일 목록을 보여주고, 채팅 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A):
+3. **Merge Conflict** (`UU`, `AA` 등): 충돌 파일 목록을 보여주고, §A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양):
    ```text
    충돌이 있어서 바로 저장할 수 없어요. 두 사람이 같은 부분을 동시에 고쳤거든요.
    충돌 파일: {파일 목록}
@@ -58,7 +58,7 @@ ls .gitignore 2>/dev/null              # .gitignore 존재 여부
 
 변경된 파일 목록을 보여준 뒤 커밋 메시지를 물어본다.
 
-`git status --porcelain` 결과로 파일 목록을 **동적 생성**하여 먼저 보여주고, 채팅 번호형 선택지로 묻는다 (`shared/questioning-policy.md` §A):
+`git status --porcelain` 결과로 파일 목록을 **동적 생성**하여 먼저 보여주고, §A 질문 도구로 묻는다(없으면 번호 블록. 아래는 폴백 모양):
 
 ```text
 변경된 파일 N개:

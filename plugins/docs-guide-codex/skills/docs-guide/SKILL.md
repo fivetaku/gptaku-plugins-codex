@@ -46,11 +46,11 @@ This plugin mostly needs just two facts: **library** and **topic**.
 
 Per `shared/questioning-policy.md` §2c — if the user already named the library and topic, proceed immediately without asking anything.
 
-If the library OR topic is genuinely ambiguous (e.g., "Router" with no project context), ask exactly ONE numbered-option question per §A below, then proceed.
+If the library OR topic is genuinely ambiguous (e.g., "Router" with no project context), ask exactly ONE question per §A below (question tool first, numbered block only as fallback), then proceed. With `request_user_input_async`, end the turn after the call and continue when the answer message arrives.
 
-### §A — Numbered-option format (Codex CLI has no multiple-choice card UI)
+### §A — Ask with the question tool (numbered block is the fallback)
 
-Codex CLI has no card UI. When you must ask, output a chat block:
+Ask with the §A question tool: `request_user_input_async` (default mode; write one short line after the call and end the turn), or `request_user_input` (Plan mode). Recommended option first; no "Other" option (free text is added automatically). Only if neither tool exists, output this numbered chat block (fallback shape):
 
 ```
 질문: <한 줄 질문>
@@ -60,7 +60,7 @@ Codex CLI has no card UI. When you must ask, output a chat block:
 ```
 
 - Recommended option always goes first (1번).
-- Multi-pick → "여러 개면 `1,3`처럼 적어주세요."
+- Multi-pick → add "(여러 개면 쉼표로)" to the title (fallback block: "여러 개면 `1,3`처럼 적어주세요.").
 - Never ask more than once; if still unclear, proceed with the most likely interpretation.
 
 ---

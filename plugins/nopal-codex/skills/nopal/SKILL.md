@@ -24,12 +24,12 @@ Load as needed (필요한 서비스만):
 Use this skill when the user wants Google Workspace work orchestrated from natural language.
 
 Questioning policy: `$PLUGIN_ROOT/shared/questioning-policy.md` §A + §1 + §2c.
-- Codex CLI has no structured question card UI. When a decision is needed, output numbered-options-in-chat per §A.
+- When a decision is needed, ask with the §A question tool (`request_user_input_async`; `request_user_input` in Plan mode). Only if neither tool exists, output the numbered block in chat. After an async call, end the turn and act only after the user's answer message arrives.
 - Infer what you can; ask only what is genuinely unknown (§1). If the request is already concrete, skip clarification and proceed (§2c).
 
 ## 규칙
 
-- 모든 질문은 §A 번호 블록으로 채팅에 출력한다. 존재하지 않는 카드 UI를 가정하지 않는다.
+- 선택지 질문은 §A 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 §A 번호 블록을 채팅에 출력한다. async 도구는 부른 뒤 턴을 끝내고, 사용자의 답이 온 다음에만 진행한다.
 - gws CLI를 통해서만 Google Workspace와 상호작용한다. 직접 HTTP 호출 금지.
 - 읽기 전용 단순 조회(일정 확인, 메일 확인 등)는 확인 없이 바로 실행한다. 쓰기/변경 작업만 사용자 확인을 받는다.
 
@@ -78,7 +78,7 @@ gws CLI 설치 여부와 인증 상태를 자동으로 확인한다. 사용자�
 
 **요청이 주어진 경우** — 사용자의 자연어 요청을 그대로 오케스트레이션 입력으로 사용하고 Step 2로 진행.
 
-**요청이 없는 경우** — §A 번호 블록으로 채팅에 출력하고 답변을 기다린다:
+**요청이 없는 경우** — §A 질문 도구로 묻고 답변을 기다린다(도구가 없으면 번호 블록 폴백으로 출력). 번호 블록 폴백일 때의 모양:
 
 ```
 무엇을 도와드릴까요?
@@ -166,7 +166,7 @@ Nopal은 Google Workspace 9개 서비스를 자연어로 자동 조합합니다.
 예시 — "어떤 회의를 준비할까요?" 대신:
 1. `gws calendar +agenda --days 3 --format json` 실행
 2. 결과에서 회의 목록 추출
-3. §A 번호 블록으로 회의 목록을 선택지로 제시
+3. §A 질문 도구로 회의 목록을 선택지로 제시 (도구가 없으면 번호 블록 폴백)
 
 ```
 어떤 회의를 준비할까요?
@@ -176,12 +176,12 @@ Nopal은 Google Workspace 9개 서비스를 자연어로 자동 조합합니다.
 4. 직접 입력해주세요
 ```
 
-**3-3. 질문 방식 (§A 번호 블록)**
+**3-3. 질문 방식 (§A 질문 도구)**
 
-부족한 파라미터가 있을 때만 질문한다. 질문은 `$PLUGIN_ROOT/shared/questioning-policy.md` §A의 번호형 선택지 블록을 채팅에 출력하고 사용자의 다음 답변을 읽는다.
+부족한 파라미터가 있을 때만 질문한다. 질문은 `$PLUGIN_ROOT/shared/questioning-policy.md` §A의 질문 도구(`request_user_input_async`, Plan 모드 `request_user_input`)로 묻고, 사용자의 다음 답변을 읽는다. 두 도구가 모두 없을 때만 번호형 선택지 블록을 채팅에 출력한다.
 
 규칙:
-- 존재하지 않는 객관식 카드 UI를 가정하지 않는다. 반드시 §A 번호 블록을 채팅에 출력한다.
+- 먼저 §A 질문 도구를 쓰고, 번호 블록은 도구가 없을 때의 폴백으로만 쓴다. async 도구는 부른 뒤 턴을 끝내고 답이 오기 전에는 답에 달린 결정을 진행하지 않는다.
 - 질문은 한 번에 묶어서 한다 (라운드트립 최소화).
 - 기본값으로 해결 가능한 파라미터는 질문하지 않고 기본값을 사용한다.
   - 회의 시간: 기본 1시간
@@ -193,12 +193,12 @@ Nopal은 Google Workspace 9개 서비스를 자연어로 자동 조합합니다.
 
 ```
 요청: "회의 준비해줘"
-→ [Calendar 조회 후] 번호 블록으로 회의 목록 제시
+→ [Calendar 조회 후] 질문 도구(폴백: 번호 블록)로 회의 목록 제시
 → "자료도 공유할까요? 1. 네  2. 아니오"
 → "참석자에게 메일도 보낼까요? 1. 네  2. 아니오"
 
 요청: "보고서 보내줘"
-→ [Drive 조회 후] 번호 블록으로 최근 파일 목록 제시
+→ [Drive 조회 후] 질문 도구(폴백: 번호 블록)로 최근 파일 목록 제시
 → "누구에게 보낼까요? (이메일 주소를 적어주세요)"
 
 요청: "이번 주 할일 정리해줘"
@@ -272,7 +272,7 @@ references/ 폴더에 `workflows.md`, `recipes.md`가 있으면 참조하여 검
 
 단순 조회가 아닌 경우, 계획을 마크다운 테이블로 보여주고 확인을 받는다.
 
-§A 번호 블록으로 확인을 받는다:
+§A 질문 도구로 확인을 받는다. async 도구는 부른 뒤 턴을 끝내고, 사용자의 명시적 답(실행)이 온 다음에만 쓰기/발송/삭제를 실행한다. 도구가 없으면 번호 블록 폴백으로 받는다. 번호 블록 폴백일 때의 모양:
 
 ```
 이렇게 실행할까요?
@@ -639,7 +639,7 @@ JSON 덤프를 하지 않는다. 사람이 읽기 쉬운 요약으로 정리한�
 
 1. **gws CLI를 거치지 않고 Google API를 직접 HTTP 호출하지 마.** 모든 Google Workspace 상호작용은 반드시 `gws` 명령어를 통한다.
 2. **OAuth 토큰이나 API 키를 하드코딩하지 마.** gws CLI가 토큰을 자체 관리한다.
-3. **존재하지 않는 객관식 카드 UI를 가정하지 마.** 질문은 반드시 §A 번호 블록을 채팅에 출력한다.
+3. **질문 도구가 있는데 번호 블록부터 쓰지 마.** 질문은 §A 질문 도구로 하고, 두 도구가 모두 없을 때만 번호 블록을 채팅에 출력한다.
 4. **references/ 파일을 실행 시점에 전부 읽지 마.** 필요한 서비스의 reference만 선택적으로 읽는다.
 5. **사용자에게 gws 명령어를 직접 타이핑하라고 안내하지 마.** Nopal이 셸에서 대신 실행한다.
 6. **프리셋 패턴에 없다고 거부하지 마.** references를 참고해서 동적으로 새 조합을 생성한다.
@@ -653,7 +653,7 @@ JSON 덤프를 하지 않는다. 사람이 읽기 쉬운 요약으로 정리한�
 ## 항상 해 (ALWAYS DO)
 
 1. **실행 시 `gws auth status`로 인증 상태를 먼저 확인한다.** (Step 0)
-2. **사용자 요청이 모호하면 §A 번호 블록으로 명확화한다.** 추론 가능한 건 묻지 않는다 (§1 + §2c). 열린 텍스트 질문은 핵심 의도 파악 시에만.
+2. **사용자 요청이 모호하면 §A 질문 도구(폴백: 번호 블록)로 명확화한다.** 추론 가능한 건 묻지 않는다 (§1 + §2c). 열린 텍스트 질문은 핵심 의도 파악 시에만.
 3. **쓰기/복합 작업은 실행 계획 미리보기를 보여주고 확인받은 후 실행한다.**
 4. **각 gws 명령어 실행 후 결과를 파싱하여 다음 단계에 필요한 ID/값을 추출한다.**
 5. **최종 결과를 사람이 읽기 쉬운 요약으로 정리한다.** JSON 덤프 금지.

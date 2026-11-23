@@ -98,15 +98,16 @@ description: Image-generation companion skill for the pumasi plugin family. Use 
 - 비율 키워드가 입력에 있으면 → 비율 질문 스킵
 - 퀄리티 키워드가 입력에 있으면 → 퀄리티 질문 스킵
 
-### Step 3: 사용자 질문 (§A 번호형 블록, 최대 5개)
+### Step 3: 사용자 질문 (§A 질문 도구 1콜, 최대 5개)
 
-Codex CLI에는 객관식 카드형 질문 UI가 **없다.** 결정이 꼭 필요하면
-`$PLUGIN_ROOT/shared/questioning-policy.md §A`의 **채팅 번호형 선택지 블록**으로 묻는다.
+결정이 꼭 필요하면 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 **질문 도구**(`request_user_input_async`, Plan 모드면 `request_user_input`)로 묻는다.
+`request_user_input_async`는 호출 후 한 줄 안내만 쓰고 턴을 끝내며, 답은 다음 메시지로 받는다. 두 도구가 모두 없을 때만 **채팅 번호형 선택지 블록**(폴백)으로 묻는다.
 
 `references/clarification-matrix.md`를 Read하여 모드별 의도 파악 카테고리 3개를 확정한다.
 
 **질문 순서** (한 턴 최대 4문항 — 초과분은 우선순위 낮은 의도 질문부터 잘라낸다):
 0. **백엔드** (입력에 "그록으로"/"grok"/"코덱스로"/"codex" 지명이 있으면 스킵)
+   번호 블록 폴백일 때의 모양:
    ```text
    질문: 어떤 백엔드로 생성할까요?
    1. Codex gpt-image-2 (권장) — 임의 비율, 한글/영문 텍스트 렌더 강함
@@ -119,11 +120,11 @@ Codex CLI에는 객관식 카드형 질문 UI가 **없다.** 결정이 꼭 필�
 
 **질문 원칙**:
 - §1 + §2c: 이미 입력에서 확정된 차원은 **묻지 않는다**. 요청이 구체적이면 질문 없이 바로 생성한다(과잉 질문 = 마찰 실패).
-- 물을 때는 §A 번호형 블록으로 — 각 슬롯당 5개 이상 선택지, 그중 1~2개는 창의적 대안(★), 마지막은 "문장으로 직접 알려주기"(Other 대체).
+- 물을 때는 §A 질문 도구로 — 각 슬롯당 5개 이상 선택지, 그중 1~2개는 창의적 대안(★). `request_user_input_async`는 선택지가 자유 문자열이라 5개 이상도 되고, 자유 입력이 자동 추가되므로 "문장으로 직접 알려주기"는 넣지 않는다. Plan 모드 `request_user_input`은 선택지 2~3개 제한이라 추천안 먼저 상위 3개만 남긴다. 도구가 없을 때만 번호 블록 폴백을 쓰고, 이때 마지막에 "문장으로 직접 알려주기"(Other 대체)를 둔다.
 - "자동 추천(AI 판단)" 안전망 선택지를 항상 포함하고, "모르면 1번(자동 추천)으로 진행하겠습니다"로 안내한다.
-- 여러 슬롯을 한 번에 물을 때는 각 질문 블록을 이어서 출력하고 "여러 개면 1,3처럼 적어주세요"로 안내. 카드 UI를 흉내내지 말 것.
+- 여러 슬롯을 한 번에 물을 때는 도구 1콜에 묶는다(Plan 모드는 3문항씩). 폴백이면 각 질문 블록을 이어서 출력하고 "여러 개면 1,3처럼 적어주세요"로 안내. 질문 도구가 있는데 번호 블록으로 때우지 말 것.
 
-§A 블록 예시 (단일 슬롯):
+번호 블록 폴백일 때의 모양 (단일 슬롯):
 ```text
 질문: 어떤 분위기로 갈까요?
 1. 자동 추천 — 내용에 맞게 판단. 결정 피로 없이 진행
@@ -214,7 +215,7 @@ bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-full.sh \
 bash $PLUGIN_ROOT/skills/pumasi-image/scripts/imagen-batch.sh "{batch_json_path}"
 ```
 
-`--backend grok`: `grok` 헤드리스 `image_gen`으로 생성한다(`--ref`를 주면 `image_edit`). 사전 조건: grok CLI 설치(`$HOME/.grok/bin/grok`) + `grok login`. 미설치/미로그인이면 스크립트가 exit 3으로 실패하니 사용자에게 알리고 codex 재생성 여부를 §A 블록으로 확인한다.
+`--backend grok`: `grok` 헤드리스 `image_gen`으로 생성한다(`--ref`를 주면 `image_edit`). 사전 조건: grok CLI 설치(`$HOME/.grok/bin/grok`) + `grok login`. 미설치/미로그인이면 스크립트가 exit 3으로 실패하니 사용자에게 알리고 codex 재생성 여부를 §A 질문 도구(없으면 번호 블록)로 확인한다.
 
 래퍼 내부 동작(codex 백엔드):
 1. `codex features list`로 image_generation feature flag 재확인 (안전망)

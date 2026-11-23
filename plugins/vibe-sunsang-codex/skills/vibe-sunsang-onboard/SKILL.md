@@ -7,7 +7,7 @@ description: 'Vibe-sunsang initial setup for Codex — self-heals the local work
 
 > 처음 한 번만 실행한다. 워크스페이스 자가 치유 → 프로젝트 매핑 → 유형 분류 → AGENTS.md 생성 → 첫 변환.
 
-Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI에 카드 UI가 없으므로 `$PLUGIN_ROOT/shared/questioning-policy.md §A` 번호 블록으로 채팅에서 묻는다 (위젯 흉내 금지).
+Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 번호 블록으로 채팅에서 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 아래 번호 블록 예시는 폴백일 때의 모양이다. 열린 코칭 질문은 도구 없이 평범한 채팅으로 묻는다 (도구가 없는데 위젯을 흉내 내지 말 것).
 
 ## 참조 경로
 
@@ -24,7 +24,7 @@ Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 Codex CLI
 
 `~/vibe-sunsang/` 디렉토리가 있는지 확인합니다.
 
-**이미 존재하는 경우 (재온보딩)** → `shared/questioning-policy.md §A` 번호 블록:
+**이미 존재하는 경우 (재온보딩)** → `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백). 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 이전에 설정한 바선생 데이터가 있습니다. 어떻게 할까요?
@@ -141,7 +141,7 @@ python3 "$PLUGIN_ROOT/scripts/convert_sessions.py" --list-projects --names-file 
 
 각 프로젝트에 대해:
 1. `display_name`(폴더명에서 자동 생성된 이름)을 추측값으로 쓴다. 같은 폴더명이 다른 경로에 있으면 변환기가 부모 폴더명을 접두로 붙여 구분해 준다.
-2. `shared/questioning-policy.md §A` 번호 블록으로 묻는다 (프로젝트별로 반복):
+2. `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백)으로 묻는다 (프로젝트별로 반복). 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 이 프로젝트(`~/code/my-project`, 세션 12개)의 이름을 뭐라고 할까요?
@@ -190,7 +190,7 @@ python3 "$PLUGIN_ROOT/scripts/convert_sessions.py" --list-projects --names-file 
 - 해당 프로젝트의 파일 구조를 간단히 확인 (`.py`, `.js` 파일이 많으면 Builder 등)
 - 추론이 어려우면 사용자에게 직접 질문
 
-각 프로젝트에 대해 `shared/questioning-policy.md §A` 번호 블록으로 확인한다:
+각 프로젝트에 대해 `shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백)으로 확인한다. 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: [프로젝트명]의 AGENTS.md를 분석해보니 [유형] 워크스페이스로 보입니다. 맞나요?
@@ -292,7 +292,7 @@ python3 "$PLUGIN_ROOT/scripts/convert_sessions.py" --force --names-file "$HOME/v
 
 ### Step 7: 바로 시작할지 물어보기
 
-`shared/questioning-policy.md §A` 번호 블록:
+`shared/questioning-policy.md §A` 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호 블록 폴백). 번호 블록 폴백일 때의 모양:
 
 ```text
 질문: 바로 이번 주 리뷰를 시작해볼까요?

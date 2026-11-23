@@ -14,13 +14,13 @@ description: Structured research-query builder that turns a vague topic into a r
 
 ## 질문 원칙 (shared/questioning-policy.md §A·§1·§2c)
 
-Codex CLI에는 객관식 카드 위젯 UI가 **없다**. `shared/questioning-policy.md §A`의 채팅 번호 블록으로 대체한다. 추론 가능한 건 묻지 말고(§1), 요청이 이미 구체적이면 과잉질문 없이 바로 브리프를 생성한다(§2c). 사용자 입력 언어에 맞춰 모든 질문/선택지/산출물 언어를 일치시킨다.
+선택지 질문은 `shared/questioning-policy.md §A`의 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 채팅 번호 블록으로 대신한다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 추론 가능한 건 묻지 말고(§1), 요청이 이미 구체적이면 과잉질문 없이 바로 브리프를 생성한다(§2c). 사용자 입력 언어에 맞춰 모든 질문/선택지/산출물 언어를 일치시킨다.
 
 ## Codex 워크플로우
 
 ### Phase 1: Discovery (주제·타입)
 
-주제가 불명확할 때만 한 번, §A 번호 블록으로 가장 큰 미지수만 묻는다:
+주제가 불명확할 때만 한 번, §A 질문 도구 1콜로 가장 큰 미지수만 묻는다(번호 블록 폴백일 때의 모양):
 
 ```text
 어떤 유형의 리서치인가요?
@@ -36,7 +36,7 @@ Codex CLI에는 객관식 카드 위젯 UI가 **없다**. `shared/questioning-po
 
 ### Phase 2: Detailed Scoping (범위·소스 품질)
 
-핵심 주제를 잡은 뒤, 정말 모호한 제약만 §A 번호 블록으로 확인한다(추론 가능하면 기본값으로 진행):
+핵심 주제를 잡은 뒤, 정말 모호한 제약만 §A 질문 도구 1콜로 확인한다(추론 가능하면 기본값으로 진행. 번호 블록 폴백일 때의 모양):
 
 ```text
 지리적 범위는?
@@ -131,7 +131,7 @@ Codex CLI에는 객관식 카드 위젯 UI가 **없다**. `shared/questioning-po
 
 ### Phase 4: Confirmation and Handoff
 
-브리프를 보여준 뒤 §A 번호 블록으로 다음 행동을 확인한다:
+브리프를 보여준 뒤 §A 질문 도구 1콜로 다음 행동을 확인한다(번호 블록 폴백일 때의 모양):
 
 ```text
 쿼리가 괜찮으면 바로 리서치를 시작할까요?
@@ -222,7 +222,7 @@ Codex CLI에는 객관식 카드 위젯 UI가 **없다**. `shared/questioning-po
 
 ## Guardrails
 
-- 질문은 §A 번호 블록으로 compact하게, 추론 가능한 건 묻지 않는다.
+- 질문은 §A 질문 도구 1콜(없으면 번호 블록)로 compact하게, 추론 가능한 건 묻지 않는다.
 - 빈칸으로 두지 말고 구체적 기본값을 채운다.
 - query schema를 구조화 출력의 계약으로 취급한다.
 - 위젯형 프롬프트에 의존하지 말고 채팅으로 묻는다.
