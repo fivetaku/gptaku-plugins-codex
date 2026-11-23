@@ -9,6 +9,8 @@ description: Commits changed files to Git, explained in plain language for non-d
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. "Commit하면 GitHub에 올라간다"는 오개념은 비유+질문으로 교정한다(§2a). 사용자가 그냥 저장만 빨리 원하면 강의하지 않는다(§2c).
 > 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양).
+> 
+> async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
 
 ## 실행 순서
 

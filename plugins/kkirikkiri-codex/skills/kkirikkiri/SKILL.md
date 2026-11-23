@@ -20,6 +20,7 @@ description: Assemble and run a Codex-native agent team from one plain-language 
 - 이후 각 Step 진입 시 본문의 `EXECUTE NOW: Read(...)` 박스를 즉시 실행한다 (per-step lazy read).
 - 텍스트 출력 후 질문하지 않는다. 도구를 먼저 호출한다.
 - 모든 결정 질문은 **§A 질문 도구**(`request_user_input_async`, Plan 모드면 `request_user_input`)로 한다. 두 도구가 모두 없을 때만 번호 블록 폴백(아래 "렌더링 규칙")을 쓴다.
+- async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
 - **§A 질문 도구를 부른 뒤에는 한 줄 안내("위 질문에 답해 주시면 이어서 진행합니다")만 쓰고 턴을 끝낸다 — 답에 달린 결정을 추측으로 진행하지 않는다.** 답이 다음 메시지로 오면 **즉시 다음 Step으로 계속 진행한다.** 답변 요약만 출력하고 멈추면 워크플로우 위반 — 반드시 다음 Step의 Read 박스나 도구 호출을 이어서 실행한다.
 
 ### 인자 파싱 (본진 `/kkirikkiri` 커맨드 통합)

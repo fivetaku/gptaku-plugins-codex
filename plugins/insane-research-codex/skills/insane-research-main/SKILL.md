@@ -40,6 +40,8 @@ description: Comprehensive, citation-heavy research workflow with session state,
 
 `shared/questioning-policy.md §A`의 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`)로 아래 메뉴를 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다. 두 도구가 모두 없을 때만 다음을 채팅에 번호 블록으로 출력하고 답변을 기다린다(번호 블록 폴백일 때의 모양):
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 ```text
 무엇을 할까요?
 1. 새 리서치 — 임의 주제로 딥리서치 시작 (주제 → 범위 → 멀티검색 → 종합 → 리포트, 10~30분)

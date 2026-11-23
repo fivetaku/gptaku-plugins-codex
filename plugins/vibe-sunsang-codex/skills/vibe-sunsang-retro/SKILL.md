@@ -9,6 +9,8 @@ description: 'Conversation-log converter — transforms Codex session JSONL logs
 
 Codex는 skill-first다 (별도 커맨드 파일 없음). 객관식은 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 번호 블록으로 채팅에서 묻는다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 아래 번호 블록 예시는 폴백일 때의 모양이다. 열린 코칭 질문은 도구 없이 평범한 채팅으로 묻는다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 ## 데이터 경로
 
 - **원본**: `~/.codex/sessions/**/*.jsonl` (`$CODEX_HOME/sessions`가 있으면 그쪽. 다른 위치는 `--sessions-dir`)

@@ -19,6 +19,8 @@ description: This skill should be used when the user asks to "스킬 만들어�
 
 이 문서에서 "선택지로 확인받는다"는 모두 `$PLUGIN_ROOT/shared/questioning-policy.md §A`를 따른다: 이번 세션 도구 목록에 `request_user_input_async`(기본 모드) 또는 `request_user_input`(Plan 모드)이 있으면 그 도구로 한 번에 묻는다. async 도구는 부른 뒤 한 줄 안내("위 질문에 답해 주시면 이어서 진행합니다")만 쓰고 **턴을 끝내며**, 답이 다음 사용자 메시지로 오면 이어간다(답에 달린 결정을 먼저 진행하지 않는다). 구조 프리뷰는 도구 호출 직전 채팅에 먼저 쓴다. 두 도구가 모두 없을 때만 아래 **번호형 선택지 블록(폴백)**을 채팅에 출력하고 사용자의 다음 자유 텍스트 답변을 읽는다. 이하 문서의 "§A 번호 블록" 예시는 모두 폴백일 때의 모양이다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 ```text
 예시 프리뷰            ← 구조를 보여줄 때만. 단순 선호 질문이면 생략.
   [User] --1:N--> [Skill]      (매번 실제 결과로 새로 생성, 하드코딩 금지)

@@ -10,6 +10,8 @@ Git/GitHub 초기 설정(Phase 1)과 프로젝트 폴더 만들기(Phase 2)를 �
 
 > 설명·교육 시 `git-teacher-help`의 §교육 원칙(`shared/questioning-policy.md` §3 Teaching)을 따른다. 겁먹은 초보에게는 원샷 금지 — 비유로 안심시키며 여러 턴에 걸쳐 손잡고 간다(§2a). 다만 사용자가 그냥 빨리 세팅만 원하면 강의하지 말고 단계만 진행한다(§2c).
 > 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양). async 도구를 쓰면 질문 뒤 턴을 끝내고, 사용자의 다음 메시지를 답으로 읽는다.
+> 
+> async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
 
 ## Phase 1: 준비하기
 

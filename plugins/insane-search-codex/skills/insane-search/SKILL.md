@@ -11,6 +11,8 @@ description: Adaptive access for blocked websites — tries every method until o
 불가피할 때만 `$PLUGIN_ROOT/shared/questioning-policy.md` §A 질문 도구(`request_user_input_async`, Plan 모드는 `request_user_input`; 둘 다 없으면 번호형 블록)를 쓰되, 준비된 사용자를
 과도하게 붙들지 않는다(§2c). 평소엔 차단 감지 → engine 실행 → trace 진단의 결정론적 흐름만 돈다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 ## 하네스 규칙 (어시스턴트에게 강제되는 지침)
 
 이 규칙은 어시스턴트가 즉흥 판단으로 엇나가지 못하게 하기 위한 **고삐**다. 위반 시 "chrome 200에서 break →

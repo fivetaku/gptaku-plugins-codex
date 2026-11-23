@@ -14,6 +14,8 @@ description: GPT Pro(웹 전용·API 없음 — 현 시점 최신 플래그십 �
 > **원칙: 사용자에게 CLI 타이핑을 시키지 않는다.** 환경이 안 갖춰졌으면 네가 `--ensure-env`로 감지하고, 필요한 결정은
 > `$PLUGIN_ROOT/shared/questioning-policy.md §A` 방식(질문 도구 `request_user_input_async` / Plan 모드 `request_user_input`, 둘 다 없으면 채팅 번호형 선택지 블록 폴백)으로 물어본 뒤
 > 네가 대신 실행한다. 초보자도 번호만 골라 따라올 수 있어야 한다. 이미 결정 가능하면(§2c) 묻지 말고 즉시 진행한다.
+> 
+> async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
 
 ## Step 0 — 첫 실행 셋업 (1회, 수동)
 

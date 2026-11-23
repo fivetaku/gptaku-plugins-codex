@@ -48,6 +48,8 @@ Per `shared/questioning-policy.md` §2c — if the user already named the librar
 
 If the library OR topic is genuinely ambiguous (e.g., "Router" with no project context), ask exactly ONE question per §A below (question tool first, numbered block only as fallback), then proceed. With `request_user_input_async`, end the turn after the call and continue when the answer message arrives.
 
+Async call shape: `{"questions":[{"title":"Header — question","options":["Recommended (Recommended) — why","Alternative — trade-off"]}]}`. Each question has only `title` and `options` (array of strings). `question`, `header`, `id` belong to Plan-mode `request_user_input` only and make the async call fail to parse. Do not add an "Other / type your own" option; free text is added automatically.
+
 ### §A — Ask with the question tool (numbered block is the fallback)
 
 Ask with the §A question tool: `request_user_input_async` (default mode; write one short line after the call and end the turn), or `request_user_input` (Plan mode). Recommended option first; no "Other" option (free text is added automatically). Only if neither tool exists, output this numbered chat block (fallback shape):

@@ -28,6 +28,7 @@ Codex에도 이제 질문 도구가 있다(2026-11-23 실측). **선택지가 �
 - **"기타"를 넣지 않는다** — 두 도구 모두 자유 입력 칸을 자동으로 붙인다.
 - **필드 옮기기**
   - 본진 `header` + `question` → async는 `title` 한 줄("헤더 — 질문"), Plan 도구는 `header`(12자 이내)·`question`·`id`(snake_case).
+  - async 호출 형식은 `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}` 하나뿐이다. `question`·`header`·`id`를 async에 넣으면 파싱 오류가 난다(2026-11-23 실측 4건 중 3건).
   - 본진 option `label` + `description` → async는 선택지 문자열 `"라벨 — 무엇인지, 트레이드오프"`, Plan 도구는 `label`·`description`.
   - 본진 `preview` → 도구가 보여 주지 못하므로 **도구를 부르기 직전 채팅 메시지**에 짧은 예시 프리뷰(ASCII 관계도·표·트리)를 먼저 쓴다.
   - 본진 `multiSelect: true` → 제목 끝에 "(여러 개면 쉼표로 적어 주세요)"를 붙이고 답을 자유 입력으로 받는다.

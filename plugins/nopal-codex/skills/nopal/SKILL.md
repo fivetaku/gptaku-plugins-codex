@@ -25,6 +25,7 @@ Use this skill when the user wants Google Workspace work orchestrated from natur
 
 Questioning policy: `$PLUGIN_ROOT/shared/questioning-policy.md` §A + §1 + §2c.
 - When a decision is needed, ask with the §A question tool (`request_user_input_async`; `request_user_input` in Plan mode). Only if neither tool exists, output the numbered block in chat. After an async call, end the turn and act only after the user's answer message arrives.
+- Async call shape: `{"questions":[{"title":"Header — question","options":["Recommended (Recommended) — why","Alternative — trade-off"]}]}`. Each question has only `title` and `options` (array of strings). `question`, `header`, `id` belong to Plan-mode `request_user_input` only and make the async call fail to parse. Do not add an "Other / type your own" option; free text is added automatically.
 - Infer what you can; ask only what is genuinely unknown (§1). If the request is already concrete, skip clarification and proceed (§2c).
 
 ## 규칙

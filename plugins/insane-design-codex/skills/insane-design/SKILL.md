@@ -33,6 +33,8 @@ Never hedge; pick one BOLD direction and defend it.
 (`request_user_input_async`, Plan 모드면 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 채팅 번호 블록으로 폴백한다.
 질문 도구를 부른 뒤에는 한 줄 안내만 쓰고 턴을 끝내며, 답이 오는 다음 메시지에서 이어서 진행한다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 - analysis는 인터뷰형이 아니라 **추출형**이다. URL과 출력 루트가 명확하면 질문 없이 진행하고,
   추론 가능한 건 묻지 않는다(§1 "추론 가능한 건 안 묻기").
 - URL/출력 루트가 모호할 때만 §A 질문 도구로 **1회** 확인한다(추천안을 1번에).

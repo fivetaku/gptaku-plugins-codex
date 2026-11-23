@@ -16,6 +16,8 @@ description: Structured research-query builder that turns a vague topic into a r
 
 선택지 질문은 `shared/questioning-policy.md §A`의 질문 도구 1콜(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻고, 두 도구가 모두 없을 때만 채팅 번호 블록으로 대신한다. async 도구는 부른 뒤 한 줄 안내만 쓰고 턴을 끝낸다(답은 다음 메시지로 온다). 추론 가능한 건 묻지 말고(§1), 요청이 이미 구체적이면 과잉질문 없이 바로 브리프를 생성한다(§2c). 사용자 입력 언어에 맞춰 모든 질문/선택지/산출물 언어를 일치시킨다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 ## Codex 워크플로우
 
 ### Phase 1: Discovery (주제·타입)

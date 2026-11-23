@@ -28,6 +28,8 @@ description: Explain Git and GitHub concepts using cloud-folder analogies for no
 - 전문용어 최소화, 안심시키기, 비판 금지. 전문 용어는 항상 한국어 병기: "Commit (저장하기)".
 
 > 결정이 필요한 곳은 `shared/questioning-policy.md` §A의 **질문 도구**(`request_user_input_async`, Plan 모드는 `request_user_input`)로 묻는다. 두 도구가 모두 없을 때만 번호 블록으로 묻는다(아래 예시는 번호 블록 폴백일 때의 모양). 단, 멘탈모델을 끌어내는 첫 질문(Turn 1)은 §1.2대로 **열린 텍스트 질문**으로 던진다.
+> 
+> async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
 
 ## 응답 규칙
 

@@ -103,6 +103,8 @@ description: Image-generation companion skill for the pumasi plugin family. Use 
 결정이 꼭 필요하면 `$PLUGIN_ROOT/shared/questioning-policy.md §A`의 **질문 도구**(`request_user_input_async`, Plan 모드면 `request_user_input`)로 묻는다.
 `request_user_input_async`는 호출 후 한 줄 안내만 쓰고 턴을 끝내며, 답은 다음 메시지로 받는다. 두 도구가 모두 없을 때만 **채팅 번호형 선택지 블록**(폴백)으로 묻는다.
 
+async 호출 형식: `{"questions":[{"title":"헤더 — 질문","options":["추천안 (추천) — 설명","대안 — 설명"]}]}`. 문항에는 `title`·`options`(문자열 배열)만 넣는다. `question`·`header`·`id`는 Plan 모드 `request_user_input` 전용이라 async에 넣으면 파싱 오류가 난다. "기타·직접 적기" 선택지는 넣지 않는다(자유 입력 칸이 자동으로 붙는다).
+
 `references/clarification-matrix.md`를 Read하여 모드별 의도 파악 카테고리 3개를 확정한다.
 
 **질문 순서** (한 턴 최대 4문항 — 초과분은 우선순위 낮은 의도 질문부터 잘라낸다):
