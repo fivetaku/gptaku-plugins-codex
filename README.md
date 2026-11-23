@@ -2,6 +2,15 @@ English | [한국어](README.ko.md)
 
 # gptaku-plugins-codex
 
+> [!IMPORTANT]
+> **This marketplace is retired (2026-11-23).** Every plugin here moved to **[gptaku-plugins](https://github.com/fivetaku/gptaku_plugins)** — one repo that installs in both Claude Code and Codex. New fixes ship only there.
+>
+> ```bash
+> codex plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git
+> ```
+>
+> Installed `*-codex` plugins keep working but no longer update. Swap each one: `codex plugin remove pumasi-codex@gptaku-codex`, then `codex plugin add pumasi@gptaku-plugins` (same name without `-codex`).
+
 > **A Codex plugin marketplace for people who want to become AI Native.**
 
 Being AI Native is not about using AI as a tool. It is about weaving AI naturally into every step from planning to execution. That takes practice, and it takes tools built for people who are learning. These plugins exist to remove specific walls you hit while working with Codex.

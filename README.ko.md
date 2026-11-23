@@ -2,6 +2,15 @@
 
 # gptaku-plugins-codex
 
+> [!IMPORTANT]
+> **이 마켓플레이스는 은퇴했습니다(2026-11-23).** 여기 있던 플러그인은 모두 **[gptaku-plugins](https://github.com/fivetaku/gptaku_plugins)** 로 옮겼습니다. 레포 하나로 Claude Code와 Codex에 모두 설치되며, 새 수정은 그쪽에만 나갑니다.
+>
+> ```bash
+> codex plugin marketplace add https://github.com/fivetaku/gptaku_plugins.git
+> ```
+>
+> 이미 설치한 `*-codex` 플러그인은 동작은 하지만 더 이상 업데이트되지 않습니다. 하나씩 바꿔 주세요: `codex plugin remove pumasi-codex@gptaku-codex` 다음 `codex plugin add pumasi@gptaku-plugins` (`-codex`를 뺀 같은 이름).
+
 > **AI Native가 되고 싶은 사람들을 위한 Codex 플러그인 마켓플레이스.**
 
 AI Native란 AI를 단순히 도구로 쓰는 게 아닙니다. 기획부터 실행까지 AI를 자연스럽게 녹여내는 것입니다. 연습이 필요하고, 배우는 사람들을 위한 도구가 필요합니다. 이 플러그인들은 Codex로 작업하면서 만나는 구체적인 벽을 하나씩 허물기 위해 만들어졌습니다.
